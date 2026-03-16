@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Microsoft.WindowsAzure.Governance.Policy.PolicyLinter</RootNamespace>
+    <AssemblyName>Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core</AssemblyName>
+    <Description>A linter for policy definitions.</Description>
+    <Authors>Microsoft</Authors>
+    <Company>Microsoft</Company>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies> <!-- Need all transitive NuGet package dependencies to be copied to the output directory-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Deployments.Expression" />
+    <PackageReference Include="Azure.Deployments.ResourceMetadata" />
+    <PackageReference Include="Azure.Deployments.ResourceMetadata.Offline" />
+    <PackageReference Include="Microsoft.PowerPlatform.ResourceStack" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="ResourceTypesAndAliases.json" LogicalName="ResourceTypesAndAliases.json" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

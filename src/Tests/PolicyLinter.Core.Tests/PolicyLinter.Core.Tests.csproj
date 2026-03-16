@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Tests</AssemblyName>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PolicyLinter.Core\PolicyLinter.Core.csproj" />
+    <ProjectReference Include="..\..\PolicyLinter.Cli\PolicyLinter.Cli.csproj" />
+  </ItemGroup>
+
+</Project>
