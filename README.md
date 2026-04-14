@@ -10,15 +10,79 @@ definitions to check for rules and best practices.
 
 ## Installation
 
-TODO
+<TODO: Add installation instructions here once the linter is published to a package manager or made available for download.>
 
 ## Usage
 
+The linter supports processing single or multiple policy definition files:
 
-## Rules
+### Single file
+```
+policylinter c:\path\to\policyDefinition.json
+```
 
-You can learn about the rules that the Azure Policy Linter checks for in the [Rules documentation](docs/RULES.md).
+### Multiple files
 
+- Processes up to 1,000 files in a single run
+
+```
+policylinter c:\path\to\policy1.json c:\path\to\policy2.json c:\path\to\policy3.json
+```
+
+### With output to JSON file
+```
+policylinter c:\path\to\policy1.json c:\path\to\policy2.json --output results.json
+```
+or
+```
+policylinter c:\path\to\policy1.json -o results.json
+```
+
+### Rule sets
+
+The linter organizes rules into rule sets for different linting scenarios. By default, the linter uses the "default" rule set which includes general-purpose rules.
+
+List available rule sets:
+```
+policylinter --list-rule-sets
+```
+
+Apply a specific rule set:
+```
+policylinter policy.json --rule-set ChangeSafety
+```
+
+Apply multiple rule sets:
+```
+policylinter policy.json --rule-set ChangeSafety --rule-set default
+```
+
+### Help
+```
+policylinter --help
+```
+
+The linter accepts either a full policy definition resource payload or a JSON containing just the policy definition property bag. When processing multiple files, the linter processes them in parallel for improved performance and provides file-specific results.
+
+## Known gaps and issues
+- No support for the more obscure leaf expressions like `source`.
+- No support for data-plane policies.
+- No support for effect details.
+- Quality of life CLI features:
+    - Suppressing linter rules.
+    - Return non-0 exit code when there are errors (or better yet, have a configure threshold for when to fail like `-Werror` flag of gcc).
+- Need to decouple internal-facing rules from this repo before we can open-source it.
+- Need a built-in way to identify whether a policy rule is applicable to 0, 1, N or unknown set of resource types
+
+## Linter rules
+
+Each linter rule should have a corresponding documentation file [here](docs/Rules/).
+
+## Demo Video
+
+Here is a demo video 
+
+![Azure Policy Linter Demo](docs/PolicyLinterDemo.gif)
 
 ## Contributing
 
