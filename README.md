@@ -82,7 +82,7 @@ Each linter rule should have a corresponding documentation file [here](docs/Rule
 
 Here is a demo video 
 
-![Azure Policy Linter Demo](docs/PolicyLinterDemo.gif)
+![Azure Policy Linter Demo](./docs/media/PolicyLinterDemo1.gif)
 
 ## Contributing
 
