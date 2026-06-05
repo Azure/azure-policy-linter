@@ -1,6 +1,10 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Metadata
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata
 {
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Metadata;
 
     /// <summary>
     /// Interface for resource type metadata classes.

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Microsoft.WindowsAzure.Governance.Policy.PolicyLinter</RootNamespace>
-    <AssemblyName>Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core</AssemblyName>
+    <RootNamespace>Microsoft.WindowsAzure.Governance.PolicyLinter</RootNamespace>
+    <AssemblyName>Microsoft.WindowsAzure.Governance.PolicyLinter.Core</AssemblyName>
     <Description>A linter for policy definitions.</Description>
     <Authors>Microsoft</Authors>
     <Company>Microsoft</Company>
@@ -20,6 +20,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="ResourceTypesAndAliases.json" LogicalName="ResourceTypesAndAliases.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="PolicyLinter.Core.nuspec" />
   </ItemGroup>
 
   <PropertyGroup>

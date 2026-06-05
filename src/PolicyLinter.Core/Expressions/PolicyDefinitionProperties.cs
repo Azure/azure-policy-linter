@@ -1,12 +1,18 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions
 {
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Expressions;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Parsing;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
@@ -37,7 +43,7 @@
         /// <summary>
         /// The policy rule expression.
         /// </summary>
-        public Expressions.PolicyRule PolicyRule { get; }
+        public PolicyRule PolicyRule { get; }
 
         /// <summary>
         /// The parameters of the policy definition.
@@ -60,7 +66,7 @@
         public ExternalEvaluationEnforcementSettings? ExternalEvaluationEnforcementSettings { get; }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="Core.PolicyDefinitionProperties"/> class.
+        /// Creates a new instance of the <see cref="PolicyDefinitionProperties"/> class.
         /// </summary>
         /// <param name="policyDefinitionPropertiesProperty">The policy definition properties.</param>
         /// <param name="typeMetadata">The type metadata.</param>
@@ -156,7 +162,7 @@
                     typeMetadata: typeMetadata)
                 : null;
 
-            this.PolicyRule = new Expressions.PolicyRule(
+            this.PolicyRule = new PolicyRule(
                 policyRuleProperty: policyDefinitionProperties?.PolicyRule,
                 parentPath: this.PathSegments,
                 parent: parent,

@@ -1,5 +1,12 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts
 {
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
     /// <summary>
     /// The base linter rule class for evaluating a policy expression of type <typeparamref name="T"/>.
     /// </summary>

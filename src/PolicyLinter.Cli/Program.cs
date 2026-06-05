@@ -1,4 +1,9 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Cli
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Cli
 {
     using System;
     using System.Collections.Generic;
@@ -8,12 +13,11 @@
     using System.Reflection;
     using System.Threading.Tasks;
     using global::Azure.Deployments.ResourceMetadata.Offline;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Rules.Contracts;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Metadata;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Parsing;
-    using Newtonsoft.Json;
+    using global::Newtonsoft.Json;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
 
     /// <summary>
     /// The linter program entry point.
@@ -88,9 +92,9 @@
         /// <param name="ruleSets">The optional rule set names to filter by.</param>
         private static async Task RunLinter(string[] filePaths, string? outputFile, string[]? ruleSets)
         {
-            if (filePaths.Length > MaxFileLimit)
+            if (filePaths.Length > Program.MaxFileLimit)
             {
-                Program.Error($"Too many files specified ({filePaths.Length}). Maximum allowed: {MaxFileLimit}");
+                Program.Error($"Too many files specified ({filePaths.Length}). Maximum allowed: {Program.MaxFileLimit}");
                 Environment.Exit(1);
             }
 
@@ -181,15 +185,15 @@
                     .OrderBy(kvp => kvp.Key)
                     .ToArray();
 
-                if (otherRuleSets.Length != 0)
+                if (otherRuleSets.Length > 0)
                 {
-                    var ruleSetNames = string.Join(", ", otherRuleSets.Select(kvp => $"'{kvp.Key}'"));
+                    var ruleSetNames = string.Join(", ", otherRuleSets.Select(kvp => $"'{kvp.Key}'").ToArray());
                     Program.DarkGray($"Additional rule sets are available: {ruleSetNames}. Use --rule-set to specify them explicitly.");
                 }
             }
             else
             {
-                var ruleSetNames = string.Join(", ", ruleSets!.Select(name => $"'{name}'"));
+                var ruleSetNames = string.Join(", ", ruleSets!.Select(name => $"'{name}'").ToArray());
                 Program.Info($"Linting using rule sets: {ruleSetNames}.");
             }
 
@@ -210,13 +214,12 @@
                 var ruleSetAttribute = ruleType.GetCustomAttribute<RuleSetAttribute>();
                 var ruleSetName = ruleSetAttribute?.Name ?? Program.DefaultRuleSetName;
 
-                if (!ruleSets.TryGetValue(ruleSetName, out int value))
+                if (!ruleSets.TryGetValue(ruleSetName, out var ruleCount))
                 {
-                    value = 0;
-                    ruleSets[ruleSetName] = value;
+                    ruleCount = 0;
                 }
 
-                ruleSets[ruleSetName] = ++value;
+                ruleSets[ruleSetName] = ruleCount + 1;
             }
 
             return ruleSets;
@@ -279,6 +282,15 @@
                 ruleSets = new[] { Program.DefaultRuleSetName };
             }
 
+            var availableRuleSets = new HashSet<string>(Program.GetRuleSetsInfo().Keys, StringComparer.OrdinalIgnoreCase);
+            var unknownRuleSets = ruleSets.Where(name => !availableRuleSets.Contains(name)).ToArray();
+            if (unknownRuleSets.Length > 0)
+            {
+                var unknownNames = string.Join(", ", unknownRuleSets.Select(name => $"'{name}'").ToArray());
+                var availableNames = string.Join(", ", availableRuleSets.OrderBy(name => name).Select(name => $"'{name}'").ToArray());
+                Program.Warning($"Unknown rule set(s): {unknownNames}. Available rule sets: {availableNames}. Use --list-rule-sets to see the list.");
+            }
+
             var ruleSetNames = new HashSet<string>(ruleSets, StringComparer.OrdinalIgnoreCase);
             var filteredRules = new List<ILinterRule>();
 
@@ -332,7 +344,7 @@
                     var errorResult = BuiltinLinterOutputs.FileReadError(filePath, ex.Message);
                     return new KeyValuePair<string, LinterOutput[]>(filePath, new[] { errorResult });
                 }
-            });
+            }).ToArray();
 
             var results = await Task.WhenAll(tasks).ConfigureAwait(false);
             return results.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);

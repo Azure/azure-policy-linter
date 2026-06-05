@@ -1,4 +1,9 @@
-namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Tests
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
 {
     using System;
     using System.IO;
@@ -7,7 +12,7 @@ namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Tests
     using System.Text.Json;
     using System.Threading.Tasks;
     using FluentAssertions;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Cli;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Cli;
     using Xunit;
 
     /// <summary>

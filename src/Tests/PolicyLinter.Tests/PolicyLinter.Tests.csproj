@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Tests</AssemblyName>
+    <AssemblyName>Microsoft.WindowsAzure.Governance.PolicyLinter.Tests</AssemblyName>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>disable</Nullable>
     <IsPackable>false</IsPackable>

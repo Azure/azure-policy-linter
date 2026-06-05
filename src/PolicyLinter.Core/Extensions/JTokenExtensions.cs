@@ -1,4 +1,9 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Extensions
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions
 {
     using System;
     using System.Globalization;

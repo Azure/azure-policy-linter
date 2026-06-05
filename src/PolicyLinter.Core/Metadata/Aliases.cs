@@ -1,4 +1,9 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Metadata
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata
 {
     using System;
     using System.Collections.Generic;
@@ -6,7 +11,7 @@
     using System.IO;
     using System.Linq;
     using System.Reflection;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Extensions;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Json;
     using Newtonsoft.Json;
 

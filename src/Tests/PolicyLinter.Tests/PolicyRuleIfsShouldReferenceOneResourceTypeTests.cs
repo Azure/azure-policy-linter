@@ -1,8 +1,14 @@
-namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Tests
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
 {
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
     using FluentAssertions;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Rules.CommonRules;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules;
     using Xunit;
 
     /// <summary>

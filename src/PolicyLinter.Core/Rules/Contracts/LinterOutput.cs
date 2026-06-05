@@ -1,4 +1,9 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts
 {
     /// <summary>
     /// Represents the output of a linter rule.

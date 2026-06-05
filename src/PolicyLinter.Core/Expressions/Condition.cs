@@ -1,7 +1,11 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions
 {
     using System.Collections.Immutable;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core;
 
     /// <summary>
     /// Represents a policy condition.

@@ -1,9 +1,13 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts
 {
     using System.Collections.Immutable;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Expressions;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
 
     /// <summary>
     /// Contains context information that is passed to the rule when it is evaluated.

@@ -1,7 +1,11 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Metadata
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata
 {
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Expressions.EvaluationHelpers;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers;
 
     /// <summary>
     /// Resolves aliases.

@@ -1,9 +1,14 @@
-namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Rules
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules
 {
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
     using System;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Expressions;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Extensions;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 

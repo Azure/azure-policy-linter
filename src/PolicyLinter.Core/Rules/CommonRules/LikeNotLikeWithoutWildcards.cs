@@ -1,7 +1,13 @@
-namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Rules
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules
 {
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
     using System;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Core;
 
     /// <summary>
     /// Flags like/notLike conditions whose operand contains no wildcards (* or ?).

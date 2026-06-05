@@ -1,7 +1,12 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Expressions.EvaluationHelpers
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers
 {
     using System;
-    using Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Extensions;
+    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>

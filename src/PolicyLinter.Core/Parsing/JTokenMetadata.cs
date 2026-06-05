@@ -1,4 +1,9 @@
-﻿namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Parsing
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
 {
     /// <summary>
     /// Represents metadata for a deserialized JSON tokens

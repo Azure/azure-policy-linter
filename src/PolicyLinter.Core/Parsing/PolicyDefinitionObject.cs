@@ -1,5 +1,10 @@
-﻿#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Parsing
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;

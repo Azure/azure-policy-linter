@@ -1,5 +1,5 @@
-<DotNetCliTool Version="1">
+﻿<DotNetCliTool Version="1">
   <Commands>
-    <Command Name="policylinter" EntryPoint="Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Cli.dll" Runner="dotnet" />
+    <Command Name="policylinter" EntryPoint="Microsoft.WindowsAzure.Governance.PolicyLinter.Cli.dll" Runner="dotnet" />
   </Commands>
 </DotNetCliTool>

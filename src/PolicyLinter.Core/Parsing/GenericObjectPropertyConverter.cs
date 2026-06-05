@@ -1,5 +1,10 @@
-﻿#nullable disable
-namespace Microsoft.WindowsAzure.Governance.Policy.PolicyLinter.Parsing
+﻿// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+#nullable disable
+namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
 {
     using System;
     using Newtonsoft.Json;
