@@ -52,6 +52,10 @@ Apply multiple rule sets:
 policylinter policy.json --rule-set ChangeSafety --rule-set default
 ```
 
+### Rule documentation
+
+Each rule has a corresponding documentation file in the [docs/Rules/](docs/Rules/) directory.
+
 ### Help
 ```
 policylinter --help
