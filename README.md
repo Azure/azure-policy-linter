@@ -75,8 +75,6 @@ Each linter rule should have a corresponding documentation file [here](docs/Rule
 
 ## Demo Video
 
-Here is a demo video 
-
 ![Azure Policy Linter Demo](./docs/media/PolicyLinterDemo1.gif)
 
 ## Contributing
@@ -84,7 +82,7 @@ Here is a demo video
 We are not accepting pull requests at this time. However, we welcome all feedback, bug reports,
 issues, and suggestions. Please feel free to open an
 [issue](https://github.com/Azure/azure-policy-linter/issues) to share your thoughts or report any
-problems you encounter. For more information about contributing, please see our [Contributing guidelines](docs/CONTRIBUTIONS.md).
+problems you encounter. For more information about contributing, please see our [Contributing guidelines](CONTRIBUTIONS.md).
 
 ## License
 
@@ -94,6 +92,10 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 For issues, questions, or suggestions, please open an
 [issue](https://github.com/Azure/azure-policy-linter/issues) on GitHub.
+
+## Security
+
+For security issues, please see our [Security policy](SECURITY.md).
 
 ## Trademark notice
 
