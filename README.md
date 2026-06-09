@@ -3,11 +3,6 @@
 Repository for the Azure Policy Linter tool that you can run against your authored policy
 definitions to check for rules and best practices.
 
-## Features
-
-- Policy definition validation
-- Best practices checking
-
 ## Installation
 
 <TODO: Add installation instructions here once the linter is published to a package manager or made available for download.>
