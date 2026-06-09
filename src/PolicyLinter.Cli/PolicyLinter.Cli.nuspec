@@ -1,0 +1,15 @@
+<package>
+  <metadata>
+    <id>Microsoft.WindowsAzure.Governance.PolicyLinter.Cli</id>
+    <version>0.2.9</version>
+    <authors>Microsoft</authors>
+    <description>A command line linter for Azure Policy Definition.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+  </metadata>
+  <files>
+    <file src="out\retail-AMD64\PolicyLinter.Cli\**.*" target="tools\net8.0\any" />
+  </files>
+</package>

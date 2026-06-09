@@ -1,0 +1,17 @@
+<package>
+<metadata>
+  <id>Microsoft.WindowsAzure.Governance.PolicyLinter.Core</id>
+  <version>0.2.9</version>
+  <authors>Microsoft</authors>
+  <description>The core logic of the linter for Azure Policy Definition.</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <dependencies>
+      <group targetFramework="net8.0">
+        <!-- All dependencies are bundled as DLLs, no external dependencies needed -->
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="out\retail-AMD64\PolicyLinter.Core\**.*" target="lib\net8.0" />
+  </files>
+</package>
