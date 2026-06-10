@@ -8,7 +8,6 @@
     <PackageVersion Include="Azure.Deployments.ResourceMetadata.Offline" Version="1.301.0" />
     <PackageVersion Include="Microsoft.PowerPlatform.ResourceStack" Version="7.0.0.2080" />
     <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
-    <PackageVersion Include="coverlet.collector" Version="6.0.2" />
     <PackageVersion Include="FluentAssertions" Version="6.2.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageVersion Include="xunit" Version="2.4.1" />
