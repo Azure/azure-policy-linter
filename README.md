@@ -49,7 +49,7 @@ policylinter policy.json --rule-set BuiltIn
 
 Apply multiple rule sets:
 ```
-policylinter policy.json --rule-set ChangeSafety --rule-set default
+policylinter policy.json --rule-set BuiltIn--rule-set default
 ```
 
 ### Rule documentation
