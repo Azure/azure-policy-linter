@@ -1,4 +1,4 @@
-# ![icon](media/icon.svg) Azure Policy Linter
+# <img src="media/icon.svg" alt="icon" width="32" height="32"> Azure Policy Linter
 
 Repository for the Azure Policy Linter tool that you can run against your authored policy
 definitions to check for rules and best practices.
@@ -49,7 +49,7 @@ policylinter policy.json --rule-set BuiltIn
 
 Apply multiple rule sets:
 ```
-policylinter policy.json --rule-set BuiltIn--rule-set default
+policylinter policy.json --rule-set BuiltIn --rule-set default
 ```
 
 ### Rule documentation
