@@ -1,5 +1,8 @@
 # Azure Policy Linter
 
+[![Build](https://github.com/Azure/azure-policy-linter/actions/workflows/build.yml/badge.svg)](https://github.com/Azure/azure-policy-linter/actions/workflows/build.yml)
+[![CodeQL](https://github.com/Azure/azure-policy-linter/actions/workflows/codeql.yml/badge.svg)](https://github.com/Azure/azure-policy-linter/actions/workflows/codeql.yml)
+
 Repository for the Azure Policy Linter tool that you can run against your authored policy
 definitions to check for rules and best practices.
 
@@ -102,5 +105,4 @@ Trademarks This project may contain trademarks or logos for projects, products, 
 Authorized use of Microsoft trademarks or logos is subject to and must follow Microsoft’s Trademark
 & Brand Guidelines. Use of Microsoft trademarks or logos in modified versions of this project must
 not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are
-subject to those third-party’s policies.
-
+subject to those third-party's policies.
