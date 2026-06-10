@@ -1,34 +1,39 @@
-## .NET
+## Build outputs
 bin/
 obj/
-*.dll
-*.exe
-*.pdb
+out/
 
 ## NuGet
 packages/
 *.nupkg
+*.snupkg
 
-## IDE
+## Test results and coverage
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.cobertura.xml
+
+## Visual Studio
 .vs/
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.rsuser
 
-## Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-x86/
-[Bb]uild/
-bld/
+## JetBrains Rider
+.idea/
+
+## Visual Studio Code
+.vscode/
 
 ## OS
+.DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-.DS_Store
 
-## Solution files
-*.sln
+## dotnet publish
+publish/

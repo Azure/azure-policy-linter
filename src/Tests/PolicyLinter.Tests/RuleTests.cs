@@ -191,7 +191,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
                 LineNumber: 18,
                 LinePosition: 90,
                 Path: "properties.policyRule.if.allOf[1].field",
-                Description: "The field alias: 'Microsoft.DocumentDB/databaseAccounts/ipRangeFilter' is referring to a property that doesn't exist in the latest API version (2024-12-01-preview) of resource type: 'Microsoft.DocumentDB/databaseAccounts'. This most likely means that the referenced property is deprecated and the policy might not work as intended.");
+                Description: "The field alias: 'Microsoft.DocumentDB/databaseAccounts/ipRangeFilter' is referring to a property that doesn't exist in the latest API version (2025-11-01-preview) of resource type: 'Microsoft.DocumentDB/databaseAccounts'. This most likely means that the referenced property is deprecated and the policy might not work as intended.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -247,7 +247,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
                 LineNumber: 18,
                 LinePosition: 99,
                 Path: "properties.policyRule.if.allOf[1].field",
-                Description: "The field alias: 'Microsoft.Storage/storageAccounts/privateEndpointConnections' maps to property that is marked as read-only in one or more old API versions of resource type: 'Microsoft.Storage/storageAccounts'. API versions: '2019-06-01, 2020-08-01-preview, 2021-01-01, 2021-02-01, 2021-04-01, 2021-06-01, 2021-08-01, 2021-09-01, 2022-05-01, 2022-09-01, 2023-01-01, 2023-04-01, 2023-05-01, 2024-01-01'");
+                Description: "The field alias: 'Microsoft.Storage/storageAccounts/privateEndpointConnections' maps to property that is marked as read-only in one or more old API versions of resource type: 'Microsoft.Storage/storageAccounts'. API versions: '2019-06-01, 2020-08-01-preview, 2021-01-01, 2021-02-01, 2021-04-01, 2021-06-01, 2021-08-01, 2021-09-01, 2022-05-01, 2022-09-01, 2023-01-01, 2023-04-01, 2023-05-01, 2024-01-01, 2025-01-01, 2025-06-01, 2025-08-01, 2026-04-01'");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -303,7 +303,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
                 LineNumber: 18,
                 LinePosition: 94,
                 Path: "properties.policyRule.if.allOf[1].field",
-                Description: "The field alias: 'Microsoft.Storage/storageAccounts/allowBlobPublicAccess' maps to property path that marked as optional in some API version of resource type: 'Microsoft.Storage/storageAccounts' . API versions: '2019-04-01, 2019-06-01, 2020-08-01-preview, 2021-01-01, 2021-02-01, 2021-04-01, 2021-06-01, 2021-08-01, 2021-09-01, 2022-05-01, 2022-09-01, 2023-01-01, 2023-04-01, 2023-05-01, 2024-01-01'");
+                Description: "The field alias: 'Microsoft.Storage/storageAccounts/allowBlobPublicAccess' maps to property path that marked as optional in some API version of resource type: 'Microsoft.Storage/storageAccounts' . API versions: '2019-04-01, 2019-06-01, 2020-08-01-preview, 2021-01-01, 2021-02-01, 2021-04-01, 2021-06-01, 2021-08-01, 2021-09-01, 2022-05-01, 2022-09-01, 2023-01-01, 2023-04-01, 2023-05-01, 2024-01-01, 2025-01-01, 2025-06-01, 2025-08-01, 2026-04-01'");
             results.Should().ContainEquivalentOf(output);
         }
 
