@@ -59,3 +59,11 @@ jobs:
         with:
           name: test-results-${{ matrix.os }}
           path: ./TestResults/
+
+      # Only upload coverage once — use the ubuntu leg to avoid double-reporting.
+      - name: Upload coverage to Codecov
+        if: matrix.os == 'ubuntu-latest'
+        uses: codecov/codecov-action@75cd1162101a0e8dac723a3080ec8f67998561d8 # v5.5.4
+        with:
+          files: ./TestResults/**/coverage.cobertura.xml
+          fail_ci_if_error: true
