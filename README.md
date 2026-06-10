@@ -67,11 +67,6 @@ The linter accepts either a full policy definition resource payload or a JSON co
 - No support for the more obscure leaf expressions like `source`.
 - No support for data-plane policies.
 - No support for effect details.
-- Quality of life CLI features:
-    - Suppressing linter rules.
-    - Return non-0 exit code when there are errors (or better yet, have a configure threshold for when to fail like `-Werror` flag of gcc).
-- Need to decouple internal-facing rules from this repo before we can open-source it.
-- Need a built-in way to identify whether a policy rule is applicable to 0, 1, N or unknown set of resource types
 
 ## Linter rules
 
