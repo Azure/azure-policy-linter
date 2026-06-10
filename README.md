@@ -44,7 +44,7 @@ policylinter --list-rule-sets
 
 Apply a specific rule set:
 ```
-policylinter policy.json --rule-set ChangeSafety
+policylinter policy.json --rule-set BuiltIn
 ```
 
 Apply multiple rule sets:
