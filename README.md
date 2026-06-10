@@ -1,4 +1,6 @@
-# <img src="media/icon.png" alt="icon" width="100" height="100"> Azure Policy Linter
+<img src="media/icon.png" alt="icon" width="100" height="100"> 
+
+# Azure Policy Linter
 
 Repository for the Azure Policy Linter tool that you can run against your authored policy
 definitions to check for rules and best practices.
