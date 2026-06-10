@@ -11,6 +11,8 @@ on:
   workflow_dispatch:
 
 permissions:
+  # required for CodeQL to read workflow run information
+  actions: read
   # required to upload SARIF results to the Security tab
   security-events: write
   contents: read
