@@ -5,6 +5,8 @@
 
 Repository for the Azure Policy Linter, a tool built by the Azure Policy team to improve the quality of [Azure Policy Definitions](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics) by surfacing known issues, gotchas and best practices.
 
+![Azure Policy Linter Demo](./docs/media/PolicyLinterDemo1.gif)
+
 ## Background
 
 [Azure Policy](https://learn.microsoft.com/en-us/azure/governance/policy/overview) allows users to define, assign and manage policies that apply to their Azure resources.
@@ -16,10 +18,6 @@ The linter project is meant to codify this knowledge and surface it as actionabl
 ## Installation
 
 > Currently (6/2026), installation requires [building the linter from source](#building-from-source). The Azure Policy team is working on publishing it to [nuget.org](https://nuget.org) as a dotnet tool in the near future.
-
-## Building from source
-
-Until a published package is available, building from source is the only way to run the linter. See [CONTRIBUTIONS.md](CONTRIBUTIONS.md#local-build-pack-and-run) for build, run, and pack instructions.
 
 ## Usage
 
@@ -88,9 +86,68 @@ The linter accepts either a full policy definition resource payload or a JSON co
 - [docs/linter-architecture.md](docs/linter-architecture.md) - how the linter works in code and what it takes to add a rule.
 - [docs/Rules/](docs/Rules/) - per-rule documentation, one file per rule.
 
-## Demo Video
+## Building from source
 
-![Azure Policy Linter Demo](./docs/media/PolicyLinterDemo1.gif)
+Until the linter is published as a package, building from source is the only way to run it. Requires the .NET SDK version pinned in [global.json](global.json).
+
+Build the solution:
+
+```
+dotnet build src/dirs.proj --configuration Release
+```
+
+Run the CLI directly from source:
+
+```
+dotnet run --project src/PolicyLinter.Cli -- <path-to-policy-json>
+```
+
+Run the tests:
+
+```
+dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj
+```
+
+To open the repository in an editor, use the helper scripts at the repo root:
+- `vs.cmd` - restores packages, generates `dirs.sln` via slngen, and opens Visual Studio. Pass `--no-launch` to generate the solution without opening Visual Studio.
+- `vsc.cmd` - restores packages, generates `dirs.sln` via slngen, and opens the repository in Visual Studio Code. The C# Dev Kit extension uses the solution file to load the full project structure.
+
+### Pack and install as a global tool
+
+To pack the CLI and install it as a global .NET tool (so you can invoke `policylinter` directly). Run these from the repository root:
+
+1. Uninstall any existing global install first - the local install will fail otherwise:
+   ```
+   dotnet tool uninstall -g Azure.Policy.PolicyLinter.Cli
+   ```
+
+2. Publish the CLI to the output path the nuspec packs from:
+   ```
+   dotnet publish src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o out/retail-AMD64/PolicyLinter.Cli
+   ```
+
+3. Pack. The nuspec's file paths are resolved relative to `NuspecBasePath`, which must be an absolute path, so pass the repo root via `$PWD` (PowerShell or bash; use `%CD%` in cmd):
+   ```
+   dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj -p:NuspecFile=$PWD/src/PolicyLinter.Cli/PolicyLinter.Cli.nuspec -p:NuspecBasePath=$PWD -o <output-path>
+   ```
+
+4. Install from the local output:
+   ```
+   dotnet tool install -g Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
+   ```
+
+5. Run:
+   ```
+   policylinter <path-to-policy-json>
+   ```
+
+## Adding a linter rule
+
+- [docs/linter-rule-design.md](docs/linter-rule-design.md) - what a good rule looks like (scope, severity, naming, description).
+- [docs/linter-architecture.md](docs/linter-architecture.md) - how rules are wired up in the code.
+- [.github/skills/triage-linter-rule/](.github/skills/triage-linter-rule/) - interactive skill to turn an idea into a spec.
+- [.github/skills/implement-linter-rule/](.github/skills/implement-linter-rule/) - interactive skill to implement a rule from a spec.
+- Every rule should have a doc file in [docs/Rules/](docs/Rules/) and at least one unit test.
 
 ## Contributing
 
