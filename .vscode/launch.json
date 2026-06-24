@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run PolicyLinter CLI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/PolicyLinter.Cli/bin/Debug/net8.0/Microsoft.WindowsAzure.Governance.PolicyLinter.Cli.dll",
+            "args": [
+                "${input:policyPath}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        }
+    ],
+    "inputs": [
+        {
+            "id": "policyPath",
+            "type": "promptString",
+            "description": "Path to the policy definition JSON file to lint"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 <package>
 <metadata>
-  <id>Microsoft.WindowsAzure.Governance.PolicyLinter.Core</id>
+  <id>Azure.Policy.PolicyLinter.Core</id>
   <version>0.2.9</version>
   <authors>Microsoft</authors>
   <description>The core logic of the linter for Azure Policy Definition.</description>

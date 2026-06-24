@@ -1,6 +1,6 @@
 <package>
   <metadata>
-    <id>Microsoft.WindowsAzure.Governance.PolicyLinter.Cli</id>
+    <id>Azure.Policy.PolicyLinter.Cli</id>
     <version>0.2.9</version>
     <authors>Microsoft</authors>
     <description>A command line linter for Azure Policy Definition.</description>

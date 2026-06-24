@@ -23,11 +23,17 @@ coverage/
 *.sln.docstates
 *.rsuser
 
+## slngen-generated solution
+dirs.sln
+
 ## JetBrains Rider
 .idea/
 
 ## Visual Studio Code
-.vscode/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 
 ## OS
 .DS_Store
