@@ -118,7 +118,7 @@ To pack the CLI and install it as a global .NET tool (so you can invoke `policyl
 
 1. Uninstall any existing global install first - the local install will fail otherwise:
    ```
-   dotnet tool uninstall -g Microsoft.Azure.PolicyLinter.Cli
+   dotnet tool uninstall -g Microsoft.Azure.Policy.PolicyLinter.Cli
    ```
 
 2. Publish the CLI to the output path the nuspec packs from:
@@ -133,7 +133,7 @@ To pack the CLI and install it as a global .NET tool (so you can invoke `policyl
 
 4. Install from the local output:
    ```
-   dotnet tool install -g Microsoft.Azure.PolicyLinter.Cli --add-source <output-path> --no-cache
+   dotnet tool install -g Microsoft.Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
    ```
 
 5. Run:
