@@ -3,7 +3,7 @@
 [![Build](https://github.com/Azure/azure-policy-linter/actions/workflows/build.yml/badge.svg)](https://github.com/Azure/azure-policy-linter/actions/workflows/build.yml)
 [![CodeQL](https://github.com/Azure/azure-policy-linter/actions/workflows/codeql.yml/badge.svg)](https://github.com/Azure/azure-policy-linter/actions/workflows/codeql.yml)
 
-Repository for the Azure Policy Linter, a tool built by the Azure Policy team to improve the quality of [Azure Policy Definitions](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics) by surfacing known issues, gotchas and best practices.
+A linter for [Azure Policy Definitions](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics) that surfaces known issues, gotchas, and best practices, built by the Azure Policy team.
 
 ![Azure Policy Linter Demo](./docs/media/PolicyLinterDemo1.gif)
 
@@ -88,7 +88,7 @@ The linter accepts either a full policy definition resource payload or a JSON co
 
 ## Building from source
 
-Until the linter is published as a package, building from source is the only way to run it. Requires the .NET SDK version pinned in [global.json](global.json).
+Requires the .NET SDK version pinned in [global.json](global.json).
 
 Build the solution:
 
