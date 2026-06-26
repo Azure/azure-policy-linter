@@ -17,7 +17,7 @@ Not needed for doc-only changes, test-only changes, or version bumps.
 
 ## Flow
 
-1. Pack and install the CLI as a global tool from a clean build. This verifies the packaging path (the same `dotnet pack` the internal mirror relies on) in addition to the linter logic:
+1. Pack and install the CLI as a global tool from a clean build:
 
    ```
    dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o <output-path>
@@ -25,7 +25,7 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    dotnet tool install -g Microsoft.Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
    ```
 
-   The `uninstall` clears any prior install so the new package is the one under test; ignore its error if no prior install exists. If `install` fails because the `policylinter` command is already in use, a tool under a different package id owns it - run `dotnet tool list -g` and uninstall that id too. `PackAsTool` produces a self-contained tool, so no separate publish step is needed. If you only need to exercise linter logic and not packaging, you can skip this and run from source with `dotnet run --project src/PolicyLinter.Cli -- <args>` instead of the `policylinter` command below.
+   If `install` fails because the `policylinter` command is in use, another package id owns it - find it with `dotnet tool list -g` and uninstall that too.
 
 2. List the available rule sets to confirm rule discovery works:
 
