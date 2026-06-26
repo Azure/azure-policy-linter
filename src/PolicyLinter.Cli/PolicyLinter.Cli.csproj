@@ -9,7 +9,10 @@
     <Authors>Microsoft</Authors>
     <Company>Microsoft</Company>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <ToolCommandName>PolicyLinter</ToolCommandName>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <PackageId>Microsoft.Azure.Policy.PolicyLinter.Cli</PackageId>
+    <ToolCommandName>policylinter</ToolCommandName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,16 +21,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.CommandLine" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="DotnetToolSettings.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="PolicyLinter.Cli.nuspec" />
   </ItemGroup>
 
   <PropertyGroup>

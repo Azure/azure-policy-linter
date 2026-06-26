@@ -17,15 +17,23 @@ Not needed for doc-only changes, test-only changes, or version bumps.
 
 ## Flow
 
-1. List the available rule sets to confirm rule discovery works:
+1. Pack and install the CLI as a global tool from a clean build. This verifies the packaging path (the same `dotnet pack` the internal mirror relies on) in addition to the linter logic:
+
+   ```
+   dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o <output-path>
+   dotnet tool uninstall -g Microsoft.Azure.Policy.PolicyLinter.Cli
+   dotnet tool install -g Microsoft.Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
+   ```
+
+   The `uninstall` clears any prior install so the new package is the one under test; ignore its error if no prior install exists. If `install` fails because the `policylinter` command is already in use, a tool under a different package id owns it - run `dotnet tool list -g` and uninstall that id too. `PackAsTool` produces a self-contained tool, so no separate publish step is needed. If you only need to exercise linter logic and not packaging, you can skip this and run from source with `dotnet run --project src/PolicyLinter.Cli -- <args>` instead of the `policylinter` command below.
+
+2. List the available rule sets to confirm rule discovery works:
 
    ```
    policylinter --list-rule-sets
    ```
 
-   When running from source, use `dotnet run -- --list-rule-sets` from the relevant CLI project directory.
-
-2. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedEnforcementPolicyEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
+3. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedEnforcementPolicyEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
 
    ```powershell
    @"
@@ -44,7 +52,7 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    "@ | Out-File -FilePath sanity-check.json -Encoding UTF8
    ```
 
-3. Run the linter under each scenario relevant to the change. At minimum, run the default rule set. If the change touches a non-default rule set or rule-set filtering, run those too:
+4. Run the linter under each scenario relevant to the change. At minimum, run the default rule set. If the change touches a non-default rule set or rule-set filtering, run those too:
 
    ```
    policylinter sanity-check.json
@@ -52,12 +60,12 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    policylinter sanity-check.json --rule-set <RuleSetName> --rule-set default
    ```
 
-4. For each run, verify:
+5. For each run, verify:
    - The CLI exits without an error.
    - Findings from the rule you changed appear (or are absent) as expected.
    - No findings appear from rule sets that weren't selected.
 
-5. Delete the temporary file:
+6. Delete the temporary file:
 
    ```powershell
    Remove-Item sanity-check.json
