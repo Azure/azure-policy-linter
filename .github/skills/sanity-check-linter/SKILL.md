@@ -17,23 +17,34 @@ Not needed for doc-only changes, test-only changes, or version bumps.
 
 ## Flow
 
-1. Pack and install the CLI as a global tool from a clean build:
+1. Check for an existing global install before touching anything. List installed tools and find any that provides the `policylinter` command or whose id ends in `.PolicyLinter.Cli`:
+
+   ```
+   dotnet tool list -g
+   ```
+
+   `dotnet tool` doesn't record where a tool came from, so you can't tell a local build from a feed install by inspection. Record the id and version. Unless the current task already said it's fine to overwrite an existing install, show the user the id and version, tell them it will be removed, and ask whether it's a real install from a feed (restore it afterwards) or a disposable local build (don't). Wait for confirmation.
+
+2. Uninstall the existing tool (repeat for the new id too, if it differs):
+
+   ```
+   dotnet tool uninstall -g <existing-id>
+   ```
+
+3. Pack and install the CLI as a global tool from a clean build:
 
    ```
    dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o <output-path>
-   dotnet tool uninstall -g Microsoft.Azure.Policy.PolicyLinter.Cli
    dotnet tool install -g Microsoft.Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
    ```
 
-   If `install` fails because the `policylinter` command is in use, another package id owns it - find it with `dotnet tool list -g` and uninstall that too.
-
-2. List the available rule sets to confirm rule discovery works:
+4. List the available rule sets to confirm rule discovery works:
 
    ```
    policylinter --list-rule-sets
    ```
 
-3. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedEnforcementPolicyEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
+5. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedEnforcementPolicyEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
 
    ```powershell
    @"
@@ -52,7 +63,7 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    "@ | Out-File -FilePath sanity-check.json -Encoding UTF8
    ```
 
-4. Run the linter under each scenario relevant to the change. At minimum, run the default rule set. If the change touches a non-default rule set or rule-set filtering, run those too:
+6. Run the linter under each scenario relevant to the change. At minimum, run the default rule set. If the change touches a non-default rule set or rule-set filtering, run those too:
 
    ```
    policylinter sanity-check.json
@@ -60,16 +71,15 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    policylinter sanity-check.json --rule-set <RuleSetName> --rule-set default
    ```
 
-5. For each run, verify:
+7. For each run, verify:
    - The CLI exits without an error.
    - Findings from the rule you changed appear (or are absent) as expected.
    - No findings appear from rule sets that weren't selected.
 
-6. Delete the temporary file:
-
-   ```powershell
-   Remove-Item sanity-check.json
-   ```
+8. Clean up:
+   - Delete the temporary file: `Remove-Item sanity-check.json`.
+   - Uninstall the sanity-check build: `dotnet tool uninstall -g Microsoft.Azure.Policy.PolicyLinter.Cli`.
+   - If step 1 found a feed install to restore, reinstall it: `dotnet tool install -g <id> --version <version>`.
 
 ## What this skill is not
 
