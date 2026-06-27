@@ -17,7 +17,7 @@
     that is PackAsTool=true, but we deliberately do NOT use it. PackAsTool re-publishes the tool's
     binaries at pack time. The internal mirror that republishes this package signs binaries on disk and
     then packs, so a pack-time re-publish would replace the signed binaries with fresh unsigned copies
-    and fail code-sign validation. We therefore pack the already-built (already-signed) output as-is.
+    and fail code-sign validation. So instead we pack the already-built (already-signed) output directly.
 
     PackAsTool normally bundles three things for you; with it off, we supply each one explicitly below:
 
