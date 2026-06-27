@@ -9,11 +9,36 @@
     <Authors>Microsoft</Authors>
     <Company>Microsoft</Company>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <IsPackable>true</IsPackable>
-    <PackAsTool>true</PackAsTool>
-    <PackageId>Microsoft.Azure.Policy.PolicyLinter.Cli</PackageId>
-    <ToolCommandName>policylinter</ToolCommandName>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <!--
+    Packed as a dotnet tool via PackageType=DotnetTool with an explicit pack-time content target, not
+    PackAsTool. The internal mirror that republishes this package signs in a build -> sign -> pack order:
+    it signs the compiled output on disk, then packs. PackAsTool re-publishes the tool payload during
+    pack (after signing), so the binaries inside the package would be unsigned and fail code-sign
+    validation. Packing the already-built (already-signed) output via TfmSpecificPackageFile avoids that
+    re-publish. Do not switch this to PackAsTool.
+  -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>Microsoft.Azure.Policy.PolicyLinter.Cli</PackageId>
+    <PackageType>DotnetTool</PackageType>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddToolPayload</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <Target Name="_AddToolPayload">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg;DotnetToolSettings.xml">
+        <PackagePath>tools/net8.0/any/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include="DotnetToolSettings.xml">
+        <PackagePath>tools/net8.0/any/DotnetToolSettings.xml</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\PolicyLinter.Core\PolicyLinter.Core.csproj" />
@@ -22,9 +47,5 @@
   <ItemGroup>
     <PackageReference Include="System.CommandLine" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
 
 </Project>
