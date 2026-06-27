@@ -13,12 +13,33 @@
   </PropertyGroup>
 
   <!--
-    Packed as a dotnet tool via PackageType=DotnetTool with an explicit pack-time content target, not
-    PackAsTool. The internal mirror that republishes this package signs in a build -> sign -> pack order:
-    it signs the compiled output on disk, then packs. PackAsTool re-publishes the tool payload during
-    pack (after signing), so the binaries inside the package would be unsigned and fail code-sign
-    validation. Packing the already-built (already-signed) output via TfmSpecificPackageFile avoids that
-    re-publish. Do not switch this to PackAsTool.
+    This project is packed as a .NET tool (installable via `dotnet tool install`). The usual way to do
+    that is PackAsTool=true, but we deliberately do NOT use it. PackAsTool re-publishes the tool's
+    binaries at pack time. The internal mirror that republishes this package signs binaries on disk and
+    then packs, so a pack-time re-publish would replace the signed binaries with fresh unsigned copies
+    and fail code-sign validation. We therefore pack the already-built (already-signed) output as-is.
+
+    PackAsTool normally bundles three things for you; with it off, we supply each one explicitly below:
+
+      1. PackageType=DotnetTool. The metadata marker that makes `dotnet tool install` accept this package
+         as a tool. Without it the package installs as an ordinary library and is not runnable as a tool.
+      2. The _AddToolPayload target. Copies the build output into tools/net8.0/any/ inside the package
+         (the actual binaries a tool package must carry). PackAsTool would have produced this via its
+         re-publish; we instead enumerate the existing output.
+      3. DotnetToolSettings.xml (hand-authored, next to this csproj). Maps the command name `policylinter`
+         to the entry-point assembly. PackAsTool would have generated this from ToolCommandName.
+
+    Supporting properties: IncludeBuildOutput=false stops the SDK also dropping the build output into
+    lib/ (we place everything under tools/ ourselves); SuppressDependenciesWhenPacking=true stops the
+    package declaring its NuGet dependencies, because a tool package bundles its whole closure instead.
+
+    TargetsForTfmSpecificContentInPackage is the NuGet hook that runs _AddToolPayload during pack; we
+    append to it so we keep any targets the SDK already registered. _AddToolPayload enumerates
+    $(OutputPath) at pack time, which is why packing with a fresh build and packing with `no-build`
+    against an existing build both produce a complete payload. A static `None Pack=true` glob would not:
+    it is evaluated at project load, before a one-shot pack has produced any output.
+
+    Do not switch this to PackAsTool.
   -->
   <PropertyGroup>
     <IsPackable>true</IsPackable>
