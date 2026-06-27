@@ -22,10 +22,9 @@
     PackAsTool normally bundles three things for you; with it off, we supply each one explicitly below:
 
       1. PackageType=DotnetTool. The metadata marker that makes `dotnet tool install` accept this package
-         as a tool. Without it the package installs as an ordinary library and is not runnable as a tool.
-      2. The _AddToolPayload target. Copies the build output into tools/net8.0/any/ inside the package
-         (the actual binaries a tool package must carry). PackAsTool would have produced this via its
-         re-publish; we instead enumerate the existing output.
+         as a tool. Without it, install rejects the package, treating it as a plain library, not a tool.
+      2. The _AddToolPayload target. Copies the build output into tools/net8.0/any/ inside the package.
+         PackAsTool would have produced this via its re-publish.
       3. DotnetToolSettings.xml (hand-authored, next to this csproj). Maps the command name `policylinter`
          to the entry-point assembly. PackAsTool would have generated this from ToolCommandName.
 
@@ -37,7 +36,8 @@
     append to it so we keep any targets the SDK already registered. _AddToolPayload enumerates
     $(OutputPath) at pack time, which is why packing with a fresh build and packing with `no-build`
     against an existing build both produce a complete payload. A static `None Pack=true` glob would not:
-    it is evaluated at project load, before a one-shot pack has produced any output.
+    item globs expand during evaluation, before any target runs, so in a one-shot pack $(OutputPath) is
+    still empty.
 
     Do not switch this to PackAsTool.
   -->
