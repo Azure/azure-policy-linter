@@ -1,6 +1,6 @@
 ---
 name: triage-linter-rule
-description: 'Turn a vague "this could be a linter rule" idea into one or more concise specs for the Azure Policy Linter. Output is a spec, saved as a local Markdown file or handed off to the authoring skill. Triggers: "this could be a linter rule", "lint rule for this", "draft a linter rule", "policy linter idea", "spec a linter rule".'
+description: 'Turn a vague "this could be a linter rule" idea into one or more concise specs for the Azure Policy Linter. Output is a spec, filed as a GitHub issue or handed off to the authoring skill. Triggers: "this could be a linter rule", "lint rule for this", "draft a linter rule", "policy linter idea", "spec a linter rule".'
 ---
 
 # Policy Linter Rule Triage
@@ -98,60 +98,23 @@ In-repo references:
 
 Once the spec is confirmed, ask the user what to do with it. Two paths:
 
-### 1. Save the spec as a local Markdown file
+### 1. File the spec as a GitHub issue
 
-Render the spec fields into a Markdown file and write it locally for the user to review. Use `TBD` for unfilled values and `None` where applicable, so reviewers can tell the difference between "decided" and "not yet considered":
+Create a GitHub issue from the confirmed spec with the `gh` CLI:
 
 ```
-# [Linter rule] <Title from spec>
-
-**Summary**
-<summary>
-
-**Target**
-<what part of the definition the rule inspects>
-
-**Applicability**
-<predicate: when the rule fires, when it stays silent>
-
-**Required context / data**
-<external data the rule needs, or "Policy JSON only">
-
-**Additional details**
-<extra implementation context, or "None">
-
-**Correct example**
-```json
-<correct>
+gh issue create --title "<short descriptive title>" --label rule-suggestion --body "<rendered spec>"
 ```
 
-**Violation example** - <one-line why>
-```json
-<violation>
-```
+Render `<rendered spec>` using the same field headings as the repo's rule-suggestion issue template (`.github/ISSUE_TEMPLATE/rule-suggestion.md`); the spec fields map to it one-to-one. Use `TBD` for unfilled values and `None` where applicable, so reviewers can tell "decided: nothing to add" from "not yet considered". Leave the template's **Existing rule** field blank for a new rule.
 
-**Suggested severity / category**
-<value or TBD>
-
-**Suggested rule set**
-<value or TBD>
-
-**Open questions**
-<list or "None">
-
-**References**
-<links or "None">
-```
-
-If the user is spec'ing multiple rules from one idea, write one Markdown file per rule.
-
-> Note: filing the spec directly as a GitHub issue is not yet supported. For now this skill only produces local Markdown files. A future update should add a handoff that opens a GitHub issue from the spec.
+Confirm the created issue URL back to the user. If the user is spec'ing multiple rules from one idea, create one issue per rule. If `gh` is unavailable or not authenticated, render the same body and hand it to the user to paste into a new issue via the Linter rule suggestion template.
 
 ### 2. Proceed directly to implementation
 
 Hand the spec off to the authoring skill (or pass it back to the user verbatim for them to drive).
 
-Default to asking - don't write a file or begin implementation without explicit confirmation.
+Default to asking - don't create an issue or begin implementation without explicit confirmation.
 
 ## Hard rules for this skill
 
