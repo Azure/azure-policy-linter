@@ -46,7 +46,7 @@ Don't dump the whole template at once.
 If you're running without an interactive user - called from another agent, batch context - don't loop on confirmations. Make the call, log the rationale in your scratchpad, and proceed. Surface the decisions in the final spec output so the next consumer can override.
 
 1. **Capture** the raw idea in the user's words. If it came from a PR, link or quote the relevant snippet.
-2. **Check for existing rules.** Start by scanning the rule doc filenames (each matches a rule identifier) for hints; drill into the doc bodies for any that look like a match. If an existing rule already covers the scenario, surface it and ask whether the new idea is redundant. If you find a partial overlap or an issue in an existing rule, ask whether the user wants to pivot to a spec for updating that rule instead.
+2. **Check for existing rules.** Start by scanning the rule doc filenames in `docs/Rules/` (each matches a rule identifier) for hints; drill into the doc bodies for any that look like a match. If an existing rule already covers the scenario, surface it and ask whether the new idea is redundant. If you find a partial overlap or an issue in an existing rule, ask whether the user wants to pivot to a spec for updating that rule instead.
 3. **Probe for missing details.** If the idea is shaky, ask what would sharpen it: a spec, a policy example in the repo, official Policy or Azure REST API docs (if this is about specific resource types). Ask the user whether they want you to do any research and whether they have sources for you. Don't research unprompted - Research pointers below is the "where to look when asked" reference.
 4. **Consider generalization.** The user's prompt might name a specific primitive or resource type but actually describe a pattern that applies more broadly. If you suspect that, surface it and ask before widening the scope.
 5. **Gate against scope.** If out of scope, say so plainly and explain. If the user wants to continue anyway, capture the spec and note the concern - don't push back further.
@@ -96,17 +96,25 @@ In-repo references:
 
 ## Handoff
 
-Once the spec is confirmed, ask the user what to do with it. Two paths:
+Once the spec is confirmed, choose what to do with it. Two paths - if interactive, ask the user which; if running non-interactively, default to path 1 (file the issue) and surface the choice in your output:
 
 ### 1. File the spec as a GitHub issue
 
-Create a GitHub issue from the confirmed spec with the `gh` CLI:
+Create a GitHub issue from the confirmed spec with the `gh` CLI. Render the body using the same field headings as the repo's rule-suggestion issue template (`.github/ISSUE_TEMPLATE/rule-suggestion.md`); the spec fields map to it one-to-one, except **Title**, which becomes the `--title` argument rather than a body heading. Use `TBD` for unfilled values and `None` where applicable, so reviewers can tell "decided: nothing to add" from "not yet considered". Leave the template's **Existing rule** field blank for a new rule.
 
-```
-gh issue create --title "<short descriptive title>" --label rule-suggestion --body "<rendered spec>"
+Pass the body on stdin via `--body-file -` with a single-quoted heredoc (bash) or here-string (PowerShell), never as a `--body "..."` argument - the body has backticks and `$` that a double-quoted argument would expand or execute. Keep the title plain text. Pass `--label` explicitly (the label must already exist); `--body-file` skips the template's auto-labeling.
+
+```bash
+gh issue create --title "<short descriptive title>" --label rule-suggestion --body-file - <<'EOF'
+<rendered spec>
+EOF
 ```
 
-Render `<rendered spec>` using the same field headings as the repo's rule-suggestion issue template (`.github/ISSUE_TEMPLATE/rule-suggestion.md`); the spec fields map to it one-to-one. Use `TBD` for unfilled values and `None` where applicable, so reviewers can tell "decided: nothing to add" from "not yet considered". Leave the template's **Existing rule** field blank for a new rule.
+```powershell
+@'
+<rendered spec>
+'@ | gh issue create --title "<short descriptive title>" --label rule-suggestion --body-file -
+```
 
 Confirm the created issue URL back to the user. If the user is spec'ing multiple rules from one idea, create one issue per rule. If `gh` is unavailable or not authenticated, render the same body and hand it to the user to paste into a new issue via the Linter rule suggestion template.
 
@@ -114,7 +122,7 @@ Confirm the created issue URL back to the user. If the user is spec'ing multiple
 
 Hand the spec off to the authoring skill (or pass it back to the user verbatim for them to drive).
 
-Default to asking - don't create an issue or begin implementation without explicit confirmation.
+When interactive, default to asking - don't create an issue or begin implementation without explicit confirmation. When non-interactive, default to filing the issue (path 1) and note the decision in your output.
 
 ## Hard rules for this skill
 
