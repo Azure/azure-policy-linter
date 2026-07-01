@@ -52,6 +52,7 @@
     <PackageId>Microsoft.Azure.Policy.PolicyLinter.Cli</PackageId>
     <PackageType>DotnetTool</PackageType>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- No apphost is emitted, so there is no standalone .exe to run; use `dotnet run` or the installed `policylinter` command. -->
     <UseAppHost>false</UseAppHost>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddToolPayload</TargetsForTfmSpecificContentInPackage>
