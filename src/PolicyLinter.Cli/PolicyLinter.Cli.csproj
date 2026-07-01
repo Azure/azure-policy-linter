@@ -30,7 +30,9 @@
 
     Supporting properties: IncludeBuildOutput=false stops the SDK also dropping the build output into
     lib/ (we place everything under tools/ ourselves); SuppressDependenciesWhenPacking=true stops the
-    package declaring its NuGet dependencies, because a tool package bundles its whole closure instead.
+    package declaring its NuGet dependencies, because a tool package bundles its whole closure instead;
+    UseAppHost=false suppresses the native apphost .exe launcher, which a Runner=dotnet tool never uses
+    (it runs the managed .dll through the dotnet host). PackAsTool omits the apphost too; we match it.
 
     TargetsForTfmSpecificContentInPackage is the property NuGet reads for extra targets to run during
     pack. We append _AddToolPayload to it (so that any targets the dotnet SDK already put there keep
@@ -38,9 +40,10 @@
     is during pack, after the build - so it captures whatever build output is on disk. That is why both
     a fresh build and a `no-build` pack against pre-built output produce a complete payload.
 
-    The Exclude drops any .nupkg found under $(OutputPath), which would otherwise get bundled into the
-    tool payload - pack embedding its own output package. By default the .nupkg lands in $(OutputPath)'s
-    parent so nothing matches; the exclude covers setups that redirect PackageOutputPath into $(OutputPath).
+    The Exclude keeps two kinds of file out of the payload. .nupkg: pack would otherwise embed its own
+    output package (by default the .nupkg lands in $(OutputPath)'s parent so nothing matches; this
+    covers setups that redirect PackageOutputPath into $(OutputPath)). .pdb: debug symbols, not needed
+    to run - PackAsTool would still bundle these, so unlike the apphost we drop them ourselves.
 
     Do not switch this to PackAsTool.
   -->
@@ -49,13 +52,14 @@
     <PackageId>Microsoft.Azure.Policy.PolicyLinter.Cli</PackageId>
     <PackageType>DotnetTool</PackageType>
     <IncludeBuildOutput>false</IncludeBuildOutput>
+    <UseAppHost>false</UseAppHost>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddToolPayload</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
 
   <Target Name="_AddToolPayload">
     <ItemGroup>
-      <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg">
+      <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg;$(OutputPath)**\*.pdb">
         <PackagePath>tools/net8.0/any/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
       </TfmSpecificPackageFile>
       <TfmSpecificPackageFile Include="DotnetToolSettings.xml">
