@@ -295,6 +295,26 @@ Use the real `TypeMetadata` when the rule's logic depends on alias resolution (a
 
 For every rule, at minimum: one negative (the rule fires, with an exact-equivalence assertion on the `LinterOutput`) and one positive (the rule doesn't fire, `Should().BeEmpty()`). Beyond that, cover the obvious variations: each distinct triggering condition gets its own negative case; missing properties, empty arrays, and case-insensitivity get their own positive cases when the rule's logic touches them. Shipped rules average around 6-10 tests per rule and that's a reasonable target.
 
+### Coverage expectation
+
+New code should land at 90% line coverage or above. CI measures this on the lines a pull request changes (not the whole codebase) and reports the result; falling short surfaces as a warning, not a failed build. The check is informational - use it to find untested branches, not as a number to game.
+
+To reproduce the CI measurement locally:
+
+```
+dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
+```
+
+That writes `TestResults/<guid>/coverage.cobertura.xml`. For the same new-code view CI produces, run [`diff-cover`](https://github.com/Bachmann1234/diff_cover) against it:
+
+```
+diff-cover TestResults/**/coverage.cobertura.xml --compare-branch origin/main
+```
+
+For a whole-codebase HTML report instead, point [ReportGenerator](https://github.com/danielpalme/ReportGenerator) at the same cobertura file.
+
+Practical ways to close a gap the report flags: add a test per untested branch (the linter's early-return guards are the usual miss); assert on the cases in *What good test coverage looks like* above; and if a line is genuinely not worth testing, factor it out or accept the warning rather than writing a hollow test for the number.
+
 ### Test naming
 
 `LinterTests_<RuleName>_<Case>`. The rule set is identified by the test class's location, not by the method name. Some existing tests use an older `LinterTests_Rules_<RuleName>` form; follow the current convention for new tests.

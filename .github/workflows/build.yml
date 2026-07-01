@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@9a946fdbd5fb07b82b2f5a4466058b876ab72bb2 # v5
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
         with:
           global-json-file: global.json
 
@@ -64,3 +64,44 @@ jobs:
         with:
           name: test-results-${{ matrix.os }}
           path: ./TestResults/
+
+  coverage:
+    name: New-code coverage (report only)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+        with:
+          # diff-cover compares this branch's changes against the base branch, so it
+          # needs full history rather than a shallow clone.
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+
+      - name: Test with coverage
+        run: dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
+
+      - name: Install diff-cover
+        run: pipx install diff-cover
+
+      - name: Report new-code coverage
+        run: |
+          base="${{ github.base_ref || 'main' }}"
+          git fetch --no-tags origin "$base"
+          coverage_file="$(find TestResults -name coverage.cobertura.xml | head -n 1)"
+          echo "Comparing against origin/$base using $coverage_file"
+          if diff-cover "$coverage_file" --compare-branch="origin/$base" --fail-under=90 --format "markdown:coverage-report.md"; then
+            echo "COVERAGE_UNDER=0" >> "$GITHUB_ENV"
+          else
+            echo "COVERAGE_UNDER=1" >> "$GITHUB_ENV"
+          fi
+          [ -f coverage-report.md ] && cat coverage-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      # Report-and-warn only: a breach surfaces as a warning annotation and in the job
+      # summary, but never fails the build or blocks a merge.
+      - name: Warn if new-code coverage is below target
+        if: env.COVERAGE_UNDER == '1'
+        run: echo "::warning::New-code test coverage is below the 90% target. See the job summary for the uncovered lines."
