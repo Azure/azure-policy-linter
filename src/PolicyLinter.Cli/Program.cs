@@ -56,6 +56,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Cli
 #pragma warning restore CA1861 // Avoid constant arrays as arguments
 
             var rootCommand = new RootCommand("A linter for Azure Policy definitions that identifies issues and provides best practice recommendations.");
+            rootCommand.Name = "policylinter";
             rootCommand.AddArgument(filesArgument);
             rootCommand.AddOption(outputOption);
             rootCommand.AddOption(listRuleSetsOption);

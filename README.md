@@ -102,6 +102,8 @@ Run the CLI directly from source:
 dotnet run --project src/PolicyLinter.Cli -- <path-to-policy-json>
 ```
 
+> There is no standalone `.exe` since the Cli is modeled as a dotnet tool; run the CLI via `dotnet run` (or the installed `policylinter` command).
+
 Run the tests:
 
 ```
@@ -116,27 +118,25 @@ To open the repository in an editor, use the helper scripts at the repo root:
 
 To pack the CLI and install it as a global .NET tool (so you can invoke `policylinter` directly). Run these from the repository root:
 
+Both NuGet packages take their version from `<Version>` in [Directory.Build.props](Directory.Build.props).
+
 1. Uninstall any existing global install first - the local install will fail otherwise:
    ```
    dotnet tool uninstall -g Microsoft.Azure.Policy.PolicyLinter.Cli
    ```
+   If `dotnet tool install` later fails with the `policylinter` command already in use, a tool installed under a different package id owns the command; run `dotnet tool list -g` to find it and uninstall that id too.
 
-2. Publish the CLI to the output path the nuspec packs from:
+2. Pack the CLI:
    ```
-   dotnet publish src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o out/retail-AMD64/PolicyLinter.Cli
-   ```
-
-3. Pack. The nuspec's file paths are resolved relative to `NuspecBasePath`, which must be an absolute path, so pass the repo root via `$PWD` (PowerShell or bash; use `%CD%` in cmd):
-   ```
-   dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj -p:NuspecFile=$PWD/src/PolicyLinter.Cli/PolicyLinter.Cli.nuspec -p:NuspecBasePath=$PWD -o <output-path>
+   dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o <output-path>
    ```
 
-4. Install from the local output:
+3. Install from the local output:
    ```
    dotnet tool install -g Microsoft.Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
    ```
 
-5. Run:
+4. Run:
    ```
    policylinter <path-to-policy-json>
    ```

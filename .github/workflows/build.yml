@@ -53,6 +53,11 @@ jobs:
       - name: Test
         run: dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
 
+      - name: Pack
+        run: |
+          dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-restore -o ./packages
+          dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-restore -o ./packages
+
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
