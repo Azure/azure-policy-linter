@@ -32,12 +32,15 @@
     lib/ (we place everything under tools/ ourselves); SuppressDependenciesWhenPacking=true stops the
     package declaring its NuGet dependencies, because a tool package bundles its whole closure instead.
 
-    TargetsForTfmSpecificContentInPackage is the NuGet hook that runs _AddToolPayload during pack; we
-    append to it so we keep any targets the SDK already registered. _AddToolPayload enumerates
-    $(OutputPath) at pack time, which is why packing with a fresh build and packing with `no-build`
-    against an existing build both produce a complete payload. A static `None Pack=true` glob would not:
-    item globs expand during evaluation, before any target runs, so in a one-shot pack $(OutputPath) is
-    still empty.
+    TargetsForTfmSpecificContentInPackage is the property NuGet reads for extra targets to run during
+    pack. We append _AddToolPayload to it (so that any targets the dotnet SDK already put there keep
+    running). _AddToolPayload lists its files by enumerating $(OutputPath) when the target runs, which
+    is during pack, after the build - so it captures whatever build output is on disk. That is why both
+    a fresh build and a `no-build` pack against pre-built output produce a complete payload.
+
+    The Exclude drops any .nupkg found under $(OutputPath), which would otherwise get bundled into the
+    tool payload - pack embedding its own output package. By default the .nupkg lands in $(OutputPath)'s
+    parent so nothing matches; the exclude covers setups that redirect PackageOutputPath into $(OutputPath).
 
     Do not switch this to PackAsTool.
   -->
@@ -52,7 +55,7 @@
 
   <Target Name="_AddToolPayload">
     <ItemGroup>
-      <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg;DotnetToolSettings.xml">
+      <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg">
         <PackagePath>tools/net8.0/any/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
       </TfmSpecificPackageFile>
       <TfmSpecificPackageFile Include="DotnetToolSettings.xml">
