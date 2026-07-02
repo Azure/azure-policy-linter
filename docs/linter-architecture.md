@@ -299,15 +299,16 @@ For every rule, at minimum: one negative (the rule fires, with an exact-equivale
 
 New code should land at 90% line coverage or above. CI measures this on the lines a pull request changes (not the whole codebase) and reports the result; falling short surfaces as a warning, not a failed build. The check is informational - use it to find untested branches, not as a number to game.
 
-To reproduce the CI measurement locally:
+The test project includes `coverlet.msbuild` which prints a coverage summary table (filtered to the Rules namespace) at the end of every `dotnet test` run:
+
+```
+dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj
+```
+
+For a diff-only view matching what CI reports, pass `--collect:"XPlat Code Coverage"` and run [`diff-cover`](https://github.com/Bachmann1234/diff_cover):
 
 ```
 dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
-```
-
-That writes `TestResults/<guid>/coverage.cobertura.xml`. For the same new-code view CI produces, run [`diff-cover`](https://github.com/Bachmann1234/diff_cover) against it:
-
-```
 diff-cover TestResults/**/coverage.cobertura.xml --compare-branch origin/main
 ```
 

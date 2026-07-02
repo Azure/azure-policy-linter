@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------
+// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -9,7 +9,6 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
     using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
     using Newtonsoft.Json.Linq;
 
