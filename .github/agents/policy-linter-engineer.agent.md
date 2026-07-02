@@ -36,7 +36,7 @@ When a doc or skill covers the task, follow it instead of improvising. If the do
 - Work with the typed policy tree whenever possible, avoid raw `JToken`/`JObject`. Especially in the core linter code.
 - Tests are specific and written as you go: assert the exact `LinterOutput` via equivalence, not substrings or exit code alone. Meet the new-code coverage target (see the architecture doc).
 - After any refactor, sweep for fossils: stale comments, dead code, orphaned helpers.
-- Comments orient a future reader who arrives cold - what the code does and why - not your internal monologue.
+- Comments are meant to help a future reader who arrives cold - what the code does and why - not your internal monologue or details about past implementation or decisions that are irrelevant to the current implementation.
 - Finish the job: goal met, build green, tests pass, full linter sanity check executed and passed successfully. Make sure that all the repo-docs are up-to-date.
 
 ## Cadence

@@ -32,12 +32,11 @@ This is a very common pitfall of enforcement policies:
   - If deciding to enforce, the main goal is to identify cases where an old API version is used and whether it's possible for callers to move to the latest API version.
     - Test the policy against common Azure clients (portal, PS, CLI) to ensure their latest version contains the property.
     - Assign the policy with `audit` effect and inspect the [activity logs](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema#policy-category) for audit events, which will also contain the request details.
-      - Internal users can query ARM's `EventServiceEntires` table. [ARM wiki](https://armwiki.azurewebsites.net/data/kusto%20v2/overview_prod.html)
     - Things to look for in activity logs:
       - Number of audited requests caused by usage of old API version. Large number might indicate that the policy has false-positives and in any case, it might not be safe to apply an enforcement policy while these requests are ongoing.
-      - Clients that are making the requests. If some clients are service principals or 1P apps making calls on behalf of users, it might be impossible for users to control the API version used by the tool that is making the request.
+      - Clients that are making the requests. If there are apps making calls on behalf of users, it might be impossible for users to control the payload used by the tool that is making the request.
 
 ## Data sources
 
-- The policy team is scanning the [RESP API specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification) and process them into [resource metadata](https://msazure.visualstudio.com/One/_git/Mgmt-Governance-Schema?path=/src/GeneratedMetadata).
+- Resource metadata is derived from the public [Azure REST API specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification).
 - The linter repo contains a dump of all available policy aliases **from the public cloud**.
