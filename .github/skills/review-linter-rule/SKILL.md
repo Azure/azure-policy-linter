@@ -42,7 +42,7 @@ Walk the list. Any mismatch is a finding.
 1. Class name (PascalCase, matches `RuleTitle` with spaces removed).
 2. File name (matches class name).
 3. File path (under the correct rule-set subfolder).
-4. Namespace - sits under `Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.<Folder>` regardless of which project; matches the folder structure.
+4. Namespace - sits under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>` regardless of which project; matches the folder structure.
 5. `[RuleSet("...")]` attribute present for non-default rule sets, absent for default.
 6. `identifier` constructor argument (kebab-case, matches doc filename exactly).
 7. `RuleTitle` constant (matches doc H1 verbatim).

@@ -3,10 +3,10 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
 {
     using System;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>

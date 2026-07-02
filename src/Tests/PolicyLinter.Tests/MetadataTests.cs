@@ -3,14 +3,14 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Contracts;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Xunit;
 

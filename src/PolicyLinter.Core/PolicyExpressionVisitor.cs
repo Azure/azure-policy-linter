@@ -3,9 +3,9 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core
+namespace Microsoft.Azure.Policy.PolicyLinter.Core
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using System;
 
     /// <summary>

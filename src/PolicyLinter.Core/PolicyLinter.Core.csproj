@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Microsoft.WindowsAzure.Governance.PolicyLinter</RootNamespace>
-    <AssemblyName>Microsoft.WindowsAzure.Governance.PolicyLinter.Core</AssemblyName>
+    <RootNamespace>Microsoft.Azure.Policy.PolicyLinter</RootNamespace>
+    <AssemblyName>Microsoft.Azure.Policy.PolicyLinter.Core</AssemblyName>
     <Description>A linter for policy definitions.</Description>
     <Authors>Microsoft</Authors>
     <Company>Microsoft</Company>

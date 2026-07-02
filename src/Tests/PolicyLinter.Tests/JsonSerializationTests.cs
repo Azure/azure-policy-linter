@@ -3,11 +3,11 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System.Collections.Generic;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Newtonsoft.Json;
     using Xunit;
 

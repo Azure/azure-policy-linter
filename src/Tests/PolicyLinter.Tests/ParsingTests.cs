@@ -3,15 +3,15 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
     using System.Collections.Generic;
     using FluentAssertions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.WindowsAzure.ResourceStack.Common.Json;
     using Xunit;
 
@@ -758,7 +758,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
             result.Should().HaveCount(1);
             result[0].Severity.Should().Be(Severity.Critical);
             result[0].Category.Should().Be(Category.Parsing);
-            result[0].Description.Should().Contain("Failed to parse the provided policy definition JSON. Parsing error: Error converting value \"not an object\" to type 'Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing.PolicyRuleObject'. Path '', line 1, position 47.");
+            result[0].Description.Should().Contain("Failed to parse the provided policy definition JSON. Parsing error: Error converting value \"not an object\" to type 'Microsoft.Azure.Policy.PolicyLinter.Core.Parsing.PolicyRuleObject'. Path '', line 1, position 47.");
         }
     }
 }

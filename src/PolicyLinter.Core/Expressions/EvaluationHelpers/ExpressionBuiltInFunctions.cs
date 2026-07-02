@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.Evalua
     using global::Azure.Deployments.Expression.Exceptions;
     using global::Azure.Deployments.Expression.Extensions;
     using global::Azure.Deployments.Expression.Utility;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Algorithms;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;

@@ -3,10 +3,10 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
 
     /// <summary>
     /// Mock implementation of the ITypeMetadata interface for testing purposes.

@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Cli
+namespace Microsoft.Azure.Policy.PolicyLinter.Cli
 {
     using System;
     using System.Collections.Generic;
@@ -14,10 +14,10 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Cli
     using System.Threading.Tasks;
     using global::Azure.Deployments.ResourceMetadata.Offline;
     using global::Newtonsoft.Json;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
 
     /// <summary>
     /// The linter program entry point.

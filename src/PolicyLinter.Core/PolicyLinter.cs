@@ -3,16 +3,16 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core
+namespace Microsoft.Azure.Policy.PolicyLinter.Core
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.WindowsAzure.ResourceStack.Common.Json;
     using Newtonsoft.Json;
 

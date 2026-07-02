@@ -3,14 +3,14 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers;
+    using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using System.Collections.Generic;
     using System.Collections.Immutable;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
 
     /// <summary>
     /// A policy expression that represents external evaluation enforcement settings.

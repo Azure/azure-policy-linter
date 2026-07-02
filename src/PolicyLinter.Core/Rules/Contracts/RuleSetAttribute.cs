@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
 {
     using System;
 

@@ -3,11 +3,11 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
 {
     using System.Collections.Immutable;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
 
     /// <summary>
     /// Contains context information that is passed to the rule when it is evaluated.

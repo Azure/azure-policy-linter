@@ -4,7 +4,7 @@
 // ------------------------------------------------------------
 
 #nullable disable
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
 {
     using System;
     using Newtonsoft.Json;

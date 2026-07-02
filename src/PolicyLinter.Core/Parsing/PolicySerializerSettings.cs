@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
 {
     using System.Collections.Generic;
     using Microsoft.WindowsAzure.ResourceStack.Common.Json;
