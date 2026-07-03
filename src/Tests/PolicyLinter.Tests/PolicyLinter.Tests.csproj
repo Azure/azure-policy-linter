@@ -7,20 +7,8 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <!-- Coverage reporting (no threshold - informational only) -->
-  <PropertyGroup>
-    <CollectCoverage>true</CollectCoverage>
-    <CoverletOutputFormat>cobertura</CoverletOutputFormat>
-    <CoverletOutput>$(OutputPath)\coverage\</CoverletOutput>
-    <Include>[Microsoft.WindowsAzure.Governance.PolicyLinter.Core]Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.*</Include>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="coverlet.collector">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="coverlet.msbuild">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
