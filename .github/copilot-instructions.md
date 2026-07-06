@@ -20,6 +20,17 @@ For rule work, use the skills under `.github/skills/`:
 
 ## Working in this repo
 
+### Testing and coverage
+
+Before submitting a PR, run tests and verify diff coverage on your changes:
+
+```powershell
+dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
+diff-cover TestResults/**/coverage.cobertura.xml --compare-branch origin/main
+```
+
+Diff coverage must be at least 90% (aim for 100%). If `diff-cover` reports uncovered lines in your changes, add tests before submitting.
+
 ### Communication
 - Be concise and matter-of-fact. State what you know, don't editorialize.
 - Separate fact from inference. When inferring, guessing, recalling from training, or offering an opinion, mark it explicitly ("I think", "in my opinion").

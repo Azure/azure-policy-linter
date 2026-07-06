@@ -1,4 +1,4 @@
-﻿# Conditional Field Alias
+# Conditional Field Alias
 
 
 | Category | Identifier |
@@ -7,7 +7,7 @@
 
 ## Description
 
-The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as conditional by resource provider in one or more API versions. This means that this property will only exist in some cases. This is typical for resources that implement additional "typing" system. For example, Azure Data Factory triggers might have different trigger "kinds", and each trigger has it's own properties. 
+The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as conditional by resource provider in one or more API versions. This means that this property will only exist in some cases. This is typical for resources that implement additional "typing" system. For example, Azure Data Factory triggers might have different trigger "kinds", and each trigger has it's own properties.
 
 If the policy rule is ignoring these additional conditions and is expecting the property to always exist, it may result in incorrect evaluation results.
 
