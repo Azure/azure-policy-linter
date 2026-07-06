@@ -34,7 +34,7 @@ This is a very common pitfall of enforcement policies:
     - Assign the policy with `audit` effect and inspect the [activity logs](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema#policy-category) for audit events, which will also contain the request details.
     - Things to look for in activity logs:
       - Number of audited requests caused by usage of old API version. Large number might indicate that the policy has false-positives and in any case, it might not be safe to apply an enforcement policy while these requests are ongoing.
-      - Clients that are making the requests. If there are apps making calls on behalf of users, it might be impossible for users to control the payload used by the tool that is making the request.
+      - Clients that are making the requests. If there are apps making calls on behalf of users, it might be impossible for users to control the API version used by the tool that is making the request.
 
 ## Data sources
 
