@@ -31,6 +31,10 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.Evalua
     /// <summary>
     /// Implementation of template functions supported by Azure Policy.
     /// </summary>
+    /// <remarks>
+    /// When a new function is added to the Azure Policy language, add a corresponding
+    /// implementation to the <see cref="BuiltInFunctions"/> dictionary in the constructor.
+    /// </remarks>
     public class ExpressionBuiltInFunctions
     {
         /// <summary>
