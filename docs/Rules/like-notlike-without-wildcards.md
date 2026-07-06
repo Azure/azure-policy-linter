@@ -6,7 +6,7 @@
 
 ## Description
 
-The `like` or `notLike` operator is used with a value that contains no wildcards (`*` or `?`). Without wildcards, these operators behave identically to `equals`/`notEquals` but are less precise and less efficient because the engine still performs pattern matching.
+The `like` or `notLike` operator is used with a value that contains no wildcards (`*` or `?`). Without wildcards, these operators behave identically to `equals`/`notEquals`, which suggests the author intended to use wildcard matching but the value contains no wildcards. Use `equals`/`notEquals` to clearly express exact-match intent.
 
 ## Suggestions
 
