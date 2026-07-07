@@ -15,9 +15,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
     /// <summary>
     /// Represents a range of IPv4 or IPv6 addresses
     /// </summary>
-    /// <remarks>
-    /// Ported from Azure Policy engine implementation.
-    /// </remarks>
     public class IPRange
     {
         /// <summary>

@@ -202,8 +202,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
             return this.aliasResolver.TryResolveAlias(aliasName, out alias);
         }
 
-#pragma warning disable CA1812 // Avoid uninstantiated internal classes (no idea why the analyzer is complaining about this, also don't really care - elpere)
-
         private class MetadataPropertyPathMapper
         {
             private Dictionary<string, Dictionary<string, string>> propertyPathMappings = new Dictionary<string, Dictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
@@ -254,8 +252,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                 return false;
             }
         }
-
-#pragma warning restore CA1812
 
     }
 }

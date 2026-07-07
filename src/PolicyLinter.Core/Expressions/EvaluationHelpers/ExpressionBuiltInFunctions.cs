@@ -29,11 +29,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
 
     /// <summary>
-    /// The language expression built-in functions. This code is largely ported from the Azure Policy evaluation engine implementation to ensure parity.
+    /// Implementation of template functions supported by Azure Policy.
     /// </summary>
     /// <remarks>
-    /// This implementation differs from the Azure Policy implementation in that it doesn't have the exact error messages and has less strict evaluation "cost" limits.
-    /// Note that this means that new functions added to Azure policy may not be immediately available here until they are ported.
+    /// When a new function is added to the Azure Policy language, add a corresponding
+    /// implementation to the <see cref="BuiltInFunctions"/> dictionary in the constructor.
     /// </remarks>
     public class ExpressionBuiltInFunctions
     {
@@ -228,12 +228,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
             var stringFormat = format.ToStringValue();
             try
             {
-                // Note(elpere):
+                // Note:
                 // Using string builder will help failing the operation in the middle if the resulted string gets too big (without allocating all the memory).
                 // In addition, looks like string builder performs better than String.Format in some cases.
                 var builder = new StringBuilder(capacity: stringFormat.Length);
 
-                // Note(elpere):
+                // Note:
                 // Ideally we should combine the 'transformation' of the arguments with the argument type check above.
                 // However, there's something in the implicit conversion between the transformed JToken to string that we can't reproduce by regularly converting to JToken to string value.
                 // Things like Guids and custom date formats don't work and I don't have time to investigate (it's covered by the existing UTs).
@@ -258,7 +258,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
         /// <param name="token">The JToken object.</param>
         private static JToken TransformJTokenForOutput(JToken token)
         {
-            // NOTE(wayan): Formatting.None is to make Array and Object to be in a single line.
+            // NOTE: Formatting.None is to make Array and Object to be in a single line.
             return token.Type is JTokenType.Array or JTokenType.Object
                 ? token.ToString(Formatting.None).Replace('\"', '\'')
                 : token;
@@ -1652,7 +1652,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
                         .Distinct(JToken.EqualityComparer));
 
                 case JTokenType.Object:
-                    // NOTE(wayan): JsonExtensions.MergeJsonInsensitive() mutates its first argument 'source' (i.e. merges properties from the second argument 'patch' into it).
+                    // NOTE: JsonExtensions.MergeJsonInsensitive() mutates its first argument 'source' (i.e. merges properties from the second argument 'patch' into it).
                     try
                     {
                         return new JObject()
@@ -2671,12 +2671,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
                 return index % 2 == 0;
             }
 
-            // Note(majastrz): The function accepts a set of key value pairs. Given that the template expressions don't support
+            // Note: The function accepts a set of key value pairs. Given that the template expressions don't support
             // any form of tuples, we accept the key and the value as separate paramaters. This means that we have to validate
             // that the user specified an even number of parameters, however.
             ExpressionBuiltInFunctions.ValidateEvenNumberOfParameters(function, parameters);
 
-            // Note(majastrz): Find indices of parameters at position 0, 2, 4, ... that aren't strings
+            // Note: Find indices of parameters at position 0, 2, 4, ... that aren't strings
             var invalidIndices = parameters
                 .Select((propertyName, index) => IsPropertyNameParameter(index) && !propertyName.IsTextBasedJTokenType() ? index : -1)
                 .Where(index => index >= 0);
