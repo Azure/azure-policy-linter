@@ -6,7 +6,7 @@ This repo is the Azure Policy Linter - a tool that inspects policy definitions f
 
 Start here:
 - `README.md` - what the linter is, install, CLI usage.
-- `CONTRIBUTIONS.md` - how to engage with the project (issues, feedback, code of conduct).
+- `CONTRIBUTING.md` - how to engage with the project (issues, feedback, code of conduct).
 
 For deeper divers:
 - `docs/linter-rule-design.md` - what a good linter rule should be (scope, severity, naming, description). **Read first when working on any rule.**

@@ -268,11 +268,6 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Cli
         /// <summary>
         /// Filters rules based on the specified rule sets.
         /// </summary>
-        /// <remarks>
-        /// Rule sets allow running different sets of linter rules depending on the scenario.
-        /// For example, 1P change safety policies might require specific rules that wouldn't
-        /// make sense in other contexts.
-        /// </remarks>
         /// <param name="allRules">All available rules.</param>
         /// <param name="ruleSets">The rule set names to filter by. If null or empty, defaults to the "default" rule set.</param>
         /// <returns>An array of filtered rules.</returns>

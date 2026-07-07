@@ -18,5 +18,5 @@ This means that the property can't be relied upon during enforcement evaluations
 
 ## Data sources
 
-- The policy team is scanning the [RESP API specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification) and process them into [resource metadata](https://msazure.visualstudio.com/One/_git/Mgmt-Governance-Schema?path=/src/GeneratedMetadata).
+- Resource metadata is derived from the public [Azure REST API specs](https://github.com/Azure/azure-rest-api-specs/tree/main/specification).
 - The linter repo contains a dump of all available policy aliases **from the public cloud**.
