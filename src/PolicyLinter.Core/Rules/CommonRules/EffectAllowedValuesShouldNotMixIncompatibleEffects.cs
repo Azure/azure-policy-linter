@@ -3,13 +3,13 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
 
     /// <summary>
     /// Ensures that the effect parameter's allowedValues do not mix effects from

@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/PolicyLinter.Cli/bin/Debug/net8.0/Microsoft.WindowsAzure.Governance.PolicyLinter.Cli.dll",
+            "program": "${workspaceFolder}/src/PolicyLinter.Cli/bin/Debug/net8.0/Microsoft.Azure.Policy.PolicyLinter.Cli.dll",
             "args": [
                 "${input:policyPath}"
             ],

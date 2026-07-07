@@ -3,13 +3,13 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
 
     /// <summary>
     /// A test linter rule for testing purposes.

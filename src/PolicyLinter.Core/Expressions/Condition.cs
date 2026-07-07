@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
     using System.Collections.Immutable;
 

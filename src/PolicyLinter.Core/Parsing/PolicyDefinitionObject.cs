@@ -4,7 +4,7 @@
 // ------------------------------------------------------------
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
 {
     using System.Collections.Generic;
     using Newtonsoft.Json;

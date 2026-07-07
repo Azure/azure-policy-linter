@@ -4,7 +4,7 @@
 // ------------------------------------------------------------
 
 #nullable disable
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
 {
     /// <summary>
     /// Represents a deserialized JSON token with generic type metadata.

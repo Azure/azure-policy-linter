@@ -1,11 +1,11 @@
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Offline;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules;
+    using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
     using Xunit;
 
     /// <summary>

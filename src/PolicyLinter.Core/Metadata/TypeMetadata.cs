@@ -3,14 +3,14 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
     using global::Azure.Deployments.ResourceMetadata.Contracts;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>

@@ -58,7 +58,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
 ### 3. Implement the rule class
 
 - **File location**: see the architecture doc for the current layout. Default-set rules and non-default rules live in different folders; verify against where rules of the same set actually live today rather than hardcoding.
-- **Namespace**: all rule namespaces sit under `Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.<Folder>`.
+- **Namespace**: all rule namespaces sit under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>`.
 - **Standard structure**: `sealed class`, parameterless constructor calling `base(...)`, `private const string RuleTitle` and `RuleDescription` fields, override `Evaluate` returning `LinterOutput[]`.
 - **Early-return guards first**; emit only after all preconditions are satisfied.
 - **Don't modify files outside the rule's own file, its tests, and its doc.** Rule logic that needs new helpers in the engine is a sign the rule is doing too much, or the helper belongs in the rule file. If you genuinely need to touch engine code, stop and confirm with the user first.

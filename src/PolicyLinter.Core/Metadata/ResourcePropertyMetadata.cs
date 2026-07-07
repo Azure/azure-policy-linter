@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
 {
     using System.Collections.Immutable;
 

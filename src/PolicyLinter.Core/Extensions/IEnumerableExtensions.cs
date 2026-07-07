@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Extensions
 {
     using System;
     using System.Collections.Generic;

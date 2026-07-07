@@ -3,18 +3,18 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core;
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
     using global::Azure.Deployments.Expression.Expressions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Extensions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 

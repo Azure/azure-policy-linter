@@ -3,9 +3,9 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Metadata
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
 
     /// <summary>
     /// Resolves aliases.

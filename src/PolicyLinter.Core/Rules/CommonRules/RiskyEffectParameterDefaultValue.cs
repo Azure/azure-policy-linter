@@ -3,11 +3,11 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 

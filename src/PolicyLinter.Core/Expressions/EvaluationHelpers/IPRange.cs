@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions.EvaluationHelpers
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
 {
     using System;
     using System.Net;

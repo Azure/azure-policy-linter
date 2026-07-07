@@ -154,11 +154,11 @@ These show up in most shipped rules. Use them instead of writing the equivalent 
 ## A rule end-to-end
 
 ```csharp
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.CommonRules
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Expressions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
@@ -324,7 +324,7 @@ Practical ways to close a gap the report flags: add a test per untested branch (
 The mechanical checklist:
 
 1. **Pick the rule set.** `default` (universal) rules go in `src/PolicyLinter.Core/Rules/CommonRules/`. A custom rule set lives in its own subfolder under `Rules/`. The design doc covers when to pick which.
-2. **Add the rule class.** Public sealed, derives from `LinterRule<T>` for your chosen target type, parameterless ctor calls `base(identifier, category, title, descriptionFormat, applyToDerivedTypes: false)`. Add `[RuleSet("...")]` unless it's a `default` rule. Namespace is `Microsoft.WindowsAzure.Governance.PolicyLinter.Core.Rules.<Subfolder>`.
+2. **Add the rule class.** Public sealed, derives from `LinterRule<T>` for your chosen target type, parameterless ctor calls `base(identifier, category, title, descriptionFormat, applyToDerivedTypes: false)`. Add `[RuleSet("...")]` unless it's a `default` rule. Namespace is `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Subfolder>`.
 3. **Add tests** to the test file for the rule's set (or a dedicated file for a complex rule). At minimum one negative and one positive case.
 4. **Add a documentation file** at `docs/Rules/<rule-identifier>.md`. Structure per `linter-rule-design.md`.
 5. **Run the CLI** against a test policy to confirm the rule fires (or doesn't).

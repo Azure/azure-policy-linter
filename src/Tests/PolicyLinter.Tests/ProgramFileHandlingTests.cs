@@ -3,7 +3,7 @@
 // Licensed under the MIT License.
 // ------------------------------------------------------------
 
-namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
+namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
     using System.IO;
@@ -12,7 +12,7 @@ namespace Microsoft.WindowsAzure.Governance.PolicyLinter.Tests
     using System.Text.Json;
     using System.Threading.Tasks;
     using FluentAssertions;
-    using Microsoft.WindowsAzure.Governance.PolicyLinter.Cli;
+    using Microsoft.Azure.Policy.PolicyLinter.Cli;
     using Xunit;
 
     /// <summary>
