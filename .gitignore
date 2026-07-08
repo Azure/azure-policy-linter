@@ -1,0 +1,45 @@
+## Build outputs
+bin/
+obj/
+out/
+
+## NuGet
+packages/
+*.nupkg
+*.snupkg
+
+## Test results and coverage
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.cobertura.xml
+
+## Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+## slngen-generated solution
+dirs.sln
+
+## JetBrains Rider
+.idea/
+
+## Visual Studio Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+## OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## dotnet publish
+publish/

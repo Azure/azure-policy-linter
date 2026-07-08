@@ -1,0 +1,107 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Restrict the default permissions granted to GITHUB_TOKEN.
+# Individual jobs can request additional permissions as needed.
+# See: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+permissions:
+  contents: read
+
+env:
+  CI: true
+  # don't print dotnet logo
+  DOTNET_NOLOGO: true
+  # disable telemetry (reduces dotnet tool output in logs)
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build-and-test:
+    name: Build and Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      # Don't cancel other matrix legs when one fails so we always see results
+      # for all platforms.
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      # Moving to immutable SHAs prevents supply chain attacks which silently change
+      # mutable versions of GH actions.
+      # Dependabot is smart enough to update these when versions change.
+      # See: https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore src/dirs.proj
+
+      - name: Build
+        run: dotnet build src/dirs.proj --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
+
+      - name: Pack
+        run: |
+          dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-restore -o ./packages
+          dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-restore -o ./packages
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: test-results-${{ matrix.os }}
+          path: ./TestResults/
+
+  coverage:
+    name: New-code coverage (report only)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+        with:
+          # diff-cover compares this branch's changes against the base branch, so it
+          # needs full history rather than a shallow clone.
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+
+      - name: Test with coverage
+        run: dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
+
+      - name: Install diff-cover
+        run: pipx install diff-cover
+
+      - name: Report new-code coverage
+        run: |
+          base="${{ github.base_ref || 'main' }}"
+          git fetch --no-tags origin "$base"
+          coverage_file="$(find TestResults -name coverage.cobertura.xml | head -n 1)"
+          echo "Comparing against origin/$base using $coverage_file"
+          if diff-cover "$coverage_file" --compare-branch="origin/$base" --fail-under=90 --format "markdown:coverage-report.md"; then
+            echo "COVERAGE_UNDER=0" >> "$GITHUB_ENV"
+          else
+            echo "COVERAGE_UNDER=1" >> "$GITHUB_ENV"
+          fi
+          [ -f coverage-report.md ] && cat coverage-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      # Report-and-warn only: a breach surfaces as a warning annotation and in the job
+      # summary, but never fails the build or blocks a merge.
+      - name: Warn if new-code coverage is below target
+        if: env.COVERAGE_UNDER == '1'
+        run: echo "::warning::New-code test coverage is below the 90% target. See the job summary for the uncovered lines."

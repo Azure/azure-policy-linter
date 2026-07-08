@@ -1,0 +1,146 @@
+# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+root = true
+
+[*.cs]
+indent_style = space
+indent_size = 4
+
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+csharp_using_directive_placement = inside_namespace
+
+# IDE0003: Remove qualification
+dotnet_style_qualification_for_event = true:suggestion
+dotnet_style_qualification_for_field = true:suggestion
+dotnet_style_qualification_for_method = true:suggestion
+dotnet_style_qualification_for_property = true:suggestion
+
+# IDE0063: Use simple 'using' statement
+csharp_prefer_simple_using_statement = true:none
+
+# IDE0017: Simplify object initialization
+dotnet_style_object_initializer = true:none
+
+# Remove unnecessary imports
+dotnet_diagnostic.IDE0005.severity = error
+
+# Remove unused parameter
+dotnet_diagnostic.IDE0060.severity = error
+
+# Remove unreachable code
+dotnet_diagnostic.IDE0035.severity = error
+dotnet_diagnostic.CS0162.severity = error
+
+# Remove unused private member
+dotnet_diagnostic.IDE0051.severity = error
+
+# Remove unread private member
+dotnet_diagnostic.IDE0052.severity = error
+
+# Avoid uncalled private code
+dotnet_diagnostic.CA1811.severity = error
+
+# Avoid uninstantiated internal classes
+dotnet_diagnostic.CA1812.severity = error
+
+# Remove unnecessary expression value
+dotnet_diagnostic.IDE0058.severity = error
+
+# Remove unnecessary value assignment
+dotnet_diagnostic.IDE0059.severity = error
+
+# Formatting rules
+dotnet_diagnostic.IDE0055.severity = error
+
+# Overrides for test projects
+[**/{Tests,test}*/**.cs]
+
+# CA2007: Do not directly await a Task
+dotnet_diagnostic.CA2007.severity = none
+
+# CA1310: Culture aware comparisons
+dotnet_diagnostic.CA1310.severity = none
+
+# This async method lacks 'await' operators and will run synchronously
+dotnet_diagnostic.CS1998.severity = none
+
+# CA2000: Dispose objects before losing scope
+dotnet_diagnostic.CA2000.severity = none
+
+# CA1307: Specify StringComparison for clarity
+dotnet_diagnostic.CA1307.severity = none
+
+# CA1825: Avoid zero-length array allocations
+dotnet_diagnostic.CA1825.severity = none
+
+# CA1309: Use ordinal string comparison
+dotnet_diagnostic.CA1309.severity = none
+
+# CA1820: Test for empty strings using string length
+dotnet_diagnostic.CA1820.severity = none
+
+# CA1018: Mark attributes with AttributeUsageAttribute
+dotnet_diagnostic.CA1018.severity = none
+
+# CA1813: Avoid unsealed attributes
+dotnet_diagnostic.CA1813.severity = none
+
+# CA1019: Define accessors for attribute arguments
+dotnet_diagnostic.CA1019.severity = none
+
+# CA5403: Certificate created with raw string
+dotnet_diagnostic.CA5403.severity = none
+
+# CA1827: Do not use Count() or LongCount() when Any() can be used
+dotnet_diagnostic.CA1827.severity = none
+
+# CA5394: Do not use insecure randomness
+dotnet_diagnostic.CA5394.severity = none
+
+# CA1834: Consider using 'StringBuilder.Append(char)' when applicable
+dotnet_diagnostic.CA1834.severity = suggestion
+
+# CA2213: Disposable fields should be disposed
+dotnet_diagnostic.CA2213.severity = suggestion
+
+# CA1001: Types that own disposable fields should be disposable
+dotnet_diagnostic.CA1001.severity = suggestion
+
+# CA1707: Identifiers should not contain underscores
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1710: Identifiers should have correct suffix
+dotnet_diagnostic.CA1710.severity = none
+
+# CA1812: Avoid uninstantiated internal classes
+dotnet_diagnostic.CA1812.severity = suggestion
+
+# CA1852: Seal internal types
+dotnet_diagnostic.CA1852.severity = none
+
+# CA1848: Use LoggerMessage for improved performance
+dotnet_diagnostic.CA1848.severity = none
+
+# Remove unused parameter
+dotnet_diagnostic.IDE0060.severity = none
+
+# Remove unused private member
+dotnet_diagnostic.IDE0051.severity = none
+
+# Remove unread private member
+dotnet_diagnostic.IDE0052.severity = none
+
+# Remove unnecessary expression value
+dotnet_diagnostic.IDE0058.severity = none
+
+# Remove unnecessary value assignment
+dotnet_diagnostic.IDE0059.severity = none
+
+# Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = none
+
+# Parameter has no matching param tag in the XML comment (but other parameters do)
+dotnet_diagnostic.CS1573.severity = none
+
+# XML comment has a param tag for a parameter, but there is no parameter by that name
+dotnet_diagnostic.CS1572.severity = none

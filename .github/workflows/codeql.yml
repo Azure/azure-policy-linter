@@ -1,0 +1,47 @@
+name: CodeQL
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Run every Sunday at midnight UTC to catch newly-published vulnerabilities
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+permissions:
+  # required for CodeQL to read workflow run information
+  actions: read
+  # required to upload SARIF results to the Security tab
+  security-events: write
+  contents: read
+
+env:
+  CI: true
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  codeql:
+    name: Run CodeQL Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4
+        with:
+          languages: csharp
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+
+      - name: Build
+        run: dotnet build src/dirs.proj --configuration Release
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4

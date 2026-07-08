@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Microsoft.Azure.Policy.PolicyLinter.Cli</AssemblyName>
+    <RootNamespace>Microsoft.Azure.Policy.PolicyLinter.Cli</RootNamespace>
+    <Description>A command line interface for Microsoft.Azure.Policy.PolicyLinter.Core - A linter for policy definitions.</Description>
+    <Authors>Microsoft</Authors>
+    <Company>Microsoft</Company>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!--
+    This project is packed as a .NET tool (installable via `dotnet tool install`). The usual way to do
+    that is PackAsTool=true, but we deliberately do NOT use it. PackAsTool re-publishes the tool's
+    binaries at pack time. The internal mirror that republishes this package signs binaries on disk and
+    then packs, so a pack-time re-publish would replace the signed binaries with fresh unsigned copies
+    and fail code-sign validation. So instead we pack the already-built (already-signed) output directly.
+
+    PackAsTool normally bundles three things for you; with it off, we supply each one explicitly below:
+
+      1. PackageType=DotnetTool. The metadata marker that makes `dotnet tool install` accept this package
+         as a tool. Without it, install rejects the package, treating it as a plain library, not a tool.
+      2. The _AddToolPayload target. Copies the build output into tools/net8.0/any/ inside the package.
+         PackAsTool would have produced this via its re-publish.
+      3. DotnetToolSettings.xml (hand-authored, next to this csproj). Maps the command name `policylinter`
+         to the entry-point assembly. PackAsTool would have generated this from ToolCommandName.
+
+    Supporting properties: IncludeBuildOutput=false stops the SDK also dropping the build output into
+    lib/ (we place everything under tools/ ourselves); SuppressDependenciesWhenPacking=true stops the
+    package declaring its NuGet dependencies, because a tool package bundles its whole closure instead;
+    UseAppHost=false suppresses the native apphost .exe launcher, which a Runner=dotnet tool never uses
+    (it runs the managed .dll through the dotnet host). PackAsTool omits the apphost too; we match it.
+
+    TargetsForTfmSpecificContentInPackage is the property NuGet reads for extra targets to run during
+    pack. We append _AddToolPayload to it (so that any targets the dotnet SDK already put there keep
+    running). _AddToolPayload lists its files by enumerating $(OutputPath) when the target runs, which
+    is during pack, after the build - so it captures whatever build output is on disk. That is why both
+    a fresh build and a `no-build` pack against pre-built output produce a complete payload.
+
+    The Exclude keeps two kinds of file out of the payload. .nupkg: pack would otherwise embed its own
+    output package (by default the .nupkg lands in $(OutputPath)'s parent so nothing matches; this
+    covers setups that redirect PackageOutputPath into $(OutputPath)). .pdb: debug symbols, not needed
+    to run - PackAsTool would still bundle these, so unlike the apphost we drop them ourselves.
+
+    Do not switch this to PackAsTool.
+  -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackageId>Microsoft.Azure.Policy.PolicyLinter.Cli</PackageId>
+    <PackageType>DotnetTool</PackageType>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <!-- No apphost is emitted, so there is no standalone .exe to run; use `dotnet run` or the installed `policylinter` command. -->
+    <UseAppHost>false</UseAppHost>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddToolPayload</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <Target Name="_AddToolPayload">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg;$(OutputPath)**\*.pdb">
+        <PackagePath>tools/net8.0/any/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+      </TfmSpecificPackageFile>
+      <TfmSpecificPackageFile Include="DotnetToolSettings.xml">
+        <PackagePath>tools/net8.0/any/DotnetToolSettings.xml</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PolicyLinter.Core\PolicyLinter.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" />
+  </ItemGroup>
+
+</Project>
