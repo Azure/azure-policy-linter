@@ -107,7 +107,7 @@ dotnet run --project src/PolicyLinter.Cli -- <path-to-policy-json>
 Run the tests:
 
 ```
-dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj
+dotnet test src/Tests/PolicyLinter.Tests.csproj
 ```
 
 To open the repository in an editor, use the helper scripts at the repo root:

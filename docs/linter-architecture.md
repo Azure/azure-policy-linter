@@ -244,7 +244,7 @@ Description:    "Parameter 'effect' defaults to 'deny', an enforcement effect.
 
 ## Testing
 
-Tests are xUnit + FluentAssertions. They live in `src/Tests/PolicyLinter.Tests/` - most rules are tested in `RuleTests.cs`, with a dedicated file for any rule complex enough to warrant one (e.g. `PolicyRuleIfsShouldReferenceOneResourceTypeTests.cs`).
+Tests are xUnit + FluentAssertions. They live in `src/Tests/`, split into three folders: `Common/` (shared mocks like `MockTypeMetadata` and `MockLinterRules`), `LinterTests/` (the engine, parsing, metadata, serialization, and CLI tests), and `RuleTests/` (one file per rule). Each rule's tests live in their own `RuleTests/<RuleName>Tests.cs`, in a class named `<RuleName>Tests`.
 
 The basic shape of a test is small:
 
@@ -279,7 +279,7 @@ For a no-finding case: `results.Should().BeEmpty()`. For multiple findings: `Hav
 
 ### `TypeMetadata` vs `MockTypeMetadata`
 
-Each test file declares one `TypeMetadata` at the top:
+Each test file declares its metadata instance at the top - the real `TypeMetadata` for rules that need alias resolution, or a `MockTypeMetadata` for rules that don't:
 
 ```csharp
 private static readonly TypeMetadata TypeMetadata = new TypeMetadata(
@@ -302,7 +302,7 @@ New code should land at 90% line coverage or above. CI measures this on the line
 To reproduce the CI measurement locally:
 
 ```
-dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
+dotnet test src/Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
 ```
 
 That writes `TestResults/<guid>/coverage.cobertura.xml`. For the same new-code view CI produces, run [`diff-cover`](https://github.com/Bachmann1234/diff_cover) against it:
@@ -317,7 +317,7 @@ Practical ways to close a gap the report flags: add a test per untested branch (
 
 ### Test naming
 
-`LinterTests_<RuleName>_<Case>`. The rule set is identified by the test class's location, not by the method name. Some existing tests use an older `LinterTests_Rules_<RuleName>` form; follow the current convention for new tests.
+`LinterTests_<RuleName>_<Case>`. The rule set is identified by the test class's location, not by the method name, so don't repeat it in the method name.
 
 ## What it takes to add a rule
 
@@ -325,7 +325,7 @@ The mechanical checklist:
 
 1. **Pick the rule set.** `default` (universal) rules go in `src/PolicyLinter.Core/Rules/CommonRules/`. A custom rule set lives in its own subfolder under `Rules/`. The design doc covers when to pick which.
 2. **Add the rule class.** Public sealed, derives from `LinterRule<T>` for your chosen target type, parameterless ctor calls `base(identifier, category, title, descriptionFormat, applyToDerivedTypes: false)`. Add `[RuleSet("...")]` unless it's a `default` rule. Namespace is `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Subfolder>`.
-3. **Add tests** to the test file for the rule's set (or a dedicated file for a complex rule). At minimum one negative and one positive case.
+3. **Add tests** in `src/Tests/RuleTests/<RuleName>Tests.cs` (a class named `<RuleName>Tests`). At minimum one negative and one positive case.
 4. **Add a documentation file** at `docs/Rules/<rule-identifier>.md`. Structure per `linter-rule-design.md`.
 5. **Run the CLI** against a test policy to confirm the rule fires (or doesn't).
 
