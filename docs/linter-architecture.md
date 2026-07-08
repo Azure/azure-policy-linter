@@ -320,8 +320,6 @@ Practical ways to close a gap the report flags: add a test per untested branch (
 - Default rule set: `RuleTests_<RuleName>_<Case>`.
 - Non-default rule set: `RuleTests_<RuleSet>_<RuleName>_<Case>`.
 
-The class location identifies the rule set for default rules; the rule set is explicit in the method name for non-default rules.
-
 ## What it takes to add a rule
 
 The mechanical checklist:
