@@ -89,7 +89,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
 xUnit + FluentAssertions. Location: see the architecture doc's testing section.
 
 - Each rule gets its own separate file: `src/Tests/RuleTests/<RuleName>Tests.cs`. Do not add a new rule's tests to a shared file or to another rule's file.
-- File shape: namespace `Microsoft.Azure.Policy.PolicyLinter.Tests`; required `using` statements; XML doc for the class; `public class <RuleName>Tests`; a file-level metadata field (`TypeMetadata` or `MockTypeMetadata` as appropriate); and `[Fact] public void RuleTests_<RuleName>_<Case>()` test methods.
+- For test structure, mock/utility choices, and other implementation details, look at the existing files in `src/Tests/RuleTests/` and helpers in `src/Tests/Common/`.
 
 Minimum coverage:
 - One negative (rule fires, exact-equivalence assertion on the `LinterOutput`).
