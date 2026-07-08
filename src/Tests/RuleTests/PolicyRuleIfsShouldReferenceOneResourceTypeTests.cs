@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_SingleResourceType()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_SingleResourceType()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_SingleResourceType()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_SingleResourceType()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -79,7 +79,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_MultipleResourceTypes()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_MultipleResourceTypes()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -115,7 +115,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_SameResourceTypeMultipleTimes()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_SameResourceTypeMultipleTimes()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -150,7 +150,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NotInOperator_MultipleResourceTypes_ShouldNotWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NotInOperator_MultipleResourceTypes_ShouldNotWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -185,7 +185,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_WithNonResourceTypeValues()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_InOperator_WithNonResourceTypeValues()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -222,7 +222,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_MultipleResourceTypes()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_MultipleResourceTypes()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -273,7 +273,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NestedAllOf()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NestedAllOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -322,7 +322,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_WithNotCondition()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_WithNotCondition()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -365,7 +365,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_DuplicateResourceType()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_DuplicateResourceType()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -405,7 +405,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NoFieldConditions()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NoFieldConditions()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -436,7 +436,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NonTypeFieldReferences()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NonTypeFieldReferences()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -476,7 +476,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_MixedFieldTypes()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_MixedFieldTypes()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -516,7 +516,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_CountExpression()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_CountExpression()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -562,7 +562,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_CountExpressionMultipleResourceTypes()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_CountExpressionMultipleResourceTypes()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -612,7 +612,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_ContainsOperator_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_ContainsOperator_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -646,7 +646,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_LikeOperator_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_LikeOperator_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -680,7 +680,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_MatchOperator_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_MatchOperator_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -714,7 +714,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_MatchInsensitivelyOperator_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_MatchInsensitivelyOperator_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -748,7 +748,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_WildcardOperatorWithExplicitResourceType_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_WildcardOperatorWithExplicitResourceType_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -790,7 +790,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_WildcardOperatorOnNonTypeField_ShouldNotWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_WildcardOperatorOnNonTypeField_ShouldNotWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -830,7 +830,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_MultipleWildcardOperators_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_MultipleWildcardOperators_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -873,7 +873,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NotWrapper_InOperator_SingleNot_ShouldNotWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NotWrapper_InOperator_SingleNot_ShouldNotWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -910,7 +910,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NotWrapper_InOperator_DoubleNot_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NotWrapper_InOperator_DoubleNot_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -951,7 +951,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_PolicyRuleIfsShouldReferenceOneResourceType_NotWrapper_InOperator_ZeroNot_ShouldWarn()
+        void RuleTests_PolicyRuleIfsShouldReferenceOneResourceType_NotWrapper_InOperator_ZeroNot_ShouldWarn()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

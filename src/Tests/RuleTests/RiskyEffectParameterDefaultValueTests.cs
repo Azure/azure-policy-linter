@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void LinterTests_RiskyEffectParameterDefaultValue_ParameterizedEffectWithRiskyDefault()
+        void RuleTests_RiskyEffectParameterDefaultValue_ParameterizedEffectWithRiskyDefault()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

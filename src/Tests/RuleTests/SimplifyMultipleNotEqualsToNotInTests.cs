@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_Violation()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_Violation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -70,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_DifferentFields_NoViolation()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_DifferentFields_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -109,7 +109,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_SingleNotEquals_NoViolation()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_SingleNotEquals_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -148,7 +148,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_AlreadyUsesNotIn_NoViolation()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_AlreadyUsesNotIn_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -182,7 +182,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_ThreeNotEqualsOnSameField()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_ThreeNotEqualsOnSameField()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -237,7 +237,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_MultipleFieldGroups()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_MultipleFieldGroups()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -284,7 +284,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_AnyOf_NoViolation()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_AnyOf_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -323,7 +323,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_SimplifyMultipleNotEqualsToNotIn_CaseInsensitiveFieldMatching()
+        void RuleTests_SimplifyMultipleNotEqualsToNotIn_CaseInsensitiveFieldMatching()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

@@ -96,7 +96,7 @@ Minimum coverage:
 
 Construct a full `LinterOutput` record and assert via `ContainEquivalentOf` - this checks all fields including line number and path in one expression rather than matching on substrings. For path-aware rules (those that consume `context.FilePath`), pass `filePath:` to `Lint(...)`.
 
-Test names: `LinterTests_<RuleName>_<Case>`. The class location identifies the rule set; don't repeat it in the method name.
+Test names: `RuleTests_<RuleName>_<Case>`. The class location identifies the rule set; don't repeat it in the method name.
 
 ### 5. Write the rule doc
 

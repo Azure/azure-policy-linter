@@ -88,7 +88,7 @@ The implementation checks worth running are the ones that catch real bugs:
 - **`HaveCount(N)` before `ContainEquivalentOf`.** Without the count assertion, a test passes when the rule wrongly emits extra findings alongside the expected one. Flag if a test asserts `ContainEquivalentOf` without first asserting count.
 - **Assertion via `ContainEquivalentOf` on a full `LinterOutput` record.** Substring or field-only assertions are brittle - they pass for the wrong reason. Flag if used.
 - **Case-insensitivity, missing properties, and empty arrays each get a test** when the rule's logic touches them.
-- **Test names follow `LinterTests_<RuleName>_<Case>`.** The class location identifies the rule set; the method name shouldn't repeat it. If pre-existing tests in the same file carry a legacy `_<RuleSet>_` segment, the rule's new tests should still use the current convention - flag inherited legacy patterns.
+- **Test names follow `RuleTests_<RuleName>_<Case>`.** The class location identifies the rule set; the method name shouldn't repeat it. If pre-existing tests in the same file carry a legacy `_<RuleSet>_` segment, the rule's new tests should still use the current convention - flag inherited legacy patterns.
 
 ### Doc-specific checks
 

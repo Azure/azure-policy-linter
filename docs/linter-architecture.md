@@ -250,7 +250,7 @@ The basic shape of a test is small:
 
 ```csharp
 [Fact]
-public void LinterTests_RiskyEffectParameterDefaultValue_DefaultIsDeny()
+public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsDeny()
 {
     var linter = new PolicyLinter(
         rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
@@ -317,7 +317,7 @@ Practical ways to close a gap the report flags: add a test per untested branch (
 
 ### Test naming
 
-`LinterTests_<RuleName>_<Case>`. The rule set is identified by the test class's location, not by the method name, so don't repeat it in the method name.
+`RuleTests_<RuleName>_<Case>`. The rule set is identified by the test class's location, not by the method name, so don't repeat it in the method name.
 
 ## What it takes to add a rule
 

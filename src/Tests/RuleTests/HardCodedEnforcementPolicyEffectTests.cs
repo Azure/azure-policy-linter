@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void LinterTests_HardCodedEnforcementPolicyEffect_EnforcementEffect()
+        void RuleTests_HardCodedEnforcementPolicyEffect_EnforcementEffect()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("audit")]
         [InlineData("[parameters('whatever')]")]
-        void LinterTests_HardCodedEnforcementPolicyEffect_ShouldNotBeTriggered(string effectValue)
+        void RuleTests_HardCodedEnforcementPolicyEffect_ShouldNotBeTriggered(string effectValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

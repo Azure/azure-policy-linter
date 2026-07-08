@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void LinterTests_EffectParameterShouldHaveAllowedAndDefaultValues_BothMissing()
+        void RuleTests_EffectParameterShouldHaveAllowedAndDefaultValues_BothMissing()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -75,7 +75,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_EffectParameterShouldHaveAllowedAndDefaultValues_AllowedValuesMissing()
+        void RuleTests_EffectParameterShouldHaveAllowedAndDefaultValues_AllowedValuesMissing()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -122,7 +122,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_EffectParameterShouldHaveAllowedAndDefaultValues_DefaultValueMissing()
+        void RuleTests_EffectParameterShouldHaveAllowedAndDefaultValues_DefaultValueMissing()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -173,7 +173,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_EffectParameterShouldHaveAllowedAndDefaultValues_BothPresent()
+        void RuleTests_EffectParameterShouldHaveAllowedAndDefaultValues_BothPresent()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -215,7 +215,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_EffectParameterShouldHaveAllowedAndDefaultValues_HardCodedEffect()
+        void RuleTests_EffectParameterShouldHaveAllowedAndDefaultValues_HardCodedEffect()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -246,7 +246,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_EffectParameterShouldHaveAllowedAndDefaultValues_CustomParameterName()
+        void RuleTests_EffectParameterShouldHaveAllowedAndDefaultValues_CustomParameterName()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

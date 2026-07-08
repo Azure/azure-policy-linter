@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_UnresolvedParameter()
+        void RuleTests_AllParameterReferencesMustResolve_UnresolvedParameter()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -68,7 +68,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_AllParametersResolved()
+        void RuleTests_AllParameterReferencesMustResolve_AllParametersResolved()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -105,7 +105,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_CaseInsensitiveMatch()
+        void RuleTests_AllParameterReferencesMustResolve_CaseInsensitiveMatch()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -142,7 +142,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_MultipleUnresolvedParameters()
+        void RuleTests_AllParameterReferencesMustResolve_MultipleUnresolvedParameters()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -199,7 +199,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_NoParameters()
+        void RuleTests_AllParameterReferencesMustResolve_NoParameters()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -230,7 +230,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_NoParameterReferences()
+        void RuleTests_AllParameterReferencesMustResolve_NoParameterReferences()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -267,7 +267,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_AllParameterReferencesMustResolve_ParameterInComplexExpression()
+        void RuleTests_AllParameterReferencesMustResolve_ParameterInComplexExpression()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_TypeIsFirst()
+        void RuleTests_TypeConditionFirstInAllOf_TypeIsFirst()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -58,7 +58,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_TypeIsNotFirst()
+        void RuleTests_TypeConditionFirstInAllOf_TypeIsNotFirst()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -109,7 +109,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_TypeAtIndexTwo()
+        void RuleTests_TypeConditionFirstInAllOf_TypeAtIndexTwo()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -164,7 +164,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_NoTypeCondition()
+        void RuleTests_TypeConditionFirstInAllOf_NoTypeCondition()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -203,7 +203,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_SingleConditionAllOf()
+        void RuleTests_TypeConditionFirstInAllOf_SingleConditionAllOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -238,7 +238,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_AnyOfNotChecked()
+        void RuleTests_TypeConditionFirstInAllOf_AnyOfNotChecked()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -277,7 +277,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void LinterTests_TypeConditionFirstInAllOf_CaseInsensitive()
+        void RuleTests_TypeConditionFirstInAllOf_CaseInsensitive()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
