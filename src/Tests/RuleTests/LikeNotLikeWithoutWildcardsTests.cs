@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void RuleTests_LikeNotLikeWithoutWildcards_LikeWithoutWildcard()
+        public void RuleTests_LikeNotLikeWithoutWildcards_LikeWithoutWildcard()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_LikeNotLikeWithoutWildcards_NotLikeWithoutWildcard()
+        public void RuleTests_LikeNotLikeWithoutWildcards_NotLikeWithoutWildcard()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -107,7 +107,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("like", "Microsoft.Compute/virtual?achines")]
         [InlineData("notLike", "Microsoft.*/storageAccounts")]
         [InlineData("notLike", "Microsoft.Compute/virtual?achines")]
-        void RuleTests_LikeNotLikeWithoutWildcards_WithWildcards_NoViolation(string operatorName, string operandValue)
+        public void RuleTests_LikeNotLikeWithoutWildcards_WithWildcards_NoViolation(string operatorName, string operandValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -137,7 +137,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_LikeNotLikeWithoutWildcards_ParameterizedValue_NoViolation()
+        public void RuleTests_LikeNotLikeWithoutWildcards_ParameterizedValue_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -176,7 +176,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("notEquals")]
         [InlineData("contains")]
         [InlineData("in")]
-        void RuleTests_LikeNotLikeWithoutWildcards_OtherOperators_NoViolation(string operatorName)
+        public void RuleTests_LikeNotLikeWithoutWildcards_OtherOperators_NoViolation(string operatorName)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

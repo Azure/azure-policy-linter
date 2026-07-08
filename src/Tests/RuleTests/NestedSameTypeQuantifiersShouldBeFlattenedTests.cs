@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_AllOfInsideAllOf()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_AllOfInsideAllOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -74,7 +74,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_AnyOfInsideAnyOf()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_AnyOfInsideAnyOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -129,7 +129,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_AllOfInsideAnyOf_NoViolation()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_AllOfInsideAnyOf_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -176,7 +176,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_NoNestedQuantifier_NoViolation()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_NoNestedQuantifier_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -215,7 +215,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_MultipleNestedAllOf()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_MultipleNestedAllOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -289,7 +289,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_NotQuantifier_NoViolation()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_NotQuantifier_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -322,7 +322,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_NestedAtIndexZero()
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_NestedAtIndexZero()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

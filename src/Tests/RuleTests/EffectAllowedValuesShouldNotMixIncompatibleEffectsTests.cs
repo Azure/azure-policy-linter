@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_ValidSameCategory()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_ValidSameCategory()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixNoDetailsAndModify()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixNoDetailsAndModify()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -103,7 +103,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixNoDetailsAndIfNotExists()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixNoDetailsAndIfNotExists()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -145,7 +145,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixAllThreeCategories()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixAllThreeCategories()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -198,7 +198,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_IfNotExistsCategoryOnly()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_IfNotExistsCategoryOnly()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -240,7 +240,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_CaseInsensitive()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_CaseInsensitive()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -282,7 +282,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_NotParameterized()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_NotParameterized()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -313,7 +313,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_NoAllowedValues()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_NoAllowedValues()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -350,7 +350,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_OnlyUncategorizedEffects()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_OnlyUncategorizedEffects()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -392,7 +392,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_CustomParameterName()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_CustomParameterName()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -434,7 +434,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_CategorizedWithUncategorized()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_CategorizedWithUncategorized()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -477,7 +477,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MultipleValuesPerCategory()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MultipleValuesPerCategory()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -520,7 +520,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_EmptyAllowedValues()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_EmptyAllowedValues()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -558,7 +558,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_ExplicitlyNullAllowedValues()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_ExplicitlyNullAllowedValues()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -596,7 +596,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_DataplaneModeSkipped()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_DataplaneModeSkipped()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -639,7 +639,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_UnknownEffectNoViolation()
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_UnknownEffectNoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

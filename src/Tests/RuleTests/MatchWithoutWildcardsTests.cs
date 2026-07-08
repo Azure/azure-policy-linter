@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void RuleTests_MatchWithoutWildcards_MatchWithoutWildcards_NoViolation()
+        public void RuleTests_MatchWithoutWildcards_MatchWithoutWildcards_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -50,7 +50,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_MatchWithoutWildcards_NotMatchWithoutWildcards_NoViolation()
+        public void RuleTests_MatchWithoutWildcards_NotMatchWithoutWildcards_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -81,7 +81,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_MatchWithoutWildcards_MatchInsensitivelyWithoutPlaceholders()
+        public void RuleTests_MatchWithoutWildcards_MatchInsensitivelyWithoutPlaceholders()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -123,7 +123,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_MatchWithoutWildcards_NotMatchInsensitivelyWithoutPlaceholders()
+        public void RuleTests_MatchWithoutWildcards_NotMatchInsensitivelyWithoutPlaceholders()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -171,7 +171,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("matchInsensitively", "resource-##")]
         [InlineData("notMatch", "resource-?ame")]
         [InlineData("notMatchInsensitively", "resource-.")]
-        void RuleTests_MatchWithoutWildcards_WithPlaceholders_NoViolation(string operatorName, string operandValue)
+        public void RuleTests_MatchWithoutWildcards_WithPlaceholders_NoViolation(string operatorName, string operandValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -201,7 +201,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_MatchWithoutWildcards_ParameterizedValue_NoViolation()
+        public void RuleTests_MatchWithoutWildcards_ParameterizedValue_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -240,7 +240,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("notEquals")]
         [InlineData("like")]
         [InlineData("contains")]
-        void RuleTests_MatchWithoutWildcards_OtherOperators_NoViolation(string operatorName)
+        public void RuleTests_MatchWithoutWildcards_OtherOperators_NoViolation(string operatorName)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

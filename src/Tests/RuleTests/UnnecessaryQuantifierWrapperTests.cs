@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_AllOfSingleExpression()
+        public void RuleTests_UnnecessaryQuantifierWrapper_AllOfSingleExpression()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -66,7 +66,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_AnyOfSingleExpression()
+        public void RuleTests_UnnecessaryQuantifierWrapper_AnyOfSingleExpression()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -113,7 +113,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_AllOfMultipleExpressions_NoViolation()
+        public void RuleTests_UnnecessaryQuantifierWrapper_AllOfMultipleExpressions_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -152,7 +152,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_AnyOfMultipleExpressions_NoViolation()
+        public void RuleTests_UnnecessaryQuantifierWrapper_AnyOfMultipleExpressions_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -191,7 +191,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_NoQuantifier_NoViolation()
+        public void RuleTests_UnnecessaryQuantifierWrapper_NoQuantifier_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -222,7 +222,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_NotQuantifier_NoViolation()
+        public void RuleTests_UnnecessaryQuantifierWrapper_NotQuantifier_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -255,7 +255,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void RuleTests_UnnecessaryQuantifierWrapper_EmptyAllOf_NoViolation()
+        public void RuleTests_UnnecessaryQuantifierWrapper_EmptyAllOf_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]

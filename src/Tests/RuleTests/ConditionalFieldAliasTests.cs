@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        void RuleTests_ConditionalFieldAlias()
+        public void RuleTests_ConditionalFieldAlias()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
