@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\PolicyLinter.Core\PolicyLinter.Core.csproj" />
-    <ProjectReference Include="..\..\PolicyLinter.Cli\PolicyLinter.Cli.csproj" />
+    <ProjectReference Include="..\PolicyLinter.Core\PolicyLinter.Core.csproj" />
+    <ProjectReference Include="..\PolicyLinter.Cli\PolicyLinter.Cli.csproj" />
   </ItemGroup>
 
 </Project>

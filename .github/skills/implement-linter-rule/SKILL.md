@@ -88,6 +88,9 @@ Renames after this step are expensive - they ripple across the cascade audit.
 
 xUnit + FluentAssertions. Location: see the architecture doc's testing section.
 
+- Each rule gets its own separate file: `src/Tests/RuleTests/<RuleName>Tests.cs`. Do not add a new rule's tests to a shared file or to another rule's file.
+- For test structure, mock/utility choices, and other implementation details, look at the existing files in `src/Tests/RuleTests/` and helpers in `src/Tests/Common/`.
+
 Minimum coverage:
 - One negative (rule fires, exact-equivalence assertion on the `LinterOutput`).
 - One positive (rule doesn't fire, `Should().BeEmpty()`).
@@ -96,7 +99,7 @@ Minimum coverage:
 
 Construct a full `LinterOutput` record and assert via `ContainEquivalentOf` - this checks all fields including line number and path in one expression rather than matching on substrings. For path-aware rules (those that consume `context.FilePath`), pass `filePath:` to `Lint(...)`.
 
-Test names: `LinterTests_<RuleName>_<Case>`. The class location identifies the rule set; don't repeat it in the method name.
+Test names: `RuleTests_<RuleName>_<Case>` for the default rule set; `RuleTests_<RuleSet>_<RuleName>_<Case>` for non-default rule sets.
 
 ### 5. Write the rule doc
 

@@ -25,7 +25,7 @@ For rule work, use the skills under `.github/skills/`:
 Before submitting a PR, run tests and verify diff coverage on your changes:
 
 ```powershell
-dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
+dotnet test src/Tests/PolicyLinter.Tests.csproj --collect:"XPlat Code Coverage" --results-directory ./TestResults
 diff-cover TestResults/**/coverage.cobertura.xml --compare-branch origin/main
 ```
 

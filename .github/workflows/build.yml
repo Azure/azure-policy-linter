@@ -51,7 +51,7 @@ jobs:
         run: dotnet build src/dirs.proj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
+        run: dotnet test src/Tests/PolicyLinter.Tests.csproj --configuration Release --no-build --logger trx --results-directory ./TestResults
 
       - name: Pack
         run: |
@@ -82,7 +82,7 @@ jobs:
           global-json-file: global.json
 
       - name: Test with coverage
-        run: dotnet test src/Tests/PolicyLinter.Tests/PolicyLinter.Tests.csproj --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
+        run: dotnet test src/Tests/PolicyLinter.Tests.csproj --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
 
       - name: Install diff-cover
         run: pipx install diff-cover
