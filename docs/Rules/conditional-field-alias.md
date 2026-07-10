@@ -36,7 +36,7 @@ The `ScheduleTrigger.typeProperties.recurrence.frequency` alias only exists for 
 }
 ```
 
-### Remediation
+### Correct
 
 Guard the reference with the trigger kind so the policy only evaluates the property when it exists:
 
