@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class ReadOnlyFieldAlias : LinterRule<Reference>
     {
         private const string RuleTitle = "Read-Only Field Alias";
-        private const string RuleDescription = "The field alias: '{0}' maps to property that is marked as read-only in one or more old API versions of resource type: '{1}'. API versions: '{2}'";
+        private const string RuleDescription = "The field alias: '{0}' maps to a property that is marked as read-only in one or more API versions of resource type: '{1}'. API versions: '{2}'";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReadOnlyFieldAlias"/> class.
