@@ -94,6 +94,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private static List<string> ExtractResourceTypes(LeafCondition leaf, Property leafOperator)
         {
             var resourceTypes = new List<string>();
+
+            // A parameterized operand (e.g. "[parameters('types')]") is not a resource type literal,
+            // so there is nothing to extract.
+            if (!leafOperator.HasLiteralValue)
+            {
+                return resourceTypes;
+            }
+
             var stringsToExtractFrom = new List<string>();
 
             // An odd number of enclosing 'not' quantifiers negates the condition (e.g. 'in'

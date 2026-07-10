@@ -726,5 +726,75 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results[0].RuleIdentifier.Should().Be("policy-rule-references-multiple-resource-types");
             results[0].Severity.Should().Be(Severity.Informational);
         }
+
+        [Fact]
+        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_InOperator_ParameterizedValue_ShouldNotThrow()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new PolicyRuleReferencesMultipleResourceTypes()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""parameters"": {
+                      ""types"": { ""type"": ""Array"" }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""in"": ""[parameters('types')]""
+                      },
+                      ""then"": {
+                        ""effect"": ""audit""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            // A parameterized ""in"" operand is not a literal array, so there is nothing to extract and no finding.
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_EqualsOperator_ParameterizedValue_ShouldNotThrow()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new PolicyRuleReferencesMultipleResourceTypes()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""parameters"": {
+                      ""resourceType"": { ""type"": ""String"" }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""[parameters('resourceType')]""
+                      },
+                      ""then"": {
+                        ""effect"": ""audit""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            // A parameterized ""equals"" operand is not a literal resource type, so there is nothing to extract and no finding.
+            results.Should().BeEmpty();
+        }
     }
 }
