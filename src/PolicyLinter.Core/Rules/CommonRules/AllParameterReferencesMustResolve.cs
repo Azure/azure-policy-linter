@@ -6,18 +6,16 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using System.Collections.Generic;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
 
     /// <summary>
-    /// Checks that every parameters('...') reference in a template language expression
-    /// resolves to an actual parameter defined in the policy definition.
+    /// Checks that every parameters('...') reference resolves to a parameter declared in the policy's parameters block.
     /// </summary>
-    public sealed class AllParameterReferencesMustResolve : LinterRule<TemplateLanguageExpression>
+    public sealed class AllParameterReferencesMustResolve : LinterRule<Reference>
     {
         private const string RuleTitle = "All Parameter References Must Resolve";
-        private const string RuleDescription = "Found a reference to parameter '{0}', but no matching parameter definition found. Check for typos or references to removed parameters.";
+        private const string RuleDescription = "The parameter '{0}' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AllParameterReferencesMustResolve"/> class.
@@ -32,34 +30,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            if (context.Parameters == null)
+            if (expression.Kind != ReferenceKind.PolicyParameterName)
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var errors = new List<LinterOutput>();
-
-            foreach (var reference in expression.References)
+            if (!expression.IsResolved || string.IsNullOrEmpty(value: expression.Identifier))
             {
-                if (reference.Kind != ReferenceKind.PolicyParameterName)
-                {
-                    continue;
-                }
-
-                if (!reference.IsResolved || string.IsNullOrEmpty(value: reference.Identifier))
-                {
-                    continue;
-                }
-
-                if (!context.Parameters.ContainsKey(key: reference.Identifier))
-                {
-                    errors.Add(this.CreateError(expression: reference, reference.Identifier));
-                }
+                return Array.Empty<LinterOutput>();
             }
 
-            return errors.ToArray();
+            // A missing parameters block is treated as an empty parameter set: the reference still cannot resolve.
+            if (context.Parameters?.ContainsKey(key: expression.Identifier) == true)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[] { this.CreateError(expression, expression.Identifier) };
         }
     }
 }
