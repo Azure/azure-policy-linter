@@ -105,7 +105,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("like", "Microsoft.Compute/*")]
         [InlineData("notLike", "Microsoft.*/storageAccounts")]
-        public void RuleTests_LikeNotLikeWithoutWildcards_WithWildcard_NoViolation(string operatorName, string operandValue)
+        public void RuleTests_LikeNotLikeWithoutWildcards_WithWildcards_NoViolation(string operatorName, string operandValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -139,7 +139,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("notLike", "Microsoft.Compute/virtual?achines", "notLike", "notEquals")]
         [InlineData("like", "", "like", "equals")]
         [InlineData("Like", "Microsoft.Compute/virtualMachines", "like", "equals")]
-        public void RuleTests_LikeNotLikeWithoutWildcards_NoWildcard_Violation(string operatorName, string operandValue, string expectedOperator, string replacement)
+        public void RuleTests_LikeNotLikeWithoutWildcards_NoWildcards_Violation(string operatorName, string operandValue, string expectedOperator, string replacement)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
