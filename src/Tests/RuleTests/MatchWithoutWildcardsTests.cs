@@ -111,13 +111,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "match-without-wildcards",
-                Title: "matchInsensitively/notMatchInsensitively Without Placeholders",
+                Title: "Match Without Wildcards",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 64,
                 Path: "properties.policyRule.if.matchInsensitively",
-                Description: "The condition uses the 'matchInsensitively' operator with value 'my-resource-name' which contains no placeholders (#, ?, or .). Use 'equals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'matchInsensitively' operator with value 'my-resource-name' which contains none of '#', '?', or '.'. Use 'equals' for exact matching.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -153,13 +153,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "match-without-wildcards",
-                Title: "matchInsensitively/notMatchInsensitively Without Placeholders",
+                Title: "Match Without Wildcards",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 67,
                 Path: "properties.policyRule.if.notMatchInsensitively",
-                Description: "The condition uses the 'notMatchInsensitively' operator with value 'my-resource-name' which contains no placeholders (#, ?, or .). Use 'notEquals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'notMatchInsensitively' operator with value 'my-resource-name' which contains none of '#', '?', or '.'. Use 'notEquals' for exact matching.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -269,13 +269,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "match-without-wildcards",
-                Title: "matchInsensitively/notMatchInsensitively Without Placeholders",
+                Title: "Match Without Wildcards",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 48,
                 Path: "properties.policyRule.if.matchInsensitively",
-                Description: "The condition uses the 'matchInsensitively' operator with value '' which contains no placeholders (#, ?, or .). Use 'equals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'matchInsensitively' operator with value '' which contains none of '#', '?', or '.'. Use 'equals' for exact matching.");
 
             results.Should().ContainEquivalentOf(output);
         }

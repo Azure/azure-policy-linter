@@ -1,4 +1,4 @@
-# matchInsensitively/notMatchInsensitively Without Placeholders
+# Match Without Wildcards
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
@@ -6,12 +6,12 @@
 
 ## Description
 
-The [`matchInsensitively` or `notMatchInsensitively`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) operator is used with a value that contains no placeholders (`#` for a digit, `?` for a letter, or `.` for any character). Without placeholders, these operators behave identically to `equals`/`notEquals` (both are case-insensitive), which suggests the author intended to use pattern matching but the value contains no patterns. Use `equals`/`notEquals` to clearly express exact-match intent.
+The [`matchInsensitively` or `notMatchInsensitively`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) operator is used with a value that contains none of `#`, `?`, or `.`. Without these characters, these operators behave identically to `equals`/`notEquals`. Use `equals`/`notEquals` to express exact-match intent.
 
 ## Suggestions
 
-- Replace `matchInsensitively` with `equals` when no placeholders are used.
-- Replace `notMatchInsensitively` with `notEquals` when no placeholders are used.
+- Replace `matchInsensitively` with `equals` when the value contains none of `#`, `?`, or `.`.
+- Replace `notMatchInsensitively` with `notEquals` when the value contains none of `#`, `?`, or `.`.
 
 ### Violation
 
@@ -31,7 +31,7 @@ The [`matchInsensitively` or `notMatchInsensitively`](https://learn.microsoft.co
 }
 ```
 
-Or use placeholders when pattern matching is intended:
+Or use `matchInsensitively` when the value contains `#`, `?`, or `.`:
 
 ```json
 {

@@ -11,17 +11,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
     /// <summary>
     /// Flags matchInsensitively/notMatchInsensitively conditions whose
-    /// operand contains no placeholders (#, ?, or .). Without placeholders these
-    /// operators behave identically to equals/notEquals (both are case-insensitive)
-    /// which suggests the author intended pattern matching.
+    /// operand contains none of '#', '?', or '.'. Without these characters
+    /// these operators behave identically to equals/notEquals (both are case-insensitive).
     /// Note: match/notMatch are case-sensitive and have no exact-match equivalent,
     /// so they are not flagged by this rule.
     /// </summary>
     public sealed class MatchWithoutWildcards : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "matchInsensitively/notMatchInsensitively Without Placeholders";
+        private const string RuleTitle = "Match Without Wildcards";
         private const string RuleDescription =
-            "The condition uses the '{0}' operator with value '{1}' which contains no placeholders (#, ?, or .). Use '{2}' instead to better reflect the intention of exact matching.";
+            "The condition uses the '{0}' operator with value '{1}' which contains none of '#', '?', or '.'. Use '{2}' for exact matching.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MatchWithoutWildcards"/> class.
@@ -46,7 +45,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var operatorName = expression.Operator.Name;
 
             // Only flag case-insensitive variants -- they are equivalent to equals/notEquals
-            // when no placeholders are present. The case-sensitive match/notMatch have no
+            // when none of '#', '?', or '.' are present. The case-sensitive match/notMatch have no
             // exact-match equivalent so we cannot suggest a replacement.
             if (!string.Equals(operatorName, "matchInsensitively", StringComparison.OrdinalIgnoreCase) &&
                 !string.Equals(operatorName, "notMatchInsensitively", StringComparison.OrdinalIgnoreCase))
