@@ -15,7 +15,7 @@ This rule is distinct from `optional-field-alias`. A conditional property does n
 ### Suggestions
 
 - Consult the resource provider documentation to find the exact condition under which the property exists (this may require trial and error).
-- Guard the reference with that condition so the property is only evaluated when it exists. See the remediation example below.
+- Guard the reference with that condition so the property is only evaluated when it exists. See the correct example below.
 - If you cannot express the exact condition, decide what the desired policy outcome is when the property is missing:
   - If deciding not to enforce, add an `exists` condition to the policy rule.
   - If deciding to enforce, assign the policy with an `audit` effect first and inspect the [activity logs](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema#policy-category) for audit events to gauge how often the condition is unmet before switching to enforcement.
