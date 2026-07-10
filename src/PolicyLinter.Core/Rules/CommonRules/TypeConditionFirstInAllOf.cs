@@ -16,7 +16,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class TypeConditionFirstInAllOf : LinterRule<Quantifier>
     {
-        private const string RuleTitle = "Type condition should be first in allOf";
+        private const string RuleTitle = "Type Condition First in allOf";
 
         private const string RuleDescription =
             "The type condition at index {0} should be moved to the first position " +
@@ -45,18 +45,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var conditions = expression.AllOf.Value;
 
-            // Already optimal: first condition is a type check
             if (TypeConditionFirstInAllOf.IsTypeCondition(conditions[0]))
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            // Find the first type condition at a non-zero index
             for (int i = 1; i < conditions.Length; i++)
             {
                 if (TypeConditionFirstInAllOf.IsTypeCondition(conditions[i]))
                 {
-                    return new[] { this.CreateWarning(expression: conditions[i], i) };
+                    return new[] { this.CreateInformational(expression: conditions[i], i) };
                 }
             }
 
@@ -69,8 +67,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private static bool IsTypeCondition(Condition condition)
         {
             return condition is LeafCondition leaf &&
-                leaf.Field != null &&
-                string.Equals(leaf.Field.Value?.ToString(), "type", StringComparison.OrdinalIgnoreCase);
+                string.Equals(leaf.Field?.FieldAccessorReference?.Identifier, "type", StringComparison.OrdinalIgnoreCase);
         }
     }
 }
