@@ -10,7 +10,7 @@ The policy definition is referencing a [field alias](https://learn.microsoft.com
 
 If the policy rule ignores these conditions and expects the property to always exist, it may produce incorrect evaluation results.
 
-This rule is distinct from `optional-field-alias`. A conditional property does not exist at all unless its condition is met (for example, the wrong trigger kind), whereas an optional property always belongs to the resource type but is simply not required in a request. A single field can trigger both rules.
+A conditional property does not exist at all unless its condition is met (for example, the wrong trigger kind).
 
 ### Suggestions
 
