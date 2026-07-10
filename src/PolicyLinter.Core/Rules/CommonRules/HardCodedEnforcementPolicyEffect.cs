@@ -17,8 +17,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class HardCodedEnforcementPolicyEffect : LinterRule<ThenExpression>
     {
-        private const string RuleTitle = "Hard-Coded Enforcement Policy Effect";
-        private const string RuleDescription = "The policy definition has a hard-coded enforcement effect: '{0}'. Consider adding an \"effect\" policy definition parameter with default value: '{1}' and allowed values: '{2}' and replace the hard-coded effect with \"[parameters('effect')]\". Parameterizing the policy effect makes it easy reuse the policy as well as to follow safe deployment practices (start with audit, then enforce).";
+        private const string RuleTitle = "Hard-Coded Policy Enforcement Effect";
+        private const string RuleDescription = "The policy definition has a hard-coded enforcement effect: '{0}'. Consider adding an \"effect\" policy definition parameter with default value: '{1}' and allowed values: '{2}' and replace the hard-coded effect with \"[parameters('effect')]\".";
 
         /// <summary>
         /// The set of enforcement effects.
@@ -28,7 +28,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             "deployIfNotExists",
             "append",
             "modify",
-            "deny"
+            "deny",
+            "denyAction"
         };
 
         /// <summary>
@@ -46,10 +47,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(ThenExpression expression, LinterContext context)
         {
-            if (expression.Effect.HasLiteralValue && EnforcementEffects.Contains(expression.Effect.Value.ToStringValue()))
+            var effectValue = expression.Effect.HasLiteralValue ? expression.Effect.Value.ToStringValue() : null;
+            if (effectValue != null && EnforcementEffects.Contains(effectValue))
             {
-                var effectValue = expression.Effect.Value.ToStringValue();
-                var auditCounterpart = effectValue.EqualsOrdinalInsensitively("deployIfNotExists") ? "auditIfNotExists" : "audit";
+                var auditCounterpart = effectValue.EqualsOrdinalInsensitively("deployIfNotExists") ? "auditIfNotExists"
+                    : effectValue.EqualsOrdinalInsensitively("denyAction") ? "auditAction"
+                    : "audit";
                 var suggestedParameterValues = new[]
                 {
                     auditCounterpart,
@@ -57,11 +60,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     "disabled"
                 };
 
-                return new[] { this.CreateInformational(expression.Effect, expression.Effect.Value.ToStringValue()!, auditCounterpart, string.Join(',', suggestedParameterValues)) };
+                return new[] { this.CreateWarning(expression.Effect, effectValue, auditCounterpart, string.Join(',', suggestedParameterValues)) };
             }
 
             return Array.Empty<LinterOutput>();
-
         }
     }
 }

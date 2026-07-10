@@ -12,4 +12,4 @@ This is risky because it means that the policy will have an enforcement effect b
 
 ### Suggestions
 
-Set the default value of the policy effect parameter to an audit or disabled effect (`audit`, `auditIfNotexists` or `disabled`).
+Set the default value of the policy effect parameter to an audit or disabled effect (`audit`, `auditIfNotExists` or `disabled`).
