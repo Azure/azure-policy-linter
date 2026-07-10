@@ -58,13 +58,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "simplify-multiple-equals-to-in",
-                Title: "Simplify multiple equals to in",
-                Severity: Severity.Warning,
+                Title: "Simplify Multiple Equals to In",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[0]",
-                Description: "The anyOf contains 2 equals conditions on field \"type\" that can be simplified to a single \"in\" condition.");
+                Description: "The anyOf contains 2 equals conditions on field 'type' that can be simplified to a single 'in' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -225,19 +225,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "simplify-multiple-equals-to-in",
-                Title: "Simplify multiple equals to in",
-                Severity: Severity.Warning,
+                Title: "Simplify Multiple Equals to In",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[0]",
-                Description: "The anyOf contains 3 equals conditions on field \"type\" that can be simplified to a single \"in\" condition.");
+                Description: "The anyOf contains 3 equals conditions on field 'type' that can be simplified to a single 'in' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_SimplifyMultipleEqualsToIn_MultipleFieldGroups()
+        public void RuleTests_SimplifyMultipleEqualsToIn_MultipleFieldGroups_Violation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -281,6 +281,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(2);
+
+            var typeFinding = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-equals-to-in",
+                Title: "Simplify Multiple Equals to In",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 8,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.anyOf[0]",
+                Description: "The anyOf contains 2 equals conditions on field 'type' that can be simplified to a single 'in' condition.");
+
+            var locationFinding = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-equals-to-in",
+                Title: "Simplify Multiple Equals to In",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 16,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.anyOf[2]",
+                Description: "The anyOf contains 2 equals conditions on field 'location' that can be simplified to a single 'in' condition.");
+
+            results.Should().ContainEquivalentOf(typeFinding);
+            results.Should().ContainEquivalentOf(locationFinding);
         }
 
         [Fact]
@@ -323,7 +346,93 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_SimplifyMultipleEqualsToIn_CaseInsensitiveFieldMatching()
+        public void RuleTests_SimplifyMultipleEqualsToIn_ExpressionFieldValue_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new SimplifyMultipleEqualsToIn()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""anyOf"": [
+                          {
+                            ""field"": ""[parameters('fieldName')]"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""field"": ""[parameters('fieldName')]"",
+                            ""equals"": ""Microsoft.Storage/storageAccounts""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_SimplifyMultipleEqualsToIn_NestedChildQuantifier_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new SimplifyMultipleEqualsToIn()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""anyOf"": [
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""type"",
+                                ""equals"": ""Microsoft.Compute/virtualMachines""
+                              }
+                            ]
+                          },
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""type"",
+                                ""equals"": ""Microsoft.Storage/storageAccounts""
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_SimplifyMultipleEqualsToIn_CaseInsensitiveFieldMatching_Violation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -359,6 +468,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-equals-to-in",
+                Title: "Simplify Multiple Equals to In",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 8,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.anyOf[0]",
+                Description: "The anyOf contains 2 equals conditions on field 'Type' that can be simplified to a single 'in' condition.");
+
+            results.Should().ContainEquivalentOf(output);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
     /// Detects allOf quantifiers containing multiple notEquals conditions on the same field
@@ -17,10 +18,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class SimplifyMultipleNotEqualsToNotIn : LinterRule<Quantifier>
     {
-        private const string RuleTitle = "Simplify multiple notEquals to notIn";
+        private const string RuleTitle = "Simplify Multiple NotEquals to NotIn";
 
         private const string RuleDescription =
-            "The allOf contains {0} notEquals conditions on field \"{1}\" that can be simplified to a single \"notIn\" condition.";
+            "The allOf contains {0} notEquals conditions on field '{1}' that can be simplified to a single 'notIn' condition.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimplifyMultipleNotEqualsToNotIn"/> class.
@@ -52,7 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 if (condition is LeafCondition leaf &&
                     leaf.Field != null &&
                     leaf.Operator != null &&
-                    string.Equals(leaf.Operator.Name, "notEquals", StringComparison.OrdinalIgnoreCase) &&
+                    leaf.Operator.Name.EqualsOrdinalInsensitively("notEquals") &&
                     leaf.Field.HasLiteralValue)
                 {
                     var fieldName = leaf.Field.Value.ToString();
@@ -69,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return fieldGroups
                 .Where(kvp => kvp.Value.Count >= 2)
-                .Select(kvp => this.CreateWarning(
+                .Select(kvp => this.CreateInformational(
                     expression: kvp.Value.First(),
                     kvp.Value.Count,
                     kvp.Key))

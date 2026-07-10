@@ -2,15 +2,15 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | simplify-multiple-equals-to-in | Warning | — |
+| BestPractices | simplify-multiple-equals-to-in | Informational | — |
 
 ## Description
 
-An `anyOf` contains multiple `equals` conditions on the same field. This can be simplified to a single `in` condition, making the policy shorter and easier to read.
+An `anyOf` contains multiple [`equals`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) conditions on the same field. This can be simplified to a single [`in`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) condition, making the policy shorter and easier to read.
 
 ## Suggestions
 
-Replace the `anyOf` with a single condition using the `in` operator and an array of values.
+Replace only the grouped `equals` conditions with a single condition using the `in` operator and an array of values. Leave any other members of the `anyOf` in place.
 
 ### Violation
 
@@ -24,11 +24,13 @@ Replace the `anyOf` with a single condition using the `in` operator and an array
 ### Correct
 
 ```json
-{
-  "field": "type",
-  "in": [
-    "Microsoft.Compute/virtualMachines",
-    "Microsoft.Storage/storageAccounts"
-  ]
-}
+"anyOf": [
+  {
+    "field": "type",
+    "in": [
+      "Microsoft.Compute/virtualMachines",
+      "Microsoft.Storage/storageAccounts"
+    ]
+  }
+]
 ```
