@@ -825,8 +825,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            // A broad operator (contains/like/match) names no concrete resource type, so this rule
-            // counts nothing from it; the broad-type-matching-operator rule owns that concern.
+            // A broad operator (contains/like/match) names no concrete resource type, so there is
+            // nothing for this rule to count and it does not fire.
             results.Should().BeEmpty();
         }
     }
