@@ -10,7 +10,7 @@ The policy rule's `if` condition references more than one resource type, countin
 
 ## Suggestions
 
-- If the multiple types are intentional (for example, applying the same control to a family of related resources), no change is needed.
+- If the multiple types are intentional (for example, governing tags or locations across multiple resource types), no change is needed.
 - If a single resource type was intended, narrow the `if` to that type and group per-type policies together in an initiative.
 
 ### Correct (intentional multi-type)
@@ -24,7 +24,3 @@ The policy rule's `if` condition references more than one resource type, countin
   ]
 }
 ```
-
-## Related rules
-
-- [broad-type-matching-operator](broad-type-matching-operator.md) - flags a broad operator on the `type` field, another way a policy can target more resource types than intended.
