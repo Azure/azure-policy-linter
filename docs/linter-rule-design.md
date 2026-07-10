@@ -76,7 +76,7 @@ Open with the construct the rule is talking about, named with the policy's own v
 
 Examples and counter-examples:
 
-- "The condition uses the '{0}' operator with value '{1}' which contains no wildcards (* or ?). Use '{2}' for exact matching." - names the construct, explains why it matters for the policy, recommends a fix.
+- "The condition uses the '{0}' operator with value '{1}' which contains no wildcard (*). Use '{2}' for exact matching." - names the construct, explains why it matters for the policy, recommends a fix.
 - "The effect parameter '{0}' does not include 'Disabled' in its allowedValues. The 'Disabled' effect enables turning off the policy without removing the assignment as well as disabling a single policy within a policy set" - same shape, the consequence is framed for the author.
 - Don't write "The like operator is less efficient when no wildcards are present." The performance characteristic is true and not what the author needs to know; what they need to know is that they probably meant `equals`.
 - Don't write "The author probably forgot to declare the parameter." Don't speculate about the author's intent or assign blame. State what was found.
