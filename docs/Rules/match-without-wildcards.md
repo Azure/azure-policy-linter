@@ -1,4 +1,4 @@
-# match/matchInsensitively Without Wildcards
+# matchInsensitively/notMatchInsensitively Without Placeholders
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
@@ -6,7 +6,7 @@
 
 ## Description
 
-The `matchInsensitively` or `notMatchInsensitively` operator is used with a value that contains no wildcards (`#` for a digit, `?` for a letter, or `.` for any character). Without wildcards, these operators behave identically to `equals`/`notEquals` (both are case-insensitive), which suggests the author intended to use pattern matching but the value contains no patterns. Use `equals`/`notEquals` to clearly express exact-match intent.
+The [`matchInsensitively` or `notMatchInsensitively`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) operator is used with a value that contains no placeholders (`#` for a digit, `?` for a letter, or `.` for any character). Without placeholders, these operators behave identically to `equals`/`notEquals` (both are case-insensitive), which suggests the author intended to use pattern matching but the value contains no patterns. Use `equals`/`notEquals` to clearly express exact-match intent.
 
 ## Suggestions
 
