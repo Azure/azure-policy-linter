@@ -96,8 +96,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             Lint(nonResolvedReference).Should().BeEmpty();
         }
 
-
-
         [Fact]
         public void RuleTests_FieldAliasUnavailableInOldApiVersions()
         {
