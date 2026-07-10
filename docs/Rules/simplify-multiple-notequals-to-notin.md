@@ -10,7 +10,7 @@ An `allOf` contains multiple [`notEquals`](https://learn.microsoft.com/azure/gov
 
 ## Suggestions
 
-Replace only the grouped `notEquals` conditions with a single condition using the `notIn` operator and an array of values. Leave any other members of the `allOf` in place.
+Replace the grouped `notEquals` conditions with a single condition using the `notIn` operator and an array of values. Leave any other members of the `allOf` in place.
 
 ### Violation
 

@@ -10,7 +10,7 @@ An `anyOf` contains multiple [`equals`](https://learn.microsoft.com/azure/govern
 
 ## Suggestions
 
-Replace only the grouped `equals` conditions with a single condition using the `in` operator and an array of values. Leave any other members of the `anyOf` in place.
+Replace the grouped `equals` conditions with a single condition using the `in` operator and an array of values. Leave any other members of the `anyOf` in place.
 
 ### Violation
 
