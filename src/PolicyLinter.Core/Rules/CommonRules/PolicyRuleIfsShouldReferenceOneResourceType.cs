@@ -118,6 +118,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return resourceTypes;
             }
 
+            // A parameterized operand (e.g. "[parameters('types')]") is not a resource type literal,
+            // so there is nothing to extract.
+            if (!leafOperator.HasLiteralValue)
+            {
+                return resourceTypes;
+            }
+
             var stringsToExtractFrom = new List<string>();
             // We need to handle "not" conditions, should check that the path has an even number or 0 "nots"
             var notCount = leaf.PathSegments.Aggregate(0, (acc, segment) =>
