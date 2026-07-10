@@ -39,17 +39,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             {
                 if (expression.ResourcePropertyMetadata.Any())
                 {
-                    var readonlyApiVersions = expression.ResourcePropertyMetadata
+                    var optionalApiVersions = expression.ResourcePropertyMetadata
                         .Where(metadata => metadata.Exists && !metadata.IsRequired && !metadata.IsConditional && !metadata.IsReadonly)
                         .SelectMany(metadata => metadata.ApiVersions)
                         .Distinct()
                         .OrderBy(v => v, comparer: SuffixAwareApiVersionComparer.Instance)
                         .ToArray();
 
-                    if (readonlyApiVersions.Length != 0)
+                    if (optionalApiVersions.Length != 0)
                     {
                         var resourceType = expression.ResourcePropertyMetadata.First().ResourceType;
-                        var apiVersionsFormatted = string.Join(", ", readonlyApiVersions);
+                        var apiVersionsFormatted = string.Join(", ", optionalApiVersions);
                         return new[] { this.CreateInformational(expression, expression.Identifier, resourceType, apiVersionsFormatted) };
                     }
                 }
