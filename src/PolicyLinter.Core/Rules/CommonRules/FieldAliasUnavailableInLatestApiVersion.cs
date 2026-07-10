@@ -13,7 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
 
     /// <summary>
-    /// Detects field aliases referring to properties that do not exist in the latest API version of the resource type.
+    /// Detects field aliases referring to properties that exist in one or more older API versions but do not exist in the latest API version of the resource type.
     /// </summary>
     public sealed class FieldAliasUnavailableInLatestApiVersion : LinterRule<Reference>
     {

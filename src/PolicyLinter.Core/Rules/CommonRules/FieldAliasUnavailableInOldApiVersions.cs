@@ -13,7 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
 
     /// <summary>
-    /// Detects field aliases that map to properties missing in one or more old API versions of the resource type.
+    /// Detects field aliases that map to properties that exist in the latest API version but are missing in one or more older API versions of the resource type.
     /// </summary>
     public sealed class FieldAliasUnavailableInOldApiVersions : LinterRule<Reference>
     {
