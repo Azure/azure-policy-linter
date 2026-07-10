@@ -64,7 +64,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 2 notEquals conditions on field 'type' that can be simplified to a single 'notIn' condition.");
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -231,7 +231,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 3 notEquals conditions on field 'type' that can be simplified to a single 'notIn' condition.");
+                Description: "The 'allOf' contains 3 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -290,7 +290,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 2 notEquals conditions on field 'type' that can be simplified to a single 'notIn' condition.");
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
 
             var locationFinding = new LinterOutput(
                 RuleIdentifier: "simplify-multiple-notequals-to-notin",
@@ -300,7 +300,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 16,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[2]",
-                Description: "The allOf contains 2 notEquals conditions on field 'location' that can be simplified to a single 'notIn' condition.");
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'location' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(typeFinding);
             results.Should().ContainEquivalentOf(locationFinding);
@@ -469,7 +469,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 2 notEquals conditions on field 'type' that can be simplified to a single 'notIn' condition.");
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -520,7 +520,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 2 notEquals conditions on field 'Type' that can be simplified to a single 'notIn' condition.");
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'Type' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }

@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Simplify Multiple Equals to In";
 
         private const string RuleDescription =
-            "The anyOf contains {0} equals conditions on field '{1}' that can be simplified to a single 'in' condition.";
+            "The 'anyOf' contains {0} 'equals' conditions on field '{1}' that can be simplified to a single 'in' condition.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimplifyMultipleEqualsToIn"/> class.

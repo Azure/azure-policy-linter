@@ -64,7 +64,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[0]",
-                Description: "The anyOf contains 2 equals conditions on field 'type' that can be simplified to a single 'in' condition.");
+                Description: "The 'anyOf' contains 2 'equals' conditions on field 'type' that can be simplified to a single 'in' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -231,7 +231,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[0]",
-                Description: "The anyOf contains 3 equals conditions on field 'type' that can be simplified to a single 'in' condition.");
+                Description: "The 'anyOf' contains 3 'equals' conditions on field 'type' that can be simplified to a single 'in' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -290,7 +290,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[0]",
-                Description: "The anyOf contains 2 equals conditions on field 'type' that can be simplified to a single 'in' condition.");
+                Description: "The 'anyOf' contains 2 'equals' conditions on field 'type' that can be simplified to a single 'in' condition.");
 
             var locationFinding = new LinterOutput(
                 RuleIdentifier: "simplify-multiple-equals-to-in",
@@ -300,7 +300,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 16,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[2]",
-                Description: "The anyOf contains 2 equals conditions on field 'location' that can be simplified to a single 'in' condition.");
+                Description: "The 'anyOf' contains 2 'equals' conditions on field 'location' that can be simplified to a single 'in' condition.");
 
             results.Should().ContainEquivalentOf(typeFinding);
             results.Should().ContainEquivalentOf(locationFinding);
@@ -477,7 +477,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.anyOf[0]",
-                Description: "The anyOf contains 2 equals conditions on field 'Type' that can be simplified to a single 'in' condition.");
+                Description: "The 'anyOf' contains 2 'equals' conditions on field 'Type' that can be simplified to a single 'in' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }

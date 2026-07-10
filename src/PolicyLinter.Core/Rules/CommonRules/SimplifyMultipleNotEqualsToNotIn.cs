@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Simplify Multiple NotEquals to NotIn";
 
         private const string RuleDescription =
-            "The allOf contains {0} notEquals conditions on field '{1}' that can be simplified to a single 'notIn' condition.";
+            "The 'allOf' contains {0} 'notEquals' conditions on field '{1}' that can be simplified to a single 'notIn' condition.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimplifyMultipleNotEqualsToNotIn"/> class.

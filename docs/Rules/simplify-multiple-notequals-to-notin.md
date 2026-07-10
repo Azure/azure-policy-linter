@@ -24,13 +24,11 @@ Replace the grouped `notEquals` conditions with a single condition using the `no
 ### Correct
 
 ```json
-"allOf": [
-  {
-    "field": "type",
-    "notIn": [
-      "Microsoft.Compute/virtualMachines",
-      "Microsoft.Storage/storageAccounts"
-    ]
-  }
-]
+{
+  "field": "type",
+  "notIn": [
+    "Microsoft.Compute/virtualMachines",
+    "Microsoft.Storage/storageAccounts"
+  ]
+}
 ```
