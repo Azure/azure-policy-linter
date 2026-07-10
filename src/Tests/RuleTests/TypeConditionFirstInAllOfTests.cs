@@ -97,8 +97,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "type-condition-first-in-allof",
-                Title: "Type condition should be first in allOf",
-                Severity: Severity.Warning,
+                Title: "Type Condition First in allOf",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 12,
                 LinePosition: 27,
@@ -152,8 +152,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "type-condition-first-in-allof",
-                Title: "Type condition should be first in allOf",
-                Severity: Severity.Warning,
+                Title: "Type Condition First in allOf",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 16,
                 LinePosition: 27,
@@ -300,6 +300,206 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                           {
                             ""field"": ""location"",
                             ""equals"": ""eastus""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_TypeConditionFirstInAllOf_CaseInsensitiveFieldFires()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new TypeConditionFirstInAllOf()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""location"",
+                            ""equals"": ""eastus""
+                          },
+                          {
+                            ""field"": ""Type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "type-condition-first-in-allof",
+                Title: "Type Condition First in allOf",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 12,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[1]",
+                Description: "The type condition at index 1 should be moved to the first position in the allOf for readability, so that readers immediately see which resource type the policy targets.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_TypeConditionFirstInAllOf_InOperatorFires()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new TypeConditionFirstInAllOf()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""location"",
+                            ""equals"": ""eastus""
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""in"": [ ""Microsoft.Compute/virtualMachines"", ""Microsoft.Storage/storageAccounts"" ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "type-condition-first-in-allof",
+                Title: "Type Condition First in allOf",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 12,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[1]",
+                Description: "The type condition at index 1 should be moved to the first position in the allOf for readability, so that readers immediately see which resource type the policy targets.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_TypeConditionFirstInAllOf_MultipleTypeConditionsFireOnFirst()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new TypeConditionFirstInAllOf()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""location"",
+                            ""equals"": ""eastus""
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Storage/storageAccounts""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "type-condition-first-in-allof",
+                Title: "Type Condition First in allOf",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 12,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[1]",
+                Description: "The type condition at index 1 should be moved to the first position in the allOf for readability, so that readers immediately see which resource type the policy targets.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_TypeConditionFirstInAllOf_NestedAllOfNotFlagged()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new TypeConditionFirstInAllOf()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""location"",
+                            ""equals"": ""eastus""
+                          },
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""type"",
+                                ""equals"": ""Microsoft.Compute/virtualMachines""
+                              }
+                            ]
                           }
                         ]
                       },
