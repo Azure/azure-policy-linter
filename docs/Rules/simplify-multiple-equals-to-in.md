@@ -24,13 +24,11 @@ Replace the grouped `equals` conditions with a single condition using the `in` o
 ### Correct
 
 ```json
-"anyOf": [
-  {
-    "field": "type",
-    "in": [
-      "Microsoft.Compute/virtualMachines",
-      "Microsoft.Storage/storageAccounts"
-    ]
-  }
-]
+{
+  "field": "type",
+  "in": [
+    "Microsoft.Compute/virtualMachines",
+    "Microsoft.Storage/storageAccounts"
+  ]
+}
 ```
