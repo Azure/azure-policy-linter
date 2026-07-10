@@ -38,15 +38,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(Quantifier expression, LinterContext context)
         {
             // Only fire when the parent quantifier has more than one child, so that flattening the
-            // nested quantifier merges its children into existing siblings. A parent whose single
-            // child is a same-type quantifier is a redundant wrapper, reported by the
-            // unnecessary-quantifier-wrapper rule instead. This guard also keeps a chain of
-            // single-child quantifiers (allOf > allOf > allOf) from firing at every level.
+            // nested quantifier merges its children into existing siblings.
             if (expression.AllOf != null && expression.AllOf.Value.Length >= 2)
             {
                 return this.FindNestedQuantifiers(
                     children: expression.AllOf.Value,
-                    isSameType: nested => nested.AllOf != null,
+                    isSameType: nested => nested.AllOf != null && nested.AllOf.Value.Length >= 2,
                     quantifierName: "allOf");
             }
 
@@ -54,7 +51,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             {
                 return this.FindNestedQuantifiers(
                     children: expression.AnyOf.Value,
-                    isSameType: nested => nested.AnyOf != null,
+                    isSameType: nested => nested.AnyOf != null && nested.AnyOf.Value.Length >= 2,
                     quantifierName: "anyOf");
             }
 

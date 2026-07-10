@@ -44,8 +44,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""location"",
                                 ""equals"": ""eastus""
-                              }
-                            ]
+                               },
+                               {
+                                 ""field"": ""tags.env"",
+                                 ""equals"": ""prod""
+                               }
+                             ]
                           }
                         ]
                       },
@@ -99,6 +103,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""location"",
                                 ""equals"": ""eastus""
+                              },
+                              {
+                                ""field"": ""tags.env"",
+                                ""equals"": ""prod""
                               }
                             ]
                           }
@@ -236,6 +244,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""type"",
                                 ""equals"": ""Microsoft.Compute/virtualMachines""
+                              },
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""eastus""
                               }
                             ]
                           },
@@ -248,6 +260,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""tags.env"",
                                 ""equals"": ""prod""
+                              },
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""westus""
                               }
                             ]
                           }
@@ -279,7 +295,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Nested Same-Type Quantifiers Should Be Flattened",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
-                LineNumber: 21,
+                LineNumber: 25,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.allOf[2].allOf",
                 Description: "This 'allOf' quantifier is nested inside a parent 'allOf' and can be flattened into it.");
@@ -343,6 +359,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""type"",
                                 ""equals"": ""Microsoft.Compute/virtualMachines""
+                              },
+                              {
+                                ""field"": ""tags.env"",
+                                ""equals"": ""prod""
                               }
                             ]
                           },
@@ -584,6 +604,63 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_MultiChildParentWithSingleChildNested_OnlyWrapperReported()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new NestedSameTypeQuantifiersShouldBeFlattened(),
+                    new UnnecessaryQuantifierWrapper()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""eastus""
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().OnlyContain(output => output.RuleIdentifier == "unnecessary-quantifier-wrapper");
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unnecessary-quantifier-wrapper",
+                Title: "Unnecessary Quantifier Wrapper",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 13,
+                LinePosition: 38,
+                Path: "properties.policyRule.if.allOf[1].allOf",
+                Description: "The 'allOf' contains a single expression and can be removed. Use the inner expression directly.");
+
+            results.Should().ContainEquivalentOf(output);
         }
     }
 }
