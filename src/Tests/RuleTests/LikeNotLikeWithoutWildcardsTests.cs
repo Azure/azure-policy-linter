@@ -55,7 +55,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 67,
                 Path: "properties.policyRule.if.like",
-                Description: "The condition uses the 'like' operator with value 'Microsoft.Compute/virtualMachines' which contains no wildcards (* or ?). Use 'equals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'like' operator with value 'Microsoft.Compute/virtualMachines' which contains no wildcard (*). Without a wildcard it behaves identically to 'equals'; use 'equals' to express exact-match intent.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -97,16 +97,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 70,
                 Path: "properties.policyRule.if.notLike",
-                Description: "The condition uses the 'notLike' operator with value 'Microsoft.Compute/virtualMachines' which contains no wildcards (* or ?). Use 'notEquals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'notLike' operator with value 'Microsoft.Compute/virtualMachines' which contains no wildcard (*). Without a wildcard it behaves identically to 'notEquals'; use 'notEquals' to express exact-match intent.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Theory]
         [InlineData("like", "Microsoft.Compute/*")]
-        [InlineData("like", "Microsoft.Compute/virtual?achines")]
         [InlineData("notLike", "Microsoft.*/storageAccounts")]
-        [InlineData("notLike", "Microsoft.Compute/virtual?achines")]
         public void RuleTests_LikeNotLikeWithoutWildcards_WithWildcards_NoViolation(string operatorName, string operandValue)
         {
             var linter = new PolicyLinter(
@@ -134,6 +132,43 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().BeEmpty();
+        }
+
+        [Theory]
+        [InlineData("like", "Microsoft.Compute/virtual?achines", "like", "equals")]
+        [InlineData("notLike", "Microsoft.Compute/virtual?achines", "notLike", "notEquals")]
+        [InlineData("like", "", "like", "equals")]
+        [InlineData("Like", "Microsoft.Compute/virtualMachines", "like", "equals")]
+        public void RuleTests_LikeNotLikeWithoutWildcards_NoWildcards_Violation(string operatorName, string operandValue, string expectedOperator, string replacement)
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new LikeNotLikeWithoutWildcards()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
+                    ""policyRule"": {{
+                      ""if"": {{
+                        ""field"": ""type"",
+                        ""{operatorName}"": ""{operandValue}""
+                      }},
+                      ""then"": {{
+                        ""effect"": ""deny""
+                      }}
+                    }}
+                  }}
+                }}";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results[0].RuleIdentifier.Should().Be("like-notlike-without-wildcards");
+            results[0].Description.Should().Be(
+                $"The condition uses the '{expectedOperator}' operator with value '{operandValue}' which contains no wildcard (*). Without a wildcard it behaves identically to '{replacement}'; use '{replacement}' to express exact-match intent.");
         }
 
         [Fact]
