@@ -63,7 +63,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                             return;
                         }
 
-                        foreach (var resourceType in ExtractResourceTypes(leaf))
+                        foreach (var resourceType in ExtractResourceTypes(leaf, leaf.Operator))
                         {
                             _ = referencedResourceTypes.Add(resourceType);
                         }
@@ -89,16 +89,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// (a single string for 'equals' or an array for 'in').
         /// </summary>
         /// <param name="leaf">The 'type' field condition to inspect.</param>
+        /// <param name="leafOperator">The condition's operator.</param>
         /// <returns>The resource types named by the condition.</returns>
-        private static List<string> ExtractResourceTypes(LeafCondition leaf)
+        private static List<string> ExtractResourceTypes(LeafCondition leaf, Property leafOperator)
         {
             var resourceTypes = new List<string>();
-            var leafOperator = leaf.Operator;
-            if (leafOperator == null)
-            {
-                return resourceTypes;
-            }
-
             var stringsToExtractFrom = new List<string>();
 
             // An odd number of enclosing 'not' quantifiers negates the condition (e.g. 'in'

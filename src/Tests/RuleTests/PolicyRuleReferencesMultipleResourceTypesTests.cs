@@ -204,6 +204,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         ""in"": [
                           ""Microsoft.Storage/storageAccounts"",
                           ""someInvalidValue"",
+                          """",
                           ""Microsoft.Compute/virtualMachines""
                         ]
                       },
@@ -216,7 +217,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            // Should still detect multiple resource types, ignoring invalid values.
+            // Should still detect multiple resource types, ignoring invalid and empty values.
             results.Should().HaveCount(1);
             results[0].RuleIdentifier.Should().Be("policy-rule-references-multiple-resource-types");
         }
