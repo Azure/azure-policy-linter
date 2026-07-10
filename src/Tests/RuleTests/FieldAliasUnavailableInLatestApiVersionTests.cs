@@ -18,8 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// </summary>
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
-        [Fact]
-        public void RuleTests_FieldAliasUnavailableInLatestApiVersion()
+        private static LinterOutput[] Lint(string policyDefinition)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -28,6 +27,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 },
                 metadata: TypeMetadata);
 
+            return linter.Lint(policyDefinition);
+        }
+
+        /// <summary>
+        /// An alias that is missing in the latest API version but present in older versions (deprecated) must fire.
+        /// </summary>
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInLatestApiVersion_DeprecatedInLatest_Fires()
+        {
             var policyDefinition = @"
                 {
                   ""properties"": {
@@ -57,7 +65,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = linter.Lint(policyDefinition);
+            var results = Lint(policyDefinition);
 
             results.Should().HaveCount(1);
 
@@ -69,9 +77,91 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 18,
                 LinePosition: 90,
                 Path: "properties.policyRule.if.allOf[1].field",
-                Description: "The field alias: 'Microsoft.DocumentDB/databaseAccounts/ipRangeFilter' is referring to a property that doesn't exist in the latest API version (2025-11-01-preview) of resource type: 'Microsoft.DocumentDB/databaseAccounts'. This most likely means that the referenced property is deprecated and the policy might not work as intended.");
+                Description: "The field alias: 'Microsoft.DocumentDB/databaseAccounts/ipRangeFilter' is referring to a property that doesn't exist in the latest API version (2025-11-01-preview) of resource type: 'Microsoft.DocumentDB/databaseAccounts'. The policy might not work as intended.");
 
             results.Should().ContainEquivalentOf(output);
         }
+
+        /// <summary>
+        /// An alias that exists in the latest API version but is missing in an older version (the old-versions rule's
+        /// case) must not fire this rule.
+        /// </summary>
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInLatestApiVersion_PresentInLatestMissingInOld_DoesNotFire()
+        {
+            var results = Lint(SingleFieldPolicy(alias: "Microsoft.Storage/storageAccounts/networkAcls.defaultAction"));
+
+            results.Should().BeEmpty();
+        }
+
+        /// <summary>
+        /// An alias that exists in every API version must not fire.
+        /// </summary>
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInLatestApiVersion_PresentInAllVersions_DoesNotFire()
+        {
+            var results = Lint(SingleFieldPolicy(alias: "Microsoft.DocumentDB/databaseAccounts/databaseAccountOfferType"));
+
+            results.Should().BeEmpty();
+        }
+
+        /// <summary>
+        /// An alias that is missing in every API version is owned by a dedicated rule and must not fire this one.
+        /// </summary>
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInLatestApiVersion_MissingInAllVersions_DoesNotFire()
+        {
+            var results = Lint(SingleFieldPolicy(alias: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings/default.resource.autopilotSettings.autoUpgradePolicy"));
+
+            results.Should().BeEmpty();
+        }
+
+        /// <summary>
+        /// A field name that is not a resolved alias (a non-alias field or a non-resolved field reference) must not fire.
+        /// </summary>
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInLatestApiVersion_NonAliasAndNonResolvedReference_DoNotFire()
+        {
+            Lint(SingleFieldPolicy(alias: "type")).Should().BeEmpty();
+
+            var nonResolvedReference = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""fieldName"": {
+                        ""type"": ""String""
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""value"": ""[field(parameters('fieldName'))]"",
+                        ""equals"": ""Allow""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            Lint(nonResolvedReference).Should().BeEmpty();
+        }
+
+        private static string SingleFieldPolicy(string alias) => @"
+            {
+              ""properties"": {
+                ""mode"": ""Indexed"",
+                ""policyRule"": {
+                  ""if"": {
+                    ""field"": """ + alias + @""",
+                    ""equals"": ""Allow""
+                  },
+                  ""then"": {
+                    ""effect"": ""deny""
+                  }
+                }
+              }
+            }";
     }
 }
