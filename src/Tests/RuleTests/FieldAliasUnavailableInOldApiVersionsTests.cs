@@ -37,7 +37,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInOldApiVersions_DeprecatedInLatest_DoesNotFire()
         {
-            var results = Lint(PolicyTemplates.SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/ipRangeFilter"));
+            var results = Lint(SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/ipRangeFilter"));
 
             results.Should().BeEmpty();
         }
@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInOldApiVersions_PresentInAllVersions_DoesNotFire()
         {
-            var results = Lint(PolicyTemplates.SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/databaseAccountOfferType"));
+            var results = Lint(SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/databaseAccountOfferType"));
 
             results.Should().BeEmpty();
         }
@@ -59,7 +59,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInOldApiVersions_MissingInAllVersions_DoesNotFire()
         {
-            var results = Lint(PolicyTemplates.SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings/default.resource.autopilotSettings.autoUpgradePolicy"));
+            var results = Lint(SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings/default.resource.autopilotSettings.autoUpgradePolicy"));
 
             results.Should().BeEmpty();
         }
@@ -70,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInOldApiVersions_NonAliasAndNonResolvedReference_DoNotFire()
         {
-            Lint(PolicyTemplates.SingleFieldPolicy(field: "type")).Should().BeEmpty();
+            Lint(SingleFieldPolicy(field: "type")).Should().BeEmpty();
 
             var nonResolvedReference = @"
                 {
@@ -212,5 +212,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().ContainEquivalentOf(output);
         }
+
+        private static string SingleFieldPolicy(string field) => @"
+            {
+              ""properties"": {
+                ""mode"": ""Indexed"",
+                ""policyRule"": {
+                  ""if"": {
+                    ""field"": """ + field + @""",
+                    ""equals"": ""Allow""
+                  },
+                  ""then"": {
+                    ""effect"": ""deny""
+                  }
+                }
+              }
+            }";
     }
 }

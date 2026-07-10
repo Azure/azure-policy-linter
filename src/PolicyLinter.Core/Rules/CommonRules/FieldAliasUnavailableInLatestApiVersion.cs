@@ -45,8 +45,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                             comparer: SuffixAwareApiVersionComparer.Instance);
 
                     // Only the "deprecated" state belongs to this rule: the property is missing in the latest API
-                    // version but exists in at least one API version. The "missing in all versions" state is covered
-                    // by a dedicated rule.
+                    // version but exists in at least one API version. The "missing in all versions" state should be
+                    // covered by a dedicated rule.
                     if (latestApiVersionMetadata != null
                         && !latestApiVersionMetadata.Exists
                         && expression.ResourcePropertyMetadata.Any(metadata => metadata.Exists))

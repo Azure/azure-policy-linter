@@ -89,7 +89,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInLatestApiVersion_PresentInLatestMissingInOld_DoesNotFire()
         {
-            var results = Lint(PolicyTemplates.SingleFieldPolicy(field: "Microsoft.Storage/storageAccounts/networkAcls.defaultAction"));
+            var results = Lint(SingleFieldPolicy(field: "Microsoft.Storage/storageAccounts/networkAcls.defaultAction"));
 
             results.Should().BeEmpty();
         }
@@ -100,7 +100,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInLatestApiVersion_PresentInAllVersions_DoesNotFire()
         {
-            var results = Lint(PolicyTemplates.SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/databaseAccountOfferType"));
+            var results = Lint(SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/databaseAccountOfferType"));
 
             results.Should().BeEmpty();
         }
@@ -111,7 +111,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInLatestApiVersion_MissingInAllVersions_DoesNotFire()
         {
-            var results = Lint(PolicyTemplates.SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings/default.resource.autopilotSettings.autoUpgradePolicy"));
+            var results = Lint(SingleFieldPolicy(field: "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/throughputSettings/default.resource.autopilotSettings.autoUpgradePolicy"));
 
             results.Should().BeEmpty();
         }
@@ -122,7 +122,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_FieldAliasUnavailableInLatestApiVersion_NonAliasAndNonResolvedReference_DoNotFire()
         {
-            Lint(PolicyTemplates.SingleFieldPolicy(field: "type")).Should().BeEmpty();
+            Lint(SingleFieldPolicy(field: "type")).Should().BeEmpty();
 
             var nonResolvedReference = @"
                 {
@@ -147,6 +147,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             Lint(nonResolvedReference).Should().BeEmpty();
         }
+
+        private static string SingleFieldPolicy(string field) => @"
+            {
+              ""properties"": {
+                ""mode"": ""Indexed"",
+                ""policyRule"": {
+                  ""if"": {
+                    ""field"": """ + field + @""",
+                    ""equals"": ""Allow""
+                  },
+                  ""then"": {
+                    ""effect"": ""deny""
+                  }
+                }
+              }
+            }";
 
     }
 }
