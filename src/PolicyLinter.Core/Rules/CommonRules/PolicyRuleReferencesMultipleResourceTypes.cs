@@ -5,26 +5,31 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Detects policies whose if condition references multiple resource types.
+    /// Detects policies whose if condition references more than one resource type,
+    /// combining the resource types named in 'type' field conditions with those
+    /// resolved from field aliases.
     /// </summary>
-    public sealed class PolicyRuleIfsShouldReferenceOneResourceType : LinterRule<IfCondition>
+    public sealed class PolicyRuleReferencesMultipleResourceTypes : LinterRule<IfCondition>
     {
+        private const string RuleDescription =
+            "The policy rule references multiple resource types: {0}. Targeting several related types is a valid pattern; if this is unintended, target a single type and group policies with an initiative.";
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="PolicyRuleIfsShouldReferenceOneResourceType"/> class.
+        /// Initializes a new instance of the <see cref="PolicyRuleReferencesMultipleResourceTypes"/> class.
         /// </summary>
-        public PolicyRuleIfsShouldReferenceOneResourceType() : base(
-            identifier: "policy-rule-should-contain-one-resource-type",
+        public PolicyRuleReferencesMultipleResourceTypes() : base(
+            identifier: "policy-rule-references-multiple-resource-types",
             category: Category.BestPractices,
-            title: "Policies should reference one resource type",
-            descriptionFormat: "{0}",
+            title: "Policy Rule References Multiple Resource Types",
+            descriptionFormat: PolicyRuleReferencesMultipleResourceTypes.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -33,14 +38,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
             var referencedResourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            var usedWildCardOperator = false;
 
-            // Create a visitor to traverse the expression tree and check how many resource types
             var visitor = new PolicyExpressionVisitor
             {
                 Visit = (expression) =>
                 {
-                    // Look for expressions of type reference
+                    // Resource types resolved from field aliases (e.g. [field('...')]).
                     if (expression is Reference reference && reference.IsResolvedFieldReference())
                     {
                         referencedResourceTypes.UnionWith(
@@ -50,6 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                         return;
                     }
 
+                    // Resource types named explicitly in a 'type' field condition.
                     if (expression is LeafCondition leaf && leaf.Field?.FieldAccessorReference != null)
                     {
                         var fieldName = leaf.Field.FieldAccessorReference.Identifier;
@@ -59,14 +63,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                             return;
                         }
 
-                        // Check for wildcard operators
-                        if (CheckWildCardOperator(leaf.Operator) && !usedWildCardOperator)
-                        {
-                            usedWildCardOperator = true;
-                        }
-
-                        var resourceTypes = ExtractResourceTypes(leaf);
-                        foreach (var resourceType in resourceTypes)
+                        foreach (var resourceType in ExtractResourceTypes(leaf, leaf.Operator))
                         {
                             _ = referencedResourceTypes.Add(resourceType);
                         }
@@ -74,63 +71,50 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 }
             };
 
-            // Visit all expressions in the policy definition
             expression.Visit(visitor);
 
-            var warnings = new List<LinterOutput>();
-            if (referencedResourceTypes.Count > 1)
+            if (referencedResourceTypes.Count <= 1)
             {
-                warnings.Add(this.CreateWarning(expression, $"It is best practice for the policy rule to only reference one resource type, referenced resource types {string.Join(", ", referencedResourceTypes)}."));
+                return Array.Empty<LinterOutput>();
             }
 
-            if (usedWildCardOperator)
+            return new[]
             {
-                warnings.Add(this.CreateWarning(expression, "The policy uses wildcard operators when checking resource types, which may lead to unintended matches."));
-            }
-
-            return warnings.ToArray();
+                this.CreateInformational(expression, string.Join(", ", referencedResourceTypes)),
+            };
         }
 
         /// <summary>
-        /// Check for wildcard operator and return a warning if found.
+        /// Extracts resource types from a 'type' leaf condition's operator value
+        /// (a single string for 'equals' or an array for 'in').
         /// </summary>
-        /// <param name="leafOperator"></param>
-        /// <returns></returns>
-        private static bool CheckWildCardOperator(Property leafOperator)
-        {
-            return string.Equals(leafOperator.Name, "contains", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(leafOperator.Name, "like", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(leafOperator.Name, "match", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(leafOperator.Name, "matchInsensitively", StringComparison.OrdinalIgnoreCase);
-        }
-
-        /// <summary>
-        /// Extracts resource types from an operator value (can be string or array).
-        /// </summary>
-        /// <param name="leaf">The operator (could be string or array)</param>
-        /// <returns>A list of extracted resource types</returns>
-        private static List<string> ExtractResourceTypes(LeafCondition leaf)
+        /// <param name="leaf">The 'type' field condition to inspect.</param>
+        /// <param name="leafOperator">The condition's operator.</param>
+        /// <returns>The resource types named by the condition.</returns>
+        private static List<string> ExtractResourceTypes(LeafCondition leaf, Property leafOperator)
         {
             var resourceTypes = new List<string>();
-            var leafOperator = leaf.Operator;
-            if (leafOperator == null)
+
+            // A parameterized operand (e.g. "[parameters('types')]") is not a resource type literal,
+            // so there is nothing to extract.
+            if (!leafOperator.HasLiteralValue)
             {
                 return resourceTypes;
             }
 
             var stringsToExtractFrom = new List<string>();
-            // We need to handle "not" conditions, should check that the path has an even number or 0 "nots"
+
+            // An odd number of enclosing 'not' quantifiers negates the condition (e.g. 'in'
+            // acts like 'notIn'), so the listed types are excluded rather than targeted.
             var notCount = leaf.PathSegments.Aggregate(0, (acc, segment) =>
                 segment.Contains("not", StringComparison.OrdinalIgnoreCase) ? acc + 1 : acc);
-            // Handle array values (e.g., from "in" operator)
-            // Make sure were in an even number of nots, we're inside a not condition
+
             if (notCount % 2 == 0 && string.Equals(leafOperator.Name, "in", StringComparison.OrdinalIgnoreCase))
             {
                 var array = (JArray)leafOperator.Value;
                 foreach (var item in array)
                 {
-                    var stringValue = item.ToString();
-                    stringsToExtractFrom.Add(stringValue);
+                    stringsToExtractFrom.Add(item.ToString());
                 }
             }
             else if (string.Equals(leafOperator.Name, "equals", StringComparison.OrdinalIgnoreCase))
@@ -146,6 +130,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     resourceTypes.Add(extractedType);
                 }
             }
+
             return resourceTypes;
         }
 
@@ -153,8 +138,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// Extracts a resource type from a string value.
         /// Resource types are in the format "Microsoft.Provider/resourceType".
         /// </summary>
-        /// <param name="value">The string value to extract from</param>
-        /// <returns>The extracted resource type, or null if not a valid resource type format</returns>
+        /// <param name="value">The string value to extract from.</param>
+        /// <returns>The extracted resource type, or null if not a valid resource type format.</returns>
         private static string? ExtractResourceTypeFromString(string value)
         {
             if (string.IsNullOrEmpty(value))
@@ -162,15 +147,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return null;
             }
 
-            // Split by '/' to check if this looks like a resource type
             var segments = value.Split('/');
 
-            // Resource types are in the format "Microsoft.Provider/resourceType"
-            // So we need at least 2 segments
-            // And check if the first segment looks like a provider namespace (contains a dot)
+            // A resource type is "Microsoft.Provider/resourceType": at least two segments,
+            // the first being a provider namespace (contains a dot).
             if (segments.Length >= 2 && segments[0].Contains('.', StringComparison.OrdinalIgnoreCase))
             {
-                // Return the resource type (first two segments)
                 return $"{segments[0]}/{segments[1]}";
             }
 
