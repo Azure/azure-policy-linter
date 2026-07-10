@@ -796,5 +796,38 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             // A parameterized ""equals"" operand is not a literal resource type, so there is nothing to extract and no finding.
             results.Should().BeEmpty();
         }
+
+        [Fact]
+        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_BroadOperatorOnType_NamesNoConcreteType_ShouldNotFire()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new PolicyRuleReferencesMultipleResourceTypes()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""contains"": ""virtualMachines""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            // A broad operator (contains/like/match) names no concrete resource type, so this rule
+            // counts nothing from it; the broad-type-matching-operator rule owns that concern.
+            results.Should().BeEmpty();
+        }
     }
 }
