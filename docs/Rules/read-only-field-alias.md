@@ -3,7 +3,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------------|----------------------------------------|----------|----------|
-| ResourceFields | read-only-field-alias | Warning | — |
+| ResourceFields | read-only-field-alias | Warning | default |
 
 ## Description
 
