@@ -18,14 +18,181 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// </summary>
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
+        /// <summary>
+        /// Builds a policy definition whose effect is parameterized, with the given parameter default value.
+        /// </summary>
+        private static string ParameterizedEffectPolicy(string defaultValue) => @"  
+           {  
+             ""properties"": {  
+               ""mode"": ""Indexed"",  
+               ""parameters"": {  
+                 ""effect"": {  
+                   ""type"": ""String"",  
+                   ""defaultValue"": """ + defaultValue + @""",  
+                   ""allowedValues"": [  
+                     ""audit"",  
+                     ""deny"",  
+                     ""disabled""  
+                   ]  
+                 }  
+               },  
+               ""policyRule"": {  
+                 ""if"": {  
+                   ""field"": ""type"",  
+                   ""equals"": ""Microsoft.Storage/storageAccounts""  
+                 },  
+                 ""then"": {  
+                   ""effect"": ""[parameters('effect')]""  
+                 }  
+               }  
+             }  
+           }";
+
         [Fact]
-        public void RuleTests_RiskyEffectParameterDefaultValue_ParameterizedEffectWithRiskyDefault()
+        public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsDeny()
         {
             var linter = new PolicyLinter(
-                rules: new ILinterRule[]
-                {
-                   new RiskyEffectParameterDefaultValue()
-                },
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
+                metadata: TypeMetadata);
+
+            var results = linter.Lint(ParameterizedEffectPolicy(defaultValue: "deny"));
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "risky-effect-parameter-default-value",
+                Title: "Risky Effect Parameter Default Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 53,
+                Path: "properties.policyRule.then.effect",
+                Description: "The policy effect is parameterized, but the referenced parameter 'effect' defaults to an enforcement effect 'deny'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to 'audit'."
+            );
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsDeployIfNotExists()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
+                metadata: TypeMetadata);
+
+            var results = linter.Lint(ParameterizedEffectPolicy(defaultValue: "deployIfNotExists"));
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "risky-effect-parameter-default-value",
+                Title: "Risky Effect Parameter Default Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 53,
+                Path: "properties.policyRule.then.effect",
+                Description: "The policy effect is parameterized, but the referenced parameter 'effect' defaults to an enforcement effect 'deployIfNotExists'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to 'auditIfNotExists'."
+            );
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsDenyAction()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
+                metadata: TypeMetadata);
+
+            var results = linter.Lint(ParameterizedEffectPolicy(defaultValue: "denyAction"));
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "risky-effect-parameter-default-value",
+                Title: "Risky Effect Parameter Default Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 53,
+                Path: "properties.policyRule.then.effect",
+                Description: "The policy effect is parameterized, but the referenced parameter 'effect' defaults to an enforcement effect 'denyAction'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to 'auditAction'."
+            );
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsCaseInsensitive()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
+                metadata: TypeMetadata);
+
+            var results = linter.Lint(ParameterizedEffectPolicy(defaultValue: "Deny"));
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "risky-effect-parameter-default-value",
+                Title: "Risky Effect Parameter Default Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 53,
+                Path: "properties.policyRule.then.effect",
+                Description: "The policy effect is parameterized, but the referenced parameter 'effect' defaults to an enforcement effect 'Deny'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to 'audit'."
+            );
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_StaticParameterNameExpression()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
+                metadata: TypeMetadata);
+
+            var policyDefinition = ParameterizedEffectPolicy(defaultValue: "deny")
+                .Replace("[parameters('effect')]", "[parameters(concat('e', 'ffect'))]");
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "risky-effect-parameter-default-value",
+                Title: "Risky Effect Parameter Default Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 65,
+                Path: "properties.policyRule.then.effect",
+                Description: "The policy effect is parameterized, but the referenced parameter 'effect' defaults to an enforcement effect 'deny'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to 'audit'."
+            );
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_SafeDefault()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
+                metadata: TypeMetadata);
+
+            var results = linter.Lint(ParameterizedEffectPolicy(defaultValue: "audit"));
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_ParameterizedEffectWithNoDefault()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
                 metadata: TypeMetadata);
 
             var policyDefinition = @"  
@@ -35,7 +202,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                    ""parameters"": {  
                      ""effect"": {  
                        ""type"": ""String"",  
-                       ""defaultValue"": ""deny"",  
                        ""allowedValues"": [  
                          ""audit"",  
                          ""deny"",  
@@ -57,45 +223,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().HaveCount(1);
+            results.Should().BeEmpty();
+        }
 
-            var output = new LinterOutput(
-                RuleIdentifier: "risky-effect-parameter-default-value",
-                Title: "Risky Effect Parameter Default Value",
-                Severity: Severity.Warning,
-                Category: Category.BestPractices,
-                LineNumber: 22,
-                LinePosition: 57,
-                Path: "properties.policyRule.then.effect",
-                Description: "The policy effect is parameterized, but the default value of the reference parameter: 'effect' is: 'deny'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to: 'audit' and: 'audit,deny,disabled' as the parameter allowed values."
-            );
-
-            results.Should().ContainEquivalentOf(output);
-
-            // Now try to get fancy and have the parameter name as a static language expression. Should still work.
-            linter = new PolicyLinter(
-                rules: new ILinterRule[]
-                {
-                   new RiskyEffectParameterDefaultValue()
-                },
+        [Fact]
+        public void RuleTests_RiskyEffectParameterDefaultValue_HardCodedEffect()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new RiskyEffectParameterDefaultValue() },
                 metadata: TypeMetadata);
 
-            policyDefinition = policyDefinition.Replace("[parameters('effect')]", "[parameters(concat('e', 'ffect'))]");
-            results = linter.Lint(policyDefinition);
-            results.Should().HaveCount(1);
+            var policyDefinition = @"  
+               {  
+                 ""properties"": {  
+                   ""mode"": ""Indexed"",  
+                   ""policyRule"": {  
+                     ""if"": {  
+                       ""field"": ""type"",  
+                       ""equals"": ""Microsoft.Storage/storageAccounts""  
+                     },  
+                     ""then"": {  
+                       ""effect"": ""deny""  
+                     }  
+                   }  
+                 }  
+               }";
 
-            output = new LinterOutput(
-                RuleIdentifier: "risky-effect-parameter-default-value",
-                Title: "Risky Effect Parameter Default Value",
-                Severity: Severity.Warning,
-                Category: Category.BestPractices,
-                LineNumber: 22,
-                LinePosition: 69,
-                Path: "properties.policyRule.then.effect",
-                Description: "The policy effect is parameterized, but the default value of the reference parameter: 'effect' is: 'deny'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to: 'audit' and: 'audit,deny,disabled' as the parameter allowed values."
-            );
+            var results = linter.Lint(policyDefinition);
 
-            results.Should().ContainEquivalentOf(output);
+            results.Should().BeEmpty();
         }
     }
 }

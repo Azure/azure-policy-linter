@@ -17,17 +17,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class RiskyEffectParameterDefaultValue : LinterRule<ThenExpression>
     {
         private const string RuleTitle = "Risky Effect Parameter Default Value";
-        private const string RuleDescription = "The policy effect is parameterized, but the default value of the reference parameter: '{0}' is: '{1}'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to: '{2}' and: '{3}' as the parameter allowed values.";
+        private const string RuleDescription = "The policy effect is parameterized, but the referenced parameter '{0}' defaults to an enforcement effect '{1}'. This increases the risk of accidentally assigning the policy with an enforcement effect. Consider setting the parameter default value to '{2}'.";
 
         /// <summary>
-        /// The risky default effect parameter values.
+        /// The set of enforcement effects.
         /// </summary>
-        private static readonly OrdinalInsensitiveHashSet RiskyDefaultEffectParameters = new OrdinalInsensitiveHashSet()
+        private static readonly OrdinalInsensitiveHashSet EnforcementEffects = new OrdinalInsensitiveHashSet()
         {
             "deployIfNotExists",
             "append",
             "modify",
-            "deny"
+            "deny",
+            "denyAction"
         };
 
         /// <summary>
@@ -36,8 +37,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         public RiskyEffectParameterDefaultValue() : base(
             identifier: "risky-effect-parameter-default-value",
             category: Category.BestPractices,
-            title: RuleTitle,
-            descriptionFormat: RuleDescription,
+            title: RiskyEffectParameterDefaultValue.RuleTitle,
+            descriptionFormat: RiskyEffectParameterDefaultValue.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -45,22 +46,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(ThenExpression expression, LinterContext context)
         {
-            if (expression.Effect.HasSimpleParameterizedValue(context: context, out var parameterName, out var _, out var defaultValue) &&
-                defaultValue != null &&
-                RiskyDefaultEffectParameters.Contains(defaultValue))
+            if (!expression.Effect.HasSimpleParameterizedValue(context: context, out var parameterName, out var _, out var defaultValue))
             {
-                var auditCounterpart = defaultValue.EqualsOrdinalInsensitively("deployIfNotExists") ? "auditIfNotExists" : "audit";
-                var suggestedParameterValues = new[]
-                {
-                    auditCounterpart,
-                    defaultValue,
-                    "disabled"
-                };
-
-                return new[] { this.CreateWarning(expression.Effect, parameterName, defaultValue, auditCounterpart, string.Join(',', suggestedParameterValues)) };
+                return Array.Empty<LinterOutput>();
             }
 
-            return Array.Empty<LinterOutput>();
+            if (defaultValue == null || !RiskyEffectParameterDefaultValue.EnforcementEffects.Contains(defaultValue))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            var safeDefault =
+                defaultValue.EqualsOrdinalInsensitively("deployIfNotExists") ? "auditIfNotExists" :
+                defaultValue.EqualsOrdinalInsensitively("denyAction") ? "auditAction" :
+                "audit";
+
+            return new[] { this.CreateWarning(expression.Effect, parameterName, defaultValue, safeDefault) };
         }
     }
 }
