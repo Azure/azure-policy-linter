@@ -44,7 +44,7 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    policylinter --list-rule-sets
    ```
 
-5. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedEnforcementPolicyEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
+5. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedPolicyEnforcementEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
 
    ```powershell
    @"

@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | hard-coded-policy-enforcement-effect | Warning | — |
+| BestPractices | hard-coded-policy-enforcement-effect | Warning | - |
 
 ## Description
 
@@ -11,7 +11,7 @@ The policy definition hard-codes an enforcement effect (`deployIfNotExists`, `ap
 - The policy definition can be reused both for enforcement (e.g. when the effect parameter is set to `deny`) and for compliance (the effect parameter set to `audit`) scenarios.
 - It makes it easier to assign the policy with an audit effect first, observe the compliance data and then gradually transition it to the enforcement effect.
 
-Hard-coded non-enforcement effects (`audit`, `auditIfNotExists`, `disabled`) are deliberately not flagged.
+Hard-coded non-enforcement effects (`audit`, `auditAction`, `auditIfNotExists`, `disabled`) are deliberately not flagged.
 
 See [Azure Policy definitions effect basics](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics) for the list of effects.
 

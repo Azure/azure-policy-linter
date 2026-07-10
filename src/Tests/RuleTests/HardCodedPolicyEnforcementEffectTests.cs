@@ -9,9 +9,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="HardCodedEnforcementPolicyEffect"/> rule.
+    /// Tests for the <see cref="HardCodedPolicyEnforcementEffect"/> rule.
     /// </summary>
-    public class HardCodedEnforcementPolicyEffectTests
+    public class HardCodedPolicyEnforcementEffectTests
     {
         /// <summary>
         /// The type metadata used for the tests.
@@ -25,12 +25,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("deployIfNotExists", "auditIfNotExists", "auditIfNotExists,deployIfNotExists,disabled", 53)]
         [InlineData("denyAction", "auditAction", "auditAction,denyAction,disabled", 46)]
         [InlineData("DENY", "audit", "audit,DENY,disabled", 40)]
-        public void RuleTests_HardCodedEnforcementPolicyEffect_EnforcementEffect(string effect, string defaultValue, string allowedValues, int linePosition)
+        public void RuleTests_HardCodedPolicyEnforcementEffect_EnforcementEffect(string effect, string defaultValue, string allowedValues, int linePosition)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new HardCodedEnforcementPolicyEffect()
+                    new HardCodedPolicyEnforcementEffect()
                 },
                 metadata: TypeMetadata);
 
@@ -83,12 +83,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("audit")]
         [InlineData("[parameters('whatever')]")]
-        public void RuleTests_HardCodedEnforcementPolicyEffect_ShouldNotBeTriggered(string effectValue)
+        public void RuleTests_HardCodedPolicyEnforcementEffect_ShouldNotBeTriggered(string effectValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new HardCodedEnforcementPolicyEffect()
+                    new HardCodedPolicyEnforcementEffect()
                 },
                 metadata: TypeMetadata);
 

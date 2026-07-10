@@ -15,7 +15,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Detects policies with hard-coded enforcement effects that should be parameterized.
     /// </summary>
-    public sealed class HardCodedEnforcementPolicyEffect : LinterRule<ThenExpression>
+    public sealed class HardCodedPolicyEnforcementEffect : LinterRule<ThenExpression>
     {
         private const string RuleTitle = "Hard-Coded Policy Enforcement Effect";
         private const string RuleDescription = "The policy definition has a hard-coded enforcement effect: '{0}'. Consider adding an \"effect\" policy definition parameter with default value: '{1}' and allowed values: '{2}' and replace the hard-coded effect with \"[parameters('effect')]\".";
@@ -33,9 +33,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HardCodedEnforcementPolicyEffect"/> class.
+        /// Initializes a new instance of the <see cref="HardCodedPolicyEnforcementEffect"/> class.
         /// </summary>
-        public HardCodedEnforcementPolicyEffect() : base(
+        public HardCodedPolicyEnforcementEffect() : base(
             identifier: "hard-coded-policy-enforcement-effect",
             category: Category.BestPractices,
             title: RuleTitle,
