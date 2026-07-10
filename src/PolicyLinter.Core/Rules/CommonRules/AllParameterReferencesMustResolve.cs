@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            // A missing parameters block is treated as an empty parameter set: the reference still cannot resolve.
+            // Resolved if declared. A missing parameters block (null) counts as empty, so the reference stays unresolved.
             if (context.Parameters?.ContainsKey(key: expression.Identifier) == true)
             {
                 return Array.Empty<LinterOutput>();
