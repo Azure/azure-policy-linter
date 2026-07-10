@@ -51,6 +51,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                         && !latestApiVersionMetadata.Exists
                         && expression.ResourcePropertyMetadata.Any(metadata => metadata.Exists))
                     {
+                        // A metadata group always carries at least one API version, so Max is never null here.
                         var latestApiVersion = latestApiVersionMetadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance);
                         var resourceType = latestApiVersionMetadata.ResourceType;
                         return new[] { this.CreateError(expression, expression.Identifier, latestApiVersion!, resourceType) };
