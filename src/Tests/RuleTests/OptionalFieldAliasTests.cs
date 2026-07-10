@@ -74,7 +74,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_OptionalFieldAlias_RequiredProperty_IsSilent()
+        public void RuleTests_OptionalFieldAlias_RequiredProperty_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -113,7 +113,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_OptionalFieldAlias_ReadOnlyProperty_IsSilent()
+        public void RuleTests_OptionalFieldAlias_ReadOnlyProperty_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -154,7 +154,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_OptionalFieldAlias_UnresolvedReference_IsSilent()
+        public void RuleTests_OptionalFieldAlias_UnresolvedReference_NoViolation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
