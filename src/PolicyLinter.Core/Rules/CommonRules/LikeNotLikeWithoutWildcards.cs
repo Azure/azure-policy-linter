@@ -10,15 +10,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System;
 
     /// <summary>
-    /// Flags like/notLike conditions whose operand contains no wildcards (* or ?).
-    /// Without wildcards these operators behave identically to equals/notEquals but
-    /// are less precise about the author's intentions.
+    /// Flags like/notLike conditions whose operand contains no wildcard (*).
+    /// Without a wildcard these operators behave identically to equals/notEquals.
     /// </summary>
     public sealed class LikeNotLikeWithoutWildcards : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "like/notLike Without Wildcards";
         private const string RuleDescription =
-            "The condition uses the '{0}' operator with value '{1}' which contains no wildcards (* or ?). Use '{2}' instead to better reflect the intention of exact matching.";
+            "The condition uses the '{0}' operator with value '{1}' which contains no wildcard (*). Without a wildcard it behaves identically to '{2}'; use '{2}' to express exact-match intent.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LikeNotLikeWithoutWildcards"/> class.
@@ -55,7 +54,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var operandValue = expression.Operator.Value.ToString();
 
-            if (operandValue.Contains('*', StringComparison.Ordinal) || operandValue.Contains('?', StringComparison.Ordinal))
+            if (operandValue.Contains('*', StringComparison.Ordinal))
             {
                 return Array.Empty<LinterOutput>();
             }
