@@ -7,7 +7,7 @@
 
 ## Description
 
-The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that doesn't exist in older API versions of the targeted resource type.
+The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that exists in the latest API version but doesn't exist in one or more older API versions of the targeted resource type.
 Aliases are meant to map a property path across ALL available API versions of a resource. However, it is very common for resource properties to be available only starting from the API version in which they were introduced.
 When a property is added to a new API version, it can't be added to older versions since it is considered a breaking change.
 

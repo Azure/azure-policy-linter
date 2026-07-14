@@ -13,12 +13,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
 
     /// <summary>
-    /// Detects field aliases that map to properties missing in one or more old API versions of the resource type.
+    /// Detects field aliases that map to properties that exist in the latest API version but are missing in one or more older API versions of the resource type.
     /// </summary>
     public sealed class FieldAliasUnavailableInOldApiVersions : LinterRule<Reference>
     {
         private const string RuleTitle = "Field Alias Unavailable In Old API Versions";
-        private const string RuleDescription = "The field alias: '{0}' maps to property path that doesn't exist in one or more old API versions of resource type: '{1}'. API versions: '{2}'";
+        private const string RuleDescription = "The field alias: '{0}' maps to a property path that doesn't exist in one or more old API versions of resource type: '{1}'. API versions: '{2}'";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldAliasUnavailableInOldApiVersions"/> class.
@@ -45,9 +45,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 // If we have any metadata for it, it means that we successfully mapped the alias
                 if (expression.ResourcePropertyMetadata.Any())
                 {
-                    var latestApiVersion = expression.ResourcePropertyMetadata
-                        .SelectMany(metadata => metadata.ApiVersions)
-                        .Max(comparer: SuffixAwareApiVersionComparer.Instance);
+                    var latestApiVersionMetadata = expression.ResourcePropertyMetadata
+                        .MaxBy(
+                            keySelector: metadata => metadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance),
+                            comparer: SuffixAwareApiVersionComparer.Instance);
 
                     var apiVersionsWithoutProperty = expression.ResourcePropertyMetadata
                         .Where(metadata => !metadata.Exists)
@@ -56,7 +57,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                         .OrderBy(v => v, comparer: SuffixAwareApiVersionComparer.Instance)
                         .ToArray();
 
-                    if (apiVersionsWithoutProperty.Length != 0 && SuffixAwareApiVersionComparer.Instance.Compare(latestApiVersion, apiVersionsWithoutProperty.First()) > 0)
+                    // Only fire when the property exists in the latest API version but is missing in one or more older
+                    // versions. The states where the property is missing in the latest version (deprecated, or missing
+                    // in all versions) are covered by other rules.
+                    if (latestApiVersionMetadata != null && latestApiVersionMetadata.Exists && apiVersionsWithoutProperty.Length != 0)
                     {
                         var resourceType = expression.ResourcePropertyMetadata.First().ResourceType;
                         var apiVersionsFormatted = string.Join(", ", apiVersionsWithoutProperty);
