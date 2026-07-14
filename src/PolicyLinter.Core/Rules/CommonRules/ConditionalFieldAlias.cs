@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class ConditionalFieldAlias : LinterRule<Reference>
     {
         private const string RuleTitle = "Conditional Field Alias";
-        private const string RuleDescription = "The field alias: '{0}' maps to property path that only exists in the target resource type: '{1}' if some conditions are met. In all other cases, the property might be missing. Affected API versions: '{2}'";
+        private const string RuleDescription = "The field alias: '{0}' maps to a property path that only exists in the resource type: '{1}' if some conditions are met. In all other cases, the property might be missing. Affected API versions: '{2}'";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConditionalFieldAlias"/> class.
@@ -37,22 +37,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             if (expression.IsResolvedFieldReference() && FieldPathHelper.IsFieldAlias(expression.Identifier))
             {
-                if (expression.ResourcePropertyMetadata.Any())
+                var conditionalMetadata = expression.ResourcePropertyMetadata
+                    .Where(metadata => metadata.Exists && metadata.IsConditional)
+                    .ToArray();
+
+                var conditionalApiVersions = conditionalMetadata
+                    .SelectMany(metadata => metadata.ApiVersions)
+                    .Distinct()
+                    .OrderBy(v => v, comparer: SuffixAwareApiVersionComparer.Instance)
+                    .ToArray();
+
+                if (conditionalApiVersions.Length != 0)
                 {
-                    var readonlyApiVersions = expression.ResourcePropertyMetadata
-                        .Where(metadata => metadata.Exists && metadata.IsConditional)
-                        .SelectMany(metadata => metadata.ApiVersions)
-                        .Distinct()
-                        .OrderBy(v => v, comparer: SuffixAwareApiVersionComparer.Instance)
-                        .ToArray();
+                    var resourceType = conditionalMetadata[0].ResourceType;
+                    var apiVersionsFormatted = string.Join(", ", conditionalApiVersions);
 
-                    if (readonlyApiVersions.Length != 0)
-                    {
-                        var resourceType = expression.ResourcePropertyMetadata.First().ResourceType;
-                        var apiVersionsFormatted = string.Join(", ", readonlyApiVersions);
-
-                        return new[] { this.CreateWarning(expression, expression.Identifier, resourceType, apiVersionsFormatted) };
-                    }
+                    return new[] { this.CreateWarning(expression, expression.Identifier, resourceType, apiVersionsFormatted) };
                 }
             }
 
