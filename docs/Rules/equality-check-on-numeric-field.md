@@ -8,7 +8,7 @@
 
 A `field` condition uses [`equals` or `notEquals`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) with a literal value against a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) whose resource property is numeric (an integer or a number).
 
-These operators coerce both operands to string and compare them case-insensitively. The comparison usually works, but the value is stringified first, so a literal whose string form differs from the property's canonical string form will not match. For example, a property value of `5.0` stringifies to `"5.0"` and does not equal the literal `"5"`; a leading zero (`"05"`) has the same problem.
+These operators coerce both operands to string and compare them case-insensitively. The comparison matches only when the literal is identical to the string form the property serializes to, so a literal whose string form differs will not match. For example, a property value of `5.0` stringifies to `"5.0"` and does not equal the literal `"5"`; a leading zero (`"05"`) has the same problem.
 
 ## Suggestions
 
