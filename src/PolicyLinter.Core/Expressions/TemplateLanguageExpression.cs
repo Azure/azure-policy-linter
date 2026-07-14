@@ -59,6 +59,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ReferenceKind? ReferenceKind { get; }
 
         /// <summary>
+        /// The name of the outermost function of the expression, if the expression is a function call.
+        /// </summary>
+        /// <example>
+        /// [tryGet(field('a'), 'b')] => "tryGet"
+        /// [coalesce(tryGet(field('a'), 'b'), '')] => "coalesce"
+        /// [field('a')] => "field"
+        /// 'literal' => null
+        /// </example>
+        public string? RootFunctionName { get; }
+
+        /// <summary>
         /// Extracts template language expressions from a JToken.
         /// </summary>
         /// <param name="token">The token.</param>
@@ -170,6 +181,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             if (Reference.IsReferenceFunction(this.LanguageExpression, out var kind))
             {
                 this.ReferenceKind = kind;
+            }
+
+            if (this.LanguageExpression is FunctionExpression rootFunction)
+            {
+                this.RootFunctionName = rootFunction.Function;
             }
 
             var references = new List<Reference>();
