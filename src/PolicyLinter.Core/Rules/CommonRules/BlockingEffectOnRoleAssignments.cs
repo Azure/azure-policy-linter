@@ -55,7 +55,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            if (!this.IfTargetsRoleAssignments(expression.If))
+            if (!BlockingEffectOnRoleAssignments.IfTargetsRoleAssignments(expression.If))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -72,7 +72,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         /// <param name="ifCondition">The policy rule's 'if' condition.</param>
         /// <returns>True if a 'type' condition targets role assignments; otherwise false.</returns>
-        private bool IfTargetsRoleAssignments(IfCondition ifCondition)
+        private static bool IfTargetsRoleAssignments(IfCondition ifCondition)
         {
             var targetsRoleAssignments = false;
 
@@ -111,7 +111,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             // An odd number of enclosing 'not' quantifiers negates the condition, so a
             // positive 'type' selector no longer targets role assignments.
-            var notCount = leaf.PathSegments.Count(segment => segment.Contains("not", StringComparison.OrdinalIgnoreCase));
+            var notCount = leaf.PathSegments.Count(segment => string.Equals(segment, "not", StringComparison.OrdinalIgnoreCase));
             if (notCount % 2 != 0)
             {
                 return false;

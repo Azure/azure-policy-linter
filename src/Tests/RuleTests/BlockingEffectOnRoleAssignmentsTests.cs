@@ -399,6 +399,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_DoubleNegatedTypeCondition_Fires()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""not"": {
+                          ""not"": {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Authorization/roleAssignments""
+                          }
+                        }
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+        }
+
+        [Fact]
         public void RuleTests_BlockingEffectOnRoleAssignments_EmptyLikeValue_ShouldNotFire()
         {
             var policyDefinition = @"
