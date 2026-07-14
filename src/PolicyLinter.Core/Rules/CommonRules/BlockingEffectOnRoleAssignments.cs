@@ -15,7 +15,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
     /// <summary>
     /// Flags a policy that blocks creation of role assignments: a 'deny' or 'denyAction'
-    /// effect whose 'if' targets the 'Microsoft.Authorization/roleAssignments' type.
+    /// effect - literal, or a simple parameterized effect that can take a blocking value -
+    /// whose 'if' targets the 'Microsoft.Authorization/roleAssignments' type.
     /// Blocking role-assignment creation can prevent just-in-time role activation and
     /// lock administrators out of the scope the policy governs.
     /// </summary>
@@ -50,7 +51,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(PolicyRule expression, LinterContext context)
         {
             var effect = expression.Then.Effect;
-            if (!effect.HasLiteralValue || !BlockingEffects.Contains(effect.Value.ToStringValue()))
+
+            var blockingEffect = BlockingEffectOnRoleAssignments.GetBlockingEffect(effect, context);
+            if (blockingEffect == null)
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -62,8 +65,36 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return new[]
             {
-                this.CreateWarning(effect, effect.Value.ToStringValue()!),
+                this.CreateWarning(effect, blockingEffect),
             };
+        }
+
+        /// <summary>
+        /// Determines whether the effect can take a blocking value, either as a literal or as
+        /// one of the possible values of a simple parameterized effect (its allowed values, or
+        /// its default value when no allowed values are defined).
+        /// </summary>
+        /// <param name="effect">The 'then' effect property.</param>
+        /// <param name="context">The linter rule evaluation context.</param>
+        /// <returns>The blocking effect value if one applies; otherwise null.</returns>
+        private static string? GetBlockingEffect(Property effect, LinterContext context)
+        {
+            if (effect.HasLiteralValue)
+            {
+                var literal = effect.Value.ToStringValue();
+                return literal != null && BlockingEffectOnRoleAssignments.BlockingEffects.Contains(literal) ? literal : null;
+            }
+
+            if (effect.HasSimpleParameterizedValue(context: context, out var _, out var allowedValues, out var defaultValue))
+            {
+                var possibleValues =
+                    allowedValues ??
+                    (defaultValue != null ? new[] { defaultValue } : Array.Empty<string>());
+
+                return possibleValues.FirstOrDefault(value => BlockingEffectOnRoleAssignments.BlockingEffects.Contains(value));
+            }
+
+            return null;
         }
 
         /// <summary>
