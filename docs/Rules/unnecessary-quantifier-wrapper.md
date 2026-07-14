@@ -1,12 +1,14 @@
-﻿# Unnecessary allOf/anyOf Wrapper
+﻿# Unnecessary Quantifier Wrapper
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unnecessary-quantifier-wrapper | Warning | default |
+| BestPractices | unnecessary-quantifier-wrapper | Informational | default |
 
 ## Description
 
 An `allOf` or `anyOf` contains only a single child expression. The wrapper is redundant and adds unnecessary nesting to the policy definition.
+
+See [logical operators](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule) in the Azure Policy definition structure.
 
 ## Suggestions
 

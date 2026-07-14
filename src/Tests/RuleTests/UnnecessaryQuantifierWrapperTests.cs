@@ -54,13 +54,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "unnecessary-quantifier-wrapper",
-                Title: "Unnecessary allOf/anyOf wrapper",
-                Severity: Severity.Warning,
+                Title: "Unnecessary Quantifier Wrapper",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 34,
                 Path: "properties.policyRule.if.allOf",
-                Description: "The \"allOf\" contains a single expression and can be removed. Use the inner expression directly.");
+                Description: "The 'allOf' contains a single expression and can be removed. Use the inner expression directly.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -101,13 +101,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "unnecessary-quantifier-wrapper",
-                Title: "Unnecessary allOf/anyOf wrapper",
-                Severity: Severity.Warning,
+                Title: "Unnecessary Quantifier Wrapper",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 34,
                 Path: "properties.policyRule.if.anyOf",
-                Description: "The \"anyOf\" contains a single expression and can be removed. Use the inner expression directly.");
+                Description: "The 'anyOf' contains a single expression and can be removed. Use the inner expression directly.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -282,6 +282,102 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_UnnecessaryQuantifierWrapper_EmptyAnyOf_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new UnnecessaryQuantifierWrapper()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""anyOf"": []
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_UnnecessaryQuantifierWrapper_NestedSingleChildChain_ReportedAtEachLevel()
+        {
+            // A chain of single-child quantifiers is reported per level by this rule; the
+            // nested-same-type-quantifiers rule defers to it and stays silent on this shape.
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new UnnecessaryQuantifierWrapper(),
+                    new NestedSameTypeQuantifiersShouldBeFlattened()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""type"",
+                                ""equals"": ""Microsoft.Compute/virtualMachines""
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(2);
+            results.Should().OnlyContain(output => output.RuleIdentifier == "unnecessary-quantifier-wrapper");
+
+            var outer = new LinterOutput(
+                RuleIdentifier: "unnecessary-quantifier-wrapper",
+                Title: "Unnecessary Quantifier Wrapper",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 34,
+                Path: "properties.policyRule.if.allOf",
+                Description: "The 'allOf' contains a single expression and can be removed. Use the inner expression directly.");
+
+            var inner = new LinterOutput(
+                RuleIdentifier: "unnecessary-quantifier-wrapper",
+                Title: "Unnecessary Quantifier Wrapper",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 9,
+                LinePosition: 38,
+                Path: "properties.policyRule.if.allOf[0].allOf",
+                Description: "The 'allOf' contains a single expression and can be removed. Use the inner expression directly.");
+
+            results.Should().ContainEquivalentOf(outer);
+            results.Should().ContainEquivalentOf(inner);
         }
     }
 }

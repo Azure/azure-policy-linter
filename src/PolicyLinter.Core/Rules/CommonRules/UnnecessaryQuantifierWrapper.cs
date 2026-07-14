@@ -15,10 +15,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class UnnecessaryQuantifierWrapper : LinterRule<Quantifier>
     {
-        private const string RuleTitle = "Unnecessary allOf/anyOf wrapper";
+        private const string RuleTitle = "Unnecessary Quantifier Wrapper";
 
         private const string RuleDescription =
-            "The \"{0}\" contains a single expression and can be removed. Use the inner expression directly.";
+            "The '{0}' contains a single expression and can be removed. Use the inner expression directly.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnnecessaryQuantifierWrapper"/> class.
@@ -37,12 +37,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             if (expression.AllOf != null && expression.AllOf.Value.Length == 1)
             {
-                return new[] { this.CreateWarning(expression: expression, "allOf") };
+                return new[] { this.CreateInformational(expression: expression, "allOf") };
             }
 
             if (expression.AnyOf != null && expression.AnyOf.Value.Length == 1)
             {
-                return new[] { this.CreateWarning(expression: expression, "anyOf") };
+                return new[] { this.CreateInformational(expression: expression, "anyOf") };
             }
 
             return Array.Empty<LinterOutput>();
