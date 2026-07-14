@@ -41,6 +41,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public JToken? DefaultValue { get; set; }
 
         /// <summary>
+        /// The parameter display name, read from its <c>metadata.displayName</c>. Null when absent.
+        /// </summary>
+        public string? DisplayName { get; }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="Parameter"/> class.
         /// </summary>
         /// <param name="name">The parameter name.</param>
@@ -67,6 +72,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 this.DefaultValue = parameter.DefaultValue.Value;
             }
+
+            this.DisplayName = (parameter.Metadata?.Value as JObject)?["displayName"]?.Value<string>();
         }
 
         /// <inheritdoc/>
