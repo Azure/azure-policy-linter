@@ -78,7 +78,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var fieldTypeName = string.Join("/", fieldTypes.Select(OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName).Distinct());
+            var fieldTypeName = string.Join(" or ", fieldTypes.Select(OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName).Distinct());
             var valueTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(expression.Operator.Value);
 
             return new[]
