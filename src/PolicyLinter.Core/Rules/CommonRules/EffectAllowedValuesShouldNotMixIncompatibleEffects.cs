@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         // Maps each effect to the shape of 'details' it requires. Effects sharing a category
         // are interchangeable; effects in different categories are not. 'mutate' and
         // 'addToNetworkGroup' are intentionally omitted -- they are dataplane-mode effects that
-        // the control-plane mode gate already skips.
+        // the IsControlPlaneMode check already skips.
         private static readonly Dictionary<string, string> EffectToCategory = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
             { "Modify", EffectAllowedValuesShouldNotMixIncompatibleEffects.ModifyDetailsCategory },
