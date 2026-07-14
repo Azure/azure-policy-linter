@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | request-context-identity-disables-compliance-scans | Warning | — |
+| BestPractices | request-context-identity-disables-compliance-scans | Warning | default |
 
 ## Description
 
