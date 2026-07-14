@@ -49,8 +49,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            // A 'value' whose outermost function is 'tryGet' is unguarded; wrapping it in 'coalesce' makes the
-            // outermost function 'coalesce' instead, which supplies a fallback and silences the rule.
+            // Fires only when the whole value is a single language expression whose outermost function is 'tryGet'.
+            // Wrapping it in 'coalesce' makes the outermost function 'coalesce', which supplies a fallback and silences the rule.
+            // A 'tryGet' nested inside another function (e.g. concat) has different behavior and is out of scope.
             if (expression.Value.LanguageExpressions.Length != 1 ||
                 !string.Equals(expression.Value.LanguageExpressions[0].OutermostFunctionName, "tryGet", StringComparison.OrdinalIgnoreCase))
             {
