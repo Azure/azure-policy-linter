@@ -6,30 +6,33 @@
 
 ## Description
 
-The effect parameter's `allowedValues` mixes effects that require incompatible `details` block configurations. Each of the following sets of effects requires its own `details` shape, so effects from different sets cannot coexist in the same `allowedValues`:
+When the [`effect`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics) is a parameter reference, every allowed effect shares the single static `then.details` block. Some effects require their own `details` shape, so allowing effects with different `details` shapes leaves at least one allowed value without a valid `details` block. Each of the following sets of effects requires its own `details` shape, and effects from different sets cannot coexist in the same `allowedValues`:
 
-- `Modify`
-- `AuditIfNotExists`, `DeployIfNotExists`
-- `DenyAction`, `AuditAction`
-- `Append`
+- [`Modify`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-modify)
+- [`AuditIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit-if-not-exists), [`DeployIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deploy-if-not-exists)
+- [`DenyAction`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny-action)
+- [`Append`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-append)
+- [`Manual`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-manual)
 
-Effects that do not require a specific `details` block (`Audit`, `Deny`, `Disabled`, `Manual`) are compatible with any of the above.
+Effects that need no `details` block ([`Audit`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit), [`Deny`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny), [`Disabled`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-disabled)) are compatible with any of the above.
 
 This rule is skipped for dataplane policy modes (e.g. `Microsoft.Kubernetes.Data`) since they may use effects not in the known set.
 
 ## Suggestions
 
-Restrict `allowedValues` to effects from a single compatible set plus any universally compatible effects. For example:
+Restrict `allowedValues` to effects from a single compatible set plus any effect that needs no `details` block (`Audit`, `Deny`, `Disabled`).
 
-**Violation**
+## Examples
+
+### Violation
 
 ```json
 "allowedValues": ["Modify", "DeployIfNotExists", "Disabled"]
 ```
 
-`Modify` and `DeployIfNotExists` require different `details` configurations.
+`Modify` and `DeployIfNotExists` require different `details` shapes.
 
-**Correct**
+### Correct
 
 ```json
 "allowedValues": ["Audit", "Modify", "Disabled"]

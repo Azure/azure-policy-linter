@@ -194,7 +194,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 23,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect': allowedValues mixes effects from incompatible effects: IfNotExistsDetails (DeployIfNotExists), ModifyDetails (Modify). Effects in each category require a different 'details' block configuration and cannot coexist in the same allowedValues."));
+                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: DeployIfNotExists, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
         }
 
         [Fact]
@@ -260,6 +260,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         ""allowedValues"": [
                           ""audit"",
                           ""modify"",
+                          ""deployIfNotExists"",
                           ""Disabled""
                         ]
                       }
@@ -278,7 +279,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 23,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: deployIfNotExists, modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
         }
 
         [Fact]
@@ -412,6 +423,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         ""allowedValues"": [
                           ""Audit"",
                           ""Modify"",
+                          ""DeployIfNotExists"",
                           ""Disabled""
                         ]
                       }
@@ -430,7 +442,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
+            results[0].Description.Should().Contain("'policyEffect'");
         }
 
         [Fact]
@@ -678,6 +691,215 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixDenyActionAndModify()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""DenyAction"",
+                        ""allowedValues"": [
+                          ""DenyAction"",
+                          ""Modify"",
+                          ""Disabled""
+                        ]
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: DenyAction, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+        }
+
+        [Fact]
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixAppendAndModify()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""Append"",
+                        ""allowedValues"": [
+                          ""Append"",
+                          ""Modify"",
+                          ""Disabled""
+                        ]
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: Append, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+        }
+
+        [Fact]
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixManualAndModify()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""Manual"",
+                        ""allowedValues"": [
+                          ""Manual"",
+                          ""Modify"",
+                          ""Disabled""
+                        ]
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: Manual, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+        }
+
+        [Fact]
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MultipleEffectsInOneConflictingCategory()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""AuditIfNotExists"",
+                        ""allowedValues"": [
+                          ""AuditIfNotExists"",
+                          ""DeployIfNotExists"",
+                          ""Modify"",
+                          ""Disabled""
+                        ]
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 23,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: AuditIfNotExists, DeployIfNotExists, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
         }
     }
 }

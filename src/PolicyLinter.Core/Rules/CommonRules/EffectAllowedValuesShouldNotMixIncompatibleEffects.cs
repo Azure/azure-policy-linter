@@ -12,23 +12,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
 
     /// <summary>
-    /// Ensures that the effect parameter's allowedValues do not mix effects from
-    /// incompatible effects. Effects that require different 'details' block configurations
-    /// (e.g. Modify details vs. IfNotExists details vs. Action details) cannot coexist
-    /// in the same allowedValues because only one details shape can be specified.
-    /// Effects that do not require a details block (e.g. Audit, Deny, Disabled) are
-    /// compatible with any other effect and are not flagged.
+    /// Ensures that the effect parameter's allowedValues do not mix effects that require
+    /// incompatible 'details' blocks. A parameterized effect shares one static 'then.details'
+    /// block, so effects whose 'details' have different shapes (for example Modify vs.
+    /// DeployIfNotExists vs. Manual) cannot coexist in the same allowedValues. Effects that
+    /// need no 'details' block (Audit, Deny, Disabled) are compatible with any effect and are
+    /// not flagged.
     /// </summary>
     public sealed class EffectAllowedValuesShouldNotMixIncompatibleEffects : LinterRule<ThenExpression>
     {
         private const string RuleTitle = "Effect Allowed Values Should Not Mix Incompatible Effects";
-        private const string RuleDescription = "The effect parameter '{0}': {1}";
+        private const string RuleDescription =
+            "The effect parameter '{0}' has allowedValues that mix effects requiring incompatible 'details' blocks: {1}. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes.";
 
         private const string ModifyDetailsCategory = "ModifyDetails";
         private const string IfNotExistsDetailsCategory = "IfNotExistsDetails";
         private const string ActionDetailsCategory = "ActionDetails";
         private const string AppendDetailsCategory = "AppendDetails";
+        private const string ManualDetailsCategory = "ManualDetails";
 
+        // Maps each effect to the shape of 'details' it requires. Effects sharing a category
+        // are interchangeable; effects in different categories are not. 'mutate' and
+        // 'addToNetworkGroup' are intentionally omitted -- they are dataplane-mode effects that
+        // the control-plane mode gate already skips.
         private static readonly Dictionary<string, string> EffectToCategory = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
             { "Modify", EffectAllowedValuesShouldNotMixIncompatibleEffects.ModifyDetailsCategory },
@@ -37,6 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             { "DenyAction", EffectAllowedValuesShouldNotMixIncompatibleEffects.ActionDetailsCategory },
             { "AuditAction", EffectAllowedValuesShouldNotMixIncompatibleEffects.ActionDetailsCategory },
             { "Append", EffectAllowedValuesShouldNotMixIncompatibleEffects.AppendDetailsCategory },
+            { "Manual", EffectAllowedValuesShouldNotMixIncompatibleEffects.ManualDetailsCategory },
         };
 
         /// <summary>
@@ -70,29 +77,30 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var categorizedValues = allowedValues
-                .Where(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(v))
-                .GroupBy(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory[v], StringComparer.Ordinal)
-                .ToDictionary(g => g.Key, g => g.ToArray());
+            var categorizedEffects = allowedValues
+                .Where(v => v != null && EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(v))
+                .ToArray();
 
-            if (categorizedValues.Count <= 1)
+            var distinctCategories = categorizedEffects
+                .Select(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory[v])
+                .Distinct(StringComparer.Ordinal)
+                .Count();
+
+            if (distinctCategories <= 1)
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var conflictDescription = string.Join(
+            var conflictingEffects = string.Join(
                 ", ",
-                categorizedValues
-                    .OrderBy(kvp => kvp.Key, StringComparer.Ordinal)
-                    .Select(kvp => $"{kvp.Key} ({string.Join(", ", kvp.Value)})")
-                    .ToArray());
+                categorizedEffects.OrderBy(v => v, StringComparer.OrdinalIgnoreCase).ToArray());
 
             return new[]
             {
                 this.CreateError(
                     expression: expression.Effect,
                     parameterName,
-                    $"allowedValues mixes effects from incompatible effects: {conflictDescription}. Effects in each category require a different 'details' block configuration and cannot coexist in the same allowedValues.")
+                    conflictingEffects)
             };
         }
 
@@ -101,12 +109,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         private static bool IsControlPlaneMode(ThenExpression expression)
         {
-            var definition = expression.Parent?.Parent as PolicyDefinition;
+            var definition = EffectAllowedValuesShouldNotMixIncompatibleEffects.FindPolicyDefinition(expression);
             var mode = definition?.Properties?.Mode?.Value?.ToString();
 
             return mode == null ||
                 string.Equals(mode, "All", StringComparison.OrdinalIgnoreCase) ||
                 string.Equals(mode, "Indexed", StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Walks up the expression tree to find the enclosing <see cref="PolicyDefinition"/>.
+        /// </summary>
+        private static PolicyDefinition? FindPolicyDefinition(PolicyExpression expression)
+        {
+            for (var current = expression.Parent; current != null; current = current.Parent)
+            {
+                if (current is PolicyDefinition definition)
+                {
+                    return definition;
+                }
+            }
+
+            return null;
         }
     }
 }
