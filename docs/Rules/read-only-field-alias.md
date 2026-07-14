@@ -1,9 +1,9 @@
 ﻿# Read-Only Field Alias
 
 
-| Category | Identifier |
-|----------------|----------------------------------------|
-| ResourceFields | read-only-field-alias |
+| Category | Identifier | Severity | Rule Set |
+|----------------|----------------------------------------|----------|----------|
+| ResourceFields | read-only-field-alias | Warning | default |
 
 ## Description
 
@@ -13,7 +13,7 @@ This means that the property can't be relied upon during enforcement evaluations
 
 ### Suggestions
 
-- Avoid relying on read-only properties in enforcement policies (e.g. policies with `deny`) effect.
+- Avoid relying on read-only properties in enforcement policies (e.g. policies with a `deny` effect).
 - If the purpose of the policy is mainly for compliance (e.g. `audit` effect), then it should be OK to use the alias.
 
 ## Data sources
