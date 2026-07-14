@@ -58,13 +58,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "simplify-multiple-notequals-to-notin",
-                Title: "Simplify multiple notEquals to notIn",
-                Severity: Severity.Warning,
+                Title: "Simplify Multiple NotEquals to NotIn",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 2 notEquals conditions on field \"type\" that can be simplified to a single \"notIn\" condition.");
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -225,19 +225,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "simplify-multiple-notequals-to-notin",
-                Title: "Simplify multiple notEquals to notIn",
-                Severity: Severity.Warning,
+                Title: "Simplify Multiple NotEquals to NotIn",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 8,
                 LinePosition: 27,
                 Path: "properties.policyRule.if.allOf[0]",
-                Description: "The allOf contains 3 notEquals conditions on field \"type\" that can be simplified to a single \"notIn\" condition.");
+                Description: "The 'allOf' contains 3 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_MultipleFieldGroups()
+        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_MultipleFieldGroups_Violation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -281,6 +281,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(2);
+
+            var typeFinding = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-notequals-to-notin",
+                Title: "Simplify Multiple NotEquals to NotIn",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 8,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[0]",
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
+
+            var locationFinding = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-notequals-to-notin",
+                Title: "Simplify Multiple NotEquals to NotIn",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 16,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[2]",
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'location' that can be simplified to a single 'notIn' condition.");
+
+            results.Should().ContainEquivalentOf(typeFinding);
+            results.Should().ContainEquivalentOf(locationFinding);
         }
 
         [Fact]
@@ -323,7 +346,136 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_CaseInsensitiveFieldMatching()
+        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_ExpressionFieldValue_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new SimplifyMultipleNotEqualsToNotIn()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""[parameters('fieldName')]"",
+                            ""notEquals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""field"": ""[parameters('fieldName')]"",
+                            ""notEquals"": ""Microsoft.Storage/storageAccounts""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_MixedOperatorSameField_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new SimplifyMultipleNotEqualsToNotIn()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""notEquals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Storage/storageAccounts""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_SameValueRepeated_Violation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new SimplifyMultipleNotEqualsToNotIn()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""notEquals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""notEquals"": ""Microsoft.Compute/virtualMachines""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-notequals-to-notin",
+                Title: "Simplify Multiple NotEquals to NotIn",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 8,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[0]",
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'type' that can be simplified to a single 'notIn' condition.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_SimplifyMultipleNotEqualsToNotIn_CaseInsensitiveFieldMatching_Violation()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -359,6 +511,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "simplify-multiple-notequals-to-notin",
+                Title: "Simplify Multiple NotEquals to NotIn",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 8,
+                LinePosition: 27,
+                Path: "properties.policyRule.if.allOf[0]",
+                Description: "The 'allOf' contains 2 'notEquals' conditions on field 'Type' that can be simplified to a single 'notIn' condition.");
+
+            results.Should().ContainEquivalentOf(output);
         }
     }
 }

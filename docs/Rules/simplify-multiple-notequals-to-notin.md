@@ -2,15 +2,15 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | simplify-multiple-notequals-to-notin | Warning | — |
+| BestPractices | simplify-multiple-notequals-to-notin | Informational | — |
 
 ## Description
 
-An `allOf` contains multiple `notEquals` conditions on the same field. This can be simplified to a single `notIn` condition, making the policy shorter and easier to read.
+An `allOf` contains multiple [`notEquals`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) conditions on the same field. This can be simplified to a single [`notIn`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) condition, making the policy shorter and easier to read.
 
 ## Suggestions
 
-Replace the `allOf` with a single condition using the `notIn` operator and an array of values.
+Replace the grouped `notEquals` conditions with a single condition using the `notIn` operator and an array of values. Leave any other members of the `allOf` in place.
 
 ### Violation
 
