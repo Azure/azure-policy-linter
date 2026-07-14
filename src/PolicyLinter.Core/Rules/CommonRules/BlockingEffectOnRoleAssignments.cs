@@ -1,0 +1,176 @@
+// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
+{
+    using System;
+    using System.Linq;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
+    using Newtonsoft.Json.Linq;
+
+    /// <summary>
+    /// Flags a policy that blocks creation of role assignments: a 'deny' or 'denyAction'
+    /// effect whose 'if' targets the 'Microsoft.Authorization/roleAssignments' type.
+    /// Blocking role-assignment creation can prevent just-in-time role activation and
+    /// lock administrators out of the scope the policy governs.
+    /// </summary>
+    public sealed class BlockingEffectOnRoleAssignments : LinterRule<PolicyRule>
+    {
+        private const string RuleTitle = "Blocking Effect on Role Assignments";
+
+        private const string RuleDescription =
+            "The '{0}' effect blocks creation of role assignments ('Microsoft.Authorization/roleAssignments'), which can prevent just-in-time role activation and lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.";
+
+        private const string RoleAssignmentType = "Microsoft.Authorization/roleAssignments";
+
+        private static readonly OrdinalInsensitiveHashSet BlockingEffects = new OrdinalInsensitiveHashSet
+        {
+            "deny",
+            "denyAction",
+        };
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BlockingEffectOnRoleAssignments"/> class.
+        /// </summary>
+        public BlockingEffectOnRoleAssignments() : base(
+            identifier: "blocking-effect-on-role-assignments",
+            category: Category.BestPractices,
+            title: BlockingEffectOnRoleAssignments.RuleTitle,
+            descriptionFormat: BlockingEffectOnRoleAssignments.RuleDescription,
+            applyToDerivedTypes: false)
+        {
+        }
+
+        /// <inheritdoc/>
+        protected override LinterOutput[] Evaluate(PolicyRule expression, LinterContext context)
+        {
+            var effect = expression.Then.Effect;
+            if (!effect.HasLiteralValue || !BlockingEffects.Contains(effect.Value.ToStringValue()))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            if (!this.IfTargetsRoleAssignments(expression.If))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[]
+            {
+                this.CreateWarning(effect, effect.Value.ToStringValue()!),
+            };
+        }
+
+        /// <summary>
+        /// Determines whether the 'if' condition contains a 'type' field condition that
+        /// positively selects the role-assignment type.
+        /// </summary>
+        /// <param name="ifCondition">The policy rule's 'if' condition.</param>
+        /// <returns>True if a 'type' condition targets role assignments; otherwise false.</returns>
+        private bool IfTargetsRoleAssignments(IfCondition ifCondition)
+        {
+            var targetsRoleAssignments = false;
+
+            var visitor = new PolicyExpressionVisitor
+            {
+                Visit = (expression) =>
+                {
+                    if (expression is LeafCondition leaf && BlockingEffectOnRoleAssignments.TargetsRoleAssignments(leaf))
+                    {
+                        targetsRoleAssignments = true;
+                    }
+                },
+            };
+
+            ifCondition.Visit(visitor);
+
+            return targetsRoleAssignments;
+        }
+
+        /// <summary>
+        /// Determines whether a leaf condition on the 'type' field selects the role-assignment
+        /// type via 'equals', 'in', or a wildcard 'like', taking enclosing 'not' quantifiers
+        /// into account (an odd number of them negates the selection).
+        /// </summary>
+        /// <param name="leaf">The leaf condition to inspect.</param>
+        /// <returns>True if the condition selects role assignments; otherwise false.</returns>
+        private static bool TargetsRoleAssignments(LeafCondition leaf)
+        {
+            var fieldName = leaf.Field?.FieldAccessorReference?.Identifier;
+            if (!string.Equals(fieldName, "type", StringComparison.OrdinalIgnoreCase) ||
+                leaf.Operator == null ||
+                !leaf.Operator.HasLiteralValue)
+            {
+                return false;
+            }
+
+            // An odd number of enclosing 'not' quantifiers negates the condition, so a
+            // positive 'type' selector no longer targets role assignments.
+            var notCount = leaf.PathSegments.Count(segment => segment.Contains("not", StringComparison.OrdinalIgnoreCase));
+            if (notCount % 2 != 0)
+            {
+                return false;
+            }
+
+            var operatorName = leaf.Operator.Name;
+
+            if (string.Equals(operatorName, "equals", StringComparison.OrdinalIgnoreCase))
+            {
+                return BlockingEffectOnRoleAssignments.IsRoleAssignmentType(leaf.Operator.Value.ToStringValue());
+            }
+
+            if (string.Equals(operatorName, "like", StringComparison.OrdinalIgnoreCase))
+            {
+                return BlockingEffectOnRoleAssignments.LikeMatchesRoleAssignmentType(leaf.Operator.Value.ToStringValue());
+            }
+
+            if (string.Equals(operatorName, "in", StringComparison.OrdinalIgnoreCase) &&
+                leaf.Operator.Value is JArray values)
+            {
+                return values.Any(value => BlockingEffectOnRoleAssignments.IsRoleAssignmentType(value.ToStringValue()));
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Checks whether a value is exactly the role-assignment type.
+        /// </summary>
+        private static bool IsRoleAssignmentType(string? value)
+        {
+            return string.Equals(value, BlockingEffectOnRoleAssignments.RoleAssignmentType, StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Checks whether a 'like' pattern matches the role-assignment type. The 'like' operator
+        /// supports a single '*' wildcard; the text before it must prefix the type and the text
+        /// after it must suffix the type.
+        /// </summary>
+        private static bool LikeMatchesRoleAssignmentType(string? pattern)
+        {
+            if (string.IsNullOrEmpty(pattern))
+            {
+                return false;
+            }
+
+            var wildcardIndex = pattern.IndexOf('*', StringComparison.Ordinal);
+            if (wildcardIndex < 0)
+            {
+                return BlockingEffectOnRoleAssignments.IsRoleAssignmentType(pattern);
+            }
+
+            var target = BlockingEffectOnRoleAssignments.RoleAssignmentType;
+            var prefix = pattern.Substring(0, wildcardIndex);
+            var suffix = pattern.Substring(wildcardIndex + 1);
+
+            return target.Length >= prefix.Length + suffix.Length &&
+                target.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) &&
+                target.EndsWith(suffix, StringComparison.OrdinalIgnoreCase);
+        }
+    }
+}
