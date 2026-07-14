@@ -44,8 +44,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""location"",
                                 ""equals"": ""eastus""
-                              }
-                            ]
+                               },
+                               {
+                                 ""field"": ""tags.env"",
+                                 ""equals"": ""prod""
+                               }
+                             ]
                           }
                         ]
                       },
@@ -62,13 +66,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
-                Title: "Nested same-type quantifiers should be flattened",
-                Severity: Severity.Warning,
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 13,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.allOf[1].allOf",
-                Description: "This \"allOf\" quantifier is nested inside a parent \"allOf\" and can be flattened into it.");
+                Description: "This 'allOf' quantifier is nested inside a parent 'allOf' and can be flattened into it.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -99,6 +103,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""location"",
                                 ""equals"": ""eastus""
+                              },
+                              {
+                                ""field"": ""tags.env"",
+                                ""equals"": ""prod""
                               }
                             ]
                           }
@@ -117,13 +125,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
-                Title: "Nested same-type quantifiers should be flattened",
-                Severity: Severity.Warning,
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 13,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.anyOf[1].anyOf",
-                Description: "This \"anyOf\" quantifier is nested inside a parent \"anyOf\" and can be flattened into it.");
+                Description: "This 'anyOf' quantifier is nested inside a parent 'anyOf' and can be flattened into it.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -236,6 +244,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""type"",
                                 ""equals"": ""Microsoft.Compute/virtualMachines""
+                              },
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""eastus""
                               }
                             ]
                           },
@@ -248,6 +260,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""tags.env"",
                                 ""equals"": ""prod""
+                              },
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""westus""
                               }
                             ]
                           }
@@ -266,23 +282,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output0 = new LinterOutput(
                 RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
-                Title: "Nested same-type quantifiers should be flattened",
-                Severity: Severity.Warning,
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 9,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.allOf[0].allOf",
-                Description: "This \"allOf\" quantifier is nested inside a parent \"allOf\" and can be flattened into it.");
+                Description: "This 'allOf' quantifier is nested inside a parent 'allOf' and can be flattened into it.");
 
             var output2 = new LinterOutput(
                 RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
-                Title: "Nested same-type quantifiers should be flattened",
-                Severity: Severity.Warning,
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
-                LineNumber: 21,
+                LineNumber: 25,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.allOf[2].allOf",
-                Description: "This \"allOf\" quantifier is nested inside a parent \"allOf\" and can be flattened into it.");
+                Description: "This 'allOf' quantifier is nested inside a parent 'allOf' and can be flattened into it.");
 
             results.Should().ContainEquivalentOf(output0);
             results.Should().ContainEquivalentOf(output2);
@@ -343,6 +359,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                               {
                                 ""field"": ""type"",
                                 ""equals"": ""Microsoft.Compute/virtualMachines""
+                              },
+                              {
+                                ""field"": ""tags.env"",
+                                ""equals"": ""prod""
                               }
                             ]
                           },
@@ -365,13 +385,280 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
-                Title: "Nested same-type quantifiers should be flattened",
-                Severity: Severity.Warning,
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 9,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.anyOf[0].anyOf",
-                Description: "This \"anyOf\" quantifier is nested inside a parent \"anyOf\" and can be flattened into it.");
+                Description: "This 'anyOf' quantifier is nested inside a parent 'anyOf' and can be flattened into it.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_ParentWithSiblingAndSameTypeChild()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new NestedSameTypeQuantifiersShouldBeFlattened()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""eastus""
+                              },
+                              {
+                                ""field"": ""tags.env"",
+                                ""equals"": ""prod""
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 13,
+                LinePosition: 38,
+                Path: "properties.policyRule.if.allOf[1].allOf",
+                Description: "This 'allOf' quantifier is nested inside a parent 'allOf' and can be flattened into it.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_SameTypeNestedAtDepthUnderDifferentType()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new NestedSameTypeQuantifiersShouldBeFlattened()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""anyOf"": [
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""eastus""
+                              },
+                              {
+                                ""anyOf"": [
+                                  {
+                                    ""field"": ""tags.env"",
+                                    ""equals"": ""prod""
+                                  },
+                                  {
+                                    ""field"": ""tags.owner"",
+                                    ""equals"": ""team""
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "nested-same-type-quantifiers-should-be-flattened",
+                Title: "Nested Same-Type Quantifiers Should Be Flattened",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 19,
+                LinePosition: 42,
+                Path: "properties.policyRule.if.allOf[1].anyOf[1].anyOf",
+                Description: "This 'anyOf' quantifier is nested inside a parent 'anyOf' and can be flattened into it.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_SingleChildParent_NoViolation()
+        {
+            // A parent whose only child is a same-type quantifier is a redundant wrapper,
+            // owned by the unnecessary-quantifier-wrapper rule. This rule stays silent.
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new NestedSameTypeQuantifiersShouldBeFlattened()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""type"",
+                                ""equals"": ""Microsoft.Compute/virtualMachines""
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_DeepSingleChildChain_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new NestedSameTypeQuantifiersShouldBeFlattened()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""allOf"": [
+                              {
+                                ""allOf"": [
+                                  {
+                                    ""field"": ""type"",
+                                    ""equals"": ""Microsoft.Compute/virtualMachines""
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NestedSameTypeQuantifiersShouldBeFlattened_MultiChildParentWithSingleChildNested_OnlyWrapperReported()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new NestedSameTypeQuantifiersShouldBeFlattened(),
+                    new UnnecessaryQuantifierWrapper()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          },
+                          {
+                            ""allOf"": [
+                              {
+                                ""field"": ""location"",
+                                ""equals"": ""eastus""
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().OnlyContain(output => output.RuleIdentifier == "unnecessary-quantifier-wrapper");
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unnecessary-quantifier-wrapper",
+                Title: "Unnecessary Quantifier Wrapper",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 13,
+                LinePosition: 38,
+                Path: "properties.policyRule.if.allOf[1].allOf",
+                Description: "The 'allOf' contains a single expression and can be removed. Use the inner expression directly.");
 
             results.Should().ContainEquivalentOf(output);
         }

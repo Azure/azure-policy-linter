@@ -1,13 +1,13 @@
 ﻿# Optional Field Alias
 
 
-| Category | Identifier |
-|----------------|----------------------------------------|
-| ResourceFields | optional-field-alias |
+| Category | Identifier | Severity |
+|----------|------------|----------|
+| ResourceFields | optional-field-alias | Informational |
 
 ## Description
 
-The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as optional (more accurately: it's not annotated as "required") by resource provider in one or more API versions. This means that this property might not exist in all incoming requests for the resource types which might result in incorrect or unexpected evaluation results.
+The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is not marked as required by the resource provider in one or more API versions. This means that this property might not exist in all incoming requests for the resource types which might result in incorrect or unexpected evaluation results.
 
 ### Suggestions
 

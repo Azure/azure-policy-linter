@@ -111,13 +111,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "match-without-wildcards",
-                Title: "match/matchInsensitively Without Wildcards",
+                Title: "Match Without Wildcards",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 64,
                 Path: "properties.policyRule.if.matchInsensitively",
-                Description: "The condition uses the 'matchInsensitively' operator with value 'my-resource-name' which contains no wildcards (#, ?, or .). Use 'equals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'matchInsensitively' operator with value 'my-resource-name' which contains none of '#', '?', or '.'. Use 'equals' for exact matching.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -153,13 +153,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "match-without-wildcards",
-                Title: "match/matchInsensitively Without Wildcards",
+                Title: "Match Without Wildcards",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 67,
                 Path: "properties.policyRule.if.notMatchInsensitively",
-                Description: "The condition uses the 'notMatchInsensitively' operator with value 'my-resource-name' which contains no wildcards (#, ?, or .). Use 'notEquals' instead to better reflect the intention of exact matching.");
+                Description: "The condition uses the 'notMatchInsensitively' operator with value 'my-resource-name' which contains none of '#', '?', or '.'. Use 'notEquals' for exact matching.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -171,6 +171,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("matchInsensitively", "resource-##")]
         [InlineData("notMatch", "resource-?ame")]
         [InlineData("notMatchInsensitively", "resource-.")]
+        [InlineData("notMatchInsensitively", "resource-##")]
+        [InlineData("notMatchInsensitively", "resource-?ame")]
         public void RuleTests_MatchWithoutWildcards_WithPlaceholders_NoViolation(string operatorName, string operandValue)
         {
             var linter = new PolicyLinter(
@@ -221,7 +223,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""name"",
-                        ""match"": ""[parameters('pattern')]""
+                        ""matchInsensitively"": ""[parameters('pattern')]""
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -232,7 +234,50 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
+            // The operand is a parameter reference, not a literal, so there is nothing to check.
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_MatchWithoutWildcards_EmptyOperand_Violation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new MatchWithoutWildcards()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""name"",
+                        ""matchInsensitively"": """"
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "match-without-wildcards",
+                Title: "Match Without Wildcards",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 48,
+                Path: "properties.policyRule.if.matchInsensitively",
+                Description: "The condition uses the 'matchInsensitively' operator with value '' which contains none of '#', '?', or '.'. Use 'equals' for exact matching.");
+
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Theory]

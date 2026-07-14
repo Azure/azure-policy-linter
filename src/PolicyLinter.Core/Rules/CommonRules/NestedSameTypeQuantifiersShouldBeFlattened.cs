@@ -17,10 +17,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class NestedSameTypeQuantifiersShouldBeFlattened : LinterRule<Quantifier>
     {
-        private const string RuleTitle = "Nested same-type quantifiers should be flattened";
+        private const string RuleTitle = "Nested Same-Type Quantifiers Should Be Flattened";
 
         private const string RuleDescription =
-            "This \"{0}\" quantifier is nested inside a parent \"{0}\" and can be flattened into it.";
+            "This '{0}' quantifier is nested inside a parent '{0}' and can be flattened into it.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NestedSameTypeQuantifiersShouldBeFlattened"/> class.
@@ -37,17 +37,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Quantifier expression, LinterContext context)
         {
-            if (expression.AllOf != null)
+            // Only fire when the parent quantifier has more than one child, so that flattening the
+            // nested quantifier merges its children into existing siblings.
+            if (expression.AllOf != null && expression.AllOf.Value.Length >= 2)
             {
                 return this.FindNestedQuantifiers(
                     children: expression.AllOf.Value,
+                    isSameType: nested => nested.AllOf != null && nested.AllOf.Value.Length >= 2,
                     quantifierName: "allOf");
             }
 
-            if (expression.AnyOf != null)
+            if (expression.AnyOf != null && expression.AnyOf.Value.Length >= 2)
             {
                 return this.FindNestedQuantifiers(
                     children: expression.AnyOf.Value,
+                    isSameType: nested => nested.AnyOf != null && nested.AnyOf.Value.Length >= 2,
                     quantifierName: "anyOf");
             }
 
@@ -56,26 +60,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         private LinterOutput[] FindNestedQuantifiers(
             ImmutableArray<Condition> children,
+            Func<Quantifier, bool> isSameType,
             string quantifierName)
         {
-            var warnings = new List<LinterOutput>();
+            var outputs = new List<LinterOutput>();
 
             for (int i = 0; i < children.Length; i++)
             {
-                if (children[i] is Quantifier nested)
+                if (children[i] is Quantifier nested && isSameType(nested))
                 {
-                    bool isNestedSameType = quantifierName == "allOf"
-                        ? nested.AllOf != null
-                        : nested.AnyOf != null;
-
-                    if (isNestedSameType)
-                    {
-                        warnings.Add(this.CreateWarning(expression: nested, quantifierName));
-                    }
+                    outputs.Add(this.CreateInformational(expression: nested, quantifierName));
                 }
             }
 
-            return warnings.ToArray();
+            return outputs.ToArray();
         }
     }
 }

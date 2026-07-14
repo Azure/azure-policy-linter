@@ -6,13 +6,14 @@
 
 ## Description
 
-Every `parameters('...')` reference in a policy definition must correspond to a parameter that is actually defined in the policy's `parameters` block.
+Every `parameters('...')` reference in a policy definition must resolve to a parameter declared in the policy's `parameters` block. When the referenced parameter is not declared - including when the policy has no `parameters` block at all - the reference cannot resolve, so the policy fails to deploy or evaluate.
 
 ## Suggestions
 
-- Verify the parameter name matches a defined parameter exactly (comparison is case-insensitive).
-- Check for common typos (e.g. `parameters('efect')` instead of `parameters('effect')`).
-- If the parameter was intentionally removed, update all references that still point to it.
+- Verify the parameter name matches a declared parameter exactly (comparison is case-insensitive).
+- Add the missing parameter to the `parameters` block, or correct the reference to point at an existing parameter.
+
+See [Azure Policy definition structure - parameters](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-parameters) for how to declare parameters.
 
 ## Examples
 

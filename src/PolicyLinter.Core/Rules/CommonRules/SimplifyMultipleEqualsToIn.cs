@@ -10,6 +10,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
     /// Detects anyOf quantifiers containing multiple equals conditions on the same field
@@ -17,10 +18,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class SimplifyMultipleEqualsToIn : LinterRule<Quantifier>
     {
-        private const string RuleTitle = "Simplify multiple equals to in";
+        private const string RuleTitle = "Simplify Multiple Equals to In";
 
         private const string RuleDescription =
-            "The anyOf contains {0} equals conditions on field \"{1}\" that can be simplified to a single \"in\" condition.";
+            "The 'anyOf' contains {0} 'equals' conditions on field '{1}' that can be simplified to a single 'in' condition.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SimplifyMultipleEqualsToIn"/> class.
@@ -52,7 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 if (condition is LeafCondition leaf &&
                     leaf.Field != null &&
                     leaf.Operator != null &&
-                    string.Equals(leaf.Operator.Name, "equals", StringComparison.OrdinalIgnoreCase) &&
+                    leaf.Operator.Name.EqualsOrdinalInsensitively("equals") &&
                     leaf.Field.HasLiteralValue)
                 {
                     var fieldName = leaf.Field.Value.ToString();
@@ -69,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return fieldGroups
                 .Where(kvp => kvp.Value.Count >= 2)
-                .Select(kvp => this.CreateWarning(
+                .Select(kvp => this.CreateInformational(
                     expression: kvp.Value.First(),
                     kvp.Value.Count,
                     kvp.Key))

@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 17,
                 LinePosition: 57,
                 Path: "properties.policyRule.then.effect",
-                Description: "Found a reference to parameter 'efect', but no matching parameter definition found. Check for typos or references to removed parameters.");
+                Description: "The parameter 'efect' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -185,7 +185,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 13,
                 LinePosition: 60,
                 Path: "properties.policyRule.if.field",
-                Description: "Found a reference to parameter 'fieldName', but no matching parameter definition found. Check for typos or references to removed parameters."));
+                Description: "The parameter 'fieldName' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
 
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "all-parameter-references-must-resolve",
@@ -195,11 +195,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 14,
                 LinePosition: 65,
                 Path: "properties.policyRule.if.equals",
-                Description: "Found a reference to parameter 'expectedValue', but no matching parameter definition found. Check for typos or references to removed parameters."));
+                Description: "The parameter 'expectedValue' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
         }
 
         [Fact]
-        public void RuleTests_AllParameterReferencesMustResolve_NoParameters()
+        public void RuleTests_AllParameterReferencesMustResolve_NoParametersBlock()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -226,7 +226,143 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "all-parameter-references-must-resolve",
+                Title: "All Parameter References Must Resolve",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 11,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The parameter 'effect' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
+        }
+
+        [Fact]
+        public void RuleTests_AllParameterReferencesMustResolve_EmptyParametersBlock()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new AllParameterReferencesMustResolve()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {},
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "all-parameter-references-must-resolve",
+                Title: "All Parameter References Must Resolve",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 12,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The parameter 'effect' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
+        }
+
+        [Fact]
+        public void RuleTests_AllParameterReferencesMustResolve_NestedParameterReference()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new AllParameterReferencesMustResolve()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {},
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""[field(parameters('fieldName'))]"",
+                        ""exists"": ""false""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "all-parameter-references-must-resolve",
+                Title: "All Parameter References Must Resolve",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 8,
+                LinePosition: 67,
+                Path: "properties.policyRule.if.field",
+                Description: "The parameter 'fieldName' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
+        }
+
+        [Fact]
+        public void RuleTests_AllParameterReferencesMustResolve_PropertySelectorOnUndefinedParameter()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new AllParameterReferencesMustResolve()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {},
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""[parameters('config').value]""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "all-parameter-references-must-resolve",
+                Title: "All Parameter References Must Resolve",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 9,
+                LinePosition: 64,
+                Path: "properties.policyRule.if.equals",
+                Description: "The parameter 'config' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
         }
 
         [Fact]
@@ -309,7 +445,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 12,
                 LinePosition: 79,
                 Path: "properties.policyRule.if.field",
-                Description: "Found a reference to parameter 'tagNme', but no matching parameter definition found. Check for typos or references to removed parameters."));
+                Description: "The parameter 'tagNme' is referenced but is not declared in the policy's 'parameters' block, so the reference cannot resolve."));
         }
     }
 }
