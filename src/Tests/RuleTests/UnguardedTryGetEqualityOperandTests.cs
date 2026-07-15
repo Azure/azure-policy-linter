@@ -58,7 +58,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 80,
                 Path: "properties.policyRule.if.equals",
-                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when a path segment is missing. The 'equals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'equals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -93,7 +93,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 83,
                 Path: "properties.policyRule.if.notEquals",
-                Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression, which returns null when a path segment is missing. The 'notEquals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'notEquals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
             results.Should().ContainEquivalentOf(output);
         }

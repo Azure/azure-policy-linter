@@ -6,19 +6,21 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using global::Azure.Deployments.Expression.Engines;
+    using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
     /// Flags an 'equals' or 'notEquals' condition whose value is a 'tryGet(...)' expression
-    /// that is not wrapped in 'coalesce'. 'tryGet' returns null when a path segment is missing,
+    /// that is not wrapped in 'coalesce'. 'tryGet' returns null when the property is missing,
     /// and 'equals'/'notEquals' throw on a null value, so the policy fails at evaluation time.
     /// </summary>
     public sealed class UnguardedTryGetEqualityOperand : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "Unguarded tryGet Equality Operand";
         private const string RuleDescription =
-            "The '{0}' operator's value is a 'tryGet(...)' expression, which returns null when a path segment is missing. The '{0}' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.";
+            "The '{0}' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The '{0}' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedTryGetEqualityOperand"/> class.
@@ -53,7 +55,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var valueExpression = expression.Operator.LanguageExpressions[0];
-            if (!string.Equals(valueExpression.RootFunctionName, "tryGet", StringComparison.OrdinalIgnoreCase))
+            var parsedValue = ExpressionsEngine.ParseLanguageExpression(valueExpression.Expression);
+            if (parsedValue is not FunctionExpression valueFunction ||
+                !string.Equals(valueFunction.Function, "tryGet", StringComparison.OrdinalIgnoreCase))
             {
                 return Array.Empty<LinterOutput>();
             }
