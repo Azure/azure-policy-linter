@@ -60,7 +60,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_BlockingEffectOnRoleAssignments_DenyActionEqualsRoleAssignments()
+        public void RuleTests_BlockingEffectOnRoleAssignments_DenyActionEqualsRoleAssignments_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -80,9 +80,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
-            results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
-            results[0].Description.Should().StartWith("The 'denyAction' effect blocks creation of role assignments");
+            results.Should().BeEmpty();
         }
 
         [Fact]
@@ -312,7 +310,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""parameters"": {
                       ""effect"": {
                         ""type"": ""String"",
-                        ""allowedValues"": [ ""audit"", ""denyAction"" ],
+                        ""allowedValues"": [ ""audit"", ""deny"" ],
                         ""defaultValue"": ""audit""
                       }
                     },
@@ -332,7 +330,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().HaveCount(1);
             results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
-            results[0].Description.Should().StartWith("The 'denyAction' effect blocks creation of role assignments");
+            results[0].Description.Should().StartWith("The 'deny' effect blocks creation of role assignments");
         }
 
         [Fact]

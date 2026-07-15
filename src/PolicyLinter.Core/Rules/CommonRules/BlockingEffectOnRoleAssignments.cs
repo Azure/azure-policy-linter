@@ -14,8 +14,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags a policy that blocks creation of role assignments: a 'deny' or 'denyAction'
-    /// effect - literal, or a simple parameterized effect that can take a blocking value -
+    /// Flags a policy that blocks creation of role assignments: a 'deny'
+    /// effect - literal, or a parameterized effect that can take a blocking value -
     /// whose 'if' targets the 'Microsoft.Authorization/roleAssignments' type.
     /// Blocking role-assignment creation can prevent just-in-time role activation and
     /// lock administrators out of the scope the policy governs.
@@ -32,7 +32,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private static readonly OrdinalInsensitiveHashSet BlockingEffects = new OrdinalInsensitiveHashSet
         {
             "deny",
-            "denyAction",
         };
 
         /// <summary>
