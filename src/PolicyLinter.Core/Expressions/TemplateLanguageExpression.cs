@@ -59,17 +59,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ReferenceKind? ReferenceKind { get; }
 
         /// <summary>
-        /// The name of the outermost function of the expression, or null if the root of the expression is not a function call.
-        /// </summary>
-        /// <example>
-        /// [tryGet(field('a'), 'b')] => "tryGet"
-        /// [coalesce(tryGet(field('a'), 'b'), 'x')] => "coalesce"
-        /// [parameters('a')] => "parameters"
-        /// </example>
-        public string? OutermostFunctionName =>
-            this.LanguageExpression is FunctionExpression functionExpression ? functionExpression.Function : null;
-
-        /// <summary>
         /// Extracts template language expressions from a JToken.
         /// </summary>
         /// <param name="token">The token.</param>

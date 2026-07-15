@@ -6,7 +6,7 @@
 
 ## Description
 
-A `value` condition's value is a [`tryGet`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#policy-functions) expression that is not wrapped in `coalesce`, compared with `equals` or `notEquals`. `tryGet` returns null when a path segment is missing. On the compared-value (left) side this does not throw - the null is coerced to empty string, so the comparison silently evaluates to false (for `notEquals`, always true). The condition can quietly never match the value the author intended.
+A `value` condition's value is a [`tryGet`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#policy-functions) expression that is not wrapped in `coalesce`, compared with `equals` or `notEquals`. `tryGet` returns null when a path segment is missing. On the compared-value (left) side this does not throw, but the null is compared directly, which can silently produce unexpected results. The condition may quietly produce a different outcome than the author intended.
 
 ## Suggestions
 

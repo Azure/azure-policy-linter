@@ -51,7 +51,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 72,
                 Path: "properties.policyRule.if.value",
-                Description: "The value condition compares the unguarded 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'equals'. 'tryGet' returns null when a path segment is missing, which is coerced to empty string, so the condition silently never matches. Wrap the 'tryGet' in 'coalesce' with a fallback value.");
+                Description: "The value condition compares the unguarded 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'equals'. 'tryGet' returns null when a path segment is missing; the comparison may silently produce unexpected results. Wrap the 'tryGet' in 'coalesce' with a fallback value.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -78,8 +78,54 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("unguarded-tryget-in-compared-value");
-            results[0].Severity.Should().Be(Severity.Warning);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unguarded-tryget-in-compared-value",
+                Title: "Unguarded tryGet in Compared Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 72,
+                Path: "properties.policyRule.if.value",
+                Description: "The value condition compares the unguarded 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'notEquals'. 'tryGet' returns null when a path segment is missing; the comparison may silently produce unexpected results. Wrap the 'tryGet' in 'coalesce' with a fallback value.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_UnguardedTryGetInComparedValue_MixedCaseFunctionName()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""value"": ""[TrYgEt(field('properties'), 'tier')]"",
+                        ""equals"": ""premium""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unguarded-tryget-in-compared-value",
+                Title: "Unguarded tryGet in Compared Value",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 72,
+                Path: "properties.policyRule.if.value",
+                Description: "The value condition compares the unguarded 'tryGet' expression '[TrYgEt(field('properties'), 'tier')]' with 'equals'. 'tryGet' returns null when a path segment is missing; the comparison may silently produce unexpected results. Wrap the 'tryGet' in 'coalesce' with a fallback value.");
+
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
