@@ -27,6 +27,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", "\"5\"", 37)]
         // Numeric JSON literal.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "eQuAls", "5", 37)]
+        // Mixed-case 'notEquals' should also match case-insensitively.
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "nOtEqUaLs", "\"5\"", 40)]
         public void RuleTests_EqualityCheckOnNumericField_NumericField_ShouldFire(string field, string @operator, string literalValue, int linePosition)
         {
             var linter = new PolicyLinter(
