@@ -6,7 +6,7 @@
 
 ## Description
 
-The `tryGet` function returns null when any path segment it dereferences is missing. The `equals` and `notEquals` operators reject a null on their value side: at evaluation time the engine throws because null is not a supported value type. When an `equals` or `notEquals` condition's value is a `tryGet(...)` expression that is not wrapped in `coalesce`, the policy fails at evaluation time for every resource whose path is missing.
+The `tryGet` function returns null when the property it looks up is missing. The `equals` and `notEquals` operators reject a null on their value side: at evaluation time the engine throws because null is not a supported value type. When an `equals` or `notEquals` condition's value is a `tryGet(...)` expression that is not wrapped in `coalesce`, the policy fails at evaluation time for every resource where that property is missing.
 
 ## Suggestions
 
