@@ -20,12 +20,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         // Integer property compared with 'equals'.
-        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "equals", 37)]
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "equals", "\"5\"", 37)]
         // Integer property compared with 'notEquals'.
-        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "notEquals", 40)]
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "notEquals", "\"5\"", 40)]
         // Property that is numeric in some API versions and a string in others.
-        [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", 37)]
-        public void RuleTests_EqualityCheckOnNumericField_NumericField_ShouldFire(string field, string @operator, int linePosition)
+        [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", "\"5\"", 37)]
+        // Numeric JSON literal.
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "eQuAls", "5", 37)]
+        public void RuleTests_EqualityCheckOnNumericField_NumericField_ShouldFire(string field, string @operator, string literalValue, int linePosition)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -41,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""__FIELD__"",
-                        ""__OPERATOR__"": ""5""
+                        ""__OPERATOR__"": __VALUE__
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -52,7 +54,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             policyDefinition = policyDefinition
                 .Replace("__FIELD__", field)
-                .Replace("__OPERATOR__", @operator);
+                .Replace("__OPERATOR__", @operator)
+                .Replace("__VALUE__", literalValue);
 
             var results = linter.Lint(policyDefinition);
 
@@ -65,7 +68,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Category: Category.ResourceFields,
                 LineNumber: 8,
                 LinePosition: linePosition,
-                Description: $"The field alias: '{field}' maps to a numeric property, but the '{@operator}' condition compares it against a literal value. The operator coerces both operands to string, so a value whose string form differs from the literal (for example '5.0' versus '5') will not match. Make sure the literal matches the property's canonical string form.",
+                Description: $"The field alias: '{field}' maps to a numeric property, but the '{@operator}' condition compares it against a literal value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.",
                 Path: "properties.policyRule.if." + @operator);
 
             results.Should().ContainEquivalentOf(output);
@@ -82,6 +85,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("location", "equals")]
         // An alias that does not resolve to any resource property metadata.
         [InlineData("Microsoft.Storage/storageAccounts/thisAliasDoesNotExist", "equals")]
+        // A 'value' condition has no field reference for the rule to inspect.
+        [InlineData(null, "equals")]
         public void RuleTests_EqualityCheckOnNumericField_NoFinding(string field, string @operator)
         {
             var linter = new PolicyLinter(
@@ -97,7 +102,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""mode"": ""Indexed"",
                     ""policyRule"": {
                       ""if"": {
-                        ""field"": ""__FIELD__"",
+                        __FIELD_PROPERTY__
                         ""__OPERATOR__"": ""5""
                       },
                       ""then"": {
@@ -108,7 +113,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 }";
 
             policyDefinition = policyDefinition
-                .Replace("__FIELD__", field)
+                .Replace(
+                    "__FIELD_PROPERTY__",
+                    field == null
+                        ? @"""value"": ""[field('Microsoft.KeyVault/vaults/softDeleteRetentionInDays')]"","
+                        : @"""field"": """ + field + @""",")
                 .Replace("__OPERATOR__", @operator);
 
             var results = linter.Lint(policyDefinition);

@@ -8,18 +8,18 @@
 
 A `field` condition uses [`equals` or `notEquals`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) with a literal value against a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) whose resource property is numeric (an integer or a number).
 
-These operators coerce both operands to string and compare them case-insensitively. The comparison matches only when the literal is identical to the string form the property serializes to, so a literal whose string form differs will not match. For example, a property value of `5.0` stringifies to `"5.0"` and does not equal the literal `"5"`; a leading zero (`"05"`) has the same problem.
+These operators coerce both operands to string and compare them case-insensitively. Numerically equal values whose string forms differ can therefore compare as unequal. For example, a property value of `5.0` stringifies to `"5.0"` and does not equal the literal `"5"`; a leading zero (`"05"`) has the same problem.
 
 ## Suggestions
 
-- Test the policy and confirm the implicit string conversion produces the behavior you intend.
+- Test the policy and confirm the implicit type conversion yields the behavior you intend.
 - For type-accurate equality, use `"value": "[equals(field('property'), 5)]", "equals": true`.
 
 ### Violation
 
 ```json
 {
-  "field": "Microsoft.Test/resourceType/floatProperty",
+  "field": "Microsoft.KeyVault/vaults/softDeleteRetentionInDays",
   "equals": "5"
 }
 ```
@@ -28,7 +28,7 @@ These operators coerce both operands to string and compare them case-insensitive
 
 ```json
 {
-  "field": "Microsoft.Test/resourceType/floatProperty",
-  "equals": "5.0"
+  "value": "[equals(field('Microsoft.KeyVault/vaults/softDeleteRetentionInDays'), 5)]",
+  "equals": true
 }
 ```

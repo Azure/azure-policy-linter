@@ -15,13 +15,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags a 'field' condition that uses 'equals' or 'notEquals' with a literal
     /// value against a field alias whose resource property is numeric. The equality
-    /// operators coerce both operands to string, so a value whose string form differs
-    /// from the literal (for example '5.0' versus '5') will not match.
+    /// operators coerce both operands to string, so numerically equal values whose
+    /// string forms differ (for example '5.0' versus '5') can compare as unequal.
     /// </summary>
     public sealed class EqualityCheckOnNumericField : LinterRule<LeafCondition>
     {
+        private const string RuleTitle = "Equality Check on Numeric Field";
         private const string RuleDescription =
-            "The field alias: '{0}' maps to a numeric property, but the '{1}' condition compares it against a literal value. The operator coerces both operands to string, so a value whose string form differs from the literal (for example '5.0' versus '5') will not match. Make sure the literal matches the property's canonical string form.";
+            "The field alias: '{0}' maps to a numeric property, but the '{1}' condition compares it against a literal value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.";
 
         private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
         {
@@ -41,7 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         public EqualityCheckOnNumericField() : base(
             identifier: "equality-check-on-numeric-field",
             category: Category.ResourceFields,
-            title: "Equality Check on Numeric Field",
+            title: EqualityCheckOnNumericField.RuleTitle,
             descriptionFormat: EqualityCheckOnNumericField.RuleDescription,
             applyToDerivedTypes: false)
         {
