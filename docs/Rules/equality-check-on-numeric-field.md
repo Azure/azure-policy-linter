@@ -12,8 +12,8 @@ These operators coerce both operands to string and compare them case-insensitive
 
 ## Suggestions
 
-- Confirm the literal matches the exact string form the property serializes to, accounting for decimal formatting and leading zeros.
-- Use the numeric comparison operators (`greater`, `greaterOrEquals`, `less`, `lessOrEquals`) when comparing magnitudes rather than exact values.
+- Test the policy and confirm the implicit string conversion produces the behavior you intend.
+- For type-accurate equality, use `"value": "[equals(field('property'), 5)]", "equals": true`.
 
 ### Violation
 
