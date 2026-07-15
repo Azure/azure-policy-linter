@@ -8,6 +8,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Detects a policy parameter that has no <c>metadata.displayName</c>. The definition is valid,
@@ -33,7 +34,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Parameter expression, LinterContext context)
         {
-            if (!string.IsNullOrWhiteSpace(expression.DisplayName))
+            var displayName = (expression.Metadata as JObject)?["displayName"]?.Value<string>();
+            if (!string.IsNullOrWhiteSpace(displayName))
             {
                 return Array.Empty<LinterOutput>();
             }
