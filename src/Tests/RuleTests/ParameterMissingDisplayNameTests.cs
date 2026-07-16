@@ -212,17 +212,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().HaveCount(1);
-
-            results.Should().ContainEquivalentOf(new LinterOutput(
-                RuleIdentifier: "parameter-missing-display-name",
-                Title: "Parameter Missing Display Name",
-                Severity: Severity.Informational,
-                Category: Category.BestPractices,
-                LineNumber: 6,
-                LinePosition: 43,
-                Path: "properties.parameters",
-                Description: "The parameter 'allowedLocations' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+            results.Should().BeEmpty();
         }
 
         [Fact]
