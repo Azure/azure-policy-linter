@@ -1059,12 +1059,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             {
                 EvaluateFunc = (rule, expression, context) =>
                 {
+                    expression.Name.Should().Be("param1");
+                    expression.Type.Should().Be("string");
+                    expression.Metadata.Should().BeOfType<JObject>()
+                        .Which["displayName"]!
+                        .Value<string>()
+                        .Should()
+                        .Be("Parameter 1");
+
                     return new[] { rule.CreateError(expression) };
                 }
             };
             var linter = new PolicyLinter(new[] { testRule }, mockMetadata);
 
-            var result = linter.Lint(@"{ 'properties': { 'parameters': { 'param1': { 'type': 'string' } }, 'policyRule': { 'if': { 'value': 1, 'equals': 1 }, 'then': { 'effect': 'deny' } } } }");
+            var result = linter.Lint(@"{ 'properties': { 'parameters': { 'param1': { 'type': 'string', 'metadata': { 'displayName': 'Parameter 1' } } }, 'policyRule': { 'if': { 'value': 1, 'equals': 1 }, 'then': { 'effect': 'deny' } } } }");
 
             result.Should().ContainSingle()
                 .Which.Description.Should().Be("Test rule for Parameters was invoked");
