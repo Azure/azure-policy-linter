@@ -113,7 +113,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         private static bool IsKnownNonDisabledEffect(string effect)
         {
-            // Audit and Deny can accompany categorized effects, but neither is interchangeable with Manual.
+            // Audit and Deny remain uncategorized for other checks, but Manual conflicts with every other known effect.
             return EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(key: effect) ||
                 string.Equals(a: effect, b: "Audit", comparisonType: StringComparison.OrdinalIgnoreCase) ||
                 string.Equals(a: effect, b: "Deny", comparisonType: StringComparison.OrdinalIgnoreCase);
