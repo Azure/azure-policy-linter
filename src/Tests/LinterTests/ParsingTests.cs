@@ -118,6 +118,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             allowedLocationsType.LineNumber.Should().Be(9);
             allowedLocationsType.LinePosition.Should().Be(31);
 
+            var allowedLocationsMetadata = allowedLocations.Value.Metadata;
+            allowedLocationsMetadata.Should().NotBeNull();
+            allowedLocationsMetadata.LineNumber.Should().Be(10);
+            allowedLocationsMetadata.LinePosition.Should().Be(29);
+
             var allowedLocationsDefaultValue = allowedLocations.Value.DefaultValue;
             allowedLocationsDefaultValue.Should().NotBeNull();
             allowedLocationsDefaultValue.LineNumber.Should().Be(14);
