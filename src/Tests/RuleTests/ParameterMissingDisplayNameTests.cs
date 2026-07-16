@@ -184,6 +184,48 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_ParameterMissingDisplayName_NonStringDisplayName()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new ParameterMissingDisplayName()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""allowedLocations"": {
+                        ""type"": ""Array"",
+                        ""metadata"": { ""displayName"": 42 }
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": { ""field"": ""type"", ""equals"": ""Microsoft.Storage/storageAccounts"" },
+                      ""then"": { ""effect"": ""deny"" }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "parameter-missing-display-name",
+                Title: "Parameter Missing Display Name",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 6,
+                LinePosition: 43,
+                Path: "properties.parameters",
+                Description: "The parameter 'allowedLocations' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+        }
+
+        [Fact]
         public void RuleTests_ParameterMissingDisplayName_DisplayNamePresent()
         {
             var linter = new PolicyLinter(

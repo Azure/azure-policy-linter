@@ -34,7 +34,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Parameter expression, LinterContext context)
         {
-            var displayName = (expression.Metadata as JObject)?["displayName"]?.Value<string>();
+            var displayNameToken = (expression.Metadata as JObject)?["displayName"];
+            var displayName = displayNameToken?.Type == JTokenType.String
+                ? displayNameToken.Value<string>()
+                : null;
             if (!string.IsNullOrWhiteSpace(displayName))
             {
                 return Array.Empty<LinterOutput>();
