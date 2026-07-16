@@ -29,7 +29,7 @@ The node types you'll most often target as a rule author:
 | `ThenExpression` | Just `Effect` (a `Property`). The linter does **not** currently model effect details (`details.roleDefinitionIds`, `existenceCondition`, etc.) as typed nodes - if you need them, walk the raw `JToken`. |
 | `Property` | Key-value pair derived from a json property. Holds `Name`, `Value` (`JToken`), `LanguageExpressions` (template references in the value), `HasLiteralValue`, and `HasSimpleParameterizedValue(...)`. |
 | `Reference` | A parsed template-language reference (`field`, `parameters`, `current`, `claims`, etc.). Carries `Kind`, `Identifier`, `IsResolved`, `PropertySelectionPath?`, and `ResourcePropertyMetadata` for resolved field aliases. |
-| `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
+| `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, `Metadata?` (raw `JToken` for the unmodeled metadata bag), plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
 
 There's also `Count` (for `count` conditions with their own scope), `ExternalEvaluationEnforcementSettings` and `EndpointSettings` (for policies that declare an external-evaluation enforcement block), and `TemplateLanguageExpression` (the parsed form of a `[...]` value). For the full list see `src/PolicyLinter.Core/Expressions/`.
 

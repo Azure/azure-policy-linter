@@ -11,7 +11,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Detects a policy or initiative parameter that does not define a non-empty metadata.description.
+    /// Detects a policy parameter that does not define a non-empty metadata.description.
     /// Without a description, whoever assigns the policy gets no guidance on the parameter's purpose or
     /// acceptable values.
     /// </summary>

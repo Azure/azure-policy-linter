@@ -1,9 +1,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using FluentAssertions;
-    using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
@@ -14,16 +12,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class ParameterMissingDescriptionTests
     {
         /// <summary>
-        /// The type metadata used for the tests.
+        /// The mock type metadata used for the tests.
         /// </summary>
-        private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+        private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Fact]
         public void RuleTests_ParameterMissingDescription_NoMetadata()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -61,7 +59,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -100,7 +98,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -139,7 +137,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -168,7 +166,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -197,7 +195,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
 
             var policyDefinition = @"
                 {

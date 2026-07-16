@@ -2,11 +2,11 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | parameter-missing-description | Informational | — |
+| BestPractices | parameter-missing-description | Informational | default |
 
 ## Description
 
-A policy or initiative parameter does not define a non-empty `metadata.description`. The definition is still valid, but whoever assigns the policy gets no guidance on what the parameter is for or what values are acceptable, which degrades the assignment experience.
+A policy parameter does not define a non-empty `metadata.description`. The definition is still valid, but whoever assigns the policy gets no guidance on what the parameter is for or what values are acceptable, which degrades the assignment experience.
 
 See [parameter properties](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-parameters#parameter-properties) for the `metadata.description` property.
 
