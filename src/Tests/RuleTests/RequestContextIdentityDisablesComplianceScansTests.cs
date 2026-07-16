@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         private const string ExpectedDescription =
-            "The policy rule uses the 'requestContext().identity' function. Compliance results show 'NotApplicable', while enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
+            "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy because its compliance state is 'NotApplicable'. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
         [Fact]
         public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityInValueExpression()

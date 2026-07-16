@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class RequestContextIdentityDisablesComplianceScans : LinterRule<PolicyRule>
     {
         private const string RuleDescription =
-            "The policy rule uses the 'requestContext().identity' function. Compliance results show 'NotApplicable', while enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
+            "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy because its compliance state is 'NotApplicable'. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestContextIdentityDisablesComplianceScans"/> class.
