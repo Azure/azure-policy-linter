@@ -24,7 +24,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public ParameterMissingDisplayName() : base(
             identifier: "parameter-missing-display-name",
-            category: Category.Misc,
+            category: Category.BestPractices,
             title: ParameterMissingDisplayName.RuleTitle,
             descriptionFormat: ParameterMissingDisplayName.RuleDescription,
             applyToDerivedTypes: false)

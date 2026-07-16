@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| Misc | parameter-missing-display-name | Informational | — |
+| BestPractices | parameter-missing-display-name | Informational | — |
 
 ## Description
 
