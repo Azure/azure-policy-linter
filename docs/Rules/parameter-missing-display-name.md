@@ -6,7 +6,7 @@
 
 ## Description
 
-A policy or initiative parameter has no `metadata.displayName`. The definition is valid and accepted, but the Azure portal assignment experience shows the raw parameter name instead of a friendly label, which degrades the assignment UX. A whitespace-only or empty `displayName` is treated the same as a missing one.
+A policy parameter has no `metadata.displayName`. The definition is valid and accepted, but the Azure portal assignment experience shows the raw parameter name instead of a friendly label, which degrades the assignment UX. A whitespace-only or empty `displayName` is treated the same as a missing one.
 
 See [parameter properties](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-parameters#parameter-properties) for the full set of parameter metadata.
 
