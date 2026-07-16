@@ -63,9 +63,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().HaveCount(1);
 
-            var expectedOperator = string.Equals(@operator, "notEquals", System.StringComparison.OrdinalIgnoreCase)
-                ? "notEquals"
-                : "equals";
+            var expectedOperator = @operator.ToLowerInvariant() switch
+            {
+                "equals" => "equals",
+                "notequals" => "notEquals",
+                _ => throw new System.InvalidOperationException("Unexpected equality operator test input."),
+            };
 
             var output = new LinterOutput(
                 RuleIdentifier: "equality-check-on-numeric-field",
