@@ -1,9 +1,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using FluentAssertions;
-    using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
@@ -14,9 +12,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedTryGetEqualityOperandTests
     {
         /// <summary>
-        /// The type metadata used for the tests.
+        /// The mock type metadata used for the tests.
         /// </summary>
-        private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+        private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         private static PolicyLinter CreateLinter()
         {
@@ -25,7 +23,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new UnguardedTryGetEqualityOperand()
                 },
-                metadata: TypeMetadata);
+                metadata: MockMetadata);
         }
 
         [Fact]
@@ -37,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""name"",
-                        ""equals"": ""[tryGet(field('properties'), 'displayName')]""
+                        ""equals"": ""[tryGet(field('tags'), 'environment')]""
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -52,11 +50,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "unguarded-tryget-equality-operand",
-                Title: "Unguarded tryGet Equality Operand",
+                Title: "Unguarded TryGet Equality Operand",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 7,
-                LinePosition: 80,
+                LinePosition: 74,
                 Path: "properties.policyRule.if.equals",
                 Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'equals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
@@ -72,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""name"",
-                        ""notEquals"": ""[tryGet(field('properties'), 'displayName')]""
+                        ""notEquals"": ""[tryGet(field('tags'), 'environment')]""
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -87,11 +85,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "unguarded-tryget-equality-operand",
-                Title: "Unguarded tryGet Equality Operand",
+                Title: "Unguarded TryGet Equality Operand",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 7,
-                LinePosition: 83,
+                LinePosition: 77,
                 Path: "properties.policyRule.if.notEquals",
                 Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'notEquals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
@@ -107,7 +105,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""name"",
-                        ""equals"": ""[TRYGET(field('properties'), 'displayName')]""
+                        ""equals"": ""[TRYGET(field('tags'), 'environment')]""
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -119,6 +117,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unguarded-tryget-equality-operand",
+                Title: "Unguarded TryGet Equality Operand",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 74,
+                Path: "properties.policyRule.if.equals",
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'equals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
@@ -130,7 +140,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""name"",
-                        ""equals"": ""[coalesce(tryGet(field('properties'), 'displayName'), '')]""
+                        ""equals"": ""[coalesce(tryGet(field('tags'), 'environment'), '')]""
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -153,7 +163,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""name"",
-                        ""equals"": ""[concat(tryGet(field('properties'), 'displayName'), '-suffix')]""
+                        ""equals"": ""[concat(tryGet(field('tags'), 'environment'), '-suffix')]""
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -225,7 +235,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {{
                       ""if"": {{
                         ""field"": ""name"",
-                        ""{operatorName}"": ""[tryGet(field('properties'), 'displayName')]""
+                        ""{operatorName}"": ""[tryGet(field('tags'), 'environment')]""
                       }},
                       ""then"": {{
                         ""effect"": ""deny""

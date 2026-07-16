@@ -12,13 +12,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
-    /// Flags an 'equals' or 'notEquals' condition whose value is a 'tryGet(...)' expression
-    /// that is not wrapped in 'coalesce'. 'tryGet' returns null when the property is missing,
-    /// and 'equals'/'notEquals' throw on a null value, so the policy fails at evaluation time.
+    /// Flags an 'equals' or 'notEquals' condition whose value expression has 'tryGet' as its
+    /// outermost function. 'tryGet' returns null when the property is missing, and
+    /// 'equals'/'notEquals' throw on a null value, so the policy fails at evaluation time.
     /// </summary>
     public sealed class UnguardedTryGetEqualityOperand : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Unguarded tryGet Equality Operand";
+        private const string RuleTitle = "Unguarded TryGet Equality Operand";
         private const string RuleDescription =
             "The '{0}' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The '{0}' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.";
 
