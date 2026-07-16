@@ -515,6 +515,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             templateLanguageExpressionsWithLineInfo.Should().ContainKey(effectPath);
             templateLanguageExpressionsWithLineInfo[effectPath].LineNumber.Should().Be(52);
             templateLanguageExpressionsWithLineInfo[effectPath].LinePosition.Should().Be(52);
+
+            // Each parameter expression is pathed by its name, so distinct parameters do not collapse onto a shared path.
+            var allowedLocationsParameterPath = "properties.parameters.allowedLocations";
+            expressionsWithLineInfo.Should().ContainKey(allowedLocationsParameterPath);
+            expressionsWithLineInfo[allowedLocationsParameterPath].LineNumber.Should().Be(8);
+            expressionsWithLineInfo[allowedLocationsParameterPath].LinePosition.Should().Be(33);
+
+            var effectParameterPath = "properties.parameters.effect";
+            expressionsWithLineInfo.Should().ContainKey(effectParameterPath);
+            expressionsWithLineInfo[effectParameterPath].LineNumber.Should().Be(19);
+            expressionsWithLineInfo[effectParameterPath].LinePosition.Should().Be(23);
         }
 
         [Theory]
