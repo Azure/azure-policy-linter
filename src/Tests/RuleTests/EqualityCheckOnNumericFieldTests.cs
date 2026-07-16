@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "notEquals", "\"5\"", "notEquals", 40)]
         // Property that is numeric in some API versions and a string in others.
         [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", "\"5\"", "equals", 37)]
-        // Numeric JSON literal.
+        // Numeric JSON literal: the unquoted value shifts the reported line position.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "eQuAls", "5", "equals", 35)]
         // Mixed-case 'notEquals' should also match case-insensitively.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "nOtEqUaLs", "\"5\"", "notEquals", 40)]
