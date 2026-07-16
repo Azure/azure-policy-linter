@@ -13,8 +13,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
 
     /// <summary>
-    /// Flags a 'field' condition that uses 'equals' or 'notEquals' with a literal
-    /// value against a field alias whose resource property is numeric. The equality
+    /// Flags a 'field' condition that uses 'equals' or 'notEquals' directly
+    /// against a JSON value on a field alias whose resource property is numeric. The equality
     /// operators coerce both operands to string, so numerically equal values whose
     /// string forms differ (for example '5.0' versus '5') can compare as unequal.
     /// </summary>
@@ -22,7 +22,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Equality Check on Numeric Field";
         private const string RuleDescription =
-            "The field alias: '{0}' maps to a numeric property, but the '{1}' condition compares it against a literal value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.";
+            "The field alias: '{0}' maps to a numeric property, but the '{1}' condition compares it directly against a JSON value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.";
 
         private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
         {
