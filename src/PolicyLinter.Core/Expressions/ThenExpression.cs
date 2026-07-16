@@ -25,11 +25,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public Property Effect { get; }
 
         /// <summary>
-        /// The policy effect details property.
-        /// </summary>
-        public Property? Details { get; }
-
-        /// <summary>
         /// Creates a new instance of the <see cref="ThenExpression"/> class.
         /// </summary>
         /// <param name="then">The then expression.</param>
@@ -51,18 +46,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 parent: this,
                 countExpressionScopes: new Stack<CountExpressionScope>(),
                 typeMetadata: typeMetadata);
-
-            this.Details = then?.Value.Details != null
-                ? new Property(
-                    name: "details",
-                    value: then.Value.Details.Value,
-                    jTokenMetadata: then.Value.Details,
-                    isFieldAccessor: false,
-                    parentPath: this.PathSegments,
-                    parent: this,
-                    countExpressionScopes: new Stack<CountExpressionScope>(),
-                    typeMetadata: typeMetadata)
-                : null;
         }
 
         /// <inheritdoc/>
@@ -72,7 +55,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 visitor.Visit(this);
                 this.Effect.Visit(visitor);
-                this.Details?.Visit(visitor);
             }
         }
     }

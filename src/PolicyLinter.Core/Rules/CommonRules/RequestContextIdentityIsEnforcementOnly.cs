@@ -15,25 +15,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// which the policy engine treats as NotApplicable for compliance evaluation while still
     /// enforcing effects at request time.
     /// </summary>
-    public sealed class RequestContextIdentityDisablesComplianceScans : LinterRule<PolicyRule>
+    public sealed class RequestContextIdentityIsEnforcementOnly : LinterRule<IfCondition>
     {
         private const string RuleDescription =
             "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy because its compliance state is 'NotApplicable'. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RequestContextIdentityDisablesComplianceScans"/> class.
+        /// Initializes a new instance of the <see cref="RequestContextIdentityIsEnforcementOnly"/> class.
         /// </summary>
-        public RequestContextIdentityDisablesComplianceScans() : base(
-            identifier: "request-context-identity-disables-compliance-scans",
+        public RequestContextIdentityIsEnforcementOnly() : base(
+            identifier: "request-context-identity-is-enforcement-only",
             category: Category.BestPractices,
-            title: "Request Context Identity Disables Compliance Scans",
-            descriptionFormat: RequestContextIdentityDisablesComplianceScans.RuleDescription,
+            title: "Request Context Identity Is Enforcement Only",
+            descriptionFormat: RequestContextIdentityIsEnforcementOnly.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(PolicyRule expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
             Reference? identityReference = null;
 

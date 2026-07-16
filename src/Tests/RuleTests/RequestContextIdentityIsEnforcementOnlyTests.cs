@@ -7,9 +7,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="RequestContextIdentityDisablesComplianceScans"/> rule.
+    /// Tests for the <see cref="RequestContextIdentityIsEnforcementOnly"/> rule.
     /// </summary>
-    public class RequestContextIdentityDisablesComplianceScansTests
+    public class RequestContextIdentityIsEnforcementOnlyTests
     {
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -20,12 +20,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy because its compliance state is 'NotApplicable'. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
         [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityInValueExpression()
+        public void RuleTests_RequestContextIdentityIsEnforcementOnly_IdentityInValueExpression()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new RequestContextIdentityDisablesComplianceScans()
+                    new RequestContextIdentityIsEnforcementOnly()
                 },
                 metadata: MockMetadata);
 
@@ -58,8 +58,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "request-context-identity-disables-compliance-scans",
-                Title: "Request Context Identity Disables Compliance Scans",
+                RuleIdentifier: "request-context-identity-is-enforcement-only",
+                Title: "Request Context Identity Is Enforcement Only",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 13,
@@ -71,12 +71,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityWithNestedProperty()
+        public void RuleTests_RequestContextIdentityIsEnforcementOnly_IdentityWithNestedProperty()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new RequestContextIdentityDisablesComplianceScans()
+                    new RequestContextIdentityIsEnforcementOnly()
                 },
                 metadata: MockMetadata);
 
@@ -101,8 +101,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "request-context-identity-disables-compliance-scans",
-                Title: "Request Context Identity Disables Compliance Scans",
+                RuleIdentifier: "request-context-identity-is-enforcement-only",
+                Title: "Request Context Identity Is Enforcement Only",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 8,
@@ -114,12 +114,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_MultipleReferencesEmitSingleFinding()
+        public void RuleTests_RequestContextIdentityIsEnforcementOnly_MultipleReferencesEmitSingleFinding()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new RequestContextIdentityDisablesComplianceScans()
+                    new RequestContextIdentityIsEnforcementOnly()
                 },
                 metadata: MockMetadata);
 
@@ -152,8 +152,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "request-context-identity-disables-compliance-scans",
-                Title: "Request Context Identity Disables Compliance Scans",
+                RuleIdentifier: "request-context-identity-is-enforcement-only",
+                Title: "Request Context Identity Is Enforcement Only",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 9,
@@ -165,12 +165,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityAccessorIsCaseInsensitive()
+        public void RuleTests_RequestContextIdentityIsEnforcementOnly_IdentityAccessorIsCaseInsensitive()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new RequestContextIdentityDisablesComplianceScans()
+                    new RequestContextIdentityIsEnforcementOnly()
                 },
                 metadata: MockMetadata);
 
@@ -195,8 +195,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "request-context-identity-disables-compliance-scans",
-                Title: "Request Context Identity Disables Compliance Scans",
+                RuleIdentifier: "request-context-identity-is-enforcement-only",
+                Title: "Request Context Identity Is Enforcement Only",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
@@ -208,66 +208,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityInThenDetails()
+        public void RuleTests_RequestContextIdentityIsEnforcementOnly_RequestContextWithoutIdentity()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new RequestContextIdentityDisablesComplianceScans()
-                },
-                metadata: MockMetadata);
-
-            var policyDefinition = @"
-                {
-                  ""properties"": {
-                    ""mode"": ""Indexed"",
-                    ""policyRule"": {
-                      ""if"": {
-                        ""field"": ""type"",
-                        ""equals"": ""Microsoft.Compute/virtualMachines""
-                      },
-                      ""then"": {
-                        ""effect"": ""modify"",
-                        ""details"": {
-                          ""roleDefinitionIds"": [],
-                          ""operations"": [
-                            {
-                              ""operation"": ""addOrReplace"",
-                              ""field"": ""tags['environment']"",
-                              ""value"": ""production"",
-                              ""condition"": ""[equals(tryGet(requestContext().identity, 'idtyp'), 'user')]""
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  }
-                }";
-
-            var results = linter.Lint(policyDefinition);
-
-            results.Should().HaveCount(1);
-
-            var output = new LinterOutput(
-                RuleIdentifier: "request-context-identity-disables-compliance-scans",
-                Title: "Request Context Identity Disables Compliance Scans",
-                Severity: Severity.Warning,
-                Category: Category.BestPractices,
-                LineNumber: 12,
-                LinePosition: 36,
-                Path: "properties.policyRule.then.details",
-                Description: ExpectedDescription);
-
-            results.Should().ContainEquivalentOf(output);
-        }
-
-        [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_RequestContextWithoutIdentity()
-        {
-            var linter = new PolicyLinter(
-                rules: new ILinterRule[]
-                {
-                    new RequestContextIdentityDisablesComplianceScans()
+                    new RequestContextIdentityIsEnforcementOnly()
                 },
                 metadata: MockMetadata);
 
@@ -293,12 +239,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_RequestContextIdentityDisablesComplianceScans_NoRequestContext()
+        public void RuleTests_RequestContextIdentityIsEnforcementOnly_NoRequestContext()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new RequestContextIdentityDisablesComplianceScans()
+                    new RequestContextIdentityIsEnforcementOnly()
                 },
                 metadata: MockMetadata);
 

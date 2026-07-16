@@ -121,8 +121,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
     {
         [JsonProperty(Required = Required.Always)]
         public GenericObjectProperty<string>? Effect { get; set; }
-
-        public GenericObjectProperty<JToken>? Details { get; set; }
     }
 
     public class ExternalEvaluationEnforcementSettingsObject

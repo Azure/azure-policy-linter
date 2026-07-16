@@ -1,8 +1,8 @@
-# Request Context Identity Disables Compliance Scans
+# Request Context Identity Is Enforcement Only
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | request-context-identity-disables-compliance-scans | Warning | default |
+| BestPractices | request-context-identity-is-enforcement-only | Warning | default |
 
 ## Description
 
@@ -10,8 +10,7 @@ The policy rule references the [`requestContext().identity`](https://learn.micro
 
 ## Suggestions
 
-- If real-time enforcement is the goal and compliance reporting is not needed, no change is required - the `NotApplicable` compliance state is expected.
-- If the policy needs compliance data, restructure the rule to evaluate resource fields instead of caller identity, so the policy engine can evaluate it during compliance scans.
+- Accept that identity-dependent enforcement produces no compliance data for the policy.
 
 ## Examples
 
@@ -21,14 +20,5 @@ The policy rule references the [`requestContext().identity`](https://learn.micro
 {
   "value": "[tryGet(requestContext().identity, 'idtyp')]",
   "equals": "user"
-}
-```
-
-### Correct
-
-```json
-{
-  "field": "tags['owner']",
-  "exists": "true"
 }
 ```
