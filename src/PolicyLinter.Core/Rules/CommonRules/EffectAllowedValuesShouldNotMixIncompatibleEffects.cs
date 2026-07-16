@@ -75,13 +75,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 .Where(v => v != null && EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(v))
                 .ToArray();
 
-            var manualCombination = allowedValues
+            var knownNonDisabledEffects = allowedValues
                 .Where(predicate: v => v != null && EffectAllowedValuesShouldNotMixIncompatibleEffects.IsKnownNonDisabledEffect(effect: v))
                 .Distinct(comparer: StringComparer.OrdinalIgnoreCase)
                 .ToArray();
 
-            var hasManualConflict = manualCombination.Length > 1 &&
-                manualCombination.Any(predicate: v => string.Equals(a: v, b: "Manual", comparisonType: StringComparison.OrdinalIgnoreCase));
+            var hasManualConflict = knownNonDisabledEffects.Length > 1 &&
+                knownNonDisabledEffects.Any(predicate: v => string.Equals(a: v, b: "Manual", comparisonType: StringComparison.OrdinalIgnoreCase));
 
             var distinctCategories = categorizedEffects
                 .Select(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory[v])
@@ -95,7 +95,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var conflictingEffects = string.Join(
                 ", ",
-                (hasManualConflict ? manualCombination : categorizedEffects)
+                (hasManualConflict ? knownNonDisabledEffects : categorizedEffects)
                     .OrderBy(v => v, StringComparer.OrdinalIgnoreCase)
                     .ToArray());
 
@@ -113,6 +113,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         private static bool IsKnownNonDisabledEffect(string effect)
         {
+            // Audit and Deny can accompany categorized effects, but neither is interchangeable with Manual.
             return EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(key: effect) ||
                 string.Equals(a: effect, b: "Audit", comparisonType: StringComparison.OrdinalIgnoreCase) ||
                 string.Equals(a: effect, b: "Deny", comparisonType: StringComparison.OrdinalIgnoreCase);

@@ -1,11 +1,15 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
+    using System.Collections.Immutable;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
+    using Newtonsoft.Json.Linq;
     using Xunit;
 
     /// <summary>
@@ -450,7 +454,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 23,
-                LinePosition: 58,
+                LinePosition: 64,
                 Path: "properties.policyRule.then.effect",
                 Description: "The effect parameter 'policyEffect' has allowedValues that combine non-interchangeable effects: DeployIfNotExists, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
@@ -620,41 +624,51 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_NullAllowedValueWithConflict()
         {
-            var linter = new PolicyLinter(
-                rules: new ILinterRule[]
+            var parameterObject = new ParameterObject
+            {
+                Type = new GenericObjectProperty<string> { Value = "String" },
+                AllowedValues = new GenericObjectProperty<GenericObjectProperty<JToken>[]>
                 {
-                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
-                },
-                metadata: TypeMetadata);
-
-            var policyDefinition = @"
-                {
-                  ""properties"": {
-                    ""mode"": ""Indexed"",
-                    ""parameters"": {
-                      ""effect"": {
-                        ""type"": ""String"",
-                        ""defaultValue"": ""Modify"",
-                        ""allowedValues"": [
-                          null,
-                          ""Modify"",
-                          ""DeployIfNotExists""
-                        ]
-                      }
-                    },
-                    ""policyRule"": {
-                      ""if"": {
-                        ""field"": ""type"",
-                        ""equals"": ""Microsoft.Storage/storageAccounts""
-                      },
-                      ""then"": {
-                        ""effect"": ""[parameters('effect')]""
-                      }
+                    Value = new[]
+                    {
+                        new GenericObjectProperty<JToken> { Value = JValue.CreateNull() },
+                        new GenericObjectProperty<JToken> { Value = JToken.FromObject("Modify") },
+                        new GenericObjectProperty<JToken> { Value = JToken.FromObject("DeployIfNotExists") }
                     }
-                  }
-                }";
+                }
+            };
 
-            var results = linter.Lint(policyDefinition);
+            var parameter = new Parameter(
+                name: "effect",
+                parameterProperty: new GenericObjectProperty<ParameterObject> { Value = parameterObject },
+                path: ImmutableArray<string>.Empty,
+                parent: null!);
+
+            var context = new LinterContext(
+                resourceTypeMetadata: TypeMetadata,
+                parameters: ImmutableDictionary<string, Parameter>.Empty.Add(key: "effect", value: parameter));
+
+            var then = new GenericObjectProperty<ThenObject>
+            {
+                Value = new ThenObject
+                {
+                    Effect = new GenericObjectProperty<string>
+                    {
+                        Value = "[parameters('effect')]",
+                        LineNumber = 22,
+                        LinePosition = 58
+                    }
+                }
+            };
+
+            var expression = new ThenExpression(
+                then: then,
+                parentPath: ImmutableArray.Create("properties", "policyRule"),
+                parent: null!,
+                typeMetadata: TypeMetadata);
+
+            var rule = new EffectAllowedValuesShouldNotMixIncompatibleEffects();
+            var results = rule.Evaluate(expression: expression, context: context);
 
             results.Should().HaveCount(1);
 
