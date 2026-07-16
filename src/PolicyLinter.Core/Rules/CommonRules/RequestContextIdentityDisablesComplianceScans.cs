@@ -11,14 +11,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
-    /// Detects policies whose if condition references the 'requestContext().identity' function,
+    /// Detects policies whose policy rule references the 'requestContext().identity' function,
     /// which the policy engine treats as NotApplicable for compliance evaluation while still
     /// enforcing effects at request time.
     /// </summary>
-    public sealed class RequestContextIdentityDisablesComplianceScans : LinterRule<IfCondition>
+    public sealed class RequestContextIdentityDisablesComplianceScans : LinterRule<PolicyRule>
     {
         private const string RuleDescription =
-            "The policy rule uses the 'requestContext().identity' function, so the policy engine marks the policy as 'NotApplicable' for compliance evaluation. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time, but the policy will not appear in compliance results.";
+            "The policy rule uses the 'requestContext().identity' function. Compliance results show 'NotApplicable', while enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestContextIdentityDisablesComplianceScans"/> class.
@@ -33,9 +33,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(PolicyRule expression, LinterContext context)
         {
-            var referencesIdentity = false;
+            Reference? identityReference = null;
 
             var visitor = new PolicyExpressionVisitor
             {
@@ -46,21 +46,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                         reference.PropertySelectionPath?.Path is { Length: > 0 } path &&
                         path[0].EqualsOrdinalInsensitively("identity"))
                     {
-                        referencesIdentity = true;
+                        identityReference ??= reference;
                     }
                 }
             };
 
             expression.Visit(visitor);
 
-            if (!referencesIdentity)
+            if (identityReference == null)
             {
                 return Array.Empty<LinterOutput>();
             }
 
             return new[]
             {
-                this.CreateWarning(expression),
+                this.CreateWarning(identityReference),
             };
         }
     }

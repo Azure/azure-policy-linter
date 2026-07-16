@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         private const string ExpectedDescription =
-            "The policy rule uses the 'requestContext().identity' function, so the policy engine marks the policy as 'NotApplicable' for compliance evaluation. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time, but the policy will not appear in compliance results.";
+            "The policy rule uses the 'requestContext().identity' function. Compliance results show 'NotApplicable', while enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
         [Fact]
         public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityInValueExpression()
@@ -62,9 +62,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Request Context Identity Disables Compliance Scans",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 6,
-                LinePosition: 29,
-                Path: "properties.policyRule.if",
+                LineNumber: 13,
+                LinePosition: 83,
+                Path: "properties.policyRule.if.allOf[1].value",
                 Description: ExpectedDescription);
 
             results.Should().ContainEquivalentOf(output);
@@ -105,9 +105,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Request Context Identity Disables Compliance Scans",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 6,
-                LinePosition: 29,
-                Path: "properties.policyRule.if",
+                LineNumber: 8,
+                LinePosition: 79,
+                Path: "properties.policyRule.if.notIn",
                 Description: ExpectedDescription);
 
             results.Should().ContainEquivalentOf(output);
@@ -150,6 +150,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "request-context-identity-disables-compliance-scans",
+                Title: "Request Context Identity Disables Compliance Scans",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 9,
+                LinePosition: 83,
+                Path: "properties.policyRule.if.allOf[0].value",
+                Description: ExpectedDescription);
+
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
@@ -181,6 +193,72 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "request-context-identity-disables-compliance-scans",
+                Title: "Request Context Identity Disables Compliance Scans",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 67,
+                Path: "properties.policyRule.if.value",
+                Description: ExpectedDescription);
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_RequestContextIdentityDisablesComplianceScans_IdentityInThenDetails()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new RequestContextIdentityDisablesComplianceScans()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Compute/virtualMachines""
+                      },
+                      ""then"": {
+                        ""effect"": ""modify"",
+                        ""details"": {
+                          ""roleDefinitionIds"": [],
+                          ""operations"": [
+                            {
+                              ""operation"": ""addOrReplace"",
+                              ""field"": ""tags['environment']"",
+                              ""value"": ""production"",
+                              ""condition"": ""[equals(tryGet(requestContext().identity, 'idtyp'), 'user')]""
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "request-context-identity-disables-compliance-scans",
+                Title: "Request Context Identity Disables Compliance Scans",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 12,
+                LinePosition: 36,
+                Path: "properties.policyRule.then.details",
+                Description: ExpectedDescription);
+
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
