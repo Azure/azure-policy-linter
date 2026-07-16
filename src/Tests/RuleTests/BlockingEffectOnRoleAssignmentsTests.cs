@@ -36,7 +36,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.then.effect",
-                Description: $"The '{effect}' effect blocks creation of role assignments ('Microsoft.Authorization/roleAssignments'), which prevents granting access under the policy's scope and can lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.");
+                Description: $"The '{effect}' effect blocks creation of role assignments or PIM activation requests ('Microsoft.Authorization/roleAssignments', 'Microsoft.Authorization/roleAssignmentScheduleRequests'), which prevents granting or activating access under the policy's scope and can lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.");
         }
 
         [Fact]
@@ -63,6 +63,61 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(
                 BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40));
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_DenyEqualsRoleAssignmentScheduleRequests()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Authorization/roleAssignmentScheduleRequests""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40));
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_InSetContainingRoleAssignmentScheduleRequests()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""in"": [
+                          ""Microsoft.Compute/virtualMachines"",
+                          ""Microsoft.Authorization/roleAssignmentScheduleRequests""
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 14, linePosition: 40));
         }
 
         [Fact]
