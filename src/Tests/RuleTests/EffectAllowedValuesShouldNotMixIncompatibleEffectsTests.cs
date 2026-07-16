@@ -194,7 +194,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 23,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: DeployIfNotExists, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: DeployIfNotExists, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
 
         [Fact]
@@ -289,7 +289,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 23,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: deployIfNotExists, modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: deployIfNotExists, modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
 
         [Fact]
@@ -443,7 +443,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].Description.Should().Contain("'policyEffect'");
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 23,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'policyEffect' has allowedValues that combine non-interchangeable effects: DeployIfNotExists, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
 
         [Fact]
@@ -609,6 +618,58 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_NullAllowedValueWithConflict()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""Modify"",
+                        ""allowedValues"": [
+                          null,
+                          ""Modify"",
+                          ""DeployIfNotExists""
+                        ]
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: DeployIfNotExists, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
+        }
+
+        [Fact]
         public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_DataplaneModeSkipped()
         {
             var linter = new PolicyLinter(
@@ -742,7 +803,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 22,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: DenyAction, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: DenyAction, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
 
         [Fact]
@@ -794,7 +855,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 22,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: Append, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: Append, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
 
         [Fact]
@@ -846,7 +907,63 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 22,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: Manual, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: Manual, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
+        }
+
+        [Theory]
+        [InlineData("Audit")]
+        [InlineData("Deny")]
+        public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_MixManualAndAuditOrDeny(string otherEffect)
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new EffectAllowedValuesShouldNotMixIncompatibleEffects()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""Manual"",
+                        ""allowedValues"": [
+                          ""Manual"",
+                          ""OTHER_EFFECT"",
+                          ""Disabled""
+                        ]
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Storage/storageAccounts""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            policyDefinition = policyDefinition.Replace(oldValue: "OTHER_EFFECT", newValue: otherEffect);
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "effect-allowed-values-should-not-mix-incompatible-effects",
+                Title: "Effect Allowed Values Should Not Mix Incompatible Effects",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 22,
+                LinePosition: 58,
+                Path: "properties.policyRule.then.effect",
+                Description: $"The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: {otherEffect}, Manual. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
 
         [Fact]
@@ -899,7 +1016,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 23,
                 LinePosition: 58,
                 Path: "properties.policyRule.then.effect",
-                Description: "The effect parameter 'effect' has allowedValues that mix effects requiring incompatible 'details' blocks: AuditIfNotExists, DeployIfNotExists, Modify. A parameterized effect shares one static 'then.details' block, so allowedValues must not combine effects that need different 'details' shapes."));
+                Description: "The effect parameter 'effect' has allowedValues that combine non-interchangeable effects: AuditIfNotExists, DeployIfNotExists, Modify. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect."));
         }
     }
 }

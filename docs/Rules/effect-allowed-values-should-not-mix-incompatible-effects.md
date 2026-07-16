@@ -6,42 +6,24 @@
 
 ## Description
 
-When the [`effect`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics) is a parameter reference, every allowed effect shares the single static `then.details` block. Some effects require their own `details` shape, so allowing effects with different `details` shapes leaves at least one allowed value without a valid `details` block. Each of the following sets of effects requires its own `details` shape, and effects from different sets cannot coexist in the same `allowedValues`:
-
-- [`Modify`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-modify)
-- [`AuditIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit-if-not-exists), [`DeployIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deploy-if-not-exists)
-- [`DenyAction`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny-action)
-- [`Append`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-append)
-- [`Manual`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-manual)
-
-Effects that need no `details` block ([`Audit`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit), [`Deny`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny), [`Disabled`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-disabled)) are compatible with any of the above.
-
-This rule is skipped for dataplane policy modes (e.g. `Microsoft.Kubernetes.Data`) since they may use effects not in the known set.
+Parameterized [`effect`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics#interchanging-effects) values share one policy rule and `then.details` configuration. Azure Policy documents [`Audit`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit), [`Deny`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny), and either [`Modify`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-modify) or [`Append`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-append) as often interchangeable, and [`AuditIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit-if-not-exists) and [`DeployIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deploy-if-not-exists) as often interchangeable. [`Manual`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-manual) is not interchangeable, while [`Disabled`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-disabled) is interchangeable with any effect; [`DenyAction`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny-action) also uses its own `details` configuration. This rule is skipped for dataplane policy modes such as `Microsoft.Kubernetes.Data`.
 
 ## Suggestions
 
-Restrict `allowedValues` to effects from a single compatible set plus any effect that needs no `details` block (`Audit`, `Deny`, `Disabled`).
+Restrict `allowedValues` to interchangeable effects. Keep `Manual` separate from every effect except `Disabled`.
 
 ## Examples
 
 ### Violation
 
 ```json
-"allowedValues": ["Modify", "DeployIfNotExists", "Disabled"]
+"allowedValues": ["Audit", "Manual", "Disabled"]
 ```
 
-`Modify` and `DeployIfNotExists` require different `details` shapes.
+`Audit` and `Manual` are not interchangeable.
 
 ### Correct
 
 ```json
-"allowedValues": ["Audit", "Modify", "Disabled"]
-```
-
-```json
-"allowedValues": ["Audit", "Deny", "Disabled"]
-```
-
-```json
-"allowedValues": ["AuditIfNotExists", "DeployIfNotExists", "Disabled"]
+"allowedValues": ["Manual", "Disabled"]
 ```
