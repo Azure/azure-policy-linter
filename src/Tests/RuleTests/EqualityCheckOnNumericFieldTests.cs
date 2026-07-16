@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Category: Category.ResourceFields,
                 LineNumber: 8,
                 LinePosition: linePosition,
-                Description: $"The field alias: '{field}' maps to a numeric property, but the '{expectedOperator}' condition compares it directly against a JSON value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.",
+                Description: $"The field alias: '{field}' maps to a numeric property, but the '{expectedOperator}' condition compares that property directly against a JSON value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.",
                 Path: "properties.policyRule.if." + expectedOperator);
 
             results.Should().ContainEquivalentOf(output);

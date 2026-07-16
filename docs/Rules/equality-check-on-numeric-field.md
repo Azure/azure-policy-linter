@@ -6,7 +6,7 @@
 
 ## Description
 
-A `field` condition uses [`equals` or `notEquals`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) directly against a JSON value on a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) whose resource property is numeric (an integer or a number).
+A `field` condition uses [`equals` or `notEquals`](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) to directly compare a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) whose resource property is numeric against a JSON value (an integer, number, or string in the policy definition).
 
 These operators coerce both operands to string and compare them case-insensitively. Numerically equal values whose string forms differ can therefore compare as unequal. For example, a property value of `5.0` stringifies to `"5.0"` and does not equal `"5"`; a leading zero (`"05"`) has the same problem.
 
