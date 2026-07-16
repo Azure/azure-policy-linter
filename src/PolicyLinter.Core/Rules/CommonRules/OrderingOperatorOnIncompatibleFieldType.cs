@@ -72,14 +72,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var valueIsNumericOrDate = OrderingOperatorOnIncompatibleFieldType.IsNumericOrDate(expression.Operator.Value);
-            if (fieldTypes.Any(fieldType => OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(fieldType, valueIsNumericOrDate)))
+            var valueType = OrderingOperatorOnIncompatibleFieldType.ClassifyValue(expression.Operator.Value);
+            if (fieldTypes.Any(fieldType => OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(fieldType, valueType)))
             {
                 return Array.Empty<LinterOutput>();
             }
 
             var fieldTypeName = string.Join(" or ", fieldTypes.Select(OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName).Distinct());
-            var valueTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(expression.Operator.Value);
+            var valueTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(valueType, expression.Operator.Value);
 
             return new[]
             {
@@ -100,34 +100,69 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <summary>
+        /// The type of a literal comparison value, which determines the condition type that the field's
+        /// type must match. Azure Policy throws when the field type doesn't match the condition type.
+        /// </summary>
+        private enum ComparisonValueType
+        {
+            /// <summary>A number (integer or float).</summary>
+            Numeric,
+
+            /// <summary>A string that parses as an ISO 8601 date.</summary>
+            Date,
+
+            /// <summary>A string that isn't a date.</summary>
+            String,
+
+            /// <summary>Any other value (boolean, object, array, or null).</summary>
+            Other,
+        }
+
+        /// <summary>
         /// Determines whether a field of the given data type can be ordered against the comparison value.
+        /// Azure Policy throws when the field's type doesn't match the comparison value's condition type.
         /// </summary>
         /// <param name="fieldType">The field's alias data type.</param>
-        /// <param name="valueIsNumericOrDate">Whether the comparison value is a number or a date.</param>
-        private static bool IsOrderableWithValue(string fieldType, bool valueIsNumericOrDate)
+        /// <param name="valueType">The comparison value's type.</param>
+        private static bool IsOrderableWithValue(string fieldType, ComparisonValueType valueType)
         {
             if (fieldType.Equals(AliasPathTokenType.Integer.ToString(), StringComparison.OrdinalIgnoreCase) ||
                 fieldType.Equals(AliasPathTokenType.Number.ToString(), StringComparison.OrdinalIgnoreCase))
             {
-                // A numeric field orders against a number or a date; any other value type throws.
-                return valueIsNumericOrDate;
+                // A numeric field orders only against a number; a string or date condition type throws.
+                return valueType == ComparisonValueType.Numeric;
             }
 
-            // Boolean, object, and array fields can't be ordered against any value. A string field is treated as
-            // compatible: it orders lexicographically against strings, dates, and numbers.
-            return !fieldType.Equals(AliasPathTokenType.Boolean.ToString(), StringComparison.OrdinalIgnoreCase) &&
-                !fieldType.Equals(AliasPathTokenType.Object.ToString(), StringComparison.OrdinalIgnoreCase) &&
-                !fieldType.Equals(AliasPathTokenType.Array.ToString(), StringComparison.OrdinalIgnoreCase);
+            if (fieldType.Equals(AliasPathTokenType.String.ToString(), StringComparison.OrdinalIgnoreCase))
+            {
+                // Dates are stored as strings, so a string field orders against a string or a date, but a
+                // number condition type throws.
+                return valueType is ComparisonValueType.String or ComparisonValueType.Date;
+            }
+
+            // Boolean, object, and array fields can't be ordered against any value.
+            return false;
         }
 
         /// <summary>
-        /// Determines whether a literal comparison value is a number or an ISO 8601 date.
+        /// Classifies a literal comparison value into the condition type it produces.
         /// </summary>
         /// <param name="value">The comparison value.</param>
-        private static bool IsNumericOrDate(JToken value)
+        private static ComparisonValueType ClassifyValue(JToken value)
         {
-            return value.Type is JTokenType.Integer or JTokenType.Float ||
-                (value.Type == JTokenType.String && (value.Value<string>() ?? string.Empty).TryParseISO8601UniversalDateTime(out _));
+            if (value.Type is JTokenType.Integer or JTokenType.Float)
+            {
+                return ComparisonValueType.Numeric;
+            }
+
+            if (value.Type == JTokenType.String)
+            {
+                return (value.Value<string>() ?? string.Empty).TryParseISO8601UniversalDateTime(out _)
+                    ? ComparisonValueType.Date
+                    : ComparisonValueType.String;
+            }
+
+            return ComparisonValueType.Other;
         }
 
         /// <summary>
@@ -145,17 +180,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <summary>
         /// Maps a literal comparison value to a type name for the failure message.
         /// </summary>
+        /// <param name="valueType">The comparison value's classified type.</param>
         /// <param name="value">The comparison value.</param>
-        private static string FriendlyValueTypeName(JToken value)
+        private static string FriendlyValueTypeName(ComparisonValueType valueType, JToken value)
         {
-            return value.Type switch
+            return valueType switch
             {
-                JTokenType.Integer or JTokenType.Float => "number",
-                JTokenType.String => "string",
-                JTokenType.Boolean => "boolean",
-                JTokenType.Object => "object",
-                JTokenType.Array => "array",
-                JTokenType.Null => "null",
+                ComparisonValueType.Numeric => "number",
+                ComparisonValueType.Date => "date",
+                ComparisonValueType.String => "string",
                 _ => value.Type.ToString().ToLowerInvariant(),
             };
         }
