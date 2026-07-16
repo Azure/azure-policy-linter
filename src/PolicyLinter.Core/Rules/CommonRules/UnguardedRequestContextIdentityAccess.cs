@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Unguarded Request Context Identity Access";
         private const string RuleDescription =
-            "The 'requestContext().identity.{0}' access selects a sub-property directly. " +
+            "A property beneath 'requestContext().identity' is selected directly (sub-property path: '{0}'). " +
             "If that path is absent from the auth token the expression fails at evaluation, which makes the policy an implicit deny. " +
             "Use 'tryGet' to select it safely.";
 

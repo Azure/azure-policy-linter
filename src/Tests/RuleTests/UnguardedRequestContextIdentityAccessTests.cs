@@ -30,7 +30,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""mode"": ""All"",
                     ""policyRule"": {
                       ""if"": {
-                        ""value"": ""[requestContext().identity.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role']]"",
+                        ""value"": ""[requestContext().identity['http://schemas.microsoft.com/identity/claims/objectidentifier']]"",
                         ""equals"": ""admin""
                       },
                       ""then"": {
@@ -50,9 +50,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 7,
-                LinePosition: 131,
+                LinePosition: 127,
                 Path: "properties.policyRule.if.value",
-                Description: "The 'requestContext().identity.claims.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role' access selects a sub-property directly. If that path is absent from the auth token the expression fails at evaluation, which makes the policy an implicit deny. Use 'tryGet' to select it safely.");
+                Description: "A property beneath 'requestContext().identity' is selected directly (sub-property path: 'http://schemas.microsoft.com/identity/claims/objectidentifier'). If that path is absent from the auth token the expression fails at evaluation, which makes the policy an implicit deny. Use 'tryGet' to select it safely.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -95,7 +95,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 69,
                 Path: "properties.policyRule.if.value",
-                Description: "The 'requestContext().identity.userId' access selects a sub-property directly. If that path is absent from the auth token the expression fails at evaluation, which makes the policy an implicit deny. Use 'tryGet' to select it safely.");
+                Description: "A property beneath 'requestContext().identity' is selected directly (sub-property path: 'userId'). If that path is absent from the auth token the expression fails at evaluation, which makes the policy an implicit deny. Use 'tryGet' to select it safely.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -116,7 +116,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""mode"": ""All"",
                     ""policyRule"": {
                       ""if"": {
-                        ""value"": ""[coalesce(tryGet(requestContext().identity, 'claims', 'role'), '')]"",
+                        ""value"": ""[coalesce(tryGet(requestContext().identity, 'http://schemas.microsoft.com/identity/claims/objectidentifier'), '')]"",
                         ""equals"": ""admin""
                       },
                       ""then"": {
@@ -214,7 +214,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""mode"": ""All"",
                     ""policyRule"": {
                       ""if"": {
-                        ""value"": ""[requestContext().identity.claims[parameters('claimName')]]"",
+                        ""value"": ""[requestContext().identity[parameters('claimName')]]"",
                         ""equals"": ""admin""
                       },
                       ""then"": {
