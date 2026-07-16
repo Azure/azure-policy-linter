@@ -1061,6 +1061,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     expression.Name.Should().Be("param1");
                     expression.Type.Should().Be("string");
+                    expression.Path.Should().Be("properties.parameters.param1");
                     expression.Metadata.Should().BeOfType<JObject>()
                         .Which["displayName"]!
                         .Value<string>()
