@@ -17,21 +17,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// Flags a policy that blocks creation of role assignments: a 'deny'
     /// effect - literal, or a parameterized effect that can take a blocking value -
     /// whose 'if' targets the 'Microsoft.Authorization/roleAssignments' type.
-    /// Blocking role-assignment creation can prevent just-in-time role activation and
-    /// lock administrators out of the scope the policy governs.
+    /// Blocking role-assignment creation prevents granting access under the scope the
+    /// policy governs, which can lock administrators out with no way to grant a recovery
+    /// role assignment.
     /// </summary>
     public sealed class BlockingEffectOnRoleAssignments : LinterRule<PolicyRule>
     {
         private const string RuleTitle = "Blocking Effect on Role Assignments";
 
         private const string RuleDescription =
-            "The '{0}' effect blocks creation of role assignments ('Microsoft.Authorization/roleAssignments'), which can prevent just-in-time role activation and lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.";
+            "The '{0}' effect blocks creation of role assignments ('Microsoft.Authorization/roleAssignments'), which prevents granting access under the policy's scope and can lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.";
 
         private const string RoleAssignmentType = "Microsoft.Authorization/roleAssignments";
 
+        private const string DenyEffect = "deny";
+
         private static readonly OrdinalInsensitiveHashSet BlockingEffects = new OrdinalInsensitiveHashSet
         {
-            "deny",
+            BlockingEffectOnRoleAssignments.DenyEffect,
         };
 
         /// <summary>
@@ -70,8 +73,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         /// <summary>
         /// Determines whether the effect can take a blocking value, either as a literal or as
-        /// one of the possible values of a simple parameterized effect (its allowed values, or
-        /// its default value when no allowed values are defined).
+        /// one of the possible values of a parameterized effect.
         /// </summary>
         /// <param name="effect">The 'then' effect property.</param>
         /// <param name="context">The linter rule evaluation context.</param>
@@ -84,13 +86,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return literal != null && BlockingEffectOnRoleAssignments.BlockingEffects.Contains(literal) ? literal : null;
             }
 
-            if (effect.HasSimpleParameterizedValue(context: context, out var _, out var allowedValues, out var defaultValue))
+            if (effect.HasSimpleParameterizedValue(context: context, out var _, out var allowedValues, out var _))
             {
-                var possibleValues =
-                    allowedValues ??
-                    (defaultValue != null ? new[] { defaultValue } : Array.Empty<string>());
+                // Without an allowed-values allow-list the parameter is unconstrained, so a
+                // blocking effect can be supplied at assignment time regardless of the default.
+                if (allowedValues == null)
+                {
+                    return BlockingEffectOnRoleAssignments.DenyEffect;
+                }
 
-                return possibleValues.FirstOrDefault(value => BlockingEffectOnRoleAssignments.BlockingEffects.Contains(value));
+                return allowedValues.FirstOrDefault(value => BlockingEffectOnRoleAssignments.BlockingEffects.Contains(value));
             }
 
             return null;
@@ -124,8 +129,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         /// <summary>
         /// Determines whether a leaf condition on the 'type' field selects the role-assignment
-        /// type via 'equals', 'in', or a wildcard 'like', taking enclosing 'not' quantifiers
-        /// into account (an odd number of them negates the selection).
+        /// type via 'equals', 'in', or a wildcard 'like'. Both enclosing 'not' quantifiers and a
+        /// negated operator ('notEquals', 'notIn', 'notLike') count as negations; an odd total
+        /// number of them inverts the selection so the type is excluded rather than selected.
         /// </summary>
         /// <param name="leaf">The leaf condition to inspect.</param>
         /// <returns>True if the condition selects role assignments; otherwise false.</returns>
@@ -139,33 +145,76 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return false;
             }
 
-            // An odd number of enclosing 'not' quantifiers negates the condition, so a
-            // positive 'type' selector no longer targets role assignments.
-            var notCount = leaf.PathSegments.Count(segment => string.Equals(segment, "not", StringComparison.OrdinalIgnoreCase));
-            if (notCount % 2 != 0)
+            if (!BlockingEffectOnRoleAssignments.TryGetTypeMatcher(leaf.Operator, out var matchesType, out var operatorNegated))
             {
                 return false;
             }
 
-            var operatorName = leaf.Operator.Name;
+            // Enclosing 'not' quantifiers and a negated operator both invert the condition; an
+            // odd total number of negations means the type is excluded rather than selected.
+            var negationCount =
+                leaf.PathSegments.Count(segment => string.Equals(segment, "not", StringComparison.OrdinalIgnoreCase)) +
+                (operatorNegated ? 1 : 0);
 
-            if (string.Equals(operatorName, "equals", StringComparison.OrdinalIgnoreCase))
+            return negationCount % 2 == 0 && matchesType;
+        }
+
+        /// <summary>
+        /// Interprets a leaf condition's operator as a positive 'type' matcher paired with a flag
+        /// indicating whether the operator itself is negated.
+        /// </summary>
+        /// <param name="op">The leaf condition's operator property.</param>
+        /// <param name="matchesType">
+        /// Whether the (positive form of the) operator's value matches the role-assignment type.
+        /// </param>
+        /// <param name="operatorNegated">Whether the operator is a negated form ('notEquals', 'notIn', 'notLike').</param>
+        /// <returns>True if the operator is a recognized type matcher; otherwise false.</returns>
+        private static bool TryGetTypeMatcher(Property op, out bool matchesType, out bool operatorNegated)
+        {
+            matchesType = false;
+            operatorNegated = false;
+
+            switch (op.Name?.ToLowerInvariant())
             {
-                return BlockingEffectOnRoleAssignments.IsRoleAssignmentType(leaf.Operator.Value.ToStringValue());
-            }
+                case "equals":
+                    matchesType = BlockingEffectOnRoleAssignments.IsRoleAssignmentType(op.Value.ToStringValue());
+                    return true;
 
-            if (string.Equals(operatorName, "like", StringComparison.OrdinalIgnoreCase))
-            {
-                return BlockingEffectOnRoleAssignments.LikeMatchesRoleAssignmentType(leaf.Operator.Value.ToStringValue());
-            }
+                case "notequals":
+                    operatorNegated = true;
+                    matchesType = BlockingEffectOnRoleAssignments.IsRoleAssignmentType(op.Value.ToStringValue());
+                    return true;
 
-            if (string.Equals(operatorName, "in", StringComparison.OrdinalIgnoreCase) &&
-                leaf.Operator.Value is JArray values)
-            {
-                return values.Any(value => BlockingEffectOnRoleAssignments.IsRoleAssignmentType(value.ToStringValue()));
-            }
+                case "like":
+                    matchesType = BlockingEffectOnRoleAssignments.LikeMatchesRoleAssignmentType(op.Value.ToStringValue());
+                    return true;
 
-            return false;
+                case "notlike":
+                    operatorNegated = true;
+                    matchesType = BlockingEffectOnRoleAssignments.LikeMatchesRoleAssignmentType(op.Value.ToStringValue());
+                    return true;
+
+                case "in":
+                    matchesType = BlockingEffectOnRoleAssignments.InSetMatchesRoleAssignmentType(op.Value);
+                    return true;
+
+                case "notin":
+                    operatorNegated = true;
+                    matchesType = BlockingEffectOnRoleAssignments.InSetMatchesRoleAssignmentType(op.Value);
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Checks whether an 'in'/'notIn' operand set contains the role-assignment type.
+        /// </summary>
+        private static bool InSetMatchesRoleAssignmentType(JToken value)
+        {
+            return value is JArray values &&
+                values.Any(item => BlockingEffectOnRoleAssignments.IsRoleAssignmentType(item.ToStringValue()));
         }
 
         /// <summary>

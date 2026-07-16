@@ -23,6 +23,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 metadata: BlockingEffectOnRoleAssignmentsTests.MockMetadata);
         }
 
+        /// <summary>
+        /// Builds the full expected finding anchored at the 'then.effect' property.
+        /// </summary>
+        private static LinterOutput ExpectedWarning(int lineNumber, int linePosition, string effect = "deny")
+        {
+            return new LinterOutput(
+                RuleIdentifier: "blocking-effect-on-role-assignments",
+                Title: "Blocking Effect on Role Assignments",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: lineNumber,
+                LinePosition: linePosition,
+                Path: "properties.policyRule.then.effect",
+                Description: $"The '{effect}' effect blocks creation of role assignments ('Microsoft.Authorization/roleAssignments'), which prevents granting access under the policy's scope and can lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.");
+        }
+
         [Fact]
         public void RuleTests_BlockingEffectOnRoleAssignments_DenyEqualsRoleAssignments()
         {
@@ -45,18 +61,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-
-            var output = new LinterOutput(
-                RuleIdentifier: "blocking-effect-on-role-assignments",
-                Title: "Blocking Effect on Role Assignments",
-                Severity: Severity.Warning,
-                Category: Category.BestPractices,
-                LineNumber: 11,
-                LinePosition: 40,
-                Path: "properties.policyRule.then.effect",
-                Description: "The 'deny' effect blocks creation of role assignments ('Microsoft.Authorization/roleAssignments'), which can prevent just-in-time role activation and lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.");
-
-            results.Should().ContainEquivalentOf(output);
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40));
         }
 
         [Fact]
@@ -105,8 +111,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
-            results[0].Severity.Should().Be(Severity.Warning);
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40));
         }
 
         [Fact]
@@ -134,7 +140,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 14, linePosition: 40));
         }
 
         [Fact]
@@ -167,7 +174,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 19, linePosition: 40));
         }
 
         [Fact]
@@ -269,25 +277,45 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_BlockingEffectOnRoleAssignments_ParameterizedEffectDefaultsToBlocking_Fires()
+        public void RuleTests_BlockingEffectOnRoleAssignments_NotEqualsTypeCondition_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
                   ""properties"": {
                     ""mode"": ""All"",
-                    ""parameters"": {
-                      ""effect"": {
-                        ""type"": ""String"",
-                        ""defaultValue"": ""deny""
-                      }
-                    },
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""type"",
-                        ""equals"": ""Microsoft.Authorization/roleAssignments""
+                        ""notEquals"": ""Microsoft.Authorization/roleAssignments""
                       },
                       ""then"": {
-                        ""effect"": ""[parameters('effect')]""
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_NotAroundNotEquals_Fires()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""not"": {
+                          ""field"": ""type"",
+                          ""notEquals"": ""Microsoft.Authorization/roleAssignments""
+                        }
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
                       }
                     }
                   }
@@ -296,8 +324,80 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
-            results[0].Description.Should().StartWith("The 'deny' effect blocks creation of role assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 13, linePosition: 40));
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_NotLikeTypeCondition_ShouldNotFire()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""notLike"": ""Microsoft.Authorization/*""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_NotInTypeCondition_ShouldNotFire()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""notIn"": [ ""Microsoft.Authorization/roleAssignments"" ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_NonSimpleEffectExpression_ShouldNotFire()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Authorization/roleAssignments""
+                      },
+                      ""then"": {
+                        ""effect"": ""[concat('de', 'ny')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().BeEmpty();
         }
 
         [Fact]
@@ -329,8 +429,40 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
-            results[0].Description.Should().StartWith("The 'deny' effect blocks creation of role assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 18, linePosition: 58));
+        }
+
+        [Fact]
+        public void RuleTests_BlockingEffectOnRoleAssignments_ParameterizedEffectNoAllowedValues_Fires()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""All"",
+                    ""parameters"": {
+                      ""effect"": {
+                        ""type"": ""String"",
+                        ""defaultValue"": ""audit""
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Authorization/roleAssignments""
+                      },
+                      ""then"": {
+                        ""effect"": ""[parameters('effect')]""
+                      }
+                    }
+                  }
+                }";
+
+            var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 17, linePosition: 58));
         }
 
         [Fact]
@@ -386,7 +518,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40));
         }
 
         [Fact]
@@ -411,7 +544,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40));
         }
 
         [Fact]
@@ -488,7 +622,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 15, linePosition: 40));
         }
 
         [Fact]
@@ -537,7 +672,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = BlockingEffectOnRoleAssignmentsTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("blocking-effect-on-role-assignments");
+            results.Should().ContainEquivalentOf(
+                BlockingEffectOnRoleAssignmentsTests.ExpectedWarning(lineNumber: 11, linePosition: 40, effect: "Deny"));
         }
     }
 }

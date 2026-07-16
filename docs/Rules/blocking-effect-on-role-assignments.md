@@ -6,7 +6,7 @@
 
 ## Description
 
-The policy uses a blocking [effect](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics) (`deny`) - specified as a literal, or as a parameterized effect that can take a blocking value (its `allowedValues`, or its default when no `allowedValues` are defined) - and its `if` targets `Microsoft.Authorization/roleAssignments`, either directly (`equals`, `in`) or through a wildcard `like` over the `Microsoft.Authorization` namespace. Blocking role-assignment creation can prevent just-in-time role activation - for example [Microsoft Entra Privileged Identity Management (PIM)](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure), which activates eligible roles by creating a role assignment. In a deadlock, an administrator who needs to elevate to remove the policy cannot, because elevating itself requires creating a role assignment the policy blocks.
+The policy uses a blocking [effect](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/effect-basics) (`deny`) - specified as a literal, or as a parameterized effect that can take a blocking value (a value in its `allowedValues`, or any value when no `allowedValues` constrain it) - and its `if` targets `Microsoft.Authorization/roleAssignments`, either directly (`equals`, `in`) or through a `like` value that matches the role-assignment type. Denying creation of role assignments prevents granting access under the policy's scope. In a deadlock, an administrator who needs to grant themselves (or someone else) the access required to remove the policy cannot, because granting that access requires creating a role assignment the policy blocks.
 
 Denying role assignments can be intentional. This finding raises the lockout risk so you can confirm a recovery path exists before assigning the policy.
 
@@ -15,7 +15,9 @@ Denying role assignments can be intentional. This finding raises the lockout ris
 - Ensure a standing recovery path that does not depend on creating a new role assignment under the policy's scope - for example persistent Owner or equivalent access at a parent scope above where the policy is assigned, so an administrator can always reach in, remove the assignment, and break the deadlock.
 - Validate the recovery path before rollout.
 
-### Violation
+## Examples
+
+**Violation** -- `deny` on the role-assignment type:
 
 ```json
 {
@@ -25,6 +27,20 @@ Denying role assignments can be intentional. This finding raises the lockout ris
   },
   "then": {
     "effect": "deny"
+  }
+}
+```
+
+**Correct** -- the same type condition with a non-blocking `audit` effect:
+
+```json
+{
+  "if": {
+    "field": "type",
+    "equals": "Microsoft.Authorization/roleAssignments"
+  },
+  "then": {
+    "effect": "audit"
   }
 }
 ```
