@@ -404,6 +404,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_OrderingOperatorOnIncompatibleFieldType_MixedStringAndNumericFieldAgainstNumber_ShouldNotFire()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new OrderingOperatorOnIncompatibleFieldType()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""Microsoft.Sql/servers/databases/maxSizeBytes"",
+                        ""less"": 5
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            // The alias is numeric in some API versions, where a number value is orderable, so the rule
+            // stays silent even though the comparison would throw in the string-typed API versions.
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
         public void RuleTests_OrderingOperatorOnIncompatibleFieldType_NumericFieldAgainstBoolean_ShouldFire()
         {
             var linter = new PolicyLinter(
