@@ -20,16 +20,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         // Integer property compared with 'equals'.
-        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "equals", "\"5\"", "equals", 37)]
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "equals", "\"5\"", 37)]
         // Integer property compared with 'notEquals'.
-        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "notEquals", "\"5\"", "notEquals", 40)]
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "notEquals", "\"5\"", 40)]
         // Property that is numeric in some API versions and a string in others.
-        [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", "\"5\"", "equals", 37)]
+        [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", "\"5\"", 37)]
         // Numeric JSON literal: the unquoted value shifts the reported line position.
-        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "eQuAls", "5", "equals", 35)]
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "eQuAls", "5", 35)]
         // Mixed-case 'notEquals' should also match case-insensitively.
-        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "nOtEqUaLs", "\"5\"", "notEquals", 40)]
-        public void RuleTests_EqualityCheckOnNumericField_NumericField_ShouldFire(string field, string @operator, string literalValue, string expectedOperator, int linePosition)
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "nOtEqUaLs", "\"5\"", 40)]
+        public void RuleTests_EqualityCheckOnNumericField_NumericField_ShouldFire(string field, string @operator, string literalValue, int linePosition)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -62,6 +62,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+
+            var expectedOperator = string.Equals(@operator, "notEquals", System.StringComparison.OrdinalIgnoreCase)
+                ? "notEquals"
+                : "equals";
 
             var output = new LinterOutput(
                 RuleIdentifier: "equality-check-on-numeric-field",
