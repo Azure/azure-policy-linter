@@ -6,7 +6,7 @@
 
 ## Description
 
-The policy rule's `if` condition references more than one resource type, counting both the types named in non-negated `type` field conditions and the types resolved from field aliases. Types excluded by a negated condition are not counted. Targeting several related types in one policy - for example with `"type": { "in": [...] }` - is a legitimate, documented pattern. This finding is advisory: it surfaces the breadth of the policy so the author can confirm it is intentional rather than an accidental over-match.
+The policy rule's `if` condition references more than one resource type, counting both the types named in `type` field conditions and the types resolved from field aliases. Targeting several related types in one policy - for example with `"type": { "in": [...] }` - is a legitimate, documented pattern. This finding is advisory: it surfaces the breadth of the policy so the author can confirm it is intentional rather than an accidental over-match.
 
 ## Suggestions
 
