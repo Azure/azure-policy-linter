@@ -6,7 +6,7 @@
 
 ## Description
 
-The `tryGet` function returns null when the property it looks up is missing. The `equals` and `notEquals` operators reject a null on their value side. When an `equals` or `notEquals` condition's value expression has `tryGet` as its outermost function, the policy fails at evaluation time for every resource where that property is missing.
+The `tryGet` function returns null when the property it looks up is missing. The `equals` and `notEquals` operators reject null values at evaluation time. When an `equals` or `notEquals` condition's value expression has `tryGet` as its outermost function, the policy fails at evaluation time for every resource where that property is missing.
 
 ## Suggestions
 
