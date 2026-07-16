@@ -18,7 +18,7 @@ Aliases are generated from the resource provider's API specification. When a pro
 
 ## Examples
 
-### Triggers the rule
+### Violation
 
 The resolved path crosses several resource-reference boundaries (subnet -> network security group -> network interface -> IP configuration -> virtual network tap -> load balancer frontend IP configuration) and points at a property that does not exist on the evaluated virtual network:
 
