@@ -15,6 +15,8 @@ These operators coerce both operands to string and compare them case-insensitive
 - Test the policy and confirm the implicit type conversion yields the behavior you intend.
 - For type-accurate equality, use `"value": "[equals(field('property'), 5)]", "equals": true`.
 
+## Examples
+
 ### Violation
 
 ```json
