@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-request-context-identity-access | Warning | — |
+| BestPractices | unguarded-request-context-identity-access | Warning | default |
 
 ## Description
 
