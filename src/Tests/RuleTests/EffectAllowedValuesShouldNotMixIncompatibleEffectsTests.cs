@@ -1,14 +1,12 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System.Collections.Immutable;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using FluentAssertions;
-    using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Newtonsoft.Json.Linq;
     using Xunit;
 
@@ -18,9 +16,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class EffectAllowedValuesShouldNotMixIncompatibleEffectsTests
     {
         /// <summary>
-        /// The type metadata used for the tests.
+        /// The mock type metadata used for the tests.
         /// </summary>
-        private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+        private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Fact]
         public void RuleTests_EffectAllowedValuesShouldNotMixIncompatibleEffects_ValidSameCategory()
@@ -30,7 +28,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -72,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -114,7 +112,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -156,7 +154,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -209,7 +207,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -251,7 +249,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -304,7 +302,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -335,7 +333,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -372,7 +370,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -414,7 +412,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -467,7 +465,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -510,7 +508,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -553,7 +551,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -591,7 +589,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -645,7 +643,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 parent: null!);
 
             var context = new LinterContext(
-                resourceTypeMetadata: TypeMetadata,
+                resourceTypeMetadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata,
                 parameters: ImmutableDictionary<string, Parameter>.Empty.Add(key: "effect", value: parameter));
 
             var then = new GenericObjectProperty<ThenObject>
@@ -665,7 +663,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 then: then,
                 parentPath: ImmutableArray.Create("properties", "policyRule"),
                 parent: null!,
-                typeMetadata: TypeMetadata);
+                typeMetadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var rule = new EffectAllowedValuesShouldNotMixIncompatibleEffects();
             var results = rule.Evaluate(expression: expression, context: context);
@@ -691,7 +689,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -734,7 +732,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -776,7 +774,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -828,7 +826,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -880,7 +878,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -934,7 +932,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -988,7 +986,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EffectAllowedValuesShouldNotMixIncompatibleEffects()
                 },
-                metadata: TypeMetadata);
+                metadata: EffectAllowedValuesShouldNotMixIncompatibleEffectsTests.MockMetadata);
 
             var policyDefinition = @"
                 {
