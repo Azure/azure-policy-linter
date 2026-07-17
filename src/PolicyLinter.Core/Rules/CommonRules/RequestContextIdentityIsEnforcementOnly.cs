@@ -17,6 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class RequestContextIdentityIsEnforcementOnly : LinterRule<IfCondition>
     {
+        private const string RuleTitle = "Request Context Identity Is Enforcement Only";
         private const string RuleDescription =
             "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy because its compliance state is 'NotApplicable'. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
 
@@ -26,7 +27,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         public RequestContextIdentityIsEnforcementOnly() : base(
             identifier: "request-context-identity-is-enforcement-only",
             category: Category.BestPractices,
-            title: "Request Context Identity Is Enforcement Only",
+            title: RequestContextIdentityIsEnforcementOnly.RuleTitle,
             descriptionFormat: RequestContextIdentityIsEnforcementOnly.RuleDescription,
             applyToDerivedTypes: false)
         {
