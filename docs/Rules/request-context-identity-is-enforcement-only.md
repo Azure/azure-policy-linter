@@ -6,11 +6,11 @@
 
 ## Description
 
-The policy rule references the [`requestContext().identity`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#policy-functions) function. Compliance scans produce no compliance data for the policy because its compliance state is `NotApplicable`. Enforcement effects such as `Deny`, `DeployIfNotExists`, and `Modify` still run at request time.
+The policy rule references the [`requestContext().identity`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#policy-functions) function. Compliance scans produce no compliance data for the policy. The policy only performs enforcement actions based on its effect.
 
 ## Suggestions
 
-- Accept that identity-dependent enforcement produces no compliance data for the policy.
+- Acknowledge that identity-dependent enforcement produces no compliance data for the policy.
 
 ## Examples
 

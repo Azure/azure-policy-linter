@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Request Context Identity Is Enforcement Only";
         private const string RuleDescription =
-            "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy because its compliance state is 'NotApplicable'. Enforcement effects such as Deny, DeployIfNotExists, and Modify still run at request time.";
+            "The policy rule uses the 'requestContext().identity' function. Compliance scans produce no compliance data for the policy. The policy only performs enforcement actions based on its effect.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestContextIdentityIsEnforcementOnly"/> class.
