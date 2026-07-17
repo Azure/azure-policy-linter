@@ -107,6 +107,45 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""parameters"": {
                       ""allowedLocations"": {
                         ""type"": ""Array"",
+                        ""metadata"": { ""description"": """" }
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": { ""field"": ""location"", ""in"": ""[parameters('allowedLocations')]"" },
+                      ""then"": { ""effect"": ""deny"" }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "parameter-missing-description",
+                Title: "Parameter Missing Description",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 6,
+                LinePosition: 43,
+                Path: "properties.parameters.allowedLocations",
+                Description: "The parameter 'allowedLocations' has no 'metadata.description'. Without one, whoever assigns the policy gets no guidance on the parameter's purpose or acceptable values. Add a 'metadata.description'."));
+        }
+
+        [Fact]
+        public void RuleTests_ParameterMissingDescription_WhitespaceDescription()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new ParameterMissingDescription() },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""allowedLocations"": {
+                        ""type"": ""Array"",
                         ""metadata"": { ""description"": ""   "" }
                       }
                     },
@@ -130,6 +169,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LinePosition: 43,
                 Path: "properties.parameters.allowedLocations",
                 Description: "The parameter 'allowedLocations' has no 'metadata.description'. Without one, whoever assigns the policy gets no guidance on the parameter's purpose or acceptable values. Add a 'metadata.description'."));
+        }
+
+        [Fact]
+        public void RuleTests_ParameterMissingDescription_NonStringDescription()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new ParameterMissingDescription() },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {
+                      ""allowedLocations"": {
+                        ""type"": ""Array"",
+                        ""metadata"": { ""description"": 42 }
+                      }
+                    },
+                    ""policyRule"": {
+                      ""if"": { ""field"": ""location"", ""in"": ""[parameters('allowedLocations')]"" },
+                      ""then"": { ""effect"": ""deny"" }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
         }
 
         [Fact]
@@ -162,7 +230,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_ParameterMissingDescription_CaseInsensitiveMetadataKeys()
+        public void RuleTests_ParameterMissingDescription_CaseInsensitiveMetadataKey()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new ParameterMissingDescription() },
@@ -180,6 +248,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     },
                     ""policyRule"": {
                       ""if"": { ""field"": ""location"", ""in"": ""[parameters('allowedLocations')]"" },
+                      ""then"": { ""effect"": ""deny"" }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_ParameterMissingDescription_NoParameters()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new ParameterMissingDescription() },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": { ""field"": ""type"", ""equals"": ""Microsoft.Storage/storageAccounts"" },
                       ""then"": { ""effect"": ""deny"" }
                     }
                   }

@@ -16,7 +16,7 @@ See [parameter properties](https://learn.microsoft.com/azure/governance/policy/c
 
 ## Examples
 
-**Violation** -- parameter with no `displayName`; the portal shows the raw parameter name:
+**Violation** -- parameter with no `metadata.displayName`:
 
 ```json
 "allowedLocations": {
@@ -24,7 +24,7 @@ See [parameter properties](https://learn.microsoft.com/azure/governance/policy/c
 }
 ```
 
-**Correct** -- parameter with a `displayName`:
+**Correct** -- parameter with a `metadata.displayName`:
 
 ```json
 "allowedLocations": {

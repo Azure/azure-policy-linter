@@ -35,10 +35,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Parameter expression, LinterContext context)
         {
-            if (expression.Metadata is JObject metadata &&
-                metadata.GetValue("description", StringComparison.OrdinalIgnoreCase) is JToken description &&
-                description.Type == JTokenType.String &&
-                !string.IsNullOrWhiteSpace(description.Value<string>()))
+            var descriptionToken = (expression.Metadata as JObject)?.GetValue("description", StringComparison.OrdinalIgnoreCase);
+
+            if (descriptionToken != null && descriptionToken.Type != JTokenType.String)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            var description = descriptionToken?.Value<string>();
+
+            if (!string.IsNullOrWhiteSpace(description))
             {
                 return Array.Empty<LinterOutput>();
             }

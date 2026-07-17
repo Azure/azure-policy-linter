@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class ParameterMissingDisplayName : LinterRule<Parameter>
     {
         private const string RuleTitle = "Parameter Missing Display Name";
-        private const string RuleDescription = "The parameter '{0}' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label.";
+        private const string RuleDescription = "The parameter '{0}' has no 'metadata.displayName'. Without one, whoever assigns the policy sees the raw parameter name instead of a friendly label. Add a 'metadata.displayName'.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterMissingDisplayName"/> class.

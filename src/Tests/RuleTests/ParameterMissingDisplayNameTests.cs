@@ -54,7 +54,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 43,
                 Path: "properties.parameters.allowedLocations",
-                Description: "The parameter 'allowedLocations' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+                Description: "The parameter 'allowedLocations' has no 'metadata.displayName'. Without one, whoever assigns the policy sees the raw parameter name instead of a friendly label. Add a 'metadata.displayName'."));
         }
 
         [Fact]
@@ -96,7 +96,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 43,
                 Path: "properties.parameters.allowedLocations",
-                Description: "The parameter 'allowedLocations' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+                Description: "The parameter 'allowedLocations' has no 'metadata.displayName'. Without one, whoever assigns the policy sees the raw parameter name instead of a friendly label. Add a 'metadata.displayName'."));
         }
 
         [Fact]
@@ -138,7 +138,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 43,
                 Path: "properties.parameters.allowedLocations",
-                Description: "The parameter 'allowedLocations' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+                Description: "The parameter 'allowedLocations' has no 'metadata.displayName'. Without one, whoever assigns the policy sees the raw parameter name instead of a friendly label. Add a 'metadata.displayName'."));
         }
 
         [Fact]
@@ -180,7 +180,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 43,
                 Path: "properties.parameters.allowedLocations",
-                Description: "The parameter 'allowedLocations' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+                Description: "The parameter 'allowedLocations' has no 'metadata.displayName'. Without one, whoever assigns the policy sees the raw parameter name instead of a friendly label. Add a 'metadata.displayName'."));
         }
 
         [Fact]
@@ -347,7 +347,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 10,
                 LinePosition: 38,
                 Path: "properties.parameters.withoutName",
-                Description: "The parameter 'withoutName' has no 'displayName' in its metadata, so the portal shows the raw parameter name during assignment. Add a 'metadata.displayName' to give it a friendly label."));
+                Description: "The parameter 'withoutName' has no 'metadata.displayName'. Without one, whoever assigns the policy sees the raw parameter name instead of a friendly label. Add a 'metadata.displayName'."));
         }
     }
 }
