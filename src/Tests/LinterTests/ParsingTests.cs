@@ -516,6 +516,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             templateLanguageExpressionsWithLineInfo[effectPath].LineNumber.Should().Be(52);
             templateLanguageExpressionsWithLineInfo[effectPath].LinePosition.Should().Be(52);
 
+            var allowedLocationsParameter = policyDefinition.Properties.Parameters["allowedLocations"];
+            allowedLocationsParameter.Metadata.Should().NotBeNull();
+            allowedLocationsParameter.Metadata!["description"]!.ToString().Should().Be("The list of allowed locations");
+
             // Each parameter expression is pathed by its name, so distinct parameters do not collapse onto a shared path.
             var allowedLocationsParameterPath = "properties.parameters.allowedLocations";
             expressionsWithLineInfo.Should().ContainKey(allowedLocationsParameterPath);
