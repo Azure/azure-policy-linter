@@ -15,6 +15,8 @@ The rule only fires when the field's type is incompatible in every known API ver
 - Order a numeric field against a number. To compare a date, use a string field (dates are stored as strings) and an ISO 8601 date value.
 - Don't compare a string field against a number, or use an ordering operator on a boolean, object, or array field. Compare the specific property you care about with `equals`, `exists`, or a `count` condition instead.
 
+## Examples
+
 ### Violation
 
 ```json
