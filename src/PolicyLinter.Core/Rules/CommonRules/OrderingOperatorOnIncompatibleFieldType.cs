@@ -7,6 +7,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
     using System.Linq;
+    using global::Azure.Deployments.ResourceMetadata.ApiVersion;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
@@ -17,13 +18,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
     /// <summary>
     /// Detects an ordering condition ('greater', 'greaterOrEquals', 'less', or 'lessOrEquals') whose
-    /// field alias has a known data type that cannot be ordered against the comparison value's type.
-    /// The comparison throws at evaluation, which fails the policy and implicitly denies the resource.
+    /// field alias has a data type in the latest API version that cannot be ordered against the
+    /// comparison value's type. The comparison throws at evaluation, which fails the policy and
+    /// implicitly denies the resource.
     /// </summary>
     public sealed class OrderingOperatorOnIncompatibleFieldType : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "Ordering Operator on Incompatible Field Type";
-        private const string RuleDescription = "The field alias '{0}' is of type '{1}' and cannot be ordered with the '{2}' operator against a value of type '{3}'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.";
+        private const string RuleDescription = "The field alias '{0}' is of type '{1}' in the latest API version and cannot be ordered with the '{2}' operator against a value of type '{3}'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.";
 
         /// <summary>
         /// The ordering operators, which throw at evaluation when their operand types don't match.
@@ -61,24 +63,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var fieldTypes = fieldReference.ResourcePropertyMetadata
-                .Where(metadata => metadata.Exists && OrderingOperatorOnIncompatibleFieldType.IsKnownType(metadata.Type))
-                .Select(metadata => metadata.Type)
-                .Distinct(StringComparer.OrdinalIgnoreCase)
-                .ToArray();
+            var latestApiVersionMetadata = fieldReference.ResourcePropertyMetadata
+                .MaxBy(
+                    keySelector: metadata => metadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance),
+                    comparer: SuffixAwareApiVersionComparer.Instance);
 
-            if (fieldTypes.Length == 0)
+            if (latestApiVersionMetadata == null ||
+                !latestApiVersionMetadata.Exists ||
+                !OrderingOperatorOnIncompatibleFieldType.IsKnownType(latestApiVersionMetadata.Type))
             {
                 return Array.Empty<LinterOutput>();
             }
 
             var valueType = OrderingOperatorOnIncompatibleFieldType.ClassifyValue(expression.Operator.Value);
-            if (fieldTypes.Any(fieldType => OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(fieldType, valueType)))
+            if (OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, valueType))
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var fieldTypeName = string.Join(" or ", fieldTypes.Select(OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName).Distinct());
+            var fieldTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName(latestApiVersionMetadata.Type);
             var valueTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(valueType, expression.Operator.Value);
 
             return new[]
