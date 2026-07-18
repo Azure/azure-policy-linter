@@ -6,13 +6,12 @@
 
 ## Description
 
-The `tryGet` function returns null when the first property it looks up is missing. Additional property arguments use ordinary dereferences and can fail before the condition operator runs. Policy evaluation also fails when the final operator value evaluates to null. This rule applies to every policy condition operator when its entire value is a `tryGet` expression: `equals`, `notEquals`, `like`, `notLike`, `in`, `notIn`, `contains`, `notContains`, `containsKey`, `notContainsKey`, `exists`, `match`, `notMatch`, `greater`, `greaterOrEquals`, `less`, `lessOrEquals`, `matchInsensitively`, and `notMatchInsensitively`.
+The `tryGet` function returns null when the property it looks up is missing. Policy evaluation fails when an operator value evaluates to null. This rule applies to every policy condition operator when its entire value is a `tryGet` expression: `equals`, `notEquals`, `like`, `notLike`, `in`, `notIn`, `contains`, `notContains`, `containsKey`, `notContainsKey`, `exists`, `match`, `notMatch`, `greater`, `greaterOrEquals`, `less`, `lessOrEquals`, `matchInsensitively`, and `notMatchInsensitively`.
 
 ## Suggestions
 
-- Make each nested property lookup safe; only the first property passed to `tryGet` is safely dereferenced.
-- Wrap the final `tryGet(...)` expression in `coalesce` with a fallback compatible with the operator's expected type.
-- Choose a fallback that cannot collide with a real value you want to match. For a string-valued equality comparison, an empty-string fallback can be appropriate: `[coalesce(tryGet(...), '')]`.
+- Wrap the `tryGet(...)` expression in `coalesce` with a fallback value, so the operand is never null: `[coalesce(tryGet(...), '')]`.
+- Choose a fallback that cannot collide with a real value you want to match.
 
 See [Azure Policy definition structure - policy functions](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#policy-functions) for the `tryGet` and `coalesce` functions.
 
@@ -31,7 +30,7 @@ If the `environment` tag is missing, the operator value evaluates to null and po
 
 ### Correct
 
-For this string-valued equality comparison, `coalesce` supplies a string fallback so the operand is never null:
+`coalesce` supplies a fallback so the operand is never null:
 
 ```json
 {

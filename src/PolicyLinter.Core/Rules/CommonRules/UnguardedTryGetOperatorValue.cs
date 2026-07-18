@@ -11,14 +11,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags a condition whose operator value is a 'tryGet' expression. 'tryGet' can return null
-    /// when its first property is missing, while later property arguments are not safely dereferenced.
+    /// Flags a condition whose operator value is a 'tryGet' expression. 'tryGet' returns null
+    /// when the property is missing, and operator values cannot evaluate to null.
     /// </summary>
     public sealed class UnguardedTryGetOperatorValue : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "Unguarded tryGet Operator Value";
         private const string RuleDescription =
-            "The '{0}' operator's value is a 'tryGet(...)' expression. 'tryGet' can return null when its first property is missing, and later property arguments are not safely dereferenced. A null operator value fails policy evaluation. Make nested lookups safe, then use 'coalesce(..., <fallback>)' with an operator-compatible fallback.";
+            "The '{0}' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedTryGetOperatorValue"/> class.
