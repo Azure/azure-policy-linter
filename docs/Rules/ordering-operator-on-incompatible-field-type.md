@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| ResourceFields | ordering-operator-on-incompatible-field-type | Error | — |
+| ResourceFields | ordering-operator-on-incompatible-field-type | Error | default |
 
 ## Description
 

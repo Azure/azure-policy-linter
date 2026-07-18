@@ -1,5 +1,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
+    using System.Collections.Immutable;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
@@ -17,6 +18,40 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// The type metadata used for the tests.
         /// </summary>
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+
+        /// <summary>
+        /// Returns one existing metadata entry with a fixed property type.
+        /// </summary>
+        private sealed class FixedTypeMetadata : ITypeMetadata
+        {
+            private readonly string type;
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="FixedTypeMetadata"/> class.
+            /// </summary>
+            /// <param name="type">The property type.</param>
+            public FixedTypeMetadata(string type)
+            {
+                this.type = type;
+            }
+
+            /// <inheritdoc/>
+            public bool TryGetAliasPropertyMetadata(string aliasName, out ResourcePropertyMetadata[] result)
+            {
+                result = new[]
+                {
+                    new ResourcePropertyMetadata
+                    {
+                        ResourceType = "Microsoft.Test/resources",
+                        ApiVersions = ImmutableArray.Create("2025-01-01"),
+                        Exists = true,
+                        Type = this.type,
+                    },
+                };
+
+                return true;
+            }
+        }
 
         [Fact]
         public void RuleTests_OrderingOperatorOnIncompatibleFieldType_BooleanField_ShouldFire()
@@ -604,6 +639,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""field"": ""Microsoft.Test/unknownResource/unknownProperty"",
+                        ""greater"": 5
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Theory]
+        [InlineData("Any")]
+        [InlineData("NotSpecified")]
+        public void RuleTests_OrderingOperatorOnIncompatibleFieldType_UnknownMetadataType_ShouldNotFire(string fieldType)
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new OrderingOperatorOnIncompatibleFieldType()
+                },
+                metadata: new FixedTypeMetadata(type: fieldType));
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""Microsoft.Test/resources/property"",
                         ""greater"": 5
                       },
                       ""then"": {
