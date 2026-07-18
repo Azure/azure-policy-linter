@@ -150,13 +150,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Checks whether the root language expression is the specified function.
+        /// Tries to get the function name when the root language expression is a function.
         /// </summary>
-        /// <param name="functionName">The function name.</param>
-        public bool IsRootFunction(string functionName)
+        /// <param name="functionName">The root function name, or an empty string when the root expression is not a function.</param>
+        public bool TryGetFunctionName(out string functionName)
         {
-            return this.LanguageExpression is FunctionExpression functionExpression &&
-                string.Equals(functionExpression.Function, functionName, StringComparison.OrdinalIgnoreCase);
+            if (this.LanguageExpression is FunctionExpression functionExpression)
+            {
+                functionName = functionExpression.Function;
+                return true;
+            }
+
+            functionName = string.Empty;
+            return false;
         }
 
         /// <summary>

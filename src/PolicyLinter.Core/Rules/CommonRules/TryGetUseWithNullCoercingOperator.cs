@@ -67,7 +67,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var languageExpression = expression.Value.LanguageExpressions[0];
             if (!string.Equals(expression.Value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
-                !languageExpression.IsRootFunction(functionName: "tryGet"))
+                !languageExpression.TryGetFunctionName(out var functionName) ||
+                !string.Equals(functionName, "tryGet", StringComparison.OrdinalIgnoreCase))
             {
                 return Array.Empty<LinterOutput>();
             }
