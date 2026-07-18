@@ -274,6 +274,57 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_DistinctChildResourceTypes()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new PolicyRuleReferencesMultipleResourceTypes()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Sql/servers/auditingPolicies""
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Sql/servers/databases""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""audit""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "policy-rule-references-multiple-resource-types",
+                Title: "Policy Rule References Multiple Resource Types",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 6,
+                LinePosition: 29,
+                Path: "properties.policyRule.if",
+                Description: "The policy rule references multiple resource types: Microsoft.Sql/servers/auditingPolicies, Microsoft.Sql/servers/databases. Targeting several related types is a valid pattern; if this is unintended, target a single type and group policies with an initiative.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
         public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_NestedAllOf()
         {
             var linter = new PolicyLinter(
@@ -323,7 +374,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_WithNotCondition()
+        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_NotWrapper_EqualsOperator_SingleNot_ShouldNotFire()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -338,18 +389,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""mode"": ""Indexed"",
                     ""policyRule"": {
                       ""if"": {
-                        ""not"": {
-                          ""allOf"": [
-                            {
+                        ""allOf"": [
+                          {
+                            ""not"": {
                               ""field"": ""type"",
                               ""equals"": ""Microsoft.Storage/storageAccounts""
-                            },
-                            {
-                              ""field"": ""type"",
-                              ""equals"": ""Microsoft.Network/virtualNetworks""
                             }
-                          ]
-                        }
+                          },
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Compute/virtualMachines""
+                          }
+                        ]
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -360,9 +411,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().HaveCount(1);
-            results[0].RuleIdentifier.Should().Be("policy-rule-references-multiple-resource-types");
-            results[0].Severity.Should().Be(Severity.Informational);
+            results.Should().BeEmpty();
         }
 
         [Fact]
