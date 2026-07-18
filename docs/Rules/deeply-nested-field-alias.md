@@ -10,7 +10,7 @@ The policy definition is referencing a [field alias](https://learn.microsoft.com
 
 Aliases are generated from the resource provider's API specification. When a provider models a property as a *reference* to a separate resource rather than an embedded child resource, the generation can misread it as the entire referenced resource being embedded inline, producing an alias for a path that does not exist on the evaluated resource. One or two levels of nesting are usually legitimately embedded child resources (for example, a network security group embedding its rules); beyond that, the path increasingly threads through one or more resource references, and the property it targets may not exist on the resource being evaluated.
 
-### Suggestions
+## Suggestions
 
 - Verify the property exists on the resource type against the resource provider's [REST API documentation](https://learn.microsoft.com/en-us/rest/api/azure/).
 - Test whether the property can actually be set by creating a test resource using Azure Portal, Azure CLI, or Azure PowerShell and attempting to configure the property. If the tools don't expose the property or fail when you try to set it, the property may not exist on the evaluated resource.
