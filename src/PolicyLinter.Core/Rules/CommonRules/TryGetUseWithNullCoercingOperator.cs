@@ -14,31 +14,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags a 'value' condition whose value is an unguarded 'tryGet' expression compared
-    /// with 'equals' or 'notEquals'. 'tryGet' returns null when a path segment is missing;
-    /// the comparison may silently produce unexpected results. Wrapping the 'tryGet' in
-    /// 'coalesce' with a fallback value gives the comparison a defined operand.
+    /// Detects a 'value' condition that uses a 'tryGet' expression with an operator that coerces
+    /// null to an empty string before evaluating the condition.
     /// </summary>
-    public sealed class UnguardedTryGetInComparedValue : LinterRule<LeafCondition>
+    public sealed class TryGetUseWithNullCoercingOperator : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Unguarded tryGet in Compared Value";
+        private const string RuleTitle = "tryGet Use with Null-Coercing Operator";
         private const string RuleDescription =
-            "The value condition compares the unguarded 'tryGet' expression '{0}' with '{1}'. 'tryGet' can return null when the property is absent. Wrap 'tryGet' in 'coalesce' with a fallback value to define the comparison behavior.";
+            "The value condition compares the 'tryGet' expression '{0}' with '{1}'. When 'tryGet' returns null, the operator coerces it to an empty string before evaluating the condition.";
 
-        private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
+        private static readonly OrdinalInsensitiveHashSet NullCoercingOperators = new OrdinalInsensitiveHashSet
         {
             "equals",
             "notEquals",
+            "in",
+            "notIn",
+            "like",
+            "notLike",
+            "contains",
+            "notContains",
+            "match",
+            "notMatch",
+            "matchInsensitively",
+            "notMatchInsensitively",
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UnguardedTryGetInComparedValue"/> class.
+        /// Initializes a new instance of the <see cref="TryGetUseWithNullCoercingOperator"/> class.
         /// </summary>
-        public UnguardedTryGetInComparedValue() : base(
-            identifier: "unguarded-tryget-in-compared-value",
+        public TryGetUseWithNullCoercingOperator() : base(
+            identifier: "tryget-use-with-null-coercing-operator",
             category: Category.BestPractices,
-            title: UnguardedTryGetInComparedValue.RuleTitle,
-            descriptionFormat: UnguardedTryGetInComparedValue.RuleDescription,
+            title: TryGetUseWithNullCoercingOperator.RuleTitle,
+            descriptionFormat: TryGetUseWithNullCoercingOperator.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -48,7 +56,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             if (expression.Value == null ||
                 expression.Operator == null ||
-                !UnguardedTryGetInComparedValue.EqualityOperators.Contains(expression.Operator.Name))
+                !TryGetUseWithNullCoercingOperator.NullCoercingOperators.Contains(expression.Operator.Name))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -69,7 +77,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return new[]
             {
-                this.CreateWarning(expression.Value, languageExpression.Expression, expression.Operator.Name),
+                this.CreateInformational(expression.Value, languageExpression.Expression, expression.Operator.Name),
             };
         }
     }

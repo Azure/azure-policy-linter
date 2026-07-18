@@ -7,9 +7,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="UnguardedTryGetInComparedValue"/> rule.
+    /// Tests for the <see cref="TryGetUseWithNullCoercingOperator"/> rule.
     /// </summary>
-    public class UnguardedTryGetInComparedValueTests
+    public class TryGetUseWithNullCoercingOperatorTests
     {
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -17,11 +17,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         private static PolicyLinter CreateLinter() => new PolicyLinter(
-            rules: new ILinterRule[] { new UnguardedTryGetInComparedValue() },
+            rules: new ILinterRule[] { new TryGetUseWithNullCoercingOperator() },
             metadata: MockMetadata);
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_EqualsOperator()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_EqualsOperator()
         {
             var policyDefinition = @"
                 {
@@ -39,25 +39,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "unguarded-tryget-in-compared-value",
-                Title: "Unguarded tryGet in Compared Value",
-                Severity: Severity.Warning,
+                RuleIdentifier: "tryget-use-with-null-coercing-operator",
+                Title: "tryGet Use with Null-Coercing Operator",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 72,
                 Path: "properties.policyRule.if.value",
-                Description: "The value condition compares the unguarded 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'equals'. 'tryGet' can return null when the property is absent. Wrap 'tryGet' in 'coalesce' with a fallback value to define the comparison behavior.");
+                Description: "The value condition compares the 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'equals'. When 'tryGet' returns null, the operator coerces it to an empty string before evaluating the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_NotEqualsOperator()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_NotEqualsOperator()
         {
             var policyDefinition = @"
                 {
@@ -75,25 +75,77 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "unguarded-tryget-in-compared-value",
-                Title: "Unguarded tryGet in Compared Value",
-                Severity: Severity.Warning,
+                RuleIdentifier: "tryget-use-with-null-coercing-operator",
+                Title: "tryGet Use with Null-Coercing Operator",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 72,
                 Path: "properties.policyRule.if.value",
-                Description: "The value condition compares the unguarded 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'notEquals'. 'tryGet' can return null when the property is absent. Wrap 'tryGet' in 'coalesce' with a fallback value to define the comparison behavior.");
+                Description: "The value condition compares the 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with 'notEquals'. When 'tryGet' returns null, the operator coerces it to an empty string before evaluating the condition.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Theory]
+        [InlineData("in", "[\"premium\"]")]
+        [InlineData("notIn", "[\"premium\"]")]
+        [InlineData("like", "\"prem*\"")]
+        [InlineData("notLike", "\"prem*\"")]
+        [InlineData("contains", "\"premium\"")]
+        [InlineData("notContains", "\"premium\"")]
+        [InlineData("match", "\"premium\"")]
+        [InlineData("notMatch", "\"premium\"")]
+        [InlineData("matchInsensitively", "\"premium\"")]
+        [InlineData("notMatchInsensitively", "\"premium\"")]
+        public void RuleTests_TryGetUseWithNullCoercingOperator_AdditionalNullCoercingOperator(
+            string @operator,
+            string comparisonValue)
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""value"": ""[tryGet(field('properties'), 'tier')]"",
+                        ""__OPERATOR__"": __VALUE__
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            policyDefinition = policyDefinition
+                .Replace("__OPERATOR__", @operator)
+                .Replace("__VALUE__", comparisonValue);
+
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "tryget-use-with-null-coercing-operator",
+                Title: "tryGet Use with Null-Coercing Operator",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 72,
+                Path: "properties.policyRule.if.value",
+                Description: $"The value condition compares the 'tryGet' expression '[tryGet(field('properties'), 'tier')]' with '{@operator}'. When 'tryGet' returns null, the operator coerces it to an empty string before evaluating the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_MixedCaseFunctionName()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_MixedCaseFunctionName()
         {
             var policyDefinition = @"
                 {
@@ -111,25 +163,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "unguarded-tryget-in-compared-value",
-                Title: "Unguarded tryGet in Compared Value",
-                Severity: Severity.Warning,
+                RuleIdentifier: "tryget-use-with-null-coercing-operator",
+                Title: "tryGet Use with Null-Coercing Operator",
+                Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 72,
                 Path: "properties.policyRule.if.value",
-                Description: "The value condition compares the unguarded 'tryGet' expression '[TrYgEt(field('properties'), 'tier')]' with 'equals'. 'tryGet' can return null when the property is absent. Wrap 'tryGet' in 'coalesce' with a fallback value to define the comparison behavior.");
+                Description: "The value condition compares the 'tryGet' expression '[TrYgEt(field('properties'), 'tier')]' with 'equals'. When 'tryGet' returns null, the operator coerces it to an empty string before evaluating the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_CoalesceGuarded_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_CoalesceGuarded_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -147,14 +199,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             // The 'tryGet' is wrapped in 'coalesce', so the comparison has a defined operand.
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_LiteralValue_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_LiteralValue_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -172,13 +224,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_ExpressionNestedInObject_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_ExpressionNestedInObject_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -198,13 +250,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_NonTryGetFunction_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_NonTryGetFunction_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -222,13 +274,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_TryGetNestedInOtherFunction_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_TryGetNestedInOtherFunction_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -246,14 +298,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             // The outermost function is 'concat', not 'tryGet' - out of scope.
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_NonEqualityOperator_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_NonNullCoercingOperator_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -262,7 +314,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     ""policyRule"": {
                       ""if"": {
                         ""value"": ""[tryGet(field('properties'), 'tier')]"",
-                        ""like"": ""prem*""
+                        ""greater"": 5
                       },
                       ""then"": {
                         ""effect"": ""deny""
@@ -271,13 +323,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetInComparedValue_FieldConditionWithTryGetValue_ShouldNotFire()
+        public void RuleTests_TryGetUseWithNullCoercingOperator_FieldConditionWithTryGetValue_ShouldNotFire()
         {
             var policyDefinition = @"
                 {
@@ -295,7 +347,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   }
                 }";
 
-            var results = UnguardedTryGetInComparedValueTests.CreateLinter().Lint(policyDefinition);
+            var results = TryGetUseWithNullCoercingOperatorTests.CreateLinter().Lint(policyDefinition);
 
             // A 'field' condition is out of scope; the right-hand 'tryGet' is a separate concern.
             results.Should().BeEmpty();
