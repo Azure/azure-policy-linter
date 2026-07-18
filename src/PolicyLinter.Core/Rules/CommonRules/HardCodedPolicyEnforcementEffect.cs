@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class HardCodedPolicyEnforcementEffect : LinterRule<ThenExpression>
     {
         private const string RuleTitle = "Hard-Coded Policy Enforcement Effect";
-        private const string RuleDescription = "The policy effect '{0}' is hard-coded. Add a string 'effect' parameter with defaultValue '{1}' and allowedValues containing '{2}', then set the policy effect to \"[parameters('effect')]\".";
+        private const string RuleDescription = "The policy effect '{0}' is hard-coded, so assignments cannot select a non-enforcement effect. Add a string 'effect' parameter with defaultValue '{1}' and allowedValues containing '{2}', then set the policy effect to \"[parameters('effect')]\".";
 
         /// <summary>
         /// The set of enforcement effects.

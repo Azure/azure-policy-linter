@@ -73,7 +73,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 24,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.then.effect",
-                Description: $"The policy effect '{effect}' is hard-coded. Add a string 'effect' parameter with defaultValue '{defaultValue}' and allowedValues containing '{defaultValue}', '{effect}', 'disabled', then set the policy effect to \"[parameters('effect')]\".");
+                Description: $"The policy effect '{effect}' is hard-coded, so assignments cannot select a non-enforcement effect. Add a string 'effect' parameter with defaultValue '{defaultValue}' and allowedValues containing '{defaultValue}', '{effect}', 'disabled', then set the policy effect to \"[parameters('effect')]\".");
 
             results.Should().ContainEquivalentOf(output);
         }
