@@ -6,8 +6,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using global::Azure.Deployments.Expression.Engines;
-    using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -69,8 +67,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var languageExpression = expression.Value.LanguageExpressions[0];
             if (!string.Equals(expression.Value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
-                ExpressionsEngine.ParseLanguageExpression(languageExpression.Expression) is not FunctionExpression functionExpression ||
-                !string.Equals(functionExpression.Function, "tryGet", StringComparison.OrdinalIgnoreCase))
+                !languageExpression.IsRootFunction(functionName: "tryGet"))
             {
                 return Array.Empty<LinterOutput>();
             }

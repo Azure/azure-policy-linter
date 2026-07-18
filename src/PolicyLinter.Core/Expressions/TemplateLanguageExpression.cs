@@ -150,6 +150,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
+        /// Checks whether the root language expression is the specified function.
+        /// </summary>
+        /// <param name="functionName">The function name.</param>
+        public bool IsRootFunction(string functionName)
+        {
+            return this.LanguageExpression is FunctionExpression functionExpression &&
+                string.Equals(functionExpression.Function, functionName, StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageExpression"/> class.
         /// </summary>
         private TemplateLanguageExpression(

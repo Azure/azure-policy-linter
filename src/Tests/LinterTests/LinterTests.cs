@@ -1166,17 +1166,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var fieldTagsX = languageExpressions.SingleOrDefault(e => e.Expression == "[field('tags.x')]");
             fieldTagsX.Should().NotBeNull();
+            fieldTagsX.IsRootFunction(functionName: "FIELD").Should().BeTrue();
+            fieldTagsX.IsRootFunction(functionName: "concat").Should().BeFalse();
             fieldTagsX.References.Should().HaveCount(1);
             fieldTagsX.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsX.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("field");
 
             var concatAB = languageExpressions.SingleOrDefault(e => e.Expression == "[concat('a','b')]");
             concatAB.Should().NotBeNull();
+            concatAB.IsRootFunction(functionName: "concat").Should().BeTrue();
             concatAB.References.Should().BeEmpty();
             concatAB.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("equals");
 
             var fieldParam = languageExpressions.SingleOrDefault(e => e.Expression == "[field(parameters('param'))]");
             fieldParam.Should().NotBeNull();
+            fieldParam.IsRootFunction(functionName: "parameters").Should().BeFalse();
             fieldParam.References.Should().HaveCount(1);
             fieldParam.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldParam.References[0].ResolutionDependencies.Should().HaveCount(1);

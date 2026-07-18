@@ -148,6 +148,7 @@ These show up in most shipped rules. Use them instead of writing the equivalent 
 - **`Reference.FromLanguageExpression`** - given a parsed `LanguageExpression`, returns every reference inside it (recursively). Use when you need to find references nested inside an arbitrary expression that isn't itself a top-level reference function.
 - **`ExpressionsEngine.IsLanguageExpression(string)` / `ParseLanguageExpression(string)`** - from the upstream `Azure.Deployments.Expression` package. The right way to detect and parse a `[...]` value. Never use regex.
 - **`TemplateLanguageExpression.ExtractFromJToken(JToken)`** - walks an arbitrary JSON sub-tree and returns every template-language expression it finds, with references already resolved. Useful when you need to inspect expressions inside JSON the linter doesn't model (e.g. `then.details`).
+- **`TemplateLanguageExpression.IsRootFunction(string)`** - checks the already-parsed expression's outermost function without reparsing the raw expression string or exposing expression-engine types.
 - **`EqualsOrdinalInsensitively` / `OrdinalInsensitiveHashSet`** - from `Microsoft.WindowsAzure.ResourceStack.Common`. Case-insensitive string equality and set lookup without repeating `StringComparison.OrdinalIgnoreCase` on every line.
 - **`Parameter.TryAsConcreteType<T>(out T[]? allowed, out T? def)`** - type-checks and unwraps a parameter's `allowedValues` and `defaultValue` to concrete C#. Powers `HasSimpleParameterizedValue`.
 
