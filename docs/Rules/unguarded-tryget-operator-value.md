@@ -1,12 +1,12 @@
-# Unguarded TryGet Equality Operand
+# Unguarded tryGet Operator Value
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-tryget-equality-operand | Error | — |
+| BestPractices | unguarded-tryget-operator-value | Error | default |
 
 ## Description
 
-The `tryGet` function returns null when the property it looks up is missing. The `equals` and `notEquals` operators reject null values at evaluation time. When an `equals` or `notEquals` condition's value expression has `tryGet` as its outermost function, the policy fails at evaluation time for every resource where that property is missing.
+The `tryGet` function returns null when the property it looks up is missing. Policy evaluation fails when an operator value evaluates to null. This rule applies to every policy condition operator when its entire value is a `tryGet` expression: `equals`, `notEquals`, `like`, `notLike`, `in`, `notIn`, `contains`, `notContains`, `containsKey`, `notContainsKey`, `exists`, `match`, `notMatch`, `greater`, `greaterOrEquals`, `less`, `lessOrEquals`, `matchInsensitively`, and `notMatchInsensitively`.
 
 ## Suggestions
 
@@ -19,7 +19,7 @@ See [Azure Policy definition structure - policy functions](https://learn.microso
 
 ### Violation
 
-If the `environment` tag is missing, the `equals` evaluation throws:
+If the `environment` tag is missing, the operator value evaluates to null and policy evaluation fails:
 
 ```json
 {

@@ -59,17 +59,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ReferenceKind? ReferenceKind { get; }
 
         /// <summary>
-        /// The function name of the root language expression if it is a function.
-        /// Returns null if the expression is not a function.
-        /// </summary>
-        /// <example>
-        /// [tryGet(field('tags'), 'x')] => "tryGet"
-        /// [coalesce(tryGet(...), '')] => "coalesce"
-        /// 'literal' => null
-        /// </example>
-        public string? RootFunctionName { get; }
-
-        /// <summary>
         /// Extracts template language expressions from a JToken.
         /// </summary>
         /// <param name="token">The token.</param>
@@ -161,6 +150,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
+        /// Tries to get the function name when the root language expression is a function.
+        /// </summary>
+        /// <param name="functionName">The root function name, or an empty string when the root expression is not a function.</param>
+        public bool TryGetFunctionName(out string functionName)
+        {
+            if (this.LanguageExpression is FunctionExpression functionExpression)
+            {
+                functionName = functionExpression.Function;
+                return true;
+            }
+
+            functionName = string.Empty;
+            return false;
+        }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageExpression"/> class.
         /// </summary>
         private TemplateLanguageExpression(
@@ -181,11 +186,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             if (Reference.IsReferenceFunction(this.LanguageExpression, out var kind))
             {
                 this.ReferenceKind = kind;
-            }
-
-            if (this.LanguageExpression is FunctionExpression functionExpression)
-            {
-                this.RootFunctionName = functionExpression.Function;
             }
 
             var references = new List<Reference>();

@@ -7,9 +7,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="UnguardedTryGetEqualityOperand"/> rule.
+    /// Tests for the <see cref="UnguardedTryGetOperatorValue"/> rule.
     /// </summary>
-    public class UnguardedTryGetEqualityOperandTests
+    public class UnguardedTryGetOperatorValueTests
     {
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -21,13 +21,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new UnguardedTryGetEqualityOperand()
+                    new UnguardedTryGetOperatorValue()
                 },
                 metadata: MockMetadata);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_EqualsWithUnguardedTryGet_Violation()
+        public void RuleTests_UnguardedTryGetOperatorValue_EqualsWithUnguardedTryGet_Violation()
         {
             var policyDefinition = @"
                 {
@@ -49,20 +49,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "unguarded-tryget-equality-operand",
-                Title: "Unguarded TryGet Equality Operand",
+                RuleIdentifier: "unguarded-tryget-operator-value",
+                Title: "Unguarded tryGet Operator Value",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 74,
                 Path: "properties.policyRule.if.equals",
-                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'equals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_NotEqualsWithUnguardedTryGet_Violation()
+        public void RuleTests_UnguardedTryGetOperatorValue_NotEqualsWithUnguardedTryGet_Violation()
         {
             var policyDefinition = @"
                 {
@@ -84,20 +84,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "unguarded-tryget-equality-operand",
-                Title: "Unguarded TryGet Equality Operand",
+                RuleIdentifier: "unguarded-tryget-operator-value",
+                Title: "Unguarded tryGet Operator Value",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 77,
                 Path: "properties.policyRule.if.notEquals",
-                Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'notEquals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_CaseInsensitiveFunctionName_Violation()
+        public void RuleTests_UnguardedTryGetOperatorValue_CaseInsensitiveFunctionName_Violation()
         {
             var policyDefinition = @"
                 {
@@ -119,20 +119,74 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "unguarded-tryget-equality-operand",
-                Title: "Unguarded TryGet Equality Operand",
+                RuleIdentifier: "unguarded-tryget-operator-value",
+                Title: "Unguarded tryGet Operator Value",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 7,
                 LinePosition: 74,
                 Path: "properties.policyRule.if.equals",
-                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. The 'equals' operator throws on a null value at evaluation time. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Theory]
+        [InlineData("like", 72)]
+        [InlineData("notLike", 75)]
+        [InlineData("in", 70)]
+        [InlineData("notIn", 73)]
+        [InlineData("contains", 76)]
+        [InlineData("notContains", 79)]
+        [InlineData("containsKey", 79)]
+        [InlineData("notContainsKey", 82)]
+        [InlineData("exists", 74)]
+        [InlineData("match", 73)]
+        [InlineData("notMatch", 76)]
+        [InlineData("greater", 75)]
+        [InlineData("greaterOrEquals", 83)]
+        [InlineData("less", 72)]
+        [InlineData("lessOrEquals", 80)]
+        [InlineData("matchInsensitively", 86)]
+        [InlineData("notMatchInsensitively", 89)]
+        public void RuleTests_UnguardedTryGetOperatorValue_AdditionalOperator(
+            string operatorName,
+            int linePosition)
+        {
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
+                    ""policyRule"": {{
+                      ""if"": {{
+                        ""field"": ""name"",
+                        ""{operatorName}"": ""[tryGet(field('tags'), 'environment')]""
+                      }},
+                      ""then"": {{
+                        ""effect"": ""deny""
+                      }}
+                    }}
+                  }}
+                }}";
+
+            var results = CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unguarded-tryget-operator-value",
+                Title: "Unguarded tryGet Operator Value",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: linePosition,
+                Path: "properties.policyRule.if." + operatorName,
+                Description: $"The '{operatorName}' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_TryGetGuardedByCoalesce_NoViolation()
+        public void RuleTests_UnguardedTryGetOperatorValue_TryGetGuardedByCoalesce_NoViolation()
         {
             var policyDefinition = @"
                 {
@@ -155,7 +209,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_TryGetNotOutermostFunction_NoViolation()
+        public void RuleTests_UnguardedTryGetOperatorValue_TryGetNotOutermostFunction_NoViolation()
         {
             var policyDefinition = @"
                 {
@@ -178,7 +232,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_LiteralValue_NoViolation()
+        public void RuleTests_UnguardedTryGetOperatorValue_LiteralValue_NoViolation()
         {
             var policyDefinition = @"
                 {
@@ -201,7 +255,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_UnguardedTryGetEqualityOperand_FieldReferenceValue_NoViolation()
+        public void RuleTests_UnguardedTryGetOperatorValue_FieldReferenceValue_NoViolation()
         {
             var policyDefinition = @"
                 {
@@ -223,26 +277,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
-        [Theory]
-        [InlineData("like")]
-        [InlineData("notLike")]
-        [InlineData("contains")]
-        public void RuleTests_UnguardedTryGetEqualityOperand_OtherOperators_NoViolation(string operatorName)
+        [Fact]
+        public void RuleTests_UnguardedTryGetOperatorValue_ExpressionNestedInArray_NoViolation()
         {
-            var policyDefinition = $@"
-                {{
-                  ""properties"": {{
-                    ""policyRule"": {{
-                      ""if"": {{
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
                         ""field"": ""name"",
-                        ""{operatorName}"": ""[tryGet(field('tags'), 'environment')]""
-                      }},
-                      ""then"": {{
+                        ""in"": [
+                          ""[tryGet(field('tags'), 'environment')]""
+                        ]
+                      },
+                      ""then"": {
                         ""effect"": ""deny""
-                      }}
-                    }}
-                  }}
-                }}";
+                      }
+                    }
+                  }
+                }";
 
             var results = CreateLinter().Lint(policyDefinition);
 
