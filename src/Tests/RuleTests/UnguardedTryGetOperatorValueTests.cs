@@ -56,7 +56,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 74,
                 Path: "properties.policyRule.if.equals",
-                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression. 'tryGet' can return null when its first property is missing, and later property arguments are not safely dereferenced. A null operator value fails policy evaluation. Make nested lookups safe, then use 'coalesce(..., <fallback>)' with an operator-compatible fallback.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -91,7 +91,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 77,
                 Path: "properties.policyRule.if.notEquals",
-                Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'notEquals' operator's value is a 'tryGet(...)' expression. 'tryGet' can return null when its first property is missing, and later property arguments are not safely dereferenced. A null operator value fails policy evaluation. Make nested lookups safe, then use 'coalesce(..., <fallback>)' with an operator-compatible fallback.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -126,7 +126,42 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 74,
                 Path: "properties.policyRule.if.equals",
-                Description: "The 'equals' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression. 'tryGet' can return null when its first property is missing, and later property arguments are not safely dereferenced. A null operator value fails policy evaluation. Make nested lookups safe, then use 'coalesce(..., <fallback>)' with an operator-compatible fallback.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_UnguardedTryGetOperatorValue_AdditionalPropertyArgument_Violation()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""name"",
+                        ""equals"": ""[tryGet(field('tags'), 'environment', 'name')]""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "unguarded-tryget-operator-value",
+                Title: "Unguarded tryGet Operator Value",
+                Severity: Severity.Error,
+                Category: Category.BestPractices,
+                LineNumber: 7,
+                LinePosition: 82,
+                Path: "properties.policyRule.if.equals",
+                Description: "The 'equals' operator's value is a 'tryGet(...)' expression. 'tryGet' can return null when its first property is missing, and later property arguments are not safely dereferenced. A null operator value fails policy evaluation. Make nested lookups safe, then use 'coalesce(..., <fallback>)' with an operator-compatible fallback.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -180,7 +215,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if." + operatorName,
-                Description: $"The '{operatorName}' operator's value is a 'tryGet(...)' expression, which returns null when the property is missing. Policy evaluation fails when an operator value evaluates to null. Wrap the expression in 'coalesce(..., <fallback>)' so the value is never null.");
+                Description: $"The '{operatorName}' operator's value is a 'tryGet(...)' expression. 'tryGet' can return null when its first property is missing, and later property arguments are not safely dereferenced. A null operator value fails policy evaluation. Make nested lookups safe, then use 'coalesce(..., <fallback>)' with an operator-compatible fallback.");
 
             results.Should().ContainEquivalentOf(output);
         }
