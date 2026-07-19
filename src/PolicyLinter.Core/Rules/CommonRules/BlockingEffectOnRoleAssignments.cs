@@ -11,6 +11,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -27,7 +28,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Blocking Effect on Role Assignments";
 
         private const string RuleDescription =
-            "The '{0}' effect blocks creation of role assignments or PIM activation requests ('Microsoft.Authorization/roleAssignments', 'Microsoft.Authorization/roleAssignmentScheduleRequests'), which prevents granting or activating access under the policy's scope and can lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.";
+            "The '{0}' effect blocks role assignment creation or PIM activation, which can lock administrators out of the policy scope. Ensure a standing recovery path at a parent scope that does not require creating a new role assignment.";
 
         private const string RoleAssignmentType = "Microsoft.Authorization/roleAssignments";
 
@@ -183,38 +184,46 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             matchesType = false;
             operatorNegated = false;
 
-            switch (op.Name?.ToLowerInvariant())
+            if (op.Name.EqualsOrdinalInsensitively("equals"))
             {
-                case "equals":
-                    matchesType = BlockingEffectOnRoleAssignments.IsLockoutType(op.Value.ToStringValue());
-                    return true;
-
-                case "notequals":
-                    operatorNegated = true;
-                    matchesType = BlockingEffectOnRoleAssignments.IsLockoutType(op.Value.ToStringValue());
-                    return true;
-
-                case "like":
-                    matchesType = BlockingEffectOnRoleAssignments.LikeMatchesLockoutType(op.Value.ToStringValue());
-                    return true;
-
-                case "notlike":
-                    operatorNegated = true;
-                    matchesType = BlockingEffectOnRoleAssignments.LikeMatchesLockoutType(op.Value.ToStringValue());
-                    return true;
-
-                case "in":
-                    matchesType = BlockingEffectOnRoleAssignments.InSetMatchesLockoutType(op.Value);
-                    return true;
-
-                case "notin":
-                    operatorNegated = true;
-                    matchesType = BlockingEffectOnRoleAssignments.InSetMatchesLockoutType(op.Value);
-                    return true;
-
-                default:
-                    return false;
+                matchesType = BlockingEffectOnRoleAssignments.IsLockoutType(op.Value.ToStringValue());
+                return true;
             }
+
+            if (op.Name.EqualsOrdinalInsensitively("notEquals"))
+            {
+                operatorNegated = true;
+                matchesType = BlockingEffectOnRoleAssignments.IsLockoutType(op.Value.ToStringValue());
+                return true;
+            }
+
+            if (op.Name.EqualsOrdinalInsensitively("like"))
+            {
+                matchesType = BlockingEffectOnRoleAssignments.LikeMatchesLockoutType(op.Value.ToStringValue());
+                return true;
+            }
+
+            if (op.Name.EqualsOrdinalInsensitively("notLike"))
+            {
+                operatorNegated = true;
+                matchesType = BlockingEffectOnRoleAssignments.LikeMatchesLockoutType(op.Value.ToStringValue());
+                return true;
+            }
+
+            if (op.Name.EqualsOrdinalInsensitively("in"))
+            {
+                matchesType = BlockingEffectOnRoleAssignments.InSetMatchesLockoutType(op.Value);
+                return true;
+            }
+
+            if (op.Name.EqualsOrdinalInsensitively("notIn"))
+            {
+                operatorNegated = true;
+                matchesType = BlockingEffectOnRoleAssignments.InSetMatchesLockoutType(op.Value);
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>

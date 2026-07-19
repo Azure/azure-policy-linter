@@ -36,7 +36,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.then.effect",
-                Description: $"The '{effect}' effect blocks creation of role assignments or PIM activation requests ('Microsoft.Authorization/roleAssignments', 'Microsoft.Authorization/roleAssignmentScheduleRequests'), which prevents granting or activating access under the policy's scope and can lock administrators out. Ensure a standing recovery path at a parent scope that does not rely on creating a new role assignment.");
+                Description: $"The '{effect}' effect blocks role assignment creation or PIM activation, which can lock administrators out of the policy scope. Ensure a standing recovery path at a parent scope that does not require creating a new role assignment.");
         }
 
         [Fact]

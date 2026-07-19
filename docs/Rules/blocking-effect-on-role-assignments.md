@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | blocking-effect-on-role-assignments | Warning | — |
+| BestPractices | blocking-effect-on-role-assignments | Warning | default |
 
 ## Description
 
