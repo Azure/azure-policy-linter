@@ -18,8 +18,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Field Alias Unavailable in Every API Version";
         private const string RuleDescription =
-            "The linter's offline metadata contains no property path for field alias '{0}' in any known API version of resource type '{1}'. " +
-            "Verify the alias or use an available field.";
+            "The field alias '{0}' resolves to resource type '{1}', but the linter's offline metadata contains no matching property path in any known API version. " +
+            "Verify that the property exists on the target resource.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldAliasUnavailableInEveryApiVersion"/> class.

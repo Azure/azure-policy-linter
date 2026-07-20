@@ -6,12 +6,11 @@
 
 ## Description
 
-This rule reports a resolved [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) when the linter's offline metadata contains no property path for it in any known API version of the resource type. The policy therefore has no known API-version property to evaluate through that alias. Findings can change as the linter's metadata is updated.
+This rule reports a [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) that exists in the alias catalog and resolves to a resource type, but whose alias paths match no property in any known API version in the linter's offline metadata. The policy author is therefore using a recognized alias name even though the metadata cannot map it to a resource property. Findings can change as the linter's metadata is updated.
 
 ## Suggestions
 
-- Verify that the alias is spelled correctly and applies to the intended resource type.
-- Replace it with an available field alias for the property you need.
+- Verify that the property is valid and present on the target resource by consulting the resource provider documentation and attempting to create or update a test resource with that property set. If the resource accepts the property, report the alias or metadata mismatch.
 
 ## Examples
 

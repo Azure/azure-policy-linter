@@ -7,6 +7,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
     using System.Collections.Immutable;
+    using global::Azure.Deployments.ResourceMetadata.Offline;
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
@@ -21,6 +22,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     {
         private const string Alias = "Microsoft.Test/widgets/property";
         private const string ResourceType = "Microsoft.Test/widgets";
+        private static readonly ITypeMetadata RealTypeMetadata = new TypeMetadata(
+            metadataProvider: new OfflineMetadataProvider(),
+            aliasResolver: new AliasResolver());
 
         [Fact]
         public void RuleTests_FieldAliasUnavailableInEveryApiVersion_OneFalseMetadataEntry_Fires()
@@ -37,6 +41,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 resourceType: ResourceType,
                 lineNumber: 7,
                 linePosition: 50,
+                path: "properties.policyRule.if.field");
+        }
+
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_RealAllMissingAlias_Fires()
+        {
+            const string alias = "Microsoft.AppPlatform/Spring/apps.persistentDisk.usedInGB";
+            const string resourceType = "Microsoft.AppPlatform/Spring";
+
+            var results = Lint(
+                policyDefinition: SingleFieldPolicy(field: alias),
+                metadata: FieldAliasUnavailableInEveryApiVersionTests.RealTypeMetadata);
+
+            AssertSingleFinding(
+                results: results,
+                alias: alias,
+                resourceType: resourceType,
+                lineNumber: 7,
+                linePosition: 76,
                 path: "properties.policyRule.if.field");
         }
 
@@ -266,8 +289,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LinePosition: linePosition,
                 Path: path,
                 Description:
-                    $"The linter's offline metadata contains no property path for field alias '{alias}' in any known API version of resource type '{resourceType}'. " +
-                    "Verify the alias or use an available field.");
+                    $"The field alias '{alias}' resolves to resource type '{resourceType}', but the linter's offline metadata contains no matching property path in any known API version. " +
+                    "Verify that the property exists on the target resource.");
 
             results.Should().ContainEquivalentOf(output);
         }
