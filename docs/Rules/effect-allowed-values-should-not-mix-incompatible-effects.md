@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | effect-allowed-values-should-not-mix-incompatible-effects | Error | — |
+| BestPractices | effect-allowed-values-should-not-mix-incompatible-effects | Error | default |
 
 ## Description
 
