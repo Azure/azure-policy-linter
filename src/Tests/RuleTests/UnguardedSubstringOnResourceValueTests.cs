@@ -12,7 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedSubstringOnResourceValueTests
     {
         private const string ExpectedDescription =
-            "The value expression calls 'substring' directly on a resource value. If the value is shorter than the requested substring, policy evaluation fails and the policy acts as deny. Guard the call with 'if()' and 'length()'.";
+            "The value expression calls 'substring' directly on a resource value. If the requested range extends beyond the value, policy evaluation fails and the policy acts as deny. Guard the call with 'if()' and 'length()'.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -68,7 +68,42 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_UnguardedSubstringOnResourceValue_CurrentReferenceInValueCount()
+        public void RuleTests_UnguardedSubstringOnResourceValue_CurrentReferenceInFieldCount()
+        {
+            const string valueExpression = "[substring(current('Microsoft.Test/widgets/items[*].name'), 0, 3)]";
+            var linter = CreateLinter();
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
+                    ""policyRule"": {{
+                      ""if"": {{
+                        ""count"": {{
+                          ""field"": ""Microsoft.Test/widgets/items[*]"",
+                          ""where"": {{
+                            ""value"": ""{valueExpression}"",
+                            ""equals"": ""abc""
+                          }}
+                        }},
+                        ""greater"": 0
+                      }},
+                      ""then"": {{
+                        ""effect"": ""deny""
+                      }}
+                    }}
+                  }}
+                }}";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(CreateExpectedOutput(
+                lineNumber: 9,
+                linePosition: 39 + valueExpression.Length,
+                path: "properties.policyRule.if.count.where.value"));
+        }
+
+        [Fact]
+        public void RuleTests_UnguardedSubstringOnResourceValue_CurrentReferenceInValueCount_NoFinding()
         {
             const string valueExpression = "[substring(current('item'), 0, 3)]";
             var linter = CreateLinter();
@@ -96,11 +131,31 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().HaveCount(1);
-            results.Should().ContainEquivalentOf(CreateExpectedOutput(
-                lineNumber: 10,
-                linePosition: 39 + valueExpression.Length,
-                path: "properties.policyRule.if.count.where.value"));
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_UnguardedSubstringOnResourceValue_FieldCondition_NoFinding()
+        {
+            var linter = CreateLinter();
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""name"",
+                        ""equals"": ""abc""
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
         }
 
         [Theory]

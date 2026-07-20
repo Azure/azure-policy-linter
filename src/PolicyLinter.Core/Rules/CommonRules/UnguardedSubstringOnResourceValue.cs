@@ -6,6 +6,8 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Collections.Immutable;
+    using System.Linq;
     using global::Azure.Deployments.Expression.Engines;
     using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
@@ -21,7 +23,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Unguarded Substring on Resource Value";
 
         private const string RuleDescription =
-            "The value expression calls 'substring' directly on a resource value. If the value is shorter than the requested substring, policy evaluation fails and the policy acts as deny. Guard the call with 'if()' and 'length()'.";
+            "The value expression calls 'substring' directly on a resource value. If the requested range extends beyond the value, policy evaluation fails and the policy acts as deny. Guard the call with 'if()' and 'length()'.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedSubstringOnResourceValue"/> class.
@@ -59,7 +61,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            if (!UnguardedSubstringOnResourceValue.ContainsResourceValueReference(substring.Parameters[0]) ||
+            if (!UnguardedSubstringOnResourceValue.ContainsResourceValueReference(
+                    expression: substring.Parameters[0],
+                    references: expression.Value.LanguageExpressions[0].References) ||
                 !UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(substring.Parameters[1], out var start) ||
                 !UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(substring.Parameters[2], out var length) ||
                 (start == 0 && length == 0))
@@ -73,22 +77,32 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             };
         }
 
-        private static bool ContainsResourceValueReference(LanguageExpression expression)
+        private static bool ContainsResourceValueReference(
+            LanguageExpression expression,
+            ImmutableArray<Reference> references)
         {
             if (expression is not FunctionExpression function)
             {
                 return false;
             }
 
-            if (string.Equals(function.Function, "field", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(function.Function, "current", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(function.Function, "field", StringComparison.OrdinalIgnoreCase))
             {
                 return true;
             }
 
+            if (string.Equals(function.Function, "current", StringComparison.OrdinalIgnoreCase))
+            {
+                return references.Any(reference =>
+                    reference.Kind == ReferenceKind.CurrentArrayMember &&
+                    reference.IsResolvedFieldReference());
+            }
+
             foreach (var parameter in function.Parameters)
             {
-                if (UnguardedSubstringOnResourceValue.ContainsResourceValueReference(parameter))
+                if (UnguardedSubstringOnResourceValue.ContainsResourceValueReference(
+                    expression: parameter,
+                    references: references))
                 {
                     return true;
                 }
