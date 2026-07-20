@@ -6,7 +6,7 @@
 
 ## Description
 
-A deny-capable policy that selects the independently deployable [`Microsoft.Network/networkSecurityGroups/securityRules` child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules) does not cover requests that submit security rules through the [`securityRules` collection on the parent network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups). Equivalent conditions are needed for both request paths when both must be denied.
+This rule checks policies whose effect is literal `deny` or a direct String parameter that is unconstrained or allows `deny`. When such a policy selects the independently deployable [`Microsoft.Network/networkSecurityGroups/securityRules` child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules), it does not cover requests that submit security rules through the [`securityRules` collection on the parent network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups). Complex effect expressions and other enforcement effects are outside the rule's scope.
 
 ## Suggestions
 

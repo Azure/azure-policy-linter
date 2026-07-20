@@ -44,16 +44,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var selectedResourceTypes = NSGSecurityRuleChildOnlyDenyCoverage.CollectSelectedResourceTypes(expression.PolicyRule.If);
+            var typeSelections = NSGSecurityRuleChildOnlyDenyCoverage.CollectTypeSelections(expression.PolicyRule.If);
+            var selectedResourceTypes = typeSelections.ResourceTypes;
             if (!selectedResourceTypes.Contains(NSGSecurityRuleChildOnlyDenyCoverage.ChildResourceType) ||
-                selectedResourceTypes.Contains(NSGSecurityRuleChildOnlyDenyCoverage.ParentResourceType))
+                selectedResourceTypes.Contains(NSGSecurityRuleChildOnlyDenyCoverage.ParentResourceType) ||
+                typeSelections.HasIndeterminateTypeCondition ||
+                typeSelections.ChildSelection == null)
             {
                 return Array.Empty<LinterOutput>();
             }
 
             return new[]
             {
-                this.CreateWarning(expression.PolicyRule.Then.Effect),
+                this.CreateWarning(typeSelections.ChildSelection),
             };
         }
 
@@ -74,32 +77,48 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 allowedValues.Any(value => string.Equals(value, "deny", StringComparison.OrdinalIgnoreCase));
         }
 
-        private static HashSet<string> CollectSelectedResourceTypes(IfCondition condition)
+        private static TypeSelections CollectTypeSelections(IfCondition condition)
         {
             var selectedResourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            Property? childSelection = null;
+            var hasIndeterminateTypeCondition = false;
             var visitor = new PolicyExpressionVisitor
             {
                 Visit = policyExpression =>
                 {
                     if (policyExpression is LeafCondition leafCondition)
                     {
-                        selectedResourceTypes.UnionWith(
-                            NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(leafCondition));
+                        var selectedTypes = NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(leafCondition);
+                        selectedResourceTypes.UnionWith(selectedTypes);
+
+                        if (childSelection == null &&
+                            selectedTypes.Contains(
+                                NSGSecurityRuleChildOnlyDenyCoverage.ChildResourceType,
+                                StringComparer.OrdinalIgnoreCase))
+                        {
+                            childSelection = leafCondition.Operator;
+                        }
+
+                        hasIndeterminateTypeCondition |=
+                            NSGSecurityRuleChildOnlyDenyCoverage.HasIndeterminateTypeCondition(
+                                condition: leafCondition,
+                                selectedTypes: selectedTypes);
                     }
                 },
             };
 
             condition.Visit(visitor);
-            return selectedResourceTypes;
+            return new TypeSelections(
+                ResourceTypes: selectedResourceTypes,
+                ChildSelection: childSelection,
+                HasIndeterminateTypeCondition: hasIndeterminateTypeCondition);
         }
 
         private static string[] GetSelectedResourceTypes(LeafCondition condition)
         {
-            if (condition.Field?.HasLiteralValue != true ||
-                !string.Equals(
-                    condition.Field.FieldAccessorReference?.Identifier,
-                    "type",
-                    StringComparison.OrdinalIgnoreCase) ||
+            var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(condition);
+            if (fieldReference?.IsResolvedFieldReference() != true ||
+                !string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase) ||
                 condition.Operator?.HasLiteralValue != true ||
                 NSGSecurityRuleChildOnlyDenyCoverage.IsUnderOddNotParity(condition))
             {
@@ -131,6 +150,43 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 .ToArray();
         }
 
+        private static Reference? GetComparedFieldReference(LeafCondition condition)
+        {
+            if (condition.Field?.FieldAccessorReference != null)
+            {
+                return condition.Field.FieldAccessorReference;
+            }
+
+            if (condition.Value?.LanguageExpressions.Length != 1)
+            {
+                return null;
+            }
+
+            var languageExpression = condition.Value.LanguageExpressions[0];
+            if (!string.Equals(languageExpression.Expression, condition.Value.Value.ToString(), StringComparison.Ordinal) ||
+                languageExpression.ReferenceKind != ReferenceKind.ResourceField ||
+                languageExpression.References.Length != 1)
+            {
+                return null;
+            }
+
+            return languageExpression.References[0];
+        }
+
+        private static bool HasIndeterminateTypeCondition(
+            LeafCondition condition,
+            string[] selectedTypes)
+        {
+            var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(condition);
+            if (fieldReference?.IsResolvedFieldReference() == true &&
+                string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase))
+            {
+                return selectedTypes.Length == 0;
+            }
+
+            return condition.Field?.HasLiteralValue == false;
+        }
+
         private static bool IsUnderOddNotParity(LeafCondition condition)
         {
             var notCount = condition.PathSegments.Count(
@@ -138,5 +194,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return notCount % 2 != 0;
         }
+
+        private sealed record TypeSelections(
+            HashSet<string> ResourceTypes,
+            Property? ChildSelection,
+            bool HasIndeterminateTypeCondition);
     }
 }

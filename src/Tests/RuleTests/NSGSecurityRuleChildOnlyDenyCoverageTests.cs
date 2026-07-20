@@ -14,8 +14,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     {
         private const string ChildResourceType = "Microsoft.Network/networkSecurityGroups/securityRules";
         private const string ParentResourceType = "Microsoft.Network/networkSecurityGroups";
-        private const int LiteralEffectLinePosition = 40;
-        private const int ParameterizedEffectLinePosition = 58;
 
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -70,9 +68,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
                 condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType));
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: LiteralEffectLinePosition);
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
         }
 
         [Fact]
@@ -82,9 +78,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 condition: @"{ ""field"": ""TYPE"", ""equals"": ""MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES"" }",
                 effect: @"""DeNy""");
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: LiteralEffectLinePosition);
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
         }
 
         [Fact]
@@ -95,7 +89,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
                 results: results,
-                linePosition: LiteralEffectLinePosition);
+                linePosition: 54,
+                path: "properties.policyRule.if.in");
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildValueFieldEquals()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: @"{ ""value"": ""[field('type')]"", ""equals"": """ + ChildResourceType + @""" }");
+
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
+                results: results,
+                linePosition: 123);
         }
 
         [Fact]
@@ -108,7 +114,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
                 results: results,
-                linePosition: LiteralEffectLinePosition);
+                linePosition: 130,
+                path: "properties.policyRule.if.not.not.equals");
         }
 
         [Fact]
@@ -119,9 +126,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 effect: @"""[parameters('effect')]""",
                 parameters: @"{ ""effect"": { ""type"": ""String"", ""allowedValues"": [""audit"", ""Deny""] } }");
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: ParameterizedEffectLinePosition);
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
         }
 
         [Fact]
@@ -132,9 +137,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 effect: @"""[parameters('effect')]""",
                 parameters: @"{ ""effect"": { ""type"": ""String"" } }");
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: ParameterizedEffectLinePosition);
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
         }
 
         [Fact]
@@ -148,7 +151,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
                 results: results,
-                linePosition: LiteralEffectLinePosition);
+                linePosition: 124,
+                path: "properties.policyRule.if.allOf[0].equals");
         }
 
         [Fact]
@@ -177,6 +181,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
                 condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ParentResourceType));
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildWithIndeterminateTypeBranch()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: @"{ ""anyOf"": [" +
+                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) +
+                    @", { ""field"": ""type"", ""notEquals"": ""Microsoft.Storage/storageAccounts"" }] }");
 
             results.Should().BeEmpty();
         }
@@ -273,7 +288,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static string EqualsType(string resourceType) =>
             @"{ ""field"": ""type"", ""equals"": """ + resourceType + @""" }";
 
-        private static void AssertSingleFinding(LinterOutput[] results, int linePosition)
+        private static void AssertSingleFinding(
+            LinterOutput[] results,
+            int linePosition = 112,
+            string path = "properties.policyRule.if.equals")
         {
             results.Should().HaveCount(1);
 
@@ -282,9 +300,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "NSG Security Rule Child-Only Deny Coverage",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 8,
+                LineNumber: 6,
                 LinePosition: linePosition,
-                Path: "properties.policyRule.then.effect",
+                Path: path,
                 Description: "This deny-capable definition covers the child security-rule request path but not changes submitted through the parent NSG 'securityRules' collection. Add equivalent parent coverage in this or another policy.");
 
             results.Should().ContainEquivalentOf(output);
