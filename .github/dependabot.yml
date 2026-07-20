@@ -18,6 +18,10 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
+    groups:
+      all-actions:
+        patterns:
+          - "*"
 
   - package-ecosystem: "dotnet-sdk"
     directory: "/"
