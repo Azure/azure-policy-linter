@@ -72,8 +72,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             expression.PolicyRule.If.Visit(visitor);
 
             if (!selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ParentResourceType) ||
-                selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType) ||
-                !referencesParentSecurityRulesAlias)
+                !referencesParentSecurityRulesAlias ||
+                (NSGSecurityRuleParentOnlyDenyCoverage.IsAllMode(expression.Mode) &&
+                NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage(expression.PolicyRule.If.Condition)))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -102,6 +103,85 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     out _) &&
                 (allowedValues == null ||
                 allowedValues.Any(value => string.Equals(value, "deny", StringComparison.OrdinalIgnoreCase)));
+        }
+
+        private static bool IsAllMode(Property? mode)
+        {
+            return mode?.HasLiteralValue == true &&
+                mode.Value.Type == JTokenType.String &&
+                string.Equals(mode.Value.Value<string>(), "all", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static bool HasEffectiveChildCoverage(Condition condition)
+        {
+            if (condition is LeafCondition leaf)
+            {
+                var selectedResourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+                NSGSecurityRuleParentOnlyDenyCoverage.AddSelectedResourceTypes(
+                    leaf: leaf,
+                    selectedResourceTypes: selectedResourceTypes);
+                return selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType);
+            }
+
+            if (condition is not Quantifier quantifier || quantifier.Not != null)
+            {
+                return false;
+            }
+
+            if (quantifier.AnyOf != null)
+            {
+                return quantifier.AnyOf.Value.Any(
+                    NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage);
+            }
+
+            if (quantifier.AllOf == null ||
+                NSGSecurityRuleParentOnlyDenyCoverage.ContainsParentSecurityRulesAlias(condition))
+            {
+                return false;
+            }
+
+            return quantifier.AllOf.Value.Any(
+                NSGSecurityRuleParentOnlyDenyCoverage.ContainsPositiveChildTypeSelection);
+        }
+
+        private static bool ContainsPositiveChildTypeSelection(Condition condition)
+        {
+            var selectedResourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var visitor = new PolicyExpressionVisitor
+            {
+                Visit = policyExpression =>
+                {
+                    if (policyExpression is LeafCondition leaf)
+                    {
+                        NSGSecurityRuleParentOnlyDenyCoverage.AddSelectedResourceTypes(
+                            leaf: leaf,
+                            selectedResourceTypes: selectedResourceTypes);
+                    }
+                },
+            };
+
+            condition.Visit(visitor);
+            return selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType);
+        }
+
+        private static bool ContainsParentSecurityRulesAlias(Condition condition)
+        {
+            var containsAlias = false;
+            var visitor = new PolicyExpressionVisitor
+            {
+                Visit = policyExpression =>
+                {
+                    if (policyExpression is Reference reference &&
+                        reference.IsResolvedFieldReference() &&
+                        NSGSecurityRuleParentOnlyDenyCoverage.IsParentSecurityRulesAlias(reference.Identifier))
+                    {
+                        containsAlias = true;
+                    }
+                },
+            };
+
+            condition.Visit(visitor);
+            return containsAlias;
         }
 
         private static void AddSelectedResourceTypes(

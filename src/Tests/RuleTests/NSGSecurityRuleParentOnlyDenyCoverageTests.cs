@@ -193,14 +193,58 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             NSGSecurityRuleParentOnlyDenyCoverageTests.AssertFinding(ifCondition: ifCondition);
         }
 
+        [Fact]
+        public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_IndexedModeChildTypeMentionedStillFires()
+        {
+            var ifCondition = @"{ ""allOf"": [
+                { ""field"": ""type"", ""in"": [
+                    ""Microsoft.Network/networkSecurityGroups"",
+                    ""Microsoft.Network/networkSecurityGroups/securityRules""
+                ] },
+                { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
+            ] }";
+
+            NSGSecurityRuleParentOnlyDenyCoverageTests.AssertFinding(ifCondition: ifCondition);
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_AllModeParentAliasMakesCombinedTypeBranchIneffective()
+        {
+            var ifCondition = @"{ ""allOf"": [
+                { ""field"": ""type"", ""in"": [
+                    ""Microsoft.Network/networkSecurityGroups"",
+                    ""Microsoft.Network/networkSecurityGroups/securityRules""
+                ] },
+                { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
+            ] }";
+
+            NSGSecurityRuleParentOnlyDenyCoverageTests.AssertFinding(
+                ifCondition: ifCondition,
+                mode: "All");
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_AllModeEffectiveChildBranch()
+        {
+            var ifCondition = @"{ ""anyOf"": [
+                { ""allOf"": [
+                    { ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups"" },
+                    { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
+                ] },
+                { ""allOf"": [
+                    { ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups/securityRules"" },
+                    { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/access"", ""equals"": ""Deny"" }
+                ] }
+            ] }";
+
+            var results = NSGSecurityRuleParentOnlyDenyCoverageTests.Lint(
+                ifCondition: ifCondition,
+                mode: "All");
+
+            results.Should().BeEmpty();
+        }
+
         [Theory]
-        [InlineData(@"{ ""allOf"": [
-            { ""field"": ""type"", ""in"": [
-                ""Microsoft.Network/networkSecurityGroups"",
-                ""Microsoft.Network/networkSecurityGroups/securityRules""
-            ] },
-            { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
-        ] }")]
         [InlineData(@"{ ""allOf"": [
             { ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups/securityRules"" },
             { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
@@ -336,12 +380,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static void AssertFinding(
             string ifCondition,
             string effect = @"""deny""",
-            string parameters = "{}")
+            string parameters = "{}",
+            string mode = "Indexed")
         {
             var results = NSGSecurityRuleParentOnlyDenyCoverageTests.Lint(
                 ifCondition: ifCondition,
                 effect: effect,
-                parameters: parameters);
+                parameters: parameters,
+                mode: mode);
 
             results.Should().HaveCount(1);
 
@@ -361,7 +407,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static LinterOutput[] Lint(
             string ifCondition,
             string effect = @"""deny""",
-            string parameters = "{}")
+            string parameters = "{}",
+            string mode = "Indexed")
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -376,7 +423,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var policyDefinition = $@"
                 {{
                   ""properties"": {{
-                    ""mode"": ""Indexed"",
+                    ""mode"": ""{mode}"",
                     ""parameters"": {compactParameters},
                     ""policyRule"": {{
                       ""if"": {compactIfCondition},

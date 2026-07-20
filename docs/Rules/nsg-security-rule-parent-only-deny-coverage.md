@@ -6,7 +6,7 @@
 
 ## Description
 
-A deny-capable policy selects the parent `Microsoft.Network/networkSecurityGroups` resource type and references its `securityRules[*]` collection, but does not select independently deployed `Microsoft.Network/networkSecurityGroups/securityRules` child resources. Azure Resource Manager supports security rules both in the [parent network security group resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups) and as [child security-rule resources](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules), so the request paths require equivalent policy coverage.
+This rule checks policies whose effect is literal `deny` or a direct String parameter that is unconstrained or allows `deny`. It reports parent `Microsoft.Network/networkSecurityGroups` conditions that reference `securityRules[*]` without effective coverage for independently deployed `Microsoft.Network/networkSecurityGroups/securityRules` child resources. Azure Resource Manager supports security rules both in the [parent network security group resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups) and as [child security-rule resources](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules), so the request paths require equivalent policy coverage. `Indexed` mode does not evaluate the child resource type; in `All` mode, child coverage needs a branch whose conditions can evaluate against the child resource.
 
 ## Suggestions
 
