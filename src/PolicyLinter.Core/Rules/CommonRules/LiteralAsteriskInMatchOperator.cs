@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Literal Asterisk in Match Operator";
         private const string RuleDescription =
-            "The condition uses the '{0}' operator with value '{1}'. Match operators treat '*' as a literal character, not a wildcard, so the condition's result depends on a literal asterisk. If wildcard matching was intended, use '{2}'.";
+            "The condition uses the '{0}' operator with value '{1}'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Keep '*' for a literal asterisk. Otherwise, use the supported placeholders or consider '{2}', whose wildcard syntax is different.";
 
         private static readonly OrdinalInsensitiveHashSet MatchOperators = new OrdinalInsensitiveHashSet
         {

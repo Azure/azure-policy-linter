@@ -10,8 +10,9 @@ The Azure Policy [`match`, `notMatch`, `matchInsensitively`, and `notMatchInsens
 
 ## Suggestions
 
-- Use `like` or `notLike` instead when `*` should match any sequence of characters.
-- Keep the match-family operator only when the compared value must contain a literal asterisk.
+- Keep the match-family operator unchanged when `*` should match a literal asterisk.
+- Replace `*` with the supported `#`, `?`, or `.` placeholders when they express the required match.
+- Consider [`like` or `notLike`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) when `*` should match a sequence of characters. These operators use different wildcard syntax, so other match placeholders become literal characters.
 
 ## Examples
 
