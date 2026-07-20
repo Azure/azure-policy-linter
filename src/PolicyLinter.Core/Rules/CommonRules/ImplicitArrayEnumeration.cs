@@ -41,7 +41,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 !FieldPathHelper.IsArrayAlias(reference.Identifier) ||
                 expression.Operator == null ||
                 string.Equals(expression.Operator.Name, "exists", StringComparison.OrdinalIgnoreCase) ||
-                reference.ReferencedCountExpressionScope != null)
+                ImplicitArrayEnumeration.IsFullyReducedByCountScope(reference))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -50,6 +50,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             {
                 this.CreateInformational(expression.Field, reference.Identifier),
             };
+        }
+
+        private static bool IsFullyReducedByCountScope(Reference reference)
+        {
+            var scope = reference.ReferencedCountExpressionScope;
+            return scope?.Type == CountScopeType.Field &&
+                ImplicitArrayEnumeration.CountArraySelectors(reference.Identifier) ==
+                ImplicitArrayEnumeration.CountArraySelectors(scope.Identifier);
+        }
+
+        private static int CountArraySelectors(string alias)
+        {
+            var count = 0;
+            var index = 0;
+
+            while ((index = alias.IndexOf("[*]", index, StringComparison.Ordinal)) >= 0)
+            {
+                count++;
+                index += 3;
+            }
+
+            return count;
         }
     }
 }

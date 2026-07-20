@@ -197,6 +197,37 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_ImplicitArrayEnumeration_NestedArrayInsideOuterCountWhere()
+        {
+            var policyDefinition = @"{
+  ""properties"": {
+    ""policyRule"": {
+      ""if"": {
+        ""count"": {
+          ""field"": ""Microsoft.Test/testResource/items[*]"",
+          ""where"": {
+            ""field"": ""Microsoft.Test/testResource/items[*].children[*].name"",
+            ""equals"": ""approved""
+          }
+        },
+        ""greater"": 0
+      },
+      ""then"": {
+        ""effect"": ""audit""
+      }
+    }
+  }
+}";
+
+            ImplicitArrayEnumerationTests.AssertSingleFinding(
+                policyDefinition: policyDefinition,
+                lineNumber: 8,
+                linePosition: 76,
+                path: "properties.policyRule.if.count.where.field",
+                alias: "Microsoft.Test/testResource/items[*].children[*].name");
+        }
+
+        [Fact]
         public void RuleTests_ImplicitArrayEnumeration_ScalarAlias()
         {
             var policyDefinition = @"{
