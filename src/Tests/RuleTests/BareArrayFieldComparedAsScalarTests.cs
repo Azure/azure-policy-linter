@@ -8,6 +8,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
+    using global::Azure.Deployments.ResourceMetadata.Offline;
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
@@ -36,6 +37,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private const string NotSpecifiedTypeAlias = "Microsoft.Test/widgets/notSpecifiedTypeProperty";
 
         private static readonly ITypeMetadata TypeMetadata = new TestTypeMetadata();
+        private static readonly ITypeMetadata RealTypeMetadata = new TypeMetadata(
+            metadataProvider: new OfflineMetadataProvider(),
+            aliasResolver: new AliasResolver());
 
         [Fact]
         public void RuleTests_BareArrayFieldComparedAsScalar_Equals()
@@ -64,8 +68,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Theory]
+        [InlineData("notEquals", @"""item-#""")]
+        [InlineData("like", @"""item-*""")]
+        [InlineData("notLike", @"""item-*""")]
         [InlineData("match", @"""item-#""")]
+        [InlineData("notMatch", @"""item-#""")]
+        [InlineData("matchInsensitively", @"""item-#""")]
+        [InlineData("notMatchInsensitively", @"""item-#""")]
         [InlineData("greater", "5")]
+        [InlineData("less", "5")]
         [InlineData("lessOrEquals", "5.5")]
         [InlineData("greaterOrEquals", "true")]
         public void RuleTests_BareArrayFieldComparedAsScalar_MatchOrOrdering(string operatorName, string operatorValue)
@@ -89,6 +100,34 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
                 Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' resolves to the whole array and is used with the scalar comparison operator '{operatorName}'. Use a '[*]' alias or field count to compare array members, or use 'exists' to check whether the property is present.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_BareArrayFieldComparedAsScalar_RealNsgArrayAlias()
+        {
+            const string alias = "Microsoft.Network/networkSecurityGroups/securityRules";
+            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter(
+                metadata: BareArrayFieldComparedAsScalarTests.RealTypeMetadata);
+            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
+                alias: alias,
+                operatorName: "equals",
+                operatorValue: @"""ready""");
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "bare-array-field-compared-as-scalar",
+                Title: "Bare Array Field Compared as Scalar",
+                Severity: Severity.Warning,
+                Category: Category.ResourceFields,
+                LineNumber: 7,
+                LinePosition: 88,
+                Path: "properties.policyRule.if.field",
+                Description: $"The field alias: '{alias}' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a '[*]' alias or field count to compare array members, or use 'exists' to check whether the property is present.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -279,12 +318,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         private static PolicyLinter CreateLinter()
         {
+            return BareArrayFieldComparedAsScalarTests.CreateLinter(
+                metadata: BareArrayFieldComparedAsScalarTests.TypeMetadata);
+        }
+
+        private static PolicyLinter CreateLinter(ITypeMetadata metadata)
+        {
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
                     new BareArrayFieldComparedAsScalar(),
                 },
-                metadata: BareArrayFieldComparedAsScalarTests.TypeMetadata);
+                metadata: metadata);
         }
 
         private static string CreatePolicy(string alias, string operatorName, string operatorValue)
