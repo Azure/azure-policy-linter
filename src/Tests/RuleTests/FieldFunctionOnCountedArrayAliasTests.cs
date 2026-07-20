@@ -65,6 +65,54 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_FieldFunctionAsOperatorValue()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new FieldFunctionOnCountedArrayAlias()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""count"": {
+                          ""field"": ""Microsoft.Test/widgets/items[*]"",
+                          ""where"": {
+                            ""field"": ""Microsoft.Test/widgets/items[*].name"",
+                            ""equals"": ""[field('Microsoft.Test/widgets/items[*].name')]""
+                          }
+                        },
+                        ""greater"": 0
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "field-function-on-counted-array-alias",
+                Title: "Field Function on Counted Array Alias",
+                Severity: Severity.Warning,
+                Category: Category.BestPractices,
+                LineNumber: 10,
+                LinePosition: 87,
+                Path: "properties.policyRule.if.count.where.equals",
+                Description: "The field() function on the counted alias 'Microsoft.Test/widgets/items[*].name' returns a one-member array inside count.where, while current('Microsoft.Test/widgets/items[*].name') returns the current scalar value. Use current('Microsoft.Test/widgets/items[*].name') for this scalar comparison.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
         public void RuleTests_FieldFunctionOnCountedArrayAlias_MatchOperatorOnChildAlias()
         {
             var linter = new PolicyLinter(

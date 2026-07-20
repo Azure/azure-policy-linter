@@ -6,6 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Collections.Generic;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -50,32 +51,44 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
-            if (expression.Value == null ||
-                expression.Operator == null ||
-                !FieldFunctionOnCountedArrayAlias.ScalarComparisonOperators.Contains(expression.Operator.Name) ||
-                expression.Value.LanguageExpressions.Length != 1)
+            if (expression.Operator == null ||
+                !FieldFunctionOnCountedArrayAlias.ScalarComparisonOperators.Contains(expression.Operator.Name))
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var languageExpression = expression.Value.LanguageExpressions[0];
-            if (!string.Equals(languageExpression.Expression, expression.Value.Value.ToString(), StringComparison.Ordinal) ||
+            var outputs = new List<LinterOutput>();
+            foreach (var property in new[] { expression.Value, expression.Operator })
+            {
+                var reference = FieldFunctionOnCountedArrayAlias.GetCountedArrayFieldReference(property);
+                if (reference != null)
+                {
+                    outputs.Add(this.CreateWarning(property, reference.Identifier));
+                }
+            }
+
+            return outputs.ToArray();
+        }
+
+        private static Reference? GetCountedArrayFieldReference(Property? property)
+        {
+            if (property == null || property.LanguageExpressions.Length != 1)
+            {
+                return null;
+            }
+
+            var languageExpression = property.LanguageExpressions[0];
+            if (!string.Equals(languageExpression.Expression, property.Value.ToString(), StringComparison.Ordinal) ||
                 languageExpression.ReferenceKind != ReferenceKind.ResourceField ||
                 languageExpression.References.Length != 1)
             {
-                return Array.Empty<LinterOutput>();
+                return null;
             }
 
             var reference = languageExpression.References[0];
-            if (!reference.IsResolved || reference.ReferencedCountExpressionScope == null)
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            return new[]
-            {
-                this.CreateWarning(expression.Value, reference.Identifier),
-            };
+            return reference.IsResolved && reference.ReferencedCountExpressionScope != null
+                ? reference
+                : null;
         }
     }
 }
