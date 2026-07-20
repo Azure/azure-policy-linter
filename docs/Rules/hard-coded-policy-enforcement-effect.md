@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | hard-coded-policy-enforcement-effect | Warning | - |
+| BestPractices | hard-coded-policy-enforcement-effect | Warning | default |
 
 ## Description
 
@@ -13,7 +13,7 @@ The policy definition hard-codes an enforcement effect (`deployIfNotExists`, `ap
 
 Hard-coded non-enforcement effects (`audit`, `auditAction`, `auditIfNotExists`, `disabled`) are deliberately not flagged.
 
-See [Azure Policy definitions effect basics](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics) for the list of effects.
+See [Azure Policy definitions effect basics](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics) for the documented effects.
 
 ## Suggestions
 
