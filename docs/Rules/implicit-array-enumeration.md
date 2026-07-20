@@ -27,7 +27,7 @@ Keep implicit enumeration for a simple condition when using another field `count
 
 ### Correct
 
-The following example explicitly requires at least one matching member, so an empty array does not satisfy the condition:
+The following example preserves the violation's behavior: no selected member may differ from `approved`, and an empty array satisfies the condition:
 
 ```json
 {
@@ -35,9 +35,9 @@ The following example explicitly requires at least one matching member, so an em
     "field": "Microsoft.Test/testResource/items[*]",
     "where": {
       "field": "Microsoft.Test/testResource/items[*].name",
-      "equals": "approved"
+      "notEquals": "approved"
     }
   },
-  "greater": 0
+  "equals": 0
 }
 ```
