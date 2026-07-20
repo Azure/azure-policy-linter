@@ -10,7 +10,9 @@ Some virtual machine create and update flows omit the `Microsoft.Compute/virtual
 
 ## Suggestions
 
-- For request-time behavior, use a property that is present in the create and update payloads and accurately represents the requirement across the supported VM creation flows.
+- For request-time OS detection, keep the `osType` condition for requests that supply it and add sibling `anyOf` branches for known image publishers, offers, and SKUs.
+- Add an `imageId` allowlist when known custom or Compute Gallery images must be included.
+- Maintain the image conditions as supported images change. Images that are not represented by `osType`, image metadata, or the `imageId` allowlist cannot be classified reliably at request time.
 - When post-provisioning evaluation is appropriate, use the alias in an `existenceCondition` with an `auditIfNotExists` or `deployIfNotExists` effect.
 
 ## Examples
@@ -29,21 +31,59 @@ When the request omits `osType`, the `deny` effect does not occur for this condi
 }
 ```
 
-### Correct - request-time alternative
+### Request-time mitigation
 
-Use a caller-supplied property only when the deployment contract guarantees its presence and meaning:
+Combine `osType` with image metadata for the images the policy must recognize:
 
 ```json
 "if": {
-  "field": "tags['declaredOsType']",
-  "equals": "Windows"
+  "allOf": [
+    {
+      "field": "type",
+      "equals": "Microsoft.Compute/virtualMachines"
+    },
+    {
+      "anyOf": [
+        {
+          "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
+          "like": "Windows*"
+        },
+        {
+          "allOf": [
+            {
+              "field": "Microsoft.Compute/imagePublisher",
+              "equals": "MicrosoftWindowsServer"
+            },
+            {
+              "field": "Microsoft.Compute/imageOffer",
+              "equals": "WindowsServer"
+            },
+            {
+              "field": "Microsoft.Compute/imageSku",
+              "like": "2022-*"
+            }
+          ]
+        },
+        {
+          "field": "Microsoft.Compute/imageId",
+          "in": "[parameters('additionalWindowsImageIds')]"
+        }
+      ]
+    }
+  ]
 },
 "then": {
   "effect": "deny"
 }
 ```
 
-### Correct - post-provisioning alternative
+Built-in policies using this pattern include:
+
+- [Windows virtual machines should have Azure Monitor Agent installed](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Monitoring/AzureMonitor_Agent_Windows_VM_Audit.json)
+- [Configure Windows Virtual Machines to be associated with a Data Collection Rule for ChangeTracking and Inventory](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/ChangeTrackingAndInventory/DCRA_Windows_VM_DINE.json)
+- [[Preview]: Configure supported Linux virtual machines to automatically enable Secure Boot](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableLinuxSB_DINE.json)
+
+### Post-provisioning alternative
 
 Evaluate the OS type after the VM is available:
 

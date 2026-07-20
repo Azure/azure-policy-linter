@@ -12,7 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class VMOSTypeAliasMayBeMissingFromRequestPayloadTests
     {
         private const string VMOSTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
-        private const string DescriptionFormat = "The field alias: '{0}' may be absent from VM create/update payloads. When omitted, this condition cannot trigger request-time {1} behavior. Existing-resource compliance can still evaluate it.";
+        private const string DescriptionFormat = "The field alias: '{0}' may be absent from VM create/update payloads. When omitted, this condition cannot trigger request-time {1} behavior, though existing-resource compliance still works. Also match known image metadata when request-time OS detection is required.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
