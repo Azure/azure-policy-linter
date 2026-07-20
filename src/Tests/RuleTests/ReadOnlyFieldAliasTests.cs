@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
 
         [Fact]
-        public void RuleTests_ReadOnlyFieldAlias()
+        public void RuleTests_ReadOnlyFieldAlias_ReadOnlyAlias_ShouldFire()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -69,9 +69,48 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 18,
                 LinePosition: 99,
                 Path: "properties.policyRule.if.allOf[1].field",
-                Description: "The field alias: 'Microsoft.Storage/storageAccounts/privateEndpointConnections' maps to property that is marked as read-only in one or more old API versions of resource type: 'Microsoft.Storage/storageAccounts'. API versions: '2019-06-01, 2020-08-01-preview, 2021-01-01, 2021-02-01, 2021-04-01, 2021-06-01, 2021-08-01, 2021-09-01, 2022-05-01, 2022-09-01, 2023-01-01, 2023-04-01, 2023-05-01, 2024-01-01, 2025-01-01, 2025-06-01, 2025-08-01, 2026-04-01'");
+                Description: "The field alias: 'Microsoft.Storage/storageAccounts/privateEndpointConnections' maps to a property that is marked as read-only in one or more API versions of resource type: 'Microsoft.Storage/storageAccounts'. API versions: '2019-06-01, 2020-08-01-preview, 2021-01-01, 2021-02-01, 2021-04-01, 2021-06-01, 2021-08-01, 2021-09-01, 2022-05-01, 2022-09-01, 2023-01-01, 2023-04-01, 2023-05-01, 2024-01-01, 2025-01-01, 2025-06-01, 2025-08-01, 2026-04-01'");
 
             results.Should().ContainEquivalentOf(output);
+        }
+
+        [Fact]
+        public void RuleTests_ReadOnlyFieldAlias_WritableAlias_ShouldNotFire()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new ReadOnlyFieldAlias()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Storage/storageAccounts""
+                          },
+                          {
+                            ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"",
+                            ""equals"": ""Something""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    } 
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
         }
     }
 }

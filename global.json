@@ -3,7 +3,7 @@
     "Microsoft.Build.Traversal": "4.1.82"
   },
   "sdk": {
-    "version": "8.0.422",
+    "version": "8.0.423",
     "rollForward": "latestFeature",
     "allowPrerelease": false
   }

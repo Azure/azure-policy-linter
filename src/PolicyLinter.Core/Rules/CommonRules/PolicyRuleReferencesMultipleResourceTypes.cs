@@ -85,7 +85,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <summary>
-        /// Extracts resource types from a 'type' leaf condition's operator value
+        /// Extracts resource types from a non-negated 'type' leaf condition's operator value
         /// (a single string for 'equals' or an array for 'in').
         /// </summary>
         /// <param name="leaf">The 'type' field condition to inspect.</param>
@@ -104,12 +104,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var stringsToExtractFrom = new List<string>();
 
-            // An odd number of enclosing 'not' quantifiers negates the condition (e.g. 'in'
-            // acts like 'notIn'), so the listed types are excluded rather than targeted.
             var notCount = leaf.PathSegments.Aggregate(0, (acc, segment) =>
-                segment.Contains("not", StringComparison.OrdinalIgnoreCase) ? acc + 1 : acc);
+                string.Equals(segment, "not", StringComparison.OrdinalIgnoreCase) ? acc + 1 : acc);
+            if (notCount % 2 != 0)
+            {
+                return resourceTypes;
+            }
 
-            if (notCount % 2 == 0 && string.Equals(leafOperator.Name, "in", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(leafOperator.Name, "in", StringComparison.OrdinalIgnoreCase))
             {
                 var array = (JArray)leafOperator.Value;
                 foreach (var item in array)
@@ -136,7 +138,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         /// <summary>
         /// Extracts a resource type from a string value.
-        /// Resource types are in the format "Microsoft.Provider/resourceType".
+        /// Resource types are in the format "Microsoft.Provider/resourceType[/childType...]".
         /// </summary>
         /// <param name="value">The string value to extract from.</param>
         /// <returns>The extracted resource type, or null if not a valid resource type format.</returns>
@@ -149,11 +151,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var segments = value.Split('/');
 
-            // A resource type is "Microsoft.Provider/resourceType": at least two segments,
-            // the first being a provider namespace (contains a dot).
             if (segments.Length >= 2 && segments[0].Contains('.', StringComparison.OrdinalIgnoreCase))
             {
-                return $"{segments[0]}/{segments[1]}";
+                return value;
             }
 
             return null;
