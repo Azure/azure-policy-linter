@@ -95,7 +95,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         private static bool IsExplicitPositiveTypeCondition(LeafCondition leaf)
         {
-            var fieldReference = leaf.Field?.FieldAccessorReference;
+            var fieldReference = FieldAliasWithoutExplicitTypeCondition.GetComparedFieldReference(leaf);
             var leafOperator = leaf.Operator;
 
             if (fieldReference == null ||
@@ -123,6 +123,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             return false;
+        }
+
+        private static Reference? GetComparedFieldReference(LeafCondition leaf)
+        {
+            if (leaf.Field?.FieldAccessorReference != null)
+            {
+                return leaf.Field.FieldAccessorReference;
+            }
+
+            if (leaf.Value?.LanguageExpressions.Length != 1)
+            {
+                return null;
+            }
+
+            var languageExpression = leaf.Value.LanguageExpressions[0];
+            if (!string.Equals(languageExpression.Expression, leaf.Value.Value.ToString(), StringComparison.Ordinal) ||
+                languageExpression.ReferenceKind != ReferenceKind.ResourceField ||
+                languageExpression.References.Length != 1)
+            {
+                return null;
+            }
+
+            return languageExpression.References[0];
         }
 
         private static bool IsNegated(LeafCondition leaf)

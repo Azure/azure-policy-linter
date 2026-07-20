@@ -7,6 +7,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
     using System.Collections.Generic;
+    using global::Azure.Deployments.ResourceMetadata.Offline;
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
@@ -29,6 +30,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private const string BlankResourceTypeAlias = "Contoso.Blank/resources/setting";
 
         private static readonly ITypeMetadata TypeMetadata = new TestTypeMetadata();
+        private static readonly ITypeMetadata RealTypeMetadata = new TypeMetadata(
+            metadataProvider: new OfflineMetadataProvider(),
+            aliasResolver: new AliasResolver());
 
         [Fact]
         public void RuleTests_FieldAliasWithoutExplicitTypeCondition_OneAlias()
@@ -97,6 +101,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_PositiveValueFieldEquals()
+        {
+            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+                ifCondition: $@"{{ ""allOf"": [{{ ""value"": ""[field('type')]"", ""equals"": ""Contoso.Storage/accounts"" }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
         public void RuleTests_FieldAliasWithoutExplicitTypeCondition_PositiveNonEmptyIn()
         {
             var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
@@ -150,6 +163,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
+        [Fact]
+        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_RealStorageAlias()
+        {
+            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+                ifCondition: @"{ ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"", ""equals"": true }",
+                metadata: FieldAliasWithoutExplicitTypeConditionTests.RealTypeMetadata);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "field-alias-without-explicit-type-condition",
+                Title: "Field Alias Without Explicit Type Condition",
+                Severity: Severity.Informational,
+                Category: Category.BestPractices,
+                LineNumber: 11,
+                LinePosition: 29,
+                Path: "properties.policyRule.if",
+                Description: "The field aliases resolve to resource types: 'Microsoft.Storage/storageAccounts' without an explicit 'type' equals or in condition. Add an explicit condition to make the policy's target resource types clear.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
         private static void AssertSingleFinding(string ifCondition, string resourceTypes)
         {
             var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(ifCondition);
@@ -171,12 +206,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         private static LinterOutput[] Lint(string ifCondition)
         {
+            return FieldAliasWithoutExplicitTypeConditionTests.Lint(
+                ifCondition: ifCondition,
+                metadata: FieldAliasWithoutExplicitTypeConditionTests.TypeMetadata);
+        }
+
+        private static LinterOutput[] Lint(string ifCondition, ITypeMetadata metadata)
+        {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
                     new FieldAliasWithoutExplicitTypeCondition(),
                 },
-                metadata: FieldAliasWithoutExplicitTypeConditionTests.TypeMetadata);
+                metadata: metadata);
 
             var policyDefinition = $@"
                 {{
