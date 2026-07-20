@@ -12,13 +12,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
-    /// Detects request-time effects whose conditions reference the VM OS type alias that is absent from create and update payloads.
+    /// Detects request-time effects whose conditions reference the VM OS type alias that can be absent from create and update payloads.
     /// </summary>
-    public sealed class VMOSTypeAliasMissingFromRequestPayload : LinterRule<PolicyDefinitionProperties>
+    public sealed class VMOSTypeAliasMayBeMissingFromRequestPayload : LinterRule<PolicyDefinitionProperties>
     {
         private const string VMOSTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
-        private const string RuleTitle = "VM OS Type Alias Missing from Request Payload";
-        private const string RuleDescription = "The field alias: '{0}' is absent from VM create/update payloads, so request-time {1} behavior does not occur for this condition. Existing-resource compliance can still evaluate it.";
+        private const string RuleTitle = "VM OS Type Alias May Be Missing from Request Payload";
+        private const string RuleDescription = "The field alias: '{0}' may be absent from VM create/update payloads. When omitted, this condition cannot trigger request-time {1} behavior. Existing-resource compliance can still evaluate it.";
 
         private static readonly string[] AffectedEffects =
         {
@@ -28,13 +28,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VMOSTypeAliasMissingFromRequestPayload"/> class.
+        /// Initializes a new instance of the <see cref="VMOSTypeAliasMayBeMissingFromRequestPayload"/> class.
         /// </summary>
-        public VMOSTypeAliasMissingFromRequestPayload() : base(
-            identifier: "vm-os-type-alias-missing-from-request-payload",
+        public VMOSTypeAliasMayBeMissingFromRequestPayload() : base(
+            identifier: "vm-os-type-alias-may-be-missing-from-request-payload",
             category: Category.ResourceFields,
-            title: VMOSTypeAliasMissingFromRequestPayload.RuleTitle,
-            descriptionFormat: VMOSTypeAliasMissingFromRequestPayload.RuleDescription,
+            title: VMOSTypeAliasMayBeMissingFromRequestPayload.RuleTitle,
+            descriptionFormat: VMOSTypeAliasMayBeMissingFromRequestPayload.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(PolicyDefinitionProperties expression, LinterContext context)
         {
-            var affectedEffects = VMOSTypeAliasMissingFromRequestPayload.GetAffectedEffects(
+            var affectedEffects = VMOSTypeAliasMayBeMissingFromRequestPayload.GetAffectedEffects(
                 effect: expression.PolicyRule.Then.Effect,
                 context: context);
             if (affectedEffects.Length == 0)
@@ -50,7 +50,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var affectedEffectsDescription = VMOSTypeAliasMissingFromRequestPayload.FormatEffects(affectedEffects);
+            var affectedEffectsDescription = VMOSTypeAliasMayBeMissingFromRequestPayload.FormatEffects(affectedEffects);
             var outputs = new List<LinterOutput>();
             var visitor = new PolicyExpressionVisitor
             {
@@ -58,7 +58,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 {
                     if (policyExpression is Reference reference &&
                         reference.IsResolvedFieldReference() &&
-                        string.Equals(reference.Identifier, VMOSTypeAliasMissingFromRequestPayload.VMOSTypeAlias, StringComparison.OrdinalIgnoreCase))
+                        string.Equals(reference.Identifier, VMOSTypeAliasMayBeMissingFromRequestPayload.VMOSTypeAlias, StringComparison.OrdinalIgnoreCase))
                     {
                         outputs.Add(this.CreateWarning(reference, reference.Identifier, affectedEffectsDescription));
                     }
@@ -78,7 +78,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             if (effect.HasLiteralValue)
             {
                 var literalEffect = effect.Value.ToString();
-                return VMOSTypeAliasMissingFromRequestPayload.AffectedEffects
+                return VMOSTypeAliasMayBeMissingFromRequestPayload.AffectedEffects
                     .Where(affectedEffect => string.Equals(affectedEffect, literalEffect, StringComparison.OrdinalIgnoreCase))
                     .ToArray();
             }
@@ -90,16 +90,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             if (allowedValues == null)
             {
-                return VMOSTypeAliasMissingFromRequestPayload.AffectedEffects;
+                return VMOSTypeAliasMayBeMissingFromRequestPayload.AffectedEffects;
             }
 
-            return VMOSTypeAliasMissingFromRequestPayload.AffectedEffects
+            return VMOSTypeAliasMayBeMissingFromRequestPayload.AffectedEffects
                 .Where(affectedEffect => allowedValues.Any(allowedValue => string.Equals(allowedValue, affectedEffect, StringComparison.OrdinalIgnoreCase)))
                 .ToArray();
         }
 
         /// <summary>
-        /// Formats effect names in deterministic request-time evaluation order.
+        /// Formats effect names in deterministic display order.
         /// </summary>
         private static string FormatEffects(string[] effects)
         {

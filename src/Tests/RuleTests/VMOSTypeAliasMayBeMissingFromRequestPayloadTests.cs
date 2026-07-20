@@ -7,12 +7,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="VMOSTypeAliasMissingFromRequestPayload"/> rule.
+    /// Tests for the <see cref="VMOSTypeAliasMayBeMissingFromRequestPayload"/> rule.
     /// </summary>
-    public class VMOSTypeAliasMissingFromRequestPayloadTests
+    public class VMOSTypeAliasMayBeMissingFromRequestPayloadTests
     {
         private const string VMOSTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
-        private const string DescriptionFormat = "The field alias: '{0}' is absent from VM create/update payloads, so request-time {1} behavior does not occur for this condition. Existing-resource compliance can still evaluate it.";
+        private const string DescriptionFormat = "The field alias: '{0}' may be absent from VM create/update payloads. When omitted, this condition cannot trigger request-time {1} behavior. Existing-resource compliance can still evaluate it.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -24,7 +24,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("deny", "deny")]
         [InlineData("append", "append")]
         [InlineData("DeNy", "deny")]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_LiteralAffectedEffect(string effect, string expectedEffect)
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_LiteralAffectedEffect(string effect, string expectedEffect)
         {
             var results = CreateLinter().Lint(LiteralEffectPolicy(effect: effect, fieldAlias: VMOSTypeAlias));
 
@@ -38,7 +38,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_AliasComparisonIsCaseInsensitive()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_AliasComparisonIsCaseInsensitive()
         {
             var alias = VMOSTypeAlias.ToUpperInvariant();
             var results = CreateLinter().Lint(LiteralEffectPolicy(effect: "audit", fieldAlias: alias));
@@ -53,7 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_ParameterizedEffectWithOneAffectedAllowedValue()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ParameterizedEffectWithOneAffectedAllowedValue()
         {
             var results = CreateLinter().Lint(ParameterizedEffectPolicy(
                 parameterType: "String",
@@ -70,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_ParameterizedEffectFormatsMultipleAffectedAllowedValuesInOrder()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ParameterizedEffectFormatsMultipleAffectedAllowedValuesInOrder()
         {
             var results = CreateLinter().Lint(ParameterizedEffectPolicy(
                 parameterType: "String",
@@ -87,7 +87,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_UnconstrainedStringEffectParameter()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ParameterizedEffectFormatsTwoAffectedAllowedValuesInOrder()
+        {
+            var results = CreateLinter().Lint(ParameterizedEffectPolicy(
+                parameterType: "String",
+                allowedValuesProperty: @"""allowedValues"": [""append"", ""DENY""]",
+                effectExpression: "[parameters('effect')]"));
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(CreateOutput(
+                lineNumber: 13,
+                linePosition: 81,
+                path: "properties.policyRule.if.field",
+                alias: VMOSTypeAlias,
+                effects: "deny or append"));
+        }
+
+        [Fact]
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_UnconstrainedStringEffectParameter()
         {
             var results = CreateLinter().Lint(ParameterizedEffectPolicy(
                 parameterType: "String",
@@ -104,7 +121,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_RootFieldFunctionValueReference()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_RootFieldFunctionValueReference()
         {
             var policyDefinition = @"{
   ""properties"": {
@@ -133,7 +150,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_MultipleAliasReferences()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_MultipleAliasReferences()
         {
             var policyDefinition = @"{
   ""properties"": {
@@ -180,7 +197,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("deployIfNotExists")]
         [InlineData("modify")]
         [InlineData("disabled")]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_UnaffectedLiteralEffect_NoFinding(string effect)
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_UnaffectedLiteralEffect_NoFinding(string effect)
         {
             var results = CreateLinter().Lint(LiteralEffectPolicy(effect: effect, fieldAlias: VMOSTypeAlias));
 
@@ -190,7 +207,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData(@"""allowedValues"": []")]
         [InlineData(@"""allowedValues"": [""disabled"", ""modify""]")]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_ParameterizedEffectWithoutAffectedAllowedValues_NoFinding(string allowedValuesProperty)
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ParameterizedEffectWithoutAffectedAllowedValues_NoFinding(string allowedValuesProperty)
         {
             var results = CreateLinter().Lint(ParameterizedEffectPolicy(
                 parameterType: "String",
@@ -201,7 +218,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_NonStringEffectParameter_NoFinding()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_NonStringEffectParameter_NoFinding()
         {
             var results = CreateLinter().Lint(ParameterizedEffectPolicy(
                 parameterType: "Array",
@@ -214,7 +231,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("[concat('de', 'ny')]")]
         [InlineData("[toLower(parameters('effect'))]")]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_ComplexEffectExpression_NoFinding(string effectExpression)
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ComplexEffectExpression_NoFinding(string effectExpression)
         {
             var results = CreateLinter().Lint(ParameterizedEffectPolicy(
                 parameterType: "String",
@@ -227,7 +244,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("Microsoft.Compute/virtualMachines/storageProfile.osDisk.diskSizeGB")]
         [InlineData("Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile.storageProfile.osDisk.osType")]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_OtherAlias_NoFinding(string fieldAlias)
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_OtherAlias_NoFinding(string fieldAlias)
         {
             var results = CreateLinter().Lint(LiteralEffectPolicy(effect: "deny", fieldAlias: fieldAlias));
 
@@ -235,7 +252,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_AliasOutsideIf_NoFinding()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_AliasOutsideIf_NoFinding()
         {
             var policyDefinition = @"{
   ""properties"": {
@@ -261,7 +278,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_VMOSTypeAliasMissingFromRequestPayload_UnresolvedDynamicFieldReference_NoFinding()
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_UnresolvedDynamicFieldReference_NoFinding()
         {
             var policyDefinition = @"{
   ""properties"": {
@@ -292,7 +309,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static PolicyLinter CreateLinter() => new PolicyLinter(
             rules: new ILinterRule[]
             {
-                new VMOSTypeAliasMissingFromRequestPayload(),
+                new VMOSTypeAliasMayBeMissingFromRequestPayload(),
             },
             metadata: MockMetadata);
 
@@ -339,8 +356,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         private static LinterOutput CreateOutput(int lineNumber, int linePosition, string path, string alias, string effects) => new LinterOutput(
-            RuleIdentifier: "vm-os-type-alias-missing-from-request-payload",
-            Title: "VM OS Type Alias Missing from Request Payload",
+            RuleIdentifier: "vm-os-type-alias-may-be-missing-from-request-payload",
+            Title: "VM OS Type Alias May Be Missing from Request Payload",
             Severity: Severity.Warning,
             Category: Category.ResourceFields,
             LineNumber: lineNumber,
