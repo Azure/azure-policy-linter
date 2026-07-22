@@ -1,32 +1,36 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using FluentAssertions;
-    using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="HardCodedEnforcementPolicyEffect"/> rule.
+    /// Tests for the <see cref="HardCodedPolicyEnforcementEffect"/> rule.
     /// </summary>
-    public class HardCodedEnforcementPolicyEffectTests
+    public class HardCodedPolicyEnforcementEffectTests
     {
         /// <summary>
-        /// The type metadata used for the tests.
+        /// The mock type metadata used for the tests.
         /// </summary>
-        private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+        private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
-        [Fact]
-        public void RuleTests_HardCodedEnforcementPolicyEffect_EnforcementEffect()
+        [Theory]
+        [InlineData("deny", "audit", 40)]
+        [InlineData("append", "audit", 42)]
+        [InlineData("modify", "audit", 42)]
+        [InlineData("deployIfNotExists", "auditIfNotExists", 53)]
+        [InlineData("denyAction", "auditAction", 46)]
+        [InlineData("DENY", "audit", 40)]
+        public void RuleTests_HardCodedPolicyEnforcementEffect_EnforcementEffect(string effect, string defaultValue, int linePosition)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new HardCodedEnforcementPolicyEffect()
+                    new HardCodedPolicyEnforcementEffect()
                 },
-                metadata: TypeMetadata);
+                metadata: HardCodedPolicyEnforcementEffectTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -51,7 +55,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         ]
                       },
                       ""then"": {
-                        ""effect"": ""deny""
+                        ""effect"": """ + effect + @"""
                       }
                     } 
                   }
@@ -63,28 +67,31 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var output = new LinterOutput(
                 RuleIdentifier: "hard-coded-policy-enforcement-effect",
-                Title: "Hard-Coded Enforcement Policy Effect",
-                Severity: Severity.Informational,
+                Title: "Hard-Coded Policy Enforcement Effect",
+                Severity: Severity.Warning,
                 Category: Category.BestPractices,
                 LineNumber: 24,
-                LinePosition: 40,
+                LinePosition: linePosition,
                 Path: "properties.policyRule.then.effect",
-                Description: "The policy definition has a hard-coded enforcement effect: 'deny'. Consider adding an \"effect\" policy definition parameter with default value: 'audit' and allowed values: 'audit,deny,disabled' and replace the hard-coded effect with \"[parameters('effect')]\". Parameterizing the policy effect makes it easy reuse the policy as well as to follow safe deployment practices (start with audit, then enforce).");
+                Description: $"The policy effect '{effect}' is hard-coded, so assignments cannot select a non-enforcement effect. Add a string 'effect' parameter with defaultValue '{defaultValue}' and allowedValues containing '{defaultValue}', '{effect}', 'disabled', then set the policy effect to \"[parameters('effect')]\".");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Theory]
         [InlineData("audit")]
+        [InlineData("auditAction")]
+        [InlineData("auditIfNotExists")]
+        [InlineData("disabled")]
         [InlineData("[parameters('whatever')]")]
-        public void RuleTests_HardCodedEnforcementPolicyEffect_ShouldNotBeTriggered(string effectValue)
+        public void RuleTests_HardCodedPolicyEnforcementEffect_ShouldNotBeTriggered(string effectValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new HardCodedEnforcementPolicyEffect()
+                    new HardCodedPolicyEnforcementEffect()
                 },
-                metadata: TypeMetadata);
+                metadata: HardCodedPolicyEnforcementEffectTests.MockMetadata);
 
             var policyDefinition = @"
                 {
@@ -109,14 +116,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         ]
                       },
                       ""then"": {
-                        ""effect"": ""deny""
+                        ""effect"": """ + effectValue + @"""
                       }
                     } 
                   }
                 }";
 
-            // Replace the hard-coded effect with the provided value
-            policyDefinition = policyDefinition.Replace("deny", effectValue);
             var results = linter.Lint(policyDefinition);
 
             results.Should().BeEmpty();

@@ -1,17 +1,51 @@
-﻿# Hard-Coded Enforcement Policy Effect
+# Hard-Coded Policy Enforcement Effect
 
-
-| Category | Identifier |
-|----------------|----------------------------------------|
-| BestPractices | hard-coded-policy-enforcement-effect |
+| Category | Identifier | Severity | Rule Set |
+|----------|------------|----------|----------|
+| BestPractices | hard-coded-policy-enforcement-effect | Warning | default |
 
 ## Description
 
-It is best practice to have the policy effect parameterized. Especially when it comes to enforcement policies. Having the policy effect is determined by a parameter has the following advantages:
-- The policy definition can be reused both for enforcement (e.g. when the effect parameter is set to `deny`) and for compliance (the policy effect set to `audit`) scenarios.
+The policy definition hard-codes an enforcement effect (`deployIfNotExists`, `append`, `modify`, `deny`, or `denyAction`) instead of parameterizing it. It is best practice to parameterize the policy effect, especially for enforcement policies. Having the policy effect determined by a parameter has the following advantages:
+
+- The policy definition can be reused both for enforcement (e.g. when the effect parameter is set to `deny`) and for compliance (the effect parameter set to `audit`) scenarios.
 - It makes it easier to assign the policy with an audit effect first, observe the compliance data and then gradually transition it to the enforcement effect.
 
-### Suggestions
+Hard-coded non-enforcement effects (`audit`, `auditAction`, `auditIfNotExists`, `disabled`) are deliberately not flagged.
 
-Use a parameterized effect for the policy. The effect parameter should have a non-enforcement default value, as well as specific allowed values.
-For example, for a `deny` policy, the effect parameter should have a default value of `audit` (or no default value at all) and allowed values of `audit`, `deny` and `disabled`.
+See [Azure Policy definitions effect basics](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics) for the documented effects.
+
+## Suggestions
+
+- Use a parameterized effect for the policy. The effect parameter should have a non-enforcement default value (or no default value at all) and specific allowed values. For example, for a `deny` policy, the effect parameter should default to `audit` with allowed values `audit`, `deny` and `disabled`.
+
+## Examples
+
+**Violation** -- hard-coded enforcement effect:
+
+```json
+"then": {
+  "effect": "deny"
+}
+```
+
+**Correct** -- parameterized effect:
+
+```json
+"parameters": {
+  "effect": {
+    "type": "string",
+    "defaultValue": "audit",
+    "allowedValues": [
+      "audit",
+      "deny",
+      "disabled"
+    ]
+  }
+},
+"policyRule": {
+  "then": {
+    "effect": "[parameters('effect')]"
+  }
+}
+```
