@@ -3,6 +3,8 @@
 [![Build](https://github.com/Azure/azure-policy-linter/actions/workflows/build.yml/badge.svg)](https://github.com/Azure/azure-policy-linter/actions/workflows/build.yml)
 [![CodeQL](https://github.com/Azure/azure-policy-linter/actions/workflows/codeql.yml/badge.svg)](https://github.com/Azure/azure-policy-linter/actions/workflows/codeql.yml)
 
+[![Linter Rules](https://img.shields.io/github/directory-file-count/Azure/azure-policy-linter/docs/Rules?type=file&extension=md&label=Linter%20Rules)](docs/Rules/)
+
 Linter for [Azure Policy Definitions](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics) that surfaces known issues, gotchas, and best practices.
 
 ![Azure Policy Linter Demo](./docs/media/PolicyLinterDemo1.gif)
