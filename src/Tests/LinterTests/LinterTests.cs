@@ -1147,8 +1147,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     'policyRule': {
                         'if': {
                             'allOf': [
-                                { 'field': ""[field('tags.x')]"", 'equals': ""[concat('a','b')]"" },
+                                { 'field': ""[field('tags.x')]"", 'equals': ""[CoNcAt('a','b')]"" },
                                 { 'value': ""[field(parameters('param'))]"", 'in': [""[field('tags.y')]""] },
+                                { 'value': ""[1]"", 'equals': 1 },
                             ]
                         },
                         'then': {
@@ -1162,21 +1163,27 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var result = linter.Lint(policy);
 
-            languageExpressions.Should().HaveCount(5);
+            languageExpressions.Should().HaveCount(6);
 
             var fieldTagsX = languageExpressions.SingleOrDefault(e => e.Expression == "[field('tags.x')]");
             fieldTagsX.Should().NotBeNull();
+            fieldTagsX.TryGetFunctionName(out var fieldFunctionName).Should().BeTrue();
+            fieldFunctionName.Should().Be("field");
             fieldTagsX.References.Should().HaveCount(1);
             fieldTagsX.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsX.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("field");
 
-            var concatAB = languageExpressions.SingleOrDefault(e => e.Expression == "[concat('a','b')]");
+            var concatAB = languageExpressions.SingleOrDefault(e => e.Expression == "[CoNcAt('a','b')]");
             concatAB.Should().NotBeNull();
+            concatAB.TryGetFunctionName(out var concatFunctionName).Should().BeTrue();
+            concatFunctionName.Should().Be("CoNcAt");
             concatAB.References.Should().BeEmpty();
             concatAB.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("equals");
 
             var fieldParam = languageExpressions.SingleOrDefault(e => e.Expression == "[field(parameters('param'))]");
             fieldParam.Should().NotBeNull();
+            fieldParam.TryGetFunctionName(out var nestedFunctionName).Should().BeTrue();
+            nestedFunctionName.Should().Be("field");
             fieldParam.References.Should().HaveCount(1);
             fieldParam.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldParam.References[0].ResolutionDependencies.Should().HaveCount(1);
@@ -1190,6 +1197,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             fieldTagsY.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsY.References[0].Identifier.Should().Be("tags.y");
             fieldTagsY.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("in");
+
+            var literalExpression = languageExpressions.SingleOrDefault(e => e.Expression == "[1]");
+            literalExpression.Should().NotBeNull();
+            literalExpression.TryGetFunctionName(out var literalFunctionName).Should().BeFalse();
+            literalFunctionName.Should().BeEmpty();
 
             var effectParam = languageExpressions.SingleOrDefault(e => e.Expression == "[parameters('effectParam')]");
             effectParam.Should().NotBeNull();

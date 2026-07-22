@@ -150,6 +150,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
+        /// Tries to get the function name when the root language expression is a function.
+        /// </summary>
+        /// <param name="functionName">The root function name, or an empty string when the root expression is not a function.</param>
+        public bool TryGetFunctionName(out string functionName)
+        {
+            if (this.LanguageExpression is FunctionExpression functionExpression)
+            {
+                functionName = functionExpression.Function;
+                return true;
+            }
+
+            functionName = string.Empty;
+            return false;
+        }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageExpression"/> class.
         /// </summary>
         private TemplateLanguageExpression(
