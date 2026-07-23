@@ -12,23 +12,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
 
     /// <summary>
-    /// Ensures that the effect parameter's allowedValues do not mix effects from
-    /// incompatible effects. Effects that require different 'details' block configurations
-    /// (e.g. Modify details vs. IfNotExists details vs. Action details) cannot coexist
-    /// in the same allowedValues because only one details shape can be specified.
-    /// Effects that do not require a details block (e.g. Audit, Deny, Disabled) are
-    /// compatible with any other effect and are not flagged.
+    /// Checks that an effect parameter's allowedValues contain only interchangeable effects.
     /// </summary>
     public sealed class EffectAllowedValuesShouldNotMixIncompatibleEffects : LinterRule<ThenExpression>
     {
         private const string RuleTitle = "Effect Allowed Values Should Not Mix Incompatible Effects";
-        private const string RuleDescription = "The effect parameter '{0}': {1}";
+        private const string RuleDescription =
+            "The effect parameter '{0}' has allowedValues that combine non-interchangeable effects: {1}. Use only effects that are interchangeable with the policy's 'then.details' configuration; 'Disabled' can be combined with any effect.";
 
         private const string ModifyDetailsCategory = "ModifyDetails";
         private const string IfNotExistsDetailsCategory = "IfNotExistsDetails";
         private const string ActionDetailsCategory = "ActionDetails";
         private const string AppendDetailsCategory = "AppendDetails";
+        private const string ManualDetailsCategory = "ManualDetails";
 
+        // Effects in the same category can use the same 'details' configuration. 'mutate' and
+        // 'addToNetworkGroup' are intentionally omitted -- they are dataplane-mode effects that
+        // the IsControlPlaneMode check already skips.
         private static readonly Dictionary<string, string> EffectToCategory = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
             { "Modify", EffectAllowedValuesShouldNotMixIncompatibleEffects.ModifyDetailsCategory },
@@ -37,6 +37,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             { "DenyAction", EffectAllowedValuesShouldNotMixIncompatibleEffects.ActionDetailsCategory },
             { "AuditAction", EffectAllowedValuesShouldNotMixIncompatibleEffects.ActionDetailsCategory },
             { "Append", EffectAllowedValuesShouldNotMixIncompatibleEffects.AppendDetailsCategory },
+            { "Manual", EffectAllowedValuesShouldNotMixIncompatibleEffects.ManualDetailsCategory },
         };
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(ThenExpression expression, LinterContext context)
         {
-            // Skip dataplane policies -- they may use effects not in our known set.
+            // Skip dataplane policies -- they may use effects not known to this rule.
             if (!EffectAllowedValuesShouldNotMixIncompatibleEffects.IsControlPlaneMode(expression))
             {
                 return Array.Empty<LinterOutput>();
@@ -70,21 +71,32 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var categorizedValues = allowedValues
-                .Where(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(v))
-                .GroupBy(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory[v], StringComparer.Ordinal)
-                .ToDictionary(g => g.Key, g => g.ToArray());
+            var categorizedEffects = allowedValues
+                .Where(v => v != null && EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(v))
+                .ToArray();
 
-            if (categorizedValues.Count <= 1)
+            var knownNonDisabledEffects = allowedValues
+                .Where(predicate: v => v != null && EffectAllowedValuesShouldNotMixIncompatibleEffects.IsKnownNonDisabledEffect(effect: v))
+                .Distinct(comparer: StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            var hasManualConflict = knownNonDisabledEffects.Length > 1 &&
+                knownNonDisabledEffects.Any(predicate: v => string.Equals(a: v, b: "Manual", comparisonType: StringComparison.OrdinalIgnoreCase));
+
+            var distinctCategories = categorizedEffects
+                .Select(v => EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory[v])
+                .Distinct(StringComparer.Ordinal)
+                .Count();
+
+            if (!hasManualConflict && distinctCategories <= 1)
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var conflictDescription = string.Join(
+            var conflictingEffects = string.Join(
                 ", ",
-                categorizedValues
-                    .OrderBy(kvp => kvp.Key, StringComparer.Ordinal)
-                    .Select(kvp => $"{kvp.Key} ({string.Join(", ", kvp.Value)})")
+                (hasManualConflict ? knownNonDisabledEffects : categorizedEffects)
+                    .OrderBy(v => v, StringComparer.OrdinalIgnoreCase)
                     .ToArray());
 
             return new[]
@@ -92,8 +104,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 this.CreateError(
                     expression: expression.Effect,
                     parameterName,
-                    $"allowedValues mixes effects from incompatible effects: {conflictDescription}. Effects in each category require a different 'details' block configuration and cannot coexist in the same allowedValues.")
+                    conflictingEffects)
             };
+        }
+
+        /// <summary>
+        /// Checks whether an effect is a known control plane effect other than Disabled.
+        /// </summary>
+        private static bool IsKnownNonDisabledEffect(string effect)
+        {
+            // Audit and Deny remain uncategorized for other checks, but Manual conflicts with every other known effect.
+            return EffectAllowedValuesShouldNotMixIncompatibleEffects.EffectToCategory.ContainsKey(key: effect) ||
+                string.Equals(a: effect, b: "Audit", comparisonType: StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(a: effect, b: "Deny", comparisonType: StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -101,12 +124,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         private static bool IsControlPlaneMode(ThenExpression expression)
         {
-            var definition = expression.Parent?.Parent as PolicyDefinition;
+            var definition = EffectAllowedValuesShouldNotMixIncompatibleEffects.FindPolicyDefinition(expression);
             var mode = definition?.Properties?.Mode?.Value?.ToString();
 
             return mode == null ||
                 string.Equals(mode, "All", StringComparison.OrdinalIgnoreCase) ||
                 string.Equals(mode, "Indexed", StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Walks up the expression tree to find the enclosing <see cref="PolicyDefinition"/>.
+        /// </summary>
+        private static PolicyDefinition? FindPolicyDefinition(PolicyExpression expression)
+        {
+            for (var current = expression.Parent; current != null; current = current.Parent)
+            {
+                if (current is PolicyDefinition definition)
+                {
+                    return definition;
+                }
+            }
+
+            return null;
         }
     }
 }
