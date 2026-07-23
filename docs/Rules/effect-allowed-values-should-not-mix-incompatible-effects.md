@@ -2,43 +2,28 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | effect-allowed-values-should-not-mix-incompatible-effects | Error | — |
+| BestPractices | effect-allowed-values-should-not-mix-incompatible-effects | Error | default |
 
 ## Description
 
-The effect parameter's `allowedValues` mixes effects that require incompatible `details` block configurations. Each of the following sets of effects requires its own `details` shape, so effects from different sets cannot coexist in the same `allowedValues`:
-
-- `Modify`
-- `AuditIfNotExists`, `DeployIfNotExists`
-- `DenyAction`, `AuditAction`
-- `Append`
-
-Effects that do not require a specific `details` block (`Audit`, `Deny`, `Disabled`, `Manual`) are compatible with any of the above.
-
-This rule is skipped for dataplane policy modes (e.g. `Microsoft.Kubernetes.Data`) since they may use effects not in the known set.
+Parameterized [`effect`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics#interchanging-effects) values share one policy rule and `then.details` configuration. Azure Policy documents [`Audit`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit), [`Deny`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny), and either [`Modify`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-modify) or [`Append`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-append) as often interchangeable, and [`AuditIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-audit-if-not-exists) and [`DeployIfNotExists`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deploy-if-not-exists) as often interchangeable. [`Manual`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-manual) is not interchangeable, while [`Disabled`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-disabled) is interchangeable with any effect; [`DenyAction`](https://learn.microsoft.com/azure/governance/policy/concepts/effect-deny-action) also uses its own `details` configuration. This rule is skipped for dataplane policy modes such as `Microsoft.Kubernetes.Data`.
 
 ## Suggestions
 
-Restrict `allowedValues` to effects from a single compatible set plus any universally compatible effects. For example:
+Restrict `allowedValues` to interchangeable effects. Keep `Manual` separate from every effect except `Disabled`.
 
-**Violation**
+## Examples
+
+### Violation
 
 ```json
-"allowedValues": ["Modify", "DeployIfNotExists", "Disabled"]
+"allowedValues": ["Audit", "Manual", "Disabled"]
 ```
 
-`Modify` and `DeployIfNotExists` require different `details` configurations.
+`Audit` and `Manual` are not interchangeable.
 
-**Correct**
-
-```json
-"allowedValues": ["Audit", "Modify", "Disabled"]
-```
+### Correct
 
 ```json
-"allowedValues": ["Audit", "Deny", "Disabled"]
-```
-
-```json
-"allowedValues": ["AuditIfNotExists", "DeployIfNotExists", "Disabled"]
+"allowedValues": ["Manual", "Disabled"]
 ```
