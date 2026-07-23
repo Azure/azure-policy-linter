@@ -41,6 +41,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public JToken? DefaultValue { get; set; }
 
         /// <summary>
+        /// The parameter metadata.
+        /// </summary>
+        public JToken? Metadata { get; }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="Parameter"/> class.
         /// </summary>
         /// <param name="name">The parameter name.</param>
@@ -62,6 +67,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Name = name;
             this.Type = parameter.Type?.Value ?? throw new ArgumentNullException(nameof(parameterProperty), "Parameter type cannot be null.");
             this.AllowedValues = parameter.AllowedValues?.Value.Select(v => v.Value).ToArray();
+            this.Metadata = parameter.Metadata?.Value;
 
             if (parameter.DefaultValue != null)
             {
