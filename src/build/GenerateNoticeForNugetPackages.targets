@@ -1,0 +1,35 @@
+<Project>
+  <PropertyGroup>
+    <NoticeFileName>ThirdPartyNotices.txt</NoticeFileName>
+    <GenerateNoticeBeforeTargets>GenerateNuspec</GenerateNoticeBeforeTargets>
+    <GenerateNoticeLocalFilePath>$(MSBuildProjectDirectory)/local-tpn.txt</GenerateNoticeLocalFilePath>
+    <GenerateNoticePreambleFile>$(MSBuildThisFileDirectory)notice-preamble.txt</GenerateNoticePreambleFile>
+    <GenerateNoticeRetryCount>9</GenerateNoticeRetryCount>
+    <GenerateNoticeBatchSize>100</GenerateNoticeBatchSize>
+    <GenerateNoticeUseLocalFile Condition="'$(GenerateNoticeUseLocalFile)' == ''">true</GenerateNoticeUseLocalFile>
+    <GenerateNoticeUpdateLocalFile Condition="'$(GenerateNoticeUpdateLocalFile)' == ''">false</GenerateNoticeUpdateLocalFile>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddNoticeToPackage</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Deployments.Internal.GenerateNotice" PrivateAssets="All" />
+  </ItemGroup>
+
+  <Target Name="PrepareForNoticeGeneration" BeforeTargets="GenerateNotice">
+    <PropertyGroup>
+      <NoticeFilePath>$(IntermediateOutputPath)$(NoticeFileName)</NoticeFilePath>
+      <GenerateNoticeOutputPath>$(NoticeFilePath)</GenerateNoticeOutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+      <GenerateNoticeAssetFile Include="$(ProjectAssetsFile)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="_AddNoticeToPackage" DependsOnTargets="GenerateNotice">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(GenerateNoticeOutputPath)">
+        <PackagePath>$(NoticeFileName)</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+</Project>

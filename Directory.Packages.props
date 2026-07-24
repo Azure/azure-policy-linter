@@ -3,6 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <PackageVersion Include="Azure.Deployments.Internal.GenerateNotice" Version="0.1.60" />
     <PackageVersion Include="Azure.Deployments.Expression" Version="1.473.0" />
     <PackageVersion Include="Azure.Deployments.ResourceMetadata" Version="1.301.0" />
     <PackageVersion Include="Azure.Deployments.ResourceMetadata.Offline" Version="1.301.0" />
