@@ -93,10 +93,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
           NOTICE_BRANCH: update-local-tpn-files
-          # Optional repository variables: comma-separated GitHub users (up to 10)
-          # and a team mention such as @Azure/policy-maintainers.
-          ALERT_ASSIGNEES: ${{ vars.NOTICE_ALERT_ASSIGNEES || 'fernandesi2244' }}
-          ALERT_TEAM: ${{ vars.NOTICE_ALERT_TEAM }}
+          ALERT_TEAM: '@Azure/azure-policy-linter-team'
           ALERT_TITLE: Open a PR for updated notice snapshots
         run: |
           open_pr_count="$(gh pr list \
@@ -118,21 +115,18 @@ jobs:
             | head -n 1)"
 
           notice_pr_url="${{ github.server_url }}/${{ github.repository }}/compare/${BASE_BRANCH}...${NOTICE_BRANCH}?expand=1"
-          alert_body="The Core or CLI third-party notice snapshot changed and was pushed to \`$NOTICE_BRANCH\`. Open the notice PR at $notice_pr_url."
-          if [ -n "$ALERT_TEAM" ]; then
-            alert_body="$(printf '%s\n\n%s' "$alert_body" "$ALERT_TEAM")"
-          fi
+          alert_body="$(printf '%s\n\n%s' \
+            "The Core or CLI third-party notice snapshot changed and was pushed to \`$NOTICE_BRANCH\`. Open the notice PR at $notice_pr_url." \
+            "$ALERT_TEAM")"
 
           if [ -z "$issue_number" ]; then
             gh issue create \
               --title "$ALERT_TITLE" \
-              --assignee "$ALERT_ASSIGNEES" \
               --body "$alert_body"
           else
-            alert_body="The notice snapshots changed again. Open or update the notice PR at $notice_pr_url."
-            if [ -n "$ALERT_TEAM" ]; then
-              alert_body="$(printf '%s\n\n%s' "$alert_body" "$ALERT_TEAM")"
-            fi
+            alert_body="$(printf '%s\n\n%s' \
+              "The notice snapshots changed again. Open or update the notice PR at $notice_pr_url." \
+              "$ALERT_TEAM")"
             gh issue comment "$issue_number" \
               --body "$alert_body"
           fi
