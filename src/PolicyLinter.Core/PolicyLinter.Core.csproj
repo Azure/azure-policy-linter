@@ -4,12 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Microsoft.Azure.Policy.PolicyLinter</RootNamespace>
     <AssemblyName>Microsoft.Azure.Policy.PolicyLinter.Core</AssemblyName>
-    <Description>A linter for policy definitions.</Description>
+    <Description>Core library for the Azure Policy Linter: static analysis of Azure Policy definitions that surfaces common authoring mistakes and policy primitive gotchas as actionable findings.</Description>
     <Authors>Microsoft</Authors>
     <Company>Microsoft</Company>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <IsPackable>true</IsPackable>
     <PackageId>Microsoft.Azure.Policy.PolicyLinter.Core</PackageId>
+    <PackageTags>azure azure-policy policy linter linting validation governance static-analysis</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +28,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <Import Project="../build/PublicNuGetPackageMetadata.targets" />
   <Import Project="../build/GenerateNoticeForNugetPackages.targets" />
 
 </Project>
