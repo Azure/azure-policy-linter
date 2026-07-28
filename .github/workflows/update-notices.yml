@@ -25,6 +25,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.repository.default_branch }}
 
       - name: Setup .NET
         uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
@@ -42,7 +43,34 @@ jobs:
           dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-build --no-restore -o ./packages
           dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-build --no-restore -o ./packages
 
+      - name: Check whether the notice branch needs an update
+        id: notice-changes
+        env:
+          NOTICE_BRANCH: update-local-tpn-files
+        run: |
+          notice_files=(
+            src/PolicyLinter.Core/local-tpn.txt
+            src/PolicyLinter.Cli/local-tpn.txt
+          )
+          should_update=false
+
+          if git fetch --no-tags origin "$NOTICE_BRANCH"; then
+            for notice_file in "${notice_files[@]}"; do
+              local_hash="$(git hash-object "$notice_file")"
+              if ! remote_hash="$(git rev-parse "FETCH_HEAD:$notice_file" 2>/dev/null)" \
+                || [ "$local_hash" != "$remote_hash" ]; then
+                should_update=true
+                break
+              fi
+            done
+          else
+            should_update=true
+          fi
+
+          echo "should_update=$should_update" >> "$GITHUB_OUTPUT"
+
       - name: Update notice branch
+        if: steps.notice-changes.outputs.should_update == 'true'
         id: update-notice-branch
         uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7
         with:
@@ -65,7 +93,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           BASE_BRANCH: ${{ github.event.repository.default_branch }}
           NOTICE_BRANCH: update-local-tpn-files
-          ALERT_ASSIGNEE: fernandesi2244
+          # Optional repository variables: comma-separated GitHub users (up to 10)
+          # and a team mention such as @Azure/policy-maintainers.
+          ALERT_ASSIGNEES: ${{ vars.NOTICE_ALERT_ASSIGNEES || 'fernandesi2244' }}
+          ALERT_TEAM: ${{ vars.NOTICE_ALERT_TEAM }}
           ALERT_TITLE: Open a PR for updated notice snapshots
         run: |
           open_pr_count="$(gh pr list \
@@ -87,12 +118,21 @@ jobs:
             | head -n 1)"
 
           notice_pr_url="${{ github.server_url }}/${{ github.repository }}/compare/${BASE_BRANCH}...${NOTICE_BRANCH}?expand=1"
+          alert_body="The Core or CLI third-party notice snapshot changed and was pushed to \`$NOTICE_BRANCH\`. Open the notice PR at $notice_pr_url."
+          if [ -n "$ALERT_TEAM" ]; then
+            alert_body="$(printf '%s\n\n%s' "$alert_body" "$ALERT_TEAM")"
+          fi
+
           if [ -z "$issue_number" ]; then
             gh issue create \
               --title "$ALERT_TITLE" \
-              --assignee "$ALERT_ASSIGNEE" \
-              --body "The Core or CLI third-party notice snapshot changed and was pushed to \`$NOTICE_BRANCH\`. Open the notice PR at $notice_pr_url."
+              --assignee "$ALERT_ASSIGNEES" \
+              --body "$alert_body"
           else
+            alert_body="The notice snapshots changed again. Open or update the notice PR at $notice_pr_url."
+            if [ -n "$ALERT_TEAM" ]; then
+              alert_body="$(printf '%s\n\n%s' "$alert_body" "$ALERT_TEAM")"
+            fi
             gh issue comment "$issue_number" \
-              --body "The notice snapshots changed again. Open or update the notice PR at $notice_pr_url."
+              --body "$alert_body"
           fi
