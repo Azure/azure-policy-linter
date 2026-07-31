@@ -58,6 +58,7 @@ public interface ILinterRule
     Category Category { get; }
     string Description { get; }
     bool ApplyToDerivedTypes { get; }
+    string DocumentationUrl { get; }
     LinterOutput[] Evaluate(PolicyExpressionBase expression, LinterContext context);
 }
 
@@ -65,6 +66,10 @@ public abstract class LinterRule<T> : ILinterRule where T : PolicyExpressionBase
 {
     protected LinterRule(string identifier, Category category, string title,
                         string descriptionFormat, bool applyToDerivedTypes) { ... }
+
+    // Derived from Identifier + DocumentationUrlBase; rules never set it directly.
+    public string DocumentationUrl => $"{DocumentationUrlBase}/{Identifier}.md";
+    protected virtual string DocumentationUrlBase => "<public GitHub docs/Rules base>";
 
     protected abstract LinterOutput[] Evaluate(T expression, LinterContext context);
 
@@ -242,6 +247,7 @@ Path:           "properties.policyRule.then.effect"
 Description:    "Parameter 'effect' defaults to 'deny', an enforcement effect.
                  Assignments that don't override the default will enforce 'deny'.
                  Set the default to 'audit'."
+DocumentationUrl: "<docs/Rules base>/risky-effect-parameter-default-value.md"
 ```
 
 ## Testing

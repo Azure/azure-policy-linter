@@ -265,6 +265,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             output.Should().Contain("Failed to parse", "Should report parsing failure");
         }
 
+        [Fact]
+        public async Task Main_PolicyWithFinding_PrintsDocumentationLink()
+        {
+            // Arrange - Create a policy that triggers a rule (hard-coded enforcement effect)
+            File.WriteAllText(tempFiles[0], GetPolicyWithFindingJson());
+
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(new[] { tempFiles[0] }));
+
+            // Assert
+            result.Should().Be(0, "Program should return success code");
+            output.Should().Contain(
+                "Documentation: https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/",
+                "Console output should include the documentation link for a finding");
+        }
+
         private string GetValidPolicyJson()
         {
             // Using a parameterized effect to avoid the hardcoded effect rule
@@ -291,6 +309,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         },
                         ""then"": {
                             ""effect"": ""[parameters('effect')]""
+                        }
+                    }
+                }
+            }";
+        }
+
+        private string GetPolicyWithFindingJson()
+        {
+            // Hard-coded enforcement effect triggers a rule, guaranteeing at least one finding.
+            return @"{
+                ""properties"": {
+                    ""displayName"": ""Test Policy"",
+                    ""description"": ""A policy for testing"",
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {},
+                    ""policyRule"": {
+                        ""if"": {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Storage/storageAccounts""
+                        },
+                        ""then"": {
+                            ""effect"": ""deny""
                         }
                     }
                 }
