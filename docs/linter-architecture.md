@@ -118,10 +118,11 @@ public record LinterOutput(
     int? LineNumber = null,
     int? LinePosition = null,
     string Description = "",
-    string Path = "");
+    string Path = "",
+    string DocumentationUrl = "");
 ```
 
-`CreateError`/`CreateWarning`/`CreateInformational` on the linter rule base class construct this record for you. The fields you don't pass explicitly come from the rule's metadata or from the `PolicyExpression?` you pass in: `LineNumber`, `LinePosition`, and `Path` on which the rule output applies. **Pass the most specific node** to get the most precise diagnostic location.
+`CreateError`/`CreateWarning`/`CreateInformational` on the linter rule base class construct this record for you. The fields you don't pass explicitly come from the rule's metadata or from the `PolicyExpression?` you pass in: `LineNumber`, `LinePosition`, and `Path` on which the rule output applies. **Pass the most specific node** to get the most precise diagnostic location. `DocumentationUrl` is derived from the rule's `Identifier` and its documentation base URL (`LinterRule<T>.DocumentationUrlBase`, a `protected virtual` that public rules leave at the GitHub default), so rules never set it directly. Engine-level findings built directly (see `BuiltinLinterOutputs`) leave it empty.
 
 **Use structured placeholders.** `Description` is produced by `string.Format(descriptionFormat, descriptionParams)`. The intended shape: a template fixed at rule construction (`"The field alias: '{0}' maps to ... resource type: '{1}'"`) with positional args filled in at finding time. This keeps the message shape inspectable from the rule's static metadata and makes findings from the same rule consistent.
 
@@ -129,7 +130,7 @@ A handful of rules use a passthrough format (`descriptionFormat: "{0}"`) and syn
 
 ### Console vs JSON output
 
-The console formatter prints four lines per finding: the title colored by severity (Error/Critical red, Warning yellow, Informational blue), then `Identifier: <id>` in dark gray, then `Line: <n>, Position: <n>, Path: <path>` if any of those is populated, then the description. Category and the literal severity name aren't printed to the console - color is the only severity signal.
+The console formatter prints per finding: the title colored by severity (Error/Critical red, Warning yellow, Informational blue), then `Identifier: <id>` in dark gray, then `Documentation: <url>` when a documentation URL is present, then `Line: <n>, Position: <n>, Path: <path>` if any of those is populated, then the description. Category and the literal severity name aren't printed to the console - color is the only severity signal.
 
 JSON output (`-o file.json`) writes the full record dictionary keyed by the original input file path, with camelCase property names and enums serialized as their string names. CI pipelines should read JSON; humans get the console.
 
@@ -277,6 +278,8 @@ public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsDeny()
 ```
 
 For a no-finding case: `results.Should().BeEmpty()`. For multiple findings: `HaveCount(N)` then `ContainEquivalentOf(...)` per expected output. Policy JSON is inlined as a verbatim string; the project deliberately doesn't use fixture files.
+
+`DocumentationUrl` is excluded from equivalence assertions assembly-wide (see `src/Tests/AssertionConfiguration.cs`), so expected `LinterOutput`s in rule tests don't specify it - it's deterministically derived from the identifier and covered by a dedicated test.
 
 ### `TypeMetadata` vs `MockTypeMetadata`
 
