@@ -5,11 +5,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Microsoft.Azure.Policy.PolicyLinter.Cli</AssemblyName>
     <RootNamespace>Microsoft.Azure.Policy.PolicyLinter.Cli</RootNamespace>
-    <Description>A command line interface for Microsoft.Azure.Policy.PolicyLinter.Core - A linter for policy definitions.</Description>
+    <Description>Command-line tool for the Azure Policy Linter. Lints Azure Policy definition files and reports authoring issues and improvement opportunities, with JSON output for CI integration.</Description>
     <Authors>Microsoft</Authors>
     <Company>Microsoft</Company>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <Nullable>enable</Nullable>
+    <PackageTags>azure azure-policy policy linter linting validation governance static-analysis cli dotnet-tool</PackageTags>
   </PropertyGroup>
 
   <!--
@@ -76,5 +77,8 @@
   <ItemGroup>
     <PackageReference Include="System.CommandLine" />
   </ItemGroup>
+
+  <Import Project="../build/PublicNuGetPackageMetadata.targets" />
+  <Import Project="../build/GenerateNoticeForNugetPackages.targets" />
 
 </Project>

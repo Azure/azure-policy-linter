@@ -1,0 +1,156 @@
+name: Update Local Notice Files
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 9 * * *
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: read
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  GenerateNoticeUseLocalFile: false
+  GenerateNoticeUpdateLocalFile: true
+
+jobs:
+  update:
+    name: Update local notice files
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore src/dirs.proj
+
+      - name: Build
+        run: dotnet build src/dirs.proj --configuration Release --no-restore
+
+      - name: Generate notice files
+        run: |
+          dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-build --no-restore -o ./packages
+          dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-build --no-restore -o ./packages
+
+      - name: Check whether the notice snapshots changed
+        id: notice-changes
+        env:
+          NOTICE_BRANCH: update-local-tpn-files
+        run: |
+          notice_files=(
+            src/PolicyLinter.Core/local-tpn.txt
+            src/PolicyLinter.Cli/local-tpn.txt
+          )
+
+          # A PR is needed when the freshly generated notices differ from the
+          # default branch we checked out (HEAD). This is independent of the
+          # notice branch, so a lingering notice branch whose PR was closed
+          # without merging keeps re-alerting until the change lands on main.
+          needs_pr=false
+          for notice_file in "${notice_files[@]}"; do
+            local_hash="$(git hash-object "$notice_file")"
+            base_hash="$(git rev-parse "HEAD:$notice_file" 2>/dev/null || true)"
+            if [ "$local_hash" != "$base_hash" ]; then
+              needs_pr=true
+              break
+            fi
+          done
+
+          # The notice branch needs a push only when it doesn't already carry
+          # the freshly generated notices (a missing branch counts as needing a
+          # push). This avoids redundant force-pushes when an open PR branch is
+          # already up to date.
+          should_update=false
+          if git fetch --no-tags origin "$NOTICE_BRANCH"; then
+            for notice_file in "${notice_files[@]}"; do
+              local_hash="$(git hash-object "$notice_file")"
+              if ! remote_hash="$(git rev-parse "FETCH_HEAD:$notice_file" 2>/dev/null)" \
+                || [ "$local_hash" != "$remote_hash" ]; then
+                should_update=true
+                break
+              fi
+            done
+          else
+            should_update=true
+          fi
+
+          # Nothing to push or alert on when the default branch is already current.
+          if [ "$needs_pr" = false ]; then
+            should_update=false
+          fi
+
+          echo "needs_pr=$needs_pr" >> "$GITHUB_OUTPUT"
+          echo "should_update=$should_update" >> "$GITHUB_OUTPUT"
+
+      - name: Update notice branch
+        if: steps.notice-changes.outputs.should_update == 'true'
+        id: update-notice-branch
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7
+        with:
+          commit_message: Update local notice files
+          commit_user_name: ${{ github.actor }}
+          commit_user_email: ${{ github.actor }}@users.noreply.github.com
+          commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          file_pattern: src/PolicyLinter.Core/local-tpn.txt src/PolicyLinter.Cli/local-tpn.txt
+          branch: update-local-tpn-files
+          commit_options: --no-verify --signoff
+          status_options: --untracked-files=no
+          push_options: --force
+          skip_fetch: true
+          skip_checkout: true
+          create_branch: true
+
+      - name: Notify that a pull request is needed
+        if: steps.notice-changes.outputs.needs_pr == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+          NOTICE_BRANCH: update-local-tpn-files
+          ALERT_TEAM: '@Azure/azure-policy-linter-team'
+          ALERT_TITLE: Open a PR for updated notice snapshots
+        run: |
+          open_pr_count="$(gh pr list \
+            --base "$BASE_BRANCH" \
+            --head "$NOTICE_BRANCH" \
+            --state open \
+            --json number \
+            --jq 'length')"
+
+          if [ "$open_pr_count" -gt 0 ]; then
+            exit 0
+          fi
+
+          issue_number="$(gh issue list \
+            --state open \
+            --limit 100 \
+            --json number,title \
+            --jq ".[] | select(.title == \"$ALERT_TITLE\") | .number" \
+            | head -n 1)"
+
+          notice_pr_url="${{ github.server_url }}/${{ github.repository }}/compare/${BASE_BRANCH}...${NOTICE_BRANCH}?expand=1"
+          alert_body="$(printf '%s\n\n%s' \
+            "The Core or CLI third-party notice snapshot changed and was pushed to \`$NOTICE_BRANCH\`. Open the notice PR at $notice_pr_url." \
+            "$ALERT_TEAM")"
+
+          if [ -z "$issue_number" ]; then
+            gh issue create \
+              --title "$ALERT_TITLE" \
+              --body "$alert_body"
+          else
+            alert_body="$(printf '%s\n\n%s' \
+              "The notice snapshots changed again. Open or update the notice PR at $notice_pr_url." \
+              "$ALERT_TEAM")"
+            gh issue comment "$issue_number" \
+              --body "$alert_body"
+          fi
