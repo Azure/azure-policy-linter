@@ -83,7 +83,7 @@ Examples and counter-examples:
 
 When the description uses `{0}` to substitute a value, make sure the surrounding sentence reads naturally once the real value is dropped in. Read it out loud with a realistic value before shipping.
 
-A description is short. Aim for 150-300 characters; treat 400 as a hard ceiling. No line breaks - the CLI prints it as a single line under the title, and IDE integrations show it as a single tooltip line. No embedded URLs either; the linter emits the rule's documentation link separately on every finding.
+A description is short. Aim for 150-300 characters; treat 400 as a hard ceiling. No line breaks - the CLI prints it as a single line under the title, and IDE integrations show it as a single tooltip line.
 
 When a rule finds two independent problems in the same policy, emit two findings. Do not build a single description out of branching fragments ("missing X" / "missing Y" / "missing X and Y").
 

@@ -286,7 +286,8 @@ public void RuleTests_RiskyEffectParameterDefaultValue_DefaultIsDeny()
 
 For a no-finding case: `results.Should().BeEmpty()`. For multiple findings: `HaveCount(N)` then `ContainEquivalentOf(...)` per expected output. Policy JSON is inlined as a verbatim string; the project deliberately doesn't use fixture files.
 
-`DocumentationUrl` is excluded from equivalence assertions assembly-wide (see `src/Tests/AssertionConfiguration.cs`), so expected `LinterOutput`s in rule tests don't specify it - a dedicated test covers it for all rules. A rule that overrides `DocumentationUrlBase` should add an explicit assertion on its `DocumentationUrl`.
+`DocumentationUrl` is excluded from equivalence assertions assembly-wide (see `src/Tests/AssertionConfiguration.cs`), so expected `LinterOutput`s in rule tests don't specify it and it's expected to be the same for all rules.
+If a rule is expected to override `DocumentationUrlBase` and point to a custom doc location, add an explicit assertation.
 
 ### `TypeMetadata` vs `MockTypeMetadata`
 
