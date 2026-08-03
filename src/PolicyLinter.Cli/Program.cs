@@ -375,14 +375,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
 
                 Program.DarkGray($"Identifier: {result.RuleIdentifier}");
 
-                if (result.DocumentationUrl.Length > 0)
-                {
-                    Program.DarkGray($"Documentation: {result.DocumentationUrl}");
-                }
-
                 if (result.Path.Length > 0 || result.LineNumber != null || result.LinePosition != null)
                 {
                     Program.DarkGray($"Line: {result.LineNumber}, Position: {result.LinePosition}, Path: {result.Path}");
+                }
+
+                if (result.DocumentationUrl.Length > 0)
+                {
+                    Program.DarkGray($"Documentation: {result.DocumentationUrl}");
                 }
 
                 Console.WriteLine(result.Description);
