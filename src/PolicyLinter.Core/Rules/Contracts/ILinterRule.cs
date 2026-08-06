@@ -37,6 +37,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
         bool ApplyToDerivedTypes { get; }
 
         /// <summary>
+        /// The URL of the documentation page for this rule.
+        /// </summary>
+        string DocumentationUrl { get; }
+
+        /// <summary>
         /// Evaluate the expression against the rule and return results as an array.
         /// </summary>
         /// <param name="expression">The expression.</param>
