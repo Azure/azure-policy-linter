@@ -31,17 +31,12 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    dotnet tool uninstall -g <existing-id>
    ```
 
-3. Confirm the required NuGet source is enabled, then restore, build, pack, and install the CLI:
+3. Pack and install the CLI as a global tool from a clean build:
 
    ```
-   dotnet nuget list source --format Detailed
-   dotnet restore src/dirs.proj
-   dotnet build src/dirs.proj --configuration Release --no-restore
-   dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-build --no-restore -o <output-path>
+   dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release -o <output-path>
    dotnet tool install -g Microsoft.Azure.Policy.PolicyLinter.Cli --add-source <output-path> --no-cache
    ```
-
-   If restore reports that packages cannot be resolved and the repository's source is disabled, enable that existing source and rerun restore. Do not use stale assets with `--no-restore` as a workaround.
 
 4. List the available rule sets to confirm rule discovery works:
 
