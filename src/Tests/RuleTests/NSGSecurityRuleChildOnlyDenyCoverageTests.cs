@@ -1,8 +1,15 @@
+// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
-    using System.Collections.Generic;
+    using System;
+    using global::Azure.Deployments.ResourceMetadata.Offline;
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
@@ -12,380 +19,224 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// </summary>
     public class NSGSecurityRuleChildOnlyDenyCoverageTests
     {
-        private const string ChildResourceType = "Microsoft.Network/networkSecurityGroups/securityRules";
-        private const string ParentResourceType = "Microsoft.Network/networkSecurityGroups";
+        private const string ChildAlias = "Microsoft.Network/networkSecurityGroups/securityRules/access";
+        private const string ParentAlias = "Microsoft.Network/networkSecurityGroups/securityRules[*].access";
 
         /// <summary>
-        /// The mock type metadata used for the tests.
+        /// The real type metadata, required because the rule inspects resolved field aliases.
         /// </summary>
-        private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
-
-        /// <summary>
-        /// Unsupported type conditions that do not select the child resource type.
-        /// </summary>
-        public static IEnumerable<object[]> UnsupportedTypeConditions => new[]
-        {
-            new object[] { @"{ ""field"": ""type"", ""like"": ""Microsoft.Network/networkSecurityGroups/*"" }" },
-            new object[] { @"{ ""field"": ""type"", ""notEquals"": """ + ChildResourceType + @""" }" },
-            new object[] { @"{ ""field"": ""type"", ""notIn"": [""" + ChildResourceType + @"""] }" },
-            new object[] { @"{ ""field"": ""type"", ""equals"": ""[parameters('targetType')]"" }" },
-            new object[] { @"{ ""field"": ""[concat('ty', 'pe')]"", ""equals"": """ + ChildResourceType + @""" }" },
-            new object[] { @"{ ""field"": ""type"", ""equals"": """" }" },
-            new object[] { @"{ ""field"": ""type"", ""equals"": ""   "" }" },
-            new object[] { @"{ ""field"": ""type"", ""in"": [] }" },
-        };
-
-        /// <summary>
-        /// Parameterized effects that cannot select deny.
-        /// </summary>
-        public static IEnumerable<object[]> NonDenyParameterizedEffects => new[]
-        {
-            new object[]
-            {
-                @"{ ""effect"": { ""type"": ""String"", ""allowedValues"": [""audit"", ""disabled""] } }",
-                @"""[parameters('effect')]""",
-            },
-            new object[]
-            {
-                @"{ ""effect"": { ""type"": ""String"", ""allowedValues"": [] } }",
-                @"""[parameters('effect')]""",
-            },
-            new object[]
-            {
-                @"{ ""effect"": { ""type"": ""Array"", ""allowedValues"": [[""deny""]] } }",
-                @"""[parameters('effect')]""",
-            },
-            new object[]
-            {
-                "{}",
-                @"""[concat('de', 'ny')]""",
-            },
-        };
+        private static readonly TypeMetadata TypeMetadata = new TypeMetadata(
+            metadataProvider: new OfflineMetadataProvider(),
+            aliasResolver: new AliasResolver());
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_LiteralDenyChildEquals()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildAlias()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType));
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(NSGSecurityRuleChildOnlyDenyCoverageTests.ExpectedOutput(
+                lineNumber: 7,
+                linePosition: 101,
+                path: "properties.policyRule.if.field",
+                alias: NSGSecurityRuleChildOnlyDenyCoverageTests.ChildAlias));
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_CaseInsensitive()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_FieldFunction()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""field"": ""TYPE"", ""equals"": ""MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES"" }",
-                effect: @"""DeNy""");
+            var ifCondition = $@"{{ ""value"": ""[field('{ChildAlias}')]"", ""equals"": ""Allow"" }}";
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
+
+            results.Should().HaveCount(1);
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_LiteralDenyChildIn()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_AliasCasingIsIgnored()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""field"": ""type"", ""in"": [""Microsoft.Storage/storageAccounts"", """ + ChildResourceType + @"""] }");
+            var ifCondition = @"{ ""field"": ""MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES/ACCESS"", ""equals"": ""Allow"" }";
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: 54,
-                path: "properties.policyRule.if.in");
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
+
+            results.Should().HaveCount(1);
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildValueFieldEquals()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_EffectParameterAllowsDeny()
         {
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
+
             var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""value"": ""[field('type')]"", ""equals"": """ + ChildResourceType + @""" }");
+                ifCondition: ifCondition,
+                effect: @"[parameters('effect')]",
+                allowedValues: @"[""audit"", ""deny""]");
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: 123);
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildUnderDoubleNot()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""not"": { ""not"": " +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) +
-                    @" } }");
-
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: 130,
-                path: "properties.policyRule.if.not.not.equals");
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParameterAllowedValuesContainDeny()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
-                effect: @"""[parameters('effect')]""",
-                parameters: @"{ ""effect"": { ""type"": ""String"", ""allowedValues"": [""audit"", ""Deny""] } }");
-
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
+            results.Should().HaveCount(1);
         }
 
         [Fact]
         public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_UnconstrainedEffectParameter()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
-                effect: @"""[parameters('effect')]""",
-                parameters: @"{ ""effect"": { ""type"": ""String"" } }");
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(results: results);
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                ifCondition: ifCondition,
+                effect: @"[parameters('effect')]",
+                allowedValues: null);
+
+            results.Should().HaveCount(1);
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_RepeatedChildSelections_FiresOnce()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_RepeatedChildAliasesFireOnce()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""allOf"": [" +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) + ", " +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) +
-                    @"] }");
+            var ifCondition = $@"{{
+                ""allOf"": [
+                    {{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }},
+                    {{ ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/direction"", ""equals"": ""Inbound"" }}
+                ]
+            }}";
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                linePosition: 124,
-                path: "properties.policyRule.if.allOf[0].equals");
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
+
+            results.Should().HaveCount(1);
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParentAlsoSelected()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParentAliasAlsoReferenced_NoFinding()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""allOf"": [" +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) + ", " +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ParentResourceType.ToUpperInvariant()) +
-                    @"] }");
+            var ifCondition = $@"{{
+                ""anyOf"": [
+                    {{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }},
+                    {{ ""field"": ""{ParentAlias}"", ""equals"": ""Allow"" }}
+                ]
+            }}";
+
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParentAndChildInSameInCondition()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParentCollectionAliasAlsoReferenced_NoFinding()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""field"": ""type"", ""in"": [""" + ChildResourceType + @""", """ + ParentResourceType + @"""] }");
+            var ifCondition = $@"{{
+                ""anyOf"": [
+                    {{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }},
+                    {{ ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules"", ""exists"": ""true"" }}
+                ]
+            }}";
+
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_CombinedTypeSelectionWithChildAlias()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_NoSecurityRuleAlias_NoFinding()
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""allOf"": [
-                    { ""field"": ""type"", ""in"": [
-                        """ + ChildResourceType + @""",
-                        """ + ParentResourceType + @"""
-                    ] },
-                    { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/access"", ""equals"": ""Deny"" }
-                ] }");
+            var ifCondition = @"{ ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups/securityRules"" }";
 
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                lineNumber: 7,
-                linePosition: 46,
-                path: "properties.policyRule.if.allOf[0].in");
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_EffectiveParentAndChildBranches()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""anyOf"": [
-                    { ""allOf"": [
-                        { ""field"": ""type"", ""equals"": """ + ParentResourceType + @""" },
-                        { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
-                    ] },
-                    { ""allOf"": [
-                        { ""field"": ""type"", ""equals"": """ + ChildResourceType + @""" },
-                        { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/access"", ""equals"": ""Deny"" }
-                    ] }
-                ] }");
-
-            results.Should().BeEmpty();
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_NegatedParentSelectionDoesNotProvideCoverage()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""anyOf"": [
-                    { ""field"": ""type"", ""equals"": """ + ChildResourceType + @""" },
-                    { ""not"": {
-                        ""field"": ""type"",
-                        ""equals"": """ + ParentResourceType + @"""
-                    } }
-                ] }");
-
-            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
-                results: results,
-                lineNumber: 7,
-                linePosition: 104,
-                path: "properties.policyRule.if.anyOf[0].equals");
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_IndexedMode_NoFinding()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
-                mode: "Indexed");
-
-            results.Should().BeEmpty();
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_MissingMode_NoFinding()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
-                mode: null);
-
-            results.Should().BeEmpty();
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParentOnly()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ParentResourceType));
-
-            results.Should().BeEmpty();
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildWithIndeterminateTypeBranch()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""anyOf"": [" +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) +
-                    @", { ""field"": ""type"", ""notEquals"": ""Microsoft.Storage/storageAccounts"" }] }");
-
-            results.Should().BeEmpty();
-        }
-
-        [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ChildUnderOddNot()
-        {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: @"{ ""not"": " +
-                    NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType) +
-                    @" }");
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(ifCondition: ifCondition);
 
             results.Should().BeEmpty();
         }
 
         [Theory]
-        [MemberData(nameof(UnsupportedTypeConditions))]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_UnsupportedTypeCondition(string condition)
+        [InlineData("Indexed")]
+        [InlineData("indexed")]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_NonAllMode_NoFinding(string mode)
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(condition: condition);
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
+
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                ifCondition: ifCondition,
+                mode: mode);
 
             results.Should().BeEmpty();
         }
 
         [Theory]
-        [InlineData("denyAction")]
-        [InlineData("modify")]
-        [InlineData("append")]
         [InlineData("audit")]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_NonDenyLiteralEffect(string effect)
+        [InlineData("modify")]
+        [InlineData("disabled")]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_NonDenyEffect_NoFinding(string effect)
         {
-            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
-                effect: @"""" + effect + @"""");
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
 
-            results.Should().BeEmpty();
-        }
-
-        [Theory]
-        [MemberData(nameof(NonDenyParameterizedEffects))]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_EffectCannotSelectDeny(
-            string parameters,
-            string effect)
-        {
             var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
-                effect: effect,
-                parameters: parameters);
+                ifCondition: ifCondition,
+                effect: effect);
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_UnrelatedChildType()
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_EffectParameterExcludesDeny_NoFinding()
         {
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
+
             var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
-                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(
-                    resourceType: "Microsoft.Compute/virtualMachines/extensions"));
+                ifCondition: ifCondition,
+                effect: @"[parameters('effect')]",
+                allowedValues: @"[""audit"", ""disabled""]");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ComplexEffectExpression_NoFinding()
+        {
+            var ifCondition = $@"{{ ""field"": ""{ChildAlias}"", ""equals"": ""Allow"" }}";
+
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                ifCondition: ifCondition,
+                effect: "[concat('de', 'ny')]");
 
             results.Should().BeEmpty();
         }
 
         private static LinterOutput[] Lint(
-            string condition,
-            string effect = @"""deny""",
-            string parameters = "{}",
+            string ifCondition,
+            string effect = "deny",
+            string allowedValues = null!,
             string mode = "All")
         {
+            var parameters = effect.StartsWith("[parameters(", StringComparison.Ordinal)
+                ? @"""parameters"": { ""effect"": { ""type"": ""String""" +
+                    (allowedValues == null ? string.Empty : @", ""allowedValues"": " + allowedValues) +
+                    @" } },"
+                : string.Empty;
+
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
+                    ""mode"": ""{mode}"",
+                    {parameters}
+                    ""policyRule"": {{
+                      ""if"": {ifCondition},
+                      ""then"": {{ ""effect"": ""{effect}"" }}
+                    }}
+                  }}
+                }}";
+
             var linter = new PolicyLinter(
-                rules: new ILinterRule[]
-                {
-                    new NSGSecurityRuleChildOnlyDenyCoverage(),
-                },
-                metadata: MockMetadata);
+                rules: new ILinterRule[] { new NSGSecurityRuleChildOnlyDenyCoverage() },
+                metadata: NSGSecurityRuleChildOnlyDenyCoverageTests.TypeMetadata);
 
-            return linter.Lint(NSGSecurityRuleChildOnlyDenyCoverageTests.PolicyDefinition(
-                condition: condition,
-                effect: effect,
-                parameters: parameters,
-                mode: mode));
+            return linter.Lint(rawPolicyDefinition: policyDefinition);
         }
 
-        private static string PolicyDefinition(
-            string condition,
-            string effect,
-            string parameters,
-            string mode)
+        private static LinterOutput ExpectedOutput(
+            int lineNumber,
+            int linePosition,
+            string path,
+            string alias)
         {
-            var modeProperty = mode == null
-                ? string.Empty
-                : @"""mode"": """ + mode + @""",";
-
-            return @"
-                {
-                  ""properties"": { " + modeProperty + @"
-                    ""parameters"": " + parameters + @",
-                    ""policyRule"": {
-                      ""if"": " + condition + @",
-                      ""then"": {
-                        ""effect"": " + effect + @"
-                      }
-                    }
-                  }
-                }";
-        }
-
-        private static string EqualsType(string resourceType) =>
-            @"{ ""field"": ""type"", ""equals"": """ + resourceType + @""" }";
-
-        private static void AssertSingleFinding(
-            LinterOutput[] results,
-            int lineNumber = 6,
-            int linePosition = 112,
-            string path = "properties.policyRule.if.equals")
-        {
-            results.Should().HaveCount(1);
-
-            var output = new LinterOutput(
+            return new LinterOutput(
                 RuleIdentifier: "nsg-security-rule-child-only-deny-coverage",
                 Title: "NSG Security Rule Child-Only Deny Coverage",
                 Severity: Severity.Warning,
@@ -393,9 +244,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: path,
-                Description: "This deny-capable definition covers the child security-rule request path but not changes submitted through the parent NSG 'securityRules' collection. Add equivalent parent coverage in this or another policy.");
-
-            results.Should().ContainEquivalentOf(output);
+                Description: $"The alias '{alias}' applies to security rules deployed as child resources. Security rules submitted with the parent network security group are not covered. Add equivalent parent resource coverage in this or another policy.");
         }
     }
 }

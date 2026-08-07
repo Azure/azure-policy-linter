@@ -6,12 +6,14 @@
 
 ## Description
 
-This rule checks policies whose effect is literal `deny` or a direct String parameter that is unconstrained or allows `deny`. It reports parent `Microsoft.Network/networkSecurityGroups` conditions that reference `securityRules[*]` without effective coverage for independently deployed `Microsoft.Network/networkSecurityGroups/securityRules` child resources. Azure Resource Manager supports security rules both in the [parent network security group resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups) and as [child security-rule resources](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules), so the request paths require equivalent policy coverage. `Indexed` mode and a missing mode do not evaluate the child resource type; in `All` mode, child coverage needs a branch whose conditions can evaluate against the child resource.
+This rule reports a deny-capable policy whose conditions reference security rules through the parent [network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups) but never reference the [security rule child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules). Security rules can be submitted either way, so a policy that only inspects the parent collection does not see security rules deployed as child resources.
+
+Note that the rule infers the targeted resource types from the aliases the condition uses, which may not reflect the resource types the policy actually applies to.
 
 ## Suggestions
 
-- Check whether another assigned policy already provides equivalent coverage for independently deployed child security-rule requests.
-- If child coverage is needed in this policy, add conditions for `Microsoft.Network/networkSecurityGroups/securityRules` and adapt parent collection aliases such as `Microsoft.Network/networkSecurityGroups/securityRules[*].access` to child-resource aliases such as `Microsoft.Network/networkSecurityGroups/securityRules/access`. Adding the child resource type without adapting the conditions is not sufficient.
+- Check whether another assigned policy already covers requests that deploy security rules as child resources.
+- To cover both paths in this policy, add a branch for the child resource and adapt the conditions to the child aliases: `Microsoft.Network/networkSecurityGroups/securityRules[*].access` becomes `Microsoft.Network/networkSecurityGroups/securityRules/access`. Adding the child resource type without adapting the conditions is not sufficient.
 
 ## Examples
 
@@ -19,23 +21,8 @@ This rule checks policies whose effect is literal `deny` or a direct String para
 
 ```json
 {
-  "policyRule": {
-    "if": {
-      "allOf": [
-        {
-          "field": "type",
-          "equals": "Microsoft.Network/networkSecurityGroups"
-        },
-        {
-          "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
-          "equals": "Allow"
-        }
-      ]
-    },
-    "then": {
-      "effect": "deny"
-    }
-  }
+  "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
+  "equals": "Allow"
 }
 ```
 
@@ -43,38 +30,15 @@ This rule checks policies whose effect is literal `deny` or a direct String para
 
 ```json
 {
-  "policyRule": {
-    "if": {
-      "anyOf": [
-        {
-          "allOf": [
-            {
-              "field": "type",
-              "equals": "Microsoft.Network/networkSecurityGroups"
-            },
-            {
-              "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
-              "equals": "Allow"
-            }
-          ]
-        },
-        {
-          "allOf": [
-            {
-              "field": "type",
-              "equals": "Microsoft.Network/networkSecurityGroups/securityRules"
-            },
-            {
-              "field": "Microsoft.Network/networkSecurityGroups/securityRules/access",
-              "equals": "Allow"
-            }
-          ]
-        }
-      ]
+  "anyOf": [
+    {
+      "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
+      "equals": "Allow"
     },
-    "then": {
-      "effect": "deny"
+    {
+      "field": "Microsoft.Network/networkSecurityGroups/securityRules/access",
+      "equals": "Allow"
     }
-  }
+  ]
 }
 ```

@@ -6,36 +6,39 @@
 
 ## Description
 
-This rule checks `All` mode policies whose effect is literal `deny` or a direct String parameter that is unconstrained or allows `deny`. When such a policy has an effective branch for the independently deployable [`Microsoft.Network/networkSecurityGroups/securityRules` child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules) but no effective branch for the [`securityRules` collection on the parent network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups), parent-path requests are not covered. `Indexed` mode and a missing mode do not evaluate the child resource type, so they are outside the rule's scope, as are complex effect expressions and other enforcement effects.
+This rule reports an `All` mode deny-capable policy whose conditions reference the [security rule child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules) but never reference security rules through the parent [network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups). Security rules can be submitted either way, so a policy that only inspects the child resource does not see security rules submitted with the parent network security group. `Indexed` mode and an absent mode do not evaluate the child resource type at all, so they are outside the rule's scope.
+
+Note that the rule infers the targeted resource types from the aliases the condition uses, which may not reflect the resource types the policy actually applies to.
 
 ## Suggestions
 
-- Add equivalent coverage for the parent `Microsoft.Network/networkSecurityGroups` request path in this policy or another policy.
-- Adapt the parent coverage to the parent `securityRules[*]` aliases. Adding the parent type to the same condition is not sufficient when the remaining conditions use child-resource aliases.
-- Check existing assigned policies before adding another definition; another policy may already provide the parent coverage.
+- Check whether another assigned policy already covers requests that submit security rules with the parent network security group.
+- To cover both paths in this policy, add a branch for the parent resource and adapt the conditions to the parent aliases: `Microsoft.Network/networkSecurityGroups/securityRules/access` becomes `Microsoft.Network/networkSecurityGroups/securityRules[*].access`. Adding the parent resource type without adapting the conditions is not sufficient.
 
 ## Examples
 
 ### Violation
 
-This condition selects only the child request path:
-
 ```json
 {
-  "field": "type",
-  "equals": "Microsoft.Network/networkSecurityGroups/securityRules"
+  "field": "Microsoft.Network/networkSecurityGroups/securityRules/access",
+  "equals": "Allow"
 }
 ```
 
 ### Correct
 
-Provide conceptually equivalent parent coverage in this policy or another policy. A separate parent condition can begin with:
-
 ```json
 {
-  "field": "type",
-  "equals": "Microsoft.Network/networkSecurityGroups"
+  "anyOf": [
+    {
+      "field": "Microsoft.Network/networkSecurityGroups/securityRules/access",
+      "equals": "Allow"
+    },
+    {
+      "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
+      "equals": "Allow"
+    }
+  ]
 }
 ```
-
-Conditions that inspect security-rule properties must also be adapted to the parent `securityRules[*]` aliases.
