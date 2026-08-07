@@ -6,7 +6,8 @@
 
 ## Description
 
-Inside a `count.where` condition, use `current()` to read a field of the array member being counted. This rule reports a `where` condition that uses `field()` on the counted alias instead: [inside `where`, `field()` returns a one-member array](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#the-field-function-inside-where-conditions) rather than the member's value, so comparing it to a single value never matches.
+This rule reports a `where` condition that uses `field()` on the counted alias, which has unintuitive behavior. Replace it with `current()` to read a field of the array member being counted.
+See: [field-function-inside-where-conditions](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#the-field-function-inside-where-conditions) for more details on the behavior of `field()` functions inside `where` conditions.
 
 ## Suggestions
 

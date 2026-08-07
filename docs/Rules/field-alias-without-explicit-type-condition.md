@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a policy rule that uses [field aliases](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) to target resources without an explicit `type` condition. Targeting by alias alone is valid, but it leaves the intended resource types implicit and harder for a reader to determine.
+This rule reports a policy that targets the fields of a specific resource type (via [field aliases](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias)) without an explicit `type` condition. Targeting by alias alone is valid, but it leaves the intended resource types implicit and harder for a reader to determine.
 
 ## Suggestions
 

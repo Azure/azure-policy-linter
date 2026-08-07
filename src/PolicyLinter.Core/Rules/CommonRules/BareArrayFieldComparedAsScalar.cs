@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Bare Array Field Compared as Scalar";
         private const string RuleDescription =
-            "The field alias: '{0}' refers to the array object as a whole, not to its members, so comparing it with '{1}' can never match a member. Use a field count expression to evaluate the array members.";
+            "The field alias: '{0}' refers to an entire array, so comparing it with '{1}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.";
 
         private static readonly OrdinalInsensitiveHashSet ScalarComparisonOperators = new OrdinalInsensitiveHashSet
         {

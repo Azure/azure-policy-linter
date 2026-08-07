@@ -6,7 +6,7 @@
 
 ## Description
 
-Two directly nested `not` operators negate the same condition twice and are mechanically equivalent to the inner condition. This adds unnecessary nesting without changing the condition's result.
+Two nested `not` operators negating the same condition were found. This adds unnecessary nesting without changing the condition's result.
 
 See [logical operators](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#logical-operators) in the Azure Policy definition structure.
 

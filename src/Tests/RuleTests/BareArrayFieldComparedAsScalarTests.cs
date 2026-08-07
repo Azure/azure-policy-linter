@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
-                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to the array object as a whole, not to its members, so comparing it with 'equals' can never match a member. Use a field count expression to evaluate the array members.");
+                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array, so comparing it with 'equals' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -99,7 +99,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to the array object as a whole, not to its members, so comparing it with '{operatorName}' can never match a member. Use a field count expression to evaluate the array members.");
+                Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array, so comparing it with '{operatorName}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -127,7 +127,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 88,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: '{alias}' refers to the array object as a whole, not to its members, so comparing it with 'equals' can never match a member. Use a field count expression to evaluate the array members.");
+                Description: $"The field alias: '{alias}' refers to an entire array, so comparing it with 'equals' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -153,7 +153,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 89,
                 Path: "properties.policyRule.if.field",
-                Description: "The field alias: 'microsoft.test/WIDGETS/arraypropertywithabsentversions' refers to the array object as a whole, not to its members, so comparing it with 'equals' can never match a member. Use a field count expression to evaluate the array members.");
+                Description: "The field alias: 'microsoft.test/WIDGETS/arraypropertywithabsentversions' refers to an entire array, so comparing it with 'equals' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }

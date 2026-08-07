@@ -11,7 +11,7 @@ This rule reports a match-family condition whose value contains an asterisk (`*`
 ## Suggestions
 
 - Replace `*` with the supported `#`, `?`, or `.` placeholders when they express the required match.
-- Consider [`like` or `notLike`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) when `*` should match a sequence of characters. These operators use different wildcard syntax, so other match placeholders become literal characters.
+- Consider [`like` or `notLike`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) when `*` should match a sequence of characters. Note that these operators use different wildcard syntax.
 
 ## Examples
 

@@ -6,11 +6,11 @@
 
 ## Description
 
-This rule reports a condition whose `field` is an array alias containing `[*]`. Azure Policy applies the condition to every member the alias selects and requires all of them to match, which is the only thing this form can express. See [referencing array members](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-members).
+This rule reports a `field` condition targeting the members of an array alias (i.e. an alias containing `[*]`). The condition will perform an implicit "allOf" evaluation, applying the condition to each array member. Use `count` expression instead, which provides a more deliberate and capable mechanism to apply conditions to array members. For more details, see [field count expressions](https://learn.microsoft.com/en-us/azure/governance/policy/how-to/author-policies-for-arrays#field-count-expressions).
 
 ## Suggestions
 
-Use a field `count` expression when the policy needs to state how many members must match. A `count` expression can require at least one match, or an exact number, which implicit enumeration cannot express.
+Use a field `count` expression.
 
 ## Examples
 
@@ -25,17 +25,15 @@ Use a field `count` expression when the policy needs to state how many members m
 
 ### Correct
 
-Requires at least one member to match. Note that this is not the same condition as the violation, which holds only when every member matches:
-
 ```json
 {
   "count": {
     "field": "Microsoft.Test/testResource/items[*]",
     "where": {
       "field": "Microsoft.Test/testResource/items[*].name",
-      "equals": "approved"
+      "notEquals": "approved"
     }
   },
-  "greater": 0
+  "equals": 0
 }
 ```

@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Implicit Array Enumeration";
 
         private const string RuleDescription =
-            "The field alias '{0}' selects array members, so Azure Policy requires every member to match. Use a field count expression when the policy needs to state how many members must match.";
+            "The condition targets the members of array alias '{0}', which performs an implicit 'allOf' evaluation over the array. Use a field count expression instead.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ImplicitArrayEnumeration"/> class.

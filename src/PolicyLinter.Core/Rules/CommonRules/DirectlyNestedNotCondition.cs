@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Directly Nested Not Condition";
 
         private const string RuleDescription =
-            "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.";
+            "Two nested 'not' operators negate the same condition, which adds nesting without changing the result. Remove both.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectlyNestedNotCondition"/> class.

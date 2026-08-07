@@ -63,7 +63,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 34,
                 Path: "properties.policyRule.if.not.not",
-                Description: "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.");
+                Description: "Two nested 'not' operators negate the same condition, which adds nesting without changing the result. Remove both.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -118,7 +118,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 14,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.allOf[1].not.not",
-                Description: "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.");
+                Description: "Two nested 'not' operators negate the same condition, which adds nesting without changing the result. Remove both.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -173,7 +173,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 14,
                 LinePosition: 38,
                 Path: "properties.policyRule.if.anyOf[1].not.not",
-                Description: "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.");
+                Description: "Two nested 'not' operators negate the same condition, which adds nesting without changing the result. Remove both.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -222,7 +222,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 34,
                 Path: "properties.policyRule.if.not.not",
-                Description: "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.");
+                Description: "Two nested 'not' operators negate the same condition, which adds nesting without changing the result. Remove both.");
 
             results.Should().ContainEquivalentOf(output);
         }

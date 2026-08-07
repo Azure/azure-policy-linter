@@ -6,11 +6,11 @@
 
 ## Description
 
-This rule reports a condition that compares an array field to a single value. A field alias without `[*]` refers to the array object as a whole rather than to its members, so the comparison can never match a member and the condition does not do what it appears to do. See [Referencing array fields](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-fields).
+This rule reports a condition that compares an entire array field to a single value, performing an invalid comparison that will always be evaluated to `false`.
 
 ## Suggestions
 
-- Use a [field count expression](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#field-count) to evaluate the array members.
+- Adjust the policy to use [field count expression](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#field-count) (if the intent is to apply condition to the array members) or remove the condition entirely.
 
 ## Examples
 

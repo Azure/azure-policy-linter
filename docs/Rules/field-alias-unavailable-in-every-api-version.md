@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) that resolves to a resource type but matches no property in any known API version in the linter's embedded metadata. The condition that uses the alias will most likely not evaluate as expected. For a recently added alias, it can also mean that the linter's embedded metadata is out of date.
+This rule reports a usage of a [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) that maps to an unknown property on the target resource. This finding is based on the linter's embedded resource type metadata. The condition that uses the alias will most likely not evaluate as expected. For a recently added alias, it can also mean that the linter's metadata is out of date.
 
 ## Suggestions
 

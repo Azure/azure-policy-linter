@@ -59,7 +59,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 9,
                 LinePosition: 81,
                 Path: "properties.policyRule.if.count.where.value",
-                Description: "Inside count.where, field('Microsoft.Test/widgets/items[*]') returns a one-member array rather than the member's value, so this comparison never matches. Use current('Microsoft.Test/widgets/items[*]') to read the field of the member being counted.");
+                Description: "The where condition uses field('Microsoft.Test/widgets/items[*]') on the counted alias, which has unintuitive behavior. Use current('Microsoft.Test/widgets/items[*]') to read the field of the array member being counted.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -107,7 +107,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 10,
                 LinePosition: 87,
                 Path: "properties.policyRule.if.count.where.equals",
-                Description: "Inside count.where, field('Microsoft.Test/widgets/items[*].name') returns a one-member array rather than the member's value, so this comparison never matches. Use current('Microsoft.Test/widgets/items[*].name') to read the field of the member being counted.");
+                Description: "The where condition uses field('Microsoft.Test/widgets/items[*].name') on the counted alias, which has unintuitive behavior. Use current('Microsoft.Test/widgets/items[*].name') to read the field of the array member being counted.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -155,7 +155,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 9,
                 LinePosition: 86,
                 Path: "properties.policyRule.if.count.where.value",
-                Description: "Inside count.where, field('Microsoft.Test/widgets/items[*].name') returns a one-member array rather than the member's value, so this comparison never matches. Use current('Microsoft.Test/widgets/items[*].name') to read the field of the member being counted.");
+                Description: "The where condition uses field('Microsoft.Test/widgets/items[*].name') on the counted alias, which has unintuitive behavior. Use current('Microsoft.Test/widgets/items[*].name') to read the field of the array member being counted.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -203,7 +203,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 9,
                 LinePosition: 90,
                 Path: "properties.policyRule.if.count.where.value",
-                Description: "Inside count.where, field('Microsoft.Test/widgets/items[*].priority') returns a one-member array rather than the member's value, so this comparison never matches. Use current('Microsoft.Test/widgets/items[*].priority') to read the field of the member being counted.");
+                Description: "The where condition uses field('Microsoft.Test/widgets/items[*].priority') on the counted alias, which has unintuitive behavior. Use current('Microsoft.Test/widgets/items[*].priority') to read the field of the array member being counted.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -251,7 +251,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 9,
                 LinePosition: 86,
                 Path: "properties.policyRule.if.count.where.value",
-                Description: "Inside count.where, field('mIcRoSoFt.TeSt/WiDgEtS/ItEmS[*].name') returns a one-member array rather than the member's value, so this comparison never matches. Use current('mIcRoSoFt.TeSt/WiDgEtS/ItEmS[*].name') to read the field of the member being counted.");
+                Description: "The where condition uses field('mIcRoSoFt.TeSt/WiDgEtS/ItEmS[*].name') on the counted alias, which has unintuitive behavior. Use current('mIcRoSoFt.TeSt/WiDgEtS/ItEmS[*].name') to read the field of the array member being counted.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -305,7 +305,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 12,
                 LinePosition: 102,
                 Path: "properties.policyRule.if.count.where.count.where.value",
-                Description: "Inside count.where, field('Microsoft.Test/widgets/items[*].children[*].name') returns a one-member array rather than the member's value, so this comparison never matches. Use current('Microsoft.Test/widgets/items[*].children[*].name') to read the field of the member being counted.");
+                Description: "The where condition uses field('Microsoft.Test/widgets/items[*].children[*].name') on the counted alias, which has unintuitive behavior. Use current('Microsoft.Test/widgets/items[*].children[*].name') to read the field of the array member being counted.");
 
             results.Should().ContainEquivalentOf(output);
         }
