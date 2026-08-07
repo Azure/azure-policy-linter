@@ -6,12 +6,11 @@
 
 ## Description
 
-A bare array field alias resolves to the whole array, while an alias with `[*]` references its members. This rule reports literal scalar operands used with equality, `like`, `match`, or ordering operators against bare aliases that metadata consistently identifies as arrays. Parameterized operands and array-aware operator families are outside its scope. See [Referencing array fields](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-fields).
+A bare array field alias resolves to the whole array, while an alias with `[*]` references its members. This rule reports literal scalar operands used with equality, `like`, `match`, or ordering operators against bare aliases that metadata consistently identifies as arrays. See [Referencing array fields](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-fields).
 
 ## Suggestions
 
-- Add `[*]` to compare individual array members, or use field count when the condition depends on how many members match.
-- Use `exists` when the condition only checks whether the array property is present.
+- Use a [field count expression](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#field-count) to evaluate the array members.
 
 ## Examples
 
@@ -24,16 +23,7 @@ A bare array field alias resolves to the whole array, while an alias with `[*]` 
 }
 ```
 
-### Correct - compare members
-
-```json
-{
-  "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
-  "equals": "Deny"
-}
-```
-
-### Correct - count matching members
+### Correct
 
 ```json
 {

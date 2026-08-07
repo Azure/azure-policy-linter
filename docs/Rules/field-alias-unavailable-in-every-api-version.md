@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) that exists in the alias catalog and resolves to a resource type, but whose alias paths match no property in any known API version in the linter's offline metadata. The policy author is therefore using a recognized alias name even though the metadata cannot map it to a resource property. Findings can change as the linter's metadata is updated.
+This rule reports a [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) that exists in the alias catalog and resolves to a resource type, but whose alias paths match no property in any known API version in the linter's embedded metadata. The policy author is therefore using a recognized alias name even though the metadata cannot map it to a resource property. Findings can change as the linter's metadata is updated.
 
 ## Suggestions
 
@@ -14,4 +14,4 @@ This rule reports a [field alias](https://learn.microsoft.com/azure/governance/p
 
 ## Examples
 
-The same field reference can only be classified by using the linter's offline known API-version metadata, so JSON alone cannot provide a self-contained violation or correct example for this rule.
+The same field reference can only be classified by using the linter's embedded known API-version metadata, so JSON alone cannot provide a self-contained violation or correct example for this rule.
