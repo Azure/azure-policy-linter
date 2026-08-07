@@ -530,7 +530,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             expressionsWithLineInfo.Should().ContainKey(effectParameterPath);
             expressionsWithLineInfo[effectParameterPath].LineNumber.Should().Be(19);
             expressionsWithLineInfo[effectParameterPath].LinePosition.Should().Be(23);
-
         }
 
         [Theory]
