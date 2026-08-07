@@ -118,6 +118,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             allowedLocationsType.LineNumber.Should().Be(9);
             allowedLocationsType.LinePosition.Should().Be(31);
 
+            var allowedLocationsMetadata = allowedLocations.Value.Metadata;
+            allowedLocationsMetadata.Should().NotBeNull();
+            allowedLocationsMetadata.LineNumber.Should().Be(10);
+            allowedLocationsMetadata.LinePosition.Should().Be(29);
+
             var allowedLocationsDefaultValue = allowedLocations.Value.DefaultValue;
             allowedLocationsDefaultValue.Should().NotBeNull();
             allowedLocationsDefaultValue.LineNumber.Should().Be(14);
@@ -510,6 +515,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             templateLanguageExpressionsWithLineInfo.Should().ContainKey(effectPath);
             templateLanguageExpressionsWithLineInfo[effectPath].LineNumber.Should().Be(52);
             templateLanguageExpressionsWithLineInfo[effectPath].LinePosition.Should().Be(52);
+
+            var allowedLocationsParameter = policyDefinition.Properties.Parameters["allowedLocations"];
+            allowedLocationsParameter.Metadata.Should().NotBeNull();
+            allowedLocationsParameter.Metadata!["description"]!.ToString().Should().Be("The list of allowed locations");
+
+            // Each parameter expression is pathed by its name, so distinct parameters do not collapse onto a shared path.
+            var allowedLocationsParameterPath = "properties.parameters.allowedLocations";
+            expressionsWithLineInfo.Should().ContainKey(allowedLocationsParameterPath);
+            expressionsWithLineInfo[allowedLocationsParameterPath].LineNumber.Should().Be(8);
+            expressionsWithLineInfo[allowedLocationsParameterPath].LinePosition.Should().Be(33);
+
+            var effectParameterPath = "properties.parameters.effect";
+            expressionsWithLineInfo.Should().ContainKey(effectParameterPath);
+            expressionsWithLineInfo[effectParameterPath].LineNumber.Should().Be(19);
+            expressionsWithLineInfo[effectParameterPath].LinePosition.Should().Be(23);
         }
 
         [Theory]

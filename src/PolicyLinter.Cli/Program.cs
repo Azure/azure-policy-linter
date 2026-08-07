@@ -380,6 +380,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
                     Program.DarkGray($"Line: {result.LineNumber}, Position: {result.LinePosition}, Path: {result.Path}");
                 }
 
+                if (result.DocumentationUrl.Length > 0)
+                {
+                    Program.DarkGray($"Documentation: {result.DocumentationUrl}");
+                }
+
                 Console.WriteLine(result.Description);
                 Console.WriteLine();
             }

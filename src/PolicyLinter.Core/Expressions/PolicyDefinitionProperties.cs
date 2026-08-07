@@ -171,7 +171,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             var parametersPaths = this.PathSegments.Concat("parameters").ToImmutableArray();
             this.Parameters = policyDefinitionProperties?.Parameters?.Value.ToDictionary(
                     keySelector: kvp => kvp.Key,
-                    elementSelector: kvp => new Parameter(name: kvp.Key, parameterProperty: kvp.Value, path: parametersPaths, parent: parent))
+                    elementSelector: kvp => new Parameter(name: kvp.Key, parameterProperty: kvp.Value, path: parametersPaths.Concat(kvp.Key).ToImmutableArray(), parent: parent))
                 .ToImmutableDictionary(StringComparer.OrdinalIgnoreCase);
         }
 

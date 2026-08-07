@@ -16,6 +16,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
     /// <param name="LinePosition">The position in the line where the issue was found.</param>
     /// <param name="Description">The description</param>
     /// <param name="Path">The path to the location in the policy definition that the output is referring to.</param>
+    /// <param name="DocumentationUrl">The URL of the documentation page for the rule that produced this output.</param>
     public record LinterOutput(
         string RuleIdentifier,
         string Title,
@@ -24,5 +25,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
         int? LineNumber = null,
         int? LinePosition = null,
         string Description = "",
-        string Path = "");
+        string Path = "",
+        string DocumentationUrl = "");
 }
