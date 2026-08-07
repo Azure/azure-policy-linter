@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Field Alias Without Explicit Type Condition";
         private const string RuleDescription =
-            "The field aliases resolve to resource types: '{0}' without an explicit 'type' equals or in condition. Add an explicit condition to make the policy's target resource types clear.";
+            "The policy rule uses field aliases that resolve to: '{0}'. It has no explicit 'type' condition, so the targeted resource types are implicit. Add a 'type' condition using 'equals' or 'in'.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldAliasWithoutExplicitTypeCondition"/> class.
@@ -40,6 +40,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var resourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var hasExplicitTypeCondition = false;
 
+            // A 'type' condition anywhere in the rule counts as a guard, so a policy that guards one
+            // logical branch and not another is not reported. TODO: use the linter's resource
+            // applicability analysis when it is available to determine the guard per branch.
             var visitor = new PolicyExpressionVisitor
             {
                 Visit = (visitedExpression) =>

@@ -12,8 +12,6 @@ A condition in `policyRule.if` that uses an array alias containing `[*]` as its 
 
 Use a field `count` expression when the policy needs to state how many members must match or handle an empty array explicitly.
 
-Keep implicit enumeration for a simple condition when using another field `count` would exceed the policy's count-expression limit, after confirming that its all-member and empty-array behavior is appropriate.
-
 ## Examples
 
 ### Violation

@@ -6,12 +6,13 @@
 
 ## Description
 
-A policy can use [field aliases](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) to target resources without an explicit `type` condition, and that is valid. When an `if` condition relies on aliases alone, its intended resource types can be less obvious to readers. This informational rule recommends an explicit positive literal `type` `equals` or `in` condition for clarity; it does not report a [policy applicability](https://learn.microsoft.com/azure/governance/policy/concepts/policy-applicability) error.
+This rule reports a policy rule that uses [field aliases](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) to target resources without an explicit `type` condition. Targeting by alias alone is valid, but it leaves the intended resource types implicit and harder for a reader to determine.
+
+Note that the rule infers the targeted resource types from the aliases the condition uses, which may not reflect the resource types the policy actually applies to.
 
 ## Suggestions
 
 - Add a positive literal `type` condition using `equals` or a nonempty `in` array to make the target resource types clear.
-- Leave the policy unchanged when alias-only targeting is intentional and sufficiently clear.
 
 ## Examples
 

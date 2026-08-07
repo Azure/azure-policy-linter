@@ -12,13 +12,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
-    /// Detects field aliases for which the offline metadata has no property path in any known API version.
+    /// Detects field aliases for which the embedded metadata has no property path in any known API version.
     /// </summary>
     public sealed class FieldAliasUnavailableInEveryApiVersion : LinterRule<Reference>
     {
         private const string RuleTitle = "Field Alias Unavailable in Every API Version";
         private const string RuleDescription =
-            "The field alias '{0}' resolves to resource type '{1}', but the linter's offline metadata contains no matching property path in any known API version. " +
+            "The field alias '{0}' resolves to resource type '{1}', but the linter's embedded metadata contains no matching property path in any known API version. " +
             "Verify that the property exists on the target resource.";
 
         /// <summary>

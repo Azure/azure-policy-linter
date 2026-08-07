@@ -180,7 +180,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 11,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "The field aliases resolve to resource types: 'Microsoft.Storage/storageAccounts' without an explicit 'type' equals or in condition. Add an explicit condition to make the policy's target resource types clear.");
+                Description: "The policy rule uses field aliases that resolve to: 'Microsoft.Storage/storageAccounts'. It has no explicit 'type' condition, so the targeted resource types are implicit. Add a 'type' condition using 'equals' or 'in'.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -199,7 +199,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 11,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: $"The field aliases resolve to resource types: '{resourceTypes}' without an explicit 'type' equals or in condition. Add an explicit condition to make the policy's target resource types clear.");
+                Description: $"The policy rule uses field aliases that resolve to: '{resourceTypes}'. It has no explicit 'type' condition, so the targeted resource types are implicit. Add a 'type' condition using 'equals' or 'in'.");
 
             results.Should().ContainEquivalentOf(output);
         }

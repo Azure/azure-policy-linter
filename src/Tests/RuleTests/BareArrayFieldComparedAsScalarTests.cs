@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
-                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a '[*]' alias or field count to compare array members, or use 'exists' to check whether the property is present.");
+                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a field count expression to evaluate the array members.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -99,7 +99,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' resolves to the whole array and is used with the scalar comparison operator '{operatorName}'. Use a '[*]' alias or field count to compare array members, or use 'exists' to check whether the property is present.");
+                Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' resolves to the whole array and is used with the scalar comparison operator '{operatorName}'. Use a field count expression to evaluate the array members.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -127,7 +127,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 88,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: '{alias}' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a '[*]' alias or field count to compare array members, or use 'exists' to check whether the property is present.");
+                Description: $"The field alias: '{alias}' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a field count expression to evaluate the array members.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -153,7 +153,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 89,
                 Path: "properties.policyRule.if.field",
-                Description: "The field alias: 'microsoft.test/WIDGETS/arraypropertywithabsentversions' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a '[*]' alias or field count to compare array members, or use 'exists' to check whether the property is present.");
+                Description: "The field alias: 'microsoft.test/WIDGETS/arraypropertywithabsentversions' resolves to the whole array and is used with the scalar comparison operator 'equals'. Use a field count expression to evaluate the array members.");
 
             results.Should().ContainEquivalentOf(output);
         }

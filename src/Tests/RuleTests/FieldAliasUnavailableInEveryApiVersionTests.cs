@@ -289,7 +289,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LinePosition: linePosition,
                 Path: path,
                 Description:
-                    $"The field alias '{alias}' resolves to resource type '{resourceType}', but the linter's offline metadata contains no matching property path in any known API version. " +
+                    $"The field alias '{alias}' resolves to resource type '{resourceType}', but the linter's embedded metadata contains no matching property path in any known API version. " +
                     "Verify that the property exists on the target resource.");
 
             results.Should().ContainEquivalentOf(output);
