@@ -44,6 +44,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void LinterTests_RuleOutput_IncludesDocumentationUrl()
+        {
+            var mockMetadata = new MockTypeMetadata();
+            var testRule = new TestPolicyDefinitionLinterRule(descriptionFormat: "Test rule was invoked")
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    return new[] { rule.CreateError(expression) };
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, mockMetadata);
+
+            var result = linter.Lint(@"{ 'properties': { 'mode': 'Indexed', 'policyRule': { 'if': { 'value': 1, 'equals': 1 }, 'then': { 'effect': 'deny' } } } }");
+            result.Should().ContainSingle()
+                .Which.DocumentationUrl.Should().Be("https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/test-policy-definition-rule.md");
+        }
+
+        [Fact]
         public void LinterTests_LeafConditionRuleIsInvoked_FieldExpression()
         {
             var mockMetadata = new MockTypeMetadata();

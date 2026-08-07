@@ -18,6 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// <summary>
     /// Tests for the Program class to verify file handling scenarios.
     /// </summary>
+    [Collection("ConsoleOutput")]
     public class ProgramFileHandlingTests : IDisposable
     {
         private readonly string[] tempFiles;

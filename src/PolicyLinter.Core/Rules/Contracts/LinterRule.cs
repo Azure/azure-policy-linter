@@ -30,6 +30,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
         /// <inheritdoc />
         public bool ApplyToDerivedTypes { get; }
 
+        /// <inheritdoc />
+        public string DocumentationUrl => $"{this.DocumentationUrlBase}/{this.Identifier}.md";
+
+        /// <summary>
+        /// The base URL under which this rule's documentation page lives. The public default points at the
+        /// azure-policy-linter GitHub repository; derived base classes (for example, internal rules) override
+        /// this to point at their own documentation location.
+        /// </summary>
+        protected virtual string DocumentationUrlBase => "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="LinterRule{T}"/> class with the specified identifier, title, category, and description.
         /// </summary>
@@ -112,7 +122,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
                 LineNumber: expression?.LineNumber,
                 LinePosition: expression?.LinePosition,
                 Description: string.Format(this.Description, descriptionParams),
-                Path: expression?.Path ?? string.Empty);
+                Path: expression?.Path ?? string.Empty,
+                DocumentationUrl: this.DocumentationUrl);
         }
     }
 }
