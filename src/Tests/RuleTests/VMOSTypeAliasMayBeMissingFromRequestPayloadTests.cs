@@ -358,6 +358,31 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 effects: "deny"));
         }
 
+        [Theory]
+        [InlineData(@"""exists"": ""banana""")]
+        [InlineData(@"""exists"": 5")]
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_NonBooleanExistsValue_Fires(string existsCondition)
+        {
+            var policyDefinition = @"{
+  ""properties"": {
+    ""mode"": ""Indexed"",
+    ""policyRule"": {
+      ""if"": {
+        ""field"": ""Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType"",
+        " + existsCondition + @"
+      },
+      ""then"": {
+        ""effect"": ""deny""
+      }
+    }
+  }
+}";
+
+            var results = CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+        }
+
         private static PolicyLinter CreateLinter() => new PolicyLinter(
             rules: new ILinterRule[]
             {

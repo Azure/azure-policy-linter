@@ -10,6 +10,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Detects request-time effects whose conditions reference the VM OS type alias that can be absent from create and update payloads.
@@ -90,7 +91,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return false;
             }
 
-            return !condition.Operator.Value.ToObject<bool>();
+            var operatorValue = condition.Operator.Value;
+            return operatorValue.Type switch
+            {
+                JTokenType.Boolean => !operatorValue.Value<bool>(),
+                JTokenType.String => bool.TryParse(operatorValue.Value<string>(), out var exists) && !exists,
+                _ => false,
+            };
         }
 
         /// <summary>

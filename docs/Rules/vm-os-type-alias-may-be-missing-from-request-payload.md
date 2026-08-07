@@ -29,9 +29,9 @@ When the request omits `osType`, the `deny` effect does not occur for this condi
 }
 ```
 
-### Correct
+### Mitigation
 
-Combine `osType` with image metadata for the images the policy must recognize:
+Combine `osType` with image metadata for the images the policy must recognize. The finding still applies because the condition continues to use the alias, but the policy now classifies the requests that omit `osType` and carry known image metadata:
 
 ```json
 {
