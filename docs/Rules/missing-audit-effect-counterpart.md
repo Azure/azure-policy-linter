@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a String parameter referenced directly by `then.effect` when its `allowedValues` contains an enforcement effect without the corresponding audit effect. The mappings are `deny`, `modify`, or `append` -> `audit`, and `deployIfNotExists` -> `auditIfNotExists`. Including the counterparts lets assignments use non-enforcing behavior without changing the policy definition. One finding is reported per missing counterpart.
+This rule reports a String parameter referenced directly by `then.effect` when its `allowedValues` contains an enforcement effect without the corresponding audit effect. The mappings are `deny`, `modify`, or `append` -> `audit`, and `deployIfNotExists` -> `auditIfNotExists`. Including the counterparts lets assignments use non-enforcing behavior without changing the policy definition.
 
 `denyAction` has no supported audit counterpart and is not reported.
 
