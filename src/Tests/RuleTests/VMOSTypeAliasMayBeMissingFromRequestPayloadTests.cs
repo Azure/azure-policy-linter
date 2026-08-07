@@ -306,6 +306,58 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
+        [Fact]
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ExistsFalseCondition_NoFinding()
+        {
+            var policyDefinition = @"{
+  ""properties"": {
+    ""mode"": ""Indexed"",
+    ""policyRule"": {
+      ""if"": {
+        ""field"": ""Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType"",
+        ""exists"": ""false""
+      },
+      ""then"": {
+        ""effect"": ""deny""
+      }
+    }
+  }
+}";
+
+            var results = CreateLinter().Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_ExistsTrueCondition_Fires()
+        {
+            var policyDefinition = @"{
+  ""properties"": {
+    ""mode"": ""Indexed"",
+    ""policyRule"": {
+      ""if"": {
+        ""field"": ""Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType"",
+        ""exists"": ""true""
+      },
+      ""then"": {
+        ""effect"": ""deny""
+      }
+    }
+  }
+}";
+
+            var results = CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(CreateOutput(
+                lineNumber: 6,
+                linePosition: 81,
+                path: "properties.policyRule.if.field",
+                alias: VMOSTypeAlias,
+                effects: "deny"));
+        }
+
         private static PolicyLinter CreateLinter() => new PolicyLinter(
             rules: new ILinterRule[]
             {

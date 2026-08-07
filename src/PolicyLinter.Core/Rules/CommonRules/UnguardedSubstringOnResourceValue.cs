@@ -12,6 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -61,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            if (!UnguardedSubstringOnResourceValue.ContainsResourceValueReference(
+            if (!UnguardedSubstringOnResourceValue.IsResourceValueReference(
                     expression: substring.Parameters[0],
                     references: expression.Value.LanguageExpressions[0].References) ||
                 !UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(substring.Parameters[1], out var start) ||
@@ -77,7 +78,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             };
         }
 
-        private static bool ContainsResourceValueReference(
+        /// <summary>
+        /// The functions that return a value with the same length as their input, so a resource
+        /// value wrapped in one of them is still of unknown length.
+        /// </summary>
+        private static readonly OrdinalInsensitiveHashSet LengthPreservingFunctions = new OrdinalInsensitiveHashSet
+        {
+            "toLower",
+            "toUpper",
+        };
+
+        /// <summary>
+        /// Determines whether the substring input is a resource value whose length is unknown.
+        /// Only a bare 'field' or 'current' reference qualifies, optionally wrapped in functions
+        /// that preserve the input length. Any other wrapping function can change the length in
+        /// ways this rule cannot reason about.
+        /// </summary>
+        private static bool IsResourceValueReference(
             LanguageExpression expression,
             ImmutableArray<Reference> references)
         {
@@ -98,17 +115,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     reference.IsResolvedFieldReference());
             }
 
-            foreach (var parameter in function.Parameters)
-            {
-                if (UnguardedSubstringOnResourceValue.ContainsResourceValueReference(
-                    expression: parameter,
-                    references: references))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return UnguardedSubstringOnResourceValue.LengthPreservingFunctions.Contains(function.Function) &&
+                function.Parameters.Length == 1 &&
+                UnguardedSubstringOnResourceValue.IsResourceValueReference(
+                    expression: function.Parameters[0],
+                    references: references);
         }
 
         private static bool TryGetNonnegativeIntegerLiteral(LanguageExpression expression, out long value)

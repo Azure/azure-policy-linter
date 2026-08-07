@@ -58,7 +58,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 {
                     if (policyExpression is Reference reference &&
                         reference.IsResolvedFieldReference() &&
-                        string.Equals(reference.Identifier, VMOSTypeAliasMayBeMissingFromRequestPayload.VMOSTypeAlias, StringComparison.OrdinalIgnoreCase))
+                        string.Equals(reference.Identifier, VMOSTypeAliasMayBeMissingFromRequestPayload.VMOSTypeAlias, StringComparison.OrdinalIgnoreCase) &&
+                        !VMOSTypeAliasMayBeMissingFromRequestPayload.MatchesOnAbsence(reference: reference))
                     {
                         outputs.Add(this.CreateWarning(reference, reference.Identifier, affectedEffectsDescription));
                     }
@@ -68,6 +69,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             expression.PolicyRule.If.Visit(visitor);
 
             return outputs.ToArray();
+        }
+
+        /// <summary>
+        /// Determines whether the condition containing the reference matches when the property is
+        /// absent, in which case a missing value is the intended match rather than a gap.
+        /// </summary>
+        private static bool MatchesOnAbsence(Reference reference)
+        {
+            PolicyExpression? ancestor = reference;
+            while (ancestor != null && ancestor is not LeafCondition)
+            {
+                ancestor = ancestor.Parent;
+            }
+
+            if (ancestor is not LeafCondition condition ||
+                condition.Operator?.HasLiteralValue != true ||
+                !string.Equals(condition.Operator.Name, "exists", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            return !condition.Operator.Value.ToObject<bool>();
         }
 
         /// <summary>

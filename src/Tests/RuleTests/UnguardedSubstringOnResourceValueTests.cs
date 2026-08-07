@@ -56,6 +56,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_UnguardedSubstringOnResourceValue_LengthIncreasingWrapper_NoFinding()
+        {
+            var results = LintValueExpression("[substring(concat(field('name'), 'abcdef'), 0, 3)]");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
         public void RuleTests_UnguardedSubstringOnResourceValue_PositiveStartWithZeroLength()
         {
             const string valueExpression = "[substring(field('name'), 2, 0)]";
