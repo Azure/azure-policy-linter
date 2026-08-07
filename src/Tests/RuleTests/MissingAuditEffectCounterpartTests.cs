@@ -197,9 +197,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Missing Audit Effect Counterpart",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
-                LineNumber: 8,
-                LinePosition: 42,
-                Path: "properties.parameters.effect.allowedValues",
+                LineNumber: 6,
+                LinePosition: 33,
+                Path: "properties.parameters.effect",
                 Description: $"The effect parameter 'effect' is missing these audit counterparts from its allowedValues: {expectedMissingCounterparts}. Adding them lets assignments use non-enforcing behavior without changing the policy definition.");
 
             results.Should().ContainEquivalentOf(output);

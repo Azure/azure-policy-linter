@@ -73,8 +73,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             if (context.Parameters == null ||
-                !context.Parameters.TryGetValue(parameterName, out var parameter) ||
-                parameter.AllowedValuesExpression == null)
+                !context.Parameters.TryGetValue(parameterName, out var parameter))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -84,7 +83,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             return new[]
             {
                 this.CreateInformational(
-                    expression: parameter.AllowedValuesExpression,
+                    expression: parameter,
                     parameterName,
                     missingCounterpartList),
             };
