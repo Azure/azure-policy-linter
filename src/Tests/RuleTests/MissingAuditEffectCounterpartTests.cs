@@ -26,7 +26,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""deny""]",
-                expectedMissingCounterparts: "'audit'");
+                expectedEnforcementEffect: "deny",
+                expectedCounterpart: "audit");
         }
 
         [Fact]
@@ -34,7 +35,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""modify""]",
-                expectedMissingCounterparts: "'audit'");
+                expectedEnforcementEffect: "modify",
+                expectedCounterpart: "audit");
         }
 
         [Fact]
@@ -42,7 +44,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""append""]",
-                expectedMissingCounterparts: "'audit'");
+                expectedEnforcementEffect: "append",
+                expectedCounterpart: "audit");
         }
 
         [Fact]
@@ -50,7 +53,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""deployIfNotExists""]",
-                expectedMissingCounterparts: "'auditIfNotExists'");
+                expectedEnforcementEffect: "deployIfNotExists",
+                expectedCounterpart: "auditIfNotExists");
         }
 
         [Fact]
@@ -58,23 +62,46 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""deny"", ""modify"", ""append""]",
-                expectedMissingCounterparts: "'audit'");
+                expectedEnforcementEffect: "deny",
+                expectedCounterpart: "audit");
         }
 
         [Fact]
-        public void RuleTests_MissingAuditEffectCounterpart_MultipleMappingsUseDeterministicOrder()
+        public void RuleTests_MissingAuditEffectCounterpart_EachMissingCounterpartIsReportedSeparately()
         {
-            MissingAuditEffectCounterpartTests.AssertFinding(
-                allowedValues: @"[""deployIfNotExists"", ""deny""]",
-                expectedMissingCounterparts: "'audit', 'auditIfNotExists'");
+            var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
+                allowedValues: @"[""deployIfNotExists"", ""deny""]");
+
+            var results = MissingAuditEffectCounterpartTests
+                .CreateLinter()
+                .Lint(rawPolicyDefinition: policyDefinition);
+
+            results.Should().HaveCount(2);
+            results.Should().ContainEquivalentOf(MissingAuditEffectCounterpartTests.ExpectedOutput(
+                enforcementEffect: "deny",
+                counterpart: "audit"));
+            results.Should().ContainEquivalentOf(MissingAuditEffectCounterpartTests.ExpectedOutput(
+                enforcementEffect: "deployIfNotExists",
+                counterpart: "auditIfNotExists"));
         }
 
         [Fact]
         public void RuleTests_MissingAuditEffectCounterpart_EffectValuesAreCaseInsensitive()
         {
-            MissingAuditEffectCounterpartTests.AssertFinding(
-                allowedValues: @"[""DeNy"", ""DePlOyIfNoTeXiStS""]",
-                expectedMissingCounterparts: "'audit', 'auditIfNotExists'");
+            var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
+                allowedValues: @"[""DeNy"", ""DePlOyIfNoTeXiStS""]");
+
+            var results = MissingAuditEffectCounterpartTests
+                .CreateLinter()
+                .Lint(rawPolicyDefinition: policyDefinition);
+
+            results.Should().HaveCount(2);
+            results.Should().ContainEquivalentOf(MissingAuditEffectCounterpartTests.ExpectedOutput(
+                enforcementEffect: "deny",
+                counterpart: "audit"));
+            results.Should().ContainEquivalentOf(MissingAuditEffectCounterpartTests.ExpectedOutput(
+                enforcementEffect: "deployIfNotExists",
+                counterpart: "auditIfNotExists"));
         }
 
         [Fact]
@@ -181,7 +208,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 metadata: MissingAuditEffectCounterpartTests.MockMetadata);
         }
 
-        private static void AssertFinding(string allowedValues, string expectedMissingCounterparts)
+        private static void AssertFinding(
+            string allowedValues,
+            string expectedEnforcementEffect,
+            string expectedCounterpart)
         {
             var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
                 allowedValues: allowedValues);
@@ -191,8 +221,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 .Lint(rawPolicyDefinition: policyDefinition);
 
             results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(MissingAuditEffectCounterpartTests.ExpectedOutput(
+                enforcementEffect: expectedEnforcementEffect,
+                counterpart: expectedCounterpart));
+        }
 
-            var output = new LinterOutput(
+        private static LinterOutput ExpectedOutput(string enforcementEffect, string counterpart)
+        {
+            return new LinterOutput(
                 RuleIdentifier: "missing-audit-effect-counterpart",
                 Title: "Missing Audit Effect Counterpart",
                 Severity: Severity.Informational,
@@ -200,9 +236,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 33,
                 Path: "properties.parameters.effect",
-                Description: $"The effect parameter 'effect' is missing these audit counterparts from its allowedValues: {expectedMissingCounterparts}. Adding them lets assignments use non-enforcing behavior without changing the policy definition.");
-
-            results.Should().ContainEquivalentOf(output);
+                Description: $"The effect parameter 'effect' allows the enforcement effect '{enforcementEffect}' but not its audit counterpart '{counterpart}'. Adding '{counterpart}' lets assignments use non-enforcing behavior without changing the policy definition.");
         }
 
         private static string ParameterizedEffectPolicy(

@@ -20,8 +20,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Missing Audit Effect Counterpart";
 
         private const string RuleDescription =
-            "The effect parameter '{0}' is missing these audit counterparts from its allowedValues: {1}. " +
-            "Adding them lets assignments use non-enforcing behavior without changing the policy definition.";
+            "The effect parameter '{0}' allows the enforcement effect '{1}' but not its audit counterpart '{2}'. " +
+            "Adding '{2}' lets assignments use non-enforcing behavior without changing the policy definition.";
 
         private static readonly (string Counterpart, string[] EnforcementEffects)[] CounterpartMappings =
         {
@@ -60,33 +60,26 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var allowedValueSet = new HashSet<string>(allowedValues, StringComparer.OrdinalIgnoreCase);
 
-            var missingCounterparts = MissingAuditEffectCounterpart.CounterpartMappings
-                .Where(mapping =>
-                    mapping.EnforcementEffects.Any(allowedValueSet.Contains) &&
-                    !allowedValueSet.Contains(mapping.Counterpart))
-                .Select(mapping => mapping.Counterpart)
-                .ToArray();
-
-            if (missingCounterparts.Length == 0)
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
             if (context.Parameters == null ||
                 !context.Parameters.TryGetValue(parameterName, out var parameter))
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var missingCounterpartList = $"'{string.Join("', '", missingCounterparts)}'";
-
-            return new[]
-            {
-                this.CreateInformational(
+            return MissingAuditEffectCounterpart.CounterpartMappings
+                .Where(mapping => !allowedValueSet.Contains(mapping.Counterpart))
+                .Select(mapping => new
+                {
+                    mapping.Counterpart,
+                    EnforcementEffect = mapping.EnforcementEffects.FirstOrDefault(allowedValueSet.Contains),
+                })
+                .Where(mapping => mapping.EnforcementEffect != null)
+                .Select(mapping => this.CreateInformational(
                     expression: parameter,
                     parameterName,
-                    missingCounterpartList),
-            };
+                    mapping.EnforcementEffect!,
+                    mapping.Counterpart))
+                .ToArray();
         }
     }
 }
