@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a policy that decides a virtual machine's OS type from the `Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType` [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) while using a request-time effect. Azure populates that property after the virtual machine is created, so it is not in the create or update request and the condition never matches at request time. The policy silently does nothing on the requests it was written to catch. This is a known [Azure Policy issue](https://github.com/Azure/azure-policy/blob/master/README.md#optional-or-auto-generated-resource-property-that-bypasses-policy-evaluation).
+This rule reports a policy that decides a virtual machine's OS type from the `Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType` [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) while using a request-time effect. Azure populates that property after the machine is created, so it is absent from the request that creates it and the condition does not match there. A non-compliant virtual machine can be created without the policy taking effect. This is a known [Azure Policy issue](https://github.com/Azure/azure-policy/blob/master/README.md#optional-or-auto-generated-resource-property-that-bypasses-policy-evaluation).
 
 Compliance scans of existing virtual machines are unaffected, because the property is present once the resource exists.
 

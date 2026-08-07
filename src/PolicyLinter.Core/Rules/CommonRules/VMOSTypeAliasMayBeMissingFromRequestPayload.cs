@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string VMOSTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
         private const string RuleTitle = "VM OS Type Alias May Be Missing from Request Payload";
-        private const string RuleDescription = "The field alias: '{0}' decides the OS type from a property that Azure populates after the virtual machine is created, so it is absent from the request and this condition never matches at request time under {1}. Match on the image instead, or evaluate after provisioning.";
+        private const string RuleDescription = "The field alias: '{0}' is absent from the request that creates a virtual machine, because Azure populates it afterwards, so this condition does not match there and {1} does not take effect on creation. Match on the image instead, or evaluate after provisioning.";
 
         private static readonly string[] AffectedEffects =
         {

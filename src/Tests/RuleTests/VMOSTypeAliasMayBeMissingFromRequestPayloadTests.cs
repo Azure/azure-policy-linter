@@ -12,7 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class VMOSTypeAliasMayBeMissingFromRequestPayloadTests
     {
         private const string VMOSTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
-        private const string DescriptionFormat = "The field alias: '{0}' decides the OS type from a property that Azure populates after the virtual machine is created, so it is absent from the request and this condition never matches at request time under {1}. Match on the image instead, or evaluate after provisioning.";
+        private const string DescriptionFormat = "The field alias: '{0}' is absent from the request that creates a virtual machine, because Azure populates it afterwards, so this condition does not match there and {1} does not take effect on creation. Match on the image instead, or evaluate after provisioning.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
