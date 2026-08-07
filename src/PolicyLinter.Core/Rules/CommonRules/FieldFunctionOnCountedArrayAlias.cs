@@ -6,35 +6,17 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using System.Collections.Generic;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
-    using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
 
     /// <summary>
     /// Flags scalar comparisons that use field() for a counted array alias inside count.where.
     /// </summary>
-    public sealed class FieldFunctionOnCountedArrayAlias : LinterRule<LeafCondition>
+    public sealed class FieldFunctionOnCountedArrayAlias : LinterRule<Reference>
     {
         private const string RuleTitle = "Field Function on Counted Array Alias";
         private const string RuleDescription =
             "The where condition uses field('{0}') on the counted alias, which has unintuitive behavior. Use current('{0}') to read the field of the array member being counted.";
-
-        private static readonly OrdinalInsensitiveHashSet ScalarComparisonOperators = new OrdinalInsensitiveHashSet
-        {
-            "equals",
-            "notEquals",
-            "like",
-            "notLike",
-            "match",
-            "notMatch",
-            "matchInsensitively",
-            "notMatchInsensitively",
-            "greater",
-            "greaterOrEquals",
-            "less",
-            "lessOrEquals",
-        };
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldFunctionOnCountedArrayAlias"/> class.
@@ -49,48 +31,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            if (expression.Operator == null ||
-                !FieldFunctionOnCountedArrayAlias.ScalarComparisonOperators.Contains(expression.Operator.Name))
+            if (expression.Kind != ReferenceKind.ResourceField ||
+                !expression.IsResolvedFieldReference() ||
+                expression.ReferencedCountExpressionScope == null ||
+                expression.Parent is not TemplateLanguageExpression)
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var outputs = new List<LinterOutput>();
-            foreach (var property in new[] { expression.Value, expression.Operator })
+            return new[]
             {
-                var reference = FieldFunctionOnCountedArrayAlias.GetCountedArrayFieldReference(property);
-                if (reference != null)
-                {
-                    outputs.Add(this.CreateWarning(property, reference.Identifier));
-                }
-            }
-
-            return outputs.ToArray();
-        }
-
-        private static Reference? GetCountedArrayFieldReference(Property? property)
-        {
-            if (property == null || property.LanguageExpressions.Length != 1)
-            {
-                return null;
-            }
-
-            var languageExpression = property.LanguageExpressions[0];
-            if (!string.Equals(languageExpression.Expression, property.Value.ToString(), StringComparison.Ordinal) ||
-                languageExpression.ReferenceKind != ReferenceKind.ResourceField ||
-                languageExpression.References.Length != 1)
-            {
-                return null;
-            }
-
-            var reference = languageExpression.References[0];
-            return reference.IsResolved &&
-                reference.PropertySelectionPath == null &&
-                reference.ReferencedCountExpressionScope != null
-                ? reference
-                : null;
+                this.CreateWarning(expression, expression.Identifier)
+            };
         }
     }
 }

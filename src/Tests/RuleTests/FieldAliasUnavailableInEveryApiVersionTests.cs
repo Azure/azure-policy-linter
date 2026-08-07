@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             AssertSingleFinding(
                 results: results,
                 alias: policyAlias,
-                resourceType: ResourceType,
+                resourceType: "microsoft.test/WIDGETS",
                 lineNumber: 7,
                 linePosition: 50,
                 path: "properties.policyRule.if.field");
@@ -96,7 +96,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             AssertSingleFinding(
                 results: results,
                 alias: Alias,
-                resourceType: "Microsoft.Test/widgets/alpha",
+                resourceType: ResourceType,
                 lineNumber: 7,
                 linePosition: 50,
                 path: "properties.policyRule.if.field");
@@ -178,7 +178,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_BlankResourceTypes_DoNotFire()
+        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_BlankMetadataResourceTypes_UseAliasResourceType()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -187,7 +187,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     PropertyMetadata(exists: false, resourceType: string.Empty, apiVersion: "2023-01-01"),
                     PropertyMetadata(exists: false, resourceType: "   ", apiVersion: "2024-01-01")));
 
-            results.Should().BeEmpty();
+            AssertSingleFinding(
+                results: results,
+                alias: Alias,
+                resourceType: ResourceType,
+                lineNumber: 7,
+                linePosition: 50,
+                path: "properties.policyRule.if.field");
         }
 
         [Fact]

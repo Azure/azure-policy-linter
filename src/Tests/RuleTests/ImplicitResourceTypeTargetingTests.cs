@@ -16,9 +16,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="FieldAliasWithoutExplicitTypeCondition"/> rule.
+    /// Tests for the <see cref="ImplicitResourceTypeTargeting"/> rule.
     /// </summary>
-    public class FieldAliasWithoutExplicitTypeConditionTests
+    public class ImplicitResourceTypeTargetingTests
     {
         private const string StorageAlias = "Contoso.Storage/accounts/setting";
         private const string OtherStorageAlias = "Contoso.Storage/accounts/otherSetting";
@@ -35,41 +35,41 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             aliasResolver: new AliasResolver());
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_OneAlias()
+        public void RuleTests_ImplicitResourceTypeTargeting_OneAlias()
         {
-            FieldAliasWithoutExplicitTypeConditionTests.AssertSingleFinding(
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
                 ifCondition: $@"{{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}",
                 resourceTypes: "Contoso.Storage/accounts");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_MultipleAliasesSameType()
+        public void RuleTests_ImplicitResourceTypeTargeting_MultipleAliasesSameType()
         {
-            FieldAliasWithoutExplicitTypeConditionTests.AssertSingleFinding(
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
                 ifCondition: $@"{{ ""allOf"": [{{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}, {{ ""field"": ""{OtherStorageAlias}"", ""equals"": ""enabled"" }}] }}",
                 resourceTypes: "Contoso.Storage/accounts");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_MultipleTypesAreSortedAndDeduplicated()
+        public void RuleTests_ImplicitResourceTypeTargeting_MultipleTypesAreSortedAndDeduplicated()
         {
-            FieldAliasWithoutExplicitTypeConditionTests.AssertSingleFinding(
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
                 ifCondition: $@"{{ ""allOf"": [{{ ""field"": ""{MultipleTypesAlias}"", ""equals"": ""enabled"" }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}",
-                resourceTypes: "Contoso.Compute/virtualMachines, Contoso.Storage/accounts");
+                resourceTypes: "Contoso.Common/resources, Contoso.Storage/accounts");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_FieldFunctionAlias()
+        public void RuleTests_ImplicitResourceTypeTargeting_FieldFunctionAlias()
         {
-            FieldAliasWithoutExplicitTypeConditionTests.AssertSingleFinding(
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
                 ifCondition: $@"{{ ""value"": ""[field('{FieldFunctionAlias}')]"", ""equals"": ""enabled"" }}",
                 resourceTypes: "Contoso.Network/virtualNetworks");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_CurrentFunctionAlias()
+        public void RuleTests_ImplicitResourceTypeTargeting_CurrentFunctionAlias()
         {
-            FieldAliasWithoutExplicitTypeConditionTests.AssertSingleFinding(
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
                 ifCondition: $@"{{ ""count"": {{ ""field"": ""{CountArrayAlias}"", ""where"": {{ ""value"": ""[current('{CurrentAlias}')]"", ""equals"": ""enabled"" }} }}, ""greater"": 0 }}",
                 resourceTypes: "Contoso.Storage/accounts");
         }
@@ -80,135 +80,142 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"{ ""field"": ""type"", ""notIn"": [""Contoso.Storage/accounts""] }")]
         [InlineData(@"{ ""field"": ""type"", ""equals"": ""[parameters('targetType')]"" }")]
         [InlineData(@"{ ""field"": ""type"", ""in"": ""[parameters('targetTypes')]"" }")]
-        [InlineData(@"{ ""field"": ""type"", ""equals"": ""   "" }")]
-        [InlineData(@"{ ""field"": ""type"", ""in"": [] }")]
-        [InlineData(@"{ ""field"": ""type"", ""in"": ["""", ""   ""] }")]
-        [InlineData(@"{ ""not"": { ""field"": ""type"", ""equals"": ""Contoso.Storage/accounts"" } }")]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_NonPositiveTypeCondition(string typeCondition)
+        public void RuleTests_ImplicitResourceTypeTargeting_NonPositiveTypeCondition(string typeCondition)
         {
-            FieldAliasWithoutExplicitTypeConditionTests.AssertSingleFinding(
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
                 ifCondition: $@"{{ ""allOf"": [{typeCondition}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}",
                 resourceTypes: "Contoso.Storage/accounts");
         }
 
-        [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_PositiveEquals()
+        [Theory]
+        [InlineData(@"{ ""field"": ""type"", ""equals"": ""   "" }")]
+        [InlineData(@"{ ""field"": ""type"", ""in"": [] }")]
+        [InlineData(@"{ ""field"": ""type"", ""in"": ["""", ""   ""] }")]
+        [InlineData(@"{ ""not"": { ""field"": ""type"", ""equals"": ""Contoso.Storage/accounts"" } }")]
+        public void RuleTests_ImplicitResourceTypeTargeting_LiteralTypeConditionCountsAsExplicit(string typeCondition)
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
+                ifCondition: $@"{{ ""allOf"": [{typeCondition}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_ImplicitResourceTypeTargeting_PositiveEquals()
+        {
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: $@"{{ ""allOf"": [{{ ""field"": ""TyPe"", ""equals"": ""Contoso.Storage/accounts"" }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}");
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_PositiveValueFieldEquals()
+        public void RuleTests_ImplicitResourceTypeTargeting_ValueFieldTypeIsNotAnExplicitTypeCondition()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
-                ifCondition: $@"{{ ""allOf"": [{{ ""value"": ""[field('type')]"", ""equals"": ""Contoso.Storage/accounts"" }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}");
-
-            results.Should().BeEmpty();
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
+                ifCondition: $@"{{ ""allOf"": [{{ ""value"": ""[field('type')]"", ""equals"": ""Contoso.Storage/accounts"" }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}",
+                resourceTypes: "Contoso.Storage/accounts");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_PositiveNonEmptyIn()
+        public void RuleTests_ImplicitResourceTypeTargeting_PositiveNonEmptyIn()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: $@"{{ ""allOf"": [{{ ""field"": ""type"", ""in"": ["""", ""Contoso.Storage/accounts""] }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}");
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_DoubleNotPositiveEquals()
+        public void RuleTests_ImplicitResourceTypeTargeting_DoubleNotPositiveEquals()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: $@"{{ ""allOf"": [{{ ""not"": {{ ""not"": {{ ""field"": ""type"", ""equals"": ""Contoso.Storage/accounts"" }} }} }}, {{ ""field"": ""{StorageAlias}"", ""equals"": ""enabled"" }}] }}");
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_NoAliases()
+        public void RuleTests_ImplicitResourceTypeTargeting_NoAliases()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: @"{ ""field"": ""location"", ""equals"": ""westus"" }");
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_UnresolvedDynamicAlias()
+        public void RuleTests_ImplicitResourceTypeTargeting_UnresolvedDynamicAlias()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: @"{ ""field"": ""[parameters('aliasName')]"", ""equals"": ""enabled"" }");
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_EmptyMetadata()
+        public void RuleTests_ImplicitResourceTypeTargeting_EmptyMetadata()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: $@"{{ ""field"": ""{EmptyMetadataAlias}"", ""equals"": ""enabled"" }}");
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_BlankResourceTypes()
+        public void RuleTests_ImplicitResourceTypeTargeting_BlankMetadataResourceTypes_UseAliasResourceType()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
-                ifCondition: $@"{{ ""field"": ""{BlankResourceTypeAlias}"", ""equals"": ""enabled"" }}");
-
-            results.Should().BeEmpty();
+            ImplicitResourceTypeTargetingTests.AssertSingleFinding(
+                ifCondition: $@"{{ ""field"": ""{BlankResourceTypeAlias}"", ""equals"": ""enabled"" }}",
+                resourceTypes: "Contoso.Blank/resources");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasWithoutExplicitTypeCondition_RealStorageAlias()
+        public void RuleTests_ImplicitResourceTypeTargeting_RealStorageAlias()
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            var results = ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: @"{ ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"", ""equals"": true }",
-                metadata: FieldAliasWithoutExplicitTypeConditionTests.RealTypeMetadata);
+                metadata: ImplicitResourceTypeTargetingTests.RealTypeMetadata);
 
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "field-alias-without-explicit-type-condition",
-                Title: "Field Alias Without Explicit Type Condition",
+                RuleIdentifier: "implicit-resource-type-targeting",
+                Title: "Implicit Resource Type Targeting",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 11,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "The policy rule uses field aliases that resolve to: 'Microsoft.Storage/storageAccounts'. It has no explicit 'type' condition, so the targeted resource types are implicit. Add a 'type' condition using 'equals' or 'in'.");
+                Description: "The policy targets fields of 'Microsoft.Storage/storageAccounts' without an explicit 'type' condition, leaving the targeted resource types implicit. Add a 'type' condition using 'equals' or 'in'.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         private static void AssertSingleFinding(string ifCondition, string resourceTypes)
         {
-            var results = FieldAliasWithoutExplicitTypeConditionTests.Lint(ifCondition);
+            var results = ImplicitResourceTypeTargetingTests.Lint(ifCondition);
 
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "field-alias-without-explicit-type-condition",
-                Title: "Field Alias Without Explicit Type Condition",
+                RuleIdentifier: "implicit-resource-type-targeting",
+                Title: "Implicit Resource Type Targeting",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 11,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: $"The policy rule uses field aliases that resolve to: '{resourceTypes}'. It has no explicit 'type' condition, so the targeted resource types are implicit. Add a 'type' condition using 'equals' or 'in'.");
+                Description: $"The policy targets fields of '{resourceTypes}' without an explicit 'type' condition, leaving the targeted resource types implicit. Add a 'type' condition using 'equals' or 'in'.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         private static LinterOutput[] Lint(string ifCondition)
         {
-            return FieldAliasWithoutExplicitTypeConditionTests.Lint(
+            return ImplicitResourceTypeTargetingTests.Lint(
                 ifCondition: ifCondition,
-                metadata: FieldAliasWithoutExplicitTypeConditionTests.TypeMetadata);
+                metadata: ImplicitResourceTypeTargetingTests.TypeMetadata);
         }
 
         private static LinterOutput[] Lint(string ifCondition, ITypeMetadata metadata)
@@ -216,7 +223,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new FieldAliasWithoutExplicitTypeCondition(),
+                    new ImplicitResourceTypeTargeting(),
                 },
                 metadata: metadata);
 

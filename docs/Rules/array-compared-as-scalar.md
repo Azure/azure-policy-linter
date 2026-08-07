@@ -1,8 +1,8 @@
-# Bare Array Field Compared as Scalar
+# Array Compared as Scalar
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| ResourceFields | bare-array-field-compared-as-scalar | Warning | default |
+| ResourceFields | array-compared-as-scalar | Warning | default |
 
 ## Description
 

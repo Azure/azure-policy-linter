@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | missing-audit-effect-counterpart | Informational | default |
+| BestPractices | missing-audit-effect-counterpart | Warning | default |
 
 ## Description
 

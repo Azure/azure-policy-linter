@@ -1,8 +1,8 @@
-# Field Alias Without Explicit Type Condition
+# Implicit Resource Type Targeting
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | field-alias-without-explicit-type-condition | Informational | default |
+| BestPractices | implicit-resource-type-targeting | Informational | default |
 
 ## Description
 
@@ -10,7 +10,7 @@ This rule reports a policy that targets the fields of a specific resource type (
 
 ## Suggestions
 
-- Add a positive literal `type` condition using `equals` or a nonempty `in` array to make the target resource types clear.
+- Add a `type` condition using `equals` or `in` to make the target resource types clear.
 
 ## Examples
 

@@ -312,9 +312,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("[current('Microsoft.Test/widgets/items[*].name')]")]
-        [InlineData("[first(field('Microsoft.Test/widgets/items[*].name'))]")]
-        [InlineData("[length(field('Microsoft.Test/widgets/items[*].name'))]")]
-        public void RuleTests_FieldFunctionOnCountedArrayAlias_OtherRootFunction_NoFinding(string value)
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_CurrentFunction_NoFinding(string value)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -351,7 +349,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldFunctionOnCountedArrayAlias_SelectedFieldResult_NoFinding()
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_SelectedFieldResult()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -383,7 +381,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
         }
 
         [Fact]
@@ -456,7 +454,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("contains", "\"approved\"")]
         [InlineData("in", "[\"approved\"]")]
         [InlineData("exists", "true")]
-        public void RuleTests_FieldFunctionOnCountedArrayAlias_ExcludedOperator_NoFinding(string operatorName, string operatorValue)
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_AnyOperator(string operatorName, string operatorValue)
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -491,7 +489,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 .Replace("__OPERAND__", operatorValue);
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
         }
 
         [Fact]
@@ -536,7 +534,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldFunctionOnCountedArrayAlias_ValueContainsExpressionAndOtherText_NoFinding()
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_ValueContainsExpressionAndOtherText()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -571,7 +569,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
         }
     }
 }

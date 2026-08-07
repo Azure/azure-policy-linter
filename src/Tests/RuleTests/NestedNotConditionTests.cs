@@ -12,9 +12,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="DirectlyNestedNotCondition"/> rule.
+    /// Tests for the <see cref="NestedNotCondition"/> rule.
     /// </summary>
-    public class DirectlyNestedNotConditionTests
+    public class NestedNotConditionTests
     {
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -22,12 +22,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_SimpleDoubleNot()
+        public void RuleTests_NestedNotCondition_SimpleDoubleNot()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 
@@ -56,8 +56,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "directly-nested-not-condition",
-                Title: "Directly Nested Not Condition",
+                RuleIdentifier: "nested-not-condition",
+                Title: "Nested Not Condition",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 8,
@@ -69,12 +69,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_DoubleNotUnderAllOf()
+        public void RuleTests_NestedNotCondition_DoubleNotUnderAllOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 
@@ -111,8 +111,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "directly-nested-not-condition",
-                Title: "Directly Nested Not Condition",
+                RuleIdentifier: "nested-not-condition",
+                Title: "Nested Not Condition",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 14,
@@ -124,12 +124,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_DoubleNotUnderAnyOf()
+        public void RuleTests_NestedNotCondition_DoubleNotUnderAnyOf()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 
@@ -166,8 +166,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "directly-nested-not-condition",
-                Title: "Directly Nested Not Condition",
+                RuleIdentifier: "nested-not-condition",
+                Title: "Nested Not Condition",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 14,
@@ -179,12 +179,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_TripleNot()
+        public void RuleTests_NestedNotCondition_TripleNot()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 
@@ -215,25 +215,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "directly-nested-not-condition",
-                Title: "Directly Nested Not Condition",
+                RuleIdentifier: "nested-not-condition",
+                Title: "Nested Not Condition",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
-                LineNumber: 8,
-                LinePosition: 34,
-                Path: "properties.policyRule.if.not.not",
+                LineNumber: 9,
+                LinePosition: 36,
+                Path: "properties.policyRule.if.not.not.not",
                 Description: "Two nested 'not' operators negate the same condition, which adds nesting without changing the result. Remove both.");
 
             results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_SingleNot_NoFinding()
+        public void RuleTests_NestedNotCondition_SingleNot_NoFinding()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 
@@ -261,12 +261,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_NotSeparatedByAllOf_NoFinding()
+        public void RuleTests_NestedNotCondition_NotSeparatedByAllOf_NoFinding()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 
@@ -300,12 +300,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_DirectlyNestedNotCondition_NotSeparatedByAnyOf_NoFinding()
+        public void RuleTests_NestedNotCondition_NotSeparatedByAnyOf_NoFinding()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new DirectlyNestedNotCondition()
+                    new NestedNotCondition()
                 },
                 metadata: MockMetadata);
 

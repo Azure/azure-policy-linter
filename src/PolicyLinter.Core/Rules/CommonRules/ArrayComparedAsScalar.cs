@@ -14,11 +14,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Detects bare array field aliases used with scalar comparison operators and literal scalar values.
+    /// Detects array field aliases compared against a literal scalar value.
     /// </summary>
-    public sealed class BareArrayFieldComparedAsScalar : LinterRule<LeafCondition>
+    public sealed class ArrayComparedAsScalar : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Bare Array Field Compared as Scalar";
+        private const string RuleTitle = "Array Compared as Scalar";
         private const string RuleDescription =
             "The field alias: '{0}' refers to an entire array, so comparing it with '{1}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.";
 
@@ -39,13 +39,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BareArrayFieldComparedAsScalar"/> class.
+        /// Initializes a new instance of the <see cref="ArrayComparedAsScalar"/> class.
         /// </summary>
-        public BareArrayFieldComparedAsScalar() : base(
-            identifier: "bare-array-field-compared-as-scalar",
+        public ArrayComparedAsScalar() : base(
+            identifier: "array-compared-as-scalar",
             category: Category.ResourceFields,
-            title: BareArrayFieldComparedAsScalar.RuleTitle,
-            descriptionFormat: BareArrayFieldComparedAsScalar.RuleDescription,
+            title: ArrayComparedAsScalar.RuleTitle,
+            descriptionFormat: ArrayComparedAsScalar.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -67,8 +67,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var comparisonOperator = expression.Operator;
             if (comparisonOperator == null ||
-                !BareArrayFieldComparedAsScalar.ScalarComparisonOperators.Contains(comparisonOperator.Name) ||
-                !BareArrayFieldComparedAsScalar.IsLiteralScalar(comparisonOperator))
+                !ArrayComparedAsScalar.ScalarComparisonOperators.Contains(comparisonOperator.Name) ||
+                !ArrayComparedAsScalar.IsLiteralScalar(comparisonOperator))
             {
                 return Array.Empty<LinterOutput>();
             }

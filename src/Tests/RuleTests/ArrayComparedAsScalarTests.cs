@@ -21,9 +21,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="BareArrayFieldComparedAsScalar"/> rule.
+    /// Tests for the <see cref="ArrayComparedAsScalar"/> rule.
     /// </summary>
-    public class BareArrayFieldComparedAsScalarTests
+    public class ArrayComparedAsScalarTests
     {
         private const string ArrayAlias = "Microsoft.Test/widgets/arrayProperty";
         private const string ArrayAliasWithAbsentVersions = "Microsoft.Test/widgets/arrayPropertyWithAbsentVersions";
@@ -42,11 +42,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             aliasResolver: new AliasResolver());
 
         [Fact]
-        public void RuleTests_BareArrayFieldComparedAsScalar_Equals()
+        public void RuleTests_ArrayComparedAsScalar_Equals()
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
-                alias: BareArrayFieldComparedAsScalarTests.ArrayAlias,
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
+                alias: ArrayComparedAsScalarTests.ArrayAlias,
                 operatorName: "equals",
                 operatorValue: @"""ready""");
 
@@ -55,8 +55,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "bare-array-field-compared-as-scalar",
-                Title: "Bare Array Field Compared as Scalar",
+                RuleIdentifier: "array-compared-as-scalar",
+                Title: "Array Compared as Scalar",
                 Severity: Severity.Warning,
                 Category: Category.ResourceFields,
                 LineNumber: 7,
@@ -79,11 +79,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("less", "5")]
         [InlineData("lessOrEquals", "5.5")]
         [InlineData("greaterOrEquals", "true")]
-        public void RuleTests_BareArrayFieldComparedAsScalar_MatchOrOrdering(string operatorName, string operatorValue)
+        public void RuleTests_ArrayComparedAsScalar_MatchOrOrdering(string operatorName, string operatorValue)
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
-                alias: BareArrayFieldComparedAsScalarTests.ArrayAlias,
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
+                alias: ArrayComparedAsScalarTests.ArrayAlias,
                 operatorName: operatorName,
                 operatorValue: operatorValue);
 
@@ -92,8 +92,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "bare-array-field-compared-as-scalar",
-                Title: "Bare Array Field Compared as Scalar",
+                RuleIdentifier: "array-compared-as-scalar",
+                Title: "Array Compared as Scalar",
                 Severity: Severity.Warning,
                 Category: Category.ResourceFields,
                 LineNumber: 7,
@@ -105,12 +105,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_BareArrayFieldComparedAsScalar_RealNsgArrayAlias()
+        public void RuleTests_ArrayComparedAsScalar_RealNsgArrayAlias()
         {
             const string alias = "Microsoft.Network/networkSecurityGroups/securityRules";
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter(
-                metadata: BareArrayFieldComparedAsScalarTests.RealTypeMetadata);
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
+            var linter = ArrayComparedAsScalarTests.CreateLinter(
+                metadata: ArrayComparedAsScalarTests.RealTypeMetadata);
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
                 alias: alias,
                 operatorName: "equals",
                 operatorValue: @"""ready""");
@@ -120,8 +120,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "bare-array-field-compared-as-scalar",
-                Title: "Bare Array Field Compared as Scalar",
+                RuleIdentifier: "array-compared-as-scalar",
+                Title: "Array Compared as Scalar",
                 Severity: Severity.Warning,
                 Category: Category.ResourceFields,
                 LineNumber: 7,
@@ -133,10 +133,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_BareArrayFieldComparedAsScalar_MixedCasingAndAbsentVersions()
+        public void RuleTests_ArrayComparedAsScalar_MixedCasingAndAbsentVersions()
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
                 alias: "microsoft.test/WIDGETS/arraypropertywithabsentversions",
                 operatorName: "EqUaLs",
                 operatorValue: "true");
@@ -146,8 +146,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "bare-array-field-compared-as-scalar",
-                Title: "Bare Array Field Compared as Scalar",
+                RuleIdentifier: "array-compared-as-scalar",
+                Title: "Array Compared as Scalar",
                 Severity: Severity.Warning,
                 Category: Category.ResourceFields,
                 LineNumber: 7,
@@ -167,10 +167,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(EmptyTypeAlias)]
         [InlineData(AnyTypeAlias)]
         [InlineData(NotSpecifiedTypeAlias)]
-        public void RuleTests_BareArrayFieldComparedAsScalar_NonArrayOrInsufficientMetadata(string alias)
+        public void RuleTests_ArrayComparedAsScalar_NonArrayOrInsufficientMetadata(string alias)
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
                 alias: alias,
                 operatorName: "equals",
                 operatorValue: @"""ready""");
@@ -188,11 +188,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("containsKey", @"""name""")]
         [InlineData("notContainsKey", @"""name""")]
         [InlineData("exists", "true")]
-        public void RuleTests_BareArrayFieldComparedAsScalar_ExcludedOperator(string operatorName, string operatorValue)
+        public void RuleTests_ArrayComparedAsScalar_ExcludedOperator(string operatorName, string operatorValue)
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
-                alias: BareArrayFieldComparedAsScalarTests.ArrayAlias,
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
+                alias: ArrayComparedAsScalarTests.ArrayAlias,
                 operatorName: operatorName,
                 operatorValue: operatorValue);
 
@@ -202,9 +202,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_BareArrayFieldComparedAsScalar_TemplateOperand()
+        public void RuleTests_ArrayComparedAsScalar_TemplateOperand()
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
             var policyDefinition = @"
                 {
                   ""properties"": {
@@ -234,11 +234,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData(@"[""ready""]")]
         [InlineData(@"{""state"":""ready""}")]
-        public void RuleTests_BareArrayFieldComparedAsScalar_NonScalarOperand(string operatorValue)
+        public void RuleTests_ArrayComparedAsScalar_NonScalarOperand(string operatorValue)
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var policyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
-                alias: BareArrayFieldComparedAsScalarTests.ArrayAlias,
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
+                alias: ArrayComparedAsScalarTests.ArrayAlias,
                 operatorName: "greater",
                 operatorValue: operatorValue);
 
@@ -248,7 +248,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_BareArrayFieldComparedAsScalar_NullOperand()
+        public void RuleTests_ArrayComparedAsScalar_NullOperand()
         {
             var parent = new TestPolicyExpression();
             var condition = new GenericObjectProperty<ConditionObject>
@@ -257,7 +257,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     Field = new GenericObjectProperty<string>
                     {
-                        Value = BareArrayFieldComparedAsScalarTests.ArrayAlias,
+                        Value = ArrayComparedAsScalarTests.ArrayAlias,
                     },
                     Greater = new GenericObjectProperty<JToken>
                     {
@@ -270,21 +270,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 parentPath: ImmutableArray<string>.Empty,
                 parent: parent,
                 countExpressionScopes: new Stack<CountExpressionScope>(),
-                typeMetadata: BareArrayFieldComparedAsScalarTests.TypeMetadata);
-            var rule = (ILinterRule)new BareArrayFieldComparedAsScalar();
+                typeMetadata: ArrayComparedAsScalarTests.TypeMetadata);
+            var rule = (ILinterRule)new ArrayComparedAsScalar();
 
             var results = rule.Evaluate(
                 expression: expression,
-                context: new LinterContext(resourceTypeMetadata: BareArrayFieldComparedAsScalarTests.TypeMetadata));
+                context: new LinterContext(resourceTypeMetadata: ArrayComparedAsScalarTests.TypeMetadata));
 
             results.Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_BareArrayFieldComparedAsScalar_UnresolvedOrDynamicFieldAccessor()
+        public void RuleTests_ArrayComparedAsScalar_UnresolvedOrDynamicFieldAccessor()
         {
-            var linter = BareArrayFieldComparedAsScalarTests.CreateLinter();
-            var unresolvedPolicyDefinition = BareArrayFieldComparedAsScalarTests.CreatePolicy(
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var unresolvedPolicyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
                 alias: "Microsoft.Test/widgets/unresolvedProperty",
                 operatorName: "equals",
                 operatorValue: @"""ready""");
@@ -318,8 +318,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         private static PolicyLinter CreateLinter()
         {
-            return BareArrayFieldComparedAsScalarTests.CreateLinter(
-                metadata: BareArrayFieldComparedAsScalarTests.TypeMetadata);
+            return ArrayComparedAsScalarTests.CreateLinter(
+                metadata: ArrayComparedAsScalarTests.TypeMetadata);
         }
 
         private static PolicyLinter CreateLinter(ITypeMetadata metadata)
@@ -327,7 +327,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new BareArrayFieldComparedAsScalar(),
+                    new ArrayComparedAsScalar(),
                 },
                 metadata: metadata);
         }
@@ -356,84 +356,84 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             /// <inheritdoc/>
             public bool TryGetAliasPropertyMetadata(string aliasName, out ResourcePropertyMetadata[] result)
             {
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.ArrayAlias, StringComparison.OrdinalIgnoreCase) ||
-                    string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.ArraySelectorAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.ArrayAlias, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(aliasName, ArrayComparedAsScalarTests.ArraySelectorAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "Array"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "Array"),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.ArrayAliasWithAbsentVersions, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.ArrayAliasWithAbsentVersions, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: false, type: string.Empty),
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "aRrAy"),
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "ARRAY"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: false, type: string.Empty),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "aRrAy"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "ARRAY"),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.ScalarAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.ScalarAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "String"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "String"),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.MixedTypeAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.MixedTypeAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "Array"),
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "String"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "Array"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "String"),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.AbsentAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.AbsentAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: false, type: string.Empty),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: false, type: string.Empty),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.EmptyMetadataAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.EmptyMetadataAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = Array.Empty<ResourcePropertyMetadata>();
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.EmptyTypeAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.EmptyTypeAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: string.Empty),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: string.Empty),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.AnyTypeAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.AnyTypeAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "Any"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "Any"),
                     };
                     return true;
                 }
 
-                if (string.Equals(aliasName, BareArrayFieldComparedAsScalarTests.NotSpecifiedTypeAlias, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(aliasName, ArrayComparedAsScalarTests.NotSpecifiedTypeAlias, StringComparison.OrdinalIgnoreCase))
                 {
                     result = new[]
                     {
-                        BareArrayFieldComparedAsScalarTests.CreateMetadata(exists: true, type: "NotSpecified"),
+                        ArrayComparedAsScalarTests.CreateMetadata(exists: true, type: "NotSpecified"),
                     };
                     return true;
                 }

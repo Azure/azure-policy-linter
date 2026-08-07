@@ -1,8 +1,8 @@
-# Directly Nested Not Condition
+# Nested Not Condition
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | directly-nested-not-condition | Informational | default |
+| BestPractices | nested-not-condition | Informational | default |
 
 ## Description
 

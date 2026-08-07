@@ -35,43 +35,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
-            var reference = expression.Field?.FieldAccessorReference;
+            var fieldAccessor = expression.Field?.FieldAccessorReference;
 
-            if (reference?.IsResolved != true ||
-                !FieldPathHelper.IsArrayAlias(reference.Identifier) ||
-                expression.Operator == null ||
-                string.Equals(expression.Operator.Name, "exists", StringComparison.OrdinalIgnoreCase) ||
-                ImplicitArrayEnumeration.IsFullyReducedByCountScope(reference))
+            if (fieldAccessor != null &&
+                fieldAccessor.IsResolved == true &&
+                FieldPathHelper.IsArrayAlias(fieldAccessor.Identifier) &&
+                fieldAccessor.ReferencedCountExpressionScope == null)
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateInformational(expression.Field, fieldAccessor.Identifier),
+                };
             }
 
-            return new[]
-            {
-                this.CreateInformational(expression.Field, reference.Identifier),
-            };
-        }
-
-        private static bool IsFullyReducedByCountScope(Reference reference)
-        {
-            var scope = reference.ReferencedCountExpressionScope;
-            return scope?.Type == CountScopeType.Field &&
-                ImplicitArrayEnumeration.CountArraySelectors(reference.Identifier) ==
-                ImplicitArrayEnumeration.CountArraySelectors(scope.Identifier);
-        }
-
-        private static int CountArraySelectors(string alias)
-        {
-            var count = 0;
-            var index = 0;
-
-            while ((index = alias.IndexOf("[*]", index, StringComparison.Ordinal)) >= 0)
-            {
-                count++;
-                index += 3;
-            }
-
-            return count;
+            return Array.Empty<LinterOutput>();
         }
     }
 }

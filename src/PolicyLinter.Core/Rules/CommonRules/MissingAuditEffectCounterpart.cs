@@ -20,14 +20,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Missing Audit Effect Counterpart";
 
         private const string RuleDescription =
-            "The effect parameter '{0}' allows the enforcement effect '{1}' but not its audit counterpart '{2}'. " +
+            "The effect parameter '{0}' allows the enforcement effects '{1}' but not their audit counterpart '{2}'. " +
             "Adding '{2}' lets an assignment audit the policy before enforcing it.";
 
-        private static readonly (string Counterpart, string[] EnforcementEffects)[] CounterpartMappings =
+        private static readonly IReadOnlyDictionary<string, string> EnforcementToAuditCounterpartMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
-            ("audit", new[] { "deny", "modify", "append" }),
-            ("auditIfNotExists", new[] { "deployIfNotExists" }),
-            ("auditAction", new[] { "denyAction" }),
+            { "deny", "audit" },
+            { "modify", "audit" },
+            { "append", "audit" },
+            { "deployIfNotExists", "auditIfNotExists" },
+            { "denyAction", "auditAction" },
         };
 
         /// <summary>
@@ -59,7 +61,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var allowedValueSet = new HashSet<string>(allowedValues, StringComparer.OrdinalIgnoreCase);
 
             if (context.Parameters == null ||
                 !context.Parameters.TryGetValue(parameterName, out var parameter))
@@ -67,20 +68,33 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            return MissingAuditEffectCounterpart.CounterpartMappings
-                .Where(mapping => !allowedValueSet.Contains(mapping.Counterpart))
-                .Select(mapping => new
+            var allowedValuesSet = new HashSet<string>(allowedValues, StringComparer.OrdinalIgnoreCase);
+            var encounteredEnforcementEffects = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var auditCounterparts = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var allowedValue in allowedValues)
+            {
+                _ = allowedValuesSet.Add(allowedValue);
+                if (MissingAuditEffectCounterpart.EnforcementToAuditCounterpartMap.TryGetValue(key: allowedValue, out var auditCounterpart))
                 {
-                    mapping.Counterpart,
-                    EnforcementEffect = mapping.EnforcementEffects.FirstOrDefault(allowedValueSet.Contains),
-                })
-                .Where(mapping => mapping.EnforcementEffect != null)
-                .Select(mapping => this.CreateInformational(
-                    expression: parameter,
-                    parameterName,
-                    mapping.EnforcementEffect!,
-                    mapping.Counterpart))
-                .ToArray();
+                    _ = encounteredEnforcementEffects.Add(allowedValue);
+                    _ = auditCounterparts.Add(auditCounterpart);
+                }
+            }
+
+            if (auditCounterparts.Count == 1 && allowedValuesSet.All(allowedValue => encounteredEnforcementEffects.Contains(allowedValue)))
+            {
+                var requiredAuditCounterpart = auditCounterparts.First();
+                return new[]
+                {
+                    this.CreateWarning(expression: parameter, parameterName, string.Join(',', encounteredEnforcementEffects), requiredAuditCounterpart),
+                };
+            }
+
+            // The effect parameter allowed values either has no enforcement effects,
+            // or it's mixing mismatching enforcement effects (e.g. "deny" and "deployIfNotExists"),
+            // or mismatching enforcement/audit counterparts (e.g. "deny" and "auditIfNotExists"),
+            // or it has values representing unknown policy effects (e.g. "deny" and "foo").
+            return Array.Empty<LinterOutput>();
         }
     }
 }

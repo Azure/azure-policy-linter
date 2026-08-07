@@ -35,7 +35,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            if (!expression.IsResolvedFieldReference() || !FieldPathHelper.IsFieldAlias(expression.Identifier))
+            if (!expression.IsResolvedFieldReference() ||
+                !FieldPathHelper.IsFieldAlias(expression.Identifier) ||
+                !FieldPathHelper.FieldAliasHasFullyQualifiedResourceType(expression.Identifier))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -46,21 +48,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var resourceType = expression.ResourcePropertyMetadata
-                .Select(metadata => metadata.ResourceType)
-                .Where(resourceType => !string.IsNullOrWhiteSpace(resourceType))
-                .OrderBy(resourceType => resourceType, comparer: StringComparer.OrdinalIgnoreCase)
-                .ThenBy(resourceType => resourceType, comparer: StringComparer.Ordinal)
-                .FirstOrDefault();
-
-            if (resourceType == null)
-            {
-                return Array.Empty<LinterOutput>();
-            }
+            var resourceType = FieldPathHelper.GetFieldAliasFullyQualifiedResourceType(expression.Identifier);
 
             return new[]
             {
-                this.CreateError(expression, expression.Identifier, resourceType),
+                this.CreateError(expression, expression.Identifier, resourceType)
             };
         }
     }

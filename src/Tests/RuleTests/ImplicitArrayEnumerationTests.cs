@@ -197,7 +197,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_ImplicitArrayEnumeration_NestedArrayInsideOuterCountWhere()
+        public void RuleTests_ImplicitArrayEnumeration_NestedArrayInsideOuterCountWhere_NoFinding()
         {
             var policyDefinition = @"{
   ""properties"": {
@@ -219,12 +219,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
   }
 }";
 
-            ImplicitArrayEnumerationTests.AssertSingleFinding(
-                policyDefinition: policyDefinition,
-                lineNumber: 8,
-                linePosition: 76,
-                path: "properties.policyRule.if.count.where.field",
-                alias: "Microsoft.Test/testResource/items[*].children[*].name");
+            ImplicitArrayEnumerationTests.AssertNoFinding(policyDefinition);
         }
 
         [Fact]
@@ -264,7 +259,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
   }
 }";
 
-            ImplicitArrayEnumerationTests.AssertNoFinding(policyDefinition);
+            ImplicitArrayEnumerationTests.AssertSingleFinding(
+                policyDefinition: policyDefinition,
+                lineNumber: 5,
+                linePosition: 60,
+                path: "properties.policyRule.if.field",
+                alias: "Microsoft.Test/testResource/items[*].name");
         }
 
         [Fact]
