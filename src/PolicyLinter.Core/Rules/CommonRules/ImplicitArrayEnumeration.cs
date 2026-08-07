@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Implicit Array Enumeration";
 
         private const string RuleDescription =
-            "The field alias '{0}' selects array members. Azure Policy applies the condition to every value selected by the array alias, and an empty collection satisfies it. Use field count when you need explicit member or empty-array handling.";
+            "The field alias '{0}' selects array members, so Azure Policy requires every member to match. Use a field count expression when the policy needs to state how many members must match.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ImplicitArrayEnumeration"/> class.

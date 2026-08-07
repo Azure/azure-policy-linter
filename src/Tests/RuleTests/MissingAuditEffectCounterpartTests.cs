@@ -108,7 +108,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         public void RuleTests_MissingAuditEffectCounterpart_AllCounterpartsPresent()
         {
             var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
-                allowedValues: @"[""deny"", ""modify"", ""append"", ""deployIfNotExists"", ""AUDIT"", ""AuditIfNotExists""]");
+                allowedValues: @"[""deny"", ""modify"", ""append"", ""deployIfNotExists"", ""denyAction"", ""AUDIT"", ""AuditIfNotExists"", ""AuditAction""]");
 
             var results = MissingAuditEffectCounterpartTests
                 .CreateLinter()
@@ -118,16 +118,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_MissingAuditEffectCounterpart_DenyActionDoesNotRequireCounterpart()
+        public void RuleTests_MissingAuditEffectCounterpart_DenyActionRequiresAuditAction()
         {
-            var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
-                allowedValues: @"[""denyAction""]");
-
-            var results = MissingAuditEffectCounterpartTests
-                .CreateLinter()
-                .Lint(rawPolicyDefinition: policyDefinition);
-
-            results.Should().BeEmpty();
+            MissingAuditEffectCounterpartTests.AssertFinding(
+                allowedValues: @"[""denyAction""]",
+                expectedEnforcementEffect: "denyAction",
+                expectedCounterpart: "auditAction");
         }
 
         [Fact]
@@ -236,7 +232,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 33,
                 Path: "properties.parameters.effect",
-                Description: $"The effect parameter 'effect' allows the enforcement effect '{enforcementEffect}' but not its audit counterpart '{counterpart}'. Adding '{counterpart}' lets assignments use non-enforcing behavior without changing the policy definition.");
+                Description: $"The effect parameter 'effect' allows the enforcement effect '{enforcementEffect}' but not its audit counterpart '{counterpart}'. Adding '{counterpart}' lets an assignment audit the policy before enforcing it.");
         }
 
         private static string ParameterizedEffectPolicy(

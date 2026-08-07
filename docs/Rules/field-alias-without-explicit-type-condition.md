@@ -8,8 +8,6 @@
 
 This rule reports a policy rule that uses [field aliases](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) to target resources without an explicit `type` condition. Targeting by alias alone is valid, but it leaves the intended resource types implicit and harder for a reader to determine.
 
-Note that the rule infers the targeted resource types from the aliases the condition uses, which may not reflect the resource types the policy actually applies to.
-
 ## Suggestions
 
 - Add a positive literal `type` condition using `equals` or a nonempty `in` array to make the target resource types clear.

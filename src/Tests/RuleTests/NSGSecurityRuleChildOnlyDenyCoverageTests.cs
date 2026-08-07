@@ -244,7 +244,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: path,
-                Description: $"The alias '{alias}' applies to security rules deployed as child resources. Security rules submitted with the parent network security group are not covered. Add equivalent parent resource coverage in this or another policy.");
+                Description: $"The alias '{alias}' targets security rules deployed as their own resource, but the policy does not target the security rules carried on the parent network security group. A security rule can be created either way. Cover both routes, here or in another policy.");
         }
     }
 }

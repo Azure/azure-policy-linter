@@ -6,11 +6,9 @@
 
 ## Description
 
-This rule reports a String parameter referenced directly by `then.effect` when its `allowedValues` contains an enforcement effect without the corresponding audit effect. The mappings are `deny`, `modify`, or `append` -> `audit`, and `deployIfNotExists` -> `auditIfNotExists`. Including the counterparts lets assignments use non-enforcing behavior without changing the policy definition.
+This rule reports a policy whose effect is parameterized, but whose allowed effects are enforcement effects only. An assignment can then only block or change requests. Offering the matching audit effect as well lets the policy be assigned in audit mode first, to see what it would have blocked before it starts blocking.
 
-`denyAction` has no supported audit counterpart and is not reported.
-
-See [interchanging effects](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics#interchanging-effects) for guidance on which effects can be interchanged.
+The counterparts are `deny`, `modify`, and `append` -> `audit`, `deployIfNotExists` -> `auditIfNotExists`, and `denyAction` -> `auditAction`. See [interchanging effects](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics#interchanging-effects).
 
 ## Suggestions
 

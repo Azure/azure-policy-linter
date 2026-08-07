@@ -340,7 +340,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LinePosition: linePosition,
                 Path: path,
                 Description:
-                    $"The field alias '{alias}' selects array members. Azure Policy applies the condition to every value selected by the array alias, and an empty collection satisfies it. Use field count when you need explicit member or empty-array handling.");
+                    $"The field alias '{alias}' selects array members, so Azure Policy requires every member to match. Use a field count expression when the policy needs to state how many members must match.");
 
             results.Should().ContainEquivalentOf(output);
         }

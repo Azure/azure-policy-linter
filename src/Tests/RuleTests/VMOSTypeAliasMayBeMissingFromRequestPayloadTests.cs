@@ -12,7 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class VMOSTypeAliasMayBeMissingFromRequestPayloadTests
     {
         private const string VMOSTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
-        private const string DescriptionFormat = "The field alias: '{0}' may be absent from VM create/update payloads. When omitted, this condition cannot trigger request-time {1} behavior, though existing-resource compliance still works. Also match known image metadata when request-time OS detection is required.";
+        private const string DescriptionFormat = "The field alias: '{0}' decides the OS type from a property that Azure populates after the virtual machine is created, so it is absent from the request and this condition never matches at request time under {1}. Match on the image instead, or evaluate after provisioning.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -381,6 +381,31 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = CreateLinter().Lint(policyDefinition);
 
             results.Should().HaveCount(1);
+        }
+
+        [Theory]
+        [InlineData("false", 0)]
+        [InlineData("true", 1)]
+        public void RuleTests_VMOSTypeAliasMayBeMissingFromRequestPayload_BooleanExistsValue(string existsValue, int expectedCount)
+        {
+            var policyDefinition = @"{
+  ""properties"": {
+    ""mode"": ""Indexed"",
+    ""policyRule"": {
+      ""if"": {
+        ""field"": ""Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType"",
+        ""exists"": " + existsValue + @"
+      },
+      ""then"": {
+        ""effect"": ""deny""
+      }
+    }
+  }
+}";
+
+            var results = CreateLinter().Lint(policyDefinition);
+
+            results.Should().HaveCount(expectedCount);
         }
 
         private static PolicyLinter CreateLinter() => new PolicyLinter(

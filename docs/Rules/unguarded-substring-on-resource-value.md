@@ -6,11 +6,11 @@
 
 ## Description
 
-This rule reports a `value` expression that calls `substring` directly on a resource value with fixed bounds. `substring` produces an evaluation error when the requested range exceeds the length of its input - `substring(field('name'), 0, 3)` errors when the resource name is shorter than three characters - and a [template evaluation error makes the policy act as deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures).
+This rule reports an unsafe use of the `substring` function. `substring` fails when the requested range runs past the end of its input, and a [failed expression makes the policy deny the request](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures). Because the input here is a resource value, any resource with a shorter value is blocked, whether or not the policy was meant to block it.
 
 ## Suggestions
 
-Guard the `substring` call with `if()` and `length()` so it is evaluated only when the resource value is long enough for the requested range.
+Check the length before taking the substring, using `if()` and `length()`.
 
 ## Examples
 

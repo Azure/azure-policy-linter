@@ -6,14 +6,16 @@
 
 ## Description
 
-This rule reports an `All` mode deny-capable policy whose conditions reference the [security rule child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules) but never reference security rules through the parent [network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups). Security rules can be submitted either way, so a policy that only inspects the child resource does not see security rules submitted with the parent network security group. `Indexed` mode and an absent mode do not evaluate the child resource type at all, so they are outside the rule's scope.
+This rule reports a deny policy that targets [security rules deployed as their own resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules) but not the security rules carried on the [parent network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups). A security rule can be created either way, so the policy blocks one route and leaves the other open.
 
-Note that the rule infers the targeted resource types from the aliases the condition uses, which may not reflect the resource types the policy actually applies to.
+Only `All` mode policies evaluate the security rule resource, so the rule does not apply to policies in `Indexed` mode.
+
+Note that the rule infers what the policy targets from the security rule aliases it uses, which may not match the resource types the policy actually applies to.
 
 ## Suggestions
 
-- Check whether another assigned policy already covers requests that submit security rules with the parent network security group.
-- To cover both paths in this policy, add a branch for the parent resource and adapt the conditions to the parent aliases: `Microsoft.Network/networkSecurityGroups/securityRules/access` becomes `Microsoft.Network/networkSecurityGroups/securityRules[*].access`. Adding the parent resource type without adapting the conditions is not sufficient.
+- Check whether an existing assigned policy already covers security rules submitted with the parent network security group.
+- Author a separate policy targeting security rules submitted with the parent network security group, or add a branch for them here. The conditions have to be rewritten to the parent aliases: `Microsoft.Network/networkSecurityGroups/securityRules/access` becomes `Microsoft.Network/networkSecurityGroups/securityRules[*].access`.
 
 ## Examples
 

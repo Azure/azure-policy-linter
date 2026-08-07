@@ -6,21 +6,18 @@
 
 ## Description
 
-Some virtual machine create and update flows omit the `Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType` [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) because the resource provider generates the property. As documented in the Azure Policy [known issues](https://github.com/Azure/azure-policy/blob/master/README.md#optional-or-auto-generated-resource-property-that-bypasses-policy-evaluation), an omitted value prevents request-time `audit`, `deny`, or `append` behavior for conditions that use this alias. Existing-resource compliance scans remain correct because the property is present when the resource is retrieved.
+This rule reports a policy that decides a virtual machine's OS type from the `Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType` [field alias](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-alias) while using a request-time effect. Azure populates that property after the virtual machine is created, so it is not in the create or update request and the condition never matches at request time. The policy silently does nothing on the requests it was written to catch. This is a known [Azure Policy issue](https://github.com/Azure/azure-policy/blob/master/README.md#optional-or-auto-generated-resource-property-that-bypasses-policy-evaluation).
 
-Image metadata does not cover every image, so a policy that combines these conditions can still miss virtual machines whose OS type cannot be determined at request time.
+Compliance scans of existing virtual machines are unaffected, because the property is present once the resource exists.
 
 ## Suggestions
 
-- For request-time OS detection, keep the `osType` condition and add sibling `anyOf` branches for the known image publishers, offers, and SKUs the policy must recognize.
-- Add an `imageId` allowlist when specific custom or Compute Gallery images must be included.
-- When post-provisioning evaluation is appropriate, use the alias in an `existenceCondition` with an `auditIfNotExists` or `deployIfNotExists` effect.
+- To catch the OS type at request time, match on the image instead: add sibling `anyOf` branches for the image publishers, offers, and SKUs the policy needs to recognize, plus an `imageId` allowlist for specific custom or Compute Gallery images. Images outside that set still cannot be classified.
+- To keep using the alias, evaluate after provisioning instead: put it in an `existenceCondition` with an `auditIfNotExists` or `deployIfNotExists` effect.
 
 ## Examples
 
 ### Violation
-
-When the request omits `osType`, the `deny` effect does not occur for this condition during VM create or update:
 
 ```json
 {
@@ -29,17 +26,13 @@ When the request omits `osType`, the `deny` effect does not occur for this condi
 }
 ```
 
-### Mitigation
+### Correct
 
-Combine `osType` with image metadata for the images the policy must recognize. The finding still applies because the condition continues to use the alias, but the policy now classifies the requests that omit `osType` and carry known image metadata:
+Match the image, which is present in the request:
 
 ```json
 {
   "anyOf": [
-    {
-      "field": "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType",
-      "like": "Windows*"
-    },
     {
       "field": "Microsoft.Compute/imagePublisher",
       "equals": "MicrosoftWindowsServer"

@@ -20,9 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string SecurityRulesAlias = "Microsoft.Network/networkSecurityGroups/securityRules";
         private const string RuleTitle = "NSG Security Rule Parent-Only Deny Coverage";
         private const string RuleDescription =
-            "The alias '{0}' applies to security rules submitted with the parent network security group. " +
-            "Requests that directly create or update 'securityRules' child resources are not covered. " +
-            "Add equivalent child resource coverage in this or another policy.";
+            "The alias '{0}' targets the security rules carried on the parent network security group, but the policy does not target security rules deployed as their own resource. A security rule can be created either way. Cover both routes, here or in another policy.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NSGSecurityRuleParentOnlyDenyCoverage"/> class.

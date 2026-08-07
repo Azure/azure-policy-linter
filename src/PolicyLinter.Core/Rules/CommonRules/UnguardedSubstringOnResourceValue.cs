@@ -6,6 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
     using global::Azure.Deployments.Expression.Engines;
@@ -16,15 +17,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags direct substring calls on resource values when the requested substring
-    /// can exceed the resource value's length.
+    /// Flags substring calls on resource values that are not guarded against an input
+    /// shorter than the requested range.
     /// </summary>
     public sealed class UnguardedSubstringOnResourceValue : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "Unguarded Substring on Resource Value";
 
         private const string RuleDescription =
-            "The value expression calls 'substring' directly on a resource value. If the requested range extends beyond the value, policy evaluation fails and the policy acts as deny. Guard the call with 'if()' and 'length()'.";
+            "The condition calls 'substring' on a resource value without checking its length first. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Guard the call with 'if()' and 'length()'.";
+
+        /// <summary>
+        /// The functions that return a value with the same length as their input, so a resource
+        /// value wrapped in one of them is still of unknown length.
+        /// </summary>
+        private static readonly OrdinalInsensitiveHashSet LengthPreservingFunctions = new OrdinalInsensitiveHashSet
+        {
+            "toLower",
+            "toUpper",
+        };
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedSubstringOnResourceValue"/> class.
@@ -41,52 +52,63 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
-            if (expression.Value?.Value.Type != JTokenType.String ||
-                expression.Value.LanguageExpressions.Length != 1)
+            var outputs = new List<LinterOutput>();
+
+            foreach (var property in new[] { expression.Value, expression.Operator })
             {
-                return Array.Empty<LinterOutput>();
+                if (property != null &&
+                    property.LanguageExpressions.Any(languageExpression =>
+                        UnguardedSubstringOnResourceValue.ContainsUnguardedSubstring(
+                            expression: ExpressionsEngine.ParseLanguageExpression(languageExpression.Expression),
+                            references: languageExpression.References)))
+                {
+                    outputs.Add(this.CreateError(expression: property));
+                }
             }
 
-            var rawValue = expression.Value.Value.Value<string>();
-            if (rawValue == null ||
-                !string.Equals(rawValue, expression.Value.LanguageExpressions[0].Expression, StringComparison.Ordinal))
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            var languageExpression = ExpressionsEngine.ParseLanguageExpression(rawValue);
-            if (languageExpression is not FunctionExpression substring ||
-                !string.Equals(substring.Function, "substring", StringComparison.OrdinalIgnoreCase) ||
-                substring.Parameters.Length != 3)
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            if (!UnguardedSubstringOnResourceValue.IsResourceValueReference(
-                    expression: substring.Parameters[0],
-                    references: expression.Value.LanguageExpressions[0].References) ||
-                !UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(substring.Parameters[1], out var start) ||
-                !UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(substring.Parameters[2], out var length) ||
-                (start == 0 && length == 0))
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            return new[]
-            {
-                this.CreateError(expression: expression.Value),
-            };
+            return outputs.ToArray();
         }
 
         /// <summary>
-        /// The functions that return a value with the same length as their input, so a resource
-        /// value wrapped in one of them is still of unknown length.
+        /// Searches an expression for a substring call on a resource value with fixed bounds.
+        /// An 'if' is the documented guard for this pattern, so its contents are not searched.
         /// </summary>
-        private static readonly OrdinalInsensitiveHashSet LengthPreservingFunctions = new OrdinalInsensitiveHashSet
+        private static bool ContainsUnguardedSubstring(
+            LanguageExpression expression,
+            ImmutableArray<Reference> references)
         {
-            "toLower",
-            "toUpper",
-        };
+            if (expression is not FunctionExpression function ||
+                string.Equals(function.Function, "if", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            return UnguardedSubstringOnResourceValue.IsUnguardedSubstringCall(
+                    function: function,
+                    references: references) ||
+                function.Parameters.Any(parameter =>
+                    UnguardedSubstringOnResourceValue.ContainsUnguardedSubstring(
+                        expression: parameter,
+                        references: references));
+        }
+
+        private static bool IsUnguardedSubstringCall(
+            FunctionExpression function,
+            ImmutableArray<Reference> references)
+        {
+            if (!string.Equals(function.Function, "substring", StringComparison.OrdinalIgnoreCase) ||
+                function.Parameters.Length != 3 ||
+                !UnguardedSubstringOnResourceValue.IsResourceValueReference(
+                    expression: function.Parameters[0],
+                    references: references))
+            {
+                return false;
+            }
+
+            return UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(function.Parameters[1], out var start) &&
+                UnguardedSubstringOnResourceValue.TryGetNonnegativeIntegerLiteral(function.Parameters[2], out var length) &&
+                !(start == 0 && length == 0);
+        }
 
         /// <summary>
         /// Determines whether the substring input is a resource value whose length is unknown.

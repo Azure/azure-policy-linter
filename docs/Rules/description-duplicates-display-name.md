@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a nonblank `description` that repeats the [`displayName`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) without adding context. The `displayName` identifies the policy definition, while `description` explains what the policy checks and why.
+This rule reports a `description` that repeats the [`displayName`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) without adding context. The `displayName` identifies the policy definition, while `description` explains what the policy checks and why.
 
 ## Suggestions
 

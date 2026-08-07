@@ -21,12 +21,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         private const string RuleDescription =
             "The effect parameter '{0}' allows the enforcement effect '{1}' but not its audit counterpart '{2}'. " +
-            "Adding '{2}' lets assignments use non-enforcing behavior without changing the policy definition.";
+            "Adding '{2}' lets an assignment audit the policy before enforcing it.";
 
         private static readonly (string Counterpart, string[] EnforcementEffects)[] CounterpartMappings =
         {
             ("audit", new[] { "deny", "modify", "append" }),
             ("auditIfNotExists", new[] { "deployIfNotExists" }),
+            ("auditAction", new[] { "denyAction" }),
         };
 
         /// <summary>

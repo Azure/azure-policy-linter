@@ -6,14 +6,14 @@
 
 ## Description
 
-This rule reports a deny-capable policy whose conditions reference security rules through the parent [network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups) but never reference the [security rule child resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules). Security rules can be submitted either way, so a policy that only inspects the parent collection does not see security rules deployed as child resources.
+This rule reports a deny policy that targets the security rules carried on the [parent network security group](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups) but not [security rules deployed as their own resource](https://learn.microsoft.com/azure/templates/microsoft.network/networksecuritygroups/securityrules). A security rule can be created either way, so the policy blocks one route and leaves the other open.
 
-Note that the rule infers the targeted resource types from the aliases the condition uses, which may not reflect the resource types the policy actually applies to.
+Note that the rule infers what the policy targets from the security rule aliases it uses, which may not match the resource types the policy actually applies to.
 
 ## Suggestions
 
-- Check whether another assigned policy already covers requests that deploy security rules as child resources.
-- To cover both paths in this policy, add a branch for the child resource and adapt the conditions to the child aliases: `Microsoft.Network/networkSecurityGroups/securityRules[*].access` becomes `Microsoft.Network/networkSecurityGroups/securityRules/access`. Adding the child resource type without adapting the conditions is not sufficient.
+- Check whether an existing assigned policy already covers security rules deployed as their own resource.
+- Author a separate policy targeting security rules deployed as their own resource, or add a branch for them here. The conditions have to be rewritten to the child aliases: `Microsoft.Network/networkSecurityGroups/securityRules[*].access` becomes `Microsoft.Network/networkSecurityGroups/securityRules/access`.
 
 ## Examples
 

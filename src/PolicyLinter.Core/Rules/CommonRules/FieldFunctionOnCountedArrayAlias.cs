@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Field Function on Counted Array Alias";
         private const string RuleDescription =
-            "The field() function on the counted alias '{0}' returns a one-member array inside count.where, while current('{0}') returns the current scalar value. Use current('{0}') for this scalar comparison.";
+            "Inside count.where, field('{0}') returns a one-member array rather than the member's value, so this comparison never matches. Use current('{0}') to read the field of the member being counted.";
 
         private static readonly OrdinalInsensitiveHashSet ScalarComparisonOperators = new OrdinalInsensitiveHashSet
         {

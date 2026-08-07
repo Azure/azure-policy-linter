@@ -12,7 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedSubstringOnResourceValueTests
     {
         private const string ExpectedDescription =
-            "The value expression calls 'substring' directly on a resource value. If the requested range extends beyond the value, policy evaluation fails and the policy acts as deny. Guard the call with 'if()' and 'length()'.";
+            "The condition calls 'substring' on a resource value without checking its length first. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Guard the call with 'if()' and 'length()'.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -170,7 +170,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[if(greaterOrEquals(length(field('name')), 3), substring(field('name'), 0, 3), field('name'))]")]
         [InlineData("[substring('abcdef', 0, 3)]")]
         [InlineData("[substring(parameters('name'), 0, 3)]")]
-        [InlineData("[toLower(substring(field('name'), 0, 3))]")]
         [InlineData("[substring(field('name'), 0)]")]
         [InlineData("[substring(field('name'), 0, parameters('length'))]")]
         [InlineData("[substring(field('name'), -1, 3)]")]
@@ -182,6 +181,48 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = LintValueExpression(valueExpression);
 
             results.Should().BeEmpty();
+        }
+
+        [Theory]
+        [InlineData("[toLower(substring(field('name'), 0, 3))]")]
+        [InlineData("[concat(substring(field('name'), 0, 3), 'suffix')]")]
+        public void RuleTests_UnguardedSubstringOnResourceValue_NestedInsideAnotherFunction(string valueExpression)
+        {
+            var results = LintValueExpression(valueExpression);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(CreateExpectedOutput(
+                lineNumber: 6,
+                linePosition: 35 + valueExpression.Length));
+        }
+
+        [Fact]
+        public void RuleTests_UnguardedSubstringOnResourceValue_OperatorExpression()
+        {
+            const string operatorExpression = "[substring(field('name'), 0, 3)]";
+            var linter = CreateLinter();
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
+                    ""policyRule"": {{
+                      ""if"": {{
+                        ""field"": ""name"",
+                        ""equals"": ""{operatorExpression}""
+                      }},
+                      ""then"": {{
+                        ""effect"": ""deny""
+                      }}
+                    }}
+                  }}
+                }}";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(CreateExpectedOutput(
+                lineNumber: 7,
+                linePosition: 36 + operatorExpression.Length,
+                path: "properties.policyRule.if.equals"));
         }
 
         [Fact]
