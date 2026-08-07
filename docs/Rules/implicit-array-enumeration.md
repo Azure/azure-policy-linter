@@ -6,7 +6,7 @@
 
 ## Description
 
-A condition in `policyRule.if` that uses an array alias containing `[*]` as its `field` implicitly applies the condition to every value selected from the array. This behaves like an implicit `allOf`, and an empty collection satisfies the condition. See [referencing array members](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-members) for the supported Azure Policy behavior.
+This rule reports a condition whose `field` is an array alias containing `[*]`. Azure Policy applies the condition to every value selected from the array, which behaves like an implicit `allOf`, and an empty collection satisfies it. See [referencing array members](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-members) for the supported Azure Policy behavior.
 
 ## Suggestions
 

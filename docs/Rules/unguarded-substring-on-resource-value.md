@@ -6,7 +6,7 @@
 
 ## Description
 
-The `substring` function produces an evaluation error when the requested range exceeds the length of its input. For example, `substring(field('name'), 0, 3)` errors when the resource name is shorter than three characters, and a [template evaluation error makes the policy act as deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures). This rule flags direct three-argument `substring` calls on resource values with fixed bounds that require a positive minimum input length.
+This rule reports a `value` expression that calls `substring` directly on a resource value with fixed bounds. `substring` produces an evaluation error when the requested range exceeds the length of its input - `substring(field('name'), 0, 3)` errors when the resource name is shorter than three characters - and a [template evaluation error makes the policy act as deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures).
 
 ## Suggestions
 

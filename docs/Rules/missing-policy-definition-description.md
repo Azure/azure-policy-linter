@@ -6,7 +6,7 @@
 
 ## Description
 
-A nonblank [`description`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) provides context for when a policy definition is used. This rule reports definitions whose `description` is missing, empty, or whitespace-only.
+This rule reports a policy definition whose [`description`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) is missing, empty, or whitespace-only. The `description` gives readers the context for when the definition should be used.
 
 ## Suggestions
 

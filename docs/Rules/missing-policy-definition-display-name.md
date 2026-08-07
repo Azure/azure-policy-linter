@@ -6,7 +6,7 @@
 
 ## Description
 
-A nonblank [`displayName`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) identifies a policy definition. This rule reports definitions whose `displayName` is missing, empty, or whitespace-only.
+This rule reports a policy definition whose [`displayName`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) is missing, empty, or whitespace-only. The `displayName` is what identifies the definition wherever policies are listed.
 
 ## Suggestions
 

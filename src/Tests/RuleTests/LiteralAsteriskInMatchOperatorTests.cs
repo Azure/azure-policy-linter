@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: linePosition,
                 Path: $"properties.policyRule.if.{operatorName}",
-                Description: $"The condition uses the '{operatorName}' operator with value '{operandValue}'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Keep '*' for a literal asterisk. Otherwise, use the supported placeholders or consider '{replacement}', whose wildcard syntax is different.");
+                Description: $"The condition uses the '{operatorName}' operator with value '{operandValue}'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Use those placeholders, or '{replacement}', whose wildcard syntax is different.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -103,7 +103,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 36,
                 Path: "properties.policyRule.if.match",
-                Description: "The condition uses the 'match' operator with value '*'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Keep '*' for a literal asterisk. Otherwise, use the supported placeholders or consider 'like', whose wildcard syntax is different.");
+                Description: "The condition uses the 'match' operator with value '*'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Use those placeholders, or 'like', whose wildcard syntax is different.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -145,7 +145,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 45,
                 Path: "properties.policyRule.if.match",
-                Description: "The condition uses the 'match' operator with value 'resource-*'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Keep '*' for a literal asterisk. Otherwise, use the supported placeholders or consider 'like', whose wildcard syntax is different.");
+                Description: "The condition uses the 'match' operator with value 'resource-*'. Match operators treat '*' literally; supported placeholders are '#' for digits, '?' for letters, and '.' for any character. Use those placeholders, or 'like', whose wildcard syntax is different.");
 
             results.Should().ContainEquivalentOf(output);
         }
