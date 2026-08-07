@@ -6,7 +6,7 @@
 
 ## Description
 
-A bare array field alias resolves to the whole array, while an alias with `[*]` references its members. Comparing the whole array against a scalar value never inspects the members, so the condition does not evaluate the resource the way the alias suggests. See [Referencing array fields](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-fields).
+This rule reports a condition that compares an array field to a single value. A field alias without `[*]` resolves to the whole array rather than to its members, so the comparison is made against the array itself and no member is ever examined. See [Referencing array fields](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#referencing-array-fields).
 
 ## Suggestions
 

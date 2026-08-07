@@ -6,7 +6,7 @@
 
 ## Description
 
-The Azure Policy [`match`, `notMatch`, `matchInsensitively`, and `notMatchInsensitively` operators](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) treat `#` as a digit placeholder, `?` as a letter placeholder, and `.` as an any-character placeholder. An asterisk (`*`) is matched literally, so it does not provide wildcard matching with these operators.
+This rule reports a match-family condition whose value contains an asterisk (`*`). The [`match`, `notMatch`, `matchInsensitively`, and `notMatchInsensitively` operators](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#conditions) match `*` literally, so it does not act as a wildcard. Their placeholders are `#` for a digit, `?` for a letter, and `.` for any character.
 
 ## Suggestions
 

@@ -6,7 +6,7 @@
 
 ## Description
 
-Inside a field `count.where` condition, [`field()` on the counted array alias](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#the-field-function-inside-where-conditions) returns a one-member array, while `current()` returns the current scalar value. A scalar comparison against that one-member array does not compare the member being counted, so the `where` condition does not filter as intended.
+This rule reports a `count.where` condition that compares the result of [`field()` on the counted array alias](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#the-field-function-inside-where-conditions) to a single value. Inside `count.where`, `field()` returns a one-member array while `current()` returns the current member's scalar value, so the comparison is made against an array and never matches the member being counted.
 
 ## Suggestions
 
