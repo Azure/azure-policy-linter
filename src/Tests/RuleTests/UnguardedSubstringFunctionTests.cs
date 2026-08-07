@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("[substring(field('name'), 0, 3)]")]
-        [InlineData("[SuBsTrInG(field('name'), 0, 3)]")]
+        [InlineData("[SuBsTrInG(FiElD('name'), 0, 3)]")]
         [InlineData("[substring(parameters('name'), 0, 3)]")]
         [InlineData("[substring(field('name'), 2, 0)]")]
         [InlineData("[substring(field('name'), 0)]")]
