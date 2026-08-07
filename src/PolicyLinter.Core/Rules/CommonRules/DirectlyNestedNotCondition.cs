@@ -34,6 +34,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Quantifier expression, LinterContext context)
         {
+            if (expression.Parent is Quantifier parent &&
+                object.ReferenceEquals(parent.Not, expression))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             if (expression.Not is not Quantifier nestedNot || nestedNot.Not == null)
             {
                 return Array.Empty<LinterOutput>();

@@ -212,9 +212,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().HaveCount(2);
+            results.Should().HaveCount(1);
 
-            var outerPairOutput = new LinterOutput(
+            var output = new LinterOutput(
                 RuleIdentifier: "directly-nested-not-condition",
                 Title: "Directly Nested Not Condition",
                 Severity: Severity.Informational,
@@ -224,18 +224,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Path: "properties.policyRule.if.not.not",
                 Description: "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.");
 
-            var innerPairOutput = new LinterOutput(
-                RuleIdentifier: "directly-nested-not-condition",
-                Title: "Directly Nested Not Condition",
-                Severity: Severity.Informational,
-                Category: Category.BestPractices,
-                LineNumber: 9,
-                LinePosition: 36,
-                Path: "properties.policyRule.if.not.not.not",
-                Description: "The directly nested 'not' operators negate the same condition twice and are mechanically equivalent to the inner condition. Remove both directly nested 'not' operators.");
-
-            results.Should().ContainEquivalentOf(outerPairOutput);
-            results.Should().ContainEquivalentOf(innerPairOutput);
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Fact]

@@ -18,13 +18,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// </summary>
     public sealed class NSGSecurityRuleParentOnlyDenyCoverage : LinterRule<PolicyDefinitionProperties>
     {
-        private const string RuleTitle = "NSG Security Rule Parent-Only Deny Coverage";
-        private const string RuleDescription =
-            "This deny-capable definition covers security rules submitted in the parent NSG collection but not independently deployed child security-rule requests. Add equivalent child coverage in this or another policy.";
-
         private const string ParentResourceType = "Microsoft.Network/networkSecurityGroups";
         private const string ChildResourceType = "Microsoft.Network/networkSecurityGroups/securityRules";
         private const string ParentSecurityRulesAliasPrefix = "Microsoft.Network/networkSecurityGroups/securityRules[*]";
+        private const string RuleTitle = "NSG Security Rule Parent-Only Deny Coverage";
+        private const string RuleDescription =
+            "This deny-capable definition covers security rules submitted in the parent NSG collection but not independently deployed child security-rule requests. Add equivalent child coverage in this or another policy.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NSGSecurityRuleParentOnlyDenyCoverage"/> class.
@@ -56,13 +55,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 {
                     if (policyExpression is LeafCondition leaf)
                     {
-                        NSGSecurityRuleParentOnlyDenyCoverage.AddSelectedResourceTypes(
-                            leaf: leaf,
-                            selectedResourceTypes: selectedResourceTypes);
+                        selectedResourceTypes.UnionWith(
+                            NSGSecurityRuleParentOnlyDenyCoverage.GetSelectedResourceTypes(
+                                condition: leaf,
+                                considerNotParity: true));
                     }
                     else if (policyExpression is Reference reference &&
                         reference.IsResolvedFieldReference() &&
-                        NSGSecurityRuleParentOnlyDenyCoverage.IsParentSecurityRulesAlias(identifier: reference.Identifier))
+                        NSGSecurityRuleParentOnlyDenyCoverage.IsParentSecurityRulesAlias(
+                            identifier: reference.Identifier))
                     {
                         referencesParentSecurityRulesAlias = true;
                     }
@@ -73,8 +74,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             if (!selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ParentResourceType) ||
                 !referencesParentSecurityRulesAlias ||
-                (NSGSecurityRuleParentOnlyDenyCoverage.IsAllMode(expression.Mode) &&
-                NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage(expression.PolicyRule.If.Condition)))
+                (NSGSecurityRuleParentOnlyDenyCoverage.IsAllMode(mode: expression.Mode) &&
+                NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage(
+                    condition: expression.PolicyRule.If.Condition,
+                    isNegated: false)))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -112,136 +115,213 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 string.Equals(mode.Value.Value<string>(), "all", StringComparison.OrdinalIgnoreCase);
         }
 
-        private static bool HasEffectiveChildCoverage(Condition condition)
+        private static bool HasEffectiveChildCoverage(Condition condition, bool isNegated)
         {
             if (condition is LeafCondition leaf)
             {
-                var selectedResourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-                NSGSecurityRuleParentOnlyDenyCoverage.AddSelectedResourceTypes(
-                    leaf: leaf,
-                    selectedResourceTypes: selectedResourceTypes);
-                return selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType);
+                if (isNegated ||
+                    NSGSecurityRuleParentOnlyDenyCoverage.ContainsParentSecurityRulesAlias(
+                        condition: leaf))
+                {
+                    return false;
+                }
+
+                return NSGSecurityRuleParentOnlyDenyCoverage.GetSelectedResourceTypes(
+                        condition: leaf,
+                        considerNotParity: false)
+                    .Contains(
+                        NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType,
+                        StringComparer.OrdinalIgnoreCase);
             }
 
-            if (condition is not Quantifier quantifier || quantifier.Not != null)
+            if (condition is not Quantifier quantifier)
             {
                 return false;
             }
 
-            if (quantifier.AnyOf != null)
+            if (quantifier.Not != null)
             {
-                return quantifier.AnyOf.Value.Any(
-                    NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage);
+                return NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage(
+                    condition: quantifier.Not,
+                    isNegated: !isNegated);
             }
 
-            if (quantifier.AllOf == null ||
-                NSGSecurityRuleParentOnlyDenyCoverage.ContainsParentSecurityRulesAlias(condition))
+            var childConditions = quantifier.AllOf ?? quantifier.AnyOf;
+            if (childConditions == null)
             {
                 return false;
             }
 
-            return quantifier.AllOf.Value.Any(
-                NSGSecurityRuleParentOnlyDenyCoverage.ContainsPositiveChildTypeSelection);
+            var useAllOf = (quantifier.AllOf != null) != isNegated;
+            if (!useAllOf)
+            {
+                return childConditions.Value.Any(
+                    child => NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage(
+                        condition: child,
+                        isNegated: isNegated));
+            }
+
+            return childConditions.Value.All(
+                    child => NSGSecurityRuleParentOnlyDenyCoverage.CanApplyToChild(
+                        condition: child,
+                        isNegated: isNegated)) &&
+                childConditions.Value.Any(
+                    child => NSGSecurityRuleParentOnlyDenyCoverage.HasEffectiveChildCoverage(
+                        condition: child,
+                        isNegated: isNegated));
         }
 
-        private static bool ContainsPositiveChildTypeSelection(Condition condition)
+        private static bool CanApplyToChild(Condition condition, bool isNegated)
         {
-            var selectedResourceTypes = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            var visitor = new PolicyExpressionVisitor
+            if (condition is LeafCondition leaf)
             {
-                Visit = policyExpression =>
+                if (NSGSecurityRuleParentOnlyDenyCoverage.ContainsParentSecurityRulesAlias(
+                    condition: leaf))
                 {
-                    if (policyExpression is LeafCondition leaf)
-                    {
-                        NSGSecurityRuleParentOnlyDenyCoverage.AddSelectedResourceTypes(
-                            leaf: leaf,
-                            selectedResourceTypes: selectedResourceTypes);
-                    }
-                },
-            };
+                    return false;
+                }
 
-            condition.Visit(visitor);
-            return selectedResourceTypes.Contains(NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType);
+                var fieldReference = NSGSecurityRuleParentOnlyDenyCoverage.GetComparedFieldReference(
+                    condition: leaf);
+                if (fieldReference?.IsResolvedFieldReference() != true ||
+                    !string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase))
+                {
+                    return fieldReference?.IsResolved != false;
+                }
+
+                var selectedTypes = NSGSecurityRuleParentOnlyDenyCoverage.GetSelectedResourceTypes(
+                    condition: leaf,
+                    considerNotParity: false);
+                if (selectedTypes.Length == 0)
+                {
+                    return false;
+                }
+
+                var selectsChild = selectedTypes.Contains(
+                    NSGSecurityRuleParentOnlyDenyCoverage.ChildResourceType,
+                    StringComparer.OrdinalIgnoreCase);
+                return isNegated != selectsChild;
+            }
+
+            if (condition is not Quantifier quantifier)
+            {
+                return false;
+            }
+
+            if (quantifier.Not != null)
+            {
+                return NSGSecurityRuleParentOnlyDenyCoverage.CanApplyToChild(
+                    condition: quantifier.Not,
+                    isNegated: !isNegated);
+            }
+
+            var childConditions = quantifier.AllOf ?? quantifier.AnyOf;
+            if (childConditions == null)
+            {
+                return false;
+            }
+
+            var useAllOf = (quantifier.AllOf != null) != isNegated;
+            return useAllOf
+                ? childConditions.Value.All(
+                    child => NSGSecurityRuleParentOnlyDenyCoverage.CanApplyToChild(
+                        condition: child,
+                        isNegated: isNegated))
+                : childConditions.Value.Any(
+                    child => NSGSecurityRuleParentOnlyDenyCoverage.CanApplyToChild(
+                        condition: child,
+                        isNegated: isNegated));
         }
 
         private static bool ContainsParentSecurityRulesAlias(Condition condition)
         {
             var containsAlias = false;
-            var visitor = new PolicyExpressionVisitor
+            condition.Visit(new PolicyExpressionVisitor
             {
-                Visit = policyExpression =>
+                Visit = expression =>
                 {
-                    if (policyExpression is Reference reference &&
+                    if (expression is Reference reference &&
                         reference.IsResolvedFieldReference() &&
-                        NSGSecurityRuleParentOnlyDenyCoverage.IsParentSecurityRulesAlias(reference.Identifier))
+                        NSGSecurityRuleParentOnlyDenyCoverage.IsParentSecurityRulesAlias(
+                            identifier: reference.Identifier))
                     {
                         containsAlias = true;
                     }
                 },
-            };
+            });
 
-            condition.Visit(visitor);
             return containsAlias;
         }
 
-        private static void AddSelectedResourceTypes(
-            LeafCondition leaf,
-            HashSet<string> selectedResourceTypes)
+        private static string[] GetSelectedResourceTypes(
+            LeafCondition condition,
+            bool considerNotParity)
         {
-            if (leaf.Field?.FieldAccessorReference == null ||
-                leaf.Operator == null ||
-                !leaf.Operator.HasLiteralValue ||
-                !string.Equals(
-                    leaf.Field.FieldAccessorReference.Identifier,
-                    "type",
-                    StringComparison.OrdinalIgnoreCase) ||
-                !NSGSecurityRuleParentOnlyDenyCoverage.HasEvenNotParity(leaf: leaf))
+            var fieldReference = NSGSecurityRuleParentOnlyDenyCoverage.GetComparedFieldReference(
+                condition: condition);
+            if (fieldReference?.IsResolvedFieldReference() != true ||
+                !string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase) ||
+                condition.Operator?.HasLiteralValue != true ||
+                (considerNotParity &&
+                NSGSecurityRuleParentOnlyDenyCoverage.IsUnderOddNotParity(condition: condition)))
             {
-                return;
+                return Array.Empty<string>();
             }
 
-            if (string.Equals(leaf.Operator.Name, "equals", StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(condition.Operator.Name, "equals", StringComparison.OrdinalIgnoreCase))
             {
-                NSGSecurityRuleParentOnlyDenyCoverage.AddStringValue(
-                    token: leaf.Operator.Value,
-                    selectedResourceTypes: selectedResourceTypes);
-                return;
+                var resourceType = condition.Operator.Value.Type == JTokenType.String
+                    ? condition.Operator.Value.Value<string>()
+                    : null;
+
+                return string.IsNullOrWhiteSpace(resourceType)
+                    ? Array.Empty<string>()
+                    : new[] { resourceType };
             }
 
-            if (!string.Equals(leaf.Operator.Name, "in", StringComparison.OrdinalIgnoreCase) ||
-                leaf.Operator.Value is not JArray values)
+            if (!string.Equals(condition.Operator.Name, "in", StringComparison.OrdinalIgnoreCase) ||
+                condition.Operator.Value is not JArray resourceTypes ||
+                resourceTypes.Count == 0 ||
+                resourceTypes.Any(resourceType => resourceType.Type != JTokenType.String))
             {
-                return;
+                return Array.Empty<string>();
             }
 
-            foreach (var value in values)
-            {
-                NSGSecurityRuleParentOnlyDenyCoverage.AddStringValue(
-                    token: value,
-                    selectedResourceTypes: selectedResourceTypes);
-            }
+            return resourceTypes
+                .Select(resourceType => resourceType.Value<string>()!)
+                .Where(resourceType => !string.IsNullOrWhiteSpace(resourceType))
+                .ToArray();
         }
 
-        private static void AddStringValue(JToken token, HashSet<string> selectedResourceTypes)
+        private static Reference? GetComparedFieldReference(LeafCondition condition)
         {
-            if (token.Type != JTokenType.String)
+            if (condition.Field?.FieldAccessorReference != null)
             {
-                return;
+                return condition.Field.FieldAccessorReference;
             }
 
-            var value = token.Value<string>();
-            if (!string.IsNullOrEmpty(value))
+            if (condition.Value?.LanguageExpressions.Length != 1)
             {
-                _ = selectedResourceTypes.Add(value);
+                return null;
             }
+
+            var languageExpression = condition.Value.LanguageExpressions[0];
+            if (!string.Equals(languageExpression.Expression, condition.Value.Value.ToString(), StringComparison.Ordinal) ||
+                languageExpression.ReferenceKind != ReferenceKind.ResourceField ||
+                languageExpression.References.Length != 1)
+            {
+                return null;
+            }
+
+            return languageExpression.References[0];
         }
 
-        private static bool HasEvenNotParity(LeafCondition leaf)
+        private static bool IsUnderOddNotParity(LeafCondition condition)
         {
-            var notCount = leaf.PathSegments.Count(
+            var notCount = condition.PathSegments.Count(
                 segment => string.Equals(segment, "not", StringComparison.Ordinal));
 
-            return notCount % 2 == 0;
+            return notCount % 2 != 0;
         }
 
         private static bool IsParentSecurityRulesAlias(string identifier)

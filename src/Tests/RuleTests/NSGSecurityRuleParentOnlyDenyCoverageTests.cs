@@ -129,6 +129,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_ValueFieldType()
+        {
+            var ifCondition = $@"{{
+                ""allOf"": [
+                    {{
+                        ""value"": ""[field('type')]"",
+                        ""equals"": ""Microsoft.Network/networkSecurityGroups""
+                    }},
+                    {ParentAliasCondition}
+                ]
+            }}";
+
+            NSGSecurityRuleParentOnlyDenyCoverageTests.AssertFinding(ifCondition: ifCondition);
+        }
+
+        [Fact]
         public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_DoubleNotType()
         {
             var ifCondition = $@"{{
@@ -242,6 +258,49 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 mode: "All");
 
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_AllModeNestedEffectiveChildBranch()
+        {
+            var ifCondition = @"{ ""allOf"": [
+                { ""field"": ""location"", ""equals"": ""eastus"" },
+                { ""anyOf"": [
+                    { ""allOf"": [
+                        { ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups"" },
+                        { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
+                    ] },
+                    { ""allOf"": [
+                        { ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups/securityRules"" },
+                        { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/access"", ""equals"": ""Deny"" }
+                    ] }
+                ] }
+            ] }";
+
+            var results = NSGSecurityRuleParentOnlyDenyCoverageTests.Lint(
+                ifCondition: ifCondition,
+                mode: "All");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleParentOnlyDenyCoverage_AllModeNegatedChildSelectionDoesNotProvideCoverage()
+        {
+            var ifCondition = @"{ ""anyOf"": [
+                { ""allOf"": [
+                    { ""field"": ""type"", ""equals"": ""Microsoft.Network/networkSecurityGroups"" },
+                    { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
+                ] },
+                { ""not"": {
+                    ""field"": ""type"",
+                    ""equals"": ""Microsoft.Network/networkSecurityGroups/securityRules""
+                } }
+            ] }";
+
+            NSGSecurityRuleParentOnlyDenyCoverageTests.AssertFinding(
+                ifCondition: ifCondition,
+                mode: "All");
         }
 
         [Theory]

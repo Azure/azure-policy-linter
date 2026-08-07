@@ -86,7 +86,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var reference = languageExpression.References[0];
-            return reference.IsResolved && reference.ReferencedCountExpressionScope != null
+            return reference.IsResolved &&
+                reference.PropertySelectionPath == null &&
+                reference.ReferencedCountExpressionScope != null
                 ? reference
                 : null;
         }

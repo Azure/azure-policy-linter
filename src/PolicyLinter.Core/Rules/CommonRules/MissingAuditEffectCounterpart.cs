@@ -27,7 +27,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             ("audit", new[] { "deny", "modify", "append" }),
             ("auditIfNotExists", new[] { "deployIfNotExists" }),
-            ("auditAction", new[] { "denyAction" }),
         };
 
         /// <summary>
@@ -73,12 +72,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
+            if (context.Parameters == null ||
+                !context.Parameters.TryGetValue(parameterName, out var parameter) ||
+                parameter.AllowedValuesExpression == null)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             var missingCounterpartList = $"'{string.Join("', '", missingCounterparts)}'";
 
             return new[]
             {
                 this.CreateInformational(
-                    expression: expression.Effect,
+                    expression: parameter.AllowedValuesExpression,
                     parameterName,
                     missingCounterpartList),
             };

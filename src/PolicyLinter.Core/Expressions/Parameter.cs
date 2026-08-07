@@ -36,6 +36,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public JToken[]? AllowedValues { get; }
 
         /// <summary>
+        /// The parameter allowed values expression.
+        /// </summary>
+        public ParameterAllowedValues? AllowedValuesExpression { get; }
+
+        /// <summary>
         /// The parameter default value.
         /// </summary>
         public JToken? DefaultValue { get; set; }
@@ -66,7 +71,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             var parameter = parameterProperty.Value;
             this.Name = name;
             this.Type = parameter.Type?.Value ?? throw new ArgumentNullException(nameof(parameterProperty), "Parameter type cannot be null.");
-            this.AllowedValues = parameter.AllowedValues?.Value.Select(v => v.Value).ToArray();
+            this.AllowedValuesExpression = parameter.AllowedValues != null
+                ? new ParameterAllowedValues(
+                    allowedValuesProperty: parameter.AllowedValues,
+                    parentPath: this.PathSegments,
+                    parent: this)
+                : null;
+            this.AllowedValues = this.AllowedValuesExpression?.Values;
             this.Metadata = parameter.Metadata?.Value;
 
             if (parameter.DefaultValue != null)
@@ -79,6 +90,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public override void Visit(PolicyExpressionVisitor visitor)
         {
             visitor.Visit?.Invoke(this);
+            this.AllowedValuesExpression?.Visit(visitor);
         }
 
         /// <summary>
@@ -105,6 +117,49 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             allowedValues = null;
             defaultValue = default;
             return false;
+        }
+    }
+
+    /// <summary>
+    /// Represents a policy parameter's allowedValues array.
+    /// </summary>
+    public sealed class ParameterAllowedValues : PolicyExpression
+    {
+        /// <summary>
+        /// The allowed values.
+        /// </summary>
+        public JToken[] Values { get; }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="ParameterAllowedValues"/> class.
+        /// </summary>
+        /// <param name="allowedValuesProperty">The allowedValues property.</param>
+        /// <param name="parentPath">The path of the parent parameter.</param>
+        /// <param name="parent">The parent parameter.</param>
+        public ParameterAllowedValues(
+            GenericObjectProperty<GenericObjectProperty<JToken>[]> allowedValuesProperty,
+            ImmutableArray<string> parentPath,
+            PolicyExpression parent)
+            : base(
+                lineNumber: allowedValuesProperty?.LineNumber,
+                linePosition: allowedValuesProperty?.LinePosition,
+                path: parentPath.Add("allowedValues"),
+                parent: parent)
+        {
+            if (allowedValuesProperty == null)
+            {
+                throw new ArgumentNullException(nameof(allowedValuesProperty), "Parameter allowedValues cannot be null.");
+            }
+
+            this.Values = allowedValuesProperty.Value
+                .Select(allowedValue => allowedValue.Value)
+                .ToArray();
+        }
+
+        /// <inheritdoc/>
+        public override void Visit(PolicyExpressionVisitor visitor)
+        {
+            visitor.Visit?.Invoke(this);
         }
     }
 

@@ -20,6 +20,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string ParentResourceType = "Microsoft.Network/networkSecurityGroups";
         private const string ChildResourceType = "Microsoft.Network/networkSecurityGroups/securityRules";
+        private const string ParentSecurityRulesAliasPrefix = "Microsoft.Network/networkSecurityGroups/securityRules[*]";
+        private const string ChildSecurityRulesAliasPrefix = ChildResourceType + "/";
         private const string RuleTitle = "NSG Security Rule Child-Only Deny Coverage";
         private const string RuleDescription =
             "This deny-capable definition covers the child security-rule request path but not changes submitted through the parent NSG 'securityRules' collection. Add equivalent parent coverage in this or another policy.";
@@ -39,25 +41,46 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(PolicyDefinitionProperties expression, LinterContext context)
         {
-            if (!NSGSecurityRuleChildOnlyDenyCoverage.CanSelectDeny(expression.PolicyRule.Then.Effect, context))
+            if (!NSGSecurityRuleChildOnlyDenyCoverage.IsAllMode(mode: expression.Mode) ||
+                !NSGSecurityRuleChildOnlyDenyCoverage.CanSelectDeny(
+                    effect: expression.PolicyRule.Then.Effect,
+                    context: context))
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            var typeSelections = NSGSecurityRuleChildOnlyDenyCoverage.CollectTypeSelections(expression.PolicyRule.If);
-            var selectedResourceTypes = typeSelections.ResourceTypes;
-            if (!selectedResourceTypes.Contains(NSGSecurityRuleChildOnlyDenyCoverage.ChildResourceType) ||
-                selectedResourceTypes.Contains(NSGSecurityRuleChildOnlyDenyCoverage.ParentResourceType) ||
+            var typeSelections = NSGSecurityRuleChildOnlyDenyCoverage.CollectTypeSelections(
+                condition: expression.PolicyRule.If);
+            if (!typeSelections.ResourceTypes.Contains(NSGSecurityRuleChildOnlyDenyCoverage.ChildResourceType) ||
                 typeSelections.HasIndeterminateTypeCondition ||
                 typeSelections.ChildSelection == null)
             {
                 return Array.Empty<LinterOutput>();
             }
 
+            if (!NSGSecurityRuleChildOnlyDenyCoverage.HasEffectiveCoverage(
+                condition: expression.PolicyRule.If.Condition,
+                targetResourceType: NSGSecurityRuleChildOnlyDenyCoverage.ChildResourceType,
+                isNegated: false) ||
+                NSGSecurityRuleChildOnlyDenyCoverage.HasEffectiveCoverage(
+                condition: expression.PolicyRule.If.Condition,
+                targetResourceType: NSGSecurityRuleChildOnlyDenyCoverage.ParentResourceType,
+                isNegated: false))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             return new[]
             {
-                this.CreateWarning(typeSelections.ChildSelection),
+                this.CreateWarning(expression: typeSelections.ChildSelection),
             };
+        }
+
+        private static bool IsAllMode(Property? mode)
+        {
+            return mode?.HasLiteralValue == true &&
+                mode.Value.Type == JTokenType.String &&
+                string.Equals(mode.Value.Value<string>(), "all", StringComparison.OrdinalIgnoreCase);
         }
 
         private static bool CanSelectDeny(Property effect, LinterContext context)
@@ -88,7 +111,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 {
                     if (policyExpression is LeafCondition leafCondition)
                     {
-                        var selectedTypes = NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(leafCondition);
+                        var selectedTypes = NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(
+                            condition: leafCondition,
+                            considerNotParity: true);
                         selectedResourceTypes.UnionWith(selectedTypes);
 
                         if (childSelection == null &&
@@ -114,13 +139,187 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 HasIndeterminateTypeCondition: hasIndeterminateTypeCondition);
         }
 
-        private static string[] GetSelectedResourceTypes(LeafCondition condition)
+        private static bool HasEffectiveCoverage(
+            Condition condition,
+            string targetResourceType,
+            bool isNegated)
         {
-            var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(condition);
+            if (condition is LeafCondition leaf)
+            {
+                if (isNegated ||
+                    NSGSecurityRuleChildOnlyDenyCoverage.ContainsIncompatibleAlias(
+                        condition: leaf,
+                        targetResourceType: targetResourceType))
+                {
+                    return false;
+                }
+
+                return NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(
+                        condition: leaf,
+                        considerNotParity: false)
+                    .Contains(
+                        targetResourceType,
+                        StringComparer.OrdinalIgnoreCase);
+            }
+
+            if (condition is not Quantifier quantifier)
+            {
+                return false;
+            }
+
+            if (quantifier.Not != null)
+            {
+                return NSGSecurityRuleChildOnlyDenyCoverage.HasEffectiveCoverage(
+                    condition: quantifier.Not,
+                    targetResourceType: targetResourceType,
+                    isNegated: !isNegated);
+            }
+
+            var childConditions = quantifier.AllOf ?? quantifier.AnyOf;
+            if (childConditions == null)
+            {
+                return false;
+            }
+
+            var useAllOf = (quantifier.AllOf != null) != isNegated;
+            if (!useAllOf)
+            {
+                return childConditions.Value.Any(
+                    child => NSGSecurityRuleChildOnlyDenyCoverage.HasEffectiveCoverage(
+                        condition: child,
+                        targetResourceType: targetResourceType,
+                        isNegated: isNegated));
+            }
+
+            return childConditions.Value.All(
+                    child => NSGSecurityRuleChildOnlyDenyCoverage.CanApplyToResourceType(
+                        condition: child,
+                        targetResourceType: targetResourceType,
+                        isNegated: isNegated)) &&
+                childConditions.Value.Any(
+                    child => NSGSecurityRuleChildOnlyDenyCoverage.HasEffectiveCoverage(
+                        condition: child,
+                        targetResourceType: targetResourceType,
+                        isNegated: isNegated));
+        }
+
+        private static bool CanApplyToResourceType(
+            Condition condition,
+            string targetResourceType,
+            bool isNegated)
+        {
+            if (condition is LeafCondition leaf)
+            {
+                if (NSGSecurityRuleChildOnlyDenyCoverage.ContainsIncompatibleAlias(
+                    condition: leaf,
+                    targetResourceType: targetResourceType))
+                {
+                    return false;
+                }
+
+                var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(
+                    condition: leaf);
+                if (fieldReference?.IsResolvedFieldReference() != true ||
+                    !string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase))
+                {
+                    return fieldReference?.IsResolved != false;
+                }
+
+                var selectedTypes = NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(
+                    condition: leaf,
+                    considerNotParity: false);
+                if (selectedTypes.Length == 0)
+                {
+                    return false;
+                }
+
+                var selectsTarget = selectedTypes.Contains(
+                    targetResourceType,
+                    StringComparer.OrdinalIgnoreCase);
+                return isNegated != selectsTarget;
+            }
+
+            if (condition is not Quantifier quantifier)
+            {
+                return false;
+            }
+
+            if (quantifier.Not != null)
+            {
+                return NSGSecurityRuleChildOnlyDenyCoverage.CanApplyToResourceType(
+                    condition: quantifier.Not,
+                    targetResourceType: targetResourceType,
+                    isNegated: !isNegated);
+            }
+
+            var childConditions = quantifier.AllOf ?? quantifier.AnyOf;
+            if (childConditions == null)
+            {
+                return false;
+            }
+
+            var useAllOf = (quantifier.AllOf != null) != isNegated;
+            return useAllOf
+                ? childConditions.Value.All(
+                    child => NSGSecurityRuleChildOnlyDenyCoverage.CanApplyToResourceType(
+                        condition: child,
+                        targetResourceType: targetResourceType,
+                        isNegated: isNegated))
+                : childConditions.Value.Any(
+                    child => NSGSecurityRuleChildOnlyDenyCoverage.CanApplyToResourceType(
+                        condition: child,
+                        targetResourceType: targetResourceType,
+                        isNegated: isNegated));
+        }
+
+        private static bool ContainsIncompatibleAlias(
+            Condition condition,
+            string targetResourceType)
+        {
+            var containsAlias = false;
+            condition.Visit(new PolicyExpressionVisitor
+            {
+                Visit = expression =>
+                {
+                    if (expression is Reference reference &&
+                        reference.IsResolvedFieldReference())
+                    {
+                        containsAlias |= string.Equals(
+                            targetResourceType,
+                            NSGSecurityRuleChildOnlyDenyCoverage.ParentResourceType,
+                            StringComparison.OrdinalIgnoreCase)
+                            ? reference.Identifier.StartsWith(
+                                NSGSecurityRuleChildOnlyDenyCoverage.ChildSecurityRulesAliasPrefix,
+                                StringComparison.OrdinalIgnoreCase)
+                            : NSGSecurityRuleChildOnlyDenyCoverage.IsParentSecurityRulesAlias(
+                                identifier: reference.Identifier);
+                    }
+                },
+            });
+
+            return containsAlias;
+        }
+
+        private static bool IsParentSecurityRulesAlias(string identifier)
+        {
+            return identifier.StartsWith(
+                    NSGSecurityRuleChildOnlyDenyCoverage.ParentSecurityRulesAliasPrefix,
+                    StringComparison.OrdinalIgnoreCase) &&
+                (identifier.Length == NSGSecurityRuleChildOnlyDenyCoverage.ParentSecurityRulesAliasPrefix.Length ||
+                identifier[NSGSecurityRuleChildOnlyDenyCoverage.ParentSecurityRulesAliasPrefix.Length] == '.');
+        }
+
+        private static string[] GetSelectedResourceTypes(
+            LeafCondition condition,
+            bool considerNotParity)
+        {
+            var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(
+                condition: condition);
             if (fieldReference?.IsResolvedFieldReference() != true ||
                 !string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase) ||
                 condition.Operator?.HasLiteralValue != true ||
-                NSGSecurityRuleChildOnlyDenyCoverage.IsUnderOddNotParity(condition))
+                (considerNotParity &&
+                NSGSecurityRuleChildOnlyDenyCoverage.IsUnderOddNotParity(condition: condition)))
             {
                 return Array.Empty<string>();
             }
@@ -177,11 +376,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             LeafCondition condition,
             string[] selectedTypes)
         {
-            var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(condition);
+            var fieldReference = NSGSecurityRuleChildOnlyDenyCoverage.GetComparedFieldReference(
+                condition: condition);
             if (fieldReference?.IsResolvedFieldReference() == true &&
                 string.Equals(fieldReference.Identifier, "type", StringComparison.OrdinalIgnoreCase))
             {
-                return selectedTypes.Length == 0;
+                return selectedTypes.Length == 0 &&
+                    NSGSecurityRuleChildOnlyDenyCoverage.GetSelectedResourceTypes(
+                        condition: condition,
+                        considerNotParity: false).Length == 0;
             }
 
             return condition.Field?.HasLiteralValue == false;

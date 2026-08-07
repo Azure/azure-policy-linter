@@ -177,6 +177,82 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_CombinedTypeSelectionWithChildAlias()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: @"{ ""allOf"": [
+                    { ""field"": ""type"", ""in"": [
+                        """ + ChildResourceType + @""",
+                        """ + ParentResourceType + @"""
+                    ] },
+                    { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/access"", ""equals"": ""Deny"" }
+                ] }");
+
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
+                results: results,
+                lineNumber: 7,
+                linePosition: 46,
+                path: "properties.policyRule.if.allOf[0].in");
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_EffectiveParentAndChildBranches()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: @"{ ""anyOf"": [
+                    { ""allOf"": [
+                        { ""field"": ""type"", ""equals"": """ + ParentResourceType + @""" },
+                        { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules[*].access"", ""equals"": ""Deny"" }
+                    ] },
+                    { ""allOf"": [
+                        { ""field"": ""type"", ""equals"": """ + ChildResourceType + @""" },
+                        { ""field"": ""Microsoft.Network/networkSecurityGroups/securityRules/access"", ""equals"": ""Deny"" }
+                    ] }
+                ] }");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_NegatedParentSelectionDoesNotProvideCoverage()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: @"{ ""anyOf"": [
+                    { ""field"": ""type"", ""equals"": """ + ChildResourceType + @""" },
+                    { ""not"": {
+                        ""field"": ""type"",
+                        ""equals"": """ + ParentResourceType + @"""
+                    } }
+                ] }");
+
+            NSGSecurityRuleChildOnlyDenyCoverageTests.AssertSingleFinding(
+                results: results,
+                lineNumber: 7,
+                linePosition: 104,
+                path: "properties.policyRule.if.anyOf[0].equals");
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_IndexedMode_NoFinding()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
+                mode: "Indexed");
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_MissingMode_NoFinding()
+        {
+            var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
+                condition: NSGSecurityRuleChildOnlyDenyCoverageTests.EqualsType(ChildResourceType),
+                mode: null);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
         public void RuleTests_NSGSecurityRuleChildOnlyDenyCoverage_ParentOnly()
         {
             var results = NSGSecurityRuleChildOnlyDenyCoverageTests.Lint(
@@ -257,7 +333,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static LinterOutput[] Lint(
             string condition,
             string effect = @"""deny""",
-            string parameters = "{}")
+            string parameters = "{}",
+            string mode = "All")
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -269,12 +346,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return linter.Lint(NSGSecurityRuleChildOnlyDenyCoverageTests.PolicyDefinition(
                 condition: condition,
                 effect: effect,
-                parameters: parameters));
+                parameters: parameters,
+                mode: mode));
         }
 
-        private static string PolicyDefinition(string condition, string effect, string parameters) => @"
+        private static string PolicyDefinition(
+            string condition,
+            string effect,
+            string parameters,
+            string mode)
+        {
+            var modeProperty = mode == null
+                ? string.Empty
+                : @"""mode"": """ + mode + @""",";
+
+            return @"
                 {
-                  ""properties"": {
+                  ""properties"": { " + modeProperty + @"
                     ""parameters"": " + parameters + @",
                     ""policyRule"": {
                       ""if"": " + condition + @",
@@ -284,12 +372,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     }
                   }
                 }";
+        }
 
         private static string EqualsType(string resourceType) =>
             @"{ ""field"": ""type"", ""equals"": """ + resourceType + @""" }";
 
         private static void AssertSingleFinding(
             LinterOutput[] results,
+            int lineNumber = 6,
             int linePosition = 112,
             string path = "properties.policyRule.if.equals")
         {
@@ -300,7 +390,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "NSG Security Rule Child-Only Deny Coverage",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 6,
+                LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: path,
                 Description: "This deny-capable definition covers the child security-rule request path but not changes submitted through the parent NSG 'securityRules' collection. Add equivalent parent coverage in this or another policy.");

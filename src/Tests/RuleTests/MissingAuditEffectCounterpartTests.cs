@@ -54,14 +54,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_MissingAuditEffectCounterpart_DenyActionRequiresAuditAction()
-        {
-            MissingAuditEffectCounterpartTests.AssertFinding(
-                allowedValues: @"[""denyAction""]",
-                expectedMissingCounterparts: "'auditAction'");
-        }
-
-        [Fact]
         public void RuleTests_MissingAuditEffectCounterpart_MultipleEffectsRequireAuditOnce()
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
@@ -73,23 +65,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         public void RuleTests_MissingAuditEffectCounterpart_MultipleMappingsUseDeterministicOrder()
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
-                allowedValues: @"[""denyAction"", ""deployIfNotExists"", ""deny""]",
-                expectedMissingCounterparts: "'audit', 'auditIfNotExists', 'auditAction'");
+                allowedValues: @"[""deployIfNotExists"", ""deny""]",
+                expectedMissingCounterparts: "'audit', 'auditIfNotExists'");
         }
 
         [Fact]
         public void RuleTests_MissingAuditEffectCounterpart_EffectValuesAreCaseInsensitive()
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
-                allowedValues: @"[""DeNy"", ""DePlOyIfNoTeXiStS"", ""DeNyAcTiOn""]",
-                expectedMissingCounterparts: "'audit', 'auditIfNotExists', 'auditAction'");
+                allowedValues: @"[""DeNy"", ""DePlOyIfNoTeXiStS""]",
+                expectedMissingCounterparts: "'audit', 'auditIfNotExists'");
         }
 
         [Fact]
         public void RuleTests_MissingAuditEffectCounterpart_AllCounterpartsPresent()
         {
             var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
-                allowedValues: @"[""deny"", ""modify"", ""append"", ""deployIfNotExists"", ""denyAction"", ""AUDIT"", ""AuditIfNotExists"", ""auditAction""]");
+                allowedValues: @"[""deny"", ""modify"", ""append"", ""deployIfNotExists"", ""AUDIT"", ""AuditIfNotExists""]");
 
             var results = MissingAuditEffectCounterpartTests
                 .CreateLinter()
@@ -99,10 +91,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_MissingAuditEffectCounterpart_AuditActionCounterpartPresent()
+        public void RuleTests_MissingAuditEffectCounterpart_DenyActionDoesNotRequireCounterpart()
         {
             var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
-                allowedValues: @"[""denyAction"", ""AuditAction""]");
+                allowedValues: @"[""denyAction""]");
 
             var results = MissingAuditEffectCounterpartTests
                 .CreateLinter()
@@ -205,9 +197,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Missing Audit Effect Counterpart",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
-                LineNumber: 17,
-                LinePosition: 58,
-                Path: "properties.policyRule.then.effect",
+                LineNumber: 8,
+                LinePosition: 42,
+                Path: "properties.parameters.effect.allowedValues",
                 Description: $"The effect parameter 'effect' is missing these audit counterparts from its allowedValues: {expectedMissingCounterparts}. Adding them lets assignments use non-enforcing behavior without changing the policy definition.");
 
             results.Should().ContainEquivalentOf(output);

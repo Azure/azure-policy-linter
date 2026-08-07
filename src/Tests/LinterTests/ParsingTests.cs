@@ -530,6 +530,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             expressionsWithLineInfo.Should().ContainKey(effectParameterPath);
             expressionsWithLineInfo[effectParameterPath].LineNumber.Should().Be(19);
             expressionsWithLineInfo[effectParameterPath].LinePosition.Should().Be(23);
+
+            var effectAllowedValuesPath = "properties.parameters.effect.allowedValues";
+            expressionsWithLineInfo.Should().ContainKey(effectAllowedValuesPath);
+            expressionsWithLineInfo[effectAllowedValuesPath].Should().BeOfType<ParameterAllowedValues>();
+            expressionsWithLineInfo[effectAllowedValuesPath].LineNumber.Should().Be(22);
+            expressionsWithLineInfo[effectAllowedValuesPath].LinePosition.Should().Be(34);
         }
 
         [Theory]

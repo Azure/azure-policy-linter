@@ -61,7 +61,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
 - **Namespace**: all rule namespaces sit under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>`.
 - **Standard structure**: `sealed class`, parameterless constructor calling `base(...)`, `private const string RuleTitle` and `RuleDescription` fields, override `Evaluate` returning `LinterOutput[]`.
 - **Early-return guards first**; emit only after all preconditions are satisfied.
-- **Don't modify files outside the rule's own file, its tests, and its doc.** Rule logic that needs new helpers in the engine is a sign the rule is doing too much, or the helper belongs in the rule file. If you genuinely need to touch engine code, stop and confirm with the user first.
+- **Don't modify files outside the rule's own file, its tests, and its doc by default.** Rule logic that needs new helpers in the engine is usually a sign the rule is doing too much, or the helper belongs in the rule file. If the required target or source location is not represented by the expression model, surface that as a linter-level issue and confirm the narrow engine change with the user instead of approximating the diagnostic location or building a private evaluator in the rule.
 
 **Common traps the engine model invites:**
 

@@ -351,6 +351,42 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_SelectedFieldResult_NoFinding()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new FieldFunctionOnCountedArrayAlias()
+                },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""count"": {
+                          ""field"": ""Microsoft.Test/widgets/items[*]"",
+                          ""where"": {
+                            ""value"": ""[field('Microsoft.Test/widgets/items[*].name')[0]]"",
+                            ""equals"": ""approved""
+                          }
+                        },
+                        ""greater"": 0
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
         public void RuleTests_FieldFunctionOnCountedArrayAlias_FieldOutsideCount_NoFinding()
         {
             var linter = new PolicyLinter(
