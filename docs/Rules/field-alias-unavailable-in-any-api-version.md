@@ -1,8 +1,8 @@
-# Field Alias Unavailable in Every API Version
+# Field Alias Unavailable in Any API Version
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| ResourceFields | field-alias-unavailable-in-every-api-version | Error | default |
+| ResourceFields | field-alias-unavailable-in-any-api-version | Error | default |
 
 ## Description
 

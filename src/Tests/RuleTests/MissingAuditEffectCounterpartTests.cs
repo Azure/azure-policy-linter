@@ -80,6 +80,45 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_MissingAuditEffectCounterpart_NoEnforcementEffects_NoFinding()
+        {
+            var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
+                allowedValues: @"[""audit"", ""disabled""]");
+
+            var results = MissingAuditEffectCounterpartTests
+                .CreateLinter()
+                .Lint(rawPolicyDefinition: policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_MissingAuditEffectCounterpart_MismatchedCounterpartAlreadyAllowed_NoFinding()
+        {
+            var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
+                allowedValues: @"[""deny"", ""auditIfNotExists""]");
+
+            var results = MissingAuditEffectCounterpartTests
+                .CreateLinter()
+                .Lint(rawPolicyDefinition: policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_MissingAuditEffectCounterpart_UnknownEffect_NoFinding()
+        {
+            var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(
+                allowedValues: @"[""deny"", ""foo""]");
+
+            var results = MissingAuditEffectCounterpartTests
+                .CreateLinter()
+                .Lint(rawPolicyDefinition: policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
         public void RuleTests_MissingAuditEffectCounterpart_EffectValuesAreCaseInsensitive()
         {
             MissingAuditEffectCounterpartTests.AssertFinding(

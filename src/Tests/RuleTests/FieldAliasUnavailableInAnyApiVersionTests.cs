@@ -16,9 +16,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="FieldAliasUnavailableInEveryApiVersion"/> rule.
+    /// Tests for the <see cref="FieldAliasUnavailableInAnyApiVersion"/> rule.
     /// </summary>
-    public class FieldAliasUnavailableInEveryApiVersionTests
+    public class FieldAliasUnavailableInAnyApiVersionTests
     {
         private const string Alias = "Microsoft.Test/widgets/property";
         private const string ResourceType = "Microsoft.Test/widgets";
@@ -27,7 +27,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             aliasResolver: new AliasResolver());
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_OneFalseMetadataEntry_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_OneFalseMetadataEntry_Fires()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -45,14 +45,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_RealAllMissingAlias_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_RealAllMissingAlias_Fires()
         {
             const string alias = "Microsoft.AppPlatform/Spring/apps.persistentDisk.usedInGB";
             const string resourceType = "Microsoft.AppPlatform/Spring";
 
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: alias),
-                metadata: FieldAliasUnavailableInEveryApiVersionTests.RealTypeMetadata);
+                metadata: FieldAliasUnavailableInAnyApiVersionTests.RealTypeMetadata);
 
             AssertSingleFinding(
                 results: results,
@@ -64,7 +64,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_AliasCasing_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_AliasCasing_Fires()
         {
             const string policyAlias = "microsoft.test/WIDGETS/PROPERTY";
 
@@ -84,7 +84,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_MultipleFalseMetadataEntries_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_MultipleFalseMetadataEntries_Fires()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -103,7 +103,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_FieldFunctionReference_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_FieldFunctionReference_Fires()
         {
             var results = Lint(
                 policyDefinition: FieldFunctionPolicy(alias: Alias),
@@ -121,7 +121,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_CurrentFunctionReference_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_CurrentFunctionReference_Fires()
         {
             const string arrayAlias = "Microsoft.Test/widgets/items[*]";
             const string currentAlias = "Microsoft.Test/widgets/items[*].property";
@@ -132,17 +132,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     alias: currentAlias,
                     PropertyMetadata(exists: false, resourceType: ResourceType, apiVersion: "2024-01-01")));
 
-            AssertSingleFinding(
-                results: results,
+            results.Should().HaveCount(2);
+            results.Should().ContainEquivalentOf(ExpectedOutput(
                 alias: currentAlias,
                 resourceType: ResourceType,
                 lineNumber: 10,
                 linePosition: 76,
-                path: "properties.policyRule.if.count.where.value");
+                path: "properties.policyRule.if.count.where.value"));
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_OneTrueMetadataEntry_DoesNotFire()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_OneTrueMetadataEntry_DoesNotFire()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -155,7 +155,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_AllTrueMetadataEntries_DoNotFire()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_AllTrueMetadataEntries_DoNotFire()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -168,17 +168,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_EmptyMetadata_DoesNotFire()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_EmptyMetadata_Fires()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
                 metadata: new TestTypeMetadata(alias: Alias));
 
-            results.Should().BeEmpty();
+            AssertSingleFinding(
+                results: results,
+                alias: Alias,
+                resourceType: ResourceType,
+                lineNumber: 7,
+                linePosition: 50,
+                path: "properties.policyRule.if.field");
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_BlankMetadataResourceTypes_UseAliasResourceType()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_BlankMetadataResourceTypes_UseAliasResourceType()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -197,7 +203,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_UnresolvedDynamicField_DoesNotFire()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_UnresolvedDynamicField_DoesNotFire()
         {
             var results = Lint(
                 policyDefinition: DynamicFieldPolicy(),
@@ -209,7 +215,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_GenericField_DoesNotFire()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_GenericField_DoesNotFire()
         {
             const string genericField = "type";
 
@@ -223,7 +229,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_NonAliasField_DoesNotFire()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_NonAliasField_DoesNotFire()
         {
             const string nonAliasField = "tags['environment']";
 
@@ -237,7 +243,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInEveryApiVersion_AllFalseMetadata_OnlyThisRuleFires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_AllFalseMetadata_OnlyThisRuleFires()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
@@ -247,7 +253,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     PropertyMetadata(exists: false, resourceType: ResourceType, apiVersion: "2024-01-01")),
                 rules: new ILinterRule[]
                 {
-                    new FieldAliasUnavailableInEveryApiVersion(),
+                    new FieldAliasUnavailableInAnyApiVersion(),
                     new FieldAliasUnavailableInLatestApiVersion(),
                     new FieldAliasUnavailableInOldApiVersions(),
                 });
@@ -269,7 +275,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var linter = new PolicyLinter(
                 rules: rules ?? new ILinterRule[]
                 {
-                    new FieldAliasUnavailableInEveryApiVersion(),
+                    new FieldAliasUnavailableInAnyApiVersion(),
                 },
                 metadata: metadata);
 
@@ -285,10 +291,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             string path)
         {
             results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(ExpectedOutput(
+                alias: alias,
+                resourceType: resourceType,
+                lineNumber: lineNumber,
+                linePosition: linePosition,
+                path: path));
+        }
 
-            var output = new LinterOutput(
-                RuleIdentifier: "field-alias-unavailable-in-every-api-version",
-                Title: "Field Alias Unavailable in Every API Version",
+        private static LinterOutput ExpectedOutput(
+            string alias,
+            string resourceType,
+            int lineNumber,
+            int linePosition,
+            string path)
+        {
+            return new LinterOutput(
+                RuleIdentifier: "field-alias-unavailable-in-any-api-version",
+                Title: "Field Alias Unavailable in Any API Version",
                 Severity: Severity.Error,
                 Category: Category.ResourceFields,
                 LineNumber: lineNumber,
@@ -297,8 +317,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Description:
                     $"The field alias '{alias}' maps to an unknown property on resource type '{resourceType}', according to the linter's embedded metadata. " +
                     "Verify that the property exists on the target resource.");
-
-            results.Should().ContainEquivalentOf(output);
         }
 
         private static ResourcePropertyMetadata PropertyMetadata(

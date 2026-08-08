@@ -22,6 +22,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleDescription =
             "The field alias: '{0}' refers to an entire array, so comparing it with '{1}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.";
 
+        // Ordering operators are omitted: an array field cannot be ordered against any value, so
+        // OrderingOperatorOnIncompatibleFieldType already reports every such condition as an error.
         private static readonly OrdinalInsensitiveHashSet ScalarComparisonOperators = new OrdinalInsensitiveHashSet
         {
             "equals",
@@ -32,10 +34,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             "notMatch",
             "matchInsensitively",
             "notMatchInsensitively",
-            "greater",
-            "greaterOrEquals",
-            "less",
-            "lessOrEquals",
         };
 
         /// <summary>

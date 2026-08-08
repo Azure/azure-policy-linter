@@ -33,18 +33,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            if (expression.Kind != ReferenceKind.ResourceField ||
-                !expression.IsResolvedFieldReference() ||
-                expression.ReferencedCountExpressionScope == null ||
-                expression.Parent is not TemplateLanguageExpression)
+            if (expression.Kind == ReferenceKind.ResourceField &&
+                expression.IsResolvedFieldReference() &&
+                expression.ReferencedCountExpressionScope != null &&
+                expression.Parent is TemplateLanguageExpression)
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateWarning(expression, expression.Identifier)
+                };
             }
 
-            return new[]
-            {
-                this.CreateWarning(expression, expression.Identifier)
-            };
+            return Array.Empty<LinterOutput>();
         }
     }
 }

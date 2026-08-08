@@ -75,11 +75,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("notMatch", @"""item-#""")]
         [InlineData("matchInsensitively", @"""item-#""")]
         [InlineData("notMatchInsensitively", @"""item-#""")]
-        [InlineData("greater", "5")]
-        [InlineData("less", "5")]
-        [InlineData("lessOrEquals", "5.5")]
-        [InlineData("greaterOrEquals", "true")]
-        public void RuleTests_ArrayComparedAsScalar_MatchOrOrdering(string operatorName, string operatorValue)
+        public void RuleTests_ArrayComparedAsScalar_ScalarComparisonOperators(string operatorName, string operatorValue)
         {
             var linter = ArrayComparedAsScalarTests.CreateLinter();
             var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
@@ -102,6 +98,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array, so comparing it with '{operatorName}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
+        }
+
+        [Theory]
+        [InlineData("greater", "5")]
+        [InlineData("greaterOrEquals", "5")]
+        [InlineData("less", "5")]
+        [InlineData("lessOrEquals", "5.5")]
+        public void RuleTests_ArrayComparedAsScalar_OrderingOperator_NoFinding(string operatorName, string operatorValue)
+        {
+            var linter = ArrayComparedAsScalarTests.CreateLinter();
+            var policyDefinition = ArrayComparedAsScalarTests.CreatePolicy(
+                alias: "Microsoft.Test/widgets/arrayProperty",
+                operatorName: operatorName,
+                operatorValue: operatorValue);
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
         }
 
         [Fact]

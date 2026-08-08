@@ -14,20 +14,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Detects field aliases for which the embedded metadata has no property path in any known API version.
     /// </summary>
-    public sealed class FieldAliasUnavailableInEveryApiVersion : LinterRule<Reference>
+    public sealed class FieldAliasUnavailableInAnyApiVersion : LinterRule<Reference>
     {
-        private const string RuleTitle = "Field Alias Unavailable in Every API Version";
+        private const string RuleTitle = "Field Alias Unavailable in Any API Version";
         private const string RuleDescription =
             "The field alias '{0}' maps to an unknown property on resource type '{1}', according to the linter's embedded metadata. Verify that the property exists on the target resource.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FieldAliasUnavailableInEveryApiVersion"/> class.
+        /// Initializes a new instance of the <see cref="FieldAliasUnavailableInAnyApiVersion"/> class.
         /// </summary>
-        public FieldAliasUnavailableInEveryApiVersion() : base(
-            identifier: "field-alias-unavailable-in-every-api-version",
+        public FieldAliasUnavailableInAnyApiVersion() : base(
+            identifier: "field-alias-unavailable-in-any-api-version",
             category: Category.ResourceFields,
-            title: FieldAliasUnavailableInEveryApiVersion.RuleTitle,
-            descriptionFormat: FieldAliasUnavailableInEveryApiVersion.RuleDescription,
+            title: FieldAliasUnavailableInAnyApiVersion.RuleTitle,
+            descriptionFormat: FieldAliasUnavailableInAnyApiVersion.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -42,8 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            if (!expression.ResourcePropertyMetadata.Any() ||
-                expression.ResourcePropertyMetadata.Any(metadata => metadata.Exists))
+            if (expression.ResourcePropertyMetadata.Any(metadata => metadata.Exists))
             {
                 return Array.Empty<LinterOutput>();
             }
