@@ -78,6 +78,10 @@
     <PackageReference Include="System.CommandLine" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Microsoft.Azure.Policy.PolicyLinter.Tests" />
+  </ItemGroup>
+
   <Import Project="../build/PublicNuGetPackageMetadata.targets" />
   <Import Project="../build/GenerateNoticeForNugetPackages.targets" />
 

@@ -113,5 +113,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core
                 Category: Category.Linter,
                 Description: $"Failed to read file '{filePath}': {errorMessage}");
         }
+
+        /// <summary>
+        /// Creates a linter output indicating that the linter failed while processing a file.
+        /// </summary>
+        /// <param name="filePath">The file path being processed.</param>
+        /// <param name="errorMessage">The error message from the exception.</param>
+        public static LinterOutput LinterExecutionError(string filePath, string errorMessage)
+        {
+            return new LinterOutput(
+                RuleIdentifier: "system-rule",
+                Title: "Linter Execution Error",
+                Severity: Severity.Critical,
+                Category: Category.Linter,
+                Description: $"Failed to lint file '{filePath}': {errorMessage}");
+        }
     }
 }
