@@ -107,7 +107,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             result.Should().Be(1, "Program should return failure code for non-existent files");
             output.Should().Contain("File Not Found", "Should report file not found");
             output.Should().Contain(nonExistentFile, "Should mention the missing file path");
-            output.Should().Contain("Done with errors.", "Output should indicate failure");
         }
 
         [Fact]
@@ -280,7 +279,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             // Assert
             result.Should().Be(1, "Program should return failure code for unreadable inputs");
             output.Should().Contain("File Read Error", "Should report the read failure");
-            output.Should().Contain("Done with errors.", "Output should indicate failure");
         }
 
         [Fact]

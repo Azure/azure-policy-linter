@@ -175,7 +175,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
 
             if (hasFailures)
             {
-                Program.Error("Done with errors.");
                 return Program.FailureExitCode;
             }
 
