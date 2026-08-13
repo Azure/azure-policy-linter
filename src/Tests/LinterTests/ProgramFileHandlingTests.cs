@@ -284,34 +284,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public async Task Main_UnknownOption_ReturnsFailure()
-        {
-            // Act
-            using var console = new ConsoleOutputCapture();
-            var (output, result) = await console.CaptureAsync(() =>
-                Program.Main(new[] { "--outpt" }));
-
-            // Assert
-            result.Should().Be(1, "Program should reject unknown options");
-            output.Should().Contain("Unrecognized option(s): --outpt");
-            output.Should().NotContain("File Not Found");
-        }
-
-        [Fact]
-        public async Task Main_ListRuleSetsWithUnknownOption_ReturnsFailure()
-        {
-            // Act
-            using var console = new ConsoleOutputCapture();
-            var (output, result) = await console.CaptureAsync(() =>
-                Program.Main(new[] { "--list-rule-sets", "--outpt" }));
-
-            // Assert
-            result.Should().Be(1, "Program should reject unknown options before executing another action");
-            output.Should().Contain("Unrecognized option(s): --outpt");
-            output.Should().NotContain("Available rule sets:");
-        }
-
-        [Fact]
         public async Task Main_UnknownRuleSet_ReturnsFailure()
         {
             // Arrange

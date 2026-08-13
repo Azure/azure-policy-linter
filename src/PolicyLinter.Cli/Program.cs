@@ -68,16 +68,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
 
             rootCommand.SetHandler(async (string[] files, FileInfo? outputFile, bool listRuleSets, string[]? ruleSets) =>
             {
-                var unknownOptions = files?
-                    .Where(filePath => filePath.StartsWith('-'))
-                    .ToArray() ?? Array.Empty<string>();
-                if (unknownOptions.Length > 0)
-                {
-                    Program.Error($"Unrecognized option(s): {string.Join(", ", unknownOptions)}");
-                    handlerExitCode = Program.FailureExitCode;
-                    return;
-                }
-
                 if (listRuleSets)
                 {
                     Program.ListRuleSets();
