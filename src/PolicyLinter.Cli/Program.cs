@@ -135,7 +135,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
             var linter = new PolicyLinter(rules: rules, metadata: metadata);
 
             var uniqueFilePaths = absoluteToInputPaths.Keys.ToArray();
-            var (allResults, hasFailures) = await Program
+            var (allResults, hasOperationalFailures) = await Program
                 .ProcessFiles(filePaths: uniqueFilePaths, linter: linter)
                 .ConfigureAwait(false);
 
@@ -173,7 +173,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
                 }
             }
 
-            if (hasFailures)
+            if (hasOperationalFailures)
             {
                 return Program.FailureExitCode;
             }
@@ -342,56 +342,74 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
         /// <param name="filePaths">The file paths to process.</param>
         /// <param name="linter">The linter instance.</param>
         /// <returns>The outputs by file path and whether any operational failure occurred.</returns>
-        internal static async Task<(Dictionary<string, LinterOutput[]> Results, bool HasFailures)> ProcessFiles(
+        internal static async Task<(Dictionary<string, LinterOutput[]> Results, bool HasOperationalFailures)> ProcessFiles(
             string[] filePaths,
             PolicyLinter linter)
         {
-            var tasks = filePaths.Select(async filePath =>
-            {
-                string fileContent;
-
-                try
-                {
-                    fileContent = await File.ReadAllTextAsync(filePath).ConfigureAwait(false);
-                }
-                catch (FileNotFoundException)
-                {
-                    var errorResult = BuiltinLinterOutputs.FileNotFound(filePath);
-                    return (FilePath: filePath, Results: new[] { errorResult }, HasFailure: true);
-                }
-                catch (Exception ex) when (Program.IsFileSystemException(ex))
-                {
-                    var errorResult = BuiltinLinterOutputs.FileReadError(filePath, ex.Message);
-                    return (FilePath: filePath, Results: new[] { errorResult }, HasFailure: true);
-                }
-
-                if (string.IsNullOrEmpty(fileContent))
-                {
-                    var parsingError = BuiltinLinterOutputs.PolicyDefinitionParsingFailure("Empty file");
-                    return (FilePath: filePath, Results: new[] { parsingError }, HasFailure: true);
-                }
-
-                try
-                {
-                    var results = linter.Lint(rawPolicyDefinition: fileContent, filePath: filePath);
-                    var hasFailure = results.Any(result =>
-                        result.Severity == Severity.Critical
-                        && string.Equals(result.RuleIdentifier, "system-rule", StringComparison.Ordinal));
-                    return (FilePath: filePath, Results: results, HasFailure: hasFailure);
-                }
-                catch (Exception ex)
-                {
-                    var errorResult = BuiltinLinterOutputs.LinterExecutionError(
-                        filePath: filePath,
-                        errorMessage: $"{ex.GetType().Name}: {ex.Message}");
-                    return (FilePath: filePath, Results: new[] { errorResult }, HasFailure: true);
-                }
-            }).ToArray();
+            var tasks = filePaths
+                .Select(filePath => Program.ProcessFile(filePath: filePath, linter: linter))
+                .ToArray();
 
             var results = await Task.WhenAll(tasks).ConfigureAwait(false);
             return (
                 Results: results.ToDictionary(result => result.FilePath, result => result.Results),
-                HasFailures: results.Any(result => result.HasFailure));
+                HasOperationalFailures: results.Any(result => result.HasOperationalFailure));
+        }
+
+        /// <summary>
+        /// Processes a single policy definition file.
+        /// </summary>
+        private static async Task<(string FilePath, LinterOutput[] Results, bool HasOperationalFailure)> ProcessFile(
+            string filePath,
+            PolicyLinter linter)
+        {
+            string fileContent;
+
+            try
+            {
+                fileContent = await File.ReadAllTextAsync(filePath).ConfigureAwait(false);
+            }
+            catch (FileNotFoundException)
+            {
+                return (
+                    filePath,
+                    new[] { BuiltinLinterOutputs.FileNotFound(filePath: filePath) },
+                    true);
+            }
+            catch (Exception ex) when (Program.IsFileSystemException(ex))
+            {
+                return (
+                    filePath,
+                    new[]
+                    {
+                        BuiltinLinterOutputs.FileReadError(
+                            filePath: filePath,
+                            errorMessage: ex.Message)
+                    },
+                    true);
+            }
+
+            if (string.IsNullOrEmpty(fileContent))
+            {
+                return (
+                    filePath,
+                    new[] { BuiltinLinterOutputs.PolicyDefinitionParsingFailure(parserError: "Empty file") },
+                    true);
+            }
+
+            try
+            {
+                var results = linter.Lint(rawPolicyDefinition: fileContent, filePath: filePath);
+                var hasParsingFailure = results.Any(BuiltinLinterOutputs.IsPolicyDefinitionParsingFailure);
+                return (filePath, results, hasParsingFailure);
+            }
+            catch (Exception ex)
+            {
+                var errorResult = BuiltinLinterOutputs.LinterExecutionError(
+                    filePath: filePath,
+                    errorMessage: $"{ex.GetType().Name}: {ex.Message}");
+                return (filePath, new[] { errorResult }, true);
+            }
         }
 
         /// <summary>

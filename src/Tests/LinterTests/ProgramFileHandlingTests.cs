@@ -376,16 +376,42 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 metadata: new MockTypeMetadata());
 
             // Act
-            var (results, hasFailures) = await Program.ProcessFiles(
+            var (results, hasOperationalFailures) = await Program.ProcessFiles(
                 filePaths: new[] { tempFiles[0] },
                 linter: linter);
 
             // Assert
-            hasFailures.Should().BeTrue();
+            hasOperationalFailures.Should().BeTrue();
             results[tempFiles[0]].Should().ContainSingle().Which.Should().BeEquivalentTo(
                 BuiltinLinterOutputs.LinterExecutionError(
                     filePath: tempFiles[0],
                     errorMessage: "InvalidOperationException: Rule failed"));
+        }
+
+        [Fact]
+        public async Task ProcessFiles_CriticalLinterOutput_DoesNotFail()
+        {
+            // Arrange
+            File.WriteAllText(tempFiles[0], GetValidPolicyJson());
+            var criticalOutput = BuiltinLinterOutputs.UnexpectedNullRuleInvocation(
+                id: "test-rule",
+                title: "Test Rule");
+            var criticalRule = new TestPolicyDefinitionLinterRule
+            {
+                EvaluateFunc = (_, _, _) => new[] { criticalOutput }
+            };
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { criticalRule },
+                metadata: new MockTypeMetadata());
+
+            // Act
+            var (results, hasOperationalFailures) = await Program.ProcessFiles(
+                filePaths: new[] { tempFiles[0] },
+                linter: linter);
+
+            // Assert
+            hasOperationalFailures.Should().BeFalse();
+            results[tempFiles[0]].Should().ContainSingle().Which.Should().BeEquivalentTo(criticalOutput);
         }
 
         private string GetValidPolicyJson()
