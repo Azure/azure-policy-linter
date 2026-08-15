@@ -29,11 +29,13 @@ Related skills:
 
 4. **Coherence cascade.** A rule's identity propagates to ~10 places. Any rename, rescope, or severity change must update all of them in one shot. See the cascade audit below.
 
+5. **Prefer simple, useful coverage.** A linter rule does not need to prove the absence of a problem. Implement the simplest check that provides the coverage agreed in the spec. Do not silently expand it to cover every logical shape or edge case.
+
 ## Flow
 
 ### 1. Confirm the spec
 
-If you received a spec from `triage-linter-rule`, you have: Title, Summary, Target, Applicability, Required context, examples, optional severity / category / rule set.
+If you received a spec from `triage-linter-rule`, you have: Title, Summary, Target, Applicability, Required context, Additional details, examples, optional severity / category / rule set. Read Additional details for missing core capabilities and coverage trade-offs before proceeding.
 
 If you received an informal request, ask only what you need to start:
 - What policy construct does this inspect? (Target)
@@ -41,6 +43,16 @@ If you received an informal request, ask only what you need to start:
 - Suggested severity?
 
 Without applicability you can't write the rule - resolve it before going further.
+
+If the rule needs a core capability the linter does not have, **stop before locking the identity or writing code**. Ask the user whether to:
+
+- Narrow the rule to a simpler check with explicit coverage gaps.
+- Defer the rule until the core capability exists.
+- Scope the core capability as separate work.
+
+Do not implement the missing core capability as part of the rule. Do not recreate it privately inside the rule. A utility method local to the check is fine; generic parsing, policy evaluation, applicability, or cross-branch analysis is core functionality.
+
+If the spec identifies a simple-versus-complete coverage trade-off but does not record the user's choice, stop and ask. Default to the simple version only when the user delegates the choice.
 
 ### 2. Lock the identity
 
@@ -61,7 +73,9 @@ Renames after this step are expensive - they ripple across the cascade audit.
 - **Namespace**: all rule namespaces sit under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>`.
 - **Standard structure**: `sealed class`, parameterless constructor calling `base(...)`, `private const string RuleTitle` and `RuleDescription` fields, override `Evaluate` returning `LinterOutput[]`.
 - **Early-return guards first**; emit only after all preconditions are satisfied.
-- **Don't modify files outside the rule's own file, its tests, and its doc.** Rule logic that needs new helpers in the engine is a sign the rule is doing too much, or the helper belongs in the rule file. If you genuinely need to touch engine code, stop and confirm with the user first.
+- **Don't modify files outside the rule's own file, its tests, and its doc.** Utility methods specific to the rule can live in the rule file. If the implementation needs a generic core capability or an engine change, return to step 1 and stop for a user decision.
+
+**Complexity check before continuing:** most shipped rules are 40-120 lines. Stop and revisit the coverage decision when the implementation is heading past roughly 150 lines, recursively evaluates the condition tree, tracks negation parity, correlates logical branches, or otherwise starts resembling policy evaluation. State the simpler implementation and what it misses. Correct and tested code can still be over-built.
 
 **Common traps the engine model invites:**
 
@@ -79,6 +93,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
 
 **Description format string discipline:**
 
+- Start with the semantic problem in the author's policy, not the rule's detection mechanics. The author should understand what is wrong and what happens if they ignore it without learning how the linter reached the conclusion.
 - Open with the construct named in the user's vocabulary and quoted in single quotes: `"The field alias: '{0}'..."`.
 - Use structured placeholders (`{0}`, `{1}`) filled at emit time. **Avoid the passthrough form** (`descriptionFormat: "{0}"`); that's usually a sign you actually have more than one rule.
 - Substitute a realistic value mentally and read the result aloud. If it reads awkwardly - "The parameter reference 'myParam' does not match..." vs "The parameter reference '[parameters('myParam')]' does not match..." - rewrite the format string so it reads naturally regardless of what's substituted.
@@ -107,7 +122,7 @@ The filename matches the rule identifier exactly. The H1 matches the rule's titl
 
 Four sections, in this order:
 1. **Metadata table** - category, identifier, severity, rule set.
-2. **Description** - 2-4 sentences, third-person declarative. What the rule checks and why it matters for the policy author. Not a how-the-rule-works explanation.
+2. **Description** - 2-4 sentences, third-person declarative. Start with the problem in the policy and its consequence. Detection mechanics, expression-tree details, metadata predicates, and exhaustive applicability conditions belong in the implementation or references, not here.
 3. **Suggestions** - imperative, second-person. Bulleted when there are multiple steps.
 4. **Examples** - minimal "violation" and "correct" fragments, when they add signal. Show only the relevant property, not a full policy document. Omit examples when the description is self-evident.
 
@@ -135,6 +150,8 @@ Before declaring done, verify the rule's identity is consistent across every art
 
 Any mismatch is a bug. If you rename or rescope mid-flow, **run this audit before declaring done.**
 
+Also verify that the remediation in `RuleDescription` agrees with the doc's Suggestions section, and that both use the same terms for the same policy concepts.
+
 ### 7. Version bump (if applicable)
 
 If the release process requires a version bump, bump `<Version>` in `Directory.Build.props` - the single source shared by both packages. Suggest it to the user; don't apply without confirmation.
@@ -143,6 +160,8 @@ If the release process requires a version bump, bump `<Version>` in `Directory.B
 
 - Run `sanity-check-linter` to confirm the CLI behaves end-to-end with the new rule.
 - Offer to run `review-linter-rule` for a design + correctness review of what you produced.
+
+When addressing review feedback, determine whether the comment is specific to one artifact or exposes a convention that applies across the rule, its tests, its doc, or other rules in the same change. Apply the general feedback everywhere it holds before replying.
 
 ## Patterns worth knowing about
 
@@ -171,3 +190,4 @@ Two failures that aren't in the design doc and recur enough to call out:
 - Never invent vocabulary not present in Azure Policy documentation.
 - When in doubt about a convention or pattern, look at existing rules in the same rule set rather than inferring from first principles.
 - Don't modify files outside the rule, its tests, and its doc without explicit user confirmation.
+- Never implement missing core linter functionality inside a rule.
