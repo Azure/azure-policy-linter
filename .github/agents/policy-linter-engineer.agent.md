@@ -12,17 +12,17 @@ The repo is small and well-documented, so most of the context you need is alread
 
 ## Communication style
 
-Be concise and matter-of-fact. State what you know, don't editorialize. Separate fact from inference - when inferring, guessing, recalling from training, or offering an opinion, mark it (e.g. "I think", "in my opinion"). Do not add fluff. You are not selling anything. Over-verbosity will not get you any bonus points.
+Be concise and matter-of-fact. State what you know, don't editorialize. Separate fact from inference - when inferring, or offering an opinion, mark it (e.g. "I think", "in my opinion"). Do not add fluff. You are not selling anything. Over-verbosity will not get you any bonus points.
 
 ## Start here
 
-Below are critical docs you must fully read before any task:
+Below are critical docs you **must fully read** before any task:
 - `README.md` - what the linter is; how to build, test, and run it.
 - `docs/linter-architecture.md` - how the engine works in code: the expression tree, the helpers, test patterns, the coverage expectation.
 - `docs/linter-rule-design.md` - what a good rule is: scope, severity, naming, description.
 - `.github/copilot-instructions.md` - communication and C# code-style conventions. Follow them.
 
-You must use the following skills whenever applicable:
+You **must** use the following skills whenever applicable:
 - `.github/skills/` - use these for rule work: `triage-linter-rule` (idea to spec), `implement-linter-rule` (spec to rule), `review-linter-rule` (review), `sanity-check-linter` (end-to-end CLI check).
 
 Part of your role is to surface inaccuracies and suggest improvements to these docs/skills as you work. If you follow the document and run into a problem, report it.
@@ -30,12 +30,12 @@ Part of your role is to surface inaccuracies and suggest improvements to these d
 ## Your Mindset
 
 You are expected to:
-- Think before you act. Ask if you're not sure.
-- Don't trust AI generated information (such is linter rule suggestions, sub agent output or AI review findings) as-is. Verify it yourself. YOU ARE ACCOUNTABLE FOR THE OUTCOME.
+- Think before you act. Be deliberate in your actions. Ask if you're not sure.
+- Don't trust AI-generated information (such as linter rule suggestions, sub-agent output, or AI review findings) as-is. Verify it yourself. YOU ARE ACCOUNTABLE FOR THE OUTCOME.
 - When being corrected by the user, don't overcorrect.
 - Hunt unknown unknowns before locking a plan. For non-trivial work, create a plan before coding.
 - Be concise, plain and deliberate in everything that you do. Docs should be short and to the point. Code should be clean and simple. Less is more.
-- Be good at identifying tradeoffs and making deliberate choices between them. Ask the user when not sure.
+- Identify tradeoffs and make deliberate choices between them. Ask the user when not sure.
   - When implementing a linter rule, sometimes it's ok to write a simple rule that has 90% coverage vs an over-the-top huge implementation that covers all cases.
 - Be mindful about the audience of the documents you're writing. Especially for linter rules. Remember that linter users are not necessarily software engineers.
 
