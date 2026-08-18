@@ -21,15 +21,30 @@ Related skills:
 
 ## The things that matter most
 
-1. **The rule must help a policy author do something about their policy.** Every choice - what to flag, severity, naming, description shape, doc shape - has to serve that. If you can't articulate what a policy author would do differently after seeing this rule's finding, you're either implementing the wrong rule or implementing it wrong. This is the test that gates every other decision.
+- **The rule and its doc must advance the quality of the policy or the knowledge of the author.**
+  - You must be able to articulate the value this rule will provide to the policy author.
+  - Every choice you make must serve that goal: when to fire, when not to, severity, name, description and documentation.
 
-2. **One check, one rule.** If the spec sounds like two ideas joined with "and", it's two rules. Stop and split.
+- **One check, one rule.**
+  - If the spec combines independent checks, split them into separate rules.
 
-3. **Use the policy author's vocabulary.** Names, descriptions, and docs only use terms that already exist in Azure Policy documentation - `field`, `alias`, `effect`, `parameter`, `allowedValues`, etc. **Do not invent categorizing nouns** ("groups", "shapes", "patterns", "buckets"). If you find yourself coining a term, describe the pattern instead, or pick a name that already exists in the policy documentation.
+- **Clarity and simplicity are critical**
+  - An engineer familiar with the linter should be able to review the core implementation in 10 minutes or less.
 
-4. **Coherence cascade.** A rule's identity propagates to ~10 places. Any rename, rescope, or severity change must update all of them in one shot. See the cascade audit below.
+- **Specs aren't ground truth, especially not AI-generated ones.**
+  - Even if the rule is implemented in the same session where it was triaged, treat implementation as an independent engineering step. The goal is to **ship** a valuable rule to policy users. A polished spec isn't a guarantee of quality or value.
+  - The implementation stage will often uncover things the spec missed. Pivot when necessary. Adhering to the linter's guidelines and providing value to the policy author matter more than following the spec literally.
 
-5. **Prefer simple, useful coverage.** A linter rule does not need to prove the absence of a problem. Implement the simplest check that provides the coverage agreed in the spec. Do not silently expand it to cover every logical shape or edge case.
+- **Use the policy author's vocabulary.**
+  - Names, descriptions, and docs only use terms that already exist in Azure Policy documentation - `field`, `alias`, `effect`, `parameter`, `allowedValues`, etc. **Do not invent categorizing nouns** ("groups", "shapes", "patterns", "buckets"). If you find yourself coining a term, describe the pattern instead, or pick a name that already exists in the policy documentation.
+  - The rule name, description and documentation MUST be simple and easy to read. They should not echo the spec, describe implementation details, or use software engineering jargon. They should target policy authors, not policy engineers.
+
+- **Don't leave dead or stale artifacts.** Implementation can change between iterations. Clean all references to old implementations.
+
+- **Trade coverage for simplicity.**
+  - It's ok if a rule doesn't "catch" all cases. It's ok to apply simple heuristics instead of complex deterministic checks.
+  - Strongly prefer simple-but-not-perfect rule coverage over an off-the-rails "perfect" implementation.
+  - Example: to identify whether the rule is targeting a specific resource type, you can either check if the rule is referencing aliases for this type, or build a SAT solver to reverse engineer the policy rule. Do the former, not the latter.
 
 ## Flow
 
@@ -52,7 +67,7 @@ If the rule needs a core capability the linter does not have, **stop before lock
 
 Do not implement the missing core capability as part of the rule. Do not recreate it privately inside the rule. A utility method local to the check is fine; generic parsing, policy evaluation, applicability, or cross-branch analysis is core functionality.
 
-If the spec identifies a simple-versus-complete coverage trade-off but does not record the user's choice, stop and ask. Default to the simple version only when the user delegates the choice.
+If you identify a simple-versus-complete coverage trade-off but the spec does not record the user's choice, stop and ask.
 
 ### 2. Lock the identity
 
@@ -73,9 +88,15 @@ Renames after this step are expensive - they ripple across the cascade audit.
 - **Namespace**: all rule namespaces sit under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>`.
 - **Standard structure**: `sealed class`, parameterless constructor calling `base(...)`, `private const string RuleTitle` and `RuleDescription` fields, override `Evaluate` returning `LinterOutput[]`.
 - **Early-return guards first**; emit only after all preconditions are satisfied.
-- **Don't modify files outside the rule's own file, its tests, and its doc.** Utility methods specific to the rule can live in the rule file. If the implementation needs a generic core capability or an engine change, return to step 1 and stop for a user decision.
+- **Don't modify files outside the rule's own file, its tests, and its doc.** Utility methods specific to the rule can live in the rule file. If the implementation needs a generic core capability or an engine change, return to step 1 and stop for explicit user approval.
 
-**Complexity check before continuing:** most shipped rules are 40-120 lines. Stop and revisit the coverage decision when the implementation is heading past roughly 150 lines, recursively evaluates the condition tree, tracks negation parity, correlates logical branches, or otherwise starts resembling policy evaluation. State the simpler implementation and what it misses. Correct and tested code can still be over-built.
+**Complexity check before continuing:**
+- Most shipped rules are 40-120 lines.
+- Rules should take no more than 10 minutes to review.
+- Stop and do an honest self-assessment. Have you gone over the top? Is it overkill?
+  - Ask a sub-agent to review and provide explicit feedback on simplicity and scope.
+- Stop and revisit the coverage decision when the implementation is heading past roughly 150 lines, takes longer than 10 minutes to review, or its complexity is disproportionate to the value and coverage gained.
+- Correct and tested code can still be over-built.
 
 **Common traps the engine model invites:**
 
@@ -93,7 +114,8 @@ Renames after this step are expensive - they ripple across the cascade audit.
 
 **Description format string discipline:**
 
-- Start with the semantic problem in the author's policy, not the rule's detection mechanics. The author should understand what is wrong and what happens if they ignore it without learning how the linter reached the conclusion.
+- Start with the semantic problem in the author's policy. By the end of the first sentence, the author **MUST** understand what is wrong.
+- Do not go into describing the implementation details, or echo the rule's spec. This is not the place.
 - Open with the construct named in the user's vocabulary and quoted in single quotes: `"The field alias: '{0}'..."`.
 - Use structured placeholders (`{0}`, `{1}`) filled at emit time. **Avoid the passthrough form** (`descriptionFormat: "{0}"`); that's usually a sign you actually have more than one rule.
 - Substitute a realistic value mentally and read the result aloud. If it reads awkwardly - "The parameter reference 'myParam' does not match..." vs "The parameter reference '[parameters('myParam')]' does not match..." - rewrite the format string so it reads naturally regardless of what's substituted.
