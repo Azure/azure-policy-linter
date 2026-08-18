@@ -28,8 +28,11 @@ Related skills:
 - **One check, one rule.**
   - If the spec combines independent checks, split them into separate rules.
 
-- **Clarity and simplicity are critical**
+- **Clarity and simplicity are critical.**
   - An engineer familiar with the linter should be able to review the core implementation in 10 minutes or less.
+  - It's ok if a rule doesn't catch all cases. Prefer simple heuristics over complex deterministic checks.
+  - Strongly prefer simple-but-not-perfect coverage over an off-the-rails "perfect" implementation.
+  - Example: to identify whether the rule targets a specific resource type, check whether it references aliases for that type instead of building a SAT solver to reverse engineer the policy rule.
 
 - **Specs aren't ground truth, especially not AI-generated ones.**
   - Even if the rule is implemented in the same session where it was triaged, treat implementation as an independent engineering step. The goal is to **ship** a valuable rule to policy users. A polished spec isn't a guarantee of quality or value.
@@ -40,11 +43,6 @@ Related skills:
   - The rule name, description and documentation MUST be simple and easy to read. They should not echo the spec, describe implementation details, or use software engineering jargon. They should target policy authors, not policy engineers.
 
 - **Don't leave dead or stale artifacts.** Implementation can change between iterations. Clean all references to old implementations.
-
-- **Trade coverage for simplicity.**
-  - It's ok if a rule doesn't "catch" all cases. It's ok to apply simple heuristics instead of complex deterministic checks.
-  - Strongly prefer simple-but-not-perfect rule coverage over an off-the-rails "perfect" implementation.
-  - Example: to identify whether the rule is targeting a specific resource type, you can either check if the rule is referencing aliases for this type, or build a SAT solver to reverse engineer the policy rule. Do the former, not the latter.
 
 ## Flow
 
@@ -142,11 +140,11 @@ Test names: `RuleTests_<RuleName>_<Case>` for the default rule set; `RuleTests_<
 
 The filename matches the rule identifier exactly. The H1 matches the rule's title verbatim. Default-set rule docs live in `docs/Rules/`; see the architecture doc for the layout.
 
-Four sections, in this order:
+Three required sections, followed by optional examples:
 1. **Metadata table** - category, identifier, severity, rule set.
 2. **Description** - 2-4 sentences, third-person declarative. Start with the problem in the policy and its consequence. Detection mechanics, expression-tree details, metadata predicates, and exhaustive applicability conditions belong in the implementation or references, not here.
 3. **Suggestions** - imperative, second-person. Bulleted when there are multiple steps.
-4. **Examples** - minimal "violation" and "correct" fragments, when they add signal. Show only the relevant property, not a full policy document. Omit examples when the description is self-evident.
+4. **Examples (optional)** - minimal "violation" and "correct" fragments, when they add signal. Show only the relevant property, not a full policy document. Omit examples when the description is self-evident.
 
 When the rule touches a documented Azure Policy concept (operator, field reference shape, effect, parameter type), link to the official Microsoft Learn page. Don't restate documentation that already exists elsewhere - point at it.
 
