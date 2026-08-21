@@ -48,6 +48,9 @@ Read these before writing anything:
 
 If you received a spec from `triage-linter-rule`, you have: Title, Summary, Target, Applicability, Required context, Additional details, examples, optional severity / category / rule set. Read Additional details for missing core capabilities and coverage trade-offs before proceeding.
 
+Read the spec with critical eye. Don't take it as ground truth. You are responsible to ensure the linter rule is correct and valuable regardless what the spec says.
+You are expected to question the spec, verify its claims and make your own decisions if something doesn't fit.
+
 If you received an informal request, ask only what you need to start:
 - What policy construct does this inspect? (Target)
 - When does it fire and when does it stay silent? (Applicability)
@@ -55,7 +58,7 @@ If you received an informal request, ask only what you need to start:
 
 Without applicability you can't write the rule - resolve it before going further.
 
-If the rule needs a core capability the linter does not have, **stop before locking the identity or writing code**. Ask the user whether to:
+If the rule needs a core capability the linter does not have, **stop**. Ask the user whether to:
 
 - Narrow the rule to a simpler check with explicit coverage gaps.
 - Defer the rule until the core capability exists.
@@ -96,17 +99,15 @@ Renames after this step are expensive - they ripple across the cascade audit.
 
 **Common traps the engine model invites:**
 
-- **Effect details (`then.details.*`) are not typed nodes.** If your rule needs to inspect `roleDefinitionIds`, `existenceCondition`, `deploymentScope`, etc., target `ThenExpression` and walk the raw `JToken` - do not invent an expression type for them.
-- **Guard with `HasLiteralValue` before treating `Property.Value` as a runtime constant.** Otherwise `[parameters('x')]` strings get compared as raw text. If your rule intentionally handles parameterized values, use `HasSimpleParameterizedValue` instead of parsing the raw string.
-- **Treat `null` and `[]` differently on collections.** `null` means the property is absent; an empty array means the author set it to empty explicitly. Skip on `null`; evaluate on `[]` unless the rule has a documented reason not to.
-- **Operator names are case-sensitive literals.** The valid set: `equals`, `notEquals`, `like`, `notLike`, `in`, `notIn`, `contains`, `notContains`, `containsKey`, `notContainsKey`, `exists`, `match`, `notMatch`, `greater`, `greaterOrEquals`, `less`, `lessOrEquals`, `matchInsensitively`, `notMatchInsensitively`. Note `greaterOrEquals` (not `greaterOrEqual`) and `matchInsensitively` (not `matchInsensitive`).
-
-**Things AI agents reach for first that are wrong:**
-
-- *"I'll use regex to find or parse `[...]` template expressions"* - no. Use `ExpressionEngine.IsLanguageExpression()` and `ExpressionsEngine.ParseLanguageExpression()`.
-- *"Field references are always inside `field()` calls"* - not always. They also appear as `LeafCondition.Field` directly or implicitly in `current()` functions. `Reference.IsResolvedFieldReference()` handles all shapes.
-- *"I'll lowercase both sides for case-insensitive compare"* - no `.ToLower()`/`.ToUpper()`. Use `StringComparison.OrdinalIgnoreCase` overloads.
-- *"I'll allocate the allowlist `HashSet` inside `Evaluate`"* - no. Static allowlists are `private static readonly HashSet<T>` on the class, allocated once.
+- Not using existing utility methods. Partial set of examples:
+  - Parsing, or using regex to parse expressions and template functions
+  - Recursive expression traversal instead of using visitors
+  - Re-inventing common helper methods identifying common policy patterns (e.g. `HasSimpleParameterizedValue`).
+- Crazy over the top implementation to achieve a perfect linter rule coverage.
+- The above typically comes with attempts to implement (or re-implement) things that should either be in the core linter as a utility method, or things that should't be in the linter at all.
+- Writing linter rules that target parent expressions and then implement additional tree traversal and parsing.
+  - e.g. a rule that targets field references but instead fo targeting `Reference` expressions, is targeting `Condition` expressions and traverses each condition to extract all references
+- Making expensive allocations in the `Evaluate` method of the rule when a static allocation would also work.
 
 **Description format string discipline:**
 

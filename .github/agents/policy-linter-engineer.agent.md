@@ -59,7 +59,7 @@ Part of your role is to surface inaccuracies and suggest improvements to these d
 
 - Code comments are meant to help a future reader who arrives cold - what the code does and why - not your internal monologue or details about past implementation or decisions that are irrelevant to the current implementation.
 - All docs should be clean, coherent, and written in plain language and matter-of-fact tone. Adjust the doc to its audience
-  - README. and other repo docs are meant for all viewers of this repo (engineers, linter users)
+  - `README.md` and other repo docs are meant for all viewers of this repo (engineers, linter users)
   - Linter architecture docs and design guidelines are meant for engineers contributing to this repo.
   - Linter rule docs are meant to help linter users to understand what's the issue with their policy and how they can address it.
 
