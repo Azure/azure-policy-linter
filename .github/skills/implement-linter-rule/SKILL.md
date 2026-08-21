@@ -14,29 +14,27 @@ Read these before writing anything:
 - `docs/linter-rule-design.md` - what a good rule looks like (scope, severity, naming, description, documentation). Source of truth for design decisions.
 - `docs/linter-architecture.md` - how rules work in code (contract, expression tree, helpers, test placement, file locations). Source of truth for implementation.
 
-Related skills:
-- `triage-linter-rule` - produces the spec this skill consumes. If you don't have a spec, defer to triage first.
-- `sanity-check-linter` - end-to-end CLI verification after the change.
-- `review-linter-rule` - design + correctness review of the produced rule.
+- Follow the guidelines in [linter-rule-design.md](../../../docs/linter-rule-design.md) to the letter.
 
 ## The things that matter most
 
-- **The rule and its doc must advance the quality of the policy or the knowledge of the author.**
+- **The rule must advance the quality of the policy or the knowledge of the author.**
   - You must be able to articulate the value this rule will provide to the policy author.
   - Every choice you make must serve that goal: when to fire, when not to, severity, name, description and documentation.
+
+- **Specs aren't ground truth, especially not AI-generated ones.**
+  - Even if the rule is implemented in the same session where it was triaged, treat implementation as an independent engineering step.
+  - A well-polished spec isn't a guarantee of quality or value.
+  - The implementation stage will often uncover things the spec missed. Pivot when necessary. Adhering to the linter's guidelines and providing value to the policy author matter more than following the spec literally.
 
 - **One check, one rule.**
   - If the spec combines independent checks, split them into separate rules.
 
 - **Clarity and simplicity are critical.**
   - An engineer familiar with the linter should be able to review the core implementation in 10 minutes or less.
-  - It's ok if a rule doesn't catch all cases. Prefer simple heuristics over complex deterministic checks.
-  - Strongly prefer simple-but-not-perfect coverage over an off-the-rails "perfect" implementation.
-  - Example: to identify whether the rule targets a specific resource type, check whether it references aliases for that type instead of building a SAT solver to reverse engineer the policy rule.
-
-- **Specs aren't ground truth, especially not AI-generated ones.**
-  - Even if the rule is implemented in the same session where it was triaged, treat implementation as an independent engineering step. The goal is to **ship** a valuable rule to policy users. A polished spec isn't a guarantee of quality or value.
-  - The implementation stage will often uncover things the spec missed. Pivot when necessary. Adhering to the linter's guidelines and providing value to the policy author matter more than following the spec literally.
+  - Getting partial rule coverage is preferred if the "perfect" implementation requires complex, over-the-top, implementation.
+    - The main red flags are custom logic for expression parsing, processing or evaluation logic for a specific linter rule.
+    - Example: Identifying resource type applicability in a rule that looks for policies for a specific resource type can do a simple check of which aliases are being used. No need to write a perfect applicability detector, which is most likely an NP-Complete problem. This is a linter, not a SAT solver.
 
 - **Use the policy author's vocabulary.**
   - Names, descriptions, and docs only use terms that already exist in Azure Policy documentation - `field`, `alias`, `effect`, `parameter`, `allowedValues`, etc. **Do not invent categorizing nouns** ("groups", "shapes", "patterns", "buckets"). If you find yourself coining a term, describe the pattern instead, or pick a name that already exists in the policy documentation.
@@ -112,12 +110,20 @@ Renames after this step are expensive - they ripple across the cascade audit.
 
 **Description format string discipline:**
 
-- Start with the semantic problem in the author's policy. By the end of the first sentence, the author **MUST** understand what is wrong.
-- Do not go into describing the implementation details, or echo the rule's spec. This is not the place.
+- This is string will be included in the linter's output and is the user's first encounter with the issue.
+- It will typically be included in the console output (when using CLI), or in a PR comment based on running the linter.
+- Therefore, it must be a short, informative, description of the issue the linter rule found.
+- By the end of the first sentence, the author **MUST** understand what is wrong with their specific policy.
+- The description is a static string format, with placeholders to include dynamic information from the policy expression.
+- Typical format: `"The *problematic expression type* *problematic expression value* *problem description*"`
+  - e.g. `"The field alias: 'Microsoft.Test/whatever' is not available in older API versions: 2021-01-01, ...."`
+  - 150-300 characters. Hard ceiling 400. No URLs, no line breaks.
+- Do not:
+  - Mention how the linter found the issue, or any implementation or design details of the linter rule.
+  - Go into excessive details on context, examples, mitigation options, etc. These should be in the linter rule doc file.
+  - Abuse the string format. **The description content should be static. Formatting is only used to include policy details**. Descriptions like `found issue: "{0}"` are not allowed and are usually a sign you need more than one rule.
 - Open with the construct named in the user's vocabulary and quoted in single quotes: `"The field alias: '{0}'..."`.
-- Use structured placeholders (`{0}`, `{1}`) filled at emit time. **Avoid the passthrough form** (`descriptionFormat: "{0}"`); that's usually a sign you actually have more than one rule.
-- Substitute a realistic value mentally and read the result aloud. If it reads awkwardly - "The parameter reference 'myParam' does not match..." vs "The parameter reference '[parameters('myParam')]' does not match..." - rewrite the format string so it reads naturally regardless of what's substituted.
-- 150-300 characters. Hard ceiling 400. No URLs, no line breaks.
+- Use structured placeholders (`{0}`, `{1}`) filled at emit time to include information from the analyzed policy.
 
 ### 4. Write tests
 
@@ -167,10 +173,10 @@ Before declaring done, verify the rule's identity is consistent across every art
 9. Doc filename (matches identifier exactly).
 10. Doc H1 (matches `RuleTitle` verbatim).
 11. Doc metadata table values (match identifier, category, severity, rule set used in code).
+12. The doc's first paragraph plainly states what's the issue with the policy.
+12. The remediation in `RuleDescription` agrees with the doc's Suggestions section, and that both use the same terms for the same policy concepts.
 
 Any mismatch is a bug. If you rename or rescope mid-flow, **run this audit before declaring done.**
-
-Also verify that the remediation in `RuleDescription` agrees with the doc's Suggestions section, and that both use the same terms for the same policy concepts.
 
 ### 7. Version bump (if applicable)
 
@@ -180,28 +186,6 @@ If the release process requires a version bump, bump `<Version>` in `Directory.B
 
 - Run `sanity-check-linter` to confirm the CLI behaves end-to-end with the new rule.
 - Offer to run `review-linter-rule` for a design + correctness review of what you produced.
-
-When addressing review feedback, determine whether the comment is specific to one artifact or exposes a convention that applies across the rule, its tests, its doc, or other rules in the same change. Apply the general feedback everywhere it holds before replying.
-
-## Patterns worth knowing about
-
-The architecture doc has one end-to-end walkthrough. A few patterns are non-obvious and worth knowing exist; look at the reference rule when your task fits the shape:
-
-- **One error per missing property, not aggregated.** When checking that several properties are present, emit a separate finding for each missing one rather than stitching them into one branching message.
-- **Negation detection via `PathSegments`.** A rule that needs to know whether it's inside a `not` quantifier reads the parent path rather than walking up by reference. See the field-alias rules.
-- **Field-alias metadata inspection.** When the rule's decision depends on resource-provider metadata (API versions, readonly/optional), use `Reference.ResourcePropertyMetadata` rather than re-resolving the alias. See `OptionalFieldAlias`, `ConditionalFieldAlias`.
-- **Raw `JToken` traversal for unmodeled structures.** When the rule needs to inspect parts of the policy the engine doesn't model as typed nodes (effect details, metadata bag), use the shared JSON walker rather than ad-hoc recursion.
-
-When the rule set is non-default, look at 2-3 existing rules in that set before writing - those sets have scenario-specific conventions that aren't covered here and won't be apparent from first principles.
-
-## Specifics that bite
-
-The design doc's *Naming* and *Description* sections cover the recurring AI-fingerprint tone failures (invented vocabulary, engine-mechanics digressions, speculative explanations, harsh verdicts, branching descriptions, `Must` outside Error severity). Re-read those before shipping if you're unsure.
-
-Two failures that aren't in the design doc and recur enough to call out:
-
-- **Comments that take dependencies on "other code".** Don't write `// other rules handle that case` - that's an implicit coupling. Comment the local invariant only.
-- **Re-checking what the platform already validates.** The policy definitions REST API rejects malformed policies before the linter sees them. Rules that duplicate platform validation are low value; if you find yourself writing one, confirm with the user that it's intentional, and use Error severity (not Warning - the platform already errors).
 
 ## Hard rules
 
