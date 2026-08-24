@@ -216,6 +216,62 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
+        /// An alias that cannot fit in the description falls back to the affected count.
+        /// </summary>
+        [Fact]
+        public void RuleTests_OptionalFieldAlias_ExtremelyLongAlias_FallsBackToAffectedCount()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new OptionalFieldAlias()
+                },
+                metadata: new OptionalAliasTypeMetadata());
+
+            var longAlias = "Microsoft.Test/widgets/" + new string('a', 400);
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""allOf"": [
+                          {
+                            ""field"": """ + longAlias + @""",
+                            ""exists"": ""true""
+                          },
+                          {
+                            ""field"": ""Microsoft.Test/widgets/group-two-property"",
+                            ""exists"": ""true""
+                          }
+                        ]
+                      },
+                      ""then"": {
+                        ""effect"": ""audit""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "optional-field-alias",
+                Title: "Optional Field Alias",
+                Severity: Severity.Informational,
+                Category: Category.ResourceFields,
+                LineNumber: 6,
+                LinePosition: 29,
+                Path: "properties.policyRule.if",
+                Description: "Field aliases and API versions where the property is optional: 2 affected aliases.");
+
+            results.Should().ContainEquivalentOf(output);
+            results[0].Description.Length.Should().BeLessThanOrEqualTo(400);
+        }
+
+        /// <summary>
         /// Different complete version sets remain separate when their summaries match.
         /// </summary>
         [Fact]
