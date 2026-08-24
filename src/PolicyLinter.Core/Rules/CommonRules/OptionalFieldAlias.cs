@@ -5,20 +5,21 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
-    using global::Azure.Deployments.ResourceMetadata.ApiVersion;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Formatting;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
     /// Detects field aliases that map to properties that are not marked as required in some API versions of the resource type.
     /// </summary>
-    public sealed class OptionalFieldAlias : LinterRule<Reference>
+    public sealed class OptionalFieldAlias : LinterRule<IfCondition>
     {
         private const string RuleTitle = "Optional Field Alias";
-        private const string RuleDescription = "The field alias: '{0}' maps to a property that is not marked as required in some API versions of resource type: '{1}'. API versions: '{2}'";
+        private const string RuleDescription = "Field aliases and API versions where the property is optional: {0}.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionalFieldAlias"/> class.
@@ -26,36 +27,78 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         public OptionalFieldAlias() : base(
             identifier: "optional-field-alias",
             category: Category.ResourceFields,
-            title: RuleTitle,
-            descriptionFormat: RuleDescription,
+            title: OptionalFieldAlias.RuleTitle,
+            descriptionFormat: OptionalFieldAlias.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
-            if (expression.IsResolvedFieldReference() && FieldPathHelper.IsFieldAlias(expression.Identifier))
+            var affectedAliases = new Dictionary<string, (Reference Reference, string GroupKey, string ApiVersionDetails)>(StringComparer.OrdinalIgnoreCase);
+
+            var visitor = new PolicyExpressionVisitor
             {
-                if (expression.ResourcePropertyMetadata.Any())
+                Visit = visited =>
                 {
-                    var optionalApiVersions = expression.ResourcePropertyMetadata
+                    if (visited is not Reference reference ||
+                        !reference.IsResolvedFieldReference() ||
+                        !FieldPathHelper.IsFieldAlias(reference.Identifier) ||
+                        !reference.ResourcePropertyMetadata.Any())
+                    {
+                        return;
+                    }
+
+                    var optionalApiVersions = reference.ResourcePropertyMetadata
                         .Where(metadata => metadata.Exists && !metadata.IsRequired && !metadata.IsConditional && !metadata.IsReadonly)
                         .SelectMany(metadata => metadata.ApiVersions)
-                        .Distinct()
-                        .OrderBy(v => v, comparer: SuffixAwareApiVersionComparer.Instance)
                         .ToArray();
 
                     if (optionalApiVersions.Length != 0)
                     {
-                        var resourceType = expression.ResourcePropertyMetadata.First().ResourceType;
-                        var apiVersionsFormatted = string.Join(", ", optionalApiVersions);
-                        return new[] { this.CreateInformational(expression, expression.Identifier, resourceType, apiVersionsFormatted) };
+                        var groupKey = string.Join(
+                            ", ",
+                            optionalApiVersions
+                                .Distinct()
+                                .OrderBy(apiVersion => apiVersion, StringComparer.Ordinal));
+
+                        _ = affectedAliases.TryAdd(
+                            key: reference.Identifier,
+                            value: (
+                                reference,
+                                groupKey,
+                                ApiVersionListFormatter.Format(optionalApiVersions)));
                     }
-                }
+                },
+            };
+
+            expression.Visit(visitor);
+
+            if (affectedAliases.Count == 0)
+            {
+                return Array.Empty<LinterOutput>();
             }
 
-            return Array.Empty<LinterOutput>();
+            PolicyExpression outputExpression = affectedAliases.Count == 1
+                ? affectedAliases.Values.First().Reference
+                : expression;
+
+            var maximumDetailsLength =
+                FieldAliasFindingFormatter.MaximumDescriptionLength -
+                string.Format(OptionalFieldAlias.RuleDescription, string.Empty).Length;
+
+            var details = FieldAliasFindingFormatter.Format(
+                aliasDetails: affectedAliases.Select(item => (
+                    Alias: item.Key,
+                    GroupKey: item.Value.GroupKey,
+                    ApiVersionDetails: item.Value.ApiVersionDetails)),
+                maximumLength: maximumDetailsLength);
+
+            return new[]
+            {
+                this.CreateInformational(outputExpression, details),
+            };
         }
     }
 }
