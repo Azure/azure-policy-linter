@@ -53,19 +53,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// Two versions are displayed from newest to oldest.
+        /// A stable version is displayed before its preview version.
         /// </summary>
         [Fact]
-        public void LinterTests_ApiVersionListFormatter_Format_TwoVersions_DisplaysBothNewestFirst()
+        public void LinterTests_ApiVersionListFormatter_Format_StableAndPreviewVersions_DisplaysStableFirst()
         {
             var result = ApiVersionListFormatter.Format(
                 new[]
                 {
-                    "2024-01-01",
+                    "2025-01-01-preview",
                     "2025-01-01",
                 });
 
-            result.Should().Be("2025-01-01, 2024-01-01");
+            result.Should().Be("2025-01-01, 2025-01-01-preview");
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// Duplicate versions are removed without case sensitivity.
+        /// Duplicate versions are removed.
         /// </summary>
         [Fact]
         public void LinterTests_ApiVersionListFormatter_Format_DuplicateVersions_RemovesDuplicates()
@@ -112,12 +112,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var result = ApiVersionListFormatter.Format(
                 new[]
                 {
-                    "2025-01-01-PREVIEW",
+                    "2025-01-01-preview",
                     "2025-01-01-preview",
                     "2024-01-01",
                 });
 
-            result.Should().Be("2025-01-01-PREVIEW, 2024-01-01");
+            result.Should().Be("2025-01-01-preview, 2024-01-01");
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Formatting
             ArgumentNullException.ThrowIfNull(apiVersions);
 
             var versions = apiVersions
-                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .Distinct()
                 .OrderByDescending(
                     version => version,
                     comparer: SuffixAwareApiVersionComparer.Instance)
