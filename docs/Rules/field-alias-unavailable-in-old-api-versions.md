@@ -1,15 +1,19 @@
 ﻿# Field Alias Unavailable In Old API Versions
 
 
-| Category | Identifier |
-|----------------|----------------------------------------|
-| ResourceFields | field-alias-unavailable-in-old-api-versions |
+| Category | Identifier | Severity | Rule Set |
+|----------------|----------------------------------------|----------|----------|
+| ResourceFields | field-alias-unavailable-in-old-api-versions | Warning | default |
 
 ## Description
 
 The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that exists in the latest API version but doesn't exist in one or more older API versions of the targeted resource type.
 Aliases are meant to map a property path across ALL available API versions of a resource. However, it is very common for resource properties to be available only starting from the API version in which they were introduced.
 When a property is added to a new API version, it can't be added to older versions since it is considered a breaking change.
+
+The linter reports one finding for the policy rule. A finding for one affected alias points to that reference; a finding for multiple aliases points to `policyRule.if`. Repeated aliases are listed once, API-version lists show the two newest affected versions, and longer alias lists are summarized to keep the description within 400 characters.
+
+Each alias group also reports how many newer API versions contain the property. A larger count can indicate that the affected versions are older relative to the resource provider's API history, but it does not prove that the risk is low because clients can continue using any supported API version.
 
 This is typically not a problem for policies that are only used for [compliance reporting](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/compliance-states) since the compliance scan is using the latest API version available for the resource, which will typically have the targeted resource properties.
 However, this can be a problem for enforcement policies (e.g. policies with `deny` effect) which are evaluated against incoming requests which can use any available API version for the resource. When a request is using an API version in which an alias doesn't exists, the alias will be resolved into an empty value, which might result in unexpected enforcement behavior.

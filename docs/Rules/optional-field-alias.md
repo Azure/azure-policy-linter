@@ -1,13 +1,15 @@
 ﻿# Optional Field Alias
 
 
-| Category | Identifier | Severity |
-|----------|------------|----------|
-| ResourceFields | optional-field-alias | Informational |
+| Category | Identifier | Severity | Rule Set |
+|----------|------------|----------|----------|
+| ResourceFields | optional-field-alias | Informational | default |
 
 ## Description
 
 The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is not marked as required by the resource provider in one or more API versions. This means that this property might not exist in all incoming requests for the resource types which might result in incorrect or unexpected evaluation results.
+
+The linter reports one finding for the policy rule. A finding for one affected alias points to that reference; a finding for multiple aliases points to `policyRule.if`. Repeated aliases are listed once, API-version lists show the two newest affected versions, and longer alias lists are summarized to keep the description within 400 characters.
 
 ### Suggestions
 
