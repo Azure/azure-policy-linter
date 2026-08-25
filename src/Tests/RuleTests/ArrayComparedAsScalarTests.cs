@@ -75,6 +75,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("notMatch", @"""item-#""")]
         [InlineData("matchInsensitively", @"""item-#""")]
         [InlineData("notMatchInsensitively", @"""item-#""")]
+        [InlineData("contains", @"""ready""")]
+        [InlineData("notContains", @"""ready""")]
         public void RuleTests_ArrayComparedAsScalar_ScalarComparisonOperators(string operatorName, string operatorValue)
         {
             var linter = ArrayComparedAsScalarTests.CreateLinter();
@@ -195,8 +197,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Theory]
-        [InlineData("contains", @"""ready""")]
-        [InlineData("notContains", @"""ready""")]
         [InlineData("in", @"[""ready""]")]
         [InlineData("notIn", @"[""ready""]")]
         [InlineData("containsKey", @"""name""")]

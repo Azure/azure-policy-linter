@@ -37,18 +37,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             var fieldAccessor = expression.Field?.FieldAccessorReference;
 
-            if (fieldAccessor != null &&
-                fieldAccessor.IsResolved == true &&
-                FieldPathHelper.IsArrayAlias(fieldAccessor.Identifier) &&
-                fieldAccessor.ReferencedCountExpressionScope == null)
+            if (fieldAccessor == null || !fieldAccessor.IsResolved || !FieldPathHelper.IsArrayAlias(fieldAccessor.Identifier))
             {
-                return new[]
-                {
-                    this.CreateInformational(expression.Field, fieldAccessor.Identifier),
-                };
+                return Array.Empty<LinterOutput>();
             }
 
-            return Array.Empty<LinterOutput>();
+            // A field count consumes its own array selector; nested selectors still enumerate.
+            var referencedCountExpression = fieldAccessor.ReferencedCountExpressionScope;
+            if (referencedCountExpression != null &&
+                referencedCountExpression.Type == CountScopeType.Field &&
+                !fieldAccessor.Identifier[referencedCountExpression.Identifier.Length..].Contains("[*]"))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[]
+            {
+                this.CreateInformational(expression.Field, fieldAccessor.Identifier),
+            };
         }
     }
 }

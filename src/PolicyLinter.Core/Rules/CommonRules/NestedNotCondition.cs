@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             return Array.Empty<LinterOutput>();
         }
 
-        public static bool ExpressionIsANotQuantifier(PolicyExpression? expression)
+        private static bool ExpressionIsANotQuantifier(PolicyExpression? expression)
         {
             return expression is Quantifier quantifier && quantifier.Not != null;
         }

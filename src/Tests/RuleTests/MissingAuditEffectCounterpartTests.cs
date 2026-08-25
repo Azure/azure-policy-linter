@@ -67,6 +67,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void RuleTests_MissingAuditEffectCounterpart_DisabledDoesNotSuppressFinding()
+        {
+            MissingAuditEffectCounterpartTests.AssertFinding(
+                allowedValues: @"[""deny"", ""disabled""]",
+                expectedEnforcementEffect: "deny",
+                expectedCounterpart: "audit");
+        }
+
+        [Fact]
         public void RuleTests_MissingAuditEffectCounterpart_MismatchedEnforcementEffects_NoFinding()
         {
             var policyDefinition = MissingAuditEffectCounterpartTests.ParameterizedEffectPolicy(

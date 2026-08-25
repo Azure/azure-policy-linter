@@ -68,7 +68,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var allowedValuesSet = new HashSet<string>(allowedValues, StringComparer.OrdinalIgnoreCase);
+            var allowedValuesSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var encounteredEnforcementEffects = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var auditCounterparts = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             foreach (var allowedValue in allowedValues)
@@ -81,20 +81,33 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 }
             }
 
-            if (auditCounterparts.Count == 1 && allowedValuesSet.All(allowedValue => encounteredEnforcementEffects.Contains(allowedValue)))
+            if (auditCounterparts.Count != 1)
             {
-                var requiredAuditCounterpart = auditCounterparts.First();
-                return new[]
-                {
-                    this.CreateWarning(expression: parameter, parameterName, string.Join(',', encounteredEnforcementEffects), requiredAuditCounterpart),
-                };
+                // There no single audit counterpart for the allowed effect values.
+                // This can indicate that the allowed values have no enforcement effects, or that they are mismatched (e.g. "deny" and "deployIfNotExists").
+                return Array.Empty<LinterOutput>();
             }
 
-            // The effect parameter allowed values either has no enforcement effects,
-            // or it's mixing mismatching enforcement effects (e.g. "deny" and "deployIfNotExists"),
-            // or mismatching enforcement/audit counterparts (e.g. "deny" and "auditIfNotExists"),
-            // or it has values representing unknown policy effects (e.g. "deny" and "foo").
-            return Array.Empty<LinterOutput>();
+            if (allowedValuesSet.Contains(auditCounterparts.First(), StringComparer.OrdinalIgnoreCase))
+            {
+                // The allowed values already include the audit counterpart for the enforcement effects.
+                return Array.Empty<LinterOutput>();
+            }
+
+            if (allowedValuesSet.Any(allowedValue =>
+                    !encounteredEnforcementEffects.Contains(allowedValue) && !string.Equals(allowedValue, "disabled", StringComparison.OrdinalIgnoreCase)))
+            {
+                // The allowed values include additional effects for which there are no known audit counterparts.
+                // Example: { "deny", "auditIfNotExists" }, or { "deny", "disabled", "foo" }.
+                // In both cases, while we do have an audit counterpart for "deny", we also have other allowed values ("auditIfNotExists" or "foo") that don't have known audit counterparts, so we can't make a recommendation.
+                return Array.Empty<LinterOutput>();
+            }
+
+            var requiredAuditCounterpart = auditCounterparts.First();
+            return new[]
+            {
+                this.CreateWarning(expression: parameter, parameterName, string.Join(',', encounteredEnforcementEffects), requiredAuditCounterpart),
+            };
         }
     }
 }

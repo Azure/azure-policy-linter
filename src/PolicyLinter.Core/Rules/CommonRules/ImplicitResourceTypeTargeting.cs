@@ -76,7 +76,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             };
         }
 
-        public static bool TryExtractResourceTypeFromReference(Reference reference, out string resourceType)
+        private static bool TryExtractResourceTypeFromReference(Reference reference, out string resourceType)
         {
             resourceType = "Unknown";
 

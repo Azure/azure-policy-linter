@@ -34,6 +34,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             "notMatch",
             "matchInsensitively",
             "notMatchInsensitively",
+            "contains",
+            "notContains",
         };
 
         /// <summary>
