@@ -170,10 +170,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// Aliases with different newer-version counts remain in separate groups.
+        /// Matching aliases share a group and different newer-version counts remain separate.
         /// </summary>
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInOldApiVersions_DifferentNewerVersionCounts_DoesNotMergeGroups()
+        public void RuleTests_FieldAliasUnavailableInOldApiVersions_MatchingAndDifferentContexts_GroupsOnlyMatchingAliases()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -190,7 +190,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                       ""if"": {
                         ""allOf"": [
                           {
-                            ""field"": ""Microsoft.Test/widgets/property-one"",
+                            ""field"": ""Microsoft.Test/widgets/property-one-a"",
+                            ""exists"": ""true""
+                          },
+                          {
+                            ""field"": ""Microsoft.Test/widgets/property-one-b"",
                             ""exists"": ""true""
                           },
                           {
@@ -218,7 +222,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field alias API-version availability: 'Microsoft.Test/widgets/property-one': unavailable in 2024-01-01 (available in 1 newer API version); 'Microsoft.Test/widgets/property-two': unavailable in 2024-01-01 (available in 2 newer API versions).");
+                Description: "Field alias API-version availability: 'Microsoft.Test/widgets/property-one-a', 'Microsoft.Test/widgets/property-one-b': unavailable in 2024-01-01 (available in 1 newer API version); 'Microsoft.Test/widgets/property-two': unavailable in 2024-01-01 (available in 2 newer API versions).");
 
             results.Should().ContainEquivalentOf(output);
         }
