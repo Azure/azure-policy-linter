@@ -29,11 +29,34 @@ jobs:
       - name: Install Policy Linter from NuGet.org
         run: dotnet tool install --global Microsoft.Azure.Policy.PolicyLinter.Cli
 
+      - name: Inspect installed tool
+        shell: bash
+        run: |
+          dotnet --info
+          dotnet tool list --global
+
+          tool_store="$HOME/.dotnet/tools/.store/microsoft.azure.policy.policylinter.cli"
+          find "$tool_store" -type f -print | sort
+
+          entry_point="$(find "$tool_store" -name Microsoft.Azure.Policy.PolicyLinter.Cli.dll -print -quit)"
+          file "$entry_point"
+          shasum -a 256 "$entry_point"
+
       - name: Run Policy Linter
         shell: bash
         run: |
-          policylinter .github/test-data/macos-smoke-policy.json --output results.json
-          cat results.json
+          set +e
+          COREHOST_TRACE=1 COREHOST_TRACEFILE=host-trace.txt \
+            policylinter .github/test-data/macos-smoke-policy.json --output results.json
+          exit_code=$?
+          set -e
+
+          cat host-trace.txt
+          [ -f results.json ] && cat results.json
+
+          if [ "$exit_code" -ne 0 ]; then
+            exit "$exit_code"
+          fi
 
           if grep -Eq '"severity"[[:space:]]*:[[:space:]]*"Critical"' results.json; then
             echo "The linter returned a critical result."
