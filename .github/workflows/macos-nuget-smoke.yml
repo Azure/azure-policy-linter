@@ -15,8 +15,17 @@ env:
 
 jobs:
   smoke-test:
-    name: Install and run public tool
-    runs-on: macos-latest
+    name: Install and run public tool (${{ matrix.architecture }})
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - architecture: arm64
+            os: macos-26
+          - architecture: x64
+            os: macos-26-intel
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
