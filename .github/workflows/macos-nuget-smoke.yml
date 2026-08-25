@@ -1,0 +1,41 @@
+name: macOS NuGet Smoke Test
+
+on:
+  push:
+    branches: [test/macos-nuget-smoke]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CI: true
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  smoke-test:
+    name: Install and run public tool
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+
+      - name: Install Policy Linter from NuGet.org
+        run: dotnet tool install --global Microsoft.Azure.Policy.PolicyLinter.Cli
+
+      - name: Run Policy Linter
+        shell: bash
+        run: |
+          policylinter .github/test-data/macos-smoke-policy.json --output results.json
+          cat results.json
+
+          if grep -Eq '"severity"[[:space:]]*:[[:space:]]*"Critical"' results.json; then
+            echo "The linter returned a critical result."
+            exit 1
+          fi

@@ -1,0 +1,17 @@
+{
+  "name": "macos-smoke-test",
+  "properties": {
+    "displayName": "macOS smoke test policy",
+    "mode": "All",
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+        "equals": true
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  }
+}
