@@ -104,14 +104,14 @@ Renames after this step are expensive - they ripple across the cascade audit.
   - Recursive expression traversal instead of using visitors
   - Re-inventing common helper methods identifying common policy patterns (e.g. `HasSimpleParameterizedValue`).
 - Crazy over the top implementation to achieve a perfect linter rule coverage.
-- The above typically comes with attempts to implement (or re-implement) things that should either be in the core linter as a utility method, or things that should't be in the linter at all.
+- The above typically comes with attempts to implement (or re-implement) things that should either be in the core linter as a utility method, or things that shouldn't be in the linter at all.
 - Writing linter rules that target parent expressions and then implement additional tree traversal and parsing.
-  - e.g. a rule that targets field references but instead fo targeting `Reference` expressions, is targeting `Condition` expressions and traverses each condition to extract all references
+  - e.g. a rule that targets field references but instead of targeting `Reference` expressions, targets `Condition` expressions and traverses each condition to extract all references.
 - Making expensive allocations in the `Evaluate` method of the rule when a static allocation would also work.
 
 **Description format string discipline:**
 
-- This is string will be included in the linter's output and is the user's first encounter with the issue.
+- This string will be included in the linter's output and is the user's first encounter with the issue.
 - It will typically be included in the console output (when using CLI), or in a PR comment based on running the linter.
 - Therefore, it must be a short, informative, description of the issue the linter rule found.
 - By the end of the first sentence, the author **MUST** understand what is wrong with their specific policy.
