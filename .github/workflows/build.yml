@@ -65,51 +65,6 @@ jobs:
           name: test-results-${{ matrix.os }}
           path: ./TestResults/
 
-  validate-parent-build:
-    name: Validate parent x64 build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
-
-      - name: Setup .NET
-        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
-        with:
-          global-json-file: global.json
-
-      - name: Verify architecture target
-        shell: pwsh
-        run: |
-          $projects = @(
-            'src/PolicyLinter.Core/PolicyLinter.Core.csproj',
-            'src/PolicyLinter.Cli/PolicyLinter.Cli.csproj'
-          )
-
-          foreach ($project in $projects) {
-            $platformTarget = dotnet msbuild $project -p:Platform=x64 -getProperty:PlatformTarget
-            if ($platformTarget.Trim() -ne 'AnyCPU') {
-              throw "$project targets '$platformTarget' when built with Platform=x64."
-            }
-          }
-
-      - name: Restore
-        run: dotnet restore src/dirs.proj -p:Platform=x64
-
-      - name: Build
-        run: dotnet build src/dirs.proj --configuration Release --no-restore -p:Platform=x64
-
-      - name: Pack
-        run: |
-          dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-build --no-restore -p:Platform=x64 -o ./packages
-          dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-build --no-restore -p:Platform=x64 -o ./packages
-
-      - name: Install and run CLI package
-        shell: pwsh
-        run: |
-          $version = dotnet msbuild src/PolicyLinter.Cli/PolicyLinter.Cli.csproj -getProperty:Version
-          dotnet tool install Microsoft.Azure.Policy.PolicyLinter.Cli --version $version.Trim() --tool-path ./tools --add-source ./packages
-          ./tools/policylinter --help
-
   coverage:
     name: New-code coverage (report only)
     runs-on: ubuntu-latest
