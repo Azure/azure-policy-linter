@@ -51,8 +51,11 @@ If you're running without an interactive user - called from another agent, batch
 4. **Consider generalization.** The user's prompt might name a specific primitive or resource type but actually describe a pattern that applies more broadly. If you suspect that, surface it and ask before widening the scope.
 5. **Gate against scope.** If out of scope, say so plainly and explain. If the user wants to continue anyway, capture the spec and note the concern - don't push back further.
 6. **Decompose and share the breakdown.** One idea often hides multiple rules (e.g. "tags should be consistent" -> naming, casing, required keys). Split when warranted, then walk the user through the proposed rules and how together they cover the original idea. Call out that one-rule-one-check is the norm. If the user wants a different split - or to keep it as one rule - and has a reason, go with it.
-7. **Draft, then refine.** For each rule, fill the spec fields below with what you know or can **reasonably** infer; leave gaps blank rather than guess. Walk the user through the draft, fill the gaps, and address feedback. Be especially careful not to add tone, content, or opinions that change what the user actually meant.
-8. **Confirm and hand off.** See *Handoff* below.
+7. **Identify missing core linter capabilities.** The linter core library might not have all the necessary functionality for implementing the desired rule. Such missing capabilities are typically related to the linter being able to parse the relevant section of the policy, the ability to write a linter rule that targets it, or missing policy evaluation-like capabilities (e.g. extracting resource type applicability). Identify what's needed and isn't there and capture it so that the implementing agent can identify it as a blocker.
+  - Note: this doesn't apply to utility methods. It's ok for a linter rule to implement its own utility methods if they are not exposed by the linter.
+8. **Identify and decide on coverage tradeoffs.** Identify cases where a simple/naive linter rule covers 90% of the cases, while 100% coverage would require complex and over-the-top logic. Work with the user to clearly identify the tradeoff and include a recommendation in the spec as to what to do. In many cases, it can hint there are missing core linter capabilities.
+9. **Draft, then refine.** For each rule, fill the spec fields below with what you know or can **reasonably** infer; leave gaps blank rather than guess. Walk the user through the draft, fill the gaps, and address feedback. Be especially careful not to add tone, content, or opinions that change what the user actually meant.
+10. **Confirm and hand off.** See *Handoff* below.
 
 ## Spec fields (per rule)
 
@@ -60,13 +63,13 @@ Walk the user through the draft in tiers - never dump the whole template at once
 
 ### Core - the rule's essence
 
-- **Title** - short, imperative. e.g. "Warn when `field` targets a readonly property".
+- **Title** - short, descriptive noun phrase naming the detected issue, e.g. "Readonly Field Alias".
 - **Summary** - 1-2 sentences: what's being checked and how it affects the behavior of the policy.
 - **Target** - what part of the definition the rule inspects (e.g. field references, parameters, `policyRule.if` conditions, template function calls).
 - **Applicability** - a predicate describing when the rule fires and when it stays silent. State it concretely enough that an implementer could turn it into a boolean. This also helps surface gaps in linter context fields and utility methods.
   - Example: *"control-plane policy whose `effect` is parameterized and one of the allowed values is `deployIfNotExists`."*
 - **Required context / data** - anything beyond the policy JSON the rule needs to make its decision (e.g. "whether the referenced resource field is readonly", "the resource type's latest API versions"). No need to verify that the data is available to the linter, just call out what's needed.
-- **Additional details** - extra dimensions the Summary can't carry cleanly. Use this when the rule targets a pattern that appears in multiple forms or places: enumerate the manifestations, special cases, and how each should be treated. Leave blank when the Summary already covers everything.
+- **Additional details** - extra dimensions the Summary can't carry cleanly. Missing linter capabilities, coverage tradeoffs and edge case handling, etc. Should read as high-level directional recommendations and implementation notes that the implementer might want to know about. Should not read like a list of additional requirements. Leave blank when the Summary already covers everything.
 - **Correct example** - minimal policy snippet (or fragment) that should pass. Illustrative, not exhaustive. Prefer one the user supplies; otherwise draft something minimal and confirm it's representative. `N/A` is acceptable when an example would add no signal.
 - **Violation example** - minimal snippet that should trigger the rule, with a one-line note on why. Same guidance as above.
 

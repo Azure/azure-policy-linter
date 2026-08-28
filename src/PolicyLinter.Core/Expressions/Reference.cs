@@ -30,6 +30,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
         /// <summary>
         /// A dictionary that maps function names to their corresponding reference kinds.
+        /// Policy function names are case insensitive.
         /// </summary>
         private static readonly ImmutableDictionary<string, ReferenceKind> FunctionNamesToReferenceKinds = new OrdinalInsensitiveDictionary<ReferenceKind>
         {
@@ -40,7 +41,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             ["requestContext"] = ReferenceKind.RequestContextProperty,
             ["current"] = ReferenceKind.CurrentArrayMember,
             ["claims"] = ReferenceKind.PolicyTokenClaims
-        }.ToImmutableDictionary();
+        }.ToImmutableDictionary(keyComparer: StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets or sets the kind of reference.
