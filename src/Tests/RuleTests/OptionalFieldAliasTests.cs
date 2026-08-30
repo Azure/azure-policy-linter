@@ -15,6 +15,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// </summary>
     public class OptionalFieldAliasTests
     {
+        private const int MaximumDescriptionLength = 400;
+
         /// <summary>
         /// The type metadata used for the tests.
         /// </summary>
@@ -216,10 +218,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// An alias that cannot fit in the description falls back to the affected count.
+        /// A later subset is selected when the first subset cannot fit.
         /// </summary>
         [Fact]
-        public void RuleTests_OptionalFieldAlias_ExtremelyLongAlias_FallsBackToAffectedCount()
+        public void RuleTests_OptionalFieldAlias_FirstSubsetTooLong_SelectsLaterSubset()
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[]
@@ -265,10 +267,57 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field aliases and API versions where the property is optional: 2 affected aliases.");
+                Description: "Field aliases and API versions where the property is optional: 'Microsoft.Test/widgets/group-two-property': 2025-01-01, 2024-01-01; and 1 more affected alias.");
 
             results.Should().ContainEquivalentOf(output);
             results[0].Description.Length.Should().BeLessThanOrEqualTo(400);
+        }
+
+        /// <summary>
+        /// A long alias is truncated when no complete subset can fit.
+        /// </summary>
+        [Fact]
+        public void RuleTests_OptionalFieldAlias_NoSubsetFits_TruncatesAliasAtDescriptionLimit()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new OptionalFieldAlias()
+                },
+                metadata: new OptionalAliasTypeMetadata());
+
+            var longAlias = "Microsoft.Test/widgets/" + new string('a', 400);
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": """ + longAlias + @""",
+                        ""exists"": ""true""
+                      },
+                      ""then"": {
+                        ""effect"": ""audit""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            const string descriptionPrefix = "Field aliases and API versions where the property is optional: '";
+            const string descriptionSuffix = "': 2025-01-01.";
+            var expectedAliasLength =
+                OptionalFieldAliasTests.MaximumDescriptionLength -
+                descriptionPrefix.Length -
+                descriptionSuffix.Length;
+            var expectedAlias = $"{longAlias.Substring(startIndex: 0, length: expectedAliasLength - 3)}...";
+            var expectedDescription = $"{descriptionPrefix}{expectedAlias}{descriptionSuffix}";
+
+            results[0].Description.Should().Be(expectedDescription);
+            results[0].Description.Should().HaveLength(OptionalFieldAliasTests.MaximumDescriptionLength);
         }
 
         /// <summary>

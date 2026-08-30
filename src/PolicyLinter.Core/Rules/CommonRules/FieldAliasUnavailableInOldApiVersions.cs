@@ -115,11 +115,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 FieldAliasFindingFormatter.MaximumDescriptionLength -
                 string.Format(FieldAliasUnavailableInOldApiVersions.RuleDescription, string.Empty).Length;
 
-            var details = FieldAliasFindingFormatter.Format(
+            var groups = FieldAliasFindingGroup.Create(
                 aliasDetails: affectedAliases.Select(item => (
                     Alias: item.Key,
                     GroupKey: item.Value.GroupKey,
-                    ApiVersionDetails: item.Value.ApiVersionDetails)),
+                    ApiVersionDetails: item.Value.ApiVersionDetails)));
+
+            var details = FieldAliasFindingFormatter.Format(
+                groups: groups,
                 maximumLength: maximumDetailsLength);
 
             return new[]

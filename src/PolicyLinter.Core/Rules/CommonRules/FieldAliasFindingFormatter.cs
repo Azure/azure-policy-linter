@@ -17,32 +17,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         internal const int MaximumDescriptionLength = 400;
 
         /// <summary>
-        /// Formats aliases grouped by identical API-version details.
+        /// Formats field-alias groups.
         /// </summary>
-        /// <param name="aliasDetails">One or more aliases, grouping keys, and API-version details.</param>
+        /// <param name="groups">The field-alias groups.</param>
         /// <param name="maximumLength">The maximum formatted length.</param>
         /// <returns>The formatted alias details.</returns>
         internal static string Format(
-            IEnumerable<(string Alias, string GroupKey, string ApiVersionDetails)> aliasDetails,
+            IEnumerable<FieldAliasFindingGroup> groups,
             int maximumLength)
         {
-            var groups = aliasDetails
-                .GroupBy(
-                    item => item.GroupKey,
-                    StringComparer.Ordinal)
-                .Select(group => (
-                    ApiVersionDetails: group.First().ApiVersionDetails,
-                    Aliases: group
-                        .Select(item => item.Alias)
-                        .Distinct(StringComparer.OrdinalIgnoreCase)
-                        .OrderBy(alias => alias, StringComparer.OrdinalIgnoreCase)
-                        .ToArray()))
-                .OrderBy(group => group.Aliases[0], StringComparer.OrdinalIgnoreCase)
-                .ToArray();
+            var orderedGroups = groups.ToArray();
 
-            var formattedGroups = groups
-                .Select(group =>
-                    $"'{string.Join("', '", group.Aliases)}': {group.ApiVersionDetails}")
+            var formattedGroups = orderedGroups
+                .Select(group => group.Format())
                 .ToArray();
 
             var fullDetails = string.Join("; ", formattedGroups);
@@ -51,44 +38,38 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return fullDetails;
             }
 
-            var firstGroup = groups[0];
-            var omittedFromFirstGroup = firstGroup.Aliases.Length - 1;
-            var firstAliasText = omittedFromFirstGroup == 0
-                ? $"'{firstGroup.Aliases[0]}'"
-                : $"'{firstGroup.Aliases[0]}' and {FieldAliasFindingFormatter.FormatAliasCount(omittedFromFirstGroup, "more")}";
-
-            var remainingAliasCount = groups
-                .Skip(1)
-                .Sum(group => group.Aliases.Length);
-
-            var compactDetails = $"{firstAliasText}: {firstGroup.ApiVersionDetails}";
-            if (remainingAliasCount != 0)
+            var totalAliasCount = orderedGroups.Sum(group => group.Aliases.Length);
+            foreach (var group in orderedGroups)
             {
-                compactDetails += $"; and {FieldAliasFindingFormatter.FormatAliasCount(remainingAliasCount, "more affected")}";
+                var compactDetails = group.FormatCompact(
+                    totalAliasCount: totalAliasCount,
+                    maximumLength: maximumLength,
+                    truncateAlias: false);
+                if (compactDetails != null)
+                {
+                    return compactDetails;
+                }
             }
 
-            if (compactDetails.Length <= maximumLength)
+            foreach (var group in orderedGroups)
             {
-                return compactDetails;
+                var compactDetails = group.FormatCompact(
+                    totalAliasCount: totalAliasCount,
+                    maximumLength: maximumLength,
+                    truncateAlias: true);
+                if (compactDetails != null)
+                {
+                    return compactDetails;
+                }
             }
 
-            var totalAliasCount = groups.Sum(group => group.Aliases.Length);
-            return FieldAliasFindingFormatter.FormatAliasCount(totalAliasCount, "affected");
-        }
-
-        /// <summary>
-        /// Formats an alias count.
-        /// </summary>
-        /// <param name="count">The alias count.</param>
-        /// <param name="modifier">The alias modifier.</param>
-        /// <returns>The formatted alias count.</returns>
-        private static string FormatAliasCount(int count, string modifier)
-        {
-            var aliasLabel = count == 1
+            var aliasLabel = totalAliasCount == 1
                 ? "alias"
                 : "aliases";
-
-            return $"{count} {modifier} {aliasLabel}";
+            var aliasCount = $"{totalAliasCount} affected {aliasLabel}";
+            return aliasCount.Length <= maximumLength
+                ? aliasCount
+                : aliasCount.Substring(startIndex: 0, length: Math.Max(0, maximumLength));
         }
     }
 }

@@ -13,7 +13,7 @@ When a property is added to a new API version, it can't be added to older versio
 
 The linter reports one finding per policy rule. A single affected alias keeps its reference location; multiple aliases use `policyRule.if`. Repeated aliases are listed once, and long alias and API-version lists are summarized.
 
-Each alias group also reports how many API versions newer than its newest unavailable version contain the property. A larger count can indicate that the affected versions are older relative to the resource provider's API history, but it does not prove that the risk is low because clients can continue using any supported API version.
+For aliases with the same API-version availability, the finding also reports how many API versions newer than the newest unavailable version contain the property. A larger count can indicate that the affected versions are older relative to the resource provider's API history, but it does not prove that the risk is low because clients can continue using any supported API version.
 
 This is typically not a problem for policies that are only used for [compliance reporting](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/compliance-states) since the compliance scan is using the latest API version available for the resource, which will typically have the targeted resource properties.
 However, this can be a problem for enforcement policies (e.g. policies with `deny` effect) which are evaluated against incoming requests which can use any available API version for the resource. When a request is using an API version in which an alias doesn't exists, the alias will be resolved into an empty value, which might result in unexpected enforcement behavior.
