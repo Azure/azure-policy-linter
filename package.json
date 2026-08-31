@@ -1,0 +1,12 @@
+{
+  "name": "azure-policy-linter-formatting",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "3.4.2",
+    "prettier": "3.9.6"
+  }
+}

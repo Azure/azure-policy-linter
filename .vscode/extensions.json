@@ -1,7 +1,3 @@
 {
-    "recommendations": [
-        "ms-dotnettools.csdevkit",
-        "ms-dotnettools.csharp",
-        "editorconfig.editorconfig"
-    ]
+  "recommendations": ["editorconfig.editorconfig", "esbenp.prettier-vscode", "ms-dotnettools.csharp", "ms-dotnettools.csdevkit"]
 }

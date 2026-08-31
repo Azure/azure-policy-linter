@@ -1,0 +1,39 @@
+# C# formatting is handled by Roslyn and .editorconfig
+*.cs
+
+# Build outputs and dependencies
+artifacts/
+bin/
+node_modules/
+obj/
+objd/
+TestResults/
+
+# Binary and generated files
+*.dll
+*.exe
+*.key
+*.log
+*.nupkg
+*.pfx
+*.sarif
+
+# Build and CI files
+*.globalconfig
+*.proj
+*.props
+*.rsp
+*.targets
+*.yaml
+*.yml
+
+# Documentation and scripts
+*.cmd
+*.md
+*.ps1
+*.sh
+*.txt
+
+# Solution and project files
+*.csproj
+*.sln

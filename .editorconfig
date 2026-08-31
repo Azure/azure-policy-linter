@@ -1,6 +1,35 @@
 # To learn more about .editorconfig see https://aka.ms/editorconfigdocs
 root = true
 
+# JSON files
+[*.{json,jsonc}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# XML and config files
+[*.{xml,config}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# PowerShell scripts
+[*.ps1]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
 [*.cs]
 indent_style = space
 indent_size = 4
