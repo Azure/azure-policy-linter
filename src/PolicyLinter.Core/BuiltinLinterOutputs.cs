@@ -13,8 +13,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core
     /// </summary>
     public static class BuiltinLinterOutputs
     {
-        private const string PolicyDefinitionParsingFailureTitle = "Policy Definition Parsing Failure";
-
         /// <summary>
         /// Creates a linter output indicating failure to parse the policy definition JSON.
         /// </summary>
@@ -23,24 +21,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core
         {
             return new LinterOutput(
                 RuleIdentifier: "system-rule",
-                Title: BuiltinLinterOutputs.PolicyDefinitionParsingFailureTitle,
+                Title: "Policy Definition Parsing Failure",
                 Severity: Severity.Critical,
                 Category: Category.Parsing,
                 Description: $"Failed to parse the provided policy definition JSON. Parsing error: {parserError}");
-        }
-
-        /// <summary>
-        /// Determines whether an output represents a policy definition parsing failure.
-        /// </summary>
-        /// <param name="output">The linter output to inspect.</param>
-        /// <returns>True when the output represents a policy definition parsing failure.</returns>
-        public static bool IsPolicyDefinitionParsingFailure(LinterOutput output)
-        {
-            return output.Category == Category.Parsing
-                && string.Equals(
-                    output.Title,
-                    BuiltinLinterOutputs.PolicyDefinitionParsingFailureTitle,
-                    StringComparison.Ordinal);
         }
 
         /// <summary>

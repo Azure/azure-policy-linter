@@ -394,14 +394,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
                 return (
                     filePath,
                     new[] { BuiltinLinterOutputs.PolicyDefinitionParsingFailure(parserError: "Empty file") },
-                    true);
+                    false);
             }
 
             try
             {
                 var results = linter.Lint(rawPolicyDefinition: fileContent, filePath: filePath);
-                var hasParsingFailure = results.Any(BuiltinLinterOutputs.IsPolicyDefinitionParsingFailure);
-                return (filePath, results, hasParsingFailure);
+                return (filePath, results, false);
             }
             catch (Exception ex)
             {

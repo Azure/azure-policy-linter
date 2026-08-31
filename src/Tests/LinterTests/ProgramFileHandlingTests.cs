@@ -155,7 +155,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(1, "Program should return failure code for invalid files");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             output.Should().Contain("Failed to parse", "Should report parsing failure");
             output.Should().NotContain("File Not Found", "Should not report file not found");
         }
@@ -172,7 +172,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(1, "Program should return failure code for empty files");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             output.Should().Contain("Failed to parse", "Should report parsing failure");
         }
 
@@ -205,7 +205,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(1, "Program should return failure code for invalid JSON");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             output.Should().Contain("Failed to parse", "Should report parsing failure");
         }
 
@@ -263,7 +263,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(1, "Program should return failure code for binary files");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             // The exact error message might vary, but it should indicate a problem with parsing
             output.Should().Contain("Failed to parse", "Should report parsing failure");
         }
