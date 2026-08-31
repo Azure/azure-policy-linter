@@ -19,7 +19,13 @@ The linter project is meant to codify this knowledge and surface it as actionabl
 
 ## Installation
 
-> Currently (6/2026), installation requires [building the linter from source](#building-from-source). The Azure Policy team is working on publishing it to [nuget.org](https://nuget.org) as a dotnet tool in the near future.
+Install the [`Microsoft.Azure.Policy.PolicyLinter.Cli`](https://www.nuget.org/packages/Microsoft.Azure.Policy.PolicyLinter.Cli) CLI as a global [.NET tool](https://learn.microsoft.com/dotnet/core/tools/global-tools):
+
+```
+dotnet tool install --global Microsoft.Azure.Policy.PolicyLinter.Cli
+```
+
+Then invoke it as `policylinter` (see [Usage](#usage)). To consume the linter as a library, reference the [`Microsoft.Azure.Policy.PolicyLinter.Core`](https://www.nuget.org/packages/Microsoft.Azure.Policy.PolicyLinter.Core) package. Alternatively, [build from source](#building-from-source).
 
 ## Usage
 
