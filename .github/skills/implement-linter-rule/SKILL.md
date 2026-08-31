@@ -137,7 +137,7 @@ Any mismatch is a bug. If you rename or rescope mid-flow, **run this audit befor
 
 ### 7. Version bump (if applicable)
 
-If the release process requires a version bump, bump `<Version>` in `Directory.Build.props` - the single source shared by both packages. Suggest it to the user; don't apply without confirmation.
+If the release process requires a version bump, bump `<Version>` in `Directory.Build.props` - the single source shared by both packages. Apply the required version update as part of the implementation.
 
 ### 8. Hand off
 
