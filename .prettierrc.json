@@ -1,0 +1,20 @@
+{
+  "endOfLine": "auto",
+  "plugins": ["@prettier/plugin-xml"],
+  "printWidth": 150,
+  "overrides": [
+    {
+      "files": ["*.xml"],
+      "options": {
+        "xmlWhitespaceSensitivity": "ignore"
+      }
+    },
+    {
+      "files": ["*.config"],
+      "options": {
+        "parser": "xml",
+        "xmlWhitespaceSensitivity": "ignore"
+      }
+    }
+  ]
+}
