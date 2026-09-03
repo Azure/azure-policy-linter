@@ -10,7 +10,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Formatting;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
@@ -36,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
-            var affectedAliases = new Dictionary<string, (Reference Reference, string GroupKey, string ApiVersionDetails)>(StringComparer.OrdinalIgnoreCase);
+            var affectedAliases = new List<(Reference Reference, ApiVersionSubset ApiVersionSubset)>();
 
             var visitor = new PolicyExpressionVisitor
             {
@@ -50,25 +49,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                         return;
                     }
 
-                    var optionalApiVersions = reference.ResourcePropertyMetadata
-                        .Where(metadata => metadata.Exists && !metadata.IsRequired && !metadata.IsConditional && !metadata.IsReadonly)
-                        .SelectMany(metadata => metadata.ApiVersions)
-                        .ToArray();
-
-                    if (optionalApiVersions.Length != 0)
+                    var apiVersionSubset = ApiVersionSubset.CreateOptional(
+                        propertyMetadata: reference.ResourcePropertyMetadata);
+                    if (apiVersionSubset != null)
                     {
-                        var groupKey = string.Join(
-                            ", ",
-                            optionalApiVersions
-                                .Distinct()
-                                .OrderBy(apiVersion => apiVersion, StringComparer.Ordinal));
-
-                        _ = affectedAliases.TryAdd(
-                            key: reference.Identifier,
-                            value: (
-                                reference,
-                                groupKey,
-                                ApiVersionListFormatter.Format(optionalApiVersions)));
+                        affectedAliases.Add((reference, apiVersionSubset));
                     }
                 },
             };
@@ -80,19 +65,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            PolicyExpression outputExpression = affectedAliases.Count == 1
-                ? affectedAliases.Values.First().Reference
-                : expression;
-
             var maximumDetailsLength =
                 FieldAliasFindingFormatter.MaximumDescriptionLength -
                 string.Format(OptionalFieldAlias.RuleDescription, string.Empty).Length;
 
             var groups = FieldAliasFindingGroup.Create(
                 aliasDetails: affectedAliases.Select(item => (
-                    Alias: item.Key,
-                    GroupKey: item.Value.GroupKey,
-                    ApiVersionDetails: item.Value.ApiVersionDetails)));
+                    Alias: item.Reference.Identifier,
+                    ApiVersionSubset: item.ApiVersionSubset)));
+
+            PolicyExpression outputExpression = groups.Sum(group => group.Aliases.Length) == 1
+                ? affectedAliases[0].Reference
+                : expression;
 
             var details = FieldAliasFindingFormatter.Format(
                 groups: groups,

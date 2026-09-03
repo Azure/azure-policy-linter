@@ -8,10 +8,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using global::Azure.Deployments.ResourceMetadata.ApiVersion;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Formatting;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
@@ -37,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
-            var affectedAliases = new Dictionary<string, (Reference Reference, string GroupKey, string ApiVersionDetails)>(StringComparer.OrdinalIgnoreCase);
+            var affectedAliases = new List<(Reference Reference, ApiVersionSubset ApiVersionSubset)>();
 
             var visitor = new PolicyExpressionVisitor
             {
@@ -51,52 +49,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                         return;
                     }
 
-                    var latestApiVersionMetadata = reference.ResourcePropertyMetadata
-                        .MaxBy(
-                            keySelector: metadata => metadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance),
-                            comparer: SuffixAwareApiVersionComparer.Instance);
-
-                    var apiVersionsWithoutProperty = reference.ResourcePropertyMetadata
-                        .Where(metadata => !metadata.Exists)
-                        .SelectMany(metadata => metadata.ApiVersions)
-                        .ToArray();
-
-                    if (latestApiVersionMetadata == null ||
-                        !latestApiVersionMetadata.Exists ||
-                        apiVersionsWithoutProperty.Length == 0)
+                    var apiVersionSubset = ApiVersionSubset.CreateUnavailableInOldApiVersions(
+                        propertyMetadata: reference.ResourcePropertyMetadata);
+                    if (apiVersionSubset == null)
                     {
                         return;
                     }
 
-                    var newestUnavailableApiVersion = apiVersionsWithoutProperty.Max(
-                        comparer: SuffixAwareApiVersionComparer.Instance);
-
-                    var newerAvailableApiVersionCount = reference.ResourcePropertyMetadata
-                        .Where(metadata => metadata.Exists)
-                        .SelectMany(metadata => metadata.ApiVersions)
-                        .Distinct()
-                        .Count(apiVersion =>
-                            SuffixAwareApiVersionComparer.Instance.Compare(
-                                apiVersion,
-                                newestUnavailableApiVersion) > 0);
-
-                    var newerAvailableApiVersionText = newerAvailableApiVersionCount == 1
-                        ? "1 newer API version"
-                        : $"{newerAvailableApiVersionCount} newer API versions";
-
-                    var groupKey = string.Join(
-                        ", ",
-                        apiVersionsWithoutProperty
-                            .Distinct()
-                            .OrderBy(apiVersion => apiVersion, StringComparer.Ordinal)) +
-                        $"|{newerAvailableApiVersionCount}";
-
-                    _ = affectedAliases.TryAdd(
-                        key: reference.Identifier,
-                        value: (
-                            reference,
-                            groupKey,
-                            $"unavailable in {ApiVersionListFormatter.Format(apiVersionsWithoutProperty)} (available in {newerAvailableApiVersionText})"));
+                    affectedAliases.Add((reference, apiVersionSubset));
                 },
             };
 
@@ -107,19 +67,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            PolicyExpression outputExpression = affectedAliases.Count == 1
-                ? affectedAliases.Values.First().Reference
-                : expression;
-
             var maximumDetailsLength =
                 FieldAliasFindingFormatter.MaximumDescriptionLength -
                 string.Format(FieldAliasUnavailableInOldApiVersions.RuleDescription, string.Empty).Length;
 
             var groups = FieldAliasFindingGroup.Create(
                 aliasDetails: affectedAliases.Select(item => (
-                    Alias: item.Key,
-                    GroupKey: item.Value.GroupKey,
-                    ApiVersionDetails: item.Value.ApiVersionDetails)));
+                    Alias: item.Reference.Identifier,
+                    ApiVersionSubset: item.ApiVersionSubset)));
+
+            PolicyExpression outputExpression = groups.Sum(group => group.Aliases.Length) == 1
+                ? affectedAliases[0].Reference
+                : expression;
 
             var details = FieldAliasFindingFormatter.Format(
                 groups: groups,

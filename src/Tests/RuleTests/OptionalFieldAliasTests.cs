@@ -2,6 +2,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
     using System.Collections.Immutable;
+    using System.Reflection;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
@@ -21,6 +22,116 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// The type metadata used for the tests.
         /// </summary>
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+
+        /// <summary>
+        /// Equivalent optional API versions normalize to equal subsets.
+        /// </summary>
+        [Fact]
+        public void RuleTests_ApiVersionSubset_CreateOptional_EquivalentVersions_AreEqual()
+        {
+            var first = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateOptional",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2025-01-01", "2024-01-01", "2025-01-01" },
+                        exists: true),
+                });
+            var second = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateOptional",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2024-01-01", "2025-01-01" },
+                        exists: true),
+                });
+
+            first.Should().Be(second);
+            first.GetHashCode().Should().Be(second.GetHashCode());
+            OptionalFieldAliasTests.FormatApiVersionSubset(first).Should().Be("2025-01-01, 2024-01-01");
+        }
+
+        /// <summary>
+        /// Different optional API-version sets remain distinct when their summaries match.
+        /// </summary>
+        [Fact]
+        public void RuleTests_ApiVersionSubset_CreateOptional_MatchingSummaries_RemainDistinct()
+        {
+            var first = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateOptional",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2023-01-01", "2024-01-01", "2025-01-01" },
+                        exists: true),
+                });
+            var second = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateOptional",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2022-01-01", "2024-01-01", "2025-01-01" },
+                        exists: true),
+                });
+
+            OptionalFieldAliasTests.FormatApiVersionSubset(first)
+                .Should()
+                .Be(OptionalFieldAliasTests.FormatApiVersionSubset(second));
+            first.Should().NotBe(second);
+            first.GetHashCode().Should().NotBe(second.GetHashCode());
+        }
+
+        /// <summary>
+        /// Unavailable API versions and availability statistics determine the subset.
+        /// </summary>
+        [Fact]
+        public void RuleTests_ApiVersionSubset_CreateUnavailable_DerivesVersionsStatisticsAndDetails()
+        {
+            var first = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateUnavailableInOldApiVersions",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2024-01-01", "2023-01-01", "2024-01-01" },
+                        exists: false),
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2026-01-01", "2022-01-01", "2025-01-01" },
+                        exists: true),
+                });
+            var equivalent = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateUnavailableInOldApiVersions",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2025-01-01", "2022-01-01", "2026-01-01" },
+                        exists: true),
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2023-01-01", "2024-01-01" },
+                        exists: false),
+                });
+            var differentStatistic = OptionalFieldAliasTests.CreateApiVersionSubset(
+                methodName: "CreateUnavailableInOldApiVersions",
+                propertyMetadata: new[]
+                {
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2023-01-01", "2024-01-01" },
+                        exists: false),
+                    OptionalFieldAliasTests.CreatePropertyMetadata(
+                        apiVersions: new[] { "2022-01-01", "2025-01-01" },
+                        exists: true),
+                });
+
+            OptionalFieldAliasTests.FormatApiVersionSubset(first)
+                .Should()
+                .Be("unavailable in 2024-01-01, 2023-01-01 (available in 2 newer API versions)");
+            first.Should().Be(equivalent);
+            first.GetHashCode().Should().Be(equivalent.GetHashCode());
+            first.Should().NotBe(differentStatistic);
+            first.GetHashCode().Should().NotBe(differentStatistic.GetHashCode());
+            OptionalFieldAliasTests.FormatApiVersionSubset(differentStatistic)
+                .Should()
+                .Be("unavailable in 2024-01-01, 2023-01-01 (available in 1 newer API version)");
+        }
 
         /// <summary>
         /// A single affected alias keeps its reference location.
@@ -493,6 +604,63 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = linter.Lint(policyDefinition);
 
             results.Should().BeEmpty();
+        }
+
+        /// <summary>
+        /// Creates an API-version subset through its internal factory.
+        /// </summary>
+        /// <param name="methodName">The factory method name.</param>
+        /// <param name="propertyMetadata">The property metadata.</param>
+        /// <returns>The API-version subset.</returns>
+        private static object CreateApiVersionSubset(
+            string methodName,
+            ResourcePropertyMetadata[] propertyMetadata)
+        {
+            var apiVersionSubsetType = typeof(OptionalFieldAlias).Assembly.GetType(
+                name: "Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules.ApiVersionSubset",
+                throwOnError: true);
+            var factory = apiVersionSubsetType.GetMethod(
+                name: methodName,
+                bindingAttr: BindingFlags.Static | BindingFlags.NonPublic);
+
+            return factory.Invoke(
+                obj: null,
+                parameters: new object[] { propertyMetadata });
+        }
+
+        /// <summary>
+        /// Creates property metadata.
+        /// </summary>
+        /// <param name="apiVersions">The API versions.</param>
+        /// <param name="exists">Whether the property exists.</param>
+        /// <returns>The property metadata.</returns>
+        private static ResourcePropertyMetadata CreatePropertyMetadata(
+            string[] apiVersions,
+            bool exists)
+        {
+            return new ResourcePropertyMetadata
+            {
+                ResourceType = "Microsoft.Test/widgets",
+                ApiVersions = ImmutableArray.Create(apiVersions),
+                Exists = exists,
+                IsRequired = false,
+            };
+        }
+
+        /// <summary>
+        /// Formats an API-version subset.
+        /// </summary>
+        /// <param name="apiVersionSubset">The API-version subset.</param>
+        /// <returns>The formatted details.</returns>
+        private static string FormatApiVersionSubset(object apiVersionSubset)
+        {
+            var format = apiVersionSubset.GetType().GetMethod(
+                name: "Format",
+                bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic);
+
+            return (string)format.Invoke(
+                obj: apiVersionSubset,
+                parameters: null);
         }
 
         /// <summary>

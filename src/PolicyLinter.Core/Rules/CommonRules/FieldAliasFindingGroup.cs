@@ -18,11 +18,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// Initializes a new instance of the <see cref="FieldAliasFindingGroup"/> class.
         /// </summary>
         /// <param name="aliases">The aliases.</param>
-        /// <param name="apiVersionDetails">The API-version details.</param>
-        private FieldAliasFindingGroup(string[] aliases, string apiVersionDetails)
+        /// <param name="apiVersionSubset">The API-version subset.</param>
+        private FieldAliasFindingGroup(string[] aliases, ApiVersionSubset apiVersionSubset)
         {
             this.Aliases = aliases;
-            this.ApiVersionDetails = apiVersionDetails;
+            this.ApiVersionSubset = apiVersionSubset;
         }
 
         /// <summary>
@@ -31,31 +31,32 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         internal string[] Aliases { get; }
 
         /// <summary>
-        /// Gets the API-version details.
+        /// Gets the API-version subset.
         /// </summary>
-        private string ApiVersionDetails { get; }
+        private ApiVersionSubset ApiVersionSubset { get; }
 
         /// <summary>
         /// Creates groups from alias details.
         /// </summary>
-        /// <param name="aliasDetails">The aliases, group keys, and API-version details.</param>
+        /// <param name="aliasDetails">The aliases and API-version subsets.</param>
         /// <returns>The finding groups.</returns>
         internal static FieldAliasFindingGroup[] Create(
-            IEnumerable<(string Alias, string GroupKey, string ApiVersionDetails)> aliasDetails)
+            IEnumerable<(string Alias, ApiVersionSubset ApiVersionSubset)> aliasDetails)
         {
             return aliasDetails
+                .DistinctBy(
+                    keySelector: item => item.Alias,
+                    comparer: StringComparer.OrdinalIgnoreCase)
                 .GroupBy(
-                    keySelector: item => item.GroupKey,
-                    comparer: StringComparer.Ordinal)
+                    keySelector: item => item.ApiVersionSubset)
                 .Select(group => new FieldAliasFindingGroup(
                     aliases: group
                         .Select(selector: item => item.Alias)
-                        .Distinct(comparer: StringComparer.OrdinalIgnoreCase)
                         .OrderBy(
                             keySelector: alias => alias,
                             comparer: StringComparer.OrdinalIgnoreCase)
                         .ToArray(),
-                    apiVersionDetails: group.First().ApiVersionDetails))
+                    apiVersionSubset: group.Key))
                 .OrderBy(
                     keySelector: group => group.Aliases[0],
                     comparer: StringComparer.OrdinalIgnoreCase)
@@ -68,7 +69,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <returns>The formatted group.</returns>
         internal string Format()
         {
-            return $"'{string.Join("', '", this.Aliases)}': {this.ApiVersionDetails}";
+            return $"'{string.Join("', '", this.Aliases)}': {this.ApiVersionSubset.Format()}";
         }
 
         /// <summary>
@@ -94,7 +95,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 : $"; and {FieldAliasFindingGroup.FormatAliasCount(otherAliasCount, "more affected")}";
 
             var alias = this.Aliases[0];
-            var formatted = $"'{alias}'{sameGroupSuffix}: {this.ApiVersionDetails}{otherGroupSuffix}";
+            var apiVersionDetails = this.ApiVersionSubset.Format();
+            var formatted = $"'{alias}'{sameGroupSuffix}: {apiVersionDetails}{otherGroupSuffix}";
             if (formatted.Length <= maximumLength)
             {
                 return formatted;
@@ -116,7 +118,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 ? new string('.', maximumAliasLength)
                 : $"{alias.Substring(startIndex: 0, length: maximumAliasLength - 3)}...";
 
-            return $"'{alias}'{sameGroupSuffix}: {this.ApiVersionDetails}{otherGroupSuffix}";
+            return $"'{alias}'{sameGroupSuffix}: {apiVersionDetails}{otherGroupSuffix}";
         }
 
         /// <summary>
