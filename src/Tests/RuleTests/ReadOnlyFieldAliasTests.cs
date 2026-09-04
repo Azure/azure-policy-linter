@@ -27,6 +27,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("audit")]
         [InlineData("AuDiTiFnOtExIsTs")]
+        [InlineData("AuDiTaCtIoN")]
         public void RuleTests_ReadOnlyFieldAlias_LiteralAuditEffect_ShouldBeInformational(string effect)
         {
             var policyDefinition = ReadOnlyFieldAliasTests.CreatePolicy(
@@ -100,13 +101,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// <summary>
         /// Verifies that an audit-only string effect parameter produces an informational finding.
         /// </summary>
-        [Fact]
-        public void RuleTests_ReadOnlyFieldAlias_AuditOnlyEffectParameter_ShouldBeInformational()
+        /// <param name="allowedValues">The allowed values JSON.</param>
+        [Theory]
+        [InlineData(@"[""AUDIT"", ""AuditIfNotExists""]")]
+        [InlineData(@"[""AuDiTaCtIoN""]")]
+        public void RuleTests_ReadOnlyFieldAlias_AuditOnlyEffectParameter_ShouldBeInformational(string allowedValues)
         {
             var parameters = ReadOnlyFieldAliasTests.CreateEffectParameter(
                 type: "String",
-                defaultValue: "AUDIT",
-                allowedValues: @"[""AUDIT"", ""AuditIfNotExists""]");
+                defaultValue: @"""AUDIT""",
+                allowedValues: allowedValues);
             var policyDefinition = ReadOnlyFieldAliasTests.CreatePolicy(
                 parameters: parameters,
                 effect: @"""[parameters('effect')]""");
@@ -136,14 +140,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// Verifies that a case-mismatched default produces a warning finding.
+        /// Verifies that an audit-only parameter is informational regardless of its default.
         /// </summary>
-        [Fact]
-        public void RuleTests_ReadOnlyFieldAlias_CaseMismatchedDefault_ShouldBeWarning()
+        /// <param name="defaultValue">The default value JSON.</param>
+        [Theory]
+        [InlineData(@"""aUdIt""")]
+        [InlineData(@"""deny""")]
+        [InlineData("1")]
+        [InlineData(@"{ ""unexpected"": true }")]
+        public void RuleTests_ReadOnlyFieldAlias_AuditOnlyEffectParameterDefault_ShouldBeInformational(string defaultValue)
         {
             var parameters = ReadOnlyFieldAliasTests.CreateEffectParameter(
                 type: "String",
-                defaultValue: "aUdIt",
+                defaultValue: defaultValue,
                 allowedValues: @"[""AUDIT"", ""AuditIfNotExists""]");
             var policyDefinition = ReadOnlyFieldAliasTests.CreatePolicy(
                 parameters: parameters,
@@ -151,7 +160,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             ReadOnlyFieldAliasTests.AssertFinding(
                 policyDefinition: policyDefinition,
-                expectedSeverity: Severity.Warning);
+                expectedSeverity: Severity.Informational);
         }
 
         /// <summary>
@@ -162,7 +171,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var parameters = ReadOnlyFieldAliasTests.CreateEffectParameter(
                 type: "String",
-                defaultValue: "audit",
+                defaultValue: @"""audit""",
                 allowedValues: @"[""audit"", ""deny""]");
             var policyDefinition = ReadOnlyFieldAliasTests.CreatePolicy(
                 parameters: parameters,
@@ -184,7 +193,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var parameters = ReadOnlyFieldAliasTests.CreateEffectParameter(
                 type: "String",
-                defaultValue: "audit",
+                defaultValue: @"""audit""",
                 allowedValues: allowedValues);
             var policyDefinition = ReadOnlyFieldAliasTests.CreatePolicy(
                 parameters: parameters,
@@ -196,15 +205,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// Verifies that a default outside audit-only allowed values produces a warning finding.
+        /// Verifies that non-string allowed values produce warning findings without crashing.
         /// </summary>
-        [Fact]
-        public void RuleTests_ReadOnlyFieldAlias_DefaultOutsideAllowedValues_ShouldBeWarning()
+        /// <param name="allowedValues">The allowed values JSON.</param>
+        [Theory]
+        [InlineData("[1]")]
+        [InlineData(@"[{ ""effect"": ""audit"" }]")]
+        [InlineData(@"[[""audit""]]")]
+        [InlineData(@"[""audit"", 1]")]
+        public void RuleTests_ReadOnlyFieldAlias_NonStringAllowedValues_ShouldBeWarning(string allowedValues)
         {
             var parameters = ReadOnlyFieldAliasTests.CreateEffectParameter(
                 type: "String",
-                defaultValue: "deny",
-                allowedValues: @"[""audit"", ""auditIfNotExists""]");
+                defaultValue: @"""audit""",
+                allowedValues: allowedValues);
             var policyDefinition = ReadOnlyFieldAliasTests.CreatePolicy(
                 parameters: parameters,
                 effect: @"""[parameters('effect')]""");
@@ -221,7 +235,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("disabled")]
         [InlineData("manual")]
-        [InlineData("auditAction")]
         [InlineData("unknown")]
         public void RuleTests_ReadOnlyFieldAlias_NonAuditLiteralEffect_ShouldBeWarning(string effect)
         {
@@ -339,14 +352,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// Creates an effect parameter.
         /// </summary>
         /// <param name="type">The parameter type.</param>
-        /// <param name="defaultValue">The default value.</param>
+        /// <param name="defaultValue">The default value JSON.</param>
         /// <param name="allowedValues">The allowed values JSON.</param>
         /// <returns>The parameter JSON.</returns>
         private static string CreateEffectParameter(string type, string defaultValue, string allowedValues)
         {
             var defaultValueProperty = defaultValue == null
                 ? string.Empty
-                : $@", ""defaultValue"": ""{defaultValue}""";
+                : $@", ""defaultValue"": {defaultValue}";
             var allowedValuesProperty = allowedValues == null
                 ? string.Empty
                 : $@", ""allowedValues"": {allowedValues}";

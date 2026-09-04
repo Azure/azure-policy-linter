@@ -12,6 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using global::Azure.Deployments.ResourceMetadata.ApiVersion;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Detects field aliases that map to properties marked as read-only in one or more API versions of the resource type.
@@ -101,22 +102,27 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return ReadOnlyFieldAlias.IsAuditEffect(effect.Value.ToStringValue());
             }
 
-            if (!effect.HasSimpleParameterizedValue(
-                context: context,
-                out var parameterName,
-                out var allowedValues,
-                out var defaultValue) ||
-                allowedValues == null ||
-                allowedValues.Length == 0 ||
-                !allowedValues.All(ReadOnlyFieldAlias.IsAuditEffect))
+            if (effect.Value.Type != JTokenType.String ||
+                effect.LanguageExpressions.Length != 1 ||
+                !effect.LanguageExpressions[0].IsSimpleParameterReference(out var parameterName) ||
+                context.Parameters == null ||
+                !context.Parameters.TryGetValue(parameterName, out var parameter) ||
+                !string.Equals(parameter.Type, PolicyParameterType.String, StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
 
-            var parameter = context.Parameters![parameterName];
-            return parameter.DefaultValue == null ||
-                (ReadOnlyFieldAlias.IsAuditEffect(defaultValue) &&
-                    allowedValues.Any(value => string.Equals(value, defaultValue, StringComparison.Ordinal)));
+            var allowedValues = parameter.AllowedValues;
+            if (allowedValues == null ||
+                allowedValues.Length == 0 ||
+                !allowedValues.All(value =>
+                    value.Type == JTokenType.String &&
+                    ReadOnlyFieldAlias.IsAuditEffect(value.ToStringValue())))
+            {
+                return false;
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -127,7 +133,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private static bool IsAuditEffect(string? effect)
         {
             return string.Equals(effect, "audit", StringComparison.OrdinalIgnoreCase) ||
-                string.Equals(effect, "auditIfNotExists", StringComparison.OrdinalIgnoreCase);
+                string.Equals(effect, "auditIfNotExists", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(effect, "auditAction", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

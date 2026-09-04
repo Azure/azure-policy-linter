@@ -7,9 +7,11 @@
 
 ## Description
 
-The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as read-only by the resource provider in one or more API versions. Read-only aliases are always reported.
+The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as read-only by the resource provider in one or more API versions. Read-only aliases remain relevant because a caller may omit the property and a resource provider may ignore a supplied value during request-time evaluation, while persisted resource state may still support compliance evaluation.
 
-Audit-only policies receive Informational severity because they cannot block or modify a deployment. Policies with enforcement-capable effects receive Warning severity because the property cannot be relied upon during enforcement evaluation. Warning severity is also used when the effect is uncertain.
+Literal `audit`, `auditIfNotExists`, and `auditAction` effects receive Informational severity, case-insensitively. A direct reference to a String effect parameter also receives Informational severity when its nonempty `allowedValues` contains only those three audit-class effects. The parameter default does not affect this classification.
+
+Enforcement effects and `disabled`, `manual`, unknown, or uncertain effects receive Warning severity. Warning severity also applies when a parameter is unresolved, is not a String, has missing, empty, mixed, or malformed `allowedValues`, or when the effect uses a complex expression.
 
 ### Suggestions
 
