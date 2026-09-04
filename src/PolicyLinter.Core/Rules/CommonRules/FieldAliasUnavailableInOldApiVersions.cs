@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class FieldAliasUnavailableInOldApiVersions : LinterRule<IfCondition>
     {
         private const string RuleTitle = "Field Alias Unavailable In Old API Versions";
-        private const string RuleDescription = "Field alias API-version availability: {0}.";
+        private const string RuleDescription = "These aliases are unavailable in older API versions, which can cause unexpected policy evaluation: {0}.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldAliasUnavailableInOldApiVersions"/> class.

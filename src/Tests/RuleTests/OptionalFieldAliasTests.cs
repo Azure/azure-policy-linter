@@ -1,8 +1,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
-    using System.Collections.Immutable;
-    using System.Reflection;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
@@ -22,116 +20,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// The type metadata used for the tests.
         /// </summary>
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
-
-        /// <summary>
-        /// Equivalent optional API versions normalize to equal subsets.
-        /// </summary>
-        [Fact]
-        public void RuleTests_ApiVersionSubset_CreateOptional_EquivalentVersions_AreEqual()
-        {
-            var first = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateOptional",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2025-01-01", "2024-01-01", "2025-01-01" },
-                        exists: true),
-                });
-            var second = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateOptional",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2024-01-01", "2025-01-01" },
-                        exists: true),
-                });
-
-            first.Should().Be(second);
-            first.GetHashCode().Should().Be(second.GetHashCode());
-            OptionalFieldAliasTests.FormatApiVersionSubset(first).Should().Be("2025-01-01, 2024-01-01");
-        }
-
-        /// <summary>
-        /// Different optional API-version sets remain distinct when their summaries match.
-        /// </summary>
-        [Fact]
-        public void RuleTests_ApiVersionSubset_CreateOptional_MatchingSummaries_RemainDistinct()
-        {
-            var first = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateOptional",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2023-01-01", "2024-01-01", "2025-01-01" },
-                        exists: true),
-                });
-            var second = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateOptional",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2022-01-01", "2024-01-01", "2025-01-01" },
-                        exists: true),
-                });
-
-            OptionalFieldAliasTests.FormatApiVersionSubset(first)
-                .Should()
-                .Be(OptionalFieldAliasTests.FormatApiVersionSubset(second));
-            first.Should().NotBe(second);
-            first.GetHashCode().Should().NotBe(second.GetHashCode());
-        }
-
-        /// <summary>
-        /// Unavailable API versions and availability statistics determine the subset.
-        /// </summary>
-        [Fact]
-        public void RuleTests_ApiVersionSubset_CreateUnavailable_DerivesVersionsStatisticsAndDetails()
-        {
-            var first = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateUnavailableInOldApiVersions",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2024-01-01", "2023-01-01", "2024-01-01" },
-                        exists: false),
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2026-01-01", "2022-01-01", "2025-01-01" },
-                        exists: true),
-                });
-            var equivalent = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateUnavailableInOldApiVersions",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2025-01-01", "2022-01-01", "2026-01-01" },
-                        exists: true),
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2023-01-01", "2024-01-01" },
-                        exists: false),
-                });
-            var differentStatistic = OptionalFieldAliasTests.CreateApiVersionSubset(
-                methodName: "CreateUnavailableInOldApiVersions",
-                propertyMetadata: new[]
-                {
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2023-01-01", "2024-01-01" },
-                        exists: false),
-                    OptionalFieldAliasTests.CreatePropertyMetadata(
-                        apiVersions: new[] { "2022-01-01", "2025-01-01" },
-                        exists: true),
-                });
-
-            OptionalFieldAliasTests.FormatApiVersionSubset(first)
-                .Should()
-                .Be("unavailable in 2024-01-01, 2023-01-01 (available in 2 newer API versions)");
-            first.Should().Be(equivalent);
-            first.GetHashCode().Should().Be(equivalent.GetHashCode());
-            first.Should().NotBe(differentStatistic);
-            first.GetHashCode().Should().NotBe(differentStatistic.GetHashCode());
-            OptionalFieldAliasTests.FormatApiVersionSubset(differentStatistic)
-                .Should()
-                .Be("unavailable in 2024-01-01, 2023-01-01 (available in 1 newer API version)");
-        }
 
         /// <summary>
         /// A single affected alias keeps its reference location.
@@ -187,7 +75,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 18,
                 LinePosition: 94,
                 Path: "properties.policyRule.if.allOf[1].field",
-                Description: "Field aliases and API versions where the property is optional: 'Microsoft.Storage/storageAccounts/allowBlobPublicAccess': 2026-04-01, 2025-08-01, and 17 older API versions.");
+                Description: "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: 'Microsoft.Storage/storageAccounts/allowBlobPublicAccess': 2026-04-01, 2025-08-01, and 17 older API versions.");
             results.Should().ContainEquivalentOf(output);
         }
 
@@ -251,7 +139,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field aliases and API versions where the property is optional: 'Microsoft.Compute/virtualMachines/osProfile.windowsConfiguration', 'Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType': 2025-11-01, 2025-04-01, and 26 older API versions; 'Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.osType': 2023-03-01-preview, 2022-07-15-preview, and 2 older API versions.");
+                Description: "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: 'Microsoft.Compute/virtualMachines/osProfile.windowsConfiguration' and 1 more alias: 2025-11-01, 2025-04-01, and 26 older API versions; and 1 more affected alias.");
 
             results.Should().ContainEquivalentOf(output);
             results[0].Description.Length.Should().BeLessThanOrEqualTo(400);
@@ -322,7 +210,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field aliases and API versions where the property is optional: 'Microsoft.Test/widgets/group-one-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' and 1 more alias: 2025-01-01, 2024-01-01, and 1 older API version; and 4 more affected aliases.");
+                Description: "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: 'Microsoft.Test/widgets/group-one-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' and 1 more alias: 2025-01-01, 2024-01-01, and 1 older API version; and 4 more affected aliases.");
 
             results.Should().ContainEquivalentOf(output);
             results[0].Description.Length.Should().BeLessThanOrEqualTo(400);
@@ -378,7 +266,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field aliases and API versions where the property is optional: 'Microsoft.Test/widgets/group-two-property': 2025-01-01, 2024-01-01; and 1 more affected alias.");
+                Description: "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: 'Microsoft.Test/widgets/group-two-property': 2025-01-01, 2024-01-01; and 1 more affected alias.");
 
             results.Should().ContainEquivalentOf(output);
             results[0].Description.Length.Should().BeLessThanOrEqualTo(400);
@@ -418,7 +306,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().HaveCount(1);
 
-            const string descriptionPrefix = "Field aliases and API versions where the property is optional: '";
+            const string descriptionPrefix = "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: '";
             const string descriptionSuffix = "': 2025-01-01.";
             var expectedAliasLength =
                 OptionalFieldAliasTests.MaximumDescriptionLength -
@@ -480,9 +368,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field aliases and API versions where the property is optional: 'Microsoft.Test/widgets/group-four-property': 2025-01-01, 2024-01-01, and 1 older API version; 'Microsoft.Test/widgets/group-one-property': 2025-01-01, 2024-01-01, and 1 older API version.");
+                Description: "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: 'Microsoft.Test/widgets/group-four-property': 2025-01-01, 2024-01-01, and 1 older API version; 'Microsoft.Test/widgets/group-one-property': 2025-01-01, 2024-01-01, and 1 older API version.");
 
             results.Should().ContainEquivalentOf(output);
+            results[0].Description.Length.Should().BeLessThanOrEqualTo(OptionalFieldAliasTests.MaximumDescriptionLength);
         }
 
         /// <summary>
@@ -607,63 +496,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         /// <summary>
-        /// Creates an API-version subset through its internal factory.
-        /// </summary>
-        /// <param name="methodName">The factory method name.</param>
-        /// <param name="propertyMetadata">The property metadata.</param>
-        /// <returns>The API-version subset.</returns>
-        private static object CreateApiVersionSubset(
-            string methodName,
-            ResourcePropertyMetadata[] propertyMetadata)
-        {
-            var apiVersionSubsetType = typeof(OptionalFieldAlias).Assembly.GetType(
-                name: "Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules.ApiVersionSubset",
-                throwOnError: true);
-            var factory = apiVersionSubsetType.GetMethod(
-                name: methodName,
-                bindingAttr: BindingFlags.Static | BindingFlags.NonPublic);
-
-            return factory.Invoke(
-                obj: null,
-                parameters: new object[] { propertyMetadata });
-        }
-
-        /// <summary>
-        /// Creates property metadata.
-        /// </summary>
-        /// <param name="apiVersions">The API versions.</param>
-        /// <param name="exists">Whether the property exists.</param>
-        /// <returns>The property metadata.</returns>
-        private static ResourcePropertyMetadata CreatePropertyMetadata(
-            string[] apiVersions,
-            bool exists)
-        {
-            return new ResourcePropertyMetadata
-            {
-                ResourceType = "Microsoft.Test/widgets",
-                ApiVersions = ImmutableArray.Create(apiVersions),
-                Exists = exists,
-                IsRequired = false,
-            };
-        }
-
-        /// <summary>
-        /// Formats an API-version subset.
-        /// </summary>
-        /// <param name="apiVersionSubset">The API-version subset.</param>
-        /// <returns>The formatted details.</returns>
-        private static string FormatApiVersionSubset(object apiVersionSubset)
-        {
-            var format = apiVersionSubset.GetType().GetMethod(
-                name: "Format",
-                bindingAttr: BindingFlags.Instance | BindingFlags.NonPublic);
-
-            return (string)format.Invoke(
-                obj: apiVersionSubset,
-                parameters: null);
-        }
-
-        /// <summary>
         /// Provides optional-property metadata for test aliases.
         /// </summary>
         private sealed class OptionalAliasTypeMetadata : ITypeMetadata
@@ -677,33 +509,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     return false;
                 }
 
-                ImmutableArray<string> apiVersions;
+                string[] apiVersions;
                 if (aliasName.Contains("group-one", StringComparison.OrdinalIgnoreCase))
                 {
-                    apiVersions = ImmutableArray.Create("2023-01-01", "2024-01-01", "2025-01-01");
+                    apiVersions = new[] { "2023-01-01", "2024-01-01", "2025-01-01" };
                 }
                 else if (aliasName.Contains("group-four", StringComparison.OrdinalIgnoreCase))
                 {
-                    apiVersions = ImmutableArray.Create("2022-01-01", "2024-01-01", "2025-01-01");
+                    apiVersions = new[] { "2022-01-01", "2024-01-01", "2025-01-01" };
                 }
                 else if (aliasName.Contains("group-two", StringComparison.OrdinalIgnoreCase))
                 {
-                    apiVersions = ImmutableArray.Create("2024-01-01", "2025-01-01");
+                    apiVersions = new[] { "2024-01-01", "2025-01-01" };
                 }
                 else
                 {
-                    apiVersions = ImmutableArray.Create("2025-01-01");
+                    apiVersions = new[] { "2025-01-01" };
                 }
 
                 result = new[]
                 {
-                    new ResourcePropertyMetadata
-                    {
-                        ResourceType = "Microsoft.Test/widgets",
-                        ApiVersions = apiVersions,
-                        Exists = true,
-                        IsRequired = false,
-                    },
+                    ResourcePropertyMetadataTestFactory.Create(
+                        apiVersions: apiVersions,
+                        exists: true),
                 };
 
                 return true;

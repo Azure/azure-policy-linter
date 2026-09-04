@@ -18,7 +18,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class OptionalFieldAlias : LinterRule<IfCondition>
     {
         private const string RuleTitle = "Optional Field Alias";
-        private const string RuleDescription = "Field aliases and API versions where the property is optional: {0}.";
+        private const string RuleDescription = "Properties mapped by these aliases may be absent from requests and cause unexpected policy evaluation: {0}.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OptionalFieldAlias"/> class.

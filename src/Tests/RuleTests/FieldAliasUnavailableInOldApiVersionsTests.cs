@@ -132,7 +132,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 90,
                 Path: "properties.policyRule.if.field",
-                Description: "Field alias API-version availability: 'Microsoft.Storage/storageAccounts/networkAcls.defaultAction': unavailable in 2016-12-01, 2016-05-01, and 3 older API versions (available in 25 newer API versions).");
+                Description: "These aliases are unavailable in older API versions, which can cause unexpected policy evaluation: 'Microsoft.Storage/storageAccounts/networkAcls.defaultAction': unavailable in 2016-12-01, 2016-05-01, and 3 older API versions (available in 25 newer API versions).");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -164,7 +164,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 62,
                 Path: "properties.policyRule.if.field",
-                Description: "Field alias API-version availability: 'Microsoft.Test/widgets/property': unavailable in 2024-01-01 (available in 1 newer API version).");
+                Description: "These aliases are unavailable in older API versions, which can cause unexpected policy evaluation: 'Microsoft.Test/widgets/property': unavailable in 2024-01-01 (available in 1 newer API version).");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -222,7 +222,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field alias API-version availability: 'Microsoft.Test/widgets/property-one-a', 'Microsoft.Test/widgets/property-one-b': unavailable in 2024-01-01 (available in 1 newer API version); 'Microsoft.Test/widgets/property-two': unavailable in 2024-01-01 (available in 2 newer API versions).");
+                Description: "These aliases are unavailable in older API versions, which can cause unexpected policy evaluation: 'Microsoft.Test/widgets/property-one-a', 'Microsoft.Test/widgets/property-one-b': unavailable in 2024-01-01 (available in 1 newer API version); 'Microsoft.Test/widgets/property-two': unavailable in 2024-01-01 (available in 2 newer API versions).");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -313,7 +313,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 11,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "Field alias API-version availability: 'Microsoft.Storage/storageAccounts/networkAcls.defaultAction', 'Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]', 'Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action', 'Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value': unavailable in 2016-12-01, 2016-05-01, and 3 older API versions (available in 25 newer API versions).");
+                Description: "These aliases are unavailable in older API versions, which can cause unexpected policy evaluation: 'Microsoft.Storage/storageAccounts/networkAcls.defaultAction' and 3 more aliases: unavailable in 2016-12-01, 2016-05-01, and 3 older API versions (available in 25 newer API versions).");
 
             results.Should().ContainEquivalentOf(output);
             results[0].Description.Length.Should().BeLessThanOrEqualTo(400);
