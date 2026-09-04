@@ -3,18 +3,18 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------------|----------------------------------------|----------|----------|
-| ResourceFields | read-only-field-alias | Warning | default |
+| ResourceFields | read-only-field-alias | Warning or Informational | default |
 
 ## Description
 
-The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as read-only by the resource provider in one or more API versions.
+The policy definition is referencing a [field alias](https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-alias) that maps to a property that is annotated as read-only by the resource provider in one or more API versions. Read-only aliases are always reported.
 
-This means that the property can't be relied upon during enforcement evaluations of incoming requests, since the caller isn't required to specify this property and even if they do, it'll most likely be ignored by the resource provider.
+Audit-only policies receive Informational severity because they cannot block or modify a deployment. Policies with enforcement-capable effects receive Warning severity because the property cannot be relied upon during enforcement evaluation. Warning severity is also used when the effect is uncertain.
 
 ### Suggestions
 
-- Avoid relying on read-only properties in enforcement policies (e.g. policies with a `deny` effect).
-- If the purpose of the policy is mainly for compliance (e.g. `audit` effect), then it should be OK to use the alias.
+- Avoid relying on read-only properties in enforcement policies, such as policies with a `deny` effect.
+- Review Informational findings in audit-only policies to confirm that the property is suitable for compliance evaluation.
 
 ## Data sources
 
