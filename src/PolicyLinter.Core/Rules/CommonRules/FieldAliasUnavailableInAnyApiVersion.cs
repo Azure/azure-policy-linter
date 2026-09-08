@@ -42,6 +42,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
+            if (expression.ResourcePropertyMetadata.Length == 0)
+            {
+                // This indicates that the alias is unknown to the linter, or targeting a resource type that the linter doesn't know about, both are out of scope for this rule.
+                return Array.Empty<LinterOutput>();
+            }
+
             if (expression.ResourcePropertyMetadata.Any(metadata => metadata.Exists))
             {
                 return Array.Empty<LinterOutput>();

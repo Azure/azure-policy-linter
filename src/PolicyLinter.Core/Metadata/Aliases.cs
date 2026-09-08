@@ -70,7 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                                         .ToOrdinalInsensitiveDictionary(
                                             keySelector: alias => alias.Name,
                                             elementSelector: alias => alias)
-                                        .ToImmutableDictionary();
+                                        .ToImmutableDictionary(keyComparer: StringComparer.OrdinalIgnoreCase);
                                 }
                             }
                         }

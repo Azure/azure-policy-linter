@@ -132,7 +132,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     alias: currentAlias,
                     PropertyMetadata(exists: false, resourceType: ResourceType, apiVersion: "2024-01-01")));
 
-            results.Should().HaveCount(2);
+            results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(ExpectedOutput(
                 alias: currentAlias,
                 resourceType: ResourceType,
@@ -168,19 +168,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_EmptyMetadata_Fires()
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_EmptyMetadata_DoesNotFire()
         {
             var results = Lint(
                 policyDefinition: SingleFieldPolicy(field: Alias),
                 metadata: new TestTypeMetadata(alias: Alias));
 
-            AssertSingleFinding(
-                results: results,
-                alias: Alias,
-                resourceType: ResourceType,
-                lineNumber: 7,
-                linePosition: 50,
-                path: "properties.policyRule.if.field");
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInAnyApiVersion_MissingAlias_DoesNotFire()
+        {
+            var results = Lint(
+                policyDefinition: SingleFieldPolicy(field: Alias),
+                metadata: new TestTypeMetadata(alias: "Microsoft.Test/widgets/otherProperty"));
+
+            results.Should().BeEmpty();
         }
 
         [Fact]
