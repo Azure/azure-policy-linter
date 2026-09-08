@@ -10,6 +10,7 @@ objd/
 TestResults/
 
 # Binary and generated files
+**/ResourceTypesAndAliases.json
 *.dll
 *.exe
 *.key
