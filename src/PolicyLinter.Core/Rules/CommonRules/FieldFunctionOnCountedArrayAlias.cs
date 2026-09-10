@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
             if (expression.Kind == ReferenceKind.ResourceField &&
-                expression.IsResolvedFieldReference() &&
+                expression.IsResolved &&
                 expression.ReferencedCountExpressionScope != null &&
                 expression.Parent is TemplateLanguageExpression)
             {
