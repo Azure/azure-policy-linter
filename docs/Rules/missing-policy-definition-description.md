@@ -6,11 +6,11 @@
 
 ## Description
 
-This rule reports a policy definition whose [`description`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) is missing, empty, or whitespace-only. The `description` gives readers the context for when the definition should be used.
+This rule reports a policy definition whose [`description`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-basics#display-name-and-description) is missing, empty, or whitespace-only. The `description` helps users understand the policy and troubleshoot its results.
 
 ## Suggestions
 
-Add a concise `description` that explains what the policy checks and why.
+Add a concise `description` that explains the policy's purpose and logic.
 
 ## Examples
 

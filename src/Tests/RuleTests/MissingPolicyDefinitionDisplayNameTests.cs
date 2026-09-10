@@ -53,7 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 3,
                 LinePosition: 33,
                 Path: "properties",
-                Description: "The policy definition does not specify a nonblank 'displayName'. Add a concise display name that identifies the definition and distinguishes it from other policies."));
+                Description: "The policy definition's 'displayName' is missing or blank, making it harder to identify the policy. Add a concise display name that identifies what the policy checks."));
         }
 
         [Fact]
@@ -94,7 +94,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 4,
                 LinePosition: 37,
                 Path: "properties.displayName",
-                Description: "The policy definition does not specify a nonblank 'displayName'. Add a concise display name that identifies the definition and distinguishes it from other policies."));
+                Description: "The policy definition's 'displayName' is missing or blank, making it harder to identify the policy. Add a concise display name that identifies what the policy checks."));
         }
 
         [Fact]
@@ -135,7 +135,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 4,
                 LinePosition: 40,
                 Path: "properties.displayName",
-                Description: "The policy definition does not specify a nonblank 'displayName'. Add a concise display name that identifies the definition and distinguishes it from other policies."));
+                Description: "The policy definition's 'displayName' is missing or blank, making it harder to identify the policy. Add a concise display name that identifies what the policy checks."));
         }
 
         [Fact]

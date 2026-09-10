@@ -16,7 +16,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Missing Policy Definition Display Name";
         private const string RuleDescription =
-            "The policy definition does not specify a nonblank 'displayName'. Add a concise display name that identifies the definition and distinguishes it from other policies.";
+            "The policy definition's 'displayName' is missing or blank, making it harder to identify the policy. Add a concise display name that identifies what the policy checks.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MissingPolicyDefinitionDisplayName"/> class.

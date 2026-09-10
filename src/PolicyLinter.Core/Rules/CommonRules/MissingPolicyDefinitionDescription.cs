@@ -16,7 +16,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Missing Policy Definition Description";
         private const string RuleDescription =
-            "The policy definition does not specify a nonblank 'description', so context for when it is used is missing. Add a concise description of what the policy checks and why.";
+            "The policy definition's 'description' is missing or blank, making it harder to understand the policy and troubleshoot its results. Add a concise description of the policy's purpose and logic.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MissingPolicyDefinitionDescription"/> class.

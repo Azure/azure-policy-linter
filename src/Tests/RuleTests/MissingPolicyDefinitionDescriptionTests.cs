@@ -53,7 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 3,
                 LinePosition: 33,
                 Path: "properties",
-                Description: "The policy definition does not specify a nonblank 'description', so context for when it is used is missing. Add a concise description of what the policy checks and why."));
+                Description: "The policy definition's 'description' is missing or blank, making it harder to understand the policy and troubleshoot its results. Add a concise description of the policy's purpose and logic."));
         }
 
         [Fact]
@@ -94,7 +94,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 4,
                 LinePosition: 37,
                 Path: "properties.description",
-                Description: "The policy definition does not specify a nonblank 'description', so context for when it is used is missing. Add a concise description of what the policy checks and why."));
+                Description: "The policy definition's 'description' is missing or blank, making it harder to understand the policy and troubleshoot its results. Add a concise description of the policy's purpose and logic."));
         }
 
         [Fact]
@@ -135,7 +135,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 4,
                 LinePosition: 40,
                 Path: "properties.description",
-                Description: "The policy definition does not specify a nonblank 'description', so context for when it is used is missing. Add a concise description of what the policy checks and why."));
+                Description: "The policy definition's 'description' is missing or blank, making it harder to understand the policy and troubleshoot its results. Add a concise description of the policy's purpose and logic."));
         }
 
         [Fact]
