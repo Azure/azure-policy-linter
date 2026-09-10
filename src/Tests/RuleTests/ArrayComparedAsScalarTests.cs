@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
-                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array, so comparing it with 'equals' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
+                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array. Comparing it with 'equals' is an invalid comparison that will have the same outcome regardless of the array contents. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -97,7 +97,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 71,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array, so comparing it with '{operatorName}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
+                Description: $"The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array. Comparing it with '{operatorName}' is an invalid comparison that will have the same outcome regardless of the array contents. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -143,7 +143,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 88,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: '{alias}' refers to an entire array, so comparing it with 'equals' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
+                Description: $"The field alias: '{alias}' refers to an entire array. Comparing it with 'equals' is an invalid comparison that will have the same outcome regardless of the array contents. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -169,7 +169,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 7,
                 LinePosition: 89,
                 Path: "properties.policyRule.if.field",
-                Description: "The field alias: 'microsoft.test/WIDGETS/arraypropertywithabsentversions' refers to an entire array, so comparing it with 'equals' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.");
+                Description: "The field alias: 'microsoft.test/WIDGETS/arraypropertywithabsentversions' refers to an entire array. Comparing it with 'equals' is an invalid comparison that will have the same outcome regardless of the array contents. Use a field count expression to apply the condition to the array members, or remove the condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -215,34 +215,48 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
-        [Fact]
-        public void RuleTests_ArrayComparedAsScalar_TemplateOperand()
+        [Theory]
+        [InlineData("[parameters('a')]")]
+        [InlineData("[concat('a', 'b')]")]
+        public void RuleTests_ArrayComparedAsScalar_TemplateOperand(string operatorValue)
         {
             var linter = ArrayComparedAsScalarTests.CreateLinter();
-            var policyDefinition = @"
-                {
-                  ""properties"": {
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
                     ""mode"": ""Indexed"",
-                    ""parameters"": {
-                      ""target"": {
+                    ""parameters"": {{
+                      ""a"": {{
                         ""type"": ""String""
-                      }
-                    },
-                    ""policyRule"": {
-                      ""if"": {
+                      }}
+                    }},
+                    ""policyRule"": {{
+                      ""if"": {{
                         ""field"": ""Microsoft.Test/widgets/arrayProperty"",
-                        ""equals"": ""[parameters('target')]""
-                      },
-                      ""then"": {
+                        ""equals"": ""{operatorValue}""
+                      }},
+                      ""then"": {{
                         ""effect"": ""audit""
-                      }
-                    }
-                  }
-                }";
+                      }}
+                    }}
+                  }}
+                }}";
 
             var results = linter.Lint(policyDefinition);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "array-compared-as-scalar",
+                Title: "Array Compared as Scalar",
+                Severity: Severity.Warning,
+                Category: Category.ResourceFields,
+                LineNumber: 12,
+                LinePosition: 71,
+                Path: "properties.policyRule.if.field",
+                Description: "The field alias: 'Microsoft.Test/widgets/arrayProperty' refers to an entire array. Comparing it with 'equals' is an invalid comparison that will have the same outcome regardless of the array contents. Use a field count expression to apply the condition to the array members, or remove the condition.");
+
+            results.Should().ContainEquivalentOf(output);
         }
 
         [Theory]

@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports a condition that compares an entire array field to a single value, performing an invalid comparison that will always be evaluated to `false`.
+This rule reports a condition that compares an entire array field to a single value, performing an invalid comparison that will always have the same outcome.
 
 ## Suggestions
 

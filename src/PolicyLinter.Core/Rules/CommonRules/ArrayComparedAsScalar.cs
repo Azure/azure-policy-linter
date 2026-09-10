@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Array Compared as Scalar";
         private const string RuleDescription =
-            "The field alias: '{0}' refers to an entire array, so comparing it with '{1}' is an invalid comparison that always evaluates to false. Use a field count expression to apply the condition to the array members, or remove the condition.";
+            "The field alias: '{0}' refers to an entire array. Comparing it with '{1}' is an invalid comparison that will have the same outcome regardless of the array contents. Use a field count expression to apply the condition to the array members, or remove the condition.";
 
         // Ordering operators are omitted: an array field cannot be ordered against any value, so
         // OrderingOperatorOnIncompatibleFieldType already reports every such condition as an error.
@@ -65,10 +65,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
+            // Don't check the operator value.
+            // Assume that if it's a scalar-comparison operator, the value being compared is a scalar.
             var comparisonOperator = expression.Operator;
             if (comparisonOperator == null ||
-                !ArrayComparedAsScalar.ScalarComparisonOperators.Contains(comparisonOperator.Name) ||
-                !ArrayComparedAsScalar.IsLiteralScalar(comparisonOperator))
+                !ArrayComparedAsScalar.ScalarComparisonOperators.Contains(comparisonOperator.Name))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -87,19 +88,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             {
                 this.CreateWarning(field, fieldReference.Identifier, comparisonOperator.Name),
             };
-        }
-
-        private static bool IsLiteralScalar(Property property)
-        {
-            if (!property.HasLiteralValue || property.Value is not JValue value)
-            {
-                return false;
-            }
-
-            return value.Type == JTokenType.String ||
-                value.Type == JTokenType.Integer ||
-                value.Type == JTokenType.Float ||
-                value.Type == JTokenType.Boolean;
         }
     }
 }
