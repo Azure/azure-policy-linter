@@ -13,6 +13,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using System.Threading.Tasks;
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Cli;
+    using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
 
     /// <summary>
@@ -102,7 +104,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { nonExistentFile }));
 
             // Assert
-            result.Should().Be(0, "Program should return success code even for non-existent files");
+            result.Should().Be(1, "Program should return failure code for non-existent files");
             output.Should().Contain("File Not Found", "Should report file not found");
             output.Should().Contain(nonExistentFile, "Should mention the missing file path");
         }
@@ -153,7 +155,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(0, "Program should return success code even for invalid files");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             output.Should().Contain("Failed to parse", "Should report parsing failure");
             output.Should().NotContain("File Not Found", "Should not report file not found");
         }
@@ -170,7 +172,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(0, "Program should return success code even for empty files");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             output.Should().Contain("Failed to parse", "Should report parsing failure");
         }
 
@@ -203,7 +205,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(0, "Program should return success code even for invalid JSON");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             output.Should().Contain("Failed to parse", "Should report parsing failure");
         }
 
@@ -226,7 +228,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0], tempFiles[1], nonExistentFile, "--output", tempOutputFile }));
 
             // Assert
-            result.Should().Be(0, "Program should return success code");
+            result.Should().Be(1, "Program should return failure code when any input fails");
             output.Should().Contain($"Results written to {tempOutputFile}", "Should indicate results were written to file");
 
             // Verify output file contains entries for all files
@@ -261,9 +263,155 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Program.Main(new[] { tempFiles[0] }));
 
             // Assert
-            result.Should().Be(0, "Program should return success code even for binary files");
+            result.Should().Be(0, "Parsing diagnostics should not indicate a CLI execution failure");
             // The exact error message might vary, but it should indicate a problem with parsing
             output.Should().Contain("Failed to parse", "Should report parsing failure");
+        }
+
+        [Fact]
+        public async Task Main_DirectoryInput_ReportsFileReadError()
+        {
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(new[] { Path.GetTempPath() }));
+
+            // Assert
+            result.Should().Be(1, "Program should return failure code for unreadable inputs");
+            output.Should().Contain("File Read Error", "Should report the read failure");
+        }
+
+        [Fact]
+        public async Task Main_UnknownRuleSet_ReturnsFailure()
+        {
+            // Arrange
+            File.WriteAllText(tempFiles[0], GetValidPolicyJson());
+
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(new[] { tempFiles[0], "--rule-set", "does-not-exist" }));
+
+            // Assert
+            result.Should().Be(1, "Program should reject unknown rule sets");
+            output.Should().Contain("Unknown rule set(s): 'does-not-exist'");
+            output.Should().NotContain("Done!");
+        }
+
+        [Fact]
+        public async Task Main_RuleError_ReturnsSuccess()
+        {
+            // Arrange
+            File.WriteAllText(tempFiles[0], GetPolicyWithErrorJson());
+
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(new[] { tempFiles[0] }));
+
+            // Assert
+            result.Should().Be(0, "Ordinary lint findings should not fail CLI execution");
+            output.Should().Contain("All Parameter References Must Resolve");
+            output.Should().Contain("Done!");
+        }
+
+        [Fact]
+        public async Task Main_OutputPathIsDirectory_ReturnsFailure()
+        {
+            // Arrange
+            File.WriteAllText(tempFiles[0], GetValidPolicyJson());
+
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(new[] { tempFiles[0], "--output", Path.GetTempPath() }));
+
+            // Assert
+            result.Should().Be(1, "Program should return failure code when output cannot be written");
+            output.Should().Contain("Failed to write output file");
+        }
+
+        [Fact]
+        public async Task Main_NoInputFiles_ReturnsFailure()
+        {
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(Array.Empty<string>()));
+
+            // Assert
+            result.Should().Be(1, "Program should return failure code without terminating the process");
+            output.Should().Contain("At least one policy definition file must be specified.");
+        }
+
+        [Fact]
+        public async Task Main_TooManyInputFiles_ReturnsFailure()
+        {
+            // Arrange
+            var files = Enumerable
+                .Repeat(tempFiles[0], 1001)
+                .ToArray();
+
+            // Act
+            using var console = new ConsoleOutputCapture();
+            var (output, result) = await console.CaptureAsync(() =>
+                Program.Main(files));
+
+            // Assert
+            result.Should().Be(1, "Program should return failure code without terminating the process");
+            output.Should().Contain("Too many files specified (1001). Maximum allowed: 1000");
+        }
+
+        [Fact]
+        public async Task ProcessFiles_LinterException_ReportsExecutionError()
+        {
+            // Arrange
+            File.WriteAllText(tempFiles[0], GetValidPolicyJson());
+            var throwingRule = new TestPolicyDefinitionLinterRule
+            {
+                EvaluateFunc = (_, _, _) => throw new InvalidOperationException("Rule failed")
+            };
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { throwingRule },
+                metadata: new MockTypeMetadata());
+
+            // Act
+            var (results, hasOperationalFailures) = await Program.ProcessFiles(
+                filePaths: new[] { tempFiles[0] },
+                linter: linter);
+
+            // Assert
+            hasOperationalFailures.Should().BeTrue();
+            results[tempFiles[0]].Should().ContainSingle().Which.Should().BeEquivalentTo(
+                BuiltinLinterOutputs.LinterExecutionError(
+                    filePath: tempFiles[0],
+                    errorMessage: "InvalidOperationException: Rule failed"));
+        }
+
+        [Fact]
+        public async Task ProcessFiles_CriticalLinterOutput_DoesNotFail()
+        {
+            // Arrange
+            File.WriteAllText(tempFiles[0], GetValidPolicyJson());
+            var criticalOutput = BuiltinLinterOutputs.UnexpectedNullRuleInvocation(
+                id: "test-rule",
+                title: "Test Rule");
+            var criticalRule = new TestPolicyDefinitionLinterRule
+            {
+                EvaluateFunc = (_, _, _) => new[] { criticalOutput }
+            };
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { criticalRule },
+                metadata: new MockTypeMetadata());
+
+            // Act
+            var (results, hasOperationalFailures) = await Program.ProcessFiles(
+                filePaths: new[] { tempFiles[0] },
+                linter: linter);
+
+            // Assert
+            hasOperationalFailures.Should().BeFalse();
+            results[tempFiles[0]].Should().ContainSingle().Which.Should().BeEquivalentTo(criticalOutput);
         }
 
         private string GetValidPolicyJson()
@@ -292,6 +440,27 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                         },
                         ""then"": {
                             ""effect"": ""[parameters('effect')]""
+                        }
+                    }
+                }
+            }";
+        }
+
+        private static string GetPolicyWithErrorJson()
+        {
+            return @"{
+                ""properties"": {
+                    ""displayName"": ""Test Policy"",
+                    ""description"": ""A policy for testing"",
+                    ""mode"": ""Indexed"",
+                    ""parameters"": {},
+                    ""policyRule"": {
+                        ""if"": {
+                            ""field"": ""type"",
+                            ""equals"": ""Microsoft.Storage/storageAccounts""
+                        },
+                        ""then"": {
+                            ""effect"": ""[parameters('missingEffect')]""
                         }
                     }
                 }

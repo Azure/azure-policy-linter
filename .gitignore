@@ -33,7 +33,11 @@ dirs.sln
 .vscode/*
 !.vscode/extensions.json
 !.vscode/launch.json
+!.vscode/settings.json
 !.vscode/tasks.json
+
+## Node.js formatting dependencies
+node_modules/
 
 ## OS
 .DS_Store

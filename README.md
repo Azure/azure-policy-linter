@@ -83,6 +83,10 @@ policylinter --help
 
 The linter accepts either a full policy definition resource payload or a JSON containing just the policy definition property bag. When processing multiple files, the linter processes them in parallel for improved performance and provides file-specific results.
 
+### Exit codes
+
+The exit code indicates whether the linter successfully performed the requested operation, not whether the policy definition is valid. Policy issues, including parsing errors and lint findings of any severity, are reported through diagnostics and do not affect the exit code. A non-zero exit code indicates that the linter could not complete the operation, such as when an input file could not be read or the output could not be written.
+
 ## Known gaps and issues
 - No support for the more obscure leaf expressions like `source`.
 - No support for data-plane policies.

@@ -24,6 +24,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
     /// </summary>
     public class Program
     {
+        private const int SuccessExitCode = 0;
+        private const int FailureExitCode = 1;
         private const int MaxFileLimit = 1000;
         private const string DefaultRuleSetName = "default";
 
@@ -62,6 +64,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
             rootCommand.AddOption(listRuleSetsOption);
             rootCommand.AddOption(ruleSetsOption);
 
+            var handlerExitCode = Program.SuccessExitCode;
+
             rootCommand.SetHandler(async (string[] files, FileInfo? outputFile, bool listRuleSets, string[]? ruleSets) =>
             {
                 if (listRuleSets)
@@ -73,16 +77,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
                 if (files == null || files.Length == 0)
                 {
                     Program.Error("At least one policy definition file must be specified.");
-                    Environment.Exit(1);
+                    handlerExitCode = Program.FailureExitCode;
+                    return;
                 }
 
-                await Program.RunLinter(
+                handlerExitCode = await Program.RunLinter(
                     filePaths: files,
                     outputFile: outputFile?.FullName,
                     ruleSets: ruleSets).ConfigureAwait(false);
             }, filesArgument, outputOption, listRuleSetsOption, ruleSetsOption);
 
-            return await rootCommand.InvokeAsync(args).ConfigureAwait(false);
+            var commandLineExitCode = await rootCommand.InvokeAsync(args).ConfigureAwait(false);
+            return commandLineExitCode != Program.SuccessExitCode
+                ? commandLineExitCode
+                : handlerExitCode;
         }
 
         /// <summary>
@@ -91,12 +99,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
         /// <param name="filePaths">The file paths to lint.</param>
         /// <param name="outputFile">The optional output file path.</param>
         /// <param name="ruleSets">The optional rule set names to filter by.</param>
-        private static async Task RunLinter(string[] filePaths, string? outputFile, string[]? ruleSets)
+        /// <returns>The process exit code.</returns>
+        private static async Task<int> RunLinter(string[] filePaths, string? outputFile, string[]? ruleSets)
         {
             if (filePaths.Length > Program.MaxFileLimit)
             {
                 Program.Error($"Too many files specified ({filePaths.Length}). Maximum allowed: {Program.MaxFileLimit}");
-                Environment.Exit(1);
+                return Program.FailureExitCode;
             }
 
             var absoluteToInputPaths = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -116,13 +125,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
 
             var allRules = Program.GetAllAvailableRules();
             var rules = Program.FilterRulesByRuleSets(allRules: allRules, ruleSets: ruleSets);
+            if (rules == null)
+            {
+                return Program.FailureExitCode;
+            }
 
             Program.PrintRuleSetInfo(ruleSets: ruleSets);
 
             var linter = new PolicyLinter(rules: rules, metadata: metadata);
 
             var uniqueFilePaths = absoluteToInputPaths.Keys.ToArray();
-            var allResults = await Program.ProcessFiles(filePaths: uniqueFilePaths, linter: linter).ConfigureAwait(false);
+            var (allResults, hasOperationalFailures) = await Program
+                .ProcessFiles(filePaths: uniqueFilePaths, linter: linter)
+                .ConfigureAwait(false);
 
             // Results are keyed by the original input paths provided by the caller,
             // not the internally resolved absolute paths used for file I/O and deduplication.
@@ -133,7 +148,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
             if (outputFile != null)
             {
                 var json = JsonConvert.SerializeObject(outputResults, LinterOutputSerializerSettings.Settings);
-                await File.WriteAllTextAsync(outputFile, json).ConfigureAwait(false);
+                try
+                {
+                    await File.WriteAllTextAsync(outputFile, json).ConfigureAwait(false);
+                }
+                catch (Exception ex) when (Program.IsFileSystemException(ex))
+                {
+                    Program.Error($"Failed to write output file '{outputFile}': {ex.Message}");
+                    return Program.FailureExitCode;
+                }
+
                 Program.Success($"Results written to {outputFile}");
             }
             else
@@ -149,7 +173,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
                 }
             }
 
+            if (hasOperationalFailures)
+            {
+                return Program.FailureExitCode;
+            }
+
             Program.Success("Done!");
+            return Program.SuccessExitCode;
         }
 
         /// <summary>
@@ -270,8 +300,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
         /// </summary>
         /// <param name="allRules">All available rules.</param>
         /// <param name="ruleSets">The rule set names to filter by. If null or empty, defaults to the "default" rule set.</param>
-        /// <returns>An array of filtered rules.</returns>
-        private static ILinterRule[] FilterRulesByRuleSets(ILinterRule[] allRules, string[]? ruleSets)
+        /// <returns>An array of filtered rules, or null when any requested rule set is unknown.</returns>
+        private static ILinterRule[]? FilterRulesByRuleSets(ILinterRule[] allRules, string[]? ruleSets)
         {
             if (ruleSets == null || ruleSets.Length == 0)
             {
@@ -284,7 +314,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
             {
                 var unknownNames = string.Join(", ", unknownRuleSets.Select(name => $"'{name}'").ToArray());
                 var availableNames = string.Join(", ", availableRuleSets.OrderBy(name => name).Select(name => $"'{name}'").ToArray());
-                Program.Warning($"Unknown rule set(s): {unknownNames}. Available rule sets: {availableNames}. Use --list-rule-sets to see the list.");
+                Program.Error($"Unknown rule set(s): {unknownNames}. Available rule sets: {availableNames}. Use --list-rule-sets to see the list.");
+                return null;
             }
 
             var ruleSetNames = new HashSet<string>(ruleSets, StringComparer.OrdinalIgnoreCase);
@@ -310,40 +341,86 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Cli
         /// </summary>
         /// <param name="filePaths">The file paths to process.</param>
         /// <param name="linter">The linter instance.</param>
-        /// <returns>A dictionary mapping file paths to linter outputs.</returns>
-        private static async Task<Dictionary<string, LinterOutput[]>> ProcessFiles(
+        /// <returns>The outputs by file path and whether any operational failure occurred.</returns>
+        internal static async Task<(Dictionary<string, LinterOutput[]> Results, bool HasOperationalFailures)> ProcessFiles(
             string[] filePaths,
             PolicyLinter linter)
         {
-            var tasks = filePaths.Select(async filePath =>
-            {
-                try
-                {
-                    var fileContent = await File.ReadAllTextAsync(filePath).ConfigureAwait(false);
-
-                    if (string.IsNullOrEmpty(fileContent))
-                    {
-                        var parsingError = BuiltinLinterOutputs.PolicyDefinitionParsingFailure("Empty file");
-                        return new KeyValuePair<string, LinterOutput[]>(filePath, new[] { parsingError });
-                    }
-
-                    var results = linter.Lint(rawPolicyDefinition: fileContent, filePath: filePath);
-                    return new KeyValuePair<string, LinterOutput[]>(filePath, results);
-                }
-                catch (FileNotFoundException)
-                {
-                    var errorResult = BuiltinLinterOutputs.FileNotFound(filePath);
-                    return new KeyValuePair<string, LinterOutput[]>(filePath, new[] { errorResult });
-                }
-                catch (Exception ex)
-                {
-                    var errorResult = BuiltinLinterOutputs.FileReadError(filePath, ex.Message);
-                    return new KeyValuePair<string, LinterOutput[]>(filePath, new[] { errorResult });
-                }
-            }).ToArray();
+            var tasks = filePaths
+                .Select(filePath => Program.ProcessFile(filePath: filePath, linter: linter))
+                .ToArray();
 
             var results = await Task.WhenAll(tasks).ConfigureAwait(false);
-            return results.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            return (
+                Results: results.ToDictionary(result => result.FilePath, result => result.Results),
+                HasOperationalFailures: results.Any(result => result.HasOperationalFailure));
+        }
+
+        /// <summary>
+        /// Processes a single policy definition file.
+        /// </summary>
+        private static async Task<(string FilePath, LinterOutput[] Results, bool HasOperationalFailure)> ProcessFile(
+            string filePath,
+            PolicyLinter linter)
+        {
+            string fileContent;
+
+            try
+            {
+                fileContent = await File.ReadAllTextAsync(filePath).ConfigureAwait(false);
+            }
+            catch (FileNotFoundException)
+            {
+                return (
+                    filePath,
+                    new[] { BuiltinLinterOutputs.FileNotFound(filePath: filePath) },
+                    true);
+            }
+            catch (Exception ex) when (Program.IsFileSystemException(ex))
+            {
+                return (
+                    filePath,
+                    new[]
+                    {
+                        BuiltinLinterOutputs.FileReadError(
+                            filePath: filePath,
+                            errorMessage: ex.Message)
+                    },
+                    true);
+            }
+
+            if (string.IsNullOrEmpty(fileContent))
+            {
+                return (
+                    filePath,
+                    new[] { BuiltinLinterOutputs.PolicyDefinitionParsingFailure(parserError: "Empty file") },
+                    false);
+            }
+
+            try
+            {
+                var results = linter.Lint(rawPolicyDefinition: fileContent, filePath: filePath);
+                return (filePath, results, false);
+            }
+            catch (Exception ex)
+            {
+                var errorResult = BuiltinLinterOutputs.LinterExecutionError(
+                    filePath: filePath,
+                    errorMessage: $"{ex.GetType().Name}: {ex.Message}");
+                return (filePath, new[] { errorResult }, true);
+            }
+        }
+
+        /// <summary>
+        /// Determines whether an exception represents a file system operation failure.
+        /// </summary>
+        /// <param name="exception">The exception to inspect.</param>
+        /// <returns>True when the exception represents a file system operation failure.</returns>
+        private static bool IsFileSystemException(Exception exception)
+        {
+            return exception is IOException
+                || exception is UnauthorizedAccessException
+                || exception is NotSupportedException;
         }
 
         /// <summary>
