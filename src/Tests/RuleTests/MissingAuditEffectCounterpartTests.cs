@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""deny"", ""modify"", ""append""]",
-                expectedEnforcementEffect: "deny,modify,append",
+                expectedEnforcementEffect: "append, deny, modify",
                 expectedCounterpart: "audit");
         }
 
@@ -132,7 +132,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             MissingAuditEffectCounterpartTests.AssertFinding(
                 allowedValues: @"[""DeNy"", ""MoDiFy""]",
-                expectedEnforcementEffect: "DeNy,MoDiFy",
+                expectedEnforcementEffect: "DeNy, MoDiFy",
                 expectedCounterpart: "audit");
         }
 

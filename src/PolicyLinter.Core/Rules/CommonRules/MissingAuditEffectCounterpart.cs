@@ -88,7 +88,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            if (allowedValuesSet.Contains(auditCounterparts.First(), StringComparer.OrdinalIgnoreCase))
+            if (allowedValuesSet.Contains(auditCounterparts.First()))
             {
                 // The allowed values already include the audit counterpart for the enforcement effects.
                 return Array.Empty<LinterOutput>();
@@ -104,9 +104,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var requiredAuditCounterpart = auditCounterparts.First();
+            var enforcementEffects = string.Join(", ", encounteredEnforcementEffects.OrderBy(x => x));
             return new[]
             {
-                this.CreateWarning(expression: parameter, parameterName, string.Join(',', encounteredEnforcementEffects), requiredAuditCounterpart),
+                this.CreateWarning(expression: parameter, parameterName, enforcementEffects, requiredAuditCounterpart),
             };
         }
     }
