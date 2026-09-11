@@ -76,9 +76,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
         /// </summary>
         /// <param name="resourceType">The fully qualified resource type.</param>
         /// <param name="result">The known capabilities.</param>
-        public static bool TryGetCapabilities(string? resourceType, out ResourceTypeCapabilities? result)
+        public static bool TryGetCapabilities(string? resourceType, out ResourceTypeCapabilities result)
         {
-            result = null;
+            result = ResourceTypeCapabilities.None;
             if (resourceType == null)
             {
                 return false;
@@ -107,7 +107,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                 var capabilities = type.Capabilities;
                 if (!string.IsNullOrWhiteSpace(value: capabilities))
                 {
-                    result.Add(key: type.ResourceType, value: new ResourceTypeCapabilities(capabilities: capabilities));
+                    var values = capabilities.Split(separator: ',', options: StringSplitOptions.TrimEntries);
+                    var flags = ResourceTypeCapabilities.None;
+                    if (values.Contains(value: nameof(ResourceTypeCapabilities.SupportsTags), comparer: StringComparer.OrdinalIgnoreCase))
+                    {
+                        flags |= ResourceTypeCapabilities.SupportsTags;
+                    }
+                    if (values.Contains(value: nameof(ResourceTypeCapabilities.SupportsLocation), comparer: StringComparer.OrdinalIgnoreCase))
+                    {
+                        flags |= ResourceTypeCapabilities.SupportsLocation;
+                    }
+                    result.Add(key: type.ResourceType, value: flags);
                 }
             }
             return result.ToImmutable();

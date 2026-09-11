@@ -50,7 +50,7 @@ Resolved field references in `Reference.ResourcePropertyMetadata` are pre-popula
 
 The public-cloud snapshot is embedded in Core from `src/PolicyLinter.Core/ResourceTypesAndAliases/`. Each namespace has a `.types.json` file with resource type capabilities and an `.aliases.json` file with alias details. The loader reads and caches each file independently on first use. Capability lookups do not deserialize aliases, and alias lookups do not deserialize capabilities.
 
-`TryGetResourceTypeCapabilities` accepts a fully qualified resource type and returns `ResourceTypeCapabilities`, with independent `SupportsTags` and `SupportsLocation` flags and the original capability `Tokens`. Lookups are case-insensitive. An unknown type or missing capabilities returns `false`; explicit `None` returns `true` with both flags false. These flags do not by themselves establish policy mode applicability; resource groups and subscriptions have separate mode rules.
+`TryGetResourceTypeCapabilities` accepts a fully qualified resource type and returns a `ResourceTypeCapabilities` flags enum: `None`, `SupportsTags`, and `SupportsLocation`. Other capability names are ignored. Lookups are case-insensitive. An unknown type or missing capabilities returns `false`; known capabilities with neither flag return `true` and `None`. These flags do not by themselves establish policy mode applicability; resource groups and subscriptions have separate mode rules.
 
 The alias/property metadata mapping still uses the existing offline resource metadata provider. [Refresh instructions](../tools/ResourceTypesAndAliases/README.md) cover only the resource types and aliases snapshot. Starting with 0.9.0, custom `ITypeMetadata` implementations must also implement `TryGetResourceTypeCapabilities`.
 

@@ -60,46 +60,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Theory]
-        [InlineData("SupportsTags, SupportsLocation", true, true)]
-        [InlineData(" supportstags , SUPPORTSLOCATION , ", true, true)]
-        [InlineData("SupportsTags", true, false)]
-        [InlineData("SupportsLocation", false, true)]
-        [InlineData("SupportsTags, SupportsExtension", true, false)]
-        [InlineData("None", false, false)]
-        [InlineData("FutureCapability", false, false)]
-        [InlineData("NotSupportsTags, NotSupportsLocation", false, false)]
-        [InlineData("", false, false)]
-        void ResourceTypeCapabilities_ParseFlags(string value, bool supportsTags, bool supportsLocation)
-        {
-            var capabilities = new ResourceTypeCapabilities(capabilities: value);
-
-            capabilities.SupportsTags.Should().Be(supportsTags);
-            capabilities.SupportsLocation.Should().Be(supportsLocation);
-        }
-
-        [Fact]
-        void ResourceTypeCapabilities_PreserveUnknownTokens()
-        {
-            var capabilities = new ResourceTypeCapabilities(capabilities: " SupportsTags, FutureCapability, ");
-
-            capabilities.Tokens.Should().Equal("SupportsTags", "FutureCapability");
-            Assert.Throws<ArgumentNullException>(() => new ResourceTypeCapabilities(capabilities: null));
-        }
-
-        [Theory]
-        [InlineData("Microsoft.Compute/virtualMachines", true, true)]
-        [InlineData("MICROSOFT.COMPUTE/VIRTUALMACHINES", true, true)]
-        [InlineData("Microsoft.Management/serviceGroups", true, false)]
-        [InlineData("Microsoft.Resources/deployments", true, false)]
-        [InlineData("Anyscale.Platform/cloudResources", true, true)]
-        [InlineData("Anyscale.Platform/agreements", false, false)]
-        void TypeMetadata_GetResourceTypeCapabilities(string resourceType, bool supportsTags, bool supportsLocation)
+        [InlineData("Microsoft.Compute/virtualMachines", ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation)]
+        [InlineData("MICROSOFT.COMPUTE/VIRTUALMACHINES", ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation)]
+        [InlineData("Microsoft.Management/serviceGroups", ResourceTypeCapabilities.SupportsTags)]
+        [InlineData("Microsoft.Resources/deployments", ResourceTypeCapabilities.SupportsTags)]
+        [InlineData("Anyscale.Platform/cloudResources", ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation)]
+        [InlineData("Anyscale.Platform/agreements", ResourceTypeCapabilities.None)]
+        [InlineData("Microsoft.Advisor/advisorScore", ResourceTypeCapabilities.None)]
+        void TypeMetadata_GetResourceTypeCapabilities(string resourceType, ResourceTypeCapabilities expected)
         {
             ITypeMetadata metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
 
             metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities).Should().BeTrue();
-            capabilities.SupportsTags.Should().Be(supportsTags);
-            capabilities.SupportsLocation.Should().Be(supportsLocation);
+            capabilities.Should().Be(expected);
         }
 
         [Theory]
@@ -117,7 +90,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
 
             metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities).Should().BeFalse();
-            capabilities.Should().BeNull();
+            capabilities.Should().Be(ResourceTypeCapabilities.None);
         }
 
         [Theory]
@@ -136,7 +109,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        void Metadata_ConcurrentLookupsReuseCachedResults()
+        void Metadata_ConcurrentLookups()
         {
             var metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
             var resolver = new AliasResolver();
@@ -152,7 +125,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                     resolvedAlias: out aliases[index]).Should().BeTrue();
             });
 
-            Assert.All(collection: capabilities, action: value => Assert.Same(expected: capabilities[0], actual: value));
+            Assert.All(collection: capabilities, action: value => Assert.Equal(
+                expected: ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation,
+                actual: value));
             Assert.All(collection: aliases, action: value => Assert.Same(expected: aliases[0], actual: value));
             aliases[0].DefaultPath.Should().Be("properties.displayName");
             aliases[0].Paths.Should().BeEmpty();

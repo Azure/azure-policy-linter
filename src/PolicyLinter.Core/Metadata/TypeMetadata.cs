@@ -40,7 +40,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
         }
 
         /// <inheritdoc/>
-        public bool TryGetResourceTypeCapabilities(string? resourceType, out ResourceTypeCapabilities? result)
+        public bool TryGetResourceTypeCapabilities(string? resourceType, out ResourceTypeCapabilities result)
         {
             return ResourceTypesAndAliases.TryGetCapabilities(resourceType: resourceType, result: out result);
         }

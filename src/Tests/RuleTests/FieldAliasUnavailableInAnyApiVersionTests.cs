@@ -416,7 +416,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             /// <inheritdoc/>
             public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
             {
-                result = null;
+                result = ResourceTypeCapabilities.None;
                 return false;
             }
 
