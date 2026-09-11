@@ -62,10 +62,14 @@ try {
             $hasTypes = $hasTypes -or $types.Count -gt 0
             $documents = @{
                 types = @($types | Select-Object capabilities, resourceType)
-                aliases = @($types | Where-Object aliases | Select-Object @{
-                    Name = 'aliases'
-                    Expression = { ,@($_.aliases | Sort-Object -Property name -CaseSensitive -Culture en-US) }
-                }, resourceType)
+                aliases = @(
+                    foreach ($type in ($types | Where-Object aliases)) {
+                        [ordered]@{
+                            aliases = @($type.aliases | Sort-Object -Property name -CaseSensitive -Culture en-US)
+                            resourceType = $type.resourceType
+                        }
+                    }
+                )
             }
 
             foreach ($suffix in @('types', 'aliases')) {

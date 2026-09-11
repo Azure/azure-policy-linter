@@ -92,7 +92,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
 
         private static ImmutableDictionary<string, AliasDetails> LoadAliases(string resourceName)
         {
-            // Keep the existing last-entry-wins behavior for aliases shared by multiple types.
+            // For aliases shared by multiple resource types, the last entry wins.
             return ResourceTypesAndAliases.LoadProvider(resourceName: resourceName).ResourceTypes
                 .SelectMany(selector: type => type.Aliases)
                 .ToOrdinalInsensitiveDictionary(keySelector: alias => alias.Name, elementSelector: alias => alias)
