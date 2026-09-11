@@ -8,12 +8,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
+    using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Contracts;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Json;
+    using Newtonsoft.Json;
     using Xunit;
 
     public class MetadataTests
@@ -25,6 +28,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             this.mockAliasResolver = new MockAliasResolver(MockResourceMetadata.Aliases);
             this.mockMetadataProvider = new MockMetadataProvider(MockResourceMetadata.ResourceTypeMetadata);
+        }
+
+        /// <summary>
+        /// Gets each embedded snapshot as a separate test case.
+        /// </summary>
+        public static object[][] SnapshotResourceNames => typeof(TypeMetadata).Assembly
+            .GetManifestResourceNames()
+            .Where(predicate: name => name.StartsWith(value: "ResourceTypesAndAliases.", comparisonType: StringComparison.Ordinal))
+            .Select(selector: name => new object[] { name })
+            .ToArray();
+
+        [Theory]
+        [MemberData(nameof(MetadataTests.SnapshotResourceNames))]
+        void Metadata_SnapshotDeserializes(string resourceName)
+        {
+            using var stream = typeof(TypeMetadata).Assembly.GetManifestResourceStream(name: resourceName);
+            using var streamReader = new StreamReader(stream: stream);
+            using var reader = new JsonTextReader(reader: streamReader);
+            var provider = JsonExtensions.JsonObjectTypeSerializer.Deserialize<ProviderTypesAndAliases>(reader: reader);
+
+            provider.Should().NotBeNull();
+            provider.Namespace.Should().NotBeNullOrWhiteSpace();
+            provider.ResourceTypes.Should().NotBeNull();
+            foreach (var type in provider.ResourceTypes)
+            {
+                type.ResourceType.Should().NotBeNullOrWhiteSpace();
+                type.Aliases.Should().NotBeNull();
+            }
+            reader.Read().Should().BeFalse(because: "the entire snapshot must be a single JSON document");
         }
 
         [Theory]

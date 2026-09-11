@@ -67,8 +67,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
             result = null;
             var separator = aliasName.IndexOf(value: '/');
             return separator > 0
-                && ResourceTypesAndAliases.aliases.TryGetValue(key: aliasName[..separator], value: out var aliases)
-                && aliases.Value.TryGetValue(key: aliasName, value: out result);
+                && ResourceTypesAndAliases.aliases.TryGetValue(key: aliasName[..separator], value: out var namespaceAliases)
+                && namespaceAliases.Value.TryGetValue(key: aliasName, value: out result);
         }
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
 
             var separator = resourceType.IndexOf(value: '/');
             return separator > 0
-                && ResourceTypesAndAliases.capabilities.TryGetValue(key: resourceType[..separator], value: out var capabilities)
-                && capabilities.Value.TryGetValue(key: resourceType[(separator + 1)..], value: out result);
+                && ResourceTypesAndAliases.capabilities.TryGetValue(key: resourceType[..separator], value: out var namespaceCapabilities)
+                && namespaceCapabilities.Value.TryGetValue(key: resourceType[(separator + 1)..], value: out result);
         }
 
         private static ImmutableDictionary<string, AliasDetails> LoadAliases(string resourceName)
