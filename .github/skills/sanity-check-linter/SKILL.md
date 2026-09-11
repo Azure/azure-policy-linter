@@ -44,7 +44,11 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    policylinter --list-rule-sets
    ```
 
-5. Create a temporary policy file. The deny-VM example below triggers a default rule (`HardCodedPolicyEnforcementEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust the policy to exercise the change you just made - the simplest valid policy that triggers the affected rule is ideal.
+5. Create two temporary policy files for the changed rule:
+   - One that triggers the rule.
+   - One that differs only in the condition that should suppress the rule.
+
+   The deny-VM example below triggers a default rule (`HardCodedPolicyEnforcementEffect`), which gives you a guaranteed finding to confirm the CLI ran end-to-end. Adjust it to exercise the change you just made, then create the matching suppression case.
 
    ```powershell
    @"
@@ -63,12 +67,15 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    "@ | Out-File -FilePath sanity-check.json -Encoding UTF8
    ```
 
-6. Run the linter under each scenario relevant to the change. At minimum, run the default rule set. If the change touches a non-default rule set or rule-set filtering, run those too:
+6. Run the linter against both policies under each scenario relevant to the change. At minimum, run the default rule set. If the change touches a non-default rule set or rule-set filtering, run those too:
 
    ```
    policylinter sanity-check.json
+   policylinter sanity-check-suppressed.json
    policylinter sanity-check.json --rule-set <RuleSetName>
+   policylinter sanity-check-suppressed.json --rule-set <RuleSetName>
    policylinter sanity-check.json --rule-set <RuleSetName> --rule-set default
+   policylinter sanity-check-suppressed.json --rule-set <RuleSetName> --rule-set default
    ```
 
 7. For each run, verify:
@@ -77,7 +84,7 @@ Not needed for doc-only changes, test-only changes, or version bumps.
    - No findings appear from rule sets that weren't selected.
 
 8. Clean up:
-   - Delete the temporary file: `Remove-Item sanity-check.json`.
+   - Delete the temporary files: `Remove-Item sanity-check.json, sanity-check-suppressed.json`.
    - Uninstall the sanity-check build: `dotnet tool uninstall -g Microsoft.Azure.Policy.PolicyLinter.Cli`.
    - If step 1 found a feed install to restore, reinstall it: `dotnet tool install -g <id> --version <version>`.
 

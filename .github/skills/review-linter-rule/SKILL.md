@@ -25,6 +25,8 @@ Related skills:
 
 3. **AI-fingerprint tone failures.** A separate cluster of failures recur because the model defaults to confident, abstract, exhaustive prose. Catch them by name (see the "Tone discipline check" below).
 
+4. **Correct code can still be over-built.** Review whether the complexity is proportional to the value and coverage gained, and whether the rule recreates functionality that belongs in the core linter.
+
 ## Flow
 
 1. **Read** the rule's `.cs` file, its test file, and its doc file. If any of the three is missing, that's the first finding - stop and report it.
@@ -33,7 +35,9 @@ Related skills:
 
 3. **Work through the three check groups in order:** coherence cascade -> tone discipline -> implementation. Stop and gather findings as you go; don't report them one at a time.
 
-4. **Report findings** in the format below. If a check group is clean, say so in one line - don't pad. If the rule passes everything, say so plainly.
+4. **Generalize each finding.** Decide whether it is specific to one artifact or applies across the rule, its tests, its doc, sibling rules, or the whole change. Review every place where it applies before reporting it.
+
+5. **Report findings** in the format below. If a check group is clean, say so in one line - don't pad. If the rule passes everything, say so plainly.
 
 ## Coherence cascade check
 
@@ -70,6 +74,8 @@ Check every user-facing string (title, description format, doc body, suggestions
 The implementation checks worth running are the ones that catch real bugs:
 
 - **Engine-code modification.** The rule must only touch its own `.cs`, its test, and its doc. Files added or modified under `src/PolicyLinter.Core/Expressions/`, `Parsing/`, `Extensions/`, `Metadata/`, or other root engine paths are a red flag - the logic belongs in the rule. **Flag as Error.**
+- **Missing core functionality recreated inside the rule.** Flag generic parsing, policy evaluation, applicability, or other reusable core behavior implemented privately by a rule. Utility methods specific to the rule are fine.
+- **Disproportionate complexity.** A correct and tested rule can still be over-built. Flag complexity that is disproportionate to the value or coverage gained, and state the simpler check and what it would miss.
 - **`sealed class` and `applyToDerivedTypes: false`.** Every rule should be `sealed`. Constructor should pass `applyToDerivedTypes: false` unless the rule has a documented reason to walk derived expression types. Both are easy to miss; analyzers don't catch either.
 - **XML documentation shape.** Class has a real `<summary>` describing what the rule checks - never `/// <inheritdoc/>`. `Evaluate` uses `<inheritdoc/>`. Constructor uses the standard `Initializes a new instance of the <see cref="..."/> class.` form.
 - **`HasLiteralValue` guard and `HasSimpleParameterizedValue` companion.** Any read of `Property.Value` that doesn't go through `HasLiteralValue` first will misfire on `[parameters('...')]` values. Inversely, rules that intentionally handle parameterized values should use `HasSimpleParameterizedValue`, not regex on the raw string. Flag either failure mode.
@@ -92,8 +98,9 @@ The implementation checks worth running are the ones that catch real bugs:
 
 ### Doc-specific checks
 
-- **Four sections in order:** metadata table, description, suggestions, examples.
+- **Required sections in order:** metadata table, description, suggestions. Examples are optional and come last when they add value.
 - **Description is third-person declarative**, suggestions are imperative second-person, examples are minimal fragments (not full policies).
+- **Description is useful to the policy author.** By the end of the first sentence, the author should understand what is wrong with the policy. Flag descriptions that lead with detection mechanics, metadata predicates, expression-tree details, or the spec.
 - **Examples are labelled `Violation` and `Correct`** - not `compliant` / `non-compliant`. The latter is bureaucratic AI-default phrasing.
 - **Property names in doc body match the policy JSON's actual casing** (camelCase: `endpointKind`, `allowedValues`, `existenceCondition`). PascalCasing them is a recurring AI fingerprint that survives review because both readings parse.
 - **Microsoft Learn links for documented Azure Policy concepts** (operators, effects, parameter types). Their absence isn't always a finding, but flag if the doc restates concepts that have canonical pages.
