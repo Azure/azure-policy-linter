@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.Bing",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/customSearchConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/skus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

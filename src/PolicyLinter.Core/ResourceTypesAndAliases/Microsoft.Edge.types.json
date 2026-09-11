@@ -1,0 +1,253 @@
+{
+  "namespace": "Microsoft.Edge",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configTemplates/configTemplateMetadatas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configTemplates/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configTemplates/versions/configTemplateSchemas"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "configurationReferences"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/arcGatewayConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/connectivityConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/dynamicConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/dynamicConfigurations/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/networkConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/provisioningConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/securityConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurations/timeServerConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configurationTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationTemplates/versions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "connectivityStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "contexts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "contexts/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "contexts/siteReferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "contexts/workflows"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "contexts/workflows/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "contexts/workflows/versions/executions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "diagnostics"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "disconnectedOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "disconnectedOperations/hardwareSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "disconnectedOperations/images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "disconnectedOperations/images/artifacts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "resourceInsights"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "schemaReferences"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "schemas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schemas/dynamicSchemas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schemas/dynamicSchemas/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schemas/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "SiteAwareResourceTypes"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "SiteKeys"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Sites"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "solutionDeployments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "solutionTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "solutionTemplates/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "solutionTemplates/versions/solutionSchemas"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "targets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "targets/instances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "targets/instances/histories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "targets/solutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "targets/solutions/instances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "targets/solutions/instances/histories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "targets/solutions/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "targetTemplates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "updates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Winfields"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Winfields/images"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workflows"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workflows/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workflows/versions/executions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workflowTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workflowTemplates/versions"
+    }
+  ]
+}

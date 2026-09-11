@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.Carbon",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "carbonEmissionReports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "queryCarbonEmissionDataAvailableDateRange"
+    }
+  ]
+}

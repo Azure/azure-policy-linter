@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.Premonition",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "libraries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "libraries/analyses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "libraries/samples"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    }
+  ]
+}

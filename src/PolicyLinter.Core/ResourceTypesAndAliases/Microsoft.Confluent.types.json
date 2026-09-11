@@ -1,0 +1,93 @@
+{
+  "namespace": "Microsoft.Confluent",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "activateSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "agreements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "organizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/access"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/access/deleteRoleBinding"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/apiKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/clusters/connectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/clusters/createAPIKey"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/clusters/topics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/networkGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/networkGateways/accessPoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/environments/schemaRegistryClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/latestLinkedSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/linkSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/listRegions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validations"
+    }
+  ]
+}

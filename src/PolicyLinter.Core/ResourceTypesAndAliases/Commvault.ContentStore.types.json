@@ -1,0 +1,57 @@
+{
+  "namespace": "Commvault.ContentStore",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "activateSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudAccounts/plans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudAccounts/protectionGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudAccounts/protectionGroups/protectedItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudAccounts/roleMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudAccounts/storages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "entities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

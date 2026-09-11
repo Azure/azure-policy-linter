@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.KubernetesConfiguration",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "extensions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "extensionTypes"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "fluxConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/extensionTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/extensionTypes/versions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "sourceControlConfigurations"
+    }
+  ]
+}

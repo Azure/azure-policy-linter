@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.Kusto",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/attacheddatabaseconfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/databases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/databases/dataconnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/databases/eventhubconnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/databases/principalassignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/databases/scripts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/dataconnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/managedPrivateEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/principalassignments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Clusters/PrivateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/sandboxCustomImages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/sharedidentities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/skus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

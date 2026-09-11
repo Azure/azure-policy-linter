@@ -1,0 +1,1319 @@
+{
+  "namespace": "Microsoft.DBforMySQL",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/administratorLogin",
+          "defaultPath": "properties.administratorLogin"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/administratorLoginPassword",
+          "defaultPath": "properties.administratorLoginPassword"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/availabilityZone",
+          "defaultPath": "properties.availabilityZone"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/backup",
+          "defaultPath": "properties.backup"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/backup.backupIntervalHours",
+          "defaultPath": "properties.backup.backupIntervalHours"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/backup.backupRetentionDays",
+          "paths": [
+            {
+              "path": "properties.backup.backupRetentionDays",
+              "apiVersions": [
+                "2020-07-01-preview",
+                "2020-07-01-privatepreview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.backup.backupRetentionDays",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/backup.earliestRestoreDate",
+          "defaultPath": "properties.backup.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/backup.geoRedundantBackup",
+          "defaultPath": "properties.backup.geoRedundantBackup"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/byokEnforcement",
+          "defaultPath": "properties.byokEnforcement"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/createMode",
+          "defaultPath": "properties.createMode"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/databasePort",
+          "defaultPath": "properties.databasePort"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/dataEncryption",
+          "defaultPath": "properties.dataEncryption"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/dataEncryption.geoBackupKeyUri",
+          "defaultPath": "properties.dataEncryption.geoBackupKeyURI"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/dataEncryption.geoBackupUserAssignedIdentityId",
+          "defaultPath": "properties.dataEncryption.geoBackupUserAssignedIdentityId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/dataEncryption.primaryKeyUri",
+          "defaultPath": "properties.dataEncryption.primaryKeyURI"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/dataEncryption.primaryUserAssignedIdentityId",
+          "defaultPath": "properties.dataEncryption.primaryUserAssignedIdentityId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/dataEncryption.type",
+          "defaultPath": "properties.dataEncryption.type"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/delegatedSubnetArguments",
+          "defaultPath": "properties.delegatedSubnetArguments"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/delegatedSubnetArguments.subnetArmResourceId",
+          "defaultPath": "properties.delegatedSubnetArguments.subnetArmResourceId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/earliestRestoreDate",
+          "defaultPath": "properties.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/fullVersion",
+          "defaultPath": "properties.fullVersion"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/fullyQualifiedDomainName",
+          "defaultPath": "properties.fullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/haEnabled",
+          "defaultPath": "properties.haEnabled"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/haState",
+          "defaultPath": "properties.haState"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/highAvailability",
+          "defaultPath": "properties.highAvailability"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/highAvailability.mode",
+          "defaultPath": "properties.highAvailability.mode"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/highAvailability.replicationMode",
+          "defaultPath": "properties.highAvailability.replicationMode"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/highAvailability.standbyAvailabilityZone",
+          "defaultPath": "properties.highAvailability.standbyAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/highAvailability.state",
+          "defaultPath": "properties.highAvailability.state"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/importSourceProperties",
+          "defaultPath": "properties.importSourceProperties"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/importSourceProperties.dataDirPath",
+          "defaultPath": "properties.importSourceProperties.dataDirPath"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/importSourceProperties.sasToken",
+          "defaultPath": "properties.importSourceProperties.sasToken"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/importSourceProperties.storageType",
+          "defaultPath": "properties.importSourceProperties.storageType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/importSourceProperties.storageUrl",
+          "defaultPath": "properties.importSourceProperties.storageUrl"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/infrastructureEncryption",
+          "defaultPath": "properties.infrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/lowerCaseTableNames",
+          "defaultPath": "properties.lowerCaseTableNames"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/maintenancePolicy",
+          "defaultPath": "properties.maintenancePolicy"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/maintenancePolicy.patchStrategy",
+          "defaultPath": "properties.maintenancePolicy.patchStrategy"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/maintenanceWindow",
+          "defaultPath": "properties.maintenanceWindow"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/maintenanceWindow.batchOfMaintenance",
+          "defaultPath": "properties.maintenanceWindow.batchOfMaintenance"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/maintenanceWindow.customWindow",
+          "defaultPath": "properties.maintenanceWindow.customWindow"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/maintenanceWindow.dayOfWeek",
+          "defaultPath": "properties.maintenanceWindow.dayOfWeek"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/maintenanceWindow.startHour",
+          "defaultPath": "properties.maintenanceWindow.startHour"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/maintenanceWindow.startMinute",
+          "defaultPath": "properties.maintenanceWindow.startMinute"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/network",
+          "defaultPath": "properties.network"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/network.delegatedSubnetResourceId",
+          "defaultPath": "properties.network.delegatedSubnetResourceId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/network.privateDnsZoneResourceId",
+          "defaultPath": "properties.network.privateDnsZoneResourceId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/network.publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-07-01-privatepreview",
+                "2020-07-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.network.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/privateDnsZoneArguments",
+          "defaultPath": "properties.privateDnsZoneArguments"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/privateDnsZoneArguments.privateDnsZoneArmResourceId",
+          "defaultPath": "properties.privateDnsZoneArguments.privateDnsZoneArmResourceId"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-07-01-privatepreview",
+                "2020-07-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.network.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/replicaCapacity",
+          "defaultPath": "properties.replicaCapacity"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/replicationRole",
+          "defaultPath": "properties.replicationRole"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/restorePointInTime",
+          "defaultPath": "properties.restorePointInTime"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/sourceServerId",
+          "defaultPath": "properties.sourceServerId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/sourceServerResourceId",
+          "defaultPath": "properties.sourceServerResourceId"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/sslEnforcement",
+          "defaultPath": "properties.sslEnforcement"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/standbyAvailabilityZone",
+          "defaultPath": "properties.standbyAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storage",
+          "defaultPath": "properties.storage"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storage.autoGrow",
+          "defaultPath": "properties.storage.autoGrow"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/storage.autoIoScaling",
+          "defaultPath": "properties.storage.autoIoScaling"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storage.iops",
+          "defaultPath": "properties.storage.iops"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/storage.logOnDisk",
+          "defaultPath": "properties.storage.logOnDisk"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/storage.storageRedundancy",
+          "defaultPath": "properties.storage.storageRedundancy"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storage.storageSizeGB",
+          "defaultPath": "properties.storage.storageSizeGB"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storage.storageSku",
+          "defaultPath": "properties.storage.storageSku"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storageProfile.backupRetentionDays",
+          "defaultPath": "properties.storageProfile.backupRetentionDays"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storageProfile.fileStorageSkuName",
+          "defaultPath": "properties.storageProfile.fileStorageSkuName"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storageProfile.storageAutogrow",
+          "defaultPath": "properties.storageProfile.storageAutogrow"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storageProfile.storageIops",
+          "defaultPath": "properties.storageProfile.storageIops"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/storageProfile.storageMB",
+          "defaultPath": "properties.storageProfile.storageMB"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "flexibleServers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/administrators/administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/administrators/identityResourceId",
+          "defaultPath": "properties.identityResourceId"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/administrators/login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/administrators/sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/administrators/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "flexibleServers/administrators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/advancedThreatProtectionSettings/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/advancedThreatProtectionSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/advancedThreatProtectionSettings/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "flexibleServers/advancedThreatProtectionSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/backupsV2/backupNameV2",
+          "defaultPath": "properties.backupNameV2"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/backupsV2/backupType",
+          "defaultPath": "properties.backupType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/backupsV2/completedTime",
+          "defaultPath": "properties.completedTime"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/backupsV2/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/backupsV2/source",
+          "defaultPath": "properties.source"
+        }
+      ],
+      "resourceType": "flexibleServers/backupsv2"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/allowedValues",
+          "defaultPath": "properties.allowedValues"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/configurations/currentValue",
+          "defaultPath": "properties.currentValue"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/dataType",
+          "defaultPath": "properties.dataType"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/defaultValue",
+          "defaultPath": "properties.defaultValue"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/configurations/documentationLink",
+          "defaultPath": "properties.documentationLink"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/isConfigPendingRestart",
+          "defaultPath": "properties.isConfigPendingRestart"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/isDynamicConfig",
+          "defaultPath": "properties.isDynamicConfig"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/isReadOnly",
+          "defaultPath": "properties.isReadOnly"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/configurations/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "flexibleServers/configurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/databases/charset",
+          "defaultPath": "properties.charset"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/databases/collation",
+          "defaultPath": "properties.collation"
+        }
+      ],
+      "resourceType": "flexibleServers/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/firewallRules/endIpAddress",
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DBForMySql/flexibleServers/firewallRules/startIpAddress",
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "flexibleServers/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/maintenances/maintenanceStartTime",
+          "defaultPath": "properties.maintenanceStartTime"
+        }
+      ],
+      "resourceType": "flexibleServers/maintenances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/flexibleServers/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "flexibleServers/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/administratorLogin",
+          "paths": [
+            {
+              "path": "properties.administratorLogin",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.administratorLogin"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/earliestRestoreDate",
+          "paths": [
+            {
+              "path": "properties.earliestRestoreDate",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/fullyQualifiedDomainName",
+          "paths": [
+            {
+              "path": "properties.fullyQualifiedDomainName",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.fullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/infrastructureEncryption",
+          "defaultPath": "properties.infrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/masterServerId",
+          "paths": [
+            {
+              "path": "properties.masterServerId",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.masterServerId"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/minimalTlsVersion",
+          "defaultPath": "properties.minimalTlsVersion"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/replicaCapacity",
+          "paths": [
+            {
+              "path": "properties.replicaCapacity",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.replicaCapacity"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/replicationRole",
+          "paths": [
+            {
+              "path": "properties.replicationRole",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.replicationRole"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sku.capacity",
+          "paths": [
+            {
+              "path": "sku.capacity",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sku.family",
+          "paths": [
+            {
+              "path": "sku.family",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sku.name",
+          "paths": [
+            {
+              "path": "sku.name",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sku.tier",
+          "paths": [
+            {
+              "path": "sku.tier",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/sslEnforcement",
+          "paths": [
+            {
+              "path": "properties.sslEnforcement",
+              "apiVersions": [
+                "2017-04-30-preview",
+                "2016-02-01-privatepreview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sslEnforcement",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/storageProfile",
+          "paths": [
+            {
+              "path": "properties.storageProfile",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/storageProfile.backupRetentionDays",
+          "paths": [
+            {
+              "path": "properties.storageProfile.backupRetentionDays",
+              "apiVersions": [
+                "2017-04-30-preview",
+                "2016-02-01-privatepreview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.storageProfile.backupRetentionDays",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/storageProfile.geoRedundantBackup",
+          "paths": [
+            {
+              "path": "properties.storageProfile.geoRedundantBackup",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile.geoRedundantBackup"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/storageProfile.storageAutogrow",
+          "defaultPath": "properties.storageProfile.storageAutogrow"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/storageProfile.storageMB",
+          "paths": [
+            {
+              "path": "properties.storageProfile.storageMB",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile.storageMB"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/userVisibleState",
+          "paths": [
+            {
+              "path": "properties.userVisibleState",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.userVisibleState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/version",
+          "paths": [
+            {
+              "path": "properties.version",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "servers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/administrators/activeDirectory.administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/administrators/activeDirectory.login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/administrators/activeDirectory.sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/administrators/activeDirectory.tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.DBForMySQL/servers/Administrators/administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.DBForMySQL/servers/Administrators/login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.DBForMySQL/servers/Administrators/sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.DBForMySQL/servers/Administrators/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "servers/administrators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/configurations/allowedValues",
+          "defaultPath": "properties.allowedValues"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/configurations/dataType",
+          "defaultPath": "properties.dataType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/configurations/defaultValue",
+          "defaultPath": "properties.defaultValue"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/configurations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/configurations/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/configurations/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "servers/configurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/databases/charset",
+          "defaultPath": "properties.charset"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/databases/collation",
+          "defaultPath": "properties.collation"
+        }
+      ],
+      "resourceType": "servers/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/firewallRules/endIpAddress",
+          "paths": [
+            {
+              "path": "properties.endIpAddress",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/firewallRules/startIpAddress",
+          "paths": [
+            {
+              "path": "properties.startIpAddress",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "servers/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/keys/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/keys/serverKeyType",
+          "defaultPath": "properties.serverKeyType"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/keys/uri",
+          "defaultPath": "properties.uri"
+        }
+      ],
+      "resourceType": "servers/keys"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "servers/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.disabledAlerts",
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.disabledAlerts[*]",
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.emailAccountAdmins",
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.emailAddresses",
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.emailAddresses[*]",
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/Default.storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/disabledAlerts",
+          "paths": [
+            {
+              "path": "properties.disabledAlerts",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/disabledAlerts[*]",
+          "paths": [
+            {
+              "path": "properties.disabledAlerts[*]",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/emailAccountAdmins",
+          "paths": [
+            {
+              "path": "properties.emailAccountAdmins",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/emailAddresses",
+          "paths": [
+            {
+              "path": "properties.emailAddresses",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/emailAddresses[*]",
+          "paths": [
+            {
+              "path": "properties.emailAddresses[*]",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/retentionDays",
+          "paths": [
+            {
+              "path": "properties.retentionDays",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/storageAccountAccessKey",
+          "paths": [
+            {
+              "path": "properties.storageAccountAccessKey",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/securityAlertPolicies/storageEndpoint",
+          "paths": [
+            {
+              "path": "properties.storageEndpoint",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "servers/securityAlertPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMySQL/servers/virtualNetworkRules/ignoreMissingVnetServiceEndpoint",
+          "paths": [
+            {
+              "path": "properties.ignoreMissingVnetServiceEndpoint",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.ignoreMissingVnetServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/virtualNetworkRules/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforMySQL/servers/virtualNetworkRules/virtualNetworkSubnetId",
+          "paths": [
+            {
+              "path": "properties.virtualNetworkSubnetId",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.virtualNetworkSubnetId"
+        }
+      ],
+      "resourceType": "servers/virtualNetworkRules"
+    }
+  ]
+}

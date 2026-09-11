@@ -1,0 +1,1011 @@
+{
+  "namespace": "Microsoft.HDInsight",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HDInsight/clusters/clusterDefinition",
+          "defaultPath": "properties.clusterDefinition"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/clusterDefinition.blueprint",
+          "defaultPath": "properties.clusterDefinition.blueprint"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/clusterDefinition.componentVersion",
+          "defaultPath": "properties.clusterDefinition.componentVersion"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/clusterDefinition.configurations",
+          "defaultPath": "properties.clusterDefinition.configurations"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/clusterDefinition.kind",
+          "paths": [
+            {
+              "path": "properties.clusterDefinition.kind",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.clusterDefinition.kind"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/clusterVersion",
+          "paths": [
+            {
+              "path": "properties.clusterVersion",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.clusterVersion"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeIsolationProperties",
+          "defaultPath": "properties.computeIsolationProperties"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeIsolationProperties.enableComputeIsolation",
+          "defaultPath": "properties.computeIsolationProperties.enableComputeIsolation"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeIsolationProperties.hostSku",
+          "defaultPath": "properties.computeIsolationProperties.hostSku"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile",
+          "defaultPath": "properties.computeProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles",
+          "defaultPath": "properties.computeProfile.roles"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*]",
+          "defaultPath": "properties.computeProfile.roles[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.capacity",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.capacity"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.capacity.maxInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.capacity.maxInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.capacity.minInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.capacity.minInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*]",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*].days",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].days"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*].days[*]",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].days[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.maxInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.maxInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.minInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.minInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.time",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.time"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].autoscale.recurrence.timeZone",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.timeZone"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].dataDisksGroups",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].dataDisksGroups[*]",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].dataDisksGroups[*].diskSizeGB",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].dataDisksGroups[*].disksPerNode",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*].disksPerNode"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].dataDisksGroups[*].storageAccountType",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*].storageAccountType"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].encryptDataDisks",
+          "defaultPath": "properties.computeProfile.roles[*].encryptDataDisks"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].hardwareProfile",
+          "defaultPath": "properties.computeProfile.roles[*].hardwareProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].hardwareProfile.vmSize",
+          "defaultPath": "properties.computeProfile.roles[*].hardwareProfile.vmSize"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].minInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].minInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].name",
+          "defaultPath": "properties.computeProfile.roles[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.password",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.password"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*]",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*].certificateData",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*].certificateData"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.username",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.username"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].scriptActions",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].scriptActions[*]",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].scriptActions[*].name",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].scriptActions[*].parameters",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*].parameters"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].scriptActions[*].uri",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*].uri"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].targetInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].targetInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].virtualNetworkProfile",
+          "defaultPath": "properties.computeProfile.roles[*].virtualNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].virtualNetworkProfile.id",
+          "defaultPath": "properties.computeProfile.roles[*].virtualNetworkProfile.id",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].virtualNetworkProfile.subnet",
+          "defaultPath": "properties.computeProfile.roles[*].virtualNetworkProfile.subnet",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/computeProfile.roles[*].VMGroupName",
+          "defaultPath": "properties.computeProfile.roles[*].VMGroupName"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties",
+          "defaultPath": "properties.diskEncryptionProperties"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties.encryptionAlgorithm",
+          "defaultPath": "properties.diskEncryptionProperties.encryptionAlgorithm"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties.encryptionAtHost",
+          "defaultPath": "properties.diskEncryptionProperties.encryptionAtHost"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties.keyName",
+          "defaultPath": "properties.diskEncryptionProperties.keyName"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties.keyVersion",
+          "defaultPath": "properties.diskEncryptionProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties.msiResourceId",
+          "defaultPath": "properties.diskEncryptionProperties.msiResourceId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/diskEncryptionProperties.vaultUri",
+          "defaultPath": "properties.diskEncryptionProperties.vaultUri"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/encryptionInTransitProperties",
+          "defaultPath": "properties.encryptionInTransitProperties"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/encryptionInTransitProperties.isEncryptionInTransitEnabled",
+          "defaultPath": "properties.encryptionInTransitProperties.isEncryptionInTransitEnabled"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/kafkaRestProperties",
+          "defaultPath": "properties.kafkaRestProperties"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/kafkaRestProperties.clientGroupInfo",
+          "defaultPath": "properties.kafkaRestProperties.clientGroupInfo"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/kafkaRestProperties.clientGroupInfo.groupId",
+          "defaultPath": "properties.kafkaRestProperties.clientGroupInfo.groupId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/kafkaRestProperties.clientGroupInfo.groupName",
+          "defaultPath": "properties.kafkaRestProperties.clientGroupInfo.groupName"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/kafkaRestProperties.configurationOverride",
+          "defaultPath": "properties.kafkaRestProperties.configurationOverride"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/minSupportedTlsVersion",
+          "defaultPath": "properties.minSupportedTlsVersion"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/networkProperties",
+          "defaultPath": "properties.networkProperties"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/networkProperties.privateLink",
+          "defaultPath": "properties.networkProperties.privateLink"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/networkProperties.resourceProviderConnection",
+          "defaultPath": "properties.networkProperties.resourceProviderConnection"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/osType",
+          "paths": [
+            {
+              "path": "properties.osType",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations",
+          "defaultPath": "properties.privateLinkConfigurations"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*]",
+          "defaultPath": "properties.privateLinkConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].groupId",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].id",
+          "defaultPath": "properties.privateLinkConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*]",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].id",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].name",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].primary",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.primary"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].privateIPAddress",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.privateIPAddress"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].privateIPAllocationMethod",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.privateIPAllocationMethod"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].provisioningState",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].subnet",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.subnet"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].subnet.id",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.subnet.id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].ipConfigurations[*].type",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].type"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].name",
+          "defaultPath": "properties.privateLinkConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].provisioningState",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateLinkConfigurations[*].type",
+          "defaultPath": "properties.privateLinkConfigurations[*].type"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile",
+          "defaultPath": "properties.securityProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.aaddsResourceId",
+          "defaultPath": "properties.securityProfile.aaddsResourceId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.clusterUsersGroupDNs",
+          "defaultPath": "properties.securityProfile.clusterUsersGroupDNs"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.clusterUsersGroupDNs[*]",
+          "defaultPath": "properties.securityProfile.clusterUsersGroupDNs[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.directoryType",
+          "paths": [
+            {
+              "path": "properties.securityProfile.directoryType",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityProfile.directoryType"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.domain",
+          "paths": [
+            {
+              "path": "properties.securityProfile.domain",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityProfile.domain"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.domainUsername",
+          "defaultPath": "properties.securityProfile.domainUsername"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.domainUserPassword",
+          "defaultPath": "properties.securityProfile.domainUserPassword"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.ldapsUrls",
+          "defaultPath": "properties.securityProfile.ldapsUrls"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.ldapsUrls[*]",
+          "paths": [
+            {
+              "path": "properties.securityProfile.ldapsUrls[*]",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityProfile.ldapsUrls[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.msiResourceId",
+          "defaultPath": "properties.securityProfile.msiResourceId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/securityProfile.organizationalUnitDN",
+          "defaultPath": "properties.securityProfile.organizationalUnitDN"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts",
+          "defaultPath": "properties.storageProfile.storageaccounts"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*]",
+          "defaultPath": "properties.storageProfile.storageaccounts[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].container",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].container"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].fileshare",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].fileshare"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].fileSystem",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].fileSystem"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].isDefault",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].isDefault"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].key",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].key"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].msiResourceId",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].msiResourceId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].name",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].resourceId",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].resourceId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/storageProfile.storageaccounts[*].saskey",
+          "defaultPath": "properties.storageProfile.storageaccounts[*].saskey"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/tier",
+          "paths": [
+            {
+              "path": "properties.tier",
+              "apiVersions": [
+                "2015-03-01-preview",
+                "2018-06-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.tier"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/applicationState",
+          "defaultPath": "properties.applicationState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/applicationType",
+          "defaultPath": "properties.applicationType"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile",
+          "defaultPath": "properties.computeProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles",
+          "defaultPath": "properties.computeProfile.roles"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*]",
+          "defaultPath": "properties.computeProfile.roles[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.capacity",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.capacity"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.capacity.maxInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.capacity.maxInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.capacity.minInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.capacity.minInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*]",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*].days",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].days"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*].days[*]",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].days[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.maxInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.maxInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.minInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.minInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.time",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.schedule[*].timeAndCapacity.time"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].autoscale.recurrence.timeZone",
+          "defaultPath": "properties.computeProfile.roles[*].autoscale.recurrence.timeZone"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].dataDisksGroups",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].dataDisksGroups[*]",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].dataDisksGroups[*].diskSizeGB",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].dataDisksGroups[*].disksPerNode",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*].disksPerNode"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].dataDisksGroups[*].storageAccountType",
+          "defaultPath": "properties.computeProfile.roles[*].dataDisksGroups[*].storageAccountType"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].encryptDataDisks",
+          "defaultPath": "properties.computeProfile.roles[*].encryptDataDisks"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].hardwareProfile",
+          "defaultPath": "properties.computeProfile.roles[*].hardwareProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].hardwareProfile.vmSize",
+          "defaultPath": "properties.computeProfile.roles[*].hardwareProfile.vmSize"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].minInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].minInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].name",
+          "defaultPath": "properties.computeProfile.roles[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.password",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.password"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*]",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*].certificateData",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.sshProfile.publicKeys[*].certificateData"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.username",
+          "defaultPath": "properties.computeProfile.roles[*].osProfile.linuxOperatingSystemProfile.username"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].scriptActions",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].scriptActions[*]",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].scriptActions[*].name",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].scriptActions[*].parameters",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*].parameters"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].scriptActions[*].uri",
+          "defaultPath": "properties.computeProfile.roles[*].scriptActions[*].uri"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].targetInstanceCount",
+          "defaultPath": "properties.computeProfile.roles[*].targetInstanceCount"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].virtualNetworkProfile",
+          "defaultPath": "properties.computeProfile.roles[*].virtualNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].virtualNetworkProfile.id",
+          "defaultPath": "properties.computeProfile.roles[*].virtualNetworkProfile.id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].virtualNetworkProfile.subnet",
+          "defaultPath": "properties.computeProfile.roles[*].virtualNetworkProfile.subnet"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/computeProfile.roles[*].VMGroupName",
+          "defaultPath": "properties.computeProfile.roles[*].VMGroupName"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/errors",
+          "defaultPath": "properties.errors"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/errors[*]",
+          "defaultPath": "properties.errors[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/errors[*].code",
+          "defaultPath": "properties.errors[*].code"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/errors[*].message",
+          "defaultPath": "properties.errors[*].message"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints",
+          "defaultPath": "properties.httpsEndpoints"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*]",
+          "defaultPath": "properties.httpsEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].accessModes",
+          "defaultPath": "properties.httpsEndpoints[*].accessModes"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].accessModes[*]",
+          "defaultPath": "properties.httpsEndpoints[*].accessModes[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].destinationPort",
+          "defaultPath": "properties.httpsEndpoints[*].destinationPort"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].disableGatewayAuth",
+          "defaultPath": "properties.httpsEndpoints[*].disableGatewayAuth"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].location",
+          "defaultPath": "properties.httpsEndpoints[*].location"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].privateIPAddress",
+          "defaultPath": "properties.httpsEndpoints[*].privateIPAddress"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].publicPort",
+          "defaultPath": "properties.httpsEndpoints[*].publicPort"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/httpsEndpoints[*].subDomainSuffix",
+          "defaultPath": "properties.httpsEndpoints[*].subDomainSuffix"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions",
+          "defaultPath": "properties.installScriptActions"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*]",
+          "defaultPath": "properties.installScriptActions[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*].applicationName",
+          "defaultPath": "properties.installScriptActions[*].applicationName"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*].name",
+          "defaultPath": "properties.installScriptActions[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*].parameters",
+          "defaultPath": "properties.installScriptActions[*].parameters"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*].roles",
+          "defaultPath": "properties.installScriptActions[*].roles"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*].roles[*]",
+          "defaultPath": "properties.installScriptActions[*].roles[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/installScriptActions[*].uri",
+          "defaultPath": "properties.installScriptActions[*].uri"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/marketplaceIdentifier",
+          "defaultPath": "properties.marketplaceIdentifier"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations",
+          "defaultPath": "properties.privateLinkConfigurations"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*]",
+          "defaultPath": "properties.privateLinkConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].groupId",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].id",
+          "defaultPath": "properties.privateLinkConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*]",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].id",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].name",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].primary",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.primary"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].privateIPAddress",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.privateIPAddress"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].privateIPAllocationMethod",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.privateIPAllocationMethod"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].provisioningState",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].subnet",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.subnet"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].subnet.id",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].properties.subnet.id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].ipConfigurations[*].type",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.ipConfigurations[*].type"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].name",
+          "defaultPath": "properties.privateLinkConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].provisioningState",
+          "defaultPath": "properties.privateLinkConfigurations[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/privateLinkConfigurations[*].type",
+          "defaultPath": "properties.privateLinkConfigurations[*].type"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/sshEndpoints",
+          "defaultPath": "properties.sshEndpoints"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/sshEndpoints[*]",
+          "defaultPath": "properties.sshEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/sshEndpoints[*].destinationPort",
+          "defaultPath": "properties.sshEndpoints[*].destinationPort"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/sshEndpoints[*].location",
+          "defaultPath": "properties.sshEndpoints[*].location"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/sshEndpoints[*].privateIPAddress",
+          "defaultPath": "properties.sshEndpoints[*].privateIPAddress"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/sshEndpoints[*].publicPort",
+          "defaultPath": "properties.sshEndpoints[*].publicPort"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions",
+          "defaultPath": "properties.uninstallScriptActions"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*]",
+          "defaultPath": "properties.uninstallScriptActions[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*].applicationName",
+          "defaultPath": "properties.uninstallScriptActions[*].applicationName"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*].name",
+          "defaultPath": "properties.uninstallScriptActions[*].name"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*].parameters",
+          "defaultPath": "properties.uninstallScriptActions[*].parameters"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*].roles",
+          "defaultPath": "properties.uninstallScriptActions[*].roles"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*].roles[*]",
+          "defaultPath": "properties.uninstallScriptActions[*].roles[*]"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/applications/uninstallScriptActions[*].uri",
+          "defaultPath": "properties.uninstallScriptActions[*].uri"
+        }
+      ],
+      "resourceType": "clusters/applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/linkIdentifier",
+          "defaultPath": "properties.linkIdentifier"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HDInsight/clusters/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "clusters/privateEndpointConnections"
+    }
+  ]
+}

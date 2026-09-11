@@ -1,0 +1,21 @@
+{
+  "namespace": "MICROSOFT.POWERPLATFORMMONITORINGHUB",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "copilotstudio"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "microsoftapp"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "powerapps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "powerautomate"
+    }
+  ]
+}

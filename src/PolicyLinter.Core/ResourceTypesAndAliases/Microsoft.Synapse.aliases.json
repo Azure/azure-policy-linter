@@ -1,0 +1,2235 @@
+{
+  "namespace": "Microsoft.Synapse",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/privateLinkHubs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "privateLinkHubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/adlaResourceId",
+          "defaultPath": "properties.adlaResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/azureADOnlyAuthentication",
+          "paths": [
+            {
+              "path": "properties.azureADOnlyAuthentication",
+              "apiVersions": [
+                "2021-05-01",
+                "2021-04-01-preview",
+                "2021-03-01",
+                "2020-12-01",
+                "2019-06-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.azureADOnlyAuthentication",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/connectivityEndpoints",
+          "defaultPath": "properties.connectivityEndpoints"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/cspWorkspaceAdminProperties",
+          "defaultPath": "properties.cspWorkspaceAdminProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/cspWorkspaceAdminProperties.initialWorkspaceAdminObjectId",
+          "defaultPath": "properties.cspWorkspaceAdminProperties.initialWorkspaceAdminObjectId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/defaultDataLakeStorage",
+          "defaultPath": "properties.defaultDataLakeStorage"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/defaultDataLakeStorage.accountUrl",
+          "defaultPath": "properties.defaultDataLakeStorage.accountUrl"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/defaultDataLakeStorage.createManagedPrivateEndpoint",
+          "defaultPath": "properties.defaultDataLakeStorage.createManagedPrivateEndpoint"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/defaultDataLakeStorage.filesystem",
+          "defaultPath": "properties.defaultDataLakeStorage.filesystem"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/defaultDataLakeStorage.resourceId",
+          "defaultPath": "properties.defaultDataLakeStorage.resourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk",
+          "defaultPath": "properties.encryption.cmk"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk.kekIdentity",
+          "defaultPath": "properties.encryption.cmk.kekIdentity"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk.kekIdentity.userAssignedIdentity",
+          "defaultPath": "properties.encryption.cmk.kekIdentity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk.key",
+          "defaultPath": "properties.encryption.cmk.key"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk.key.keyVaultUrl",
+          "defaultPath": "properties.encryption.cmk.key.keyVaultUrl"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk.key.name",
+          "defaultPath": "properties.encryption.cmk.key.name"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.cmk.status",
+          "defaultPath": "properties.encryption.cmk.status"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/encryption.doubleEncryptionEnabled",
+          "defaultPath": "properties.encryption.doubleEncryptionEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extraProperties",
+          "defaultPath": "properties.extraProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedResourceGroupName",
+          "defaultPath": "properties.managedResourceGroupName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedVirtualNetwork",
+          "defaultPath": "properties.managedVirtualNetwork"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedVirtualNetworkSettings",
+          "defaultPath": "properties.managedVirtualNetworkSettings"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedVirtualNetworkSettings.allowedAadTenantIdsForLinking",
+          "defaultPath": "properties.managedVirtualNetworkSettings.allowedAadTenantIdsForLinking"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedVirtualNetworkSettings.allowedAadTenantIdsForLinking[*]",
+          "defaultPath": "properties.managedVirtualNetworkSettings.allowedAadTenantIdsForLinking[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedVirtualNetworkSettings.linkedAccessCheckOnTargetResource",
+          "defaultPath": "properties.managedVirtualNetworkSettings.linkedAccessCheckOnTargetResource"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedVirtualNetworkSettings.preventDataExfiltration",
+          "defaultPath": "properties.managedVirtualNetworkSettings.preventDataExfiltration"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-12-01",
+                "2019-06-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/purviewConfiguration",
+          "defaultPath": "properties.purviewConfiguration"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/purviewConfiguration.purviewResourceId",
+          "defaultPath": "properties.purviewConfiguration.purviewResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/settings",
+          "defaultPath": "properties.settings"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlAdministratorLogin",
+          "defaultPath": "properties.sqlAdministratorLogin"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlAdministratorLoginPassword",
+          "defaultPath": "properties.sqlAdministratorLoginPassword"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/trustedServiceBypassEnabled",
+          "defaultPath": "properties.trustedServiceBypassEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/virtualNetworkProfile",
+          "defaultPath": "properties.virtualNetworkProfile"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/virtualNetworkProfile.computeSubnetId",
+          "defaultPath": "properties.virtualNetworkProfile.computeSubnetId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration",
+          "defaultPath": "properties.workspaceRepositoryConfiguration"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.accountName",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.accountName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.clientId",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.clientId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.clientSecret",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.clientSecret"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.clientSecret.byoaSecretAkvUrl",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.clientSecret.byoaSecretAkvUrl"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.clientSecret.byoaSecretName",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.clientSecret.byoaSecretName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.collaborationBranch",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.collaborationBranch"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.hostName",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.hostName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.lastCommitId",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.lastCommitId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.projectName",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.projectName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.repositoryName",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.repositoryName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.rootFolder",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.rootFolder"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.tenantId",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.tenantId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceRepositoryConfiguration.type",
+          "defaultPath": "properties.workspaceRepositoryConfiguration.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/workspaceUID",
+          "defaultPath": "properties.workspaceUID"
+        }
+      ],
+      "resourceType": "workspaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/administrators/administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/administrators/login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/administrators/sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/administrators/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "workspaces/administrators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/auditActionsAndGroups",
+          "defaultPath": "properties.auditActionsAndGroups"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/auditActionsAndGroups[*]",
+          "defaultPath": "properties.auditActionsAndGroups[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/isAzureMonitorTargetEnabled",
+          "defaultPath": "properties.isAzureMonitorTargetEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/isDevopsAuditEnabled",
+          "defaultPath": "properties.isDevopsAuditEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/isStorageSecondaryKeyInUse",
+          "defaultPath": "properties.isStorageSecondaryKeyInUse"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/queueDelayMs",
+          "defaultPath": "properties.queueDelayMs"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/storageAccountSubscriptionId",
+          "defaultPath": "properties.storageAccountSubscriptionId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/auditingSettings/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "workspaces/auditingSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/azureADOnlyAuthentications/azureADOnlyAuthentication",
+          "defaultPath": "properties.azureADOnlyAuthentication",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/azureADOnlyAuthentications/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/azureADOnlyAuthentications/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "workspaces/azureADOnlyAuthentications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoPause",
+          "defaultPath": "properties.autoPause"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoPause.delayInMinutes",
+          "defaultPath": "properties.autoPause.delayInMinutes"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoPause.enabled",
+          "defaultPath": "properties.autoPause.enabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoScale",
+          "defaultPath": "properties.autoScale"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoScale.enabled",
+          "defaultPath": "properties.autoScale.enabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoScale.maxNodeCount",
+          "defaultPath": "properties.autoScale.maxNodeCount"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/autoScale.minNodeCount",
+          "defaultPath": "properties.autoScale.minNodeCount"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/cacheSize",
+          "defaultPath": "properties.cacheSize"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries",
+          "defaultPath": "properties.customLibraries"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*]",
+          "defaultPath": "properties.customLibraries[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].containerName",
+          "defaultPath": "properties.customLibraries[*].containerName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].creatorId",
+          "defaultPath": "properties.customLibraries[*].creatorId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].name",
+          "defaultPath": "properties.customLibraries[*].name"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].path",
+          "defaultPath": "properties.customLibraries[*].path"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].provisioningStatus",
+          "defaultPath": "properties.customLibraries[*].provisioningStatus"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].type",
+          "defaultPath": "properties.customLibraries[*].type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/customLibraries[*].uploadedTimestamp",
+          "defaultPath": "properties.customLibraries[*].uploadedTimestamp"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/defaultSparkLogFolder",
+          "defaultPath": "properties.defaultSparkLogFolder"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/dynamicExecutorAllocation",
+          "defaultPath": "properties.dynamicExecutorAllocation"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/dynamicExecutorAllocation.enabled",
+          "defaultPath": "properties.dynamicExecutorAllocation.enabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/dynamicExecutorAllocation.maxExecutors",
+          "defaultPath": "properties.dynamicExecutorAllocation.maxExecutors"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/dynamicExecutorAllocation.minExecutors",
+          "defaultPath": "properties.dynamicExecutorAllocation.minExecutors"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/haveLibraryRequirementsChanged",
+          "defaultPath": "properties.haveLibraryRequirementsChanged"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/isAutotuneEnabled",
+          "defaultPath": "properties.isAutotuneEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/isComputeIsolationEnabled",
+          "defaultPath": "properties.isComputeIsolationEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/lastSucceededTimestamp",
+          "defaultPath": "properties.lastSucceededTimestamp"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/libraryRequirements",
+          "defaultPath": "properties.libraryRequirements"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/libraryRequirements.content",
+          "defaultPath": "properties.libraryRequirements.content"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/libraryRequirements.filename",
+          "defaultPath": "properties.libraryRequirements.filename"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/libraryRequirements.time",
+          "defaultPath": "properties.libraryRequirements.time"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/nodeCount",
+          "defaultPath": "properties.nodeCount"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/nodeSize",
+          "defaultPath": "properties.nodeSize"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/nodeSizeFamily",
+          "defaultPath": "properties.nodeSizeFamily"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sessionLevelPackagesEnabled",
+          "defaultPath": "properties.sessionLevelPackagesEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkConfigProperties",
+          "defaultPath": "properties.sparkConfigProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkConfigProperties.configurationType",
+          "defaultPath": "properties.sparkConfigProperties.configurationType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkConfigProperties.content",
+          "defaultPath": "properties.sparkConfigProperties.content"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkConfigProperties.filename",
+          "defaultPath": "properties.sparkConfigProperties.filename"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkConfigProperties.time",
+          "defaultPath": "properties.sparkConfigProperties.time"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkEventsFolder",
+          "defaultPath": "properties.sparkEventsFolder"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/bigDataPools/sparkVersion",
+          "defaultPath": "properties.sparkVersion"
+        }
+      ],
+      "resourceType": "workspaces/bigDataPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/dedicatedSQLminimalTlsSettings/minimalTlsVersion",
+          "defaultPath": "properties.minimalTlsVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "workspaces/dedicatedSQLminimalTlsSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/auditActionsAndGroups",
+          "defaultPath": "properties.auditActionsAndGroups"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/auditActionsAndGroups[*]",
+          "defaultPath": "properties.auditActionsAndGroups[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/isAzureMonitorTargetEnabled",
+          "defaultPath": "properties.isAzureMonitorTargetEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/isDevopsAuditEnabled",
+          "defaultPath": "properties.isDevopsAuditEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/isStorageSecondaryKeyInUse",
+          "defaultPath": "properties.isStorageSecondaryKeyInUse"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/predicateExpression",
+          "defaultPath": "properties.predicateExpression"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/queueDelayMs",
+          "defaultPath": "properties.queueDelayMs"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/storageAccountSubscriptionId",
+          "defaultPath": "properties.storageAccountSubscriptionId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/extendedAuditingSettings/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "workspaces/extendedAuditingSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/firewallRules/endIpAddress",
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/firewallRules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/firewallRules/startIpAddress",
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "workspaces/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.managedVirtualNetwork",
+          "defaultPath": "properties.managedVirtualNetwork"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.managedVirtualNetwork.id",
+          "defaultPath": "properties.managedVirtualNetwork.id"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.managedVirtualNetwork.referenceName",
+          "defaultPath": "properties.managedVirtualNetwork.referenceName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.managedVirtualNetwork.type",
+          "defaultPath": "properties.managedVirtualNetwork.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties",
+          "defaultPath": "properties.typeProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties",
+          "defaultPath": "properties.typeProperties.computeProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.copyComputeScaleProperties",
+          "defaultPath": "properties.typeProperties.computeProperties.copyComputeScaleProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.dataFlowProperties",
+          "defaultPath": "properties.typeProperties.computeProperties.dataFlowProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.dataFlowProperties.cleanup",
+          "defaultPath": "properties.typeProperties.computeProperties.dataFlowProperties.cleanup"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.dataFlowProperties.computeType",
+          "defaultPath": "properties.typeProperties.computeProperties.dataFlowProperties.computeType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.dataFlowProperties.coreCount",
+          "defaultPath": "properties.typeProperties.computeProperties.dataFlowProperties.coreCount"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.dataFlowProperties.timeToLive",
+          "defaultPath": "properties.typeProperties.computeProperties.dataFlowProperties.timeToLive"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.location",
+          "defaultPath": "properties.typeProperties.computeProperties.location"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.maxParallelExecutionsPerNode",
+          "defaultPath": "properties.typeProperties.computeProperties.maxParallelExecutionsPerNode"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.nodeSize",
+          "defaultPath": "properties.typeProperties.computeProperties.nodeSize"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.numberOfNodes",
+          "defaultPath": "properties.typeProperties.computeProperties.numberOfNodes"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.pipelineExternalComputeScaleProperties",
+          "defaultPath": "properties.typeProperties.computeProperties.pipelineExternalComputeScaleProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.vNetProperties",
+          "defaultPath": "properties.typeProperties.computeProperties.vNetProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.vNetProperties.publicIPs",
+          "defaultPath": "properties.typeProperties.computeProperties.vNetProperties.publicIPs"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.vNetProperties.publicIPs[*]",
+          "defaultPath": "properties.typeProperties.computeProperties.vNetProperties.publicIPs[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.vNetProperties.subnet",
+          "defaultPath": "properties.typeProperties.computeProperties.vNetProperties.subnet"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.vNetProperties.subnetId",
+          "defaultPath": "properties.typeProperties.computeProperties.vNetProperties.subnetId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.computeProperties.vNetProperties.vNetId",
+          "defaultPath": "properties.typeProperties.computeProperties.vNetProperties.vNetId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.customerVirtualNetwork",
+          "defaultPath": "properties.typeProperties.customerVirtualNetwork"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.customerVirtualNetwork.subnetId",
+          "defaultPath": "properties.typeProperties.customerVirtualNetwork.subnetId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.SecureString",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.SecureString.value",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.value",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogAdminPassword.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogAdminUserName",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogAdminUserName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogPricingTier",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogPricingTier"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.catalogInfo.catalogServerEndpoint",
+          "defaultPath": "properties.typeProperties.ssisProperties.catalogInfo.catalogServerEndpoint"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties.blobContainerUri",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties.blobContainerUri"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties.sasToken",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties.sasToken"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.SecureString",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties.sasToken"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.SecureString.value",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.value",
+          "defaultPath": "properties.typeProperties.ssisProperties.customSetupScriptProperties.sasToken.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.connectVia",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.connectVia"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.connectVia.referenceName",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.connectVia.referenceName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.connectVia.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.connectVia.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.path",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.path"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.stagingLinkedService",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.stagingLinkedService"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.stagingLinkedService.referenceName",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.stagingLinkedService.referenceName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.dataProxyProperties.stagingLinkedService.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.dataProxyProperties.stagingLinkedService.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.edition",
+          "defaultPath": "properties.typeProperties.ssisProperties.edition"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*]",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.AzureKeyVaultSecret.store",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password.store"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.AzureKeyVaultSecret.store.parameters",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password.store.parameters"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.AzureKeyVaultSecret.store.referenceName",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password.store.referenceName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.AzureKeyVaultSecret.store.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password.store.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.SecureString",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.SecureString.value",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].CmdkeySetup.typeProperties.password.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.password.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.componentName",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.componentName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.AzureKeyVaultSecret.store",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey.store"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.AzureKeyVaultSecret.store.parameters",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey.store.parameters"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.AzureKeyVaultSecret.store.referenceName",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey.store.referenceName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.AzureKeyVaultSecret.store.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey.store.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.SecureString",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.SecureString.value",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].ComponentSetup.typeProperties.licenseKey.type",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.licenseKey.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].EnvironmentVariableSetup",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].EnvironmentVariableSetup.typeProperties",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].EnvironmentVariableSetup.typeProperties.variableName",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.variableName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].EnvironmentVariableSetup.typeProperties.variableValue",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].typeProperties.variableValue"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.expressCustomSetupProperties[*].type",
+          "defaultPath": "properties.typeProperties.ssisProperties.expressCustomSetupProperties[*].type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/Managed.typeProperties.ssisProperties.licenseType",
+          "defaultPath": "properties.typeProperties.ssisProperties.licenseType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties",
+          "defaultPath": "properties.typeProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo",
+          "defaultPath": "properties.typeProperties.linkedInfo"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.authorizationType",
+          "defaultPath": "properties.typeProperties.linkedInfo.authorizationType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.Key",
+          "defaultPath": "properties.typeProperties.linkedInfo"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.Key.key",
+          "defaultPath": "properties.typeProperties.linkedInfo.key"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.Key.key.SecureString",
+          "defaultPath": "properties.typeProperties.linkedInfo.key"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.Key.key.SecureString.value",
+          "defaultPath": "properties.typeProperties.linkedInfo.key.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.Key.key.type",
+          "defaultPath": "properties.typeProperties.linkedInfo.key.type"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.Key.key.value",
+          "defaultPath": "properties.typeProperties.linkedInfo.key.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.RBAC",
+          "defaultPath": "properties.typeProperties.linkedInfo"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.linkedInfo.RBAC.resourceId",
+          "defaultPath": "properties.typeProperties.linkedInfo.resourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/SelfHosted.typeProperties.selfContainedInteractiveAuthoringEnabled",
+          "defaultPath": "properties.typeProperties.selfContainedInteractiveAuthoringEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/integrationRuntimes/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "workspaces/integrationruntimes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/keys/isActiveCMK",
+          "defaultPath": "properties.isActiveCMK"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/keys/keyVaultUrl",
+          "defaultPath": "properties.keyVaultUrl"
+        }
+      ],
+      "resourceType": "workspaces/keys"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/dataIngestionUri",
+          "defaultPath": "properties.dataIngestionUri"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/enablePurge",
+          "defaultPath": "properties.enablePurge"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/enableStreamingIngest",
+          "defaultPath": "properties.enableStreamingIngest"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/engineType",
+          "defaultPath": "properties.engineType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/languageExtensions",
+          "defaultPath": "properties.languageExtensions"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/languageExtensions.value",
+          "defaultPath": "properties.languageExtensions.value"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/languageExtensions.value[*]",
+          "defaultPath": "properties.languageExtensions.value[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/languageExtensions.value[*].languageExtensionName",
+          "defaultPath": "properties.languageExtensions.value[*].languageExtensionName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/optimizedAutoscale",
+          "defaultPath": "properties.optimizedAutoscale"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/optimizedAutoscale.isEnabled",
+          "defaultPath": "properties.optimizedAutoscale.isEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/optimizedAutoscale.maximum",
+          "defaultPath": "properties.optimizedAutoscale.maximum"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/optimizedAutoscale.minimum",
+          "defaultPath": "properties.optimizedAutoscale.minimum"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/optimizedAutoscale.version",
+          "defaultPath": "properties.optimizedAutoscale.version"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/stateReason",
+          "defaultPath": "properties.stateReason"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/uri",
+          "defaultPath": "properties.uri"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/workspaceUid",
+          "defaultPath": "properties.workspaceUid"
+        }
+      ],
+      "resourceType": "workspaces/kustoPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/attachedDatabaseNames",
+          "defaultPath": "properties.attachedDatabaseNames"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/attachedDatabaseNames[*]",
+          "defaultPath": "properties.attachedDatabaseNames[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/clusterResourceId",
+          "defaultPath": "properties.clusterResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/databaseName",
+          "defaultPath": "properties.databaseName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/defaultPrincipalsModificationKind",
+          "defaultPath": "properties.defaultPrincipalsModificationKind"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties",
+          "defaultPath": "properties.tableLevelSharingProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToExclude",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToExclude"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToExclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToInclude",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToInclude"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToInclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToExclude",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToExclude"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToExclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToInclude",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToInclude"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToInclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToExclude",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToExclude"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToExclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToInclude",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToInclude"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToInclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToInclude[*]"
+        }
+      ],
+      "resourceType": "workspaces/kustoPools/attacheddatabaseconfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.attachedDatabaseConfigurationName",
+          "defaultPath": "properties.attachedDatabaseConfigurationName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.hotCachePeriod",
+          "defaultPath": "properties.hotCachePeriod"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.leaderClusterResourceId",
+          "defaultPath": "properties.leaderClusterResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.principalsModificationKind",
+          "defaultPath": "properties.principalsModificationKind"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.softDeletePeriod",
+          "defaultPath": "properties.softDeletePeriod"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.statistics",
+          "defaultPath": "properties.statistics"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadOnlyFollowing.statistics.size",
+          "defaultPath": "properties.statistics.size"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadWrite.hotCachePeriod",
+          "defaultPath": "properties.hotCachePeriod"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadWrite.isFollowed",
+          "defaultPath": "properties.isFollowed"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadWrite.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadWrite.softDeletePeriod",
+          "defaultPath": "properties.softDeletePeriod"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadWrite.statistics",
+          "defaultPath": "properties.statistics"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/ReadWrite.statistics.size",
+          "defaultPath": "properties.statistics.size"
+        }
+      ],
+      "resourceType": "workspaces/kustoPools/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.blobStorageEventType",
+          "defaultPath": "properties.blobStorageEventType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.eventHubResourceId",
+          "defaultPath": "properties.eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.ignoreFirstRecord",
+          "defaultPath": "properties.ignoreFirstRecord"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.storageAccountResourceId",
+          "defaultPath": "properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventGrid.tableName",
+          "defaultPath": "properties.tableName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.compression",
+          "defaultPath": "properties.compression"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.eventHubResourceId",
+          "defaultPath": "properties.eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.eventSystemProperties",
+          "defaultPath": "properties.eventSystemProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.eventSystemProperties[*]",
+          "defaultPath": "properties.eventSystemProperties[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.managedIdentityResourceId",
+          "defaultPath": "properties.managedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/EventHub.tableName",
+          "defaultPath": "properties.tableName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.eventSystemProperties",
+          "defaultPath": "properties.eventSystemProperties"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.eventSystemProperties[*]",
+          "defaultPath": "properties.eventSystemProperties[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.iotHubResourceId",
+          "defaultPath": "properties.iotHubResourceId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.sharedAccessPolicyName",
+          "defaultPath": "properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/dataConnections/IotHub.tableName",
+          "defaultPath": "properties.tableName"
+        }
+      ],
+      "resourceType": "workspaces/kustoPools/databases/dataconnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/aadObjectId",
+          "defaultPath": "properties.aadObjectId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/principalName",
+          "defaultPath": "properties.principalName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/role",
+          "defaultPath": "properties.role"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/databases/principalAssignments/tenantName",
+          "defaultPath": "properties.tenantName"
+        }
+      ],
+      "resourceType": "workspaces/kustoPools/Databases/PrincipalAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/aadObjectId",
+          "defaultPath": "properties.aadObjectId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/principalName",
+          "defaultPath": "properties.principalName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/role",
+          "defaultPath": "properties.role"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/kustoPools/principalAssignments/tenantName",
+          "defaultPath": "properties.tenantName"
+        }
+      ],
+      "resourceType": "workspaces/kustoPools/PrincipalAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/managedIdentitySqlControlSettings/grantSqlControlToManagedIdentity",
+          "defaultPath": "properties.grantSqlControlToManagedIdentity"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedIdentitySqlControlSettings/grantSqlControlToManagedIdentity.actualState",
+          "defaultPath": "properties.grantSqlControlToManagedIdentity.actualState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/managedIdentitySqlControlSettings/grantSqlControlToManagedIdentity.desiredState",
+          "defaultPath": "properties.grantSqlControlToManagedIdentity.desiredState"
+        }
+      ],
+      "resourceType": "workspaces/managedIdentitySqlControlSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/disabledAlerts",
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/disabledAlerts[*]",
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/emailAccountAdmins",
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/emailAddresses",
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/emailAddresses[*]",
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/securityAlertPolicies/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "workspaces/securityAlertPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlAdministrators/administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlAdministrators/login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlAdministrators/sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlAdministrators/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "workspaces/sqlAdministrators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/collation",
+          "defaultPath": "properties.collation"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/databaseGuid",
+          "defaultPath": "properties.databaseGuid"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/dataRetention",
+          "defaultPath": "properties.dataRetention"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/dataRetention.dropRetentionPeriod",
+          "defaultPath": "properties.dataRetention.dropRetentionPeriod"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/dataRetention.retentionPeriod",
+          "defaultPath": "properties.dataRetention.retentionPeriod"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/maxSizeBytes",
+          "defaultPath": "properties.maxSizeBytes"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlDatabases/storageRedundancy",
+          "defaultPath": "properties.storageRedundancy"
+        }
+      ],
+      "resourceType": "workspaces/sqlDatabases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/autoPauseTimer",
+          "defaultPath": "properties.autoPauseTimer"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/autoResume",
+          "defaultPath": "properties.autoResume"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/collation",
+          "defaultPath": "properties.collation"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/createMode",
+          "defaultPath": "properties.createMode"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/currentServiceObjectiveName",
+          "defaultPath": "properties.currentServiceObjectiveName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maxServiceObjectiveName",
+          "defaultPath": "properties.maxServiceObjectiveName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maxSizeBytes",
+          "defaultPath": "properties.maxSizeBytes"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/recoverableDatabaseId",
+          "defaultPath": "properties.recoverableDatabaseId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/requestedServiceObjectiveName",
+          "defaultPath": "properties.requestedServiceObjectiveName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/restorePointInTime",
+          "defaultPath": "properties.restorePointInTime"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sourceDatabaseDeletionDate",
+          "defaultPath": "properties.sourceDatabaseDeletionDate"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sourceDatabaseId",
+          "defaultPath": "properties.sourceDatabaseId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/sqlPoolGuid",
+          "defaultPath": "properties.sqlPoolGuid"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/storageAccountType",
+          "defaultPath": "properties.storageAccountType"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/auditActionsAndGroups",
+          "defaultPath": "properties.auditActionsAndGroups"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/auditActionsAndGroups[*]",
+          "defaultPath": "properties.auditActionsAndGroups[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/isAzureMonitorTargetEnabled",
+          "defaultPath": "properties.isAzureMonitorTargetEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/isStorageSecondaryKeyInUse",
+          "defaultPath": "properties.isStorageSecondaryKeyInUse"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/storageAccountSubscriptionId",
+          "defaultPath": "properties.storageAccountSubscriptionId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/auditingSettings/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/auditingSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/applicationPrincipals",
+          "defaultPath": "properties.applicationPrincipals"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/dataMaskingState",
+          "defaultPath": "properties.dataMaskingState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/exemptPrincipals",
+          "defaultPath": "properties.exemptPrincipals"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/maskingLevel",
+          "defaultPath": "properties.maskingLevel"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/dataMaskingPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/aliasName",
+          "defaultPath": "properties.aliasName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/columnName",
+          "defaultPath": "properties.columnName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/id",
+          "defaultPath": "properties.id"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/maskingFunction",
+          "defaultPath": "properties.maskingFunction"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/numberFrom",
+          "defaultPath": "properties.numberFrom"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/numberTo",
+          "defaultPath": "properties.numberTo"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/prefixSize",
+          "defaultPath": "properties.prefixSize"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/replacementString",
+          "defaultPath": "properties.replacementString"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/ruleState",
+          "defaultPath": "properties.ruleState"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/schemaName",
+          "defaultPath": "properties.schemaName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/suffixSize",
+          "defaultPath": "properties.suffixSize"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/dataMaskingPolicies/rules/tableName",
+          "defaultPath": "properties.tableName"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/dataMaskingPolicies/rules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/auditActionsAndGroups",
+          "defaultPath": "properties.auditActionsAndGroups"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/auditActionsAndGroups[*]",
+          "defaultPath": "properties.auditActionsAndGroups[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/isAzureMonitorTargetEnabled",
+          "defaultPath": "properties.isAzureMonitorTargetEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/isStorageSecondaryKeyInUse",
+          "defaultPath": "properties.isStorageSecondaryKeyInUse"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/predicateExpression",
+          "defaultPath": "properties.predicateExpression"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/queueDelayMs",
+          "defaultPath": "properties.queueDelayMs"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/storageAccountSubscriptionId",
+          "defaultPath": "properties.storageAccountSubscriptionId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/extendedAuditingSettings/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/extendedAuditingSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maintenancewindows/timeRanges",
+          "defaultPath": "properties.timeRanges"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maintenancewindows/timeRanges[*]",
+          "defaultPath": "properties.timeRanges[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maintenancewindows/timeRanges[*].dayOfWeek",
+          "defaultPath": "properties.timeRanges[*].dayOfWeek"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maintenancewindows/timeRanges[*].duration",
+          "defaultPath": "properties.timeRanges[*].duration"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/maintenancewindows/timeRanges[*].startTime",
+          "defaultPath": "properties.timeRanges[*].startTime"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/maintenanceWindows"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/metadataSync/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/metadataSync/syncIntervalInMinutes",
+          "defaultPath": "properties.syncIntervalInMinutes"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/metadataSync"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/columnName",
+          "defaultPath": "properties.columnName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/informationType",
+          "defaultPath": "properties.informationType"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/informationTypeId",
+          "defaultPath": "properties.informationTypeId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/isDisabled",
+          "defaultPath": "properties.isDisabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/labelId",
+          "defaultPath": "properties.labelId"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/labelName",
+          "defaultPath": "properties.labelName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/rank",
+          "defaultPath": "properties.rank"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/schemaName",
+          "defaultPath": "properties.schemaName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/schemas/tables/columns/sensitivityLabels/tableName",
+          "defaultPath": "properties.tableName"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/schemas/tables/columns/sensitivityLabels"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/disabledAlerts",
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/disabledAlerts[*]",
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/emailAccountAdmins",
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/emailAddresses",
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/emailAddresses[*]",
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/securityAlertPolicies/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/securityAlertPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/transparentDataEncryption/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/transparentDataEncryption"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/recurringScans",
+          "defaultPath": "properties.recurringScans"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/recurringScans.emails",
+          "defaultPath": "properties.recurringScans.emails"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/recurringScans.emails[*]",
+          "defaultPath": "properties.recurringScans.emails[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/recurringScans.emailSubscriptionAdmins",
+          "defaultPath": "properties.recurringScans.emailSubscriptionAdmins"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/recurringScans.isEnabled",
+          "defaultPath": "properties.recurringScans.isEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/storageContainerPath",
+          "defaultPath": "properties.storageContainerPath"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/storageContainerSasKey",
+          "defaultPath": "properties.storageContainerSasKey"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/vulnerabilityAssessments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/rules/baselines/baselineResults",
+          "defaultPath": "properties.baselineResults"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/rules/baselines/baselineResults[*]",
+          "defaultPath": "properties.baselineResults[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/rules/baselines/baselineResults[*].result",
+          "defaultPath": "properties.baselineResults[*].result"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/vulnerabilityAssessments/rules/baselines/baselineResults[*].result[*]",
+          "defaultPath": "properties.baselineResults[*].result[*]"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/vulnerabilityAssessments/rules/baselines"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/importance",
+          "defaultPath": "properties.importance"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/maxResourcePercent",
+          "defaultPath": "properties.maxResourcePercent"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/maxResourcePercentPerRequest",
+          "defaultPath": "properties.maxResourcePercentPerRequest"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/minResourcePercent",
+          "defaultPath": "properties.minResourcePercent"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/minResourcePercentPerRequest",
+          "defaultPath": "properties.minResourcePercentPerRequest"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/queryExecutionTimeout",
+          "defaultPath": "properties.queryExecutionTimeout"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/workloadGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/context",
+          "defaultPath": "properties.context"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/endTime",
+          "defaultPath": "properties.endTime"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/importance",
+          "defaultPath": "properties.importance"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/label",
+          "defaultPath": "properties.label"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/memberName",
+          "defaultPath": "properties.memberName"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/sqlPools/workloadGroups/workloadClassifiers/startTime",
+          "defaultPath": "properties.startTime"
+        }
+      ],
+      "resourceType": "workspaces/sqlPools/workloadGroups/workloadClassifiers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/recurringScans",
+          "defaultPath": "properties.recurringScans"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/recurringScans.emails",
+          "defaultPath": "properties.recurringScans.emails"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/recurringScans.emails[*]",
+          "defaultPath": "properties.recurringScans.emails[*]"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/recurringScans.emailSubscriptionAdmins",
+          "defaultPath": "properties.recurringScans.emailSubscriptionAdmins"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/recurringScans.isEnabled",
+          "defaultPath": "properties.recurringScans.isEnabled"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/storageContainerPath",
+          "defaultPath": "properties.storageContainerPath"
+        },
+        {
+          "name": "Microsoft.Synapse/workspaces/vulnerabilityAssessments/storageContainerSasKey",
+          "defaultPath": "properties.storageContainerSasKey"
+        }
+      ],
+      "resourceType": "workspaces/vulnerabilityAssessments"
+    }
+  ]
+}

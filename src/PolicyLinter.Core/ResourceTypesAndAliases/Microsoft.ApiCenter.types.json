@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.ApiCenter",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "deletedServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services/eventGridFilters"
+    }
+  ]
+}

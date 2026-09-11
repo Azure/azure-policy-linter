@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.StorageCache",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "amlFilesystems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "amlFilesystems/autoExportJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "amlFilesystems/autoImportJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "amlFilesystems/expansionJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "amlFilesystems/importJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "amlFilesystems/rebalanceJobs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "caches"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "caches/storageTargets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkAmlFSSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getRequiredAmlFSSubnetsSize"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ascoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "usageModels"
+    }
+  ]
+}

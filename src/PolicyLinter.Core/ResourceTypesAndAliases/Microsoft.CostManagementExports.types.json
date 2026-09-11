@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.CostManagementExports",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

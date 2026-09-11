@@ -1,0 +1,209 @@
+{
+  "namespace": "Microsoft.Marketplace",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "keys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "keys/create"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "keys/revoke"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/edgeZones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/edgeZones/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "mysolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/AdminRequestApprovals"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/anyExistingOffersInTheCollections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/billingAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/bulkCollectionsAction"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/approveAllItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/disableApproveAllItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/mapOffersToContexts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/offers/contextsView"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/offers/upsertOfferWithMultiContext"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/queryRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/setRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collections/transferOffers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/collectionsToSubscriptionsMapping"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/fetchAllSubscriptionsInTenant"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/listNewPlansNotifications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/listStopSellOffersPlansNotifications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/listSubscriptionsContext"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/offers/acknowledgeNotification"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/queryApprovedPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/queryNotificationsState"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/queryOffers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/queryUserOffers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/queryUserRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/RequestApprovals"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/requestApprovals/query"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateStores/requestApprovals/withdrawPlan"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "products/checkUserHasReview"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "products/reviews"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "products/reviews/comments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "products/reviews/helpful"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "products/usermetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publishers/offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publishers/offers/amendments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "register"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "search"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "skus"
+    }
+  ]
+}

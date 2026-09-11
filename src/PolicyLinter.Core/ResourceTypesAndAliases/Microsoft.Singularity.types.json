@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.Singularity",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/accountQuotaPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/groupPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/models"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/networks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/presetModels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/secrets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/storageContainers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/templatedModels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instanceTypeSeries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instanceTypeSeries/instanceTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationNewResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationNewStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "quotas"
+    }
+  ]
+}

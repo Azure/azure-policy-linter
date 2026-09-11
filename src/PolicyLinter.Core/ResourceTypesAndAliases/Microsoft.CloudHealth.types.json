@@ -1,0 +1,41 @@
+{
+  "namespace": "Microsoft.CloudHealth",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "healthmodels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/authenticationsettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/discoveryrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/entities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/relationships"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/signaldefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

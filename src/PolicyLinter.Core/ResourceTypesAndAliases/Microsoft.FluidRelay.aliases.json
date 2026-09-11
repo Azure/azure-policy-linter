@@ -1,0 +1,62 @@
+{
+  "namespace": "Microsoft.FluidRelay",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/encryption.customerManagedKeyEncryption",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/fluidRelayEndpoints",
+          "defaultPath": "properties.fluidRelayEndpoints"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/fluidRelayEndpoints.ordererEndpoints",
+          "defaultPath": "properties.fluidRelayEndpoints.ordererEndpoints"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/fluidRelayEndpoints.ordererEndpoints[*]",
+          "defaultPath": "properties.fluidRelayEndpoints.ordererEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/fluidRelayEndpoints.storageEndpoints",
+          "defaultPath": "properties.fluidRelayEndpoints.storageEndpoints"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/fluidRelayEndpoints.storageEndpoints[*]",
+          "defaultPath": "properties.fluidRelayEndpoints.storageEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/frsTenantId",
+          "defaultPath": "properties.frsTenantId"
+        },
+        {
+          "name": "Microsoft.FluidRelay/fluidRelayServers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "fluidRelayServers"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "namespace": "Microsoft.Portal",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Portal/consoles/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.Portal/consoles/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Portal/consoles/uri",
+          "defaultPath": "properties.uri"
+        }
+      ],
+      "resourceType": "consoles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Portal/dashboards/lenses",
+          "defaultPath": "properties.lenses"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*]",
+          "defaultPath": "properties.lenses[*]"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].metadata",
+          "defaultPath": "properties.lenses[*].metadata"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].order",
+          "defaultPath": "properties.lenses[*].order"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts",
+          "defaultPath": "properties.lenses[*].parts"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*]",
+          "defaultPath": "properties.lenses[*].parts[*]"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata",
+          "defaultPath": "properties.lenses[*].parts[*].metadata"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart",
+          "defaultPath": "properties.lenses[*].parts[*].metadata"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.inputs",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.inputs"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.inputs[*]",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.inputs[*]"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.content",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.content"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.markdownSource",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.markdownSource"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.markdownUri",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.markdownUri"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.settings",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.settings"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.settings.content",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.settings.content"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.settings.markdownSource",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.settings.markdownSource"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.settings.markdownUri",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.settings.markdownUri"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.settings.subtitle",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.settings.subtitle"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.settings.title",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.settings.title"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.subtitle",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.subtitle"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.Extension-HubsExtension-PartType-MarkdownPart.settings.content.title",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.settings.content.title"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].metadata.type",
+          "defaultPath": "properties.lenses[*].parts[*].metadata.type"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].position",
+          "defaultPath": "properties.lenses[*].parts[*].position"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].position.colSpan",
+          "defaultPath": "properties.lenses[*].parts[*].position.colSpan"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].position.metadata",
+          "defaultPath": "properties.lenses[*].parts[*].position.metadata"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].position.rowSpan",
+          "defaultPath": "properties.lenses[*].parts[*].position.rowSpan"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].position.x",
+          "defaultPath": "properties.lenses[*].parts[*].position.x"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/lenses[*].parts[*].position.y",
+          "defaultPath": "properties.lenses[*].parts[*].position.y"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Portal/dashboards/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "dashboards"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Portal/tenantConfigurations/enforcePrivateMarkdownStorage",
+          "defaultPath": "properties.enforcePrivateMarkdownStorage"
+        },
+        {
+          "name": "Microsoft.Portal/tenantConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "tenantconfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Portal/userSettings/preferredLocation",
+          "defaultPath": "properties.preferredLocation"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/preferredOsType",
+          "defaultPath": "properties.preferredOsType"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/preferredShellType",
+          "defaultPath": "properties.preferredShellType"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/storageProfile.diskSizeInGB",
+          "defaultPath": "properties.storageProfile.diskSizeInGB"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/storageProfile.fileShareName",
+          "defaultPath": "properties.storageProfile.fileShareName"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/storageProfile.storageAccountResourceId",
+          "defaultPath": "properties.storageProfile.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/terminalSettings",
+          "defaultPath": "properties.terminalSettings"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/terminalSettings.fontSize",
+          "defaultPath": "properties.terminalSettings.fontSize"
+        },
+        {
+          "name": "Microsoft.Portal/userSettings/terminalSettings.fontStyle",
+          "defaultPath": "properties.terminalSettings.fontStyle"
+        }
+      ],
+      "resourceType": "userSettings"
+    }
+  ]
+}

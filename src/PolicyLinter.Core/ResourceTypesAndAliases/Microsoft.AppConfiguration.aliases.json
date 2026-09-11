@@ -1,0 +1,372 @@
+{
+  "namespace": "Microsoft.AppConfiguration",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/azureFrontDoor",
+          "defaultPath": "properties.azureFrontDoor"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/azureFrontDoor.resourceId",
+          "defaultPath": "properties.azureFrontDoor.resourceId"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/createMode",
+          "defaultPath": "properties.createMode"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/dataPlaneProxy",
+          "defaultPath": "properties.dataPlaneProxy"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/dataPlaneProxy.authenticationMode",
+          "defaultPath": "properties.dataPlaneProxy.authenticationMode"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/dataPlaneProxy.privateLinkDelegation",
+          "defaultPath": "properties.dataPlaneProxy.privateLinkDelegation"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/defaultKeyValueRevisionRetentionPeriodInSeconds",
+          "defaultPath": "properties.defaultKeyValueRevisionRetentionPeriodInSeconds"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2020-07-01-preview",
+                "2020-06-01",
+                "2019-11-01-preview",
+                "2019-10-01",
+                "2019-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/enablePurgeProtection",
+          "defaultPath": "properties.enablePurgeProtection"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/encryption.keyVaultProperties.identityClientId",
+          "defaultPath": "properties.encryption.keyVaultProperties.identityClientId"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/encryption.keyVaultProperties.keyIdentifier",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyIdentifier"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/experimentation",
+          "defaultPath": "properties.experimentation"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/experimentation.dataPlaneEndpoint",
+          "defaultPath": "properties.experimentation.dataPlaneEndpoint"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/experimentation.resourceId",
+          "defaultPath": "properties.experimentation.resourceId"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/managedOnBehalfOfConfiguration",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/managedOnBehalfOfConfiguration.moboBrokerResources",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/managedOnBehalfOfConfiguration.moboBrokerResources[*]",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*]"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/managedOnBehalfOfConfiguration.moboBrokerResources[*].id",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*].id"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2019-10-01",
+                "2019-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/softDeleteRetentionInDays",
+          "defaultPath": "properties.softDeleteRetentionInDays"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/telemetry",
+          "defaultPath": "properties.telemetry"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/telemetry.resourceId",
+          "defaultPath": "properties.telemetry.resourceId"
+        }
+      ],
+      "resourceType": "configurationStores"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/contentType",
+          "defaultPath": "properties.contentType"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/eTag",
+          "defaultPath": "properties.eTag"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/key",
+          "defaultPath": "properties.key"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/label",
+          "defaultPath": "properties.label"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/lastModified",
+          "defaultPath": "properties.lastModified"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/locked",
+          "defaultPath": "properties.locked"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/keyValues/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "configurationStores/keyValues"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/networkSecurityPerimeterConfigurations/profile.name",
+          "defaultPath": "properties.profile.name"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/networkSecurityPerimeterConfigurations/resourceAssociation.accessMode",
+          "defaultPath": "properties.resourceAssociation.accessMode"
+        }
+      ],
+      "resourceType": "configurationStores/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "configurationStores/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/replicas/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/replicas/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "configurationStores/replicas"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/compositionType",
+          "defaultPath": "properties.compositionType"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/expires",
+          "defaultPath": "properties.expires"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/filters",
+          "defaultPath": "properties.filters"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/filters[*]",
+          "defaultPath": "properties.filters[*]"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/filters[*].key",
+          "defaultPath": "properties.filters[*].key"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/filters[*].label",
+          "defaultPath": "properties.filters[*].label"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/itemsCount",
+          "defaultPath": "properties.itemsCount"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/retentionPeriod",
+          "defaultPath": "properties.retentionPeriod"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/size",
+          "defaultPath": "properties.size"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AppConfiguration/configurationStores/snapshots/tags",
+          "defaultPath": "properties.tags"
+        }
+      ],
+      "resourceType": "configurationStores/snapshots"
+    }
+  ]
+}

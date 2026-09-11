@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.WindowsPushNotificationServices",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registrations"
+    }
+  ]
+}

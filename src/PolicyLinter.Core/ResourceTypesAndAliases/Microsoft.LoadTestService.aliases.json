@@ -1,0 +1,101 @@
+{
+  "namespace": "Microsoft.LoadTestService",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LoadTestService/loadTestMappings/azureLoadTestingResourceId",
+          "defaultPath": "properties.azureLoadTestingResourceId"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTestMappings/sourceResourceId",
+          "defaultPath": "properties.sourceResourceId"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTestMappings/testId",
+          "defaultPath": "properties.testId"
+        }
+      ],
+      "resourceType": "loadTestMappings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LoadTestService/loadTestProfileMappings/azureLoadTestingResourceId",
+          "defaultPath": "properties.azureLoadTestingResourceId"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTestProfileMappings/sourceResourceId",
+          "defaultPath": "properties.sourceResourceId"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTestProfileMappings/testProfileId",
+          "defaultPath": "properties.testProfileId"
+        }
+      ],
+      "resourceType": "loadTestProfileMappings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LoadTestService/loadTests/dataPlaneURI",
+          "defaultPath": "properties.dataPlaneURI"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/encryption.identity",
+          "defaultPath": "properties.encryption.identity"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/encryption.identity.resourceId",
+          "defaultPath": "properties.encryption.identity.resourceId"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/encryption.identity.type",
+          "defaultPath": "properties.encryption.identity.type"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/encryption.keyUrl",
+          "defaultPath": "properties.encryption.keyUrl"
+        },
+        {
+          "name": "Microsoft.LoadTestService/loadTests/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "loadtests"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LoadTestService/playwrightWorkspaces/dataplaneUri",
+          "defaultPath": "properties.dataplaneUri"
+        },
+        {
+          "name": "Microsoft.LoadTestService/playwrightWorkspaces/localAuth",
+          "defaultPath": "properties.localAuth"
+        },
+        {
+          "name": "Microsoft.LoadTestService/playwrightWorkspaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LoadTestService/playwrightWorkspaces/regionalAffinity",
+          "defaultPath": "properties.regionalAffinity"
+        },
+        {
+          "name": "Microsoft.LoadTestService/playwrightWorkspaces/workspaceId",
+          "defaultPath": "properties.workspaceId"
+        }
+      ],
+      "resourceType": "playwrightWorkspaces"
+    }
+  ]
+}

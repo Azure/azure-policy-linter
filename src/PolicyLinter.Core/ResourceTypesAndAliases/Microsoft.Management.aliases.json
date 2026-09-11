@@ -1,0 +1,147 @@
+{
+  "namespace": "Microsoft.Management",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Management/managementGroups/children",
+          "defaultPath": "properties.children"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*]",
+          "defaultPath": "properties.children[*]"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].childId",
+          "defaultPath": "properties.children[*].childId"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].childType",
+          "defaultPath": "properties.children[*].childType"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].displayName",
+          "defaultPath": "properties.children[*].displayName"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].id",
+          "defaultPath": "properties.children[*].id"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].name",
+          "defaultPath": "properties.children[*].name"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].roles",
+          "defaultPath": "properties.children[*].roles"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].roles[*]",
+          "defaultPath": "properties.children[*].roles[*]"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/children[*].type",
+          "defaultPath": "properties.children[*].type"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details",
+          "defaultPath": "properties.details"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.parent",
+          "defaultPath": "properties.details.parent"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.parent.displayName",
+          "defaultPath": "properties.details.parent.displayName"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.parent.id",
+          "defaultPath": "properties.details.parent.id"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.parent.name",
+          "defaultPath": "properties.details.parent.name"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.parent.parentId",
+          "defaultPath": "properties.details.parent.parentId"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.updatedBy",
+          "defaultPath": "properties.details.updatedBy"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.updatedTime",
+          "defaultPath": "properties.details.updatedTime"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/details.version",
+          "defaultPath": "properties.details.version"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/path",
+          "defaultPath": "properties.path"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/path[*]",
+          "defaultPath": "properties.path[*]"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/path[*].displayName",
+          "defaultPath": "properties.path[*].displayName"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/path[*].name",
+          "defaultPath": "properties.path[*].name"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/roles",
+          "defaultPath": "properties.roles"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/roles[*]",
+          "defaultPath": "properties.roles[*]"
+        },
+        {
+          "name": "Microsoft.Management/managementGroups/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "managementGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Management/serviceGroups/attributes",
+          "defaultPath": "properties.attributes"
+        },
+        {
+          "name": "Microsoft.Management/serviceGroups/attributes.criticality",
+          "defaultPath": "properties.attributes.criticality"
+        },
+        {
+          "name": "Microsoft.Management/serviceGroups/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Management/serviceGroups/parent",
+          "defaultPath": "properties.parent"
+        },
+        {
+          "name": "Microsoft.Management/serviceGroups/parent.resourceId",
+          "defaultPath": "properties.parent.resourceId"
+        },
+        {
+          "name": "Microsoft.Management/serviceGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "serviceGroups"
+    }
+  ]
+}

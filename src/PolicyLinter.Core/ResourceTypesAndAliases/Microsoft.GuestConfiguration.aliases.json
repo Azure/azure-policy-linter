@@ -1,0 +1,298 @@
+{
+  "namespace": "Microsoft.GuestConfiguration",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/assignmentHash",
+          "defaultPath": "properties.assignmentHash"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/complianceReason",
+          "defaultPath": "properties.complianceReason"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/complianceStatus",
+          "defaultPath": "properties.complianceStatus"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/contentHash",
+          "defaultPath": "properties.guestConfiguration.contentHash"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/context",
+          "defaultPath": "properties.context"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration",
+          "defaultPath": "properties.guestConfiguration"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.assignmentSource",
+          "defaultPath": "properties.guestConfiguration.assignmentSource"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.assignmentType",
+          "defaultPath": "properties.guestConfiguration.assignmentType"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter",
+          "defaultPath": "properties.guestConfiguration.configurationParameter"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter.value",
+          "defaultPath": "properties.guestConfiguration.configurationParameter.value"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter.value[*]",
+          "defaultPath": "properties.guestConfiguration.configurationParameter.value[*]"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter.value[*].name",
+          "defaultPath": "properties.guestConfiguration.configurationParameter.value[*].name"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter.value[*].value",
+          "defaultPath": "properties.guestConfiguration.configurationParameter.value[*].value"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter[*]",
+          "defaultPath": "properties.guestConfiguration.configurationParameter[*]"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter[*].name",
+          "defaultPath": "properties.guestConfiguration.configurationParameter[*].name"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationParameter[*].value",
+          "defaultPath": "properties.guestConfiguration.configurationParameter[*].value"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationProtectedParameter",
+          "defaultPath": "properties.guestConfiguration.configurationProtectedParameter"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationProtectedParameter[*]",
+          "defaultPath": "properties.guestConfiguration.configurationProtectedParameter[*]"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationProtectedParameter[*].name",
+          "defaultPath": "properties.guestConfiguration.configurationProtectedParameter[*].name"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationProtectedParameter[*].value",
+          "defaultPath": "properties.guestConfiguration.configurationProtectedParameter[*].value"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting",
+          "defaultPath": "properties.guestConfiguration.configurationSetting"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting.actionAfterReboot",
+          "defaultPath": "properties.guestConfiguration.configurationSetting.actionAfterReboot"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting.allowModuleOverwrite",
+          "defaultPath": "properties.guestConfiguration.configurationSetting.allowModuleOverwrite"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting.configurationMode",
+          "defaultPath": "properties.guestConfiguration.configurationSetting.configurationMode"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting.configurationModeFrequencyMins",
+          "defaultPath": "properties.guestConfiguration.configurationSetting.configurationModeFrequencyMins"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting.rebootIfNeeded",
+          "defaultPath": "properties.guestConfiguration.configurationSetting.rebootIfNeeded"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.configurationSetting.refreshFrequencyMins",
+          "defaultPath": "properties.guestConfiguration.configurationSetting.refreshFrequencyMins"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.contentHash",
+          "defaultPath": "properties.guestConfiguration.contentHash"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.contentManagedIdentity",
+          "defaultPath": "properties.guestConfiguration.contentManagedIdentity"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.contentType",
+          "defaultPath": "properties.guestConfiguration.contentType"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.contentUri",
+          "defaultPath": "properties.guestConfiguration.contentUri"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.kind",
+          "defaultPath": "properties.guestConfiguration.kind"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.name",
+          "defaultPath": "properties.guestConfiguration.name"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.type",
+          "defaultPath": "properties.guestConfiguration.type"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/guestConfiguration.version",
+          "defaultPath": "properties.guestConfiguration.version"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/lastComplianceStatusChecked",
+          "defaultPath": "properties.lastComplianceStatusChecked"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport",
+          "defaultPath": "properties.latestAssignmentReport"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.assignment",
+          "defaultPath": "properties.latestAssignmentReport.assignment"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.assignment.configuration",
+          "defaultPath": "properties.latestAssignmentReport.assignment.configuration"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.assignment.configuration.name",
+          "defaultPath": "properties.latestAssignmentReport.assignment.configuration.name"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.assignment.configuration.version",
+          "defaultPath": "properties.latestAssignmentReport.assignment.configuration.version"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.assignment.name",
+          "defaultPath": "properties.latestAssignmentReport.assignment.name"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.complianceStatus",
+          "defaultPath": "properties.latestAssignmentReport.complianceStatus"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.endTime",
+          "defaultPath": "properties.latestAssignmentReport.endTime"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.id",
+          "defaultPath": "properties.latestAssignmentReport.id"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.operationType",
+          "defaultPath": "properties.latestAssignmentReport.operationType"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.reportId",
+          "defaultPath": "properties.latestAssignmentReport.reportId"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources",
+          "defaultPath": "properties.latestAssignmentReport.resources"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*]",
+          "defaultPath": "properties.latestAssignmentReport.resources[*]"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*].complianceStatus",
+          "defaultPath": "properties.latestAssignmentReport.resources[*].complianceStatus"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*].reasons",
+          "defaultPath": "properties.latestAssignmentReport.resources[*].reasons"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*].reasons[*]",
+          "defaultPath": "properties.latestAssignmentReport.resources[*].reasons[*]"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*].reasons[*].code",
+          "defaultPath": "properties.latestAssignmentReport.resources[*].reasons[*].code"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*].reasons[*].phrase",
+          "defaultPath": "properties.latestAssignmentReport.resources[*].reasons[*].phrase"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.resources[*].resourceId",
+          "defaultPath": "properties.latestAssignmentReport.resources[*].resourceId"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.startTime",
+          "defaultPath": "properties.latestAssignmentReport.startTime"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.vm",
+          "defaultPath": "properties.latestAssignmentReport.vm"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.vm.id",
+          "defaultPath": "properties.latestAssignmentReport.vm.id"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestAssignmentReport.vm.uuid",
+          "defaultPath": "properties.latestAssignmentReport.vm.uuid"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/latestReportId",
+          "defaultPath": "properties.latestReportId"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/parameterHash",
+          "defaultPath": "properties.parameterHash"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/resourceType",
+          "defaultPath": "properties.resourceType"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList",
+          "defaultPath": "properties.vmssVMList"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList[*]",
+          "defaultPath": "properties.vmssVMList[*]"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList[*].complianceStatus",
+          "defaultPath": "properties.vmssVMList[*].complianceStatus"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList[*].lastComplianceChecked",
+          "defaultPath": "properties.vmssVMList[*].lastComplianceChecked"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList[*].latestReportId",
+          "defaultPath": "properties.vmssVMList[*].latestReportId"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList[*].vmId",
+          "defaultPath": "properties.vmssVMList[*].vmId"
+        },
+        {
+          "name": "Microsoft.GuestConfiguration/guestConfigurationAssignments/vmssVMList[*].vmResourceId",
+          "defaultPath": "properties.vmssVMList[*].vmResourceId"
+        }
+      ],
+      "resourceType": "guestConfigurationAssignments"
+    }
+  ]
+}

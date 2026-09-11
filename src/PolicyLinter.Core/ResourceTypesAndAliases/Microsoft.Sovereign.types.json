@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.Sovereign",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sovereignViews"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transparencyLogs"
+    }
+  ]
+}

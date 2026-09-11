@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.MessagingConnectors",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/datapreview"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/manifest"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/schema"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/Validation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

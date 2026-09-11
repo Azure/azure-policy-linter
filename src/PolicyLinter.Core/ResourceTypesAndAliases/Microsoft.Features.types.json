@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.Features",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "featureConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "featureProviderNamespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "featureProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "featureProviders/subscriptionFeatureRegistrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "features"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptionFeatureRegistrations"
+    }
+  ]
+}

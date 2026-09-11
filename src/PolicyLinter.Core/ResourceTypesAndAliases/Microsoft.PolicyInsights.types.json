@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.PolicyInsights",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "asyncOperationResults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "attestations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "checkPolicyRestrictions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "componentPolicyStates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generatePolicyAuthoringGuide"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generatePolicyEffect"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generatePolicyParameters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generatePolicyRule"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generatePolicySkeleton"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyEvents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "policyMetadata"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyStates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyTrackedResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "remediations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "simulatePolicy"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "verifyPolicy"
+    }
+  ]
+}

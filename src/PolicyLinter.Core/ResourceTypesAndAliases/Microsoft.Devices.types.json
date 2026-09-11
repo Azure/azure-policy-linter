@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.Devices",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkProvisioningServiceNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IotHubs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "IotHubs/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "IotHubs/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "IotHubs/failover"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "iotHubs/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "IotHubs/securitySettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/provisioningServiceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "provisioningServiceOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ProvisioningServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "provisioningServices/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "provisioningServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "usages"
+    }
+  ]
+}

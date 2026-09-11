@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.ServiceNetworking",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionProxyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionProxyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "trafficControllers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "trafficControllers/associations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "trafficControllers/frontends"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficControllers/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficControllers/privateEndpointConnectionProxies/updatePrivateEndpointProperties"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficControllers/privateEndpointConnectionProxies/validate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficControllers/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficControllers/privateLinkResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "trafficControllers/securityPolicies"
+    }
+  ]
+}

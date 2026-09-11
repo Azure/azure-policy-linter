@@ -1,0 +1,89 @@
+{
+  "namespace": "Microsoft.AppConfiguration",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configurationStores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/experimentation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/featureFlags"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/generateSasToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/keyValues"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "configurationStores/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/replicas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/resetSasKind"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationStores/snapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedConfigurationStores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedConfigurationStores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

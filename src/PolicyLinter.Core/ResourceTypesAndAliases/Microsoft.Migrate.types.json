@@ -1,0 +1,165 @@
+{
+  "namespace": "Microsoft.Migrate",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "assessmentProjects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assessmentProjects/assessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assessmentProjects/businessCases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/groups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/groups/assessments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/hypervcollectors"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/importcollectors"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/servercollectors"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "assessmentprojects/vmwarecollectors"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "castScanReports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/rmsOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "migrateprojects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/artifacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/createwavesfromplan"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/fetchsasuri"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/generatewaveplan"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/getwaveplans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/importwaveplan"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/migrationentities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/migrationentitygroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/plans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/platformlandingzones"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "migrateprojects/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/refreshEntities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/reports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/runbooks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/runbooks/executions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "migrateprojects/solutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/tasks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/tasksummary"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/waveoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/waves"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateprojects/workloadoperations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "moveCollections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "moveCollections/moveResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "onPremTcoDetails"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

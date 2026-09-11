@@ -1,0 +1,673 @@
+{
+  "namespace": "Microsoft.Databricks",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Databricks/accessConnectors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Databricks/accessConnectors/referedBy",
+          "defaultPath": "properties.referedBy"
+        },
+        {
+          "name": "Microsoft.Databricks/accessConnectors/referedBy[*]",
+          "defaultPath": "properties.referedBy[*]"
+        }
+      ],
+      "resourceType": "accessConnectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Databricks/workspaces/accessConnector",
+          "defaultPath": "properties.accessConnector"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/accessConnector.id",
+          "defaultPath": "properties.accessConnector.id"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/accessConnector.identityType",
+          "defaultPath": "properties.accessConnector.identityType"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/accessConnector.userAssignedIdentityId",
+          "defaultPath": "properties.accessConnector.userAssignedIdentityId"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/authorizations",
+          "defaultPath": "properties.authorizations"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/authorizations[*]",
+          "defaultPath": "properties.authorizations[*]"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/authorizations[*].principalId",
+          "defaultPath": "properties.authorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/authorizations[*].roleDefinitionId",
+          "defaultPath": "properties.authorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/createdBy.applicationId",
+          "defaultPath": "properties.createdBy.applicationId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/createdBy.oid",
+          "defaultPath": "properties.createdBy.oid"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/createdBy.puid",
+          "defaultPath": "properties.createdBy.puid"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/createdDateTime",
+          "defaultPath": "properties.createdDateTime"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/defaultCatalog",
+          "defaultPath": "properties.defaultCatalog"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/defaultCatalog.initialName",
+          "defaultPath": "properties.defaultCatalog.initialName"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/defaultCatalog.initialType",
+          "defaultPath": "properties.defaultCatalog.initialType"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/defaultStorageFirewall",
+          "defaultPath": "properties.defaultStorageFirewall"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/diskEncryptionSetId",
+          "defaultPath": "properties.diskEncryptionSetId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities",
+          "defaultPath": "properties.encryption.entities"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk",
+          "defaultPath": "properties.encryption.entities.managedDisk"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk.keySource",
+          "defaultPath": "properties.encryption.entities.managedDisk.keySource"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk.keyVaultProperties",
+          "defaultPath": "properties.encryption.entities.managedDisk.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryption.entities.managedDisk.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk.keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.encryption.entities.managedDisk.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk.keyVaultProperties.keyVersion",
+          "defaultPath": "properties.encryption.entities.managedDisk.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedDisk.rotationToLatestKeyVersionEnabled",
+          "defaultPath": "properties.encryption.entities.managedDisk.rotationToLatestKeyVersionEnabled"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedServices",
+          "defaultPath": "properties.encryption.entities.managedServices"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedServices.keySource",
+          "defaultPath": "properties.encryption.entities.managedServices.keySource"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedServices.keyVaultProperties",
+          "defaultPath": "properties.encryption.entities.managedServices.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedServices.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryption.entities.managedServices.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedServices.keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.encryption.entities.managedServices.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/encryption.entities.managedServices.keyVaultProperties.keyVersion",
+          "defaultPath": "properties.encryption.entities.managedServices.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance",
+          "defaultPath": "properties.enhancedSecurityCompliance"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.automaticClusterUpdate",
+          "defaultPath": "properties.enhancedSecurityCompliance.automaticClusterUpdate"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.automaticClusterUpdate.value",
+          "defaultPath": "properties.enhancedSecurityCompliance.automaticClusterUpdate.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.complianceSecurityProfile",
+          "defaultPath": "properties.enhancedSecurityCompliance.complianceSecurityProfile"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.complianceSecurityProfile.complianceStandards",
+          "defaultPath": "properties.enhancedSecurityCompliance.complianceSecurityProfile.complianceStandards"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.complianceSecurityProfile.complianceStandards[*]",
+          "defaultPath": "properties.enhancedSecurityCompliance.complianceSecurityProfile.complianceStandards[*]"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.complianceSecurityProfile.value",
+          "defaultPath": "properties.enhancedSecurityCompliance.complianceSecurityProfile.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.enhancedSecurityMonitoring",
+          "defaultPath": "properties.enhancedSecurityCompliance.enhancedSecurityMonitoring"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/enhancedSecurityCompliance.enhancedSecurityMonitoring.value",
+          "defaultPath": "properties.enhancedSecurityCompliance.enhancedSecurityMonitoring.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/isUcEnabled",
+          "defaultPath": "properties.isUcEnabled"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/managedDiskIdentity",
+          "defaultPath": "properties.managedDiskIdentity"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/managedDiskIdentity.principalId",
+          "defaultPath": "properties.managedDiskIdentity.principalId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/managedDiskIdentity.tenantId",
+          "defaultPath": "properties.managedDiskIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/managedDiskIdentity.type",
+          "defaultPath": "properties.managedDiskIdentity.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/managedResourceGroupId",
+          "defaultPath": "properties.managedResourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.amlWorkspaceId",
+          "defaultPath": "properties.parameters.amlWorkspaceId"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.amlWorkspaceId.type",
+          "defaultPath": "properties.parameters.amlWorkspaceId.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.amlWorkspaceId.value",
+          "defaultPath": "properties.parameters.amlWorkspaceId.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customPrivateSubnetName",
+          "defaultPath": "properties.parameters.customPrivateSubnetName"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customPrivateSubnetName.type",
+          "defaultPath": "properties.parameters.customPrivateSubnetName.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customPrivateSubnetName.value",
+          "defaultPath": "properties.parameters.customPrivateSubnetName.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customPublicSubnetName",
+          "defaultPath": "properties.parameters.customPublicSubnetName"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customPublicSubnetName.type",
+          "defaultPath": "properties.parameters.customPublicSubnetName.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customPublicSubnetName.value",
+          "defaultPath": "properties.parameters.customPublicSubnetName.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customVirtualNetworkId",
+          "defaultPath": "properties.parameters.customVirtualNetworkId"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customVirtualNetworkId.type",
+          "defaultPath": "properties.parameters.customVirtualNetworkId.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.customVirtualNetworkId.value",
+          "defaultPath": "properties.parameters.customVirtualNetworkId.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.enableNoPublicIp",
+          "defaultPath": "properties.parameters.enableNoPublicIp"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.enableNoPublicIp.type",
+          "defaultPath": "properties.parameters.enableNoPublicIp.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.enableNoPublicIp.value",
+          "defaultPath": "properties.parameters.enableNoPublicIp.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption",
+          "defaultPath": "properties.parameters.encryption"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption.type",
+          "defaultPath": "properties.parameters.encryption.type"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption.value",
+          "defaultPath": "properties.parameters.encryption.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption.value.KeyName",
+          "defaultPath": "properties.parameters.encryption.value.KeyName"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption.value.keySource",
+          "defaultPath": "properties.parameters.encryption.value.keySource"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption.value.keyvaulturi",
+          "defaultPath": "properties.parameters.encryption.value.keyvaulturi"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.encryption.value.keyversion",
+          "defaultPath": "properties.parameters.encryption.value.keyversion"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.loadBalancerBackendPoolName",
+          "defaultPath": "properties.parameters.loadBalancerBackendPoolName"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.loadBalancerBackendPoolName.type",
+          "defaultPath": "properties.parameters.loadBalancerBackendPoolName.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.loadBalancerBackendPoolName.value",
+          "defaultPath": "properties.parameters.loadBalancerBackendPoolName.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.loadBalancerId",
+          "defaultPath": "properties.parameters.loadBalancerId"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.loadBalancerId.type",
+          "defaultPath": "properties.parameters.loadBalancerId.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.loadBalancerId.value",
+          "defaultPath": "properties.parameters.loadBalancerId.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.natGatewayName",
+          "defaultPath": "properties.parameters.natGatewayName"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.natGatewayName.type",
+          "defaultPath": "properties.parameters.natGatewayName.type"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.natGatewayName.value",
+          "defaultPath": "properties.parameters.natGatewayName.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.prepareEncryption",
+          "defaultPath": "properties.parameters.prepareEncryption"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.prepareEncryption.type",
+          "defaultPath": "properties.parameters.prepareEncryption.type"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.prepareEncryption.value",
+          "defaultPath": "properties.parameters.prepareEncryption.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.publicIpName",
+          "defaultPath": "properties.parameters.publicIpName"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.publicIpName.type",
+          "defaultPath": "properties.parameters.publicIpName.type"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.publicIpName.value",
+          "defaultPath": "properties.parameters.publicIpName.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.relayNamespaceName",
+          "defaultPath": "properties.parameters.relayNamespaceName"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.relayNamespaceName.type",
+          "defaultPath": "properties.parameters.relayNamespaceName.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.relayNamespaceName.value",
+          "defaultPath": "properties.parameters.relayNamespaceName.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.requireInfrastructureEncryption",
+          "defaultPath": "properties.parameters.requireInfrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.requireInfrastructureEncryption.type",
+          "defaultPath": "properties.parameters.requireInfrastructureEncryption.type"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/parameters.requireInfrastructureEncryption.value",
+          "defaultPath": "properties.parameters.requireInfrastructureEncryption.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.resourceTags",
+          "defaultPath": "properties.parameters.resourceTags"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.resourceTags.type",
+          "defaultPath": "properties.parameters.resourceTags.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.resourceTags.value",
+          "defaultPath": "properties.parameters.resourceTags.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.storageAccountName",
+          "defaultPath": "properties.parameters.storageAccountName"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.storageAccountName.type",
+          "defaultPath": "properties.parameters.storageAccountName.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.storageAccountName.value",
+          "defaultPath": "properties.parameters.storageAccountName.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.storageAccountSkuName",
+          "defaultPath": "properties.parameters.storageAccountSkuName"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.storageAccountSkuName.type",
+          "defaultPath": "properties.parameters.storageAccountSkuName.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.storageAccountSkuName.value",
+          "defaultPath": "properties.parameters.storageAccountSkuName.value"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.vnetAddressPrefix",
+          "defaultPath": "properties.parameters.vnetAddressPrefix"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.vnetAddressPrefix.type",
+          "defaultPath": "properties.parameters.vnetAddressPrefix.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/parameters.vnetAddressPrefix.value",
+          "defaultPath": "properties.parameters.vnetAddressPrefix.value"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/requiredNsgRules",
+          "defaultPath": "properties.requiredNsgRules"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/storageAccountIdentity",
+          "defaultPath": "properties.storageAccountIdentity"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/storageAccountIdentity.principalId",
+          "defaultPath": "properties.storageAccountIdentity.principalId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/storageAccountIdentity.tenantId",
+          "defaultPath": "properties.storageAccountIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/storageAccountIdentity.type",
+          "defaultPath": "properties.storageAccountIdentity.type"
+        },
+        {
+          "name": "Microsoft.DataBricks/workspaces/uiDefinitionUri",
+          "defaultPath": "properties.uiDefinitionUri"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/updatedBy.applicationId",
+          "defaultPath": "properties.updatedBy.applicationId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/updatedBy.oid",
+          "defaultPath": "properties.updatedBy.oid"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/updatedBy.puid",
+          "defaultPath": "properties.updatedBy.puid"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/workspaceId",
+          "defaultPath": "properties.workspaceId"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/workspaceUrl",
+          "defaultPath": "properties.workspaceUrl"
+        }
+      ],
+      "resourceType": "workspaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/allowForwardedTraffic",
+          "defaultPath": "properties.allowForwardedTraffic"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/allowGatewayTransit",
+          "defaultPath": "properties.allowGatewayTransit"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/allowVirtualNetworkAccess",
+          "defaultPath": "properties.allowVirtualNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/databricksAddressSpace",
+          "defaultPath": "properties.databricksAddressSpace"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/databricksAddressSpace.addressPrefixes",
+          "defaultPath": "properties.databricksAddressSpace.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/databricksAddressSpace.addressPrefixes[*]",
+          "defaultPath": "properties.databricksAddressSpace.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/databricksVirtualNetwork",
+          "defaultPath": "properties.databricksVirtualNetwork"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/databricksVirtualNetwork.id",
+          "defaultPath": "properties.databricksVirtualNetwork.id"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/peeringState",
+          "defaultPath": "properties.peeringState"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/remoteAddressSpace",
+          "defaultPath": "properties.remoteAddressSpace"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/remoteAddressSpace.addressPrefixes",
+          "defaultPath": "properties.remoteAddressSpace.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/remoteAddressSpace.addressPrefixes[*]",
+          "defaultPath": "properties.remoteAddressSpace.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/remoteVirtualNetwork",
+          "defaultPath": "properties.remoteVirtualNetwork"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/remoteVirtualNetwork.id",
+          "defaultPath": "properties.remoteVirtualNetwork.id"
+        },
+        {
+          "name": "Microsoft.Databricks/workspaces/virtualNetworkPeerings/useRemoteGateways",
+          "defaultPath": "properties.useRemoteGateways"
+        }
+      ],
+      "resourceType": "workspaces/virtualNetworkPeerings"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.Fabric",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "capacities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkServicesForFabric"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkServicesForFabric/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkServicesForFabric/operationStatuses"
+    }
+  ]
+}

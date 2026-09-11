@@ -1,0 +1,22 @@
+{
+  "namespace": "GitHub.Network",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "GitHub.Network/networkSettings/businessId",
+          "defaultPath": "properties.businessId"
+        },
+        {
+          "name": "GitHub.Network/networkSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "GitHub.Network/networkSettings/subnetId",
+          "defaultPath": "properties.subnetId"
+        }
+      ],
+      "resourceType": "networkSettings"
+    }
+  ]
+}

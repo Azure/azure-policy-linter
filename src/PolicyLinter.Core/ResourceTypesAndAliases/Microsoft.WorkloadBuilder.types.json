@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.WorkloadBuilder",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "migrationAgents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workloads"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloads/instances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloads/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloads/versions/artifacts"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.ProjectArcadia",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/operationStatus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/sparkComputes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/sqlComputes"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.ExtendedLocation",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "customLocations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "customLocations/enabledResourceTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "customLocations/internalMetadata"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "customLocations/resourceSyncRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsstatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

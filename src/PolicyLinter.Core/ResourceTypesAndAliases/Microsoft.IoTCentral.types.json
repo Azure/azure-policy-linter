@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.IoTCentral",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "appTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkSubdomainAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IoTApps"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "IoTApps/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

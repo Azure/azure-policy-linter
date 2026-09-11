@@ -1,0 +1,34 @@
+{
+  "namespace": "Microsoft.OperationsManagement",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OperationsManagement/solutions/containedResources",
+          "defaultPath": "properties.containedResources"
+        },
+        {
+          "name": "Microsoft.OperationsManagement/solutions/containedResources[*]",
+          "defaultPath": "properties.containedResources[*]"
+        },
+        {
+          "name": "Microsoft.OperationsManagement/solutions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.OperationsManagement/solutions/referencedResources",
+          "defaultPath": "properties.referencedResources"
+        },
+        {
+          "name": "Microsoft.OperationsManagement/solutions/referencedResources[*]",
+          "defaultPath": "properties.referencedResources[*]"
+        },
+        {
+          "name": "Microsoft.OperationsManagement/solutions/workspaceResourceId",
+          "defaultPath": "properties.workspaceResourceId"
+        }
+      ],
+      "resourceType": "solutions"
+    }
+  ]
+}

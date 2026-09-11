@@ -1,0 +1,157 @@
+{
+  "namespace": "Microsoft.ManagedNetworkFabric",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accesscontrollists"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EdgeConnectors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Fabrics"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Fabrics/Vlans"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Fabrics/Vrfs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Fabrics/Vrfs/Networks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Fabrics/Vrfs/Peerings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "internetgatewayrules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "InternetGateways"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IpCommunities"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IpCommunityLists"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IpExtendedCommunities"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IpPrefixes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "IpPrefixLists"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "L2IsolationDomains"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "L3IsolationDomains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "L3IsolationDomains/externalNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "L3IsolationDomains/internalNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "L3IsolationDomains/northboundnetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "L3IsolationDomains/southboundnetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "neighborgroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkbootstrapdevices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "NetworkBootstrapDevices/NetworkBootstrapInterfaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkbootstrapinterfaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "NetworkDevices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "NetworkDevices/NetworkInterfaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "NetworkFabricControllers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "NetworkFabrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "NetworkFabrics/NetworkToNetworkInterconnects"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkmonitors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkpacketbrokers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "NetworkRacks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networktaprules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networktaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "RoutePolicies"
+    }
+  ]
+}

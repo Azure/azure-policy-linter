@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.ManagedServices",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "marketplaceRegistrationDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "registrationAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "registrationDefinitions"
+    }
+  ]
+}

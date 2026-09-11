@@ -1,0 +1,81 @@
+{
+  "namespace": "Microsoft.AzureResilienceManagement",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "drills"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "drills/drillResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "drills/drillRuns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "drills/drillRuns/drillRunChildJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "drills/drillRuns/drillRunResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "GoalAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "GoalAssignments/GoalResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "GoalTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "recoveryPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recoveryPlans/recoveryJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recoveryPlans/recoveryJobs/recoveryChildJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recoveryPlans/recoveryJobs/recoveryJobResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recoveryPlans/recoveryResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "UnifiedResilienceItems"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "UsagePlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "UsagePlans/Enrollments"
+    }
+  ]
+}

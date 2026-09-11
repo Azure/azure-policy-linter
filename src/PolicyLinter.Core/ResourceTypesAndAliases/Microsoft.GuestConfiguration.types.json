@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.GuestConfiguration",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "guestConfigurationAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

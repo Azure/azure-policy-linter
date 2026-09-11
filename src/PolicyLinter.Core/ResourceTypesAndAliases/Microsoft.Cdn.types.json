@@ -1,0 +1,265 @@
+{
+  "namespace": "Microsoft.Cdn",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "canMigrate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "CdnWebApplicationFirewallManagedRuleSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "CdnWebApplicationFirewallPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkEndpointNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkResourceUsage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EdgeActionOperations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EdgeActions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EdgeActions/attachments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EdgeActions/executionFilters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EdgeActions/versionCodePackage"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EdgeActions/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgenodes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/cdnwebapplicationfirewallpolicyresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/afdendpointresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/afdendpointresults/routeresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/agentlinkresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/authpolicyresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/customdomainresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/endpointresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/endpointresults/customdomainresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/endpointresults/origingroupresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/endpointresults/originresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/origingroupresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/origingroupresults/originresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/policyresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/rulesetresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/rulesetresults/ruleresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/secretresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/securitypolicyresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/targetgroupresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/profileresults/tunnelpolicyresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/webagentresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults/webagentresults/knowledgesourceresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "profiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "profiles/afdendpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/afdendpoints/routes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "profiles/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/authpolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/customdomains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/deploymentversions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/edgeextensiongroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "profiles/endpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/endpoints/customdomains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/endpoints/origingroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/endpoints/origins"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/keygroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/networkpolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/origingroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/origingroups/origins"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/rulesets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/rulesets/rules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/secrets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/securitypolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/targetgroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/tunnelpolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateProbe"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateSecret"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "webAgents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "webAgents/knowledgeSources"
+    }
+  ]
+}

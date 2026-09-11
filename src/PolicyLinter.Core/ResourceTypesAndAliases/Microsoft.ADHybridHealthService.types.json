@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.ADHybridHealthService",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "aadsupportcases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "addsservices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "anonymousapiusers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configuration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "logs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servicehealthmetrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services"
+    }
+  ]
+}

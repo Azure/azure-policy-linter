@@ -1,0 +1,21 @@
+{
+  "namespace": "microsoft.aadiam",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "diagnosticSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "diagnosticSettingsCategories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "tenants"
+    }
+  ]
+}

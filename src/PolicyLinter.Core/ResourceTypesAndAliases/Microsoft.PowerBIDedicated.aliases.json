@@ -1,0 +1,42 @@
+{
+  "namespace": "Microsoft.PowerBIDedicated",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/administration",
+          "defaultPath": "properties.administration"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/administration.members",
+          "defaultPath": "properties.administration.members"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/administration.members[*]",
+          "defaultPath": "properties.administration.members[*]"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.PowerBIDedicated/capacities/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "capacities"
+    }
+  ]
+}

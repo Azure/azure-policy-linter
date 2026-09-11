@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.ContainerInstance",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "AIAgentsGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerGroupProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerScaleSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/cachedImages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/containerScaleSetOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/createReservationSet"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/nGroupsOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/reservationSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateDeleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "nGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sandboxGroups"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "serviceAssociationLinks"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.Purview",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/kafkaConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "checkConsent"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "consents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getDefaultAccount"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/listFeatures"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "removeDefaultAccount"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "setDefaultAccount"
+    }
+  ]
+}

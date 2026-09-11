@@ -1,0 +1,86 @@
+{
+  "namespace": "Microsoft.Features",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/approvalType",
+          "defaultPath": "properties.approvalType"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/authorizationProfile",
+          "defaultPath": "properties.authorizationProfile"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/authorizationProfile.approvedTime",
+          "defaultPath": "properties.authorizationProfile.approvedTime"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/authorizationProfile.approver",
+          "defaultPath": "properties.authorizationProfile.approver"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/authorizationProfile.requestedTime",
+          "defaultPath": "properties.authorizationProfile.requestedTime"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/authorizationProfile.requester",
+          "defaultPath": "properties.authorizationProfile.requester"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/authorizationProfile.requesterObjectId",
+          "defaultPath": "properties.authorizationProfile.requesterObjectId"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/documentationLink",
+          "defaultPath": "properties.documentationLink"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/featureName",
+          "defaultPath": "properties.featureName"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/providerNamespace",
+          "defaultPath": "properties.providerNamespace"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/registrationDate",
+          "defaultPath": "properties.registrationDate"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/releaseDate",
+          "defaultPath": "properties.releaseDate"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/shouldFeatureDisplayInPortal",
+          "defaultPath": "properties.shouldFeatureDisplayInPortal"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/subscriptionId",
+          "defaultPath": "properties.subscriptionId"
+        },
+        {
+          "name": "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "featureProviders/subscriptionFeatureRegistrations"
+    }
+  ]
+}

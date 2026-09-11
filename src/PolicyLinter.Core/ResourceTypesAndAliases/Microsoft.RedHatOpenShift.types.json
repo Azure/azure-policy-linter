@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.RedHatOpenShift",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "HCPOpenShiftClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "HCPOpenShiftClusters/ExternalAuths"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "HCPOpenShiftClusters/NodePools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hcpOpenShiftVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hcpOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hcpOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hcpOperatorIdentityRoleSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/openshiftversions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsstatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/platformworkloadidentityrolesets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "OpenShiftClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

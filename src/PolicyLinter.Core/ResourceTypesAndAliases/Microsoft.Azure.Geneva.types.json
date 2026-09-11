@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.Azure.Geneva",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "environments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "environments/accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "environments/accounts/namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "environments/accounts/namespaces/configurations"
+    }
+  ]
+}

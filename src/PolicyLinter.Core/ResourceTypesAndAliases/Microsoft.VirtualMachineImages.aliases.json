@@ -1,0 +1,118 @@
+{
+  "namespace": "Microsoft.VirtualMachineImages",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/buildTimeoutInMinutes",
+          "defaultPath": "properties.buildTimeoutInMinutes"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/customize",
+          "defaultPath": "properties.customize"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/customize[*]",
+          "defaultPath": "properties.customize[*]"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/customize[*].name",
+          "defaultPath": "properties.customize[*].name"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/customize[*].type",
+          "defaultPath": "properties.customize[*].type"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/distribute",
+          "defaultPath": "properties.distribute"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/distribute[*]",
+          "defaultPath": "properties.distribute[*]"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/distribute[*].artifactTags",
+          "defaultPath": "properties.distribute[*].artifactTags"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/distribute[*].runOutputName",
+          "defaultPath": "properties.distribute[*].runOutputName"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/distribute[*].type",
+          "defaultPath": "properties.distribute[*].type"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/lastRunStatus",
+          "defaultPath": "properties.lastRunStatus"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/lastRunStatus.endTime",
+          "defaultPath": "properties.lastRunStatus.endTime"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/lastRunStatus.message",
+          "defaultPath": "properties.lastRunStatus.message"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/lastRunStatus.runState",
+          "defaultPath": "properties.lastRunStatus.runState"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/lastRunStatus.runSubState",
+          "defaultPath": "properties.lastRunStatus.runSubState"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/lastRunStatus.startTime",
+          "defaultPath": "properties.lastRunStatus.startTime"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/provisioningError",
+          "defaultPath": "properties.provisioningError"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/provisioningError.message",
+          "defaultPath": "properties.provisioningError.message"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/provisioningError.provisioningErrorCode",
+          "defaultPath": "properties.provisioningError.provisioningErrorCode"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/source.type",
+          "defaultPath": "properties.source.type"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/vmProfile",
+          "defaultPath": "properties.vmProfile"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/vmProfile.osDiskSizeGB",
+          "defaultPath": "properties.vmProfile.osDiskSizeGB"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/vmProfile.vmSize",
+          "defaultPath": "properties.vmProfile.vmSize"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/vmProfile.vnetConfig",
+          "defaultPath": "properties.vmProfile.vnetConfig"
+        },
+        {
+          "name": "Microsoft.VirtualMachineImages/imageTemplates/vmProfile.vnetConfig.subnetId",
+          "defaultPath": "properties.vmProfile.vnetConfig.subnetId"
+        }
+      ],
+      "resourceType": "imageTemplates"
+    }
+  ]
+}

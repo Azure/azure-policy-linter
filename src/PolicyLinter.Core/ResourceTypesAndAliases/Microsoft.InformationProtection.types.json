@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.InformationProtection",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "labelGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "labelGroups/labels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "labelGroups/labels/conditions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "labelGroups/labels/subLabels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "labelGroups/labels/subLabels/conditions"
+    }
+  ]
+}

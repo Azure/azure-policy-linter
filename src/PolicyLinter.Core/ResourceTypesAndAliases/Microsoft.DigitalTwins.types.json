@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.DigitalTwins",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "digitalTwinsInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "digitalTwinsInstances/endpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "digitalTwinsInstances/ingressEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "digitalTwinsInstances/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "digitalTwinsInstances/timeSeriesDatabaseConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

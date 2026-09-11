@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.EdgeOrderPartner",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/productFamilies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/productFamilies/inventories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "searchInventories"
+    }
+  ]
+}

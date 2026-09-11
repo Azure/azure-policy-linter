@@ -1,0 +1,14 @@
+{
+  "namespace": "Microsoft.SerialConsole",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SerialConsole/consoleServices/disabled",
+          "defaultPath": "properties.disabled"
+        }
+      ],
+      "resourceType": "consoleServices"
+    }
+  ]
+}

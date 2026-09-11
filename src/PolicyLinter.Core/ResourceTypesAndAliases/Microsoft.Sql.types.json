@@ -1,0 +1,1177 @@
+{
+  "namespace": "Microsoft.Sql",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedServers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "instancePools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/administratorAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/administratorOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/advancedThreatProtectionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/advancedThreatProtectionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/auditingSettingsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/auditingSettingsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/changeLongTermRetentionBackupAccessTierAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/changeLongTermRetentionBackupAccessTierOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectionPoliciesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectionPoliciesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseEncryptionProtectorRevalidateAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseEncryptionProtectorRevalidateOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseEncryptionProtectorRevertAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseEncryptionProtectorRevertOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/databaseRestoreAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedServerAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedServerOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnetsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnetsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/devOpsAuditingSettingsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/devOpsAuditingSettingsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/distributedAvailabilityGroupsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/distributedAvailabilityGroupsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dnsAliasAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dnsAliasOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/elasticPoolAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/elasticPoolOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/encryptionProtectorAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/encryptionProtectorOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/extendedAuditingSettingsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/extendedAuditingSettingsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/externalPolicyBasedAuthorizationsAzureAsycOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/externalPolicyBasedAuthorizationsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/failoverGroupAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/failoverGroupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/firewallRulesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/firewallRulesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/importExportAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/importExportOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instanceFailoverGroupAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instanceFailoverGroupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instanceFailoverGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instancePoolAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instancePoolOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ipv6FirewallRulesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ipv6FirewallRulesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/jobAgentAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/jobAgentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/jobAgentPrivateEndpointAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/jobAgentPrivateEndpointOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ledgerDigestUploadsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ledgerDigestUploadsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionBackupAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionBackupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionBackups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionManagedInstanceBackupAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionManagedInstanceBackupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionManagedInstanceBackups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionManagedInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionPolicyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionPolicyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/longTermRetentionServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseCompleteRestoreAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseCompleteRestoreOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseMoveOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseRestoreAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDatabaseRestoreOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDnsAliasAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedDnsAliasOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceAdvancedThreatProtectionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceAdvancedThreatProtectionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceDtcAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceEncryptionProtectorAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceEncryptionProtectorOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceKeyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceKeyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceLongTermRetentionPolicyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceLongTermRetentionPolicyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstancePrivateEndpointConnectionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstancePrivateEndpointConnectionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstancePrivateEndpointConnectionProxyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstancePrivateEndpointConnectionProxyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceTdeCertAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedInstanceTdeCertOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedLedgerDigestUploadsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedLedgerDigestUploadsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedServerSecurityAlertPoliciesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedServerSecurityAlertPoliciesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedShortTermRetentionPolicyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedShortTermRetentionPolicyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedtransparentDataEncryptionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedtransparentDataEncryptionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/outboundFirewallRulesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/outboundFirewallRulesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionProxyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionProxyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/refreshExternalGovernanceStatusAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/refreshExternalGovernanceStatusMIAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/refreshExternalGovernanceStatusMIOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/refreshExternalGovernanceStatusOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/replicationLinksAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/replicationLinksOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/securityAlertPoliciesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/securityAlertPoliciesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverAdministratorAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverAdministratorOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverConfigurationOptionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverKeyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverKeyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverTrustCertificatesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverTrustCertificatesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverTrustGroupAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverTrustGroupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverTrustGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/shortTermRetentionPolicyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/shortTermRetentionPolicyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sqlVulnerabilityAssessmentAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sqlVulnerabilityAssessmentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/startManagedInstanceAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/startManagedInstanceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/stopManagedInstanceAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/stopManagedInstanceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/syncAgentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/syncDatabaseIds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/syncGroupAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/syncGroupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/syncMemberOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/tdeCertAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/tdeCertOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/transparentDataEncryptionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/transparentDataEncryptionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updateManagedInstanceDnsServersAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updateManagedInstanceDnsServersOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualClusterAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualClusterOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualNetworkRulesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualNetworkRulesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vulnerabilityAssessmentScanAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vulnerabilityAssessmentScanOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/administrators"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/advancedThreatProtectionSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/azureADOnlyAuthentications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedInstances/databases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/databases/advancedThreatProtectionSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/databases/backupLongTermRetentionPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/databases/backupShortTermRetentionPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/databases/ledgerDigestUploads"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/databases/schemas/tables/columns/sensitivityLabels"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/databases/securityAlertPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/databases/transparentDataEncryption"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/databases/vulnerabilityAssessments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/databases/vulnerabilityAssessments/rules/baselines"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/distributedAvailabilityGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/dnsAliases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/dtc"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/encryptionProtector"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/keys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/metricDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/metrics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/recoverableDatabases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/securityAlertPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/serverConfigurationOptions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedInstances/serverTrustCertificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/sqlAgent"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/startStopSchedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/tdeCertificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/vulnerabilityAssessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "servers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/administratorOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/administrators"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/advancedThreatProtectionSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/advisors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/aggregatedDatabaseMetrics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/auditingPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/auditingSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/automaticTuning"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/azureADOnlyAuthentications"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/backupLongTermRetentionVaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/communicationLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/connectionPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "servers/databases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/activate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/activatedatabase"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/advancedThreatProtectionSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/advisors"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/advisors/recommendedActions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/auditingPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/auditingSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/auditRecords"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/automaticTuning"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/backupLongTermRetentionPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/backupShortTermRetentionPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/connectionPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/databaseState"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/dataMaskingPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/dataMaskingPolicies/rules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/deactivate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/deactivatedatabase"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/extendedAuditingSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/geoBackupPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/getCurrentAvailabilityZone"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/ledgerDigestUploads"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/maintenanceWindows"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/metricDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/metrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/recommendedSensitivityLabels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/replicationLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/schemas/tables/columns/sensitivityLabels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/securityAlertPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/sqlvulnerabilityassessments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/sqlVulnerabilityAssessments/baselines"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/sqlVulnerabilityAssessments/baselines/rules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/syncGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/syncGroups/syncMembers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/topQueries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/topQueries/queryText"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/transparentDataEncryption"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/VulnerabilityAssessment"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/vulnerabilityAssessments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/vulnerabilityAssessments/rules/baselines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/VulnerabilityAssessmentScans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/VulnerabilityAssessmentSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databases/workloadGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases/workloadGroups/workloadClassifiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/databaseSecurityPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/devOpsAuditingSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/disasterRecoveryConfiguration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/dnsAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/elasticPoolEstimates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "servers/elasticpools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/elasticPools/advisors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/elasticpools/metricdefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/elasticpools/metrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/encryptionProtector"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/extendedAuditingSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/failoverGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/failoverGroups/tryPlannedBeforeForcedFailover"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/firewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/import"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/importExportOperationResults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/ipv6FirewallRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "servers/jobAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "servers/jobAgents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/jobAgents/credentials"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/jobAgents/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/jobAgents/jobs/executions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/jobAgents/jobs/steps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/jobAgents/privateEndpoints"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/jobAgents/targetGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/keys"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/operationResults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/outboundFirewallRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/recommendedElasticPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/recoverableDatabases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/restorableDroppedDatabases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/securityAlertPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/serviceObjectives"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/sqlvulnerabilityassessments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/sqlVulnerabilityAssessments/baselines"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/sqlVulnerabilityAssessments/baselines/rules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/syncAgents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/tdeCertificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/virtualNetworkRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/vulnerabilityAssessments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualClusters"
+    }
+  ]
+}

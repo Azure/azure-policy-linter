@@ -1,0 +1,69 @@
+{
+  "namespace": "Microsoft.ChangeSafety",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "changeactivityevents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "changerecords"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "changerecords/stageprogressions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "changestates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "changestates/stageprogressions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "saferollouts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "saferollouts/stages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "saferollouts/steps"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "stagemaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validators"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validators/versions"
+    }
+  ]
+}

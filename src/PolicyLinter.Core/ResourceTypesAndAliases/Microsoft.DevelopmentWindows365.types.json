@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.DevelopmentWindows365",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "DevelopmentCloudPcDelegatedMsis"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.AppPlatform",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "runtimeVersions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Spring"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/apiPortals"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/applicationAccelerators"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/applicationLiveViews"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/apps/bindings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/deployments/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/deployments/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/domains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/domains/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/domains/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/apps/operationStatuses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/configServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/configServers/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/configServers/operationStatuses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/configurationServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/devToolPortals"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/eurekaServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/eurekaServers/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/eurekaServers/operationStatuses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/gateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/monitoringSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spring/operationStatuses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Spring/storages"
+    }
+  ]
+}

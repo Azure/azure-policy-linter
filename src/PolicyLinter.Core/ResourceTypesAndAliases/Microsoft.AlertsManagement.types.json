@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.AlertsManagement",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "actionRules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "alertRuleRecommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "alertsMetaData"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "alertsSummary"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "issues"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateFromSmartDetection"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "previewalertrule"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "prometheusRuleGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "smartDetectorAlertRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "smartGroups"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "tenantActivityLogAlerts"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "namespace": "Anyscale.Platform",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "agreements"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clouds"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clouds/cloudResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clouds/computeConfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clouds/containerImages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clouds/projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clouds/projects/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clouds/projects/services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clouds/projects/workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

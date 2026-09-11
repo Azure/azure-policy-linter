@@ -1,0 +1,125 @@
+{
+  "namespace": "Microsoft.ComputeSchedule",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "associatedOccurrences"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "associatedScheduledActions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "autoaction"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "autoaction/occurrence"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "autoActionResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "autoActions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "autoActions/occurrences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "location"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/regionalNotifications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesCancelOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesExecuteCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesExecuteCreateFlex"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesExecuteDeallocate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesExecuteDelete"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesExecuteHibernate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesExecuteStart"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesGetOperationErrors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesGetOperationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesSubmitDeallocate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesSubmitHibernate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesSubmitStart"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "scheduledActionResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scheduledActions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scheduledActions/occurrences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scheduledActions/occurrences/resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scheduledActions/resources"
+    }
+  ]
+}

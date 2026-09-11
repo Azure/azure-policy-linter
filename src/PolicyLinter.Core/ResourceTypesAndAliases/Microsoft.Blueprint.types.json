@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.Blueprint",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "blueprintAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "blueprintAssignments/assignmentOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "blueprintAssignments/operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "blueprints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "blueprints/artifacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "blueprints/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "blueprints/versions/artifacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

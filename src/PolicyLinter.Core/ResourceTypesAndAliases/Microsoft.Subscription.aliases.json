@@ -1,0 +1,35 @@
+{
+  "namespace": "Microsoft.Subscription",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Subscription/aliases/subscriptionId",
+          "defaultPath": "properties.subscriptionId"
+        }
+      ],
+      "resourceType": "aliases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Subscription/SubscriptionDefinitions/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.Subscription/SubscriptionDefinitions/offerType",
+          "defaultPath": "properties.offerType"
+        },
+        {
+          "name": "Microsoft.Subscription/SubscriptionDefinitions/subscriptionDisplayName",
+          "defaultPath": "properties.subscriptionDisplayName"
+        },
+        {
+          "name": "Microsoft.Subscription/SubscriptionDefinitions/subscriptionId",
+          "defaultPath": "properties.subscriptionId"
+        }
+      ],
+      "resourceType": "SubscriptionDefinitions"
+    }
+  ]
+}

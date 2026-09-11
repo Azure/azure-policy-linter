@@ -4,12 +4,6 @@
 #Requires -Version 7.4
 #Requires -Modules @{ ModuleName = 'Az.Accounts'; ModuleVersion = '5.3.1' }
 
-<#
-.SYNOPSIS
-Refreshes public-cloud resource types and aliases from Azure Resource Manager.
-.PARAMETER OutputDirectory
-Directory for generated namespace files. Defaults to PolicyLinter.Core\ResourceTypesAndAliases.
-#>
 [CmdletBinding()]
 param(
     [ValidateNotNullOrEmpty()]
@@ -25,13 +19,10 @@ if ($null -eq $context -or $context.Environment.Name -ne 'AzureCloud') {
 }
 
 $namespaces = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
-$generatedFiles = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
-$OutputDirectory = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($OutputDirectory)
 $stagingDirectory = Join-Path $OutputDirectory ".refresh-$([guid]::NewGuid())"
 $null = New-Item -ItemType Directory -Path $stagingDirectory -Force
 $uri = 'https://management.azure.com/providers?api-version=2021-04-01&$expand=resourceTypes/aliases'
-$typeCount = 0
-$aliasCount = 0
+$hasTypes = $false
 
 try {
     do {
@@ -60,77 +51,50 @@ try {
                 throw "Provider '$namespace' is missing the resourceTypes array."
             }
 
-            $types = [System.Collections.Generic.List[object]]::new()
-            $aliasTypes = [System.Collections.Generic.List[object]]::new()
+            $types = @($provider.resourceTypes | ForEach-Object { [pscustomobject]$_ } |
+                Sort-Object -Property resourceType -CaseSensitive -Culture en-US)
             $typeNames = [System.Collections.Generic.HashSet[string]]::new([System.StringComparer]::OrdinalIgnoreCase)
-
-            foreach ($type in ($provider.resourceTypes | Sort-Object -Property resourceType -CaseSensitive -Culture en-US)) {
+            foreach ($type in $types) {
                 if ([string]::IsNullOrWhiteSpace($type.resourceType) -or -not $typeNames.Add($type.resourceType)) {
                     throw "Invalid or duplicate resource type in '$namespace': $($type.resourceType)"
                 }
-
-                $types.Add([ordered]@{
-                    capabilities = $type['capabilities']
-                    resourceType = $type.resourceType
-                })
-
-                $aliases = @(
-                    $type['aliases'] | Where-Object { $null -ne $_ } |
-                        Sort-Object -Property name -CaseSensitive -Culture en-US |
-                        ForEach-Object {
-                            [ordered]@{
-                                defaultMetadata = $_['defaultMetadata']
-                                name = $_.name
-                                defaultPath = $_['defaultPath']
-                                paths = @($_['paths'] | Where-Object { $null -ne $_ })
-                            }
-                        }
-                )
-                if ($aliases.Count -gt 0) {
-                    $aliasTypes.Add([ordered]@{
-                        aliases = $aliases
-                        resourceType = $type.resourceType
-                    })
-                }
-                $aliasCount += $aliases.Count
             }
-            $typeCount += $types.Count
+            $hasTypes = $hasTypes -or $types.Count -gt 0
+            $documents = @{
+                types = @($types | Select-Object capabilities, resourceType)
+                aliases = @($types | Where-Object aliases | Select-Object @{
+                    Name = 'aliases'
+                    Expression = { ,@($_.aliases | Sort-Object -Property name -CaseSensitive -Culture en-US) }
+                }, resourceType)
+            }
 
-            foreach ($entry in @(
-                @{ Suffix = 'types'; ResourceTypes = $types.ToArray() },
-                @{ Suffix = 'aliases'; ResourceTypes = $aliasTypes.ToArray() }
-            )) {
-                $fileName = "$namespace.$($entry.Suffix).json"
+            foreach ($suffix in @('types', 'aliases')) {
                 $document = [ordered]@{
                     namespace = $namespace
-                    resourceTypes = $entry.ResourceTypes
+                    resourceTypes = $documents[$suffix]
                 }
                 $json = ConvertTo-Json -InputObject $document -Depth 100 -WarningAction Stop
-                [System.IO.File]::WriteAllText(
-                    (Join-Path $stagingDirectory $fileName),
-                    $json.Replace("`r`n", "`n") + "`n",
-                    [System.Text.UTF8Encoding]::new($false))
-                $null = $generatedFiles.Add($fileName)
+                $json | Set-Content -LiteralPath (Join-Path $stagingDirectory "$namespace.$suffix.json") -Encoding utf8NoBOM
             }
         }
         $uri = $page['nextLink']
     } while ($uri)
 
-    if ($typeCount -eq 0) {
+    if (-not $hasTypes) {
         throw 'Providers API returned no resource types; existing files were not changed.'
     }
 
     # Publish only after every page has been fetched and serialized successfully.
-    Get-ChildItem -LiteralPath $stagingDirectory -File |
-        Copy-Item -Destination $OutputDirectory -Force
+    $snapshots = @(Get-ChildItem -LiteralPath $stagingDirectory -File)
+    $snapshots | Copy-Item -Destination $OutputDirectory -Force
     Get-ChildItem -LiteralPath $OutputDirectory -File |
         Where-Object {
             ($_.Name -like '*.types.json' -or $_.Name -like '*.aliases.json') -and
-            -not $generatedFiles.Contains($_.Name)
+            $_.Name -notin $snapshots.Name
         } |
         Remove-Item
 
-    Write-Host "Generated $($namespaces.Count) namespaces, $typeCount resource types, and $aliasCount aliases in $OutputDirectory"
+    Write-Host "Updated $($namespaces.Count) namespaces in $OutputDirectory"
 }
 finally {
     Remove-Item -LiteralPath $stagingDirectory -Recurse -Force

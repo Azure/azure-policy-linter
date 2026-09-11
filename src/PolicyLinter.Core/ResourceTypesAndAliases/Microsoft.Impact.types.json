@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Impact",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "connectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getUploadToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "impactCategories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloadImpacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloadImpacts/insights"
+    }
+  ]
+}

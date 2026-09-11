@@ -1,0 +1,64 @@
+{
+  "namespace": "Microsoft.Automanage",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/accountId",
+          "defaultPath": "properties.accountId"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/configurationProfile",
+          "defaultPath": "properties.configurationProfile"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/profileOverrides",
+          "defaultPath": "properties.profileOverrides"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/provisioningStatus",
+          "defaultPath": "properties.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfileAssignments/targetId",
+          "defaultPath": "properties.targetId"
+        }
+      ],
+      "resourceType": "configurationProfileAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automanage/configurationProfiles/overrides",
+          "defaultPath": "properties.overrides"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfiles/overrides[*]",
+          "defaultPath": "properties.overrides[*]"
+        }
+      ],
+      "resourceType": "configurationProfiles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automanage/configurationProfiles/versions/overrides",
+          "defaultPath": "properties.overrides"
+        },
+        {
+          "name": "Microsoft.Automanage/configurationProfiles/versions/overrides[*]",
+          "defaultPath": "properties.overrides[*]"
+        }
+      ],
+      "resourceType": "configurationProfiles/versions"
+    }
+  ]
+}

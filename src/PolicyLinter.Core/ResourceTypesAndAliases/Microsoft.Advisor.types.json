@@ -1,0 +1,101 @@
+{
+  "namespace": "Microsoft.Advisor",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "advisorScore"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assessmentTypes"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "configurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "conversations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "criticalResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "discoverableWorkloads"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateRecommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "insights"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "metadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "predict"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "recommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "remediations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resiliencyReviews"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "risks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "riskTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptionScores"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "suppressions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "triageRecommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "triageResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "workloadResourceMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloads"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workloadScores"
+    }
+  ]
+}

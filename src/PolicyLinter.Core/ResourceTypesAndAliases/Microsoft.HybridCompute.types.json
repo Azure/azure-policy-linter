@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.HybridCompute",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "gateways"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "licenses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyExtension"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyRunCommand"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateLinkScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/publishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/publishers/extensionTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/publishers/extensionTypes/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updateCenterOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "machines"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "machines/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "machines/assessPatches"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "machines/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "machines/hybridIdentityMetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "machines/installPatches"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "machines/licenseProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "machines/privateLinkScopes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "machines/runcommands"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "networkConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "osType"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "osType/agentVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "osType/agentVersions/latest"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "settings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateLicense"
+    }
+  ]
+}

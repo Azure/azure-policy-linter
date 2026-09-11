@@ -1,0 +1,105 @@
+{
+  "namespace": "Microsoft.Consumption",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "AggregatedCost"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Balances"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Budgets"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Charges"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "CostTags"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "credits"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "events"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Forecasts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "lots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "lots/contingencies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Marketplaces"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "OperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "OperationStatus"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Pricesheets"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "products"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ReservationDetails"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ReservationRecommendationDetails"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ReservationRecommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ReservationSummaries"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ReservationTransactions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Tags"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "tenants"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Terms"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "UsageDetails"
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "namespace": "Microsoft.AnalysisServices",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AnalysisServices/servers/asAdministrators",
+          "paths": [
+            {
+              "path": "properties.asAdministrators",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.asAdministrators"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/asAdministrators.members",
+          "paths": [
+            {
+              "path": "properties.asAdministrators.members",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.asAdministrators.members"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/asAdministrators.members[*]",
+          "paths": [
+            {
+              "path": "properties.asAdministrators.members[*]",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.asAdministrators.members[*]"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/backupBlobContainerUri",
+          "paths": [
+            {
+              "path": "properties.backupBlobContainerUri",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.backupBlobContainerUri"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/gatewayDetails",
+          "defaultPath": "properties.gatewayDetails"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/gatewayDetails.dmtsClusterUri",
+          "defaultPath": "properties.gatewayDetails.dmtsClusterUri"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/gatewayDetails.gatewayObjectId",
+          "defaultPath": "properties.gatewayDetails.gatewayObjectId"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/gatewayDetails.gatewayResourceId",
+          "defaultPath": "properties.gatewayDetails.gatewayResourceId"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings.enablePowerBIService",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings.enablePowerBIService",
+              "apiVersions": [
+                "2017-07-14",
+                "2016-05-16"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings.enablePowerBIService",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings.firewallRules",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings.firewallRules",
+              "apiVersions": [
+                "2017-07-14",
+                "2016-05-16"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings.firewallRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings.firewallRules[*]",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings.firewallRules[*]",
+              "apiVersions": [
+                "2017-07-14",
+                "2016-05-16"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings.firewallRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings.firewallRules[*].firewallRuleName",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings.firewallRules[*].firewallRuleName",
+              "apiVersions": [
+                "2017-07-14",
+                "2016-05-16"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings.firewallRules[*].firewallRuleName",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings.firewallRules[*].rangeEnd",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings.firewallRules[*].rangeEnd",
+              "apiVersions": [
+                "2017-07-14",
+                "2016-05-16"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings.firewallRules[*].rangeEnd",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/ipV4FirewallSettings.firewallRules[*].rangeStart",
+          "paths": [
+            {
+              "path": "properties.ipV4FirewallSettings.firewallRules[*].rangeStart",
+              "apiVersions": [
+                "2017-07-14",
+                "2016-05-16"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.ipV4FirewallSettings.firewallRules[*].rangeStart",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/managedMode",
+          "paths": [
+            {
+              "path": "properties.managedMode",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.managedMode"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/querypoolConnectionMode",
+          "paths": [
+            {
+              "path": "properties.querypoolConnectionMode",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.querypoolConnectionMode"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/serverFullName",
+          "paths": [
+            {
+              "path": "properties.serverFullName",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.serverFullName"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/serverMonitorMode",
+          "paths": [
+            {
+              "path": "properties.serverMonitorMode",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.serverMonitorMode"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.AnalysisServices/servers/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2016-05-16",
+                "2017-07-14",
+                "2017-08-01",
+                "2017-08-01-beta"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "servers"
+    }
+  ]
+}

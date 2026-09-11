@@ -1,0 +1,209 @@
+{
+  "namespace": "Microsoft.Authorization",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "accessReviewHistoryDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "accessReviewScheduleDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "accessReviewScheduleSettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "acquirePolicyToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "attributeNamespaces"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "batchResourceCheckAccess"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "checkAccess"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "createAttributeNamespace"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataPolicyManifests"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "denyAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "diagnosticSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "diagnosticSettingsCategories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "elevateAccess"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "eligibleChildResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EnablePrivateLinkNetworkAccess"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "findOrphanRoleAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "listPolicyDefinitionVersions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "listPolicySetDefinitionVersions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "locks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MigrateRbac"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MigrateRbac/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatus"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "permissions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "policyDefinitions/versions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyEnrollments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policyExemptions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policySetDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "policySetDefinitions/versions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "privateLinkAssociations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerOperations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resourceManagementPrivateLinks"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleAssignmentApprovals"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleAssignmentScheduleInstances"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleAssignmentScheduleRequests"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleAssignmentSchedules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleAssignmentsUsageMetrics"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleEligibilityScheduleInstances"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleEligibilityScheduleRequests"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleEligibilitySchedules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleManagementAlertConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleManagementAlertDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleManagementAlertOperations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleManagementAlerts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleManagementPolicies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "roleManagementPolicyAssignments"
+    }
+  ]
+}

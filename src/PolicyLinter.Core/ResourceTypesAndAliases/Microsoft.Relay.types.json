@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.Relay",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/namespaceOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/hybridconnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/hybridconnections/authorizationrules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/networkrulesets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/wcfrelays"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/wcfrelays/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

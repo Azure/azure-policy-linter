@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.AzureActiveDirectory",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "associatedBillingAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "b2cDirectories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "b2ctenants"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ciamDirectories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deleteTenant"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "directories"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "entraTenants"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "guestUsages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateTenantDeletionEligibility"
+    }
+  ]
+}

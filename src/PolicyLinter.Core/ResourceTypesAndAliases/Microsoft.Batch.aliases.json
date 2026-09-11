@@ -1,0 +1,1753 @@
+{
+  "namespace": "Microsoft.Batch",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Batch/batchAccounts/allowedAuthenticationModes",
+          "paths": [
+            {
+              "path": "properties.allowedAuthenticationModes",
+              "apiVersions": [
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.allowedAuthenticationModes",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/allowedAuthenticationModes[*]",
+          "paths": [
+            {
+              "path": "properties.allowedAuthenticationModes[*]",
+              "apiVersions": [
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.allowedAuthenticationModes[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/autoStorage",
+          "defaultPath": "properties.autoStorage"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/autoStorage.authenticationMode",
+          "defaultPath": "properties.autoStorage.authenticationMode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/autoStorage.nodeIdentityReference",
+          "defaultPath": "properties.autoStorage.nodeIdentityReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/autoStorage.nodeIdentityReference.resourceId",
+          "defaultPath": "properties.autoStorage.nodeIdentityReference.resourceId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/autoStorage.storageAccountId",
+          "paths": [
+            {
+              "path": "properties.autoStorage.storageAccountId",
+              "apiVersions": [
+                "2015-09-01",
+                "2015-07-01",
+                "2014-05-01-privatepreview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.autoStorage.storageAccountId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/encryption.keySource",
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/encryption.keyVaultProperties.keyIdentifier",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyIdentifier"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/keyVaultReference",
+          "defaultPath": "properties.keyVaultReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/keyVaultReference.id",
+          "paths": [
+            {
+              "path": "properties.keyVaultReference.id",
+              "apiVersions": [
+                "2014-05-01-privatepreview",
+                "2015-07-01",
+                "2015-09-01",
+                "2015-12-01",
+                "2017-01-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2018-12-01",
+                "2019-04-01",
+                "2019-08-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.keyVaultReference.id"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/keyVaultReference.url",
+          "defaultPath": "properties.keyVaultReference.url"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.accountAccess",
+          "defaultPath": "properties.networkProfile.accountAccess"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.accountAccess.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkProfile.accountAccess.defaultAction",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.accountAccess.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.accountAccess.ipRules",
+          "paths": [
+            {
+              "path": "properties.networkProfile.accountAccess.ipRules",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.accountAccess.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.accountAccess.ipRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkProfile.accountAccess.ipRules[*]",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.accountAccess.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.accountAccess.ipRules[*].action",
+          "paths": [
+            {
+              "path": "properties.networkProfile.accountAccess.ipRules[*].action",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.accountAccess.ipRules[*].action",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.accountAccess.ipRules[*].value",
+          "paths": [
+            {
+              "path": "properties.networkProfile.accountAccess.ipRules[*].value",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.accountAccess.ipRules[*].value",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.nodeManagementAccess",
+          "defaultPath": "properties.networkProfile.nodeManagementAccess"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.nodeManagementAccess.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkProfile.nodeManagementAccess.defaultAction",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.nodeManagementAccess.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.nodeManagementAccess.ipRules",
+          "paths": [
+            {
+              "path": "properties.networkProfile.nodeManagementAccess.ipRules",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.nodeManagementAccess.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.nodeManagementAccess.ipRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkProfile.nodeManagementAccess.ipRules[*]",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.nodeManagementAccess.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.nodeManagementAccess.ipRules[*].action",
+          "paths": [
+            {
+              "path": "properties.networkProfile.nodeManagementAccess.ipRules[*].action",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.nodeManagementAccess.ipRules[*].action",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/networkProfile.nodeManagementAccess.ipRules[*].value",
+          "paths": [
+            {
+              "path": "properties.networkProfile.nodeManagementAccess.ipRules[*].value",
+              "apiVersions": [
+                "2022-01-01",
+                "2021-06-01",
+                "2021-01-01",
+                "2020-09-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkProfile.nodeManagementAccess.ipRules[*].value",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/poolAllocationMode",
+          "paths": [
+            {
+              "path": "properties.poolAllocationMode",
+              "apiVersions": [
+                "2014-05-01-privatepreview",
+                "2015-07-01",
+                "2015-09-01",
+                "2015-12-01",
+                "2017-01-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2018-12-01",
+                "2019-04-01",
+                "2019-08-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.poolAllocationMode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2019-08-01",
+                "2019-04-01",
+                "2018-12-01",
+                "2017-09-01",
+                "2017-05-01",
+                "2017-01-01",
+                "2015-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "batchAccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/allowUpdates",
+          "defaultPath": "properties.allowUpdates"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/defaultVersion",
+          "defaultPath": "properties.defaultVersion"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/displayName",
+          "defaultPath": "properties.displayName"
+        }
+      ],
+      "resourceType": "batchAccounts/applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/versions/format",
+          "defaultPath": "properties.format"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/versions/lastActivationTime",
+          "defaultPath": "properties.lastActivationTime"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/versions/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/versions/storageUrl",
+          "defaultPath": "properties.storageUrl"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/applications/versions/storageUrlExpiry",
+          "defaultPath": "properties.storageUrlExpiry"
+        }
+      ],
+      "resourceType": "batchAccounts/applications/versions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Batch/batchAccounts/certificates/format",
+          "defaultPath": "properties.format"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/certificates/thumbprint",
+          "defaultPath": "properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/certificates/thumbprintAlgorithm",
+          "defaultPath": "properties.thumbprintAlgorithm"
+        }
+      ],
+      "resourceType": "batchAccounts/certificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/allocationState",
+          "defaultPath": "properties.allocationState"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/allocationStateTransitionTime",
+          "defaultPath": "properties.allocationStateTransitionTime"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/applicationLicenses",
+          "defaultPath": "properties.applicationLicenses"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/applicationLicenses[*]",
+          "defaultPath": "properties.applicationLicenses[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/applicationPackages",
+          "defaultPath": "properties.applicationPackages"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/applicationPackages[*]",
+          "defaultPath": "properties.applicationPackages[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/applicationPackages[*].id",
+          "defaultPath": "properties.applicationPackages[*].id"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/applicationPackages[*].version",
+          "defaultPath": "properties.applicationPackages[*].version"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun",
+          "defaultPath": "properties.autoScaleRun"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error",
+          "defaultPath": "properties.autoScaleRun.error"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.code",
+          "defaultPath": "properties.autoScaleRun.error.code"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.details",
+          "defaultPath": "properties.autoScaleRun.error.details"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.details[*]",
+          "defaultPath": "properties.autoScaleRun.error.details[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.details[*].code",
+          "defaultPath": "properties.autoScaleRun.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.details[*].details",
+          "defaultPath": "properties.autoScaleRun.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.details[*].details[*]",
+          "defaultPath": "properties.autoScaleRun.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.details[*].message",
+          "defaultPath": "properties.autoScaleRun.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.error.message",
+          "defaultPath": "properties.autoScaleRun.error.message"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.evaluationTime",
+          "defaultPath": "properties.autoScaleRun.evaluationTime"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/autoScaleRun.results",
+          "defaultPath": "properties.autoScaleRun.results"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates",
+          "defaultPath": "properties.certificates"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates[*]",
+          "defaultPath": "properties.certificates[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates[*].id",
+          "defaultPath": "properties.certificates[*].id"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates[*].storeLocation",
+          "defaultPath": "properties.certificates[*].storeLocation"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates[*].storeName",
+          "defaultPath": "properties.certificates[*].storeName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates[*].visibility",
+          "defaultPath": "properties.certificates[*].visibility"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/certificates[*].visibility[*]",
+          "defaultPath": "properties.certificates[*].visibility[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/currentDedicatedNodes",
+          "defaultPath": "properties.currentDedicatedNodes"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/currentLowPriorityNodes",
+          "defaultPath": "properties.currentLowPriorityNodes"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/currentNodeCommunicationMode",
+          "defaultPath": "properties.currentNodeCommunicationMode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration",
+          "defaultPath": "properties.deploymentConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.cloudServiceConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.cloudServiceConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.cloudServiceConfiguration.currentOSVersion",
+          "defaultPath": "properties.deploymentConfiguration.cloudServiceConfiguration.currentOSVersion"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.cloudServiceConfiguration.osFamily",
+          "defaultPath": "properties.deploymentConfiguration.cloudServiceConfiguration.osFamily"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.cloudServiceConfiguration.osVersion",
+          "defaultPath": "properties.deploymentConfiguration.cloudServiceConfiguration.osVersion"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.cloudServiceConfiguration.targetOSVersion",
+          "defaultPath": "properties.deploymentConfiguration.cloudServiceConfiguration.targetOSVersion"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerImageNames",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerImageNames"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerImageNames[*]",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerImageNames[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*]",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].identityReference",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].identityReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].identityReference.resourceId",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].identityReference.resourceId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].password",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].password"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].registryServer",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].registryServer"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].username",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.containerRegistries[*].username"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.type",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.containerConfiguration.type"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*]",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].caching",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].caching"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].diskSizeGB",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].lun",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].lun"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk.diskEncryptionSet",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk.diskEncryptionSet"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk.securityProfile",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk.securityProfile"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk.storageAccountType",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].managedDisk.storageAccountType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].storageAccountType",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.dataDisks[*].storageAccountType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey.identityReference",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey.identityReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey.keyUrl",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey.keyUrl"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey.rotationToLatestKeyVersionEnabled",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.customerManagedKey.rotationToLatestKeyVersionEnabled"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.targets",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.targets"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.targets[*]",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.diskEncryptionConfiguration.targets[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*]",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].autoUpgradeMinorVersion",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].autoUpgradeMinorVersion"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].enableAutomaticUpgrade",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].enableAutomaticUpgrade"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].name",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].name"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].provisionAfterExtensions",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].provisionAfterExtensions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].provisionAfterExtensions[*]",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].provisionAfterExtensions[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].publisher",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].publisher"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].type",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].type"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.extensions[*].typeHandlerVersion",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.extensions[*].typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.communityGalleryImageId",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.communityGalleryImageId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.id",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.id"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.offer",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.offer"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.publisher",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.publisher"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.sharedGalleryImageId",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.sharedGalleryImageId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.sku",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.sku"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.imageReference.version",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.imageReference.version"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.licenseType",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.licenseType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.nodeAgentSkuId",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.nodeAgentSkuId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.nodePlacementConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.nodePlacementConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.nodePlacementConfiguration.policy",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.nodePlacementConfiguration.policy"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.caching",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.caching"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.diskSizeGB",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.diskSizeGB"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.ephemeralOSDiskSettings",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.ephemeralOSDiskSettings"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.ephemeralOSDiskSettings.placement",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.ephemeralOSDiskSettings.placement"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk.diskEncryptionSet",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk.diskEncryptionSet"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk.securityProfile",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk.securityProfile"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk.storageAccountType",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.managedDisk.storageAccountType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.osDisk.writeAcceleratorEnabled",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.osDisk.writeAcceleratorEnabled"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.encryptionAtHost",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.encryptionAtHost"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings.enabled",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings.enabled"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings.imds",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings.imds"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings.wireServer",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.proxyAgentSettings.wireServer"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.securityType",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.securityType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.uefiSettings",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.uefiSettings"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.uefiSettings.secureBootEnabled",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.uefiSettings.secureBootEnabled"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.securityProfile.uefiSettings.vTpmEnabled",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.securityProfile.uefiSettings.vTpmEnabled"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.serviceArtifactReference",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.serviceArtifactReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.serviceArtifactReference.id",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.serviceArtifactReference.id"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.windowsConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.windowsConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/deploymentConfiguration.virtualMachineConfiguration.windowsConfiguration.enableAutomaticUpdates",
+          "defaultPath": "properties.deploymentConfiguration.virtualMachineConfiguration.windowsConfiguration.enableAutomaticUpdates"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/interNodeCommunication",
+          "defaultPath": "properties.interNodeCommunication"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/lastModified",
+          "defaultPath": "properties.lastModified"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/maxTasksPerNode",
+          "defaultPath": "properties.maxTasksPerNode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/metadata[*]",
+          "defaultPath": "properties.metadata[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/metadata[*].name",
+          "defaultPath": "properties.metadata[*].name"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/metadata[*].value",
+          "defaultPath": "properties.metadata[*].value"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration",
+          "defaultPath": "properties.mountConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*]",
+          "defaultPath": "properties.mountConfiguration[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.accountKey",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.accountKey"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.accountName",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.accountName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.blobfuseOptions",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.blobfuseOptions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.containerName",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.containerName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.identityReference",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.identityReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.identityReference.resourceId",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.identityReference.resourceId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.relativeMountPath",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.relativeMountPath"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureBlobFileSystemConfiguration.sasKey",
+          "defaultPath": "properties.mountConfiguration[*].azureBlobFileSystemConfiguration.sasKey"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureFileShareConfiguration",
+          "defaultPath": "properties.mountConfiguration[*].azureFileShareConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureFileShareConfiguration.accountKey",
+          "defaultPath": "properties.mountConfiguration[*].azureFileShareConfiguration.accountKey"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureFileShareConfiguration.accountName",
+          "defaultPath": "properties.mountConfiguration[*].azureFileShareConfiguration.accountName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureFileShareConfiguration.azureFileUrl",
+          "defaultPath": "properties.mountConfiguration[*].azureFileShareConfiguration.azureFileUrl"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureFileShareConfiguration.mountOptions",
+          "defaultPath": "properties.mountConfiguration[*].azureFileShareConfiguration.mountOptions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].azureFileShareConfiguration.relativeMountPath",
+          "defaultPath": "properties.mountConfiguration[*].azureFileShareConfiguration.relativeMountPath"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].cifsMountConfiguration",
+          "defaultPath": "properties.mountConfiguration[*].cifsMountConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].cifsMountConfiguration.mountOptions",
+          "defaultPath": "properties.mountConfiguration[*].cifsMountConfiguration.mountOptions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].cifsMountConfiguration.password",
+          "defaultPath": "properties.mountConfiguration[*].cifsMountConfiguration.password"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].cifsMountConfiguration.relativeMountPath",
+          "defaultPath": "properties.mountConfiguration[*].cifsMountConfiguration.relativeMountPath"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].cifsMountConfiguration.source",
+          "defaultPath": "properties.mountConfiguration[*].cifsMountConfiguration.source"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].cifsMountConfiguration.username",
+          "defaultPath": "properties.mountConfiguration[*].cifsMountConfiguration.username"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].nfsMountConfiguration",
+          "defaultPath": "properties.mountConfiguration[*].nfsMountConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].nfsMountConfiguration.mountOptions",
+          "defaultPath": "properties.mountConfiguration[*].nfsMountConfiguration.mountOptions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].nfsMountConfiguration.relativeMountPath",
+          "defaultPath": "properties.mountConfiguration[*].nfsMountConfiguration.relativeMountPath"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/mountConfiguration[*].nfsMountConfiguration.source",
+          "defaultPath": "properties.mountConfiguration[*].nfsMountConfiguration.source"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration",
+          "defaultPath": "properties.networkConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.dynamicVNetAssignmentScope",
+          "defaultPath": "properties.networkConfiguration.dynamicVNetAssignmentScope"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.enableAcceleratedNetworking",
+          "defaultPath": "properties.networkConfiguration.enableAcceleratedNetworking"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*]",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].backendPort",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].backendPort"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].frontendPortRangeEnd",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].frontendPortRangeEnd"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].frontendPortRangeStart",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].frontendPortRangeStart"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].name",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].name"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*]",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].access",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].access"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].priority",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].priority"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].sourceAddressPrefix",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].sourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].sourcePortRanges",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].sourcePortRanges"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].sourcePortRanges[*]",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].networkSecurityGroupRules[*].sourcePortRanges[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.endpointConfiguration.inboundNatPools[*].protocol",
+          "defaultPath": "properties.networkConfiguration.endpointConfiguration.inboundNatPools[*].protocol"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipAddressIds",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipAddressIds"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipAddressIds[*]",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipAddressIds[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipFamilies",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipFamilies"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipFamilies[*]",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipFamilies[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipTags",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipTags"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipTags[*]",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipTags[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipTags[*].ipTagType",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipTags[*].ipTagType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.ipTags[*].tag",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.ipTags[*].tag"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPAddressConfiguration.provision",
+          "defaultPath": "properties.networkConfiguration.publicIPAddressConfiguration.provision"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPs",
+          "defaultPath": "properties.networkConfiguration.publicIPs"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.publicIPs[*]",
+          "defaultPath": "properties.networkConfiguration.publicIPs[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.subnetId",
+          "defaultPath": "properties.networkConfiguration.subnetId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/networkConfiguration.subnetId.externalDocs",
+          "defaultPath": "properties.networkConfiguration.subnetId.externalDocs"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/provisioningStateTransitionTime",
+          "defaultPath": "properties.provisioningStateTransitionTime"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus",
+          "defaultPath": "properties.resizeOperationStatus"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors",
+          "defaultPath": "properties.resizeOperationStatus.errors"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*]",
+          "defaultPath": "properties.resizeOperationStatus.errors[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].code",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].code"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].details",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].details"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].details[*]",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].details[*].code",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].details[*].code"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].details[*].details",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].details[*].details"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].details[*].details[*]",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].details[*].message",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].details[*].message"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.errors[*].message",
+          "defaultPath": "properties.resizeOperationStatus.errors[*].message"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.nodeDeallocationOption",
+          "defaultPath": "properties.resizeOperationStatus.nodeDeallocationOption"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.resizeTimeout",
+          "defaultPath": "properties.resizeOperationStatus.resizeTimeout"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.startTime",
+          "defaultPath": "properties.resizeOperationStatus.startTime"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.targetDedicatedNodes",
+          "defaultPath": "properties.resizeOperationStatus.targetDedicatedNodes"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resizeOperationStatus.targetLowPriorityNodes",
+          "defaultPath": "properties.resizeOperationStatus.targetLowPriorityNodes"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/resourceTags",
+          "defaultPath": "properties.resourceTags"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings",
+          "defaultPath": "properties.scaleSettings"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.autoScale",
+          "defaultPath": "properties.scaleSettings.autoScale"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.autoScale.evaluationInterval",
+          "defaultPath": "properties.scaleSettings.autoScale.evaluationInterval"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.autoScale.formula",
+          "defaultPath": "properties.scaleSettings.autoScale.formula"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.autoScale.formula.externalDocs",
+          "defaultPath": "properties.scaleSettings.autoScale.formula.externalDocs"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.fixedScale",
+          "defaultPath": "properties.scaleSettings.fixedScale"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.fixedScale.nodeDeallocationOption",
+          "defaultPath": "properties.scaleSettings.fixedScale.nodeDeallocationOption"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.fixedScale.resizeTimeout",
+          "defaultPath": "properties.scaleSettings.fixedScale.resizeTimeout"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.fixedScale.targetDedicatedNodes",
+          "defaultPath": "properties.scaleSettings.fixedScale.targetDedicatedNodes"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/scaleSettings.fixedScale.targetLowPriorityNodes",
+          "defaultPath": "properties.scaleSettings.fixedScale.targetLowPriorityNodes"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask",
+          "defaultPath": "properties.startTask"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.commandLine",
+          "defaultPath": "properties.startTask.commandLine"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings",
+          "defaultPath": "properties.startTask.containerSettings"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.containerHostBatchBindMounts",
+          "defaultPath": "properties.startTask.containerSettings.containerHostBatchBindMounts"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.containerHostBatchBindMounts[*]",
+          "defaultPath": "properties.startTask.containerSettings.containerHostBatchBindMounts[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.containerHostBatchBindMounts[*].isReadOnly",
+          "defaultPath": "properties.startTask.containerSettings.containerHostBatchBindMounts[*].isReadOnly"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.containerHostBatchBindMounts[*].source",
+          "defaultPath": "properties.startTask.containerSettings.containerHostBatchBindMounts[*].source"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.containerRunOptions",
+          "defaultPath": "properties.startTask.containerSettings.containerRunOptions"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.imageName",
+          "defaultPath": "properties.startTask.containerSettings.imageName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.registry",
+          "defaultPath": "properties.startTask.containerSettings.registry"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.registry.identityReference",
+          "defaultPath": "properties.startTask.containerSettings.registry.identityReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.registry.identityReference.resourceId",
+          "defaultPath": "properties.startTask.containerSettings.registry.identityReference.resourceId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.registry.password",
+          "defaultPath": "properties.startTask.containerSettings.registry.password"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.registry.registryServer",
+          "defaultPath": "properties.startTask.containerSettings.registry.registryServer"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.registry.username",
+          "defaultPath": "properties.startTask.containerSettings.registry.username"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.containerSettings.workingDirectory",
+          "defaultPath": "properties.startTask.containerSettings.workingDirectory"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.environmentSettings",
+          "defaultPath": "properties.startTask.environmentSettings"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.environmentSettings[*]",
+          "defaultPath": "properties.startTask.environmentSettings[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.environmentSettings[*].name",
+          "defaultPath": "properties.startTask.environmentSettings[*].name"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.environmentSettings[*].value",
+          "defaultPath": "properties.startTask.environmentSettings[*].value"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.maxTaskRetryCount",
+          "defaultPath": "properties.startTask.maxTaskRetryCount"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles",
+          "defaultPath": "properties.startTask.resourceFiles"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*]",
+          "defaultPath": "properties.startTask.resourceFiles[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].autoStorageContainerName",
+          "defaultPath": "properties.startTask.resourceFiles[*].autoStorageContainerName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].blobPrefix",
+          "defaultPath": "properties.startTask.resourceFiles[*].blobPrefix"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].blobSource",
+          "defaultPath": "properties.startTask.resourceFiles[*].blobSource"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].fileMode",
+          "defaultPath": "properties.startTask.resourceFiles[*].fileMode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].filePath",
+          "defaultPath": "properties.startTask.resourceFiles[*].filePath"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].httpUrl",
+          "defaultPath": "properties.startTask.resourceFiles[*].httpUrl"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].identityReference",
+          "defaultPath": "properties.startTask.resourceFiles[*].identityReference"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].identityReference.resourceId",
+          "defaultPath": "properties.startTask.resourceFiles[*].identityReference.resourceId"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.resourceFiles[*].storageContainerUrl",
+          "defaultPath": "properties.startTask.resourceFiles[*].storageContainerUrl"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.userIdentity",
+          "defaultPath": "properties.startTask.userIdentity"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.userIdentity.autoUser",
+          "defaultPath": "properties.startTask.userIdentity.autoUser"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.userIdentity.autoUser.elevationLevel",
+          "defaultPath": "properties.startTask.userIdentity.autoUser.elevationLevel"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.userIdentity.autoUser.scope",
+          "defaultPath": "properties.startTask.userIdentity.autoUser.scope"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.userIdentity.userName",
+          "defaultPath": "properties.startTask.userIdentity.userName"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/startTask.waitForSuccess",
+          "defaultPath": "properties.startTask.waitForSuccess"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/targetNodeCommunicationMode",
+          "defaultPath": "properties.targetNodeCommunicationMode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/taskSchedulingPolicy",
+          "defaultPath": "properties.taskSchedulingPolicy"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/taskSchedulingPolicy.jobDefaultOrder",
+          "defaultPath": "properties.taskSchedulingPolicy.jobDefaultOrder"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/taskSchedulingPolicy.nodeFillType",
+          "defaultPath": "properties.taskSchedulingPolicy.nodeFillType"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/taskSlotsPerNode",
+          "defaultPath": "properties.taskSlotsPerNode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy",
+          "defaultPath": "properties.upgradePolicy"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.automaticOSUpgradePolicy",
+          "defaultPath": "properties.upgradePolicy.automaticOSUpgradePolicy"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.automaticOSUpgradePolicy.disableAutomaticRollback",
+          "defaultPath": "properties.upgradePolicy.automaticOSUpgradePolicy.disableAutomaticRollback"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.automaticOSUpgradePolicy.enableAutomaticOSUpgrade",
+          "defaultPath": "properties.upgradePolicy.automaticOSUpgradePolicy.enableAutomaticOSUpgrade"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.automaticOSUpgradePolicy.osRollingUpgradeDeferral",
+          "defaultPath": "properties.upgradePolicy.automaticOSUpgradePolicy.osRollingUpgradeDeferral"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.automaticOSUpgradePolicy.useRollingUpgradePolicy",
+          "defaultPath": "properties.upgradePolicy.automaticOSUpgradePolicy.useRollingUpgradePolicy"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.mode",
+          "defaultPath": "properties.upgradePolicy.mode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.enableCrossZoneUpgrade",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.enableCrossZoneUpgrade"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.maxBatchInstancePercent",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.maxBatchInstancePercent"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.maxUnhealthyInstancePercent",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.maxUnhealthyInstancePercent"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.maxUnhealthyUpgradedInstancePercent",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.maxUnhealthyUpgradedInstancePercent"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.pauseTimeBetweenBatches",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.pauseTimeBetweenBatches"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.prioritizeUnhealthyInstances",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.prioritizeUnhealthyInstances"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/upgradePolicy.rollingUpgradePolicy.rollbackFailedInstancesOnPolicyBreach",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradePolicy.rollbackFailedInstancesOnPolicyBreach"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts",
+          "defaultPath": "properties.userAccounts"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*]",
+          "defaultPath": "properties.userAccounts[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].elevationLevel",
+          "defaultPath": "properties.userAccounts[*].elevationLevel"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].linuxUserConfiguration",
+          "defaultPath": "properties.userAccounts[*].linuxUserConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].linuxUserConfiguration.gid",
+          "defaultPath": "properties.userAccounts[*].linuxUserConfiguration.gid"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].linuxUserConfiguration.sshPrivateKey",
+          "defaultPath": "properties.userAccounts[*].linuxUserConfiguration.sshPrivateKey"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].linuxUserConfiguration.uid",
+          "defaultPath": "properties.userAccounts[*].linuxUserConfiguration.uid"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].name",
+          "defaultPath": "properties.userAccounts[*].name"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].password",
+          "defaultPath": "properties.userAccounts[*].password"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].windowsUserConfiguration",
+          "defaultPath": "properties.userAccounts[*].windowsUserConfiguration"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/userAccounts[*].windowsUserConfiguration.loginMode",
+          "defaultPath": "properties.userAccounts[*].windowsUserConfiguration.loginMode"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/pools/vmSize",
+          "defaultPath": "properties.vmSize"
+        }
+      ],
+      "resourceType": "batchAccounts/pools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Batch/batchAccounts/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "batchAccounts/privateEndpointConnections"
+    }
+  ]
+}

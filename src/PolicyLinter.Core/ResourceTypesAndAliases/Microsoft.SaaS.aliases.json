@@ -1,0 +1,111 @@
+{
+  "namespace": "Microsoft.SaaS",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SaaS/resources/autoRenew",
+          "defaultPath": "properties.autoRenew"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/offerId",
+          "defaultPath": "properties.offerId"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/paymentChannelMetadata",
+          "defaultPath": "properties.paymentChannelMetadata"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/paymentChannelType",
+          "defaultPath": "properties.paymentChannelType"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/publisherId",
+          "defaultPath": "properties.publisherId"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/publisherTestEnvironment",
+          "defaultPath": "properties.publisherTestEnvironment"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/quantity",
+          "defaultPath": "properties.quantity"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/saasResourceName",
+          "defaultPath": "properties.saasResourceName"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/saasSessionId",
+          "defaultPath": "properties.saasSessionId"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/saasSubscriptionId",
+          "defaultPath": "properties.saasSubscriptionId"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/skuId",
+          "defaultPath": "properties.skuId"
+        },
+        {
+          "name": "Microsoft.SaaS/resources/termId",
+          "defaultPath": "properties.termId"
+        }
+      ],
+      "resourceType": "resources"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SaaS/saasresources/autoRenew",
+          "defaultPath": "properties.autoRenew"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/offerId",
+          "defaultPath": "properties.offerId"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/paymentChannelMetadata",
+          "defaultPath": "properties.paymentChannelMetadata"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/paymentChannelType",
+          "defaultPath": "properties.paymentChannelType"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/publisherId",
+          "defaultPath": "properties.publisherId"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/publisherTestEnvironment",
+          "defaultPath": "properties.publisherTestEnvironment"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/quantity",
+          "defaultPath": "properties.quantity"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/saasResourceName",
+          "defaultPath": "properties.saasResourceName"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/saasSessionId",
+          "defaultPath": "properties.saasSessionId"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/saasSubscriptionId",
+          "defaultPath": "properties.saasSubscriptionId"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/skuId",
+          "defaultPath": "properties.skuId"
+        },
+        {
+          "name": "Microsoft.SaaS/saasresources/termId",
+          "defaultPath": "properties.termId"
+        }
+      ],
+      "resourceType": "saasresources"
+    }
+  ]
+}

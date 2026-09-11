@@ -1,0 +1,822 @@
+{
+  "namespace": "Microsoft.Singularity",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Singularity/accounts/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/idleResourcesHandlingPolicy",
+          "defaultPath": "properties.idleResourcesHandlingPolicy"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/idleResourcesHandlingPolicy.idleResourcesHandlingMode",
+          "defaultPath": "properties.idleResourcesHandlingPolicy.idleResourcesHandlingMode"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/locations",
+          "defaultPath": "properties.locations"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/locations[*]",
+          "defaultPath": "properties.locations[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/locations[*].failoverPriority",
+          "defaultPath": "properties.locations[*].failoverPriority"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/locations[*].isZoneRedundant",
+          "defaultPath": "properties.locations[*].isZoneRedundant"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/locations[*].name",
+          "defaultPath": "properties.locations[*].name"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/networkSettings",
+          "defaultPath": "properties.networkSettings"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/networkSettings.subnetId",
+          "defaultPath": "properties.networkSettings.subnetId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/statusDetails",
+          "defaultPath": "properties.statusDetails"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas",
+          "defaultPath": "properties.quotas"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas[*]",
+          "defaultPath": "properties.quotas[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas[*].id",
+          "defaultPath": "properties.quotas[*].id"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas[*].limit",
+          "defaultPath": "properties.quotas[*].limit"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas[*].name",
+          "defaultPath": "properties.quotas[*].name"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas[*].slaTier",
+          "defaultPath": "properties.quotas[*].slaTier"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/quotas[*].used",
+          "defaultPath": "properties.quotas[*].used"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/accountQuotaPolicies/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "accounts/accountQuotaPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/maxSharedStorageBandwidth",
+          "defaultPath": "properties.maxSharedStorageBandwidth"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/maxSharedStorageIOPs",
+          "defaultPath": "properties.maxSharedStorageIOPs"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas",
+          "defaultPath": "properties.quotas"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas[*]",
+          "defaultPath": "properties.quotas[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas[*].id",
+          "defaultPath": "properties.quotas[*].id"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas[*].limit",
+          "defaultPath": "properties.quotas[*].limit"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas[*].name",
+          "defaultPath": "properties.quotas[*].name"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas[*].slaTier",
+          "defaultPath": "properties.quotas[*].slaTier"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/quotas[*].used",
+          "defaultPath": "properties.quotas[*].used"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/groupPolicies/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "accounts/groupPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy",
+          "defaultPath": "properties.checkpointPolicy"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointInterval",
+          "defaultPath": "properties.checkpointPolicy.checkpointInterval"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointIterationCount",
+          "defaultPath": "properties.checkpointPolicy.checkpointIterationCount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointRelativePath",
+          "defaultPath": "properties.checkpointPolicy.checkpointRelativePath"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointRetentionPolicy",
+          "defaultPath": "properties.checkpointPolicy.checkpointRetentionPolicy"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointRetentionPolicy.maxStorage",
+          "defaultPath": "properties.checkpointPolicy.checkpointRetentionPolicy.maxStorage"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointRetentionPolicy.mode",
+          "defaultPath": "properties.checkpointPolicy.checkpointRetentionPolicy.mode"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.checkpointRetentionPolicy.ttl",
+          "defaultPath": "properties.checkpointPolicy.checkpointRetentionPolicy.ttl"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/checkpointPolicy.enableCheckpoint",
+          "defaultPath": "properties.checkpointPolicy.enableCheckpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation",
+          "defaultPath": "properties.codeLocation"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.mount",
+          "defaultPath": "properties.codeLocation.mount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.mount.path",
+          "defaultPath": "properties.codeLocation.mount.path"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source",
+          "defaultPath": "properties.codeLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureAISupercomputerStorage",
+          "defaultPath": "properties.codeLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureAISupercomputerStorage.storageContainerName",
+          "defaultPath": "properties.codeLocation.source.storageContainerName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureBlobStorage",
+          "defaultPath": "properties.codeLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureBlobStorage.accountResourceId",
+          "defaultPath": "properties.codeLocation.source.accountResourceId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureBlobStorage.authenticationType",
+          "defaultPath": "properties.codeLocation.source.authenticationType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureBlobStorage.blobEndpoint",
+          "defaultPath": "properties.codeLocation.source.blobEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureBlobStorage.userAssignedIdentity",
+          "defaultPath": "properties.codeLocation.source.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage",
+          "defaultPath": "properties.codeLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage.accountKey",
+          "defaultPath": "properties.codeLocation.source.accountKey"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage.accountResourceId",
+          "defaultPath": "properties.codeLocation.source.accountResourceId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage.authenticationType",
+          "defaultPath": "properties.codeLocation.source.authenticationType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage.fileEndpoint",
+          "defaultPath": "properties.codeLocation.source.fileEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage.storageAccount",
+          "defaultPath": "properties.codeLocation.source.storageAccount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.AzureFileStorage.userAssignedIdentity",
+          "defaultPath": "properties.codeLocation.source.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.source.kind",
+          "defaultPath": "properties.codeLocation.source.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/codeLocation.storageCacheContainerName",
+          "defaultPath": "properties.codeLocation.storageCacheContainerName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage",
+          "defaultPath": "properties.containerImage"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Custom",
+          "defaultPath": "properties.containerImage"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Custom.containerRegistryPassword",
+          "defaultPath": "properties.containerImage.containerRegistryPassword"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Custom.containerRegistryUsername",
+          "defaultPath": "properties.containerImage.containerRegistryUsername"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Custom.image",
+          "defaultPath": "properties.containerImage.image"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Custom.userAssignedIdentity",
+          "defaultPath": "properties.containerImage.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.kind",
+          "defaultPath": "properties.containerImage.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Platform",
+          "defaultPath": "properties.containerImage"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/containerImage.Platform.name",
+          "defaultPath": "properties.containerImage.name"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*]",
+          "defaultPath": "properties.dataLocation[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].mount",
+          "defaultPath": "properties.dataLocation[*].mount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].mount.path",
+          "defaultPath": "properties.dataLocation[*].mount.path"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source",
+          "defaultPath": "properties.dataLocation[*].source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureAISupercomputerStorage",
+          "defaultPath": "properties.dataLocation[*].source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureAISupercomputerStorage.storageContainerName",
+          "defaultPath": "properties.dataLocation[*].source.storageContainerName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureBlobStorage",
+          "defaultPath": "properties.dataLocation[*].source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureBlobStorage.accountResourceId",
+          "defaultPath": "properties.dataLocation[*].source.accountResourceId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureBlobStorage.authenticationType",
+          "defaultPath": "properties.dataLocation[*].source.authenticationType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureBlobStorage.blobEndpoint",
+          "defaultPath": "properties.dataLocation[*].source.blobEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureBlobStorage.userAssignedIdentity",
+          "defaultPath": "properties.dataLocation[*].source.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage",
+          "defaultPath": "properties.dataLocation[*].source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage.accountKey",
+          "defaultPath": "properties.dataLocation[*].source.accountKey"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage.accountResourceId",
+          "defaultPath": "properties.dataLocation[*].source.accountResourceId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage.authenticationType",
+          "defaultPath": "properties.dataLocation[*].source.authenticationType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage.fileEndpoint",
+          "defaultPath": "properties.dataLocation[*].source.fileEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage.storageAccount",
+          "defaultPath": "properties.dataLocation[*].source.storageAccount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.AzureFileStorage.userAssignedIdentity",
+          "defaultPath": "properties.dataLocation[*].source.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].source.kind",
+          "defaultPath": "properties.dataLocation[*].source.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/dataLocation[*].storageCacheContainerName",
+          "defaultPath": "properties.dataLocation[*].storageCacheContainerName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/environmentVariables",
+          "defaultPath": "properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/grafanaEndpoint",
+          "defaultPath": "properties.grafanaEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/groupPolicyName",
+          "defaultPath": "properties.groupPolicyName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/jobId",
+          "defaultPath": "properties.jobId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/jobLogsEndpoint",
+          "defaultPath": "properties.jobLogsEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/maxJobExecutionTime",
+          "defaultPath": "properties.maxJobExecutionTime"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/notebookEndpoint",
+          "defaultPath": "properties.notebookEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation",
+          "defaultPath": "properties.outputLocation"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.mount",
+          "defaultPath": "properties.outputLocation.mount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.mount.path",
+          "defaultPath": "properties.outputLocation.mount.path"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source",
+          "defaultPath": "properties.outputLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureAISupercomputerStorage",
+          "defaultPath": "properties.outputLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureAISupercomputerStorage.storageContainerName",
+          "defaultPath": "properties.outputLocation.source.storageContainerName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureBlobStorage",
+          "defaultPath": "properties.outputLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureBlobStorage.accountResourceId",
+          "defaultPath": "properties.outputLocation.source.accountResourceId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureBlobStorage.authenticationType",
+          "defaultPath": "properties.outputLocation.source.authenticationType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureBlobStorage.blobEndpoint",
+          "defaultPath": "properties.outputLocation.source.blobEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureBlobStorage.userAssignedIdentity",
+          "defaultPath": "properties.outputLocation.source.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage",
+          "defaultPath": "properties.outputLocation.source"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage.accountKey",
+          "defaultPath": "properties.outputLocation.source.accountKey"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage.accountResourceId",
+          "defaultPath": "properties.outputLocation.source.accountResourceId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage.authenticationType",
+          "defaultPath": "properties.outputLocation.source.authenticationType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage.fileEndpoint",
+          "defaultPath": "properties.outputLocation.source.fileEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage.storageAccount",
+          "defaultPath": "properties.outputLocation.source.storageAccount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.AzureFileStorage.userAssignedIdentity",
+          "defaultPath": "properties.outputLocation.source.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.source.kind",
+          "defaultPath": "properties.outputLocation.source.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/outputLocation.storageCacheContainerName",
+          "defaultPath": "properties.outputLocation.storageCacheContainerName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies",
+          "defaultPath": "properties.placementPolicies"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*]",
+          "defaultPath": "properties.placementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*]",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].instanceType",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].instanceType"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.autoScaleIntervalInSecondsHint",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.autoScaleIntervalInSecondsHint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.currentInstanceTypeCount",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.currentInstanceTypeCount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.instanceTypeCountSet",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.instanceTypeCountSet"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.instanceTypeCountSet[*]",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.instanceTypeCountSet[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.maxInstanceTypeCount",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.maxInstanceTypeCount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.minInstanceTypeCount",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.minInstanceTypeCount"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*]",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate.end",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate.end"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate.start",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate.start"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate.timeZone",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].fixedDate.timeZone"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].name",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].name"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*]",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*]"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.metricName",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.metricName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.operator",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.operator"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.statistic",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.statistic"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.threshold",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.threshold"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.timeAggregation",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.timeAggregation"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.timeGrain",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.timeGrain"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.timeWindow",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].metricTrigger.timeWindow"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.cooldown",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.cooldown"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.direction",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.direction"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.type",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.type"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.value",
+          "defaultPath": "properties.placementPolicies[*].instanceTypes[*].scalePolicy.profiles[*].rules[*].scaleAction.value"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/placementPolicies[*].location",
+          "defaultPath": "properties.placementPolicies[*].location"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/program",
+          "defaultPath": "properties.program"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/programArgs",
+          "defaultPath": "properties.programArgs"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/schedulingPriority",
+          "defaultPath": "properties.schedulingPriority"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/slaTier",
+          "defaultPath": "properties.slaTier"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/statusDetails",
+          "defaultPath": "properties.statusDetails"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/suspendOnIdleTime",
+          "defaultPath": "properties.suspendOnIdleTime"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/tensorBoardEndpoint",
+          "defaultPath": "properties.tensorBoardEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/jobs/tensorBoardLogDirectory",
+          "defaultPath": "properties.tensorBoardLogDirectory"
+        }
+      ],
+      "resourceType": "accounts/jobs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/ADLS.clientId",
+          "defaultPath": "properties.clientId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/ADLS.clientSecret",
+          "defaultPath": "properties.clientSecret"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/ADLS.mountOptions",
+          "defaultPath": "properties.mountOptions"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/ADLS.mountOptions.kind",
+          "defaultPath": "properties.mountOptions.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/ADLS.path",
+          "defaultPath": "properties.path"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/ADLS.tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions",
+          "defaultPath": "properties.mountOptions"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.Fuse",
+          "defaultPath": "properties.mountOptions"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.Fuse.maxConcurrency",
+          "defaultPath": "properties.mountOptions.maxConcurrency"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.Fuse.streaming",
+          "defaultPath": "properties.mountOptions.streaming"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.Fuse.streamingBlockSizeMiB",
+          "defaultPath": "properties.mountOptions.streamingBlockSizeMiB"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.Fuse.streamingCacheLimitMiB",
+          "defaultPath": "properties.mountOptions.streamingCacheLimitMiB"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.Fuse.streamingMaxBlocksPerFile",
+          "defaultPath": "properties.mountOptions.streamingMaxBlocksPerFile"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.mountOptions.kind",
+          "defaultPath": "properties.mountOptions.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.storageTarget",
+          "defaultPath": "properties.storageTarget"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.storageTarget.blobName",
+          "defaultPath": "properties.storageTarget.blobName"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.storageTarget.containerEndpoint",
+          "defaultPath": "properties.storageTarget.containerEndpoint"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.storageTarget.sasToken",
+          "defaultPath": "properties.storageTarget.sasToken"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/Blob.storageTarget.userAssignedIdentity",
+          "defaultPath": "properties.storageTarget.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/consumedStorageInGB",
+          "defaultPath": "properties.consumedStorageInGB"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/defaultMountPath",
+          "defaultPath": "properties.defaultMountPath"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/kind",
+          "defaultPath": "properties.kind"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/NFS.capacityInGiB",
+          "defaultPath": "properties.capacityInGiB"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/region",
+          "defaultPath": "properties.region"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/sizeInGB",
+          "defaultPath": "properties.sizeInGB"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/statusDetails",
+          "defaultPath": "properties.statusDetails"
+        },
+        {
+          "name": "Microsoft.Singularity/accounts/storagecontainers/tier",
+          "defaultPath": "properties.tier"
+        }
+      ],
+      "resourceType": "accounts/storageContainers"
+    }
+  ]
+}

@@ -1,0 +1,1133 @@
+{
+  "namespace": "Microsoft.Network",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "applicationGatewayAvailableRequestHeaders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationGatewayAvailableResponseHeaders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationGatewayAvailableServerVariables"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationGatewayAvailableSslOptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationGatewayAvailableWafRuleSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applicationGateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "applicationGateways/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applicationGatewayWebApplicationFirewallPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applicationSecurityGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assist"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "authenticationPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "authorizationPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "azureFirewallFqdnTags"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "azureFirewalls"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "azureserviceconnectioncontrollers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "azureWebCategories"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bastionHosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "bgpServiceCommunities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkFrontdoorNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkTrafficManagerNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkTrafficManagerNameAvailabilityV2"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "cloudServiceNetworkInterfaces"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "cloudServicePublicIPAddresses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "cloudServiceSlots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "copilot"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "customIpPrefixes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ddosCustomPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ddosProtectionPlans"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsForwardingRulesets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnsForwardingRulesets/forwardingRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnsForwardingRulesets/virtualNetworkLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnsOperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolverDomainLists"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnsResolverDomainLists/bulk"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolverPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolverPolicies/dnsSecurityRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolverPolicies/virtualNetworkLinks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolvers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolvers/inboundEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnsResolvers/outboundEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dnszones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/A"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/AAAA"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/all"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/CAA"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/CNAME"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/dnssecConfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/DS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/MX"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/NAPTR"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/NS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/PTR"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/recordsets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/SOA"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/SRV"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/TLSA"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dnszones/TXT"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dscpConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "expressRouteCircuits"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "expressRouteCircuits/authorizations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "expressRouteCircuits/peerings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "expressRouteCircuits/peerings/connections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "expressRouteCrossConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "expressRouteCrossConnections/peerings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "expressRouteGateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "expressRouteGateways/expressRouteConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "expressRouteLags"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "expressRoutePorts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "expressRoutePorts/authorizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "expressRoutePortsLocations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "expressRouteProviderPorts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "expressRouteServiceProviders"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "firewallPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "firewallPolicies/ruleCollectionGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "firewallPolicies/ruleGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "firstPartyServiceTags"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "frontdoorOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "frontdoors"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "frontDoors/backendPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "frontdoors/frontendEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "frontdoors/frontendEndpoints/customHttpsConfiguration"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "frontDoors/rulesEngines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "frontdoorWebApplicationFirewallManagedRuleSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "frontdoorWebApplicationFirewallPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "gatewayLoadBalancerAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getDnsResourceReference"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "interconnectGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "internalNotify"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "internalPublicIpAddresses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ipAllocations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ipGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "loadBalancers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "loadBalancers/backendAddressPools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "loadBalancers/inboundNatRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "localNetworkGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ApplicationGatewayWafDynamicManifests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/autoApprovedPrivateLinkServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availableDelegations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availablePrivateEndpointTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availableServiceAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/bareMetalTenants"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/batchNotifyPrivateEndpointsForResourceMove"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/batchValidatePrivateEndpointsForResourceMove"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkAcceleratedNetworkingSupport"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/CheckDnsNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkPrivateLinkServiceVisibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/commitInternalAzureNetworkManagerConfiguration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dataTasks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletePacketTagging"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dnsResolverOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dnsResolverOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dnsResolverPolicyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dnsResolverPolicyOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/effectiveResourceOwnership"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getAzureNetworkManagerConfiguration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getPacketTagging"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/internalAzureVirtualNetworkManagerOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ipamPoolOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/networkSecurityPerimeterOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/neuroShieldOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/nfvOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/nfvOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/nspServiceTags"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/perimeterAssociableResourceTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateLinkServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/publicIpAddresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/publishResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/queryNetworkSecurityPerimeter"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/rnmEffectiveNetworkSecurityGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/rnmEffectiveRouteTable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serviceTagDetails"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serviceTags"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/setAzureNetworkManagerConfiguration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/setLoadBalancerFrontendPublicIpAddresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/setResourceOwnership"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/startPacketTagging"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/supportedVirtualMachineSizes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateResourceOwnership"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/verifierWorkspaceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualNetworkAvailableEndpointServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualNetworks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "natGateways"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkExperimentProfiles"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkExperimentProfiles/experiments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "networkGroupMemberships"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkIntentPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkInterfaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkInterfaces/tapConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "networkManagerConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkManagers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/connectivityConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkManagers/ipamPools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkmanagers/ipampools/staticcidrs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/networkGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/networkGroups/staticMembers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/routingConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/routingConfigurations/ruleCollections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/routingConfigurations/ruleCollections/rules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/scopeConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/securityAdminConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/securityAdminConfigurations/ruleCollections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/securityAdminConfigurations/ruleCollections/rules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/securityUserConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/securityUserConfigurations/ruleCollections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/securityUserConfigurations/ruleCollections/rules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkManagers/verifierWorkspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/verifierWorkspaces/reachabilityAnalysisIntents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkManagers/verifierWorkspaces/reachabilityAnalysisRuns"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkSecurityGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkSecurityGroups/securityRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkSecurityPerimeters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkSecurityPerimeters/links"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkSecurityPerimeters/loggingConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkSecurityPerimeters/profiles"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkSecurityPerimeters/profiles/accessRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkSecurityPerimeters/resourceAssociations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkVirtualAppliances"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkVirtualAppliances/networkVirtualApplianceConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkVirtualApplianceSkus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers/agents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers/connectionAnalyzers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers/connectionMonitors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers/flowLogs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers/lenses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "networkWatchers/packetCaptures"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkWatchers/pingMeshes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "neuroShields"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "p2sVpnGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsOperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateDnsZones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/A"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/AAAA"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/all"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/CNAME"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/MX"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/PTR"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/SOA"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/SRV"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZones/TXT"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateDnsZones/virtualNetworkLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateDnsZonesInternal"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateEndpointRedirectMaps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateEndpoints"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "privateEndpoints/privateDnsZoneGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateEndpoints/privateLinkServiceProxies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "privateLinkServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privatetrafficmanagerprofiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privatetrafficmanagerprofiles/endpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privatetrafficmanagerprofiles/healthPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privatetrafficmanagerprofiles/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privatetrafficmanagerprofiles/probingGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privatetrafficmanagerprofiles/validateLink"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privatetrafficmanagerprofilesoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "probinggatewayoperations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "probinggateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "probinggateways/topologyreferences"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publicIPAddresses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publicIPPrefixes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "queryExpressRoutePortsBandwidth"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "routeFilters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "routeFilters/routeFilterRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "routeTables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "routeTables/routes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "securityPartnerProviders"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "serviceEndpointPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "serviceEndpointPolicies/serviceEndpointPolicyDefinitions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "serviceGateways"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "topologymaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "topologymaps/sites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "topologymapsoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficManagerGeographicHierarchies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "trafficmanagerprofiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficmanagerprofiles/azureendpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficmanagerprofiles/externalendpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficmanagerprofiles/heatMaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficmanagerprofiles/nestedendpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficmanagerprofiles/validateLink"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "trafficManagerUserMetricsKeys"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualHubs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/bgpConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/connectionPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/hubRouteTables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/hubVirtualNetworkConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/ipConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/routeMaps"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/routeTables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualHubs/routingIntent"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualNetworkAppliances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualNetworkGateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualNetworkGateways/natRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/listDnsForwardingRulesets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/listDnsResolverPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/listDnsResolvers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/listNetworkManagerEffectiveConnectivityConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/listNetworkManagerEffectiveSecurityAdminRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/moveIpConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/privateDnsZoneLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualNetworks/subnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualNetworks/taggedTrafficConsumers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualNetworks/virtualNetworkPeerings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualNetworkTaps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualRouters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualRouters/peerings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualWans"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vpnGateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vpnGateways/natRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vpnGateways/vpnConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vpnServerConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vpnServerConfigurations/configurationPolicyGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vpnSites"
+    }
+  ]
+}

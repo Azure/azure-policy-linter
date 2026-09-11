@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.AppComplianceAutomation",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getCollectionCount"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getOverviewStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listInUseStorageAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "onboard"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports/evidences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports/scopingConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports/snapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports/snapshots/controls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reports/webhooks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "triggerEvaluation"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.Communication",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "CheckNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "CommunicationServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "CommunicationServices/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "CommunicationServices/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "CommunicationServices/SmtpUsernames"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EmailServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EmailServices/Domains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EmailServices/Domains/SenderUsernames"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EmailServices/Domains/SuppressionLists"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EmailServices/Domains/SuppressionLists/SuppressionListAddresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/Usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

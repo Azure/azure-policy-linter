@@ -1,0 +1,66 @@
+{
+  "namespace": "Microsoft.HealthBot",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthBot/healthBots/accessControlMethod",
+          "defaultPath": "properties.accessControlMethod"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/botManagementPortalLink",
+          "defaultPath": "properties.botManagementPortalLink"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/keyVaultProperties",
+          "defaultPath": "properties.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/keyVaultProperties.keyName",
+          "defaultPath": "properties.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/keyVaultProperties.keyVersion",
+          "defaultPath": "properties.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/keyVaultProperties.userIdentity",
+          "defaultPath": "properties.keyVaultProperties.userIdentity"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.HealthBot/healthBots/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "healthBots"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "namespace": "Microsoft.CertificateRegistration",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/appServiceCertificateNotRenewableReasons",
+          "defaultPath": "properties.appServiceCertificateNotRenewableReasons"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/appServiceCertificateNotRenewableReasons[*]",
+          "defaultPath": "properties.appServiceCertificateNotRenewableReasons[*]"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/autoRenew",
+          "defaultPath": "properties.autoRenew"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/certificates",
+          "defaultPath": "properties.certificates"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/contact",
+          "defaultPath": "properties.contact"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/contact.email",
+          "defaultPath": "properties.contact.email"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/contact.nameFirst",
+          "defaultPath": "properties.contact.nameFirst"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/contact.nameLast",
+          "defaultPath": "properties.contact.nameLast"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/contact.phone",
+          "defaultPath": "properties.contact.phone"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/csr",
+          "defaultPath": "properties.csr"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/distinguishedName",
+          "defaultPath": "properties.distinguishedName"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/domainVerificationToken",
+          "defaultPath": "properties.domainVerificationToken"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/expirationTime",
+          "defaultPath": "properties.expirationTime"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate",
+          "defaultPath": "properties.intermediate"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.issuer",
+          "defaultPath": "properties.intermediate.issuer"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.notAfter",
+          "defaultPath": "properties.intermediate.notAfter"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.notBefore",
+          "defaultPath": "properties.intermediate.notBefore"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.rawData",
+          "defaultPath": "properties.intermediate.rawData"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.serialNumber",
+          "defaultPath": "properties.intermediate.serialNumber"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.signatureAlgorithm",
+          "defaultPath": "properties.intermediate.signatureAlgorithm"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.subject",
+          "defaultPath": "properties.intermediate.subject"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.thumbprint",
+          "defaultPath": "properties.intermediate.thumbprint"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/intermediate.version",
+          "defaultPath": "properties.intermediate.version"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/isPrivateKeyExternal",
+          "defaultPath": "properties.isPrivateKeyExternal"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/keySize",
+          "defaultPath": "properties.keySize"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/lastCertificateIssuanceTime",
+          "defaultPath": "properties.lastCertificateIssuanceTime"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/nextAutoRenewalTimeStamp",
+          "defaultPath": "properties.nextAutoRenewalTimeStamp"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/productType",
+          "defaultPath": "properties.productType"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root",
+          "defaultPath": "properties.root"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.issuer",
+          "defaultPath": "properties.root.issuer"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.notAfter",
+          "defaultPath": "properties.root.notAfter"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.notBefore",
+          "defaultPath": "properties.root.notBefore"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.rawData",
+          "defaultPath": "properties.root.rawData"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.serialNumber",
+          "defaultPath": "properties.root.serialNumber"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.signatureAlgorithm",
+          "defaultPath": "properties.root.signatureAlgorithm"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.subject",
+          "defaultPath": "properties.root.subject"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.thumbprint",
+          "defaultPath": "properties.root.thumbprint"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/root.version",
+          "defaultPath": "properties.root.version"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate",
+          "defaultPath": "properties.signedCertificate"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.issuer",
+          "defaultPath": "properties.signedCertificate.issuer"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.notAfter",
+          "defaultPath": "properties.signedCertificate.notAfter"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.notBefore",
+          "defaultPath": "properties.signedCertificate.notBefore"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.rawData",
+          "defaultPath": "properties.signedCertificate.rawData"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.serialNumber",
+          "defaultPath": "properties.signedCertificate.serialNumber"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.signatureAlgorithm",
+          "defaultPath": "properties.signedCertificate.signatureAlgorithm"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.subject",
+          "defaultPath": "properties.signedCertificate.subject"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.thumbprint",
+          "defaultPath": "properties.signedCertificate.thumbprint"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/signedCertificate.version",
+          "defaultPath": "properties.signedCertificate.version"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/validityInYears",
+          "defaultPath": "properties.validityInYears"
+        }
+      ],
+      "resourceType": "certificateOrders"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/certificates/keyVaultId",
+          "defaultPath": "properties.keyVaultId"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/certificates/keyVaultSecretName",
+          "defaultPath": "properties.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.CertificateRegistration/certificateOrders/certificates/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "certificateOrders/certificates"
+    }
+  ]
+}

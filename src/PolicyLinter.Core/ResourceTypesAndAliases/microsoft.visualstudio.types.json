@@ -1,0 +1,25 @@
+{
+  "namespace": "microsoft.visualstudio",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "account"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "account/extension"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "account/project"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

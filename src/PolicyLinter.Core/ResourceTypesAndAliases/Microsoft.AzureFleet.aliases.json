@@ -1,0 +1,322 @@
+{
+  "namespace": "Microsoft.AzureFleet",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile",
+          "defaultPath": "properties.computeProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.applicationProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.applicationProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.applicationProfile.galleryApplications",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.applicationProfile.galleryApplications"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.applicationProfile.galleryApplications[*]",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.applicationProfile.galleryApplications[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.capacityReservation",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.capacityReservation"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.capacityReservation.capacityReservationGroup",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.capacityReservation.capacityReservationGroup"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.diagnosticsProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.diagnosticsProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.diagnosticsProfile.bootDiagnostics",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.diagnosticsProfile.bootDiagnostics"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.extensionProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.extensionProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.extensionProfile.extensions",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.extensionProfile.extensions"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.extensionProfile.extensions[*]",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.extensionProfile.extensions[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.extensionProfile.extensionsTimeBudget",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.extensionProfile.extensionsTimeBudget"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.hardwareProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.hardwareProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.hardwareProfile.vmSizeProperties",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.hardwareProfile.vmSizeProperties"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.licenseType",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.licenseType"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.networkProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.networkProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.networkProfile.healthProbe",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.networkProfile.healthProbe"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.networkProfile.networkApiVersion",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.networkProfile.networkApiVersion"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.networkProfile.networkInterfaceConfigurations",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.networkProfile.networkInterfaceConfigurations"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.networkProfile.networkInterfaceConfigurations[*]",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.networkProfile.networkInterfaceConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.adminPassword",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.adminPassword"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.adminUsername",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.allowExtensionOperations",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.allowExtensionOperations"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.computerNamePrefix",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.computerNamePrefix"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.customData",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.customData"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.linuxConfiguration",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.linuxConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.requireGuestProvisionSignal",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.requireGuestProvisionSignal"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.secrets",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.secrets"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.secrets[*]",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.secrets[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.osProfile.windowsConfiguration",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.osProfile.windowsConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.scheduledEventsProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.scheduledEventsProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.scheduledEventsProfile.osImageNotificationProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.scheduledEventsProfile.osImageNotificationProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.scheduledEventsProfile.terminateNotificationProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.scheduledEventsProfile.terminateNotificationProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityPostureReference",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityPostureReference"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityPostureReference.excludeExtensions",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityPostureReference.excludeExtensions"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityPostureReference.excludeExtensions[*]",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityPostureReference.excludeExtensions[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityPostureReference.id",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityPostureReference.id"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityPostureReference.isOverridable",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityPostureReference.isOverridable"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityProfile.encryptionAtHost",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityProfile.encryptionAtHost"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityProfile.encryptionIdentity",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityProfile.encryptionIdentity"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityProfile.proxyAgentSettings",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityProfile.proxyAgentSettings"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityProfile.securityType",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityProfile.securityType"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.securityProfile.uefiSettings",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.securityProfile.uefiSettings"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.serviceArtifactReference",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.serviceArtifactReference"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.serviceArtifactReference.id",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.serviceArtifactReference.id"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.storageProfile",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.storageProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.storageProfile.dataDisks",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.storageProfile.dataDisks"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.storageProfile.dataDisks[*]",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.storageProfile.dataDisks[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.storageProfile.diskControllerType",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.storageProfile.diskControllerType"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.storageProfile.imageReference",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.storageProfile.imageReference"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.storageProfile.osDisk",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.storageProfile.osDisk"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.timeCreated",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.timeCreated"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.baseVirtualMachineProfile.userData",
+          "defaultPath": "properties.computeProfile.baseVirtualMachineProfile.userData"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.computeApiVersion",
+          "defaultPath": "properties.computeProfile.computeApiVersion"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/computeProfile.platformFaultDomainCount",
+          "defaultPath": "properties.computeProfile.platformFaultDomainCount"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/regularPriorityProfile",
+          "defaultPath": "properties.regularPriorityProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/regularPriorityProfile.allocationStrategy",
+          "defaultPath": "properties.regularPriorityProfile.allocationStrategy"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/regularPriorityProfile.capacity",
+          "defaultPath": "properties.regularPriorityProfile.capacity"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/regularPriorityProfile.minCapacity",
+          "defaultPath": "properties.regularPriorityProfile.minCapacity"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile",
+          "defaultPath": "properties.spotPriorityProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile.allocationStrategy",
+          "defaultPath": "properties.spotPriorityProfile.allocationStrategy"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile.capacity",
+          "defaultPath": "properties.spotPriorityProfile.capacity"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile.evictionPolicy",
+          "defaultPath": "properties.spotPriorityProfile.evictionPolicy"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile.maintain",
+          "defaultPath": "properties.spotPriorityProfile.maintain"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile.maxPricePerVM",
+          "defaultPath": "properties.spotPriorityProfile.maxPricePerVM"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/spotPriorityProfile.minCapacity",
+          "defaultPath": "properties.spotPriorityProfile.minCapacity"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/timeCreated",
+          "defaultPath": "properties.timeCreated"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/uniqueId",
+          "defaultPath": "properties.uniqueId"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/vmSizesProfile",
+          "defaultPath": "properties.vmSizesProfile"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/vmSizesProfile[*]",
+          "defaultPath": "properties.vmSizesProfile[*]"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/vmSizesProfile[*].name",
+          "defaultPath": "properties.vmSizesProfile[*].name"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/vmSizesProfile[*].rank",
+          "defaultPath": "properties.vmSizesProfile[*].rank"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.AzureFleet/fleets/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "fleets"
+    }
+  ]
+}

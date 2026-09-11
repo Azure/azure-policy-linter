@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.ZeroTrustSegmentation",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ztsOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "segmentationManagers"
+    }
+  ]
+}

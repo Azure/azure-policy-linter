@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.Help",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "diagnostics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "discoverSolutions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "discoverySolutions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "monitorInsights"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "plugins"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "SelfHelp"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "simplifiedSolutions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "smartDiagnostics"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "solutions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "troubleshooters"
+    }
+  ]
+}

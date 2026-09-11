@@ -1,0 +1,97 @@
+{
+  "namespace": "Microsoft.DevTestLab",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/artifactSources"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/costs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/customImages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labs/environments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/formulas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/notificationChannels"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/policySets/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/schedules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labs/serviceRunners"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users/disks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users/environments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users/secrets"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users/serviceFabrics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users/serviceFabrics/schedules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labs/virtualMachines"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/virtualMachines/schedules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/virtualNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "schedules"
+    }
+  ]
+}

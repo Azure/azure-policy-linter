@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.AzureArcData",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "DataControllers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "DataControllers/ActiveDirectoryConnectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "PostgresInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlManagedInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "SqlManagedInstances/FailoverGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlServerEsuLicenses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlServerInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlServerInstances/AvailabilityGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlServerInstances/Databases"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlServerLicenses"
+    }
+  ]
+}

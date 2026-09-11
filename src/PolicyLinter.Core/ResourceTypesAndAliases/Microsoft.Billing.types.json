@@ -1,0 +1,893 @@
+{
+  "namespace": "Microsoft.Billing",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/addresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/addresses/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/agreements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/alertPreferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/appliedReservationOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/associatedBillingAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/associatedTenants"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/availableBalance"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/availableOffers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/alertPreferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/availableBalance"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/billingRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/chargeRevisions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/createBillingRoleAssignment"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/billingRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/customers/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/enrollmentAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/departments/enrollmentAccounts/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/editPurchaseOrderNumbers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/enrollmentAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/enrollmentAccounts/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/enrollmentAccounts/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/enrollmentAccounts/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/fetchTransactionProducts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/fetchTransactionPurchaseOrderNumbers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/fetchTransactionTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/instructions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoices/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoices/pricesheet"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoices/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/billingRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/createBillingRoleAssignment"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/initiateTransfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/products/transfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/products/updateAutoRenew"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/transfers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoiceSections/validateDeleteInvoiceSectionEligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/invoicingPreferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/notificationContacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/BillingProfiles/patchOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/paymentMethodLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/paymentMethods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/pricesheet"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/pricesheetDownloadOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/purchaseOrderInvoices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/purchaseOrderMappingRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/purchaseOrderMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/purchaseOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/purchaseOrderTransactionExports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/purchaseOrderTransactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/reevaluatePurchaseOrderMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/reservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/validateDeleteBillingProfileEligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/validateDetachPaymentMethodEligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfiles/validatePurchaseOrderMapping"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingProfilesSummaries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptionAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptions/elevateRole"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptions/invoices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptions/invoices/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptions/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/billingSubscriptions/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/createBillingRoleAssignment"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/createInvoiceSectionOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customerAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/createBillingRoleAssignment"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/initiateTransfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/transfers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/customers/transferSupportedAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/enrollmentAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/departments/enrollmentAccounts/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/editPurchaseOrderNumbers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts/activationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts/billingPeriods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts/billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts/billingRoleAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts/billingRoleDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/enrollmentAccounts/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/fetchTransactionProducts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/fetchTransactionPurchaseOrderNumbers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/fetchTransactionTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/incentiveSchedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/incentiveSchedules/milestones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoices/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoices/summary"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoices/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoices/transactionSummary"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/billingSubscriptionMoveOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/billingSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/billingSubscriptions/transfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/elevate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/initiateTransfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/patchOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/productMoveOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/products/transfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/products/updateAutoRenew"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/productTransfersResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoiceSections/transfers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/invoicingPreferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/licensePurchases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/licenseReservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/lineOfCredit"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/listInvoiceSectionsWithCreateSubscriptionPermission"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/listProductRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/migrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/notificationContacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/partnerChangeRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/partnerOrganizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/patchOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/payableOverage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/paymentMethodLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/paymentMethods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/paymentMethods/fetchUnsettledCharges"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/paymentMethods/settleCharges"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/payNow"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/permissionRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/previewAgreements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/promotionalCredits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrderInvoices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrderMappingRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrderMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrderOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrderTransactionExports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/purchaseOrderTransactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/reevaluatePurchaseOrderMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/reservationOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/reservationOrders/reservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/reservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/savingsPlanOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/savingsPlanOrders/savingsPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/savingsPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/signAgreement"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/transactions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingAccounts/validatePurchaseOrderMapping"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "billingPeriods"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "billingPermissions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingProperty"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingRequests"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "billingRoleAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "billingRoleDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "createBillingRoleAssignment"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "departments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "enrollmentAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "invoices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "paymentMethods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "permissionRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "promotionalCredits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "promotionalCredits/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "promotions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "promotions/checkeligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transfers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transfers/acceptTransfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transfers/declineTransfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transfers/operationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transfers/validateTransfer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateAddress"
+    }
+  ]
+}

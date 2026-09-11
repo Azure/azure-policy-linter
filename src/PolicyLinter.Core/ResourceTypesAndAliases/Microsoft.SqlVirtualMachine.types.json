@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.SqlVirtualMachine",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/availabilityGroupListenerOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/registerSqlVmCandidate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/sqlVirtualMachineGroupOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/sqlVirtualMachineOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlVirtualMachineGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "SqlVirtualMachineGroups/AvailabilityGroupListeners"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlVirtualMachines"
+    }
+  ]
+}

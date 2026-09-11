@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Orbital",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "geoCatalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "geoCatalogs/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "geoCatalogs/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "namespace": "Microsoft.DevCenter",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkScopedNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "devcenters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/attachednetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/catalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/catalogs/devboxdefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/catalogs/environmentDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/catalogs/imagedefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/catalogs/imagedefinitions/builds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/catalogs/tasks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "devcenters/devboxdefinitions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "devcenters/encryptionsets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/environmentTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/galleries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/galleries/images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/galleries/images/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "devcenters/projectpolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/usages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkconnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkconnections/healthchecks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkconnections/outboundNetworkDependenciesEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "plans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "plans/members"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/allowedEnvironmentTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/attachednetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/catalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/catalogs/environmentDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/catalogs/imagedefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/catalogs/imagedefinitions/builds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/devboxdefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/environmentTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/images/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/listskus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "projects/pools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "projects/pools/schedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

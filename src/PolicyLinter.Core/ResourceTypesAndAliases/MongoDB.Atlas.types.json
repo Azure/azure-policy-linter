@@ -1,0 +1,37 @@
+{
+  "namespace": "MongoDB.Atlas",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "organizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations/projects/clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

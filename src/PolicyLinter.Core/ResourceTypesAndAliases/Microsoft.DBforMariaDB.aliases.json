@@ -1,0 +1,361 @@
+{
+  "namespace": "Microsoft.DBforMariaDB",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForMariaDB/servers/administratorLogin",
+          "defaultPath": "properties.administratorLogin"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/earliestRestoreDate",
+          "defaultPath": "properties.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/fullyQualifiedDomainName",
+          "defaultPath": "properties.fullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/masterServerId",
+          "defaultPath": "properties.masterServerId"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/minimalTlsVersion",
+          "defaultPath": "properties.minimalTlsVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2018-06-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/replicaCapacity",
+          "defaultPath": "properties.replicaCapacity"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/replicationRole",
+          "defaultPath": "properties.replicationRole"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/sslEnforcement",
+          "defaultPath": "properties.sslEnforcement",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/storageProfile.backupRetentionDays",
+          "defaultPath": "properties.storageProfile.backupRetentionDays"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/storageProfile.geoRedundantBackup",
+          "defaultPath": "properties.storageProfile.geoRedundantBackup"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/storageProfile.storageAutogrow",
+          "defaultPath": "properties.storageProfile.storageAutogrow"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/storageProfile.storageMB",
+          "defaultPath": "properties.storageProfile.storageMB"
+        },
+        {
+          "name": "Microsoft.DBForMariaDB/servers/userVisibleState",
+          "defaultPath": "properties.userVisibleState"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "servers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/configurations/allowedValues",
+          "defaultPath": "properties.allowedValues"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/configurations/dataType",
+          "defaultPath": "properties.dataType"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/configurations/defaultValue",
+          "defaultPath": "properties.defaultValue"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/configurations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/configurations/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/configurations/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "servers/configurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/databases/charset",
+          "defaultPath": "properties.charset"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/databases/collation",
+          "defaultPath": "properties.collation"
+        }
+      ],
+      "resourceType": "servers/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/firewallRules/endIpAddress",
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/firewallRules/startIpAddress",
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "servers/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/keys/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/keys/serverKeyType",
+          "defaultPath": "properties.serverKeyType"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/keys/uri",
+          "defaultPath": "properties.uri"
+        }
+      ],
+      "resourceType": "servers/keys"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "servers/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.disabledAlerts",
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.disabledAlerts[*]",
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.emailAccountAdmins",
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.emailAddresses",
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.emailAddresses[*]",
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/Default.storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/disabledAlerts",
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/disabledAlerts[*]",
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/emailAccountAdmins",
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/emailAddresses",
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/emailAddresses[*]",
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/securityAlertPolicies/storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "servers/securityAlertPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforMariaDB/servers/virtualNetworkRules/ignoreMissingVnetServiceEndpoint",
+          "defaultPath": "properties.ignoreMissingVnetServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/virtualNetworkRules/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforMariaDB/servers/virtualNetworkRules/virtualNetworkSubnetId",
+          "defaultPath": "properties.virtualNetworkSubnetId"
+        }
+      ],
+      "resourceType": "servers/virtualNetworkRules"
+    }
+  ]
+}

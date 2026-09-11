@@ -1,0 +1,68 @@
+{
+  "namespace": "Microsoft.Attestation",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Attestation/attestationProviders/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-10-01",
+                "2018-09-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/tpmAttestationAuthentication",
+          "defaultPath": "properties.tpmAttestationAuthentication"
+        }
+      ],
+      "resourceType": "attestationProviders"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Attestation/attestationProviders/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "attestationProviders/privateEndpointConnections"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "namespace": "microsoft.visualstudio",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate",
+          "defaultPath": "properties.bootstrapPipelineTemplate"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationSource",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationSource"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationSource.applicationConfiguration",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationSource.applicationConfiguration"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationSource.applicationType",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationSource.applicationType"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationSource.sourceType",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationSource.sourceType"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget.resources",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget.resources"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget.resources[*]",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget.resources[*]"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget.resources[*].authorizationReference",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget.resources[*].authorizationReference"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget.resources[*].id",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget.resources[*].id"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget.resources[*].role",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget.resources[*].role"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.applicationTarget.targetType",
+          "defaultPath": "properties.bootstrapPipelineTemplate.applicationTarget.targetType"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/bootstrapPipelineTemplate.authorizationDetails",
+          "defaultPath": "properties.bootstrapPipelineTemplate.authorizationDetails"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/ownerUpn",
+          "defaultPath": "properties.ownerUpn"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations",
+          "defaultPath": "properties.pipelineBootstrapConfigurations"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*]",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].name",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository.authorization",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository.authorization"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository.authorization.authorizationType",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository.authorization.authorizationType"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository.authorization.parameters",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository.authorization.parameters"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository.defaultBranch",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository.defaultBranch"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository.id",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository.id"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].repository.repositoryType",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].repository.repositoryType"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].templateId",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].templateId"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/pipelineBootstrapConfigurations[*].templateParameters",
+          "defaultPath": "properties.pipelineBootstrapConfigurations[*].templateParameters"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/processTemplateId",
+          "defaultPath": "properties.processTemplateId"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/tfsUniqueIdentifier",
+          "defaultPath": "properties.tfsUniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.VisualStudio/account/project/versionControlOption",
+          "defaultPath": "properties.versionControlOption"
+        }
+      ],
+      "resourceType": "account/project"
+    }
+  ]
+}

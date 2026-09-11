@@ -1,0 +1,229 @@
+{
+  "namespace": "Microsoft.DBforPostgreSQL",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "availableEngineVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "flexibleServers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/administrators"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/advancedThreatProtectionSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/configurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/databases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/firewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "flexibleServers/migrations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "flexibleServers/virtualendpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getPrivateDnsZoneSuffix"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/administratorAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/administratorOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/azureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkVirtualNetworkSubnetUsage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getAutoMigrationFreeSlots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getCachedServerName"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getLatestAutoMigrationSchedule"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/performanceTiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionProxyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/privateEndpointConnectionProxyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/recommendedActionSessionsAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/recommendedActionSessionsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/resourceType"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/securityAlertPoliciesAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/securityAlertPoliciesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverKeyAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serverKeyOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updateAutoMigrationSchedule"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "serverGroupsv2"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "serverGroupsv2/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "servers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/administrators"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/advisors"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/configurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/databases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/firewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/keys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/queryTexts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/recoverableServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/resetQueryPerformanceInsightData"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "servers/securityAlertPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/topQueryStatistics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/virtualNetworkRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servers/waitStatistics"
+    }
+  ]
+}

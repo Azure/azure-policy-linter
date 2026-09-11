@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.DataBoxEdge",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "availableSkus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "DataBoxEdgeDevices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/bandwidthSchedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "DataBoxEdgeDevices/checkNameAvailability"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/orders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/roles"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/shares"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/storageAccountCredentials"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/storageAccounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/storageAccounts/containers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/triggers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "dataBoxEdgeDevices/users"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

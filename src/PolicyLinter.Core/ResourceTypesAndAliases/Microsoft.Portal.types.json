@@ -1,0 +1,49 @@
+{
+  "namespace": "Microsoft.Portal",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "consoles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dashboards"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "flags"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listTenantConfigurationViolations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/consoles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/flags"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/userSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenantconfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "userSettings"
+    }
+  ]
+}

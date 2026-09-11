@@ -1,0 +1,785 @@
+{
+  "namespace": "Microsoft.AlertsManagement",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actionGroupId",
+          "defaultPath": "properties.actionGroupId"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions",
+          "defaultPath": "properties.actions"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*]",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].actionType",
+          "defaultPath": "properties.actions[*].actionType"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].AddActionGroups",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].AddActionGroups.actionGroupIds",
+          "defaultPath": "properties.actions[*].actionGroupIds"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].AddActionGroups.actionGroupIds[*]",
+          "defaultPath": "properties.actions[*].actionGroupIds[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts.correlateBy",
+          "defaultPath": "properties.actions[*].correlateBy"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts.correlateBy[*]",
+          "defaultPath": "properties.actions[*].correlateBy[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts.correlateBy[*].field",
+          "defaultPath": "properties.actions[*].correlateBy[*].field"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts.correlationInterval",
+          "defaultPath": "properties.actions[*].correlationInterval"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts.notificationsForCorrelatedAlerts",
+          "defaultPath": "properties.actions[*].notificationsForCorrelatedAlerts"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/actions[*].CorrelateAlerts.priority",
+          "defaultPath": "properties.actions[*].priority"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions",
+          "defaultPath": "properties.conditions"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertContext",
+          "defaultPath": "properties.conditions.alertContext"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertContext.operator",
+          "defaultPath": "properties.conditions.alertContext.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertContext.values",
+          "defaultPath": "properties.conditions.alertContext.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertContext.values[*]",
+          "defaultPath": "properties.conditions.alertContext.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleId",
+          "defaultPath": "properties.conditions.alertRuleId"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleId.operator",
+          "defaultPath": "properties.conditions.alertRuleId.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleId.values",
+          "defaultPath": "properties.conditions.alertRuleId.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleId.values[*]",
+          "defaultPath": "properties.conditions.alertRuleId.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleName",
+          "defaultPath": "properties.conditions.alertRuleName"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleName.operator",
+          "defaultPath": "properties.conditions.alertRuleName.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleName.values",
+          "defaultPath": "properties.conditions.alertRuleName.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.alertRuleName.values[*]",
+          "defaultPath": "properties.conditions.alertRuleName.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.applicationInsightsSearchResults",
+          "defaultPath": "properties.conditions.applicationInsightsSearchResults"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.applicationInsightsSearchResults.operator",
+          "defaultPath": "properties.conditions.applicationInsightsSearchResults.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.applicationInsightsSearchResults.values",
+          "defaultPath": "properties.conditions.applicationInsightsSearchResults.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.applicationInsightsSearchResults.values[*]",
+          "defaultPath": "properties.conditions.applicationInsightsSearchResults.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.description",
+          "defaultPath": "properties.conditions.description"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.description.operator",
+          "defaultPath": "properties.conditions.description.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.description.values",
+          "defaultPath": "properties.conditions.description.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.description.values[*]",
+          "defaultPath": "properties.conditions.description.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.logAnalyticsSearchResults",
+          "defaultPath": "properties.conditions.logAnalyticsSearchResults"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.logAnalyticsSearchResults.operator",
+          "defaultPath": "properties.conditions.logAnalyticsSearchResults.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.logAnalyticsSearchResults.values",
+          "defaultPath": "properties.conditions.logAnalyticsSearchResults.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.logAnalyticsSearchResults.values[*]",
+          "defaultPath": "properties.conditions.logAnalyticsSearchResults.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorCondition",
+          "defaultPath": "properties.conditions.monitorCondition"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorCondition.operator",
+          "defaultPath": "properties.conditions.monitorCondition.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorCondition.values",
+          "defaultPath": "properties.conditions.monitorCondition.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorCondition.values[*]",
+          "defaultPath": "properties.conditions.monitorCondition.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorService",
+          "defaultPath": "properties.conditions.monitorService"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorService.operator",
+          "defaultPath": "properties.conditions.monitorService.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorService.values",
+          "defaultPath": "properties.conditions.monitorService.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.monitorService.values[*]",
+          "defaultPath": "properties.conditions.monitorService.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.severity",
+          "defaultPath": "properties.conditions.severity"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.severity.operator",
+          "defaultPath": "properties.conditions.severity.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.severity.values",
+          "defaultPath": "properties.conditions.severity.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.severity.values[*]",
+          "defaultPath": "properties.conditions.severity.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.signalType",
+          "defaultPath": "properties.conditions.signalType"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.signalType.operator",
+          "defaultPath": "properties.conditions.signalType.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.signalType.values",
+          "defaultPath": "properties.conditions.signalType.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.signalType.values[*]",
+          "defaultPath": "properties.conditions.signalType.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResource",
+          "defaultPath": "properties.conditions.targetResource"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResource.operator",
+          "defaultPath": "properties.conditions.targetResource.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResource.values",
+          "defaultPath": "properties.conditions.targetResource.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResource.values[*]",
+          "defaultPath": "properties.conditions.targetResource.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceGroup",
+          "defaultPath": "properties.conditions.targetResourceGroup"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceGroup.operator",
+          "defaultPath": "properties.conditions.targetResourceGroup.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceGroup.values",
+          "defaultPath": "properties.conditions.targetResourceGroup.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceGroup.values[*]",
+          "defaultPath": "properties.conditions.targetResourceGroup.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceType",
+          "defaultPath": "properties.conditions.targetResourceType"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceType.operator",
+          "defaultPath": "properties.conditions.targetResourceType.operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceType.values",
+          "defaultPath": "properties.conditions.targetResourceType.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions.targetResourceType.values[*]",
+          "defaultPath": "properties.conditions.targetResourceType.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions[*]",
+          "defaultPath": "properties.conditions[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions[*].field",
+          "defaultPath": "properties.conditions[*].field"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions[*].operator",
+          "defaultPath": "properties.conditions[*].operator"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions[*].values",
+          "defaultPath": "properties.conditions[*].values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/conditions[*].values[*]",
+          "defaultPath": "properties.conditions[*].values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/lastModifiedAt",
+          "defaultPath": "properties.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/lastModifiedBy",
+          "defaultPath": "properties.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/resourceGroup",
+          "defaultPath": "properties.resourceGroup"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule",
+          "defaultPath": "properties.schedule"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.effectiveFrom",
+          "defaultPath": "properties.schedule.effectiveFrom"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.effectiveUntil",
+          "defaultPath": "properties.schedule.effectiveUntil"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences",
+          "defaultPath": "properties.schedule.recurrences"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*]",
+          "defaultPath": "properties.schedule.recurrences[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].endTime",
+          "defaultPath": "properties.schedule.recurrences[*].endTime"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].Monthly",
+          "defaultPath": "properties.schedule.recurrences[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].Monthly.daysOfMonth",
+          "defaultPath": "properties.schedule.recurrences[*].daysOfMonth"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].Monthly.daysOfMonth[*]",
+          "defaultPath": "properties.schedule.recurrences[*].daysOfMonth[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].recurrenceType",
+          "defaultPath": "properties.schedule.recurrences[*].recurrenceType"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].startTime",
+          "defaultPath": "properties.schedule.recurrences[*].startTime"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].Weekly",
+          "defaultPath": "properties.schedule.recurrences[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].Weekly.daysOfWeek",
+          "defaultPath": "properties.schedule.recurrences[*].daysOfWeek"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.recurrences[*].Weekly.daysOfWeek[*]",
+          "defaultPath": "properties.schedule.recurrences[*].daysOfWeek[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/schedule.timeZone",
+          "defaultPath": "properties.schedule.timeZone"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scope.scopeType",
+          "defaultPath": "properties.scope.scopeType"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scope.type",
+          "defaultPath": "properties.scope.type"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scope.values",
+          "defaultPath": "properties.scope.values"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scope.values[*]",
+          "defaultPath": "properties.scope.values[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scopes",
+          "defaultPath": "properties.scopes"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/scopes[*]",
+          "defaultPath": "properties.scopes[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig",
+          "defaultPath": "properties.suppressionConfig"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.recurrenceType",
+          "defaultPath": "properties.suppressionConfig.recurrenceType"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule",
+          "defaultPath": "properties.suppressionConfig.schedule"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule.endDate",
+          "defaultPath": "properties.suppressionConfig.schedule.endDate"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule.endTime",
+          "defaultPath": "properties.suppressionConfig.schedule.endTime"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule.recurrenceValues",
+          "defaultPath": "properties.suppressionConfig.schedule.recurrenceValues"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule.recurrenceValues[*]",
+          "defaultPath": "properties.suppressionConfig.schedule.recurrenceValues[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule.startDate",
+          "defaultPath": "properties.suppressionConfig.schedule.startDate"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/suppressionConfig.schedule.startTime",
+          "defaultPath": "properties.suppressionConfig.schedule.startTime"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/actionRules/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "actionRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/clusterName",
+          "defaultPath": "properties.clusterName"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/interval",
+          "defaultPath": "properties.interval"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules",
+          "defaultPath": "properties.rules"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*]",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].actions",
+          "defaultPath": "properties.rules[*].actions"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].actions[*]",
+          "defaultPath": "properties.rules[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].actions[*].actionGroupId",
+          "defaultPath": "properties.rules[*].actions[*].actionGroupId"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].actions[*].actionProperties",
+          "defaultPath": "properties.rules[*].actions[*].actionProperties"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].alert",
+          "defaultPath": "properties.rules[*].alert"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].annotations",
+          "defaultPath": "properties.rules[*].annotations"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].enabled",
+          "defaultPath": "properties.rules[*].enabled"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].expression",
+          "defaultPath": "properties.rules[*].expression"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].for",
+          "defaultPath": "properties.rules[*].for"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].labels",
+          "defaultPath": "properties.rules[*].labels"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].record",
+          "defaultPath": "properties.rules[*].record"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].resolveConfiguration",
+          "defaultPath": "properties.rules[*].resolveConfiguration"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].resolveConfiguration.autoResolved",
+          "defaultPath": "properties.rules[*].resolveConfiguration.autoResolved"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].resolveConfiguration.timeToResolve",
+          "defaultPath": "properties.rules[*].resolveConfiguration.timeToResolve"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/rules[*].severity",
+          "defaultPath": "properties.rules[*].severity"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/scopes",
+          "defaultPath": "properties.scopes"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/prometheusRuleGroups/scopes[*]",
+          "defaultPath": "properties.scopes[*]"
+        }
+      ],
+      "resourceType": "prometheusRuleGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/actionGroups",
+          "defaultPath": "properties.actionGroups"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/actionGroups.customEmailSubject",
+          "defaultPath": "properties.actionGroups.customEmailSubject"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/actionGroups.customWebhookPayload",
+          "defaultPath": "properties.actionGroups.customWebhookPayload"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/actionGroups.groupIds",
+          "defaultPath": "properties.actionGroups.groupIds"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/actionGroups.groupIds[*]",
+          "defaultPath": "properties.actionGroups.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector",
+          "defaultPath": "properties.detector"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.description",
+          "defaultPath": "properties.detector.description"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.id",
+          "defaultPath": "properties.detector.id"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.imagePaths",
+          "defaultPath": "properties.detector.imagePaths"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.imagePaths[*]",
+          "defaultPath": "properties.detector.imagePaths[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.name",
+          "defaultPath": "properties.detector.name"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions",
+          "defaultPath": "properties.detector.parameterDefinitions"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions[*]",
+          "defaultPath": "properties.detector.parameterDefinitions[*]"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions[*].description",
+          "defaultPath": "properties.detector.parameterDefinitions[*].description"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions[*].displayName",
+          "defaultPath": "properties.detector.parameterDefinitions[*].displayName"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions[*].isMandatory",
+          "defaultPath": "properties.detector.parameterDefinitions[*].isMandatory"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions[*].name",
+          "defaultPath": "properties.detector.parameterDefinitions[*].name"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.parameterDefinitions[*].type",
+          "defaultPath": "properties.detector.parameterDefinitions[*].type"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.parameters",
+          "defaultPath": "properties.detector.parameters"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.supportedCadences",
+          "defaultPath": "properties.detector.supportedCadences"
+        },
+        {
+          "name": "microsoft.alertsManagement/smartDetectorAlertRules/detector.supportedCadences[*]",
+          "defaultPath": "properties.detector.supportedCadences[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.supportedResourceTypes",
+          "defaultPath": "properties.detector.supportedResourceTypes"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/detector.supportedResourceTypes[*]",
+          "defaultPath": "properties.detector.supportedResourceTypes[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/frequency",
+          "defaultPath": "properties.frequency"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/scope[*]",
+          "defaultPath": "properties.scope[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/severity",
+          "defaultPath": "properties.severity"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/throttling",
+          "defaultPath": "properties.throttling"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/smartDetectorAlertRules/throttling.duration",
+          "defaultPath": "properties.throttling.duration"
+        }
+      ],
+      "resourceType": "smartDetectorAlertRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/actions",
+          "defaultPath": "properties.actions"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/actions.actionGroups",
+          "defaultPath": "properties.actions.actionGroups"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/actions.actionGroups[*]",
+          "defaultPath": "properties.actions.actionGroups[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/actions.actionGroups[*].actionGroupId",
+          "defaultPath": "properties.actions.actionGroups[*].actionGroupId"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/actions.actionGroups[*].actionProperties",
+          "defaultPath": "properties.actions.actionGroups[*].actionProperties"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/actions.actionGroups[*].webhookProperties",
+          "defaultPath": "properties.actions.actionGroups[*].webhookProperties"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition",
+          "defaultPath": "properties.condition"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf",
+          "defaultPath": "properties.condition.allOf"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*]",
+          "defaultPath": "properties.condition.allOf[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].anyOf",
+          "defaultPath": "properties.condition.allOf[*].anyOf"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].anyOf[*]",
+          "defaultPath": "properties.condition.allOf[*].anyOf[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].anyOf[*].containsAny",
+          "defaultPath": "properties.condition.allOf[*].anyOf[*].containsAny"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].anyOf[*].containsAny[*]",
+          "defaultPath": "properties.condition.allOf[*].anyOf[*].containsAny[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].anyOf[*].equals",
+          "defaultPath": "properties.condition.allOf[*].anyOf[*].equals"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].anyOf[*].field",
+          "defaultPath": "properties.condition.allOf[*].anyOf[*].field"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].containsAny",
+          "defaultPath": "properties.condition.allOf[*].containsAny"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].containsAny[*]",
+          "defaultPath": "properties.condition.allOf[*].containsAny[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].equals",
+          "defaultPath": "properties.condition.allOf[*].equals"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/condition.allOf[*].field",
+          "defaultPath": "properties.condition.allOf[*].field"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/scopes",
+          "defaultPath": "properties.scopes"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/scopes[*]",
+          "defaultPath": "properties.scopes[*]"
+        },
+        {
+          "name": "Microsoft.AlertsManagement/tenantActivityLogAlerts/tenantScope",
+          "defaultPath": "properties.tenantScope"
+        }
+      ],
+      "resourceType": "tenantActivityLogAlerts"
+    }
+  ]
+}

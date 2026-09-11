@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.ResourceHealth",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "availabilityStatuses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "childAvailabilityStatuses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "childResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "emergingissues"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "events"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "impactedResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "metadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

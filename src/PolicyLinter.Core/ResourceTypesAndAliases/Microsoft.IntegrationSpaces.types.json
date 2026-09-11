@@ -1,0 +1,41 @@
+{
+  "namespace": "Microsoft.IntegrationSpaces",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "spaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "spaces/Applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "spaces/applications/businessprocesses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "spaces/applications/businessprocesses/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "spaces/applications/resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Spaces/InfrastructureResources"
+    }
+  ]
+}

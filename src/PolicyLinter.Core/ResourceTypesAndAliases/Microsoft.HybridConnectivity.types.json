@@ -1,0 +1,41 @@
+{
+  "namespace": "Microsoft.HybridConnectivity",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "endpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateAwsTemplate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateGcpTemplate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publicCloudConnectors"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "solutionConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "solutionTypes"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.StandbyPool",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "standbyContainerGroupPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "standbyContainerGroupPools/runtimeViews"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "standbyVirtualMachinePools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "standbyVirtualMachinePools/runtimeViews"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "standbyVirtualMachinePools/standbyVirtualMachines"
+    }
+  ]
+}

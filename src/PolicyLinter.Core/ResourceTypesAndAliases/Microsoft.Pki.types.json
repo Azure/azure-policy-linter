@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.Pki",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "pkis"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "pkis/certificateAuthorities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "pkis/enrollmentPolicies"
+    }
+  ]
+}

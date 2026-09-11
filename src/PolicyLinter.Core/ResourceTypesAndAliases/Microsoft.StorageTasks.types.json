@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.StorageTasks",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/asyncoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/previewActions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageTasks"
+    }
+  ]
+}

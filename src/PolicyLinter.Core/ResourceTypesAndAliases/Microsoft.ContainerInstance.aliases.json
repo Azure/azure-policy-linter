@@ -1,0 +1,1860 @@
+{
+  "namespace": "Microsoft.ContainerInstance",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/confidentialComputeProperties",
+          "defaultPath": "properties.confidentialComputeProperties"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/confidentialComputeProperties.ccePolicy",
+          "defaultPath": "properties.confidentialComputeProperties.ccePolicy"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers",
+          "defaultPath": "properties.containers"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*]",
+          "defaultPath": "properties.containers[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].command",
+          "defaultPath": "properties.containers[*].properties.command"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].command[*]",
+          "defaultPath": "properties.containers[*].properties.command[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].configMap",
+          "defaultPath": "properties.containers[*].properties.configMap"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].configMap.keyValuePairs",
+          "defaultPath": "properties.containers[*].properties.configMap.keyValuePairs"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].environmentVariables",
+          "defaultPath": "properties.containers[*].properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].environmentVariables[*]",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].environmentVariables[*].name",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].environmentVariables[*].secureValue",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].secureValue"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].environmentVariables[*].secureValueReference",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].secureValueReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].environmentVariables[*].value",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].image",
+          "defaultPath": "properties.containers[*].properties.image"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].instanceView",
+          "defaultPath": "properties.containers[*].properties.instanceView"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].instanceView.currentState",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].instanceView.events",
+          "defaultPath": "properties.containers[*].properties.instanceView.events"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].instanceView.events[*]",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].instanceView.previousState",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].instanceView.restartCount",
+          "defaultPath": "properties.containers[*].properties.instanceView.restartCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe",
+          "defaultPath": "properties.containers[*].properties.livenessProbe"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.exec",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.exec"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.failureThreshold",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.httpGet",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.initialDelaySeconds",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.periodSeconds",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.successThreshold",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].livenessProbe.timeoutSeconds",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].name",
+          "defaultPath": "properties.containers[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].ports",
+          "defaultPath": "properties.containers[*].properties.ports"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].ports[*]",
+          "defaultPath": "properties.containers[*].properties.ports[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].ports[*].port",
+          "defaultPath": "properties.containers[*].properties.ports[*].port"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].ports[*].protocol",
+          "defaultPath": "properties.containers[*].properties.ports[*].protocol"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe",
+          "defaultPath": "properties.containers[*].properties.readinessProbe"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.exec",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.exec"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.failureThreshold",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.httpGet",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.initialDelaySeconds",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.periodSeconds",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.successThreshold",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].readinessProbe.timeoutSeconds",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].resources",
+          "defaultPath": "properties.containers[*].properties.resources"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].resources.limits",
+          "defaultPath": "properties.containers[*].properties.resources.limits"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].resources.requests",
+          "defaultPath": "properties.containers[*].properties.resources.requests"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext",
+          "defaultPath": "properties.containers[*].properties.securityContext"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext.allowPrivilegeEscalation",
+          "defaultPath": "properties.containers[*].properties.securityContext.allowPrivilegeEscalation"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext.capabilities",
+          "defaultPath": "properties.containers[*].properties.securityContext.capabilities"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext.privileged",
+          "defaultPath": "properties.containers[*].properties.securityContext.privileged"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext.runAsGroup",
+          "defaultPath": "properties.containers[*].properties.securityContext.runAsGroup"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext.runAsUser",
+          "defaultPath": "properties.containers[*].properties.securityContext.runAsUser"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].securityContext.seccompProfile",
+          "defaultPath": "properties.containers[*].properties.securityContext.seccompProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].volumeMounts",
+          "defaultPath": "properties.containers[*].properties.volumeMounts"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].volumeMounts[*]",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].volumeMounts[*].mountPath",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*].mountPath"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].volumeMounts[*].name",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/containers[*].volumeMounts[*].readOnly",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*].readOnly"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics",
+          "defaultPath": "properties.diagnostics"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics.logAnalytics",
+          "defaultPath": "properties.diagnostics.logAnalytics"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics.logAnalytics.logType",
+          "defaultPath": "properties.diagnostics.logAnalytics.logType"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics.logAnalytics.metadata",
+          "defaultPath": "properties.diagnostics.logAnalytics.metadata"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics.logAnalytics.workspaceId",
+          "defaultPath": "properties.diagnostics.logAnalytics.workspaceId"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics.logAnalytics.workspaceKey",
+          "defaultPath": "properties.diagnostics.logAnalytics.workspaceKey"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/diagnostics.logAnalytics.workspaceResourceId",
+          "defaultPath": "properties.diagnostics.logAnalytics.workspaceResourceId"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/encryptionProperties",
+          "defaultPath": "properties.encryptionProperties"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/encryptionProperties.identity",
+          "defaultPath": "properties.encryptionProperties.identity"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/encryptionProperties.keyName",
+          "defaultPath": "properties.encryptionProperties.keyName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/encryptionProperties.keyVersion",
+          "defaultPath": "properties.encryptionProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/encryptionProperties.vaultBaseUrl",
+          "defaultPath": "properties.encryptionProperties.vaultBaseUrl"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/extensions",
+          "defaultPath": "properties.extensions"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/extensions[*]",
+          "defaultPath": "properties.extensions[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/extensions[*].extensionType",
+          "defaultPath": "properties.extensions[*].properties.extensionType"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/extensions[*].name",
+          "defaultPath": "properties.extensions[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/extensions[*].version",
+          "defaultPath": "properties.extensions[*].properties.version"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials",
+          "defaultPath": "properties.imageRegistryCredentials"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*]",
+          "defaultPath": "properties.imageRegistryCredentials[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*].identity",
+          "defaultPath": "properties.imageRegistryCredentials[*].identity"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*].identityUrl",
+          "defaultPath": "properties.imageRegistryCredentials[*].identityUrl"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*].password",
+          "defaultPath": "properties.imageRegistryCredentials[*].password"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*].passwordReference",
+          "defaultPath": "properties.imageRegistryCredentials[*].passwordReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*].server",
+          "defaultPath": "properties.imageRegistryCredentials[*].server"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/imageRegistryCredentials[*].username",
+          "defaultPath": "properties.imageRegistryCredentials[*].username"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers",
+          "defaultPath": "properties.initContainers"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*]",
+          "defaultPath": "properties.initContainers[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].command",
+          "defaultPath": "properties.initContainers[*].properties.command"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].command[*]",
+          "defaultPath": "properties.initContainers[*].properties.command[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].environmentVariables",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].environmentVariables[*]",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].environmentVariables[*].name",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].environmentVariables[*].secureValue",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].secureValue"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].environmentVariables[*].secureValueReference",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].secureValueReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].environmentVariables[*].value",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].image",
+          "defaultPath": "properties.initContainers[*].properties.image"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].instanceView",
+          "defaultPath": "properties.initContainers[*].properties.instanceView"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].instanceView.currentState",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].instanceView.events",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].instanceView.events[*]",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].instanceView.previousState",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].instanceView.restartCount",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.restartCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].name",
+          "defaultPath": "properties.initContainers[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext",
+          "defaultPath": "properties.initContainers[*].properties.securityContext"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext.allowPrivilegeEscalation",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.allowPrivilegeEscalation"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext.capabilities",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.capabilities"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext.privileged",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.privileged"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext.runAsGroup",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.runAsGroup"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext.runAsUser",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.runAsUser"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].securityContext.seccompProfile",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.seccompProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].volumeMounts",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].volumeMounts[*]",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].volumeMounts[*].mountPath",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*].mountPath"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].volumeMounts[*].name",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/initContainers[*].volumeMounts[*].readOnly",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*].readOnly"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress",
+          "defaultPath": "properties.ipAddress"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.autoGeneratedDomainNameLabelScope",
+          "defaultPath": "properties.ipAddress.autoGeneratedDomainNameLabelScope"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.dnsNameLabel",
+          "defaultPath": "properties.ipAddress.dnsNameLabel"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.fqdn",
+          "defaultPath": "properties.ipAddress.fqdn"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.ip",
+          "defaultPath": "properties.ipAddress.ip"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.ports",
+          "defaultPath": "properties.ipAddress.ports"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.ports[*]",
+          "defaultPath": "properties.ipAddress.ports[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.ports[*].port",
+          "defaultPath": "properties.ipAddress.ports[*].port"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.ports[*].protocol",
+          "defaultPath": "properties.ipAddress.ports[*].protocol"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/ipAddress.type",
+          "defaultPath": "properties.ipAddress.type"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/priority",
+          "defaultPath": "properties.priority"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/registeredRevisions",
+          "defaultPath": "properties.registeredRevisions"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/registeredRevisions[*]",
+          "defaultPath": "properties.registeredRevisions[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/restartPolicy",
+          "defaultPath": "properties.restartPolicy"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext",
+          "defaultPath": "properties.securityContext"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.allowPrivilegeEscalation",
+          "defaultPath": "properties.securityContext.allowPrivilegeEscalation"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.capabilities",
+          "defaultPath": "properties.securityContext.capabilities"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.capabilities.add",
+          "defaultPath": "properties.securityContext.capabilities.add"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.capabilities.add[*]",
+          "defaultPath": "properties.securityContext.capabilities.add[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.capabilities.drop",
+          "defaultPath": "properties.securityContext.capabilities.drop"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.capabilities.drop[*]",
+          "defaultPath": "properties.securityContext.capabilities.drop[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.privileged",
+          "defaultPath": "properties.securityContext.privileged"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.runAsGroup",
+          "defaultPath": "properties.securityContext.runAsGroup"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.runAsUser",
+          "defaultPath": "properties.securityContext.runAsUser"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/securityContext.seccompProfile",
+          "defaultPath": "properties.securityContext.seccompProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/shutdownGracePeriod",
+          "defaultPath": "properties.shutdownGracePeriod"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/timeToLive",
+          "defaultPath": "properties.timeToLive"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/useKrypton",
+          "defaultPath": "properties.useKrypton"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes",
+          "defaultPath": "properties.volumes"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*]",
+          "defaultPath": "properties.volumes[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].azureFile",
+          "defaultPath": "properties.volumes[*].azureFile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].azureFile.readOnly",
+          "defaultPath": "properties.volumes[*].azureFile.readOnly"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].azureFile.shareName",
+          "defaultPath": "properties.volumes[*].azureFile.shareName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].azureFile.storageAccountKey",
+          "defaultPath": "properties.volumes[*].azureFile.storageAccountKey"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].azureFile.storageAccountKeyReference",
+          "defaultPath": "properties.volumes[*].azureFile.storageAccountKeyReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].azureFile.storageAccountName",
+          "defaultPath": "properties.volumes[*].azureFile.storageAccountName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].gitRepo",
+          "defaultPath": "properties.volumes[*].gitRepo"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].gitRepo.directory",
+          "defaultPath": "properties.volumes[*].gitRepo.directory"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].gitRepo.repository",
+          "defaultPath": "properties.volumes[*].gitRepo.repository"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].gitRepo.revision",
+          "defaultPath": "properties.volumes[*].gitRepo.revision"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].name",
+          "defaultPath": "properties.volumes[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].secret",
+          "defaultPath": "properties.volumes[*].secret"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/volumes[*].secretReference",
+          "defaultPath": "properties.volumes[*].secretReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroupProfiles/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "containerGroupProfiles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/confidentialComputeProperties",
+          "defaultPath": "properties.confidentialComputeProperties"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/confidentialComputeProperties.ccePolicy",
+          "defaultPath": "properties.confidentialComputeProperties.ccePolicy"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containerGroupProfile",
+          "defaultPath": "properties.containerGroupProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containerGroupProfile.id",
+          "defaultPath": "properties.containerGroupProfile.id"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containerGroupProfile.revision",
+          "defaultPath": "properties.containerGroupProfile.revision"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers",
+          "defaultPath": "properties.containers"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*]",
+          "defaultPath": "properties.containers[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].command",
+          "defaultPath": "properties.containers[*].properties.command"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].command[*]",
+          "defaultPath": "properties.containers[*].properties.command[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].configMap",
+          "defaultPath": "properties.containers[*].properties.configMap"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].configMap.keyValuePairs",
+          "defaultPath": "properties.containers[*].properties.configMap.keyValuePairs"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].environmentVariables",
+          "defaultPath": "properties.containers[*].properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].environmentVariables[*]",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].environmentVariables[*].name",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].environmentVariables[*].secureValue",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].secureValue"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].environmentVariables[*].secureValueReference",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].secureValueReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].environmentVariables[*].value",
+          "defaultPath": "properties.containers[*].properties.environmentVariables[*].value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].image",
+          "defaultPath": "properties.containers[*].properties.image"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView",
+          "defaultPath": "properties.containers[*].properties.instanceView"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.currentState",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.currentState.detailStatus",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState.detailStatus"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.currentState.exitCode",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState.exitCode"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.currentState.finishTime",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState.finishTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.currentState.startTime",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState.startTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.currentState.state",
+          "defaultPath": "properties.containers[*].properties.instanceView.currentState.state"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events",
+          "defaultPath": "properties.containers[*].properties.instanceView.events"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*]",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*].count",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*].count"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*].firstTimestamp",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*].firstTimestamp"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*].lastTimestamp",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*].lastTimestamp"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*].message",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*].message"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*].name",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.events[*].type",
+          "defaultPath": "properties.containers[*].properties.instanceView.events[*].type"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.previousState",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.previousState.detailStatus",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState.detailStatus"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.previousState.exitCode",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState.exitCode"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.previousState.finishTime",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState.finishTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.previousState.startTime",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState.startTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.previousState.state",
+          "defaultPath": "properties.containers[*].properties.instanceView.previousState.state"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].instanceView.restartCount",
+          "defaultPath": "properties.containers[*].properties.instanceView.restartCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe",
+          "defaultPath": "properties.containers[*].properties.livenessProbe"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.exec",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.exec"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.exec.command",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.exec.command"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.exec.command[*]",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.exec.command[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.failureThreshold",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.httpHeaders",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.httpHeaders"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.httpHeaders.name",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.httpHeaders.name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.httpHeaders.value",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.httpHeaders.value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.httpHeaders[*]",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.httpHeaders[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.httpHeaders[*].name",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.httpHeaders[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.httpHeaders[*].value",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.httpHeaders[*].value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.path",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.path"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.port",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.port"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.httpGet.scheme",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.httpGet.scheme"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.initialDelaySeconds",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.periodSeconds",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.successThreshold",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].livenessProbe.timeoutSeconds",
+          "defaultPath": "properties.containers[*].properties.livenessProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].name",
+          "defaultPath": "properties.containers[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].ports",
+          "defaultPath": "properties.containers[*].properties.ports"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].ports[*]",
+          "defaultPath": "properties.containers[*].properties.ports[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].ports[*].port",
+          "defaultPath": "properties.containers[*].properties.ports[*].port"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].ports[*].protocol",
+          "defaultPath": "properties.containers[*].properties.ports[*].protocol"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe",
+          "defaultPath": "properties.containers[*].properties.readinessProbe"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.exec",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.exec"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.exec.command",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.exec.command"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.exec.command[*]",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.exec.command[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.failureThreshold",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.httpHeaders",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.httpHeaders"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.httpHeaders.name",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.httpHeaders.name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.httpHeaders.value",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.httpHeaders.value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.httpHeaders[*]",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.httpHeaders[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.httpHeaders[*].name",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.httpHeaders[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.httpHeaders[*].value",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.httpHeaders[*].value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.path",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.path"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.port",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.port"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.httpGet.scheme",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.httpGet.scheme"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.initialDelaySeconds",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.periodSeconds",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.successThreshold",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].readinessProbe.timeoutSeconds",
+          "defaultPath": "properties.containers[*].properties.readinessProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources",
+          "defaultPath": "properties.containers[*].properties.resources"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.limits",
+          "defaultPath": "properties.containers[*].properties.resources.limits"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.limits.cpu",
+          "defaultPath": "properties.containers[*].properties.resources.limits.cpu"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.limits.gpu",
+          "defaultPath": "properties.containers[*].properties.resources.limits.gpu"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.limits.gpu.count",
+          "defaultPath": "properties.containers[*].properties.resources.limits.gpu.count"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.limits.gpu.sku",
+          "defaultPath": "properties.containers[*].properties.resources.limits.gpu.sku"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.limits.memoryInGB",
+          "defaultPath": "properties.containers[*].properties.resources.limits.memoryInGB"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.requests",
+          "defaultPath": "properties.containers[*].properties.resources.requests"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.requests.cpu",
+          "defaultPath": "properties.containers[*].properties.resources.requests.cpu"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.requests.gpu",
+          "defaultPath": "properties.containers[*].properties.resources.requests.gpu"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.requests.gpu.count",
+          "defaultPath": "properties.containers[*].properties.resources.requests.gpu.count"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.requests.gpu.sku",
+          "defaultPath": "properties.containers[*].properties.resources.requests.gpu.sku"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].resources.requests.memoryInGB",
+          "defaultPath": "properties.containers[*].properties.resources.requests.memoryInGB"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext",
+          "defaultPath": "properties.containers[*].properties.securityContext"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext.allowPrivilegeEscalation",
+          "defaultPath": "properties.containers[*].properties.securityContext.allowPrivilegeEscalation"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext.capabilities",
+          "defaultPath": "properties.containers[*].properties.securityContext.capabilities"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext.privileged",
+          "defaultPath": "properties.containers[*].properties.securityContext.privileged"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext.runAsGroup",
+          "defaultPath": "properties.containers[*].properties.securityContext.runAsGroup"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext.runAsUser",
+          "defaultPath": "properties.containers[*].properties.securityContext.runAsUser"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].securityContext.seccompProfile",
+          "defaultPath": "properties.containers[*].properties.securityContext.seccompProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].volumeMounts",
+          "defaultPath": "properties.containers[*].properties.volumeMounts"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].volumeMounts[*]",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].volumeMounts[*].mountPath",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*].mountPath"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].volumeMounts[*].name",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/containers[*].volumeMounts[*].readOnly",
+          "defaultPath": "properties.containers[*].properties.volumeMounts[*].readOnly"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics",
+          "defaultPath": "properties.diagnostics"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics.logAnalytics",
+          "defaultPath": "properties.diagnostics.logAnalytics"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics.logAnalytics.logType",
+          "defaultPath": "properties.diagnostics.logAnalytics.logType"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics.logAnalytics.metadata",
+          "defaultPath": "properties.diagnostics.logAnalytics.metadata"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics.logAnalytics.workspaceId",
+          "defaultPath": "properties.diagnostics.logAnalytics.workspaceId"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics.logAnalytics.workspaceKey",
+          "defaultPath": "properties.diagnostics.logAnalytics.workspaceKey"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/diagnostics.logAnalytics.workspaceResourceId",
+          "defaultPath": "properties.diagnostics.logAnalytics.workspaceResourceId"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/dnsConfig",
+          "defaultPath": "properties.dnsConfig"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/dnsConfig.nameServers",
+          "defaultPath": "properties.dnsConfig.nameServers"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/dnsConfig.nameServers[*]",
+          "defaultPath": "properties.dnsConfig.nameServers[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/dnsConfig.options",
+          "defaultPath": "properties.dnsConfig.options"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/dnsConfig.searchDomains",
+          "defaultPath": "properties.dnsConfig.searchDomains"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/encryptionProperties",
+          "defaultPath": "properties.encryptionProperties"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/encryptionProperties.identity",
+          "defaultPath": "properties.encryptionProperties.identity"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/encryptionProperties.keyName",
+          "defaultPath": "properties.encryptionProperties.keyName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/encryptionProperties.keyVersion",
+          "defaultPath": "properties.encryptionProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/encryptionProperties.vaultBaseUrl",
+          "defaultPath": "properties.encryptionProperties.vaultBaseUrl"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/extensions",
+          "defaultPath": "properties.extensions"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/extensions[*]",
+          "defaultPath": "properties.extensions[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/extensions[*].extensionType",
+          "defaultPath": "properties.extensions[*].properties.extensionType"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/extensions[*].name",
+          "defaultPath": "properties.extensions[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/extensions[*].version",
+          "defaultPath": "properties.extensions[*].properties.version"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/identityAcls",
+          "defaultPath": "properties.identityAcls"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/identityAcls.acls",
+          "defaultPath": "properties.identityAcls.acls"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/identityAcls.acls[*]",
+          "defaultPath": "properties.identityAcls.acls[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/identityAcls.acls[*].access",
+          "defaultPath": "properties.identityAcls.acls[*].access"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/identityAcls.acls[*].identity",
+          "defaultPath": "properties.identityAcls.acls[*].identity"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/identityAcls.defaultAccess",
+          "defaultPath": "properties.identityAcls.defaultAccess"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials",
+          "defaultPath": "properties.imageRegistryCredentials"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*]",
+          "defaultPath": "properties.imageRegistryCredentials[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*].identity",
+          "defaultPath": "properties.imageRegistryCredentials[*].identity"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*].identityUrl",
+          "defaultPath": "properties.imageRegistryCredentials[*].identityUrl"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*].password",
+          "defaultPath": "properties.imageRegistryCredentials[*].password"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*].passwordReference",
+          "defaultPath": "properties.imageRegistryCredentials[*].passwordReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*].server",
+          "defaultPath": "properties.imageRegistryCredentials[*].server"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/imageRegistryCredentials[*].username",
+          "defaultPath": "properties.imageRegistryCredentials[*].username"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers",
+          "defaultPath": "properties.initContainers"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*]",
+          "defaultPath": "properties.initContainers[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].command",
+          "defaultPath": "properties.initContainers[*].properties.command"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].command[*]",
+          "defaultPath": "properties.initContainers[*].properties.command[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].environmentVariables",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].environmentVariables[*]",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].environmentVariables[*].name",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].environmentVariables[*].secureValue",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].secureValue"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].environmentVariables[*].secureValueReference",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].secureValueReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].environmentVariables[*].value",
+          "defaultPath": "properties.initContainers[*].properties.environmentVariables[*].value"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].image",
+          "defaultPath": "properties.initContainers[*].properties.image"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView",
+          "defaultPath": "properties.initContainers[*].properties.instanceView"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.currentState",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.currentState.detailStatus",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState.detailStatus"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.currentState.exitCode",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState.exitCode"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.currentState.finishTime",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState.finishTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.currentState.startTime",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState.startTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.currentState.state",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.currentState.state"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*]",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*].count",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*].count"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*].firstTimestamp",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*].firstTimestamp"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*].lastTimestamp",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*].lastTimestamp"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*].message",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*].message"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*].name",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.events[*].type",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.events[*].type"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.previousState",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.previousState.detailStatus",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState.detailStatus"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.previousState.exitCode",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState.exitCode"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.previousState.finishTime",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState.finishTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.previousState.startTime",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState.startTime"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.previousState.state",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.previousState.state"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].instanceView.restartCount",
+          "defaultPath": "properties.initContainers[*].properties.instanceView.restartCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].name",
+          "defaultPath": "properties.initContainers[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext",
+          "defaultPath": "properties.initContainers[*].properties.securityContext"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext.allowPrivilegeEscalation",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.allowPrivilegeEscalation"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext.capabilities",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.capabilities"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext.privileged",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.privileged"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext.runAsGroup",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.runAsGroup"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext.runAsUser",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.runAsUser"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].securityContext.seccompProfile",
+          "defaultPath": "properties.initContainers[*].properties.securityContext.seccompProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].volumeMounts",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].volumeMounts[*]",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].volumeMounts[*].mountPath",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*].mountPath"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].volumeMounts[*].name",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/initContainers[*].volumeMounts[*].readOnly",
+          "defaultPath": "properties.initContainers[*].properties.volumeMounts[*].readOnly"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView",
+          "defaultPath": "properties.instanceView"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events",
+          "defaultPath": "properties.instanceView.events"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*]",
+          "defaultPath": "properties.instanceView.events[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*].count",
+          "defaultPath": "properties.instanceView.events[*].count"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*].firstTimestamp",
+          "defaultPath": "properties.instanceView.events[*].firstTimestamp"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*].lastTimestamp",
+          "defaultPath": "properties.instanceView.events[*].lastTimestamp"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*].message",
+          "defaultPath": "properties.instanceView.events[*].message"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*].name",
+          "defaultPath": "properties.instanceView.events[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.events[*].type",
+          "defaultPath": "properties.instanceView.events[*].type"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/instanceView.state",
+          "defaultPath": "properties.instanceView.state"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress",
+          "defaultPath": "properties.ipAddress"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.autoGeneratedDomainNameLabelScope",
+          "defaultPath": "properties.ipAddress.autoGeneratedDomainNameLabelScope"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.dnsNameLabel",
+          "defaultPath": "properties.ipAddress.dnsNameLabel"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.fqdn",
+          "defaultPath": "properties.ipAddress.fqdn"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.ip",
+          "defaultPath": "properties.ipAddress.ip"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.ports",
+          "defaultPath": "properties.ipAddress.ports"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.ports[*]",
+          "defaultPath": "properties.ipAddress.ports[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.ports[*].port",
+          "defaultPath": "properties.ipAddress.ports[*].port"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.ports[*].protocol",
+          "defaultPath": "properties.ipAddress.ports[*].protocol"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/ipAddress.type",
+          "defaultPath": "properties.ipAddress.type"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/isCreatedFromStandbyPool",
+          "defaultPath": "properties.isCreatedFromStandbyPool"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/isCustomProvisioningTimeout",
+          "defaultPath": "properties.isCustomProvisioningTimeout"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/networkProfile.id",
+          "defaultPath": "properties.networkProfile.id"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/priority",
+          "defaultPath": "properties.priority"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/provisioningTimeoutInSeconds",
+          "defaultPath": "properties.provisioningTimeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/restartPolicy",
+          "defaultPath": "properties.restartPolicy"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/secretReferences",
+          "defaultPath": "properties.secretReferences"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/secretReferences[*]",
+          "defaultPath": "properties.secretReferences[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/secretReferences[*].identity",
+          "defaultPath": "properties.secretReferences[*].identity"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/secretReferences[*].name",
+          "defaultPath": "properties.secretReferences[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/secretReferences[*].secretReferenceUri",
+          "defaultPath": "properties.secretReferences[*].secretReferenceUri"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/standbyPoolProfile",
+          "defaultPath": "properties.standbyPoolProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/standbyPoolProfile.failContainerGroupCreateOnReuseFailure",
+          "defaultPath": "properties.standbyPoolProfile.failContainerGroupCreateOnReuseFailure"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/standbyPoolProfile.id",
+          "defaultPath": "properties.standbyPoolProfile.id"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/subnetIds",
+          "defaultPath": "properties.subnetIds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/subnetIds[*]",
+          "defaultPath": "properties.subnetIds[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/subnetIds[*].id",
+          "defaultPath": "properties.subnetIds[*].id"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/subnetIds[*].name",
+          "defaultPath": "properties.subnetIds[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes",
+          "defaultPath": "properties.volumes"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*]",
+          "defaultPath": "properties.volumes[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].azureFile",
+          "defaultPath": "properties.volumes[*].azureFile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].azureFile.readOnly",
+          "defaultPath": "properties.volumes[*].azureFile.readOnly"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].azureFile.shareName",
+          "defaultPath": "properties.volumes[*].azureFile.shareName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].azureFile.storageAccountKey",
+          "defaultPath": "properties.volumes[*].azureFile.storageAccountKey"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].azureFile.storageAccountKeyReference",
+          "defaultPath": "properties.volumes[*].azureFile.storageAccountKeyReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].azureFile.storageAccountName",
+          "defaultPath": "properties.volumes[*].azureFile.storageAccountName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].emptyDir",
+          "defaultPath": "properties.volumes[*].emptyDir"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].gitRepo",
+          "defaultPath": "properties.volumes[*].gitRepo"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].gitRepo.directory",
+          "defaultPath": "properties.volumes[*].gitRepo.directory"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].gitRepo.repository",
+          "defaultPath": "properties.volumes[*].gitRepo.repository"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].gitRepo.revision",
+          "defaultPath": "properties.volumes[*].gitRepo.revision"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].name",
+          "defaultPath": "properties.volumes[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].secret",
+          "defaultPath": "properties.volumes[*].secret"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/volumes[*].secretReference",
+          "defaultPath": "properties.volumes[*].secretReference"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/containerGroups/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "containerGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles",
+          "defaultPath": "properties.containerGroupProfiles"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*]",
+          "defaultPath": "properties.containerGroupProfiles[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.containers",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.containers"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.containers[*]",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.containers[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.containers[*].name",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.containers[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.subnetIds",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.subnetIds"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.subnetIds[*]",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.subnetIds[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.subnetIds[*].id",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.subnetIds[*].id"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.subnetIds[*].name",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.subnetIds[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.volumes",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.volumes"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.volumes[*]",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.volumes[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.volumes[*].azureFile",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.volumes[*].azureFile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].containerGroupProperties.volumes[*].name",
+          "defaultPath": "properties.containerGroupProfiles[*].containerGroupProperties.volumes[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.applicationGateway",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.applicationGateway"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.applicationGateway.backendAddressPools",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.applicationGateway.backendAddressPools"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.applicationGateway.backendAddressPools[*]",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.applicationGateway.backendAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.applicationGateway.resource",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.applicationGateway.resource"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.loadBalancer",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.loadBalancer"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.loadBalancer.backendAddressPools",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.loadBalancer.backendAddressPools"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].networkProfile.loadBalancer.backendAddressPools[*]",
+          "defaultPath": "properties.containerGroupProfiles[*].networkProfile.loadBalancer.backendAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].resource",
+          "defaultPath": "properties.containerGroupProfiles[*].resource"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].resource.id",
+          "defaultPath": "properties.containerGroupProfiles[*].resource.id"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].revision",
+          "defaultPath": "properties.containerGroupProfiles[*].revision"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].storageProfile",
+          "defaultPath": "properties.containerGroupProfiles[*].storageProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].storageProfile.fileShares",
+          "defaultPath": "properties.containerGroupProfiles[*].storageProfile.fileShares"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].storageProfile.fileShares[*]",
+          "defaultPath": "properties.containerGroupProfiles[*].storageProfile.fileShares[*]"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].storageProfile.fileShares[*].name",
+          "defaultPath": "properties.containerGroupProfiles[*].storageProfile.fileShares[*].name"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].storageProfile.fileShares[*].resourceGroupName",
+          "defaultPath": "properties.containerGroupProfiles[*].storageProfile.fileShares[*].resourceGroupName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/containerGroupProfiles[*].storageProfile.fileShares[*].storageAccountName",
+          "defaultPath": "properties.containerGroupProfiles[*].storageProfile.fileShares[*].storageAccountName"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/elasticProfile",
+          "defaultPath": "properties.elasticProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/elasticProfile.containerGroupNamingPolicy",
+          "defaultPath": "properties.elasticProfile.containerGroupNamingPolicy"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/elasticProfile.containerGroupNamingPolicy.guidNamingPolicy",
+          "defaultPath": "properties.elasticProfile.containerGroupNamingPolicy.guidNamingPolicy"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/elasticProfile.containerGroupNamingPolicy.guidNamingPolicy.prefix",
+          "defaultPath": "properties.elasticProfile.containerGroupNamingPolicy.guidNamingPolicy.prefix"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/elasticProfile.desiredCount",
+          "defaultPath": "properties.elasticProfile.desiredCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/elasticProfile.maintainDesiredCount",
+          "defaultPath": "properties.elasticProfile.maintainDesiredCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/placementProfile",
+          "defaultPath": "properties.placementProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/placementProfile.faultDomainCount",
+          "defaultPath": "properties.placementProfile.faultDomainCount"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile",
+          "defaultPath": "properties.updateProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile.rollingUpdateProfile",
+          "defaultPath": "properties.updateProfile.rollingUpdateProfile"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile.rollingUpdateProfile.inPlaceUpdate",
+          "defaultPath": "properties.updateProfile.rollingUpdateProfile.inPlaceUpdate"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile.rollingUpdateProfile.maxBatchPercent",
+          "defaultPath": "properties.updateProfile.rollingUpdateProfile.maxBatchPercent"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile.rollingUpdateProfile.maxUnhealthyPercent",
+          "defaultPath": "properties.updateProfile.rollingUpdateProfile.maxUnhealthyPercent"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile.rollingUpdateProfile.pauseTimeBetweenBatches",
+          "defaultPath": "properties.updateProfile.rollingUpdateProfile.pauseTimeBetweenBatches"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/updateProfile.updateMode",
+          "defaultPath": "properties.updateProfile.updateMode"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.ContainerInstance/ngroups/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "nGroups"
+    }
+  ]
+}

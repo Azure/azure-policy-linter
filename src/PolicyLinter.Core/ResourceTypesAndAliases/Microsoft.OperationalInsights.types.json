@@ -1,0 +1,125 @@
+{
+  "namespace": "Microsoft.OperationalInsights",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedWorkspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "linkTargets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "querypacks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "querypacks/queries"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "storageInsightConfigs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/api"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/dataExports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/dataShares"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/dataSources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/linkedServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/linkedStorageAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/metadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/purge"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/purgeLakeData"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/query"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/savedSearches"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/scopedPrivateLinkProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/storageInsightConfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/summaryLogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/tables"
+    }
+  ]
+}

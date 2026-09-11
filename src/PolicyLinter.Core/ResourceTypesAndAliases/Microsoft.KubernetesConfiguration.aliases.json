@@ -1,0 +1,886 @@
+{
+  "namespace": "Microsoft.KubernetesConfiguration",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/aksAssignedIdentity",
+          "defaultPath": "properties.aksAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/aksAssignedIdentity.principalId",
+          "defaultPath": "properties.aksAssignedIdentity.principalId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/aksAssignedIdentity.tenantId",
+          "defaultPath": "properties.aksAssignedIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/aksAssignedIdentity.type",
+          "defaultPath": "properties.aksAssignedIdentity.type"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/autoUpgradeMinorVersion",
+          "defaultPath": "properties.autoUpgradeMinorVersion"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/configurationProtectedSettings",
+          "defaultPath": "properties.configurationProtectedSettings"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/configurationSettings",
+          "defaultPath": "properties.configurationSettings"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/currentVersion",
+          "defaultPath": "properties.currentVersion"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/customLocationSettings",
+          "defaultPath": "properties.customLocationSettings"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo",
+          "defaultPath": "properties.errorInfo"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.additionalInfo",
+          "defaultPath": "properties.errorInfo.additionalInfo"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.additionalInfo[*]",
+          "defaultPath": "properties.errorInfo.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.additionalInfo[*].type",
+          "defaultPath": "properties.errorInfo.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.code",
+          "defaultPath": "properties.errorInfo.code"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details",
+          "defaultPath": "properties.errorInfo.details"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*]",
+          "defaultPath": "properties.errorInfo.details[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].additionalInfo",
+          "defaultPath": "properties.errorInfo.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].additionalInfo[*]",
+          "defaultPath": "properties.errorInfo.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.errorInfo.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].code",
+          "defaultPath": "properties.errorInfo.details[*].code"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].details",
+          "defaultPath": "properties.errorInfo.details[*].details"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].details[*]",
+          "defaultPath": "properties.errorInfo.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].message",
+          "defaultPath": "properties.errorInfo.details[*].message"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.details[*].target",
+          "defaultPath": "properties.errorInfo.details[*].target"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.message",
+          "defaultPath": "properties.errorInfo.message"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/errorInfo.target",
+          "defaultPath": "properties.errorInfo.target"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/extensionType",
+          "defaultPath": "properties.extensionType"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/identity",
+          "defaultPath": "properties.identity"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/identity.principalId",
+          "defaultPath": "properties.identity.principalId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/identity.tenantId",
+          "defaultPath": "properties.identity.tenantId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/identity.type",
+          "defaultPath": "properties.identity.type"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/installedVersion",
+          "defaultPath": "properties.installedVersion"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/installState",
+          "defaultPath": "properties.installState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/isSystemExtension",
+          "defaultPath": "properties.isSystemExtension"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/lastStatusTime",
+          "defaultPath": "properties.lastStatusTime"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/packageUri",
+          "defaultPath": "properties.packageUri"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/releaseTrain",
+          "defaultPath": "properties.releaseTrain"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/scope.cluster",
+          "defaultPath": "properties.scope.cluster"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/scope.cluster.releaseNamespace",
+          "defaultPath": "properties.scope.cluster.releaseNamespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/scope.namespace",
+          "defaultPath": "properties.scope.namespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/scope.namespace.targetNamespace",
+          "defaultPath": "properties.scope.namespace.targetNamespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses[*].code",
+          "defaultPath": "properties.statuses[*].code"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses[*].displayStatus",
+          "defaultPath": "properties.statuses[*].displayStatus"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses[*].level",
+          "defaultPath": "properties.statuses[*].level"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/statuses[*].time",
+          "defaultPath": "properties.statuses[*].time"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/extensions/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "extensions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob",
+          "defaultPath": "properties.azureBlob"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.accountKey",
+          "defaultPath": "properties.azureBlob.accountKey"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.containerName",
+          "defaultPath": "properties.azureBlob.containerName"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.localAuthRef",
+          "defaultPath": "properties.azureBlob.localAuthRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.managedIdentity",
+          "defaultPath": "properties.azureBlob.managedIdentity"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.managedIdentity.clientId",
+          "defaultPath": "properties.azureBlob.managedIdentity.clientId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.sasToken",
+          "defaultPath": "properties.azureBlob.sasToken"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal",
+          "defaultPath": "properties.azureBlob.servicePrincipal"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal.clientCertificate",
+          "defaultPath": "properties.azureBlob.servicePrincipal.clientCertificate"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal.clientCertificatePassword",
+          "defaultPath": "properties.azureBlob.servicePrincipal.clientCertificatePassword"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal.clientCertificateSendChain",
+          "defaultPath": "properties.azureBlob.servicePrincipal.clientCertificateSendChain"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal.clientId",
+          "defaultPath": "properties.azureBlob.servicePrincipal.clientId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal.clientSecret",
+          "defaultPath": "properties.azureBlob.servicePrincipal.clientSecret"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.servicePrincipal.tenantId",
+          "defaultPath": "properties.azureBlob.servicePrincipal.tenantId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.syncIntervalInSeconds",
+          "defaultPath": "properties.azureBlob.syncIntervalInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.timeoutInSeconds",
+          "defaultPath": "properties.azureBlob.timeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/azureBlob.url",
+          "defaultPath": "properties.azureBlob.url"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket",
+          "defaultPath": "properties.bucket"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.accessKey",
+          "defaultPath": "properties.bucket.accessKey"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.bucketName",
+          "defaultPath": "properties.bucket.bucketName"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.insecure",
+          "defaultPath": "properties.bucket.insecure"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.localAuthRef",
+          "defaultPath": "properties.bucket.localAuthRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.syncIntervalInSeconds",
+          "defaultPath": "properties.bucket.syncIntervalInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.timeoutInSeconds",
+          "defaultPath": "properties.bucket.timeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/bucket.url",
+          "defaultPath": "properties.bucket.url"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/complianceState",
+          "defaultPath": "properties.complianceState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/configurationProtectedSettings",
+          "defaultPath": "properties.configurationProtectedSettings"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/errorMessage",
+          "defaultPath": "properties.errorMessage"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository",
+          "defaultPath": "properties.gitRepository"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.httpsCACert",
+          "defaultPath": "properties.gitRepository.httpsCACert"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.httpsCAFile",
+          "defaultPath": "properties.gitRepository.httpsCAFile"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.httpsUser",
+          "defaultPath": "properties.gitRepository.httpsUser"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.localAuthRef",
+          "defaultPath": "properties.gitRepository.localAuthRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.provider",
+          "defaultPath": "properties.gitRepository.provider"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.repositoryRef",
+          "defaultPath": "properties.gitRepository.repositoryRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.repositoryRef.branch",
+          "defaultPath": "properties.gitRepository.repositoryRef.branch"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.repositoryRef.commit",
+          "defaultPath": "properties.gitRepository.repositoryRef.commit"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.repositoryRef.semver",
+          "defaultPath": "properties.gitRepository.repositoryRef.semver"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.repositoryRef.tag",
+          "defaultPath": "properties.gitRepository.repositoryRef.tag"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.sshKnownHosts",
+          "defaultPath": "properties.gitRepository.sshKnownHosts"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.syncIntervalInSeconds",
+          "defaultPath": "properties.gitRepository.syncIntervalInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.timeoutInSeconds",
+          "defaultPath": "properties.gitRepository.timeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/gitRepository.url",
+          "defaultPath": "properties.gitRepository.url"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/kustomizations",
+          "defaultPath": "properties.kustomizations"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/lastSourceSyncedAt",
+          "defaultPath": "properties.lastSourceSyncedAt"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/lastSourceSyncedCommitId",
+          "defaultPath": "properties.lastSourceSyncedCommitId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/lastSourceUpdatedAt",
+          "defaultPath": "properties.lastSourceUpdatedAt"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/lastSourceUpdatedCommitId",
+          "defaultPath": "properties.lastSourceUpdatedCommitId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/namespace",
+          "defaultPath": "properties.namespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository",
+          "defaultPath": "properties.ociRepository"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.insecure",
+          "defaultPath": "properties.ociRepository.insecure"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.layerSelector",
+          "defaultPath": "properties.ociRepository.layerSelector"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.layerSelector.mediaType",
+          "defaultPath": "properties.ociRepository.layerSelector.mediaType"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.layerSelector.operation",
+          "defaultPath": "properties.ociRepository.layerSelector.operation"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.localAuthRef",
+          "defaultPath": "properties.ociRepository.localAuthRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.repositoryRef",
+          "defaultPath": "properties.ociRepository.repositoryRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.repositoryRef.digest",
+          "defaultPath": "properties.ociRepository.repositoryRef.digest"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.repositoryRef.semver",
+          "defaultPath": "properties.ociRepository.repositoryRef.semver"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.repositoryRef.tag",
+          "defaultPath": "properties.ociRepository.repositoryRef.tag"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.serviceAccountName",
+          "defaultPath": "properties.ociRepository.serviceAccountName"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.syncIntervalInSeconds",
+          "defaultPath": "properties.ociRepository.syncIntervalInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.timeoutInSeconds",
+          "defaultPath": "properties.ociRepository.timeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.tlsConfig",
+          "defaultPath": "properties.ociRepository.tlsConfig"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.tlsConfig.caCertificate",
+          "defaultPath": "properties.ociRepository.tlsConfig.caCertificate"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.tlsConfig.clientCertificate",
+          "defaultPath": "properties.ociRepository.tlsConfig.clientCertificate"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.tlsConfig.privateKey",
+          "defaultPath": "properties.ociRepository.tlsConfig.privateKey"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.url",
+          "defaultPath": "properties.ociRepository.url"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.useWorkloadIdentity",
+          "defaultPath": "properties.ociRepository.useWorkloadIdentity"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify",
+          "defaultPath": "properties.ociRepository.verify"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify.matchOidcIdentity",
+          "defaultPath": "properties.ociRepository.verify.matchOidcIdentity"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify.matchOidcIdentity[*]",
+          "defaultPath": "properties.ociRepository.verify.matchOidcIdentity[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify.matchOidcIdentity[*].issuer",
+          "defaultPath": "properties.ociRepository.verify.matchOidcIdentity[*].issuer"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify.matchOidcIdentity[*].subject",
+          "defaultPath": "properties.ociRepository.verify.matchOidcIdentity[*].subject"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify.provider",
+          "defaultPath": "properties.ociRepository.verify.provider"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/ociRepository.verify.verificationConfig",
+          "defaultPath": "properties.ociRepository.verify.verificationConfig"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/reconciliationWaitDuration",
+          "defaultPath": "properties.reconciliationWaitDuration"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/repositoryPublicKey",
+          "defaultPath": "properties.repositoryPublicKey"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/sourceKind",
+          "defaultPath": "properties.sourceKind"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/sourceSyncedCommitId",
+          "defaultPath": "properties.sourceSyncedCommitId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/sourceUpdatedAt",
+          "defaultPath": "properties.sourceUpdatedAt"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].appliedBy",
+          "defaultPath": "properties.statuses[*].appliedBy"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].appliedBy.name",
+          "defaultPath": "properties.statuses[*].appliedBy.name"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].appliedBy.namespace",
+          "defaultPath": "properties.statuses[*].appliedBy.namespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].complianceState",
+          "defaultPath": "properties.statuses[*].complianceState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.failureCount",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.failureCount"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.helmChartRef",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.helmChartRef"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.helmChartRef.name",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.helmChartRef.name"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.helmChartRef.namespace",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.helmChartRef.namespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.installFailureCount",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.installFailureCount"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.lastRevisionApplied",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.lastRevisionApplied"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].helmReleaseProperties.upgradeFailureCount",
+          "defaultPath": "properties.statuses[*].helmReleaseProperties.upgradeFailureCount"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].kind",
+          "defaultPath": "properties.statuses[*].kind"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].name",
+          "defaultPath": "properties.statuses[*].name"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].namespace",
+          "defaultPath": "properties.statuses[*].namespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions",
+          "defaultPath": "properties.statuses[*].statusConditions"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions[*]",
+          "defaultPath": "properties.statuses[*].statusConditions[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions[*].lastTransitionTime",
+          "defaultPath": "properties.statuses[*].statusConditions[*].lastTransitionTime"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions[*].message",
+          "defaultPath": "properties.statuses[*].statusConditions[*].message"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions[*].reason",
+          "defaultPath": "properties.statuses[*].statusConditions[*].reason"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions[*].status",
+          "defaultPath": "properties.statuses[*].statusConditions[*].status"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statuses[*].statusConditions[*].type",
+          "defaultPath": "properties.statuses[*].statusConditions[*].type"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/statusUpdatedAt",
+          "defaultPath": "properties.statusUpdatedAt"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/suspend",
+          "defaultPath": "properties.suspend"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/fluxConfigurations/waitForReconciliation",
+          "defaultPath": "properties.waitForReconciliation"
+        }
+      ],
+      "resourceType": "fluxConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/clusterResourceId",
+          "defaultPath": "properties.clusterResourceId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateLinkScopeId",
+          "defaultPath": "properties.privateLinkScopeId"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "privateLinkScopes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/privateLinkScopes/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "privateLinkScopes/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/complianceState",
+          "defaultPath": "properties.complianceStatus.complianceState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/complianceStatus",
+          "defaultPath": "properties.complianceStatus"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/complianceStatus.complianceState",
+          "defaultPath": "properties.complianceStatus.complianceState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/complianceStatus.lastConfigApplied",
+          "defaultPath": "properties.complianceStatus.lastConfigApplied"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/complianceStatus.message",
+          "defaultPath": "properties.complianceStatus.message"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/complianceStatus.messageLevel",
+          "defaultPath": "properties.complianceStatus.messageLevel"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/configurationProtectedSettings",
+          "defaultPath": "properties.configurationProtectedSettings"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/enableHelmOperator",
+          "defaultPath": "properties.enableHelmOperator"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/helmOperatorProperties",
+          "defaultPath": "properties.helmOperatorProperties"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/helmOperatorProperties.chartValues",
+          "defaultPath": "properties.helmOperatorProperties.chartValues"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/helmOperatorProperties.chartVersion",
+          "defaultPath": "properties.helmOperatorProperties.chartVersion"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/lastConfigApplied",
+          "defaultPath": "properties.complianceStatus.lastConfigApplied"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/operatorInstanceName",
+          "defaultPath": "properties.operatorInstanceName"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/operatorNamespace",
+          "defaultPath": "properties.operatorNamespace"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/operatorParams",
+          "defaultPath": "properties.operatorParams"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/operatorScope",
+          "defaultPath": "properties.operatorScope"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/operatorType",
+          "defaultPath": "properties.operatorType"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/repositoryPublicKey",
+          "defaultPath": "properties.repositoryPublicKey"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/repositoryUrl",
+          "defaultPath": "properties.repositoryUrl"
+        },
+        {
+          "name": "Microsoft.KubernetesConfiguration/sourceControlConfigurations/sshKnownHostsContents",
+          "defaultPath": "properties.sshKnownHostsContents"
+        }
+      ],
+      "resourceType": "sourceControlConfigurations"
+    }
+  ]
+}

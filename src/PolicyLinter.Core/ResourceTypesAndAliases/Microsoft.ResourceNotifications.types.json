@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.ResourceNotifications",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "eventGridFilters"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notificationSessions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

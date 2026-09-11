@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.PortalServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "assistant"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "compilefile"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "copilots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "copilotSettings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dashboards"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "extensions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "extensions/deployments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "extensions/slots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "extensions/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "settings"
+    }
+  ]
+}

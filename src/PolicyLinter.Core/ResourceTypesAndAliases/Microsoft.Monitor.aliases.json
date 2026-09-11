@@ -1,0 +1,102 @@
+{
+  "namespace": "Microsoft.Monitor",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Monitor/accounts/accountId",
+          "defaultPath": "properties.accountId"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/defaultIngestionSettings",
+          "defaultPath": "properties.defaultIngestionSettings"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/defaultIngestionSettings.dataCollectionEndpointResourceId",
+          "defaultPath": "properties.defaultIngestionSettings.dataCollectionEndpointResourceId"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/defaultIngestionSettings.dataCollectionRuleResourceId",
+          "defaultPath": "properties.defaultIngestionSettings.dataCollectionRuleResourceId"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/metrics",
+          "defaultPath": "properties.metrics"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/metrics.internalId",
+          "defaultPath": "properties.metrics.internalId"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/metrics.prometheusQueryEndpoint",
+          "defaultPath": "properties.metrics.prometheusQueryEndpoint"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Monitor/accounts/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        }
+      ],
+      "resourceType": "accounts"
+    }
+  ]
+}

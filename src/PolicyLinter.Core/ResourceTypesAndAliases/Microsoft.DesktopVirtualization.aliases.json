@@ -1,0 +1,1742 @@
+{
+  "namespace": "Microsoft.DesktopVirtualization",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/customData",
+          "defaultPath": "properties.customData"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/failHealthCheckOnStagingFailure",
+          "defaultPath": "properties.failHealthCheckOnStagingFailure"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/hostPoolReferences",
+          "defaultPath": "properties.hostPoolReferences"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/hostPoolReferences[*]",
+          "defaultPath": "properties.hostPoolReferences[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image",
+          "defaultPath": "properties.image"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.certificateExpiry",
+          "defaultPath": "properties.image.certificateExpiry"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.certificateName",
+          "defaultPath": "properties.image.certificateName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.displayName",
+          "defaultPath": "properties.image.displayName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.imagePath",
+          "defaultPath": "properties.image.imagePath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.isActive",
+          "defaultPath": "properties.image.isActive"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.isPackageTimestamped",
+          "defaultPath": "properties.image.isPackageTimestamped"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.isRegularRegistration",
+          "defaultPath": "properties.image.isRegularRegistration"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.lastUpdated",
+          "defaultPath": "properties.image.lastUpdated"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageAlias",
+          "defaultPath": "properties.image.packageAlias"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications",
+          "defaultPath": "properties.image.packageApplications"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*]",
+          "defaultPath": "properties.image.packageApplications[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].appId",
+          "defaultPath": "properties.image.packageApplications[*].appId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].appUserModelID",
+          "defaultPath": "properties.image.packageApplications[*].appUserModelID"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].description",
+          "defaultPath": "properties.image.packageApplications[*].description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].friendlyName",
+          "defaultPath": "properties.image.packageApplications[*].friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].iconImageName",
+          "defaultPath": "properties.image.packageApplications[*].iconImageName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].rawIcon",
+          "defaultPath": "properties.image.packageApplications[*].rawIcon"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageApplications[*].rawPng",
+          "defaultPath": "properties.image.packageApplications[*].rawPng"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageDependencies",
+          "defaultPath": "properties.image.packageDependencies"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageDependencies[*]",
+          "defaultPath": "properties.image.packageDependencies[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageDependencies[*].dependencyName",
+          "defaultPath": "properties.image.packageDependencies[*].dependencyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageDependencies[*].minVersion",
+          "defaultPath": "properties.image.packageDependencies[*].minVersion"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageDependencies[*].publisher",
+          "defaultPath": "properties.image.packageDependencies[*].publisher"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageFamilyName",
+          "defaultPath": "properties.image.packageFamilyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageFullName",
+          "defaultPath": "properties.image.packageFullName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageName",
+          "defaultPath": "properties.image.packageName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.packageRelativePath",
+          "defaultPath": "properties.image.packageRelativePath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/image.version",
+          "defaultPath": "properties.image.version"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/keyVaultURL",
+          "defaultPath": "properties.keyVaultURL"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/packageLookbackUrl",
+          "defaultPath": "properties.packageLookbackUrl"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/packageOwnerName",
+          "defaultPath": "properties.packageOwnerName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/appAttachPackages/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "appattachpackages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applicationGroupType",
+          "defaultPath": "properties.applicationGroupType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/cloudPcResource",
+          "defaultPath": "properties.cloudPcResource"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/hostPoolArmPath",
+          "defaultPath": "properties.hostPoolArmPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/migrationRequest",
+          "defaultPath": "properties.migrationRequest"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/migrationRequest.migrationPath",
+          "defaultPath": "properties.migrationRequest.migrationPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/migrationRequest.operation",
+          "defaultPath": "properties.migrationRequest.operation"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/showInFeed",
+          "defaultPath": "properties.showInFeed"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/workspaceArmPath",
+          "defaultPath": "properties.workspaceArmPath"
+        }
+      ],
+      "resourceType": "applicationgroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/applicationType",
+          "defaultPath": "properties.applicationType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/commandLineArguments",
+          "defaultPath": "properties.commandLineArguments"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/commandLineSetting",
+          "defaultPath": "properties.commandLineSetting"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/filePath",
+          "defaultPath": "properties.filePath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/iconContent",
+          "defaultPath": "properties.iconContent"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/iconHash",
+          "defaultPath": "properties.iconHash"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/iconIndex",
+          "defaultPath": "properties.iconIndex"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/iconPath",
+          "defaultPath": "properties.iconPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/msixPackageApplicationId",
+          "defaultPath": "properties.msixPackageApplicationId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/msixPackageFamilyName",
+          "defaultPath": "properties.msixPackageFamilyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/applications/showInPortal",
+          "defaultPath": "properties.showInPortal"
+        }
+      ],
+      "resourceType": "applicationgroups/applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/desktops/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/applicationGroups/desktops/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        }
+      ],
+      "resourceType": "applicationgroups/desktops"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate",
+          "defaultPath": "properties.agentUpdate"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.maintenanceWindows",
+          "defaultPath": "properties.agentUpdate.maintenanceWindows"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.maintenanceWindows[*]",
+          "defaultPath": "properties.agentUpdate.maintenanceWindows[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.maintenanceWindows[*].dayOfWeek",
+          "defaultPath": "properties.agentUpdate.maintenanceWindows[*].dayOfWeek"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.maintenanceWindows[*].hour",
+          "defaultPath": "properties.agentUpdate.maintenanceWindows[*].hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.maintenanceWindowTimeZone",
+          "defaultPath": "properties.agentUpdate.maintenanceWindowTimeZone"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.type",
+          "defaultPath": "properties.agentUpdate.type"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/agentUpdate.useSessionHostLocalTime",
+          "defaultPath": "properties.agentUpdate.useSessionHostLocalTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/appAttachPackageReferences",
+          "defaultPath": "properties.appAttachPackageReferences"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/appAttachPackageReferences[*]",
+          "defaultPath": "properties.appAttachPackageReferences[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/applicationGroupReferences",
+          "defaultPath": "properties.applicationGroupReferences"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/applicationGroupReferences[*]",
+          "defaultPath": "properties.applicationGroupReferences[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/cloudPcResource",
+          "defaultPath": "properties.cloudPcResource"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/customRdpProperty",
+          "defaultPath": "properties.customRdpProperty"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/directUDP",
+          "defaultPath": "properties.directUDP"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/hostPoolType",
+          "defaultPath": "properties.hostPoolType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/loadBalancerType",
+          "defaultPath": "properties.loadBalancerType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/managedPrivateUDP",
+          "defaultPath": "properties.managedPrivateUDP"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/managementType",
+          "defaultPath": "properties.managementType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/maxSessionLimit",
+          "defaultPath": "properties.maxSessionLimit"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/migrationRequest",
+          "defaultPath": "properties.migrationRequest"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/migrationRequest.migrationPath",
+          "defaultPath": "properties.migrationRequest.migrationPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/migrationRequest.operation",
+          "defaultPath": "properties.migrationRequest.operation"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/personalDesktopAssignmentType",
+          "defaultPath": "properties.personalDesktopAssignmentType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/preferredAppGroupType",
+          "defaultPath": "properties.preferredAppGroupType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2022-09-09",
+                "2021-07-12",
+                "2021-03-09-preview",
+                "2021-02-01-preview",
+                "2021-01-14-preview",
+                "2020-11-10-preview",
+                "2020-11-02-preview",
+                "2020-10-19-preview",
+                "2020-09-21-preview",
+                "2019-12-10-preview",
+                "2019-09-24-preview",
+                "2019-01-23-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/publicUDP",
+          "defaultPath": "properties.publicUDP"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/registrationInfo",
+          "defaultPath": "properties.registrationInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/registrationInfo.expirationTime",
+          "defaultPath": "properties.registrationInfo.expirationTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/registrationInfo.registrationTokenOperation",
+          "defaultPath": "properties.registrationInfo.registrationTokenOperation"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/registrationInfo.resetToken",
+          "defaultPath": "properties.registrationInfo.resetToken"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/registrationInfo.token",
+          "defaultPath": "properties.registrationInfo.token"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/relayUDP",
+          "defaultPath": "properties.relayUDP"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/ring",
+          "defaultPath": "properties.ring"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/ssoadfsAuthority",
+          "defaultPath": "properties.ssoadfsAuthority"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/ssoClientId",
+          "defaultPath": "properties.ssoClientId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/ssoClientSecretKeyVaultPath",
+          "defaultPath": "properties.ssoClientSecretKeyVaultPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/ssoContext",
+          "defaultPath": "properties.ssoContext"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/ssoSecretType",
+          "defaultPath": "properties.ssoSecretType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/startVMOnConnect",
+          "defaultPath": "properties.startVMOnConnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/validationEnvironment",
+          "defaultPath": "properties.validationEnvironment"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/vmTemplate",
+          "defaultPath": "properties.vmTemplate"
+        }
+      ],
+      "resourceType": "hostpools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/imagePath",
+          "defaultPath": "properties.imagePath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/isActive",
+          "defaultPath": "properties.isActive"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/isRegularRegistration",
+          "defaultPath": "properties.isRegularRegistration"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/lastUpdated",
+          "defaultPath": "properties.lastUpdated"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications",
+          "defaultPath": "properties.packageApplications"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*]",
+          "defaultPath": "properties.packageApplications[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].appId",
+          "defaultPath": "properties.packageApplications[*].appId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].appUserModelID",
+          "defaultPath": "properties.packageApplications[*].appUserModelID"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].description",
+          "defaultPath": "properties.packageApplications[*].description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].friendlyName",
+          "defaultPath": "properties.packageApplications[*].friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].iconImageName",
+          "defaultPath": "properties.packageApplications[*].iconImageName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].rawIcon",
+          "defaultPath": "properties.packageApplications[*].rawIcon"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageApplications[*].rawPng",
+          "defaultPath": "properties.packageApplications[*].rawPng"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageDependencies",
+          "defaultPath": "properties.packageDependencies"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageDependencies[*]",
+          "defaultPath": "properties.packageDependencies[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageDependencies[*].dependencyName",
+          "defaultPath": "properties.packageDependencies[*].dependencyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageDependencies[*].minVersion",
+          "defaultPath": "properties.packageDependencies[*].minVersion"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageDependencies[*].publisher",
+          "defaultPath": "properties.packageDependencies[*].publisher"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageFamilyName",
+          "defaultPath": "properties.packageFamilyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageName",
+          "defaultPath": "properties.packageName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/packageRelativePath",
+          "defaultPath": "properties.packageRelativePath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/msixPackages/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "hostpools/msixpackages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "hostpools/privateendpointconnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/availabilityZones",
+          "defaultPath": "properties.availabilityZones"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/availabilityZones[*]",
+          "defaultPath": "properties.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/bootDiagnosticsInfo",
+          "defaultPath": "properties.bootDiagnosticsInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/bootDiagnosticsInfo.enabled",
+          "defaultPath": "properties.bootDiagnosticsInfo.enabled"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/bootDiagnosticsInfo.storageUri",
+          "defaultPath": "properties.bootDiagnosticsInfo.storageUri"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/customConfigurationScriptUrl",
+          "defaultPath": "properties.customConfigurationScriptUrl"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/diskInfo",
+          "defaultPath": "properties.diskInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/diskInfo.type",
+          "defaultPath": "properties.diskInfo.type"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo",
+          "defaultPath": "properties.domainInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.activeDirectoryInfo",
+          "defaultPath": "properties.domainInfo.activeDirectoryInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.activeDirectoryInfo.domainCredentials",
+          "defaultPath": "properties.domainInfo.activeDirectoryInfo.domainCredentials"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.activeDirectoryInfo.domainCredentials.passwordKeyVaultSecretUri",
+          "defaultPath": "properties.domainInfo.activeDirectoryInfo.domainCredentials.passwordKeyVaultSecretUri"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.activeDirectoryInfo.domainCredentials.usernameKeyVaultSecretUri",
+          "defaultPath": "properties.domainInfo.activeDirectoryInfo.domainCredentials.usernameKeyVaultSecretUri"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.activeDirectoryInfo.domainName",
+          "defaultPath": "properties.domainInfo.activeDirectoryInfo.domainName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.activeDirectoryInfo.ouPath",
+          "defaultPath": "properties.domainInfo.activeDirectoryInfo.ouPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.azureActiveDirectoryInfo",
+          "defaultPath": "properties.domainInfo.azureActiveDirectoryInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.azureActiveDirectoryInfo.mdmProviderGuid",
+          "defaultPath": "properties.domainInfo.azureActiveDirectoryInfo.mdmProviderGuid"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/domainInfo.joinType",
+          "defaultPath": "properties.domainInfo.joinType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo",
+          "defaultPath": "properties.imageInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.customInfo",
+          "defaultPath": "properties.imageInfo.customInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.customInfo.resourceId",
+          "defaultPath": "properties.imageInfo.customInfo.resourceId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.marketplaceInfo",
+          "defaultPath": "properties.imageInfo.marketplaceInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.marketplaceInfo.exactVersion",
+          "defaultPath": "properties.imageInfo.marketplaceInfo.exactVersion"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.marketplaceInfo.offer",
+          "defaultPath": "properties.imageInfo.marketplaceInfo.offer"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.marketplaceInfo.publisher",
+          "defaultPath": "properties.imageInfo.marketplaceInfo.publisher"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.marketplaceInfo.sku",
+          "defaultPath": "properties.imageInfo.marketplaceInfo.sku"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/imageInfo.type",
+          "defaultPath": "properties.imageInfo.type"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/networkInfo",
+          "defaultPath": "properties.networkInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/networkInfo.securityGroupId",
+          "defaultPath": "properties.networkInfo.securityGroupId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/networkInfo.subnetId",
+          "defaultPath": "properties.networkInfo.subnetId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/securityInfo",
+          "defaultPath": "properties.securityInfo"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/securityInfo.secureBootEnabled",
+          "defaultPath": "properties.securityInfo.secureBootEnabled"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/securityInfo.type",
+          "defaultPath": "properties.securityInfo.type"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/securityInfo.vTpmEnabled",
+          "defaultPath": "properties.securityInfo.vTpmEnabled"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmAdminCredentials",
+          "defaultPath": "properties.vmAdminCredentials"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmAdminCredentials.passwordKeyVaultSecretUri",
+          "defaultPath": "properties.vmAdminCredentials.passwordKeyVaultSecretUri"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmAdminCredentials.usernameKeyVaultSecretUri",
+          "defaultPath": "properties.vmAdminCredentials.usernameKeyVaultSecretUri"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmLocation",
+          "defaultPath": "properties.vmLocation"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmNamePrefix",
+          "defaultPath": "properties.vmNamePrefix"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmResourceGroup",
+          "defaultPath": "properties.vmResourceGroup"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmSizeId",
+          "defaultPath": "properties.vmSizeId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostConfigurations/vmTags",
+          "defaultPath": "properties.vmTags"
+        }
+      ],
+      "resourceType": "hostpools/sessionhostconfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements/scheduledDateTimeZone",
+          "defaultPath": "properties.scheduledDateTimeZone"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements/update",
+          "defaultPath": "properties.update"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements/update.deleteOriginalVm",
+          "defaultPath": "properties.update.deleteOriginalVm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements/update.logOffDelayMinutes",
+          "defaultPath": "properties.update.logOffDelayMinutes"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements/update.logOffMessage",
+          "defaultPath": "properties.update.logOffMessage"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHostManagements/update.maxVmsRemoved",
+          "defaultPath": "properties.update.maxVmsRemoved"
+        }
+      ],
+      "resourceType": "hostpools/sessionhostmanagements"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHosts/allowNewSession",
+          "defaultPath": "properties.allowNewSession"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHosts/assignedUser",
+          "defaultPath": "properties.assignedUser"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/hostPools/sessionHosts/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        }
+      ],
+      "resourceType": "hostpools/sessionhosts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/exclusionTag",
+          "defaultPath": "properties.exclusionTag"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/hostPoolReferences",
+          "defaultPath": "properties.hostPoolReferences"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/hostPoolReferences[*]",
+          "defaultPath": "properties.hostPoolReferences[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/hostPoolReferences[*].hostPoolArmPath",
+          "defaultPath": "properties.hostPoolReferences[*].hostPoolArmPath"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/hostPoolReferences[*].scalingPlanEnabled",
+          "defaultPath": "properties.hostPoolReferences[*].scalingPlanEnabled"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/hostPoolType",
+          "defaultPath": "properties.hostPoolType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/ring",
+          "defaultPath": "properties.ring"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules",
+          "defaultPath": "properties.schedules"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*]",
+          "defaultPath": "properties.schedules[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].createDelete",
+          "defaultPath": "properties.schedules[*].createDelete"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].createDelete.rampDownMaximumHostPoolSize",
+          "defaultPath": "properties.schedules[*].createDelete.rampDownMaximumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].createDelete.rampDownMinimumHostPoolSize",
+          "defaultPath": "properties.schedules[*].createDelete.rampDownMinimumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].createDelete.rampUpMaximumHostPoolSize",
+          "defaultPath": "properties.schedules[*].createDelete.rampUpMaximumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].createDelete.rampUpMinimumHostPoolSize",
+          "defaultPath": "properties.schedules[*].createDelete.rampUpMinimumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].daysOfWeek",
+          "defaultPath": "properties.schedules[*].daysOfWeek"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].daysOfWeek[*]",
+          "defaultPath": "properties.schedules[*].daysOfWeek[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].name",
+          "defaultPath": "properties.schedules[*].name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].offPeakLoadBalancingAlgorithm",
+          "defaultPath": "properties.schedules[*].offPeakLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].offPeakStartTime",
+          "defaultPath": "properties.schedules[*].offPeakStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].offPeakStartTime.hour",
+          "defaultPath": "properties.schedules[*].offPeakStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].offPeakStartTime.minute",
+          "defaultPath": "properties.schedules[*].offPeakStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].peakLoadBalancingAlgorithm",
+          "defaultPath": "properties.schedules[*].peakLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].peakStartTime",
+          "defaultPath": "properties.schedules[*].peakStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].peakStartTime.hour",
+          "defaultPath": "properties.schedules[*].peakStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].peakStartTime.minute",
+          "defaultPath": "properties.schedules[*].peakStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownCapacityThresholdPct",
+          "defaultPath": "properties.schedules[*].rampDownCapacityThresholdPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownForceLogoffUsers",
+          "defaultPath": "properties.schedules[*].rampDownForceLogoffUsers"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownLoadBalancingAlgorithm",
+          "defaultPath": "properties.schedules[*].rampDownLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownMinimumHostsPct",
+          "defaultPath": "properties.schedules[*].rampDownMinimumHostsPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownNotificationMessage",
+          "defaultPath": "properties.schedules[*].rampDownNotificationMessage"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownStartTime",
+          "defaultPath": "properties.schedules[*].rampDownStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownStartTime.hour",
+          "defaultPath": "properties.schedules[*].rampDownStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownStartTime.minute",
+          "defaultPath": "properties.schedules[*].rampDownStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownStopHostsWhen",
+          "defaultPath": "properties.schedules[*].rampDownStopHostsWhen"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampDownWaitTimeMinutes",
+          "defaultPath": "properties.schedules[*].rampDownWaitTimeMinutes"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampUpCapacityThresholdPct",
+          "defaultPath": "properties.schedules[*].rampUpCapacityThresholdPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampUpLoadBalancingAlgorithm",
+          "defaultPath": "properties.schedules[*].rampUpLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampUpMinimumHostsPct",
+          "defaultPath": "properties.schedules[*].rampUpMinimumHostsPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampUpStartTime",
+          "defaultPath": "properties.schedules[*].rampUpStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampUpStartTime.hour",
+          "defaultPath": "properties.schedules[*].rampUpStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].rampUpStartTime.minute",
+          "defaultPath": "properties.schedules[*].rampUpStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/schedules[*].scalingMethod",
+          "defaultPath": "properties.schedules[*].scalingMethod"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/timeZone",
+          "defaultPath": "properties.timeZone"
+        }
+      ],
+      "resourceType": "scalingplans"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/daysOfWeek",
+          "defaultPath": "properties.daysOfWeek"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/daysOfWeek[*]",
+          "defaultPath": "properties.daysOfWeek[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakActionOnDisconnect",
+          "defaultPath": "properties.offPeakActionOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakActionOnLogoff",
+          "defaultPath": "properties.offPeakActionOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakMinutesToWaitOnDisconnect",
+          "defaultPath": "properties.offPeakMinutesToWaitOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakMinutesToWaitOnLogoff",
+          "defaultPath": "properties.offPeakMinutesToWaitOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakStartTime",
+          "defaultPath": "properties.offPeakStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakStartTime.hour",
+          "defaultPath": "properties.offPeakStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakStartTime.minute",
+          "defaultPath": "properties.offPeakStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/offPeakStartVMOnConnect",
+          "defaultPath": "properties.offPeakStartVMOnConnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakActionOnDisconnect",
+          "defaultPath": "properties.peakActionOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakActionOnLogoff",
+          "defaultPath": "properties.peakActionOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakMinutesToWaitOnDisconnect",
+          "defaultPath": "properties.peakMinutesToWaitOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakMinutesToWaitOnLogoff",
+          "defaultPath": "properties.peakMinutesToWaitOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakStartTime",
+          "defaultPath": "properties.peakStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakStartTime.hour",
+          "defaultPath": "properties.peakStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakStartTime.minute",
+          "defaultPath": "properties.peakStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/peakStartVMOnConnect",
+          "defaultPath": "properties.peakStartVMOnConnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownActionOnDisconnect",
+          "defaultPath": "properties.rampDownActionOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownActionOnLogoff",
+          "defaultPath": "properties.rampDownActionOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownMinutesToWaitOnDisconnect",
+          "defaultPath": "properties.rampDownMinutesToWaitOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownMinutesToWaitOnLogoff",
+          "defaultPath": "properties.rampDownMinutesToWaitOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownStartTime",
+          "defaultPath": "properties.rampDownStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownStartTime.hour",
+          "defaultPath": "properties.rampDownStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownStartTime.minute",
+          "defaultPath": "properties.rampDownStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampDownStartVMOnConnect",
+          "defaultPath": "properties.rampDownStartVMOnConnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpActionOnDisconnect",
+          "defaultPath": "properties.rampUpActionOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpActionOnLogoff",
+          "defaultPath": "properties.rampUpActionOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpAutoStartHosts",
+          "defaultPath": "properties.rampUpAutoStartHosts"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpMinutesToWaitOnDisconnect",
+          "defaultPath": "properties.rampUpMinutesToWaitOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpMinutesToWaitOnLogoff",
+          "defaultPath": "properties.rampUpMinutesToWaitOnLogoff"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpStartTime",
+          "defaultPath": "properties.rampUpStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpStartTime.hour",
+          "defaultPath": "properties.rampUpStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpStartTime.minute",
+          "defaultPath": "properties.rampUpStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/personalSchedules/rampUpStartVMOnConnect",
+          "defaultPath": "properties.rampUpStartVMOnConnect"
+        }
+      ],
+      "resourceType": "scalingplans/personalSchedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/createDelete",
+          "defaultPath": "properties.createDelete"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/createDelete.rampDownMaximumHostPoolSize",
+          "defaultPath": "properties.createDelete.rampDownMaximumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/createDelete.rampDownMinimumHostPoolSize",
+          "defaultPath": "properties.createDelete.rampDownMinimumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/createDelete.rampUpMaximumHostPoolSize",
+          "defaultPath": "properties.createDelete.rampUpMaximumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/createDelete.rampUpMinimumHostPoolSize",
+          "defaultPath": "properties.createDelete.rampUpMinimumHostPoolSize"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/daysOfWeek",
+          "defaultPath": "properties.daysOfWeek"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/daysOfWeek[*]",
+          "defaultPath": "properties.daysOfWeek[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/offPeakLoadBalancingAlgorithm",
+          "defaultPath": "properties.offPeakLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/offPeakStartTime",
+          "defaultPath": "properties.offPeakStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/offPeakStartTime.hour",
+          "defaultPath": "properties.offPeakStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/offPeakStartTime.minute",
+          "defaultPath": "properties.offPeakStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/peakLoadBalancingAlgorithm",
+          "defaultPath": "properties.peakLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/peakStartTime",
+          "defaultPath": "properties.peakStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/peakStartTime.hour",
+          "defaultPath": "properties.peakStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/peakStartTime.minute",
+          "defaultPath": "properties.peakStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownCapacityThresholdPct",
+          "defaultPath": "properties.rampDownCapacityThresholdPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownForceLogoffUsers",
+          "defaultPath": "properties.rampDownForceLogoffUsers"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownLoadBalancingAlgorithm",
+          "defaultPath": "properties.rampDownLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownMinimumHostsPct",
+          "defaultPath": "properties.rampDownMinimumHostsPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownNotificationMessage",
+          "defaultPath": "properties.rampDownNotificationMessage"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownStartTime",
+          "defaultPath": "properties.rampDownStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownStartTime.hour",
+          "defaultPath": "properties.rampDownStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownStartTime.minute",
+          "defaultPath": "properties.rampDownStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownStopHostsWhen",
+          "defaultPath": "properties.rampDownStopHostsWhen"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampDownWaitTimeMinutes",
+          "defaultPath": "properties.rampDownWaitTimeMinutes"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampUpCapacityThresholdPct",
+          "defaultPath": "properties.rampUpCapacityThresholdPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampUpLoadBalancingAlgorithm",
+          "defaultPath": "properties.rampUpLoadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampUpMinimumHostsPct",
+          "defaultPath": "properties.rampUpMinimumHostsPct"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampUpStartTime",
+          "defaultPath": "properties.rampUpStartTime"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampUpStartTime.hour",
+          "defaultPath": "properties.rampUpStartTime.hour"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/rampUpStartTime.minute",
+          "defaultPath": "properties.rampUpStartTime.minute"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/scalingPlans/pooledSchedules/scalingMethod",
+          "defaultPath": "properties.scalingMethod"
+        }
+      ],
+      "resourceType": "scalingplans/pooledSchedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/applicationGroupReferences",
+          "defaultPath": "properties.applicationGroupReferences"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/applicationGroupReferences[*]",
+          "defaultPath": "properties.applicationGroupReferences[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/cloudPcResource",
+          "defaultPath": "properties.cloudPcResource"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2022-09-09",
+                "2021-07-12",
+                "2021-03-09-preview",
+                "2021-02-01-preview",
+                "2021-01-14-preview",
+                "2020-11-10-preview",
+                "2020-11-02-preview",
+                "2020-10-19-preview",
+                "2020-09-21-preview",
+                "2019-12-10-preview",
+                "2019-09-24-preview",
+                "2019-01-23-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "workspaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DesktopVirtualization/workspaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "workspaces/privateendpointconnections"
+    }
+  ]
+}

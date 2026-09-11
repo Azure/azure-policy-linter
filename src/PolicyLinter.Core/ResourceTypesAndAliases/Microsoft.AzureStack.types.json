@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.AzureStack",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "cloudManifestFiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateDeploymentLicense"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "linkedSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registrations/customerSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registrations/products"
+    }
+  ]
+}

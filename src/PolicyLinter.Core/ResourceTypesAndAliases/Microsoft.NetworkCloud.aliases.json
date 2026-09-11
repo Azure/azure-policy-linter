@@ -1,0 +1,2554 @@
+{
+  "namespace": "Microsoft.NetworkCloud",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/associatedResourceIds",
+          "defaultPath": "properties.associatedResourceIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/associatedResourceIds[*]",
+          "defaultPath": "properties.associatedResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/bmcConnectionString",
+          "defaultPath": "properties.bmcConnectionString"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/bmcCredentials",
+          "defaultPath": "properties.bmcCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/bmcCredentials.password",
+          "defaultPath": "properties.bmcCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/bmcCredentials.username",
+          "defaultPath": "properties.bmcCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/bmcMacAddress",
+          "defaultPath": "properties.bmcMacAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/bootMacAddress",
+          "defaultPath": "properties.bootMacAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/cordonStatus",
+          "defaultPath": "properties.cordonStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory",
+          "defaultPath": "properties.hardwareInventory"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.additionalHostInformation",
+          "defaultPath": "properties.hardwareInventory.additionalHostInformation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.interfaces",
+          "defaultPath": "properties.hardwareInventory.interfaces"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.interfaces[*]",
+          "defaultPath": "properties.hardwareInventory.interfaces[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.interfaces[*].linkStatus",
+          "defaultPath": "properties.hardwareInventory.interfaces[*].linkStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.interfaces[*].macAddress",
+          "defaultPath": "properties.hardwareInventory.interfaces[*].macAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.interfaces[*].name",
+          "defaultPath": "properties.hardwareInventory.interfaces[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.interfaces[*].networkInterfaceId",
+          "defaultPath": "properties.hardwareInventory.interfaces[*].networkInterfaceId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics",
+          "defaultPath": "properties.hardwareInventory.nics"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*]",
+          "defaultPath": "properties.hardwareInventory.nics[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].lldpNeighbor",
+          "defaultPath": "properties.hardwareInventory.nics[*].lldpNeighbor"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].lldpNeighbor.portDescription",
+          "defaultPath": "properties.hardwareInventory.nics[*].lldpNeighbor.portDescription"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].lldpNeighbor.portName",
+          "defaultPath": "properties.hardwareInventory.nics[*].lldpNeighbor.portName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].lldpNeighbor.systemDescription",
+          "defaultPath": "properties.hardwareInventory.nics[*].lldpNeighbor.systemDescription"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].lldpNeighbor.systemName",
+          "defaultPath": "properties.hardwareInventory.nics[*].lldpNeighbor.systemName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].macAddress",
+          "defaultPath": "properties.hardwareInventory.nics[*].macAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareInventory.nics[*].name",
+          "defaultPath": "properties.hardwareInventory.nics[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareValidationStatus",
+          "defaultPath": "properties.hardwareValidationStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareValidationStatus.lastValidationTime",
+          "defaultPath": "properties.hardwareValidationStatus.lastValidationTime"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hardwareValidationStatus.result",
+          "defaultPath": "properties.hardwareValidationStatus.result"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hybridAksClustersAssociatedIds",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/hybridAksClustersAssociatedIds[*]",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/kubernetesNodeName",
+          "defaultPath": "properties.kubernetesNodeName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/machineDetails",
+          "defaultPath": "properties.machineDetails"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/machineName",
+          "defaultPath": "properties.machineName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/machineRoles",
+          "defaultPath": "properties.machineRoles"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/machineRoles[*]",
+          "defaultPath": "properties.machineRoles[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/machineSkuId",
+          "defaultPath": "properties.machineSkuId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/oamIpv4Address",
+          "defaultPath": "properties.oamIpv4Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/oamIpv6Address",
+          "defaultPath": "properties.oamIpv6Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/osImage",
+          "defaultPath": "properties.osImage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/powerState",
+          "defaultPath": "properties.powerState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/rackId",
+          "defaultPath": "properties.rackId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/rackSlot",
+          "defaultPath": "properties.rackSlot"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/readyState",
+          "defaultPath": "properties.readyState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/runtimeProtectionStatus",
+          "defaultPath": "properties.runtimeProtectionStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/runtimeProtectionStatus.definitionsLastUpdated",
+          "defaultPath": "properties.runtimeProtectionStatus.definitionsLastUpdated"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/runtimeProtectionStatus.definitionsVersion",
+          "defaultPath": "properties.runtimeProtectionStatus.definitionsVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/runtimeProtectionStatus.scanCompletedTime",
+          "defaultPath": "properties.runtimeProtectionStatus.scanCompletedTime"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/runtimeProtectionStatus.scanScheduledTime",
+          "defaultPath": "properties.runtimeProtectionStatus.scanScheduledTime"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/runtimeProtectionStatus.scanStartedTime",
+          "defaultPath": "properties.runtimeProtectionStatus.scanStartedTime"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/serviceTag",
+          "defaultPath": "properties.serviceTag"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/virtualMachinesAssociatedIds",
+          "defaultPath": "properties.virtualMachinesAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/bareMetalMachines/virtualMachinesAssociatedIds[*]",
+          "defaultPath": "properties.virtualMachinesAssociatedIds[*]"
+        }
+      ],
+      "resourceType": "bareMetalMachines"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints",
+          "defaultPath": "properties.additionalEgressEndpoints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints[*]",
+          "defaultPath": "properties.additionalEgressEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints[*].category",
+          "defaultPath": "properties.additionalEgressEndpoints[*].category"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints[*].endpoints",
+          "defaultPath": "properties.additionalEgressEndpoints[*].endpoints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints[*].endpoints[*]",
+          "defaultPath": "properties.additionalEgressEndpoints[*].endpoints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints[*].endpoints[*].domainName",
+          "defaultPath": "properties.additionalEgressEndpoints[*].endpoints[*].domainName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/additionalEgressEndpoints[*].endpoints[*].port",
+          "defaultPath": "properties.additionalEgressEndpoints[*].endpoints[*].port"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/associatedResourceIds",
+          "defaultPath": "properties.associatedResourceIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/associatedResourceIds[*]",
+          "defaultPath": "properties.associatedResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enableDefaultEgressEndpoints",
+          "defaultPath": "properties.enableDefaultEgressEndpoints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints",
+          "defaultPath": "properties.enabledEgressEndpoints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints[*]",
+          "defaultPath": "properties.enabledEgressEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints[*].category",
+          "defaultPath": "properties.enabledEgressEndpoints[*].category"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints[*].endpoints",
+          "defaultPath": "properties.enabledEgressEndpoints[*].endpoints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints[*].endpoints[*]",
+          "defaultPath": "properties.enabledEgressEndpoints[*].endpoints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints[*].endpoints[*].domainName",
+          "defaultPath": "properties.enabledEgressEndpoints[*].endpoints[*].domainName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/enabledEgressEndpoints[*].endpoints[*].port",
+          "defaultPath": "properties.enabledEgressEndpoints[*].endpoints[*].port"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/hybridAksClustersAssociatedIds",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/hybridAksClustersAssociatedIds[*]",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/interfaceName",
+          "defaultPath": "properties.interfaceName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/virtualMachinesAssociatedIds",
+          "defaultPath": "properties.virtualMachinesAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/cloudServicesNetworks/virtualMachinesAssociatedIds[*]",
+          "defaultPath": "properties.virtualMachinesAssociatedIds[*]"
+        }
+      ],
+      "resourceType": "cloudServicesNetworks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/analyticsWorkspaceId",
+          "defaultPath": "properties.analyticsWorkspaceId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/availabilityZones",
+          "defaultPath": "properties.availabilityZones"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/availabilityZones[*]",
+          "defaultPath": "properties.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/clusterVersions",
+          "defaultPath": "properties.clusterVersions"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/clusterVersions[*]",
+          "defaultPath": "properties.clusterVersions[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/clusterVersions[*].supportExpiryDate",
+          "defaultPath": "properties.clusterVersions[*].supportExpiryDate"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/clusterVersions[*].targetClusterVersion",
+          "defaultPath": "properties.clusterVersions[*].targetClusterVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/fabricControllerId",
+          "defaultPath": "properties.fabricControllerId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/managedResourceGroupConfiguration",
+          "defaultPath": "properties.managedResourceGroupConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/managedResourceGroupConfiguration.location",
+          "defaultPath": "properties.managedResourceGroupConfiguration.location"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/managedResourceGroupConfiguration.name",
+          "defaultPath": "properties.managedResourceGroupConfiguration.name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/managerExtendedLocation",
+          "defaultPath": "properties.managerExtendedLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/managerExtendedLocation.name",
+          "defaultPath": "properties.managerExtendedLocation.name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/managerExtendedLocation.type",
+          "defaultPath": "properties.managerExtendedLocation.type"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusterManagers/vmSize",
+          "defaultPath": "properties.vmSize"
+        }
+      ],
+      "resourceType": "clusterManagers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.availabilityZone",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.availabilityZone"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*]",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcConnectionString",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcConnectionString"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcCredentials",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcCredentials.password",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcCredentials.username",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcMacAddress",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bmcMacAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bootMacAddress",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].bootMacAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].machineDetails",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].machineDetails"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].machineName",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].machineName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].rackSlot",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].rackSlot"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].serialNumber",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.bareMetalMachineConfigurationData[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.networkRackId",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.networkRackId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.rackLocation",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.rackLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.rackSerialNumber",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.rackSerialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.rackSkuId",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.rackSkuId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*]",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].adminCredentials",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].adminCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].adminCredentials.password",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].adminCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].adminCredentials.username",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].adminCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].rackSlot",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].rackSlot"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].serialNumber",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].storageApplianceName",
+          "defaultPath": "properties.aggregatorOrSingleRackDefinition.storageApplianceConfigurationData[*].storageApplianceName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/analyticsWorkspaceId",
+          "defaultPath": "properties.analyticsWorkspaceId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions",
+          "defaultPath": "properties.availableUpgradeVersions"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*]",
+          "defaultPath": "properties.availableUpgradeVersions[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*].controlImpact",
+          "defaultPath": "properties.availableUpgradeVersions[*].controlImpact"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*].expectedDuration",
+          "defaultPath": "properties.availableUpgradeVersions[*].expectedDuration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*].impactDescription",
+          "defaultPath": "properties.availableUpgradeVersions[*].impactDescription"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*].supportExpiryDate",
+          "defaultPath": "properties.availableUpgradeVersions[*].supportExpiryDate"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*].targetClusterVersion",
+          "defaultPath": "properties.availableUpgradeVersions[*].targetClusterVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/availableUpgradeVersions[*].workloadImpact",
+          "defaultPath": "properties.availableUpgradeVersions[*].workloadImpact"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity",
+          "defaultPath": "properties.clusterCapacity"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.availableApplianceStorageGB",
+          "defaultPath": "properties.clusterCapacity.availableApplianceStorageGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.availableCoreCount",
+          "defaultPath": "properties.clusterCapacity.availableCoreCount"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.availableHostStorageGB",
+          "defaultPath": "properties.clusterCapacity.availableHostStorageGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.availableMemoryGB",
+          "defaultPath": "properties.clusterCapacity.availableMemoryGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.totalApplianceStorageGB",
+          "defaultPath": "properties.clusterCapacity.totalApplianceStorageGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.totalCoreCount",
+          "defaultPath": "properties.clusterCapacity.totalCoreCount"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.totalHostStorageGB",
+          "defaultPath": "properties.clusterCapacity.totalHostStorageGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterCapacity.totalMemoryGB",
+          "defaultPath": "properties.clusterCapacity.totalMemoryGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterConnectionStatus",
+          "defaultPath": "properties.clusterConnectionStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterExtendedLocation",
+          "defaultPath": "properties.clusterExtendedLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterExtendedLocation.name",
+          "defaultPath": "properties.clusterExtendedLocation.name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterExtendedLocation.type",
+          "defaultPath": "properties.clusterExtendedLocation.type"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterLocation",
+          "defaultPath": "properties.clusterLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterManagerConnectionStatus",
+          "defaultPath": "properties.clusterManagerConnectionStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterManagerId",
+          "defaultPath": "properties.clusterManagerId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterServicePrincipal",
+          "defaultPath": "properties.clusterServicePrincipal"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterServicePrincipal.applicationId",
+          "defaultPath": "properties.clusterServicePrincipal.applicationId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterServicePrincipal.password",
+          "defaultPath": "properties.clusterServicePrincipal.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterServicePrincipal.principalId",
+          "defaultPath": "properties.clusterServicePrincipal.principalId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterServicePrincipal.tenantId",
+          "defaultPath": "properties.clusterServicePrincipal.tenantId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterType",
+          "defaultPath": "properties.clusterType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/clusterVersion",
+          "defaultPath": "properties.clusterVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeDeploymentThreshold",
+          "defaultPath": "properties.computeDeploymentThreshold"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeDeploymentThreshold.grouping",
+          "defaultPath": "properties.computeDeploymentThreshold.grouping"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeDeploymentThreshold.type",
+          "defaultPath": "properties.computeDeploymentThreshold.type"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeDeploymentThreshold.value",
+          "defaultPath": "properties.computeDeploymentThreshold.value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions",
+          "defaultPath": "properties.computeRackDefinitions"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*]",
+          "defaultPath": "properties.computeRackDefinitions[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].availabilityZone",
+          "defaultPath": "properties.computeRackDefinitions[*].availabilityZone"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*]",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcConnectionString",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcConnectionString"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcCredentials",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcCredentials.password",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcCredentials.username",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcMacAddress",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bmcMacAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bootMacAddress",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].bootMacAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].machineDetails",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].machineDetails"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].machineName",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].machineName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].rackSlot",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].rackSlot"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].bareMetalMachineConfigurationData[*].serialNumber",
+          "defaultPath": "properties.computeRackDefinitions[*].bareMetalMachineConfigurationData[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].networkRackId",
+          "defaultPath": "properties.computeRackDefinitions[*].networkRackId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].rackLocation",
+          "defaultPath": "properties.computeRackDefinitions[*].rackLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].rackSerialNumber",
+          "defaultPath": "properties.computeRackDefinitions[*].rackSerialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].rackSkuId",
+          "defaultPath": "properties.computeRackDefinitions[*].rackSkuId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*]",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*].adminCredentials",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*].adminCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*].adminCredentials.password",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*].adminCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*].adminCredentials.username",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*].adminCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*].rackSlot",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*].rackSlot"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*].serialNumber",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/computeRackDefinitions[*].storageApplianceConfigurationData[*].storageApplianceName",
+          "defaultPath": "properties.computeRackDefinitions[*].storageApplianceConfigurationData[*].storageApplianceName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/hybridAksExtendedLocation",
+          "defaultPath": "properties.hybridAksExtendedLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/hybridAksExtendedLocation.name",
+          "defaultPath": "properties.hybridAksExtendedLocation.name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/hybridAksExtendedLocation.type",
+          "defaultPath": "properties.hybridAksExtendedLocation.type"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/managedResourceGroupConfiguration",
+          "defaultPath": "properties.managedResourceGroupConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/managedResourceGroupConfiguration.location",
+          "defaultPath": "properties.managedResourceGroupConfiguration.location"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/managedResourceGroupConfiguration.name",
+          "defaultPath": "properties.managedResourceGroupConfiguration.name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/manualActionCount",
+          "defaultPath": "properties.manualActionCount"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/networkFabricId",
+          "defaultPath": "properties.networkFabricId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/runtimeProtectionConfiguration",
+          "defaultPath": "properties.runtimeProtectionConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/runtimeProtectionConfiguration.enforcementLevel",
+          "defaultPath": "properties.runtimeProtectionConfiguration.enforcementLevel"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/secretArchive",
+          "defaultPath": "properties.secretArchive"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/secretArchive.keyVaultId",
+          "defaultPath": "properties.secretArchive.keyVaultId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/secretArchive.useKeyVault",
+          "defaultPath": "properties.secretArchive.useKeyVault"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/supportExpiryDate",
+          "defaultPath": "properties.supportExpiryDate"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/updateStrategy",
+          "defaultPath": "properties.updateStrategy"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/updateStrategy.maxUnavailable",
+          "defaultPath": "properties.updateStrategy.maxUnavailable"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/updateStrategy.strategyType",
+          "defaultPath": "properties.updateStrategy.strategyType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/updateStrategy.thresholdType",
+          "defaultPath": "properties.updateStrategy.thresholdType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/updateStrategy.thresholdValue",
+          "defaultPath": "properties.updateStrategy.thresholdValue"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/updateStrategy.waitTimeMinutes",
+          "defaultPath": "properties.updateStrategy.waitTimeMinutes"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/workloadResourceIds",
+          "defaultPath": "properties.workloadResourceIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/workloadResourceIds[*]",
+          "defaultPath": "properties.workloadResourceIds[*]"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/azureGroupId",
+          "defaultPath": "properties.azureGroupId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/expiration",
+          "defaultPath": "properties.expiration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/jumpHostsAllowed",
+          "defaultPath": "properties.jumpHostsAllowed"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/jumpHostsAllowed[*]",
+          "defaultPath": "properties.jumpHostsAllowed[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/lastValidation",
+          "defaultPath": "properties.lastValidation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/osGroupName",
+          "defaultPath": "properties.osGroupName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/privilegeLevel",
+          "defaultPath": "properties.privilegeLevel"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList",
+          "defaultPath": "properties.userList"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList[*]",
+          "defaultPath": "properties.userList[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList[*].azureUserName",
+          "defaultPath": "properties.userList[*].azureUserName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList[*].description",
+          "defaultPath": "properties.userList[*].description"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList[*].sshPublicKey",
+          "defaultPath": "properties.userList[*].sshPublicKey"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList[*].sshPublicKey.keyData",
+          "defaultPath": "properties.userList[*].sshPublicKey.keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userList[*].userPrincipalName",
+          "defaultPath": "properties.userList[*].userPrincipalName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userListStatus",
+          "defaultPath": "properties.userListStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userListStatus[*]",
+          "defaultPath": "properties.userListStatus[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userListStatus[*].azureUserName",
+          "defaultPath": "properties.userListStatus[*].azureUserName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userListStatus[*].status",
+          "defaultPath": "properties.userListStatus[*].status"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bareMetalMachineKeySets/userListStatus[*].statusMessage",
+          "defaultPath": "properties.userListStatus[*].statusMessage"
+        }
+      ],
+      "resourceType": "clusters/bareMetalMachineKeySets"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/azureGroupId",
+          "defaultPath": "properties.azureGroupId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/expiration",
+          "defaultPath": "properties.expiration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/lastValidation",
+          "defaultPath": "properties.lastValidation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/privilegeLevel",
+          "defaultPath": "properties.privilegeLevel"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList",
+          "defaultPath": "properties.userList"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList[*]",
+          "defaultPath": "properties.userList[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList[*].azureUserName",
+          "defaultPath": "properties.userList[*].azureUserName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList[*].description",
+          "defaultPath": "properties.userList[*].description"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList[*].sshPublicKey",
+          "defaultPath": "properties.userList[*].sshPublicKey"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList[*].sshPublicKey.keyData",
+          "defaultPath": "properties.userList[*].sshPublicKey.keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userList[*].userPrincipalName",
+          "defaultPath": "properties.userList[*].userPrincipalName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userListStatus",
+          "defaultPath": "properties.userListStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userListStatus[*]",
+          "defaultPath": "properties.userListStatus[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userListStatus[*].azureUserName",
+          "defaultPath": "properties.userListStatus[*].azureUserName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userListStatus[*].status",
+          "defaultPath": "properties.userListStatus[*].status"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/bmcKeySets/userListStatus[*].statusMessage",
+          "defaultPath": "properties.userListStatus[*].statusMessage"
+        }
+      ],
+      "resourceType": "clusters/bmcKeySets"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/collectionInterval",
+          "defaultPath": "properties.collectionInterval"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/disabledMetrics",
+          "defaultPath": "properties.disabledMetrics"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/disabledMetrics[*]",
+          "defaultPath": "properties.disabledMetrics[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/enabledMetrics",
+          "defaultPath": "properties.enabledMetrics"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/enabledMetrics[*]",
+          "defaultPath": "properties.enabledMetrics[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/clusters/metricsConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "clusters/metricsConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/aadConfiguration",
+          "defaultPath": "properties.aadConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/aadConfiguration.adminGroupObjectIds",
+          "defaultPath": "properties.aadConfiguration.adminGroupObjectIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/aadConfiguration.adminGroupObjectIds[*]",
+          "defaultPath": "properties.aadConfiguration.adminGroupObjectIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/administratorConfiguration",
+          "defaultPath": "properties.administratorConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/administratorConfiguration.adminUsername",
+          "defaultPath": "properties.administratorConfiguration.adminUsername"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/administratorConfiguration.sshPublicKeys",
+          "defaultPath": "properties.administratorConfiguration.sshPublicKeys"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/administratorConfiguration.sshPublicKeys[*]",
+          "defaultPath": "properties.administratorConfiguration.sshPublicKeys[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/administratorConfiguration.sshPublicKeys[*].keyData",
+          "defaultPath": "properties.administratorConfiguration.sshPublicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/attachedNetworkIds",
+          "defaultPath": "properties.attachedNetworkIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/attachedNetworkIds[*]",
+          "defaultPath": "properties.attachedNetworkIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/availableUpgrades",
+          "defaultPath": "properties.availableUpgrades"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/availableUpgrades[*]",
+          "defaultPath": "properties.availableUpgrades[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/availableUpgrades[*].availabilityLifecycle",
+          "defaultPath": "properties.availableUpgrades[*].availabilityLifecycle"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/availableUpgrades[*].version",
+          "defaultPath": "properties.availableUpgrades[*].version"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/connectedClusterId",
+          "defaultPath": "properties.connectedClusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneKubernetesVersion",
+          "defaultPath": "properties.controlPlaneKubernetesVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration",
+          "defaultPath": "properties.controlPlaneNodeConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.administratorConfiguration",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.administratorConfiguration.adminUsername",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration.adminUsername"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys[*]",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys[*].keyData",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.administratorConfiguration.sshPublicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.availabilityZones",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.availabilityZones"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.availabilityZones[*]",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.count",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.count"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/controlPlaneNodeConfiguration.vmSkuName",
+          "defaultPath": "properties.controlPlaneNodeConfiguration.vmSkuName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/featureStatuses",
+          "defaultPath": "properties.featureStatuses"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/featureStatuses[*]",
+          "defaultPath": "properties.featureStatuses[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/featureStatuses[*].detailedStatus",
+          "defaultPath": "properties.featureStatuses[*].detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/featureStatuses[*].detailedStatusMessage",
+          "defaultPath": "properties.featureStatuses[*].detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/featureStatuses[*].name",
+          "defaultPath": "properties.featureStatuses[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/featureStatuses[*].version",
+          "defaultPath": "properties.featureStatuses[*].version"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations",
+          "defaultPath": "properties.initialAgentPoolConfigurations"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].administratorConfiguration",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].administratorConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].administratorConfiguration.adminUsername",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].administratorConfiguration.adminUsername"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].administratorConfiguration.sshPublicKeys",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].administratorConfiguration.sshPublicKeys"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].administratorConfiguration.sshPublicKeys[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].administratorConfiguration.sshPublicKeys[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].administratorConfiguration.sshPublicKeys[*].keyData",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].administratorConfiguration.sshPublicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].agentOptions",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].agentOptions"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].agentOptions.hugepagesCount",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].agentOptions.hugepagesCount"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].agentOptions.hugepagesSize",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].agentOptions.hugepagesSize"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks[*].networkId",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks[*].pluginType",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l2Networks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*].ipamEnabled",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*].ipamEnabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*].networkId",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*].pluginType",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.l3Networks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks[*].networkId",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks[*].pluginType",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].attachedNetworkConfiguration.trunkedNetworks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].availabilityZones",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].availabilityZones"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].availabilityZones[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].count",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].count"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].labels",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].labels"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].labels[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].labels[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].labels[*].key",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].labels[*].key"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].labels[*].value",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].labels[*].value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].mode",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].mode"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].name",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].taints",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].taints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].taints[*]",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].taints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].taints[*].key",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].taints[*].key"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].taints[*].value",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].taints[*].value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].upgradeSettings",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].upgradeSettings"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].upgradeSettings.maxSurge",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].upgradeSettings.maxSurge"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/initialAgentPoolConfigurations[*].vmSkuName",
+          "defaultPath": "properties.initialAgentPoolConfigurations[*].vmSkuName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/managedResourceGroupConfiguration",
+          "defaultPath": "properties.managedResourceGroupConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/managedResourceGroupConfiguration.location",
+          "defaultPath": "properties.managedResourceGroupConfiguration.location"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/managedResourceGroupConfiguration.name",
+          "defaultPath": "properties.managedResourceGroupConfiguration.name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration",
+          "defaultPath": "properties.networkConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l2Networks",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l2Networks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l2Networks[*]",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l2Networks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l2Networks[*].networkId",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l2Networks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l2Networks[*].pluginType",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l2Networks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l3Networks",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l3Networks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l3Networks[*]",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l3Networks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l3Networks[*].ipamEnabled",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l3Networks[*].ipamEnabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l3Networks[*].networkId",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l3Networks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.l3Networks[*].pluginType",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.l3Networks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.trunkedNetworks",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.trunkedNetworks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.trunkedNetworks[*]",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.trunkedNetworks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.trunkedNetworks[*].networkId",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.trunkedNetworks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.attachedNetworkConfiguration.trunkedNetworks[*].pluginType",
+          "defaultPath": "properties.networkConfiguration.attachedNetworkConfiguration.trunkedNetworks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].advertiseToFabric",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].advertiseToFabric"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].communities",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].communities"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].communities[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].communities[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].ipAddressPools",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].ipAddressPools"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].ipAddressPools[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].ipAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].peers",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].peers"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].peers[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpAdvertisements[*].peers[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].bfdEnabled",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].bfdEnabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].bgpMultiHop",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].bgpMultiHop"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].holdTime",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].holdTime"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].keepAliveTime",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].keepAliveTime"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].myAsn",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].myAsn"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].name",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].password",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].peerAddress",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].peerAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].peerAsn",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].peerAsn"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].peerPort",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.bgpPeers[*].peerPort"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.fabricPeeringEnabled",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.fabricPeeringEnabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].addresses",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].addresses"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].addresses[*]",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].addresses[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].autoAssign",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].autoAssign"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].name",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].onlyUseHostIps",
+          "defaultPath": "properties.networkConfiguration.bgpServiceLoadBalancerConfiguration.ipAddressPools[*].onlyUseHostIps"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.cloudServicesNetworkId",
+          "defaultPath": "properties.networkConfiguration.cloudServicesNetworkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.cniNetworkId",
+          "defaultPath": "properties.networkConfiguration.cniNetworkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.dnsServiceIp",
+          "defaultPath": "properties.networkConfiguration.dnsServiceIp"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.podCidrs",
+          "defaultPath": "properties.networkConfiguration.podCidrs"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.podCidrs[*]",
+          "defaultPath": "properties.networkConfiguration.podCidrs[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.serviceCidrs",
+          "defaultPath": "properties.networkConfiguration.serviceCidrs"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/networkConfiguration.serviceCidrs[*]",
+          "defaultPath": "properties.networkConfiguration.serviceCidrs[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes",
+          "defaultPath": "properties.nodes"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*]",
+          "defaultPath": "properties.nodes[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].agentPoolId",
+          "defaultPath": "properties.nodes[*].agentPoolId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].availabilityZone",
+          "defaultPath": "properties.nodes[*].availabilityZone"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].bareMetalMachineId",
+          "defaultPath": "properties.nodes[*].bareMetalMachineId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].cpuCores",
+          "defaultPath": "properties.nodes[*].cpuCores"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].detailedStatus",
+          "defaultPath": "properties.nodes[*].detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].detailedStatusMessage",
+          "defaultPath": "properties.nodes[*].detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].diskSizeGB",
+          "defaultPath": "properties.nodes[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].image",
+          "defaultPath": "properties.nodes[*].image"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].kubernetesVersion",
+          "defaultPath": "properties.nodes[*].kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].labels",
+          "defaultPath": "properties.nodes[*].labels"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].labels[*]",
+          "defaultPath": "properties.nodes[*].labels[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].labels[*].key",
+          "defaultPath": "properties.nodes[*].labels[*].key"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].labels[*].value",
+          "defaultPath": "properties.nodes[*].labels[*].value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].memorySizeGB",
+          "defaultPath": "properties.nodes[*].memorySizeGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].mode",
+          "defaultPath": "properties.nodes[*].mode"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].name",
+          "defaultPath": "properties.nodes[*].name"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments",
+          "defaultPath": "properties.nodes[*].networkAttachments"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*]",
+          "defaultPath": "properties.nodes[*].networkAttachments[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].attachedNetworkId",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].attachedNetworkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].defaultGateway",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].defaultGateway"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].ipAllocationMethod",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].ipAllocationMethod"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].ipv4Address",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].ipv4Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].ipv6Address",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].ipv6Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].macAddress",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].macAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].networkAttachments[*].networkAttachmentName",
+          "defaultPath": "properties.nodes[*].networkAttachments[*].networkAttachmentName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].powerState",
+          "defaultPath": "properties.nodes[*].powerState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].role",
+          "defaultPath": "properties.nodes[*].role"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].taints",
+          "defaultPath": "properties.nodes[*].taints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].taints[*]",
+          "defaultPath": "properties.nodes[*].taints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].taints[*].key",
+          "defaultPath": "properties.nodes[*].taints[*].key"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].taints[*].value",
+          "defaultPath": "properties.nodes[*].taints[*].value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/nodes[*].vmSkuName",
+          "defaultPath": "properties.nodes[*].vmSkuName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "kubernetesClusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/administratorConfiguration",
+          "defaultPath": "properties.administratorConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/administratorConfiguration.adminUsername",
+          "defaultPath": "properties.administratorConfiguration.adminUsername"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/administratorConfiguration.sshPublicKeys",
+          "defaultPath": "properties.administratorConfiguration.sshPublicKeys"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/administratorConfiguration.sshPublicKeys[*]",
+          "defaultPath": "properties.administratorConfiguration.sshPublicKeys[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/administratorConfiguration.sshPublicKeys[*].keyData",
+          "defaultPath": "properties.administratorConfiguration.sshPublicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/agentOptions",
+          "defaultPath": "properties.agentOptions"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/agentOptions.hugepagesCount",
+          "defaultPath": "properties.agentOptions.hugepagesCount"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/agentOptions.hugepagesSize",
+          "defaultPath": "properties.agentOptions.hugepagesSize"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration",
+          "defaultPath": "properties.attachedNetworkConfiguration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l2Networks",
+          "defaultPath": "properties.attachedNetworkConfiguration.l2Networks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l2Networks[*]",
+          "defaultPath": "properties.attachedNetworkConfiguration.l2Networks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l2Networks[*].networkId",
+          "defaultPath": "properties.attachedNetworkConfiguration.l2Networks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l2Networks[*].pluginType",
+          "defaultPath": "properties.attachedNetworkConfiguration.l2Networks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l3Networks",
+          "defaultPath": "properties.attachedNetworkConfiguration.l3Networks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l3Networks[*]",
+          "defaultPath": "properties.attachedNetworkConfiguration.l3Networks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l3Networks[*].ipamEnabled",
+          "defaultPath": "properties.attachedNetworkConfiguration.l3Networks[*].ipamEnabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l3Networks[*].networkId",
+          "defaultPath": "properties.attachedNetworkConfiguration.l3Networks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.l3Networks[*].pluginType",
+          "defaultPath": "properties.attachedNetworkConfiguration.l3Networks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.trunkedNetworks",
+          "defaultPath": "properties.attachedNetworkConfiguration.trunkedNetworks"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.trunkedNetworks[*]",
+          "defaultPath": "properties.attachedNetworkConfiguration.trunkedNetworks[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.trunkedNetworks[*].networkId",
+          "defaultPath": "properties.attachedNetworkConfiguration.trunkedNetworks[*].networkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/attachedNetworkConfiguration.trunkedNetworks[*].pluginType",
+          "defaultPath": "properties.attachedNetworkConfiguration.trunkedNetworks[*].pluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/availabilityZones",
+          "defaultPath": "properties.availabilityZones"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/availabilityZones[*]",
+          "defaultPath": "properties.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/count",
+          "defaultPath": "properties.count"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/labels[*]",
+          "defaultPath": "properties.labels[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/labels[*].key",
+          "defaultPath": "properties.labels[*].key"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/labels[*].value",
+          "defaultPath": "properties.labels[*].value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/taints",
+          "defaultPath": "properties.taints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/taints[*]",
+          "defaultPath": "properties.taints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/taints[*].key",
+          "defaultPath": "properties.taints[*].key"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/taints[*].value",
+          "defaultPath": "properties.taints[*].value"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/upgradeSettings",
+          "defaultPath": "properties.upgradeSettings"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/upgradeSettings.maxSurge",
+          "defaultPath": "properties.upgradeSettings.maxSurge"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/kubernetesClusters/agentPools/vmSkuName",
+          "defaultPath": "properties.vmSkuName"
+        }
+      ],
+      "resourceType": "kubernetesClusters/agentPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/associatedResourceIds",
+          "defaultPath": "properties.associatedResourceIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/associatedResourceIds[*]",
+          "defaultPath": "properties.associatedResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/hybridAksClustersAssociatedIds",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/hybridAksClustersAssociatedIds[*]",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/hybridAksPluginType",
+          "defaultPath": "properties.hybridAksPluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/interfaceName",
+          "defaultPath": "properties.interfaceName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/l2IsolationDomainId",
+          "defaultPath": "properties.l2IsolationDomainId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/virtualMachinesAssociatedIds",
+          "defaultPath": "properties.virtualMachinesAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l2Networks/virtualMachinesAssociatedIds[*]",
+          "defaultPath": "properties.virtualMachinesAssociatedIds[*]"
+        }
+      ],
+      "resourceType": "l2Networks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/associatedResourceIds",
+          "defaultPath": "properties.associatedResourceIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/associatedResourceIds[*]",
+          "defaultPath": "properties.associatedResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/hybridAksClustersAssociatedIds",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/hybridAksClustersAssociatedIds[*]",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/hybridAksIpamEnabled",
+          "defaultPath": "properties.hybridAksIpamEnabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/hybridAksPluginType",
+          "defaultPath": "properties.hybridAksPluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/interfaceName",
+          "defaultPath": "properties.interfaceName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/ipAllocationType",
+          "defaultPath": "properties.ipAllocationType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/ipv4ConnectedPrefix",
+          "defaultPath": "properties.ipv4ConnectedPrefix"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/ipv6ConnectedPrefix",
+          "defaultPath": "properties.ipv6ConnectedPrefix"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/l3IsolationDomainId",
+          "defaultPath": "properties.l3IsolationDomainId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/virtualMachinesAssociatedIds",
+          "defaultPath": "properties.virtualMachinesAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/virtualMachinesAssociatedIds[*]",
+          "defaultPath": "properties.virtualMachinesAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/l3Networks/vlan",
+          "defaultPath": "properties.vlan"
+        }
+      ],
+      "resourceType": "l3Networks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/racks/availabilityZone",
+          "defaultPath": "properties.availabilityZone"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/rackLocation",
+          "defaultPath": "properties.rackLocation"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/rackSerialNumber",
+          "defaultPath": "properties.rackSerialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/racks/rackSkuId",
+          "defaultPath": "properties.rackSkuId"
+        }
+      ],
+      "resourceType": "racks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/administratorCredentials",
+          "defaultPath": "properties.administratorCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/administratorCredentials.password",
+          "defaultPath": "properties.administratorCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/administratorCredentials.username",
+          "defaultPath": "properties.administratorCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/capacity",
+          "defaultPath": "properties.capacity"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/capacityUsed",
+          "defaultPath": "properties.capacityUsed"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/managementIpv4Address",
+          "defaultPath": "properties.managementIpv4Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/rackId",
+          "defaultPath": "properties.rackId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/rackSlot",
+          "defaultPath": "properties.rackSlot"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/remoteVendorManagementFeature",
+          "defaultPath": "properties.remoteVendorManagementFeature"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/remoteVendorManagementStatus",
+          "defaultPath": "properties.remoteVendorManagementStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/storageAppliances/storageApplianceSkuId",
+          "defaultPath": "properties.storageApplianceSkuId"
+        }
+      ],
+      "resourceType": "storageAppliances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/associatedResourceIds",
+          "defaultPath": "properties.associatedResourceIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/associatedResourceIds[*]",
+          "defaultPath": "properties.associatedResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/hybridAksClustersAssociatedIds",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/hybridAksClustersAssociatedIds[*]",
+          "defaultPath": "properties.hybridAksClustersAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/hybridAksPluginType",
+          "defaultPath": "properties.hybridAksPluginType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/interfaceName",
+          "defaultPath": "properties.interfaceName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/isolationDomainIds",
+          "defaultPath": "properties.isolationDomainIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/isolationDomainIds[*]",
+          "defaultPath": "properties.isolationDomainIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/virtualMachinesAssociatedIds",
+          "defaultPath": "properties.virtualMachinesAssociatedIds"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/virtualMachinesAssociatedIds[*]",
+          "defaultPath": "properties.virtualMachinesAssociatedIds[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/vlans",
+          "defaultPath": "properties.vlans"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/trunkedNetworks/vlans[*]",
+          "defaultPath": "properties.vlans[*]"
+        }
+      ],
+      "resourceType": "trunkedNetworks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/adminUsername",
+          "defaultPath": "properties.adminUsername"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/availabilityZone",
+          "defaultPath": "properties.availabilityZone"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/bareMetalMachineId",
+          "defaultPath": "properties.bareMetalMachineId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/bootMethod",
+          "defaultPath": "properties.bootMethod"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment",
+          "defaultPath": "properties.cloudServicesNetworkAttachment"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.attachedNetworkId",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.attachedNetworkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.defaultGateway",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.defaultGateway"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.ipAllocationMethod",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.ipAllocationMethod"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.ipv4Address",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.ipv4Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.ipv6Address",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.ipv6Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.macAddress",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.macAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cloudServicesNetworkAttachment.networkAttachmentName",
+          "defaultPath": "properties.cloudServicesNetworkAttachment.networkAttachmentName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/cpuCores",
+          "defaultPath": "properties.cpuCores"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/isolateEmulatorThread",
+          "defaultPath": "properties.isolateEmulatorThread"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/memorySizeGB",
+          "defaultPath": "properties.memorySizeGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments",
+          "defaultPath": "properties.networkAttachments"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*]",
+          "defaultPath": "properties.networkAttachments[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].attachedNetworkId",
+          "defaultPath": "properties.networkAttachments[*].attachedNetworkId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].defaultGateway",
+          "defaultPath": "properties.networkAttachments[*].defaultGateway"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].ipAllocationMethod",
+          "defaultPath": "properties.networkAttachments[*].ipAllocationMethod"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].ipv4Address",
+          "defaultPath": "properties.networkAttachments[*].ipv4Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].ipv6Address",
+          "defaultPath": "properties.networkAttachments[*].ipv6Address"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].macAddress",
+          "defaultPath": "properties.networkAttachments[*].macAddress"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkAttachments[*].networkAttachmentName",
+          "defaultPath": "properties.networkAttachments[*].networkAttachmentName"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/networkData",
+          "defaultPath": "properties.networkData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/placementHints",
+          "defaultPath": "properties.placementHints"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/placementHints[*]",
+          "defaultPath": "properties.placementHints[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/placementHints[*].hintType",
+          "defaultPath": "properties.placementHints[*].hintType"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/placementHints[*].resourceId",
+          "defaultPath": "properties.placementHints[*].resourceId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/placementHints[*].schedulingExecution",
+          "defaultPath": "properties.placementHints[*].schedulingExecution"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/placementHints[*].scope",
+          "defaultPath": "properties.placementHints[*].scope"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/powerState",
+          "defaultPath": "properties.powerState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/sshPublicKeys",
+          "defaultPath": "properties.sshPublicKeys"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/sshPublicKeys[*]",
+          "defaultPath": "properties.sshPublicKeys[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/sshPublicKeys[*].keyData",
+          "defaultPath": "properties.sshPublicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile.osDisk",
+          "defaultPath": "properties.storageProfile.osDisk"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile.osDisk.createOption",
+          "defaultPath": "properties.storageProfile.osDisk.createOption"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile.osDisk.deleteOption",
+          "defaultPath": "properties.storageProfile.osDisk.deleteOption"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile.osDisk.diskSizeGB",
+          "defaultPath": "properties.storageProfile.osDisk.diskSizeGB"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile.volumeAttachments",
+          "defaultPath": "properties.storageProfile.volumeAttachments"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/storageProfile.volumeAttachments[*]",
+          "defaultPath": "properties.storageProfile.volumeAttachments[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/userData",
+          "defaultPath": "properties.userData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/virtioInterface",
+          "defaultPath": "properties.virtioInterface"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/vmDeviceModel",
+          "defaultPath": "properties.vmDeviceModel"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/vmImage",
+          "defaultPath": "properties.vmImage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/vmImageRepositoryCredentials",
+          "defaultPath": "properties.vmImageRepositoryCredentials"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/vmImageRepositoryCredentials.password",
+          "defaultPath": "properties.vmImageRepositoryCredentials.password"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/vmImageRepositoryCredentials.registryUrl",
+          "defaultPath": "properties.vmImageRepositoryCredentials.registryUrl"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/vmImageRepositoryCredentials.username",
+          "defaultPath": "properties.vmImageRepositoryCredentials.username"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/volumes",
+          "defaultPath": "properties.volumes"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/volumes[*]",
+          "defaultPath": "properties.volumes[*]"
+        }
+      ],
+      "resourceType": "virtualMachines"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/expiration",
+          "defaultPath": "properties.expiration"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/privateLinkServiceId",
+          "defaultPath": "properties.privateLinkServiceId"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/sshPublicKey",
+          "defaultPath": "properties.sshPublicKey"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/sshPublicKey.keyData",
+          "defaultPath": "properties.sshPublicKey.keyData"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/virtualMachines/consoles/virtualMachineAccessId",
+          "defaultPath": "properties.virtualMachineAccessId"
+        }
+      ],
+      "resourceType": "virtualMachines/consoles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetworkCloud/volumes/attachedTo",
+          "defaultPath": "properties.attachedTo"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/volumes/attachedTo[*]",
+          "defaultPath": "properties.attachedTo[*]"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/volumes/detailedStatus",
+          "defaultPath": "properties.detailedStatus"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/volumes/detailedStatusMessage",
+          "defaultPath": "properties.detailedStatusMessage"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/volumes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/volumes/serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.NetworkCloud/volumes/sizeMiB",
+          "defaultPath": "properties.sizeMiB"
+        }
+      ],
+      "resourceType": "volumes"
+    }
+  ]
+}

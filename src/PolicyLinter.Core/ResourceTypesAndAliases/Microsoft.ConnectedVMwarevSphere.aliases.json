@@ -1,0 +1,1485 @@
+{
+  "namespace": "Microsoft.ConnectedVMwarevSphere",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/datastoreIds",
+          "defaultPath": "properties.datastoreIds"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/datastoreIds[*]",
+          "defaultPath": "properties.datastoreIds[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/networkIds",
+          "defaultPath": "properties.networkIds"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/networkIds[*]",
+          "defaultPath": "properties.networkIds[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/clusters/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/datastores/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        }
+      ],
+      "resourceType": "datastores"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/hosts/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        }
+      ],
+      "resourceType": "hosts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/cpuLimitMHz",
+          "defaultPath": "properties.cpuLimitMHz"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/cpuReservationMHz",
+          "defaultPath": "properties.cpuReservationMHz"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/cpuSharesLevel",
+          "defaultPath": "properties.cpuSharesLevel"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/memLimitMB",
+          "defaultPath": "properties.memLimitMB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/memReservationMB",
+          "defaultPath": "properties.memReservationMB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/memSharesLevel",
+          "defaultPath": "properties.memSharesLevel"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/resourcePools/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        }
+      ],
+      "resourceType": "resourcepools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/connectionStatus",
+          "defaultPath": "properties.connectionStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/credentials.password",
+          "defaultPath": "properties.credentials.password"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/credentials.username",
+          "defaultPath": "properties.credentials.username"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/instanceUuid",
+          "defaultPath": "properties.instanceUuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/port",
+          "defaultPath": "properties.port"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "VCenters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/Datastore.capacityGB",
+          "defaultPath": "properties.capacityGB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/Datastore.freeSpaceGB",
+          "defaultPath": "properties.freeSpaceGB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/Host.parent",
+          "defaultPath": "properties.parent"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/Host.parent.inventoryItemId",
+          "defaultPath": "properties.parent.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/Host.parent.moName",
+          "defaultPath": "properties.parent.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/inventoryType",
+          "defaultPath": "properties.inventoryType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/managedResourceId",
+          "defaultPath": "properties.managedResourceId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/ResourcePool.parent",
+          "defaultPath": "properties.parent"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/ResourcePool.parent.inventoryItemId",
+          "defaultPath": "properties.parent.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/ResourcePool.parent.moName",
+          "defaultPath": "properties.parent.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.host",
+          "defaultPath": "properties.host"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.host.inventoryItemId",
+          "defaultPath": "properties.host.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.host.moName",
+          "defaultPath": "properties.host.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.instanceUuid",
+          "defaultPath": "properties.instanceUuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.ipAddresses",
+          "defaultPath": "properties.ipAddresses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.ipAddresses[*]",
+          "defaultPath": "properties.ipAddresses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.osName",
+          "defaultPath": "properties.osName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.powerState",
+          "defaultPath": "properties.powerState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.resourcePool",
+          "defaultPath": "properties.resourcePool"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.resourcePool.inventoryItemId",
+          "defaultPath": "properties.resourcePool.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.resourcePool.moName",
+          "defaultPath": "properties.resourcePool.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.smbiosUuid",
+          "defaultPath": "properties.smbiosUuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.toolsRunningStatus",
+          "defaultPath": "properties.toolsRunningStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.toolsVersion",
+          "defaultPath": "properties.toolsVersion"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachine.toolsVersionStatus",
+          "defaultPath": "properties.toolsVersionStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachineTemplate.folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachineTemplate.memorySizeMB",
+          "defaultPath": "properties.memorySizeMB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachineTemplate.numCoresPerSocket",
+          "defaultPath": "properties.numCoresPerSocket"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachineTemplate.numCPUs",
+          "defaultPath": "properties.numCPUs"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachineTemplate.osName",
+          "defaultPath": "properties.osName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/vcenters/inventoryItems/VirtualMachineTemplate.osType",
+          "defaultPath": "properties.osType"
+        }
+      ],
+      "resourceType": "VCenters/inventoryitems"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/firmwareType",
+          "defaultPath": "properties.firmwareType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile",
+          "defaultPath": "properties.guestAgentProfile"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.agentVersion",
+          "defaultPath": "properties.guestAgentProfile.agentVersion"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails",
+          "defaultPath": "properties.guestAgentProfile.errorDetails"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*]",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].code",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].code"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details[*]",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details[*].code",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details[*].code"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details[*].details",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details[*].details"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details[*].details[*]",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details[*].message",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].details[*].target",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].details[*].target"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].message",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.errorDetails[*].target",
+          "defaultPath": "properties.guestAgentProfile.errorDetails[*].target"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.lastStatusChange",
+          "defaultPath": "properties.guestAgentProfile.lastStatusChange"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.status",
+          "defaultPath": "properties.guestAgentProfile.status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgentProfile.vmUuid",
+          "defaultPath": "properties.guestAgentProfile.vmUuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile",
+          "defaultPath": "properties.hardwareProfile"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile.cpuHotAddEnabled",
+          "defaultPath": "properties.hardwareProfile.cpuHotAddEnabled"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile.cpuHotRemoveEnabled",
+          "defaultPath": "properties.hardwareProfile.cpuHotRemoveEnabled"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile.memoryHotAddEnabled",
+          "defaultPath": "properties.hardwareProfile.memoryHotAddEnabled"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile.memorySizeMB",
+          "defaultPath": "properties.hardwareProfile.memorySizeMB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile.numCoresPerSocket",
+          "defaultPath": "properties.hardwareProfile.numCoresPerSocket"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hardwareProfile.numCPUs",
+          "defaultPath": "properties.hardwareProfile.numCPUs"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/instanceUuid",
+          "defaultPath": "properties.instanceUuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces",
+          "defaultPath": "properties.networkProfile.networkInterfaces"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].deviceKey",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].deviceKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipAddresses",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipAddresses[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.allocationMethod",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.allocationMethod"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.dnsServers",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.dnsServers"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.dnsServers[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.gateway",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.gateway"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.gateway[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.gateway[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.ipAddress",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.ipAddress"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*].allocationMethod",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*].allocationMethod"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*].ipAddress",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*].ipAddress"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*].subnetMask",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.ipAddressInfo[*].subnetMask"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.primaryWinsServer",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.primaryWinsServer"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.secondaryWinsServer",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.secondaryWinsServer"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].ipSettings.subnetMask",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipSettings.subnetMask"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].label",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].label"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].macAddress",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].macAddress"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].name",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].name"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].networkId",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].networkId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].networkMoName",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].networkMoName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].networkMoRefId",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].networkMoRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].nicType",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].nicType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/networkProfile.networkInterfaces[*].powerOnBoot",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].powerOnBoot"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile",
+          "defaultPath": "properties.osProfile"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.adminPassword",
+          "defaultPath": "properties.osProfile.adminPassword"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.adminUsername",
+          "defaultPath": "properties.osProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.computerName",
+          "defaultPath": "properties.osProfile.computerName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.osName",
+          "defaultPath": "properties.osProfile.osName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.osType",
+          "defaultPath": "properties.osProfile.osType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.toolsRunningStatus",
+          "defaultPath": "properties.osProfile.toolsRunningStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.toolsVersion",
+          "defaultPath": "properties.osProfile.toolsVersion"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/osProfile.toolsVersionStatus",
+          "defaultPath": "properties.osProfile.toolsVersionStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/placementProfile",
+          "defaultPath": "properties.placementProfile"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/placementProfile.clusterId",
+          "defaultPath": "properties.placementProfile.clusterId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/placementProfile.datastoreId",
+          "defaultPath": "properties.placementProfile.datastoreId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/placementProfile.hostId",
+          "defaultPath": "properties.placementProfile.hostId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/placementProfile.resourcePoolId",
+          "defaultPath": "properties.placementProfile.resourcePoolId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/powerState",
+          "defaultPath": "properties.powerState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/resourcePoolId",
+          "defaultPath": "properties.resourcePoolId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/smbiosUuid",
+          "defaultPath": "properties.smbiosUuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks",
+          "defaultPath": "properties.storageProfile.disks"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*]",
+          "defaultPath": "properties.storageProfile.disks[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].controllerKey",
+          "defaultPath": "properties.storageProfile.disks[*].controllerKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].deviceKey",
+          "defaultPath": "properties.storageProfile.disks[*].deviceKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].deviceName",
+          "defaultPath": "properties.storageProfile.disks[*].deviceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].diskMode",
+          "defaultPath": "properties.storageProfile.disks[*].diskMode"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].diskObjectId",
+          "defaultPath": "properties.storageProfile.disks[*].diskObjectId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].diskSizeGB",
+          "defaultPath": "properties.storageProfile.disks[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].diskType",
+          "defaultPath": "properties.storageProfile.disks[*].diskType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].label",
+          "defaultPath": "properties.storageProfile.disks[*].label"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].name",
+          "defaultPath": "properties.storageProfile.disks[*].name"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.disks[*].unitNumber",
+          "defaultPath": "properties.storageProfile.disks[*].unitNumber"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers",
+          "defaultPath": "properties.storageProfile.scsiControllers"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers[*]",
+          "defaultPath": "properties.storageProfile.scsiControllers[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers[*].busNumber",
+          "defaultPath": "properties.storageProfile.scsiControllers[*].busNumber"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers[*].controllerKey",
+          "defaultPath": "properties.storageProfile.scsiControllers[*].controllerKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers[*].scsiCtlrUnitNumber",
+          "defaultPath": "properties.storageProfile.scsiControllers[*].scsiCtlrUnitNumber"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers[*].sharing",
+          "defaultPath": "properties.storageProfile.scsiControllers[*].sharing"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/storageProfile.scsiControllers[*].type",
+          "defaultPath": "properties.storageProfile.scsiControllers[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/templateId",
+          "defaultPath": "properties.templateId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/vmId",
+          "defaultPath": "properties.vmId"
+        }
+      ],
+      "resourceType": "virtualmachines"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/autoUpgradeMinorVersion",
+          "defaultPath": "properties.autoUpgradeMinorVersion"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/forceUpdateTag",
+          "defaultPath": "properties.forceUpdateTag"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView",
+          "defaultPath": "properties.instanceView"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.name",
+          "defaultPath": "properties.instanceView.name"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.status",
+          "defaultPath": "properties.instanceView.status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.status.code",
+          "defaultPath": "properties.instanceView.status.code"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.status.displayStatus",
+          "defaultPath": "properties.instanceView.status.displayStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.status.level",
+          "defaultPath": "properties.instanceView.status.level"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.status.message",
+          "defaultPath": "properties.instanceView.status.message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.status.time",
+          "defaultPath": "properties.instanceView.status.time"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.type",
+          "defaultPath": "properties.instanceView.type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/instanceView.typeHandlerVersion",
+          "defaultPath": "properties.instanceView.typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/publisher",
+          "defaultPath": "properties.publisher"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/type",
+          "defaultPath": "properties.type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/extensions/typeHandlerVersion",
+          "defaultPath": "properties.typeHandlerVersion"
+        }
+      ],
+      "resourceType": "virtualmachines/extensions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/credentials.password",
+          "defaultPath": "properties.credentials.password"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/credentials.username",
+          "defaultPath": "properties.credentials.username"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/httpProxyConfig",
+          "defaultPath": "properties.httpProxyConfig"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/httpProxyConfig.httpsProxy",
+          "defaultPath": "properties.httpProxyConfig.httpsProxy"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/provisioningAction",
+          "defaultPath": "properties.provisioningAction"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/guestAgents/uuid",
+          "defaultPath": "properties.uuid"
+        }
+      ],
+      "resourceType": "virtualmachines/guestagents"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/identity",
+          "defaultPath": "properties.identity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/identity.principalId",
+          "defaultPath": "properties.identity.principalId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/identity.tenantId",
+          "defaultPath": "properties.identity.tenantId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/identity.type",
+          "defaultPath": "properties.identity.type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/publicKey",
+          "defaultPath": "properties.publicKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachines/hybridIdentityMetadata/vmId",
+          "defaultPath": "properties.vmId"
+        }
+      ],
+      "resourceType": "virtualmachines/hybrididentitymetadata"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks",
+          "defaultPath": "properties.disks"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*]",
+          "defaultPath": "properties.disks[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].controllerKey",
+          "defaultPath": "properties.disks[*].controllerKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].deviceKey",
+          "defaultPath": "properties.disks[*].deviceKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].deviceName",
+          "defaultPath": "properties.disks[*].deviceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].diskMode",
+          "defaultPath": "properties.disks[*].diskMode"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].diskObjectId",
+          "defaultPath": "properties.disks[*].diskObjectId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].diskSizeGB",
+          "defaultPath": "properties.disks[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].diskType",
+          "defaultPath": "properties.disks[*].diskType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].label",
+          "defaultPath": "properties.disks[*].label"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].name",
+          "defaultPath": "properties.disks[*].name"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/disks[*].unitNumber",
+          "defaultPath": "properties.disks[*].unitNumber"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/firmwareType",
+          "defaultPath": "properties.firmwareType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/memorySizeMB",
+          "defaultPath": "properties.memorySizeMB"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces",
+          "defaultPath": "properties.networkInterfaces"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*]",
+          "defaultPath": "properties.networkInterfaces[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].deviceKey",
+          "defaultPath": "properties.networkInterfaces[*].deviceKey"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipAddresses",
+          "defaultPath": "properties.networkInterfaces[*].ipAddresses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipAddresses[*]",
+          "defaultPath": "properties.networkInterfaces[*].ipAddresses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.allocationMethod",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.allocationMethod"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.dnsServers",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.dnsServers"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.dnsServers[*]",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.gateway",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.gateway"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.gateway[*]",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.gateway[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.ipAddress",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.ipAddress"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.ipAddressInfo",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.ipAddressInfo"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.ipAddressInfo[*]",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.ipAddressInfo[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.ipAddressInfo[*].allocationMethod",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.ipAddressInfo[*].allocationMethod"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.ipAddressInfo[*].ipAddress",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.ipAddressInfo[*].ipAddress"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.ipAddressInfo[*].subnetMask",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.ipAddressInfo[*].subnetMask"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.primaryWinsServer",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.primaryWinsServer"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.secondaryWinsServer",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.secondaryWinsServer"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].ipSettings.subnetMask",
+          "defaultPath": "properties.networkInterfaces[*].ipSettings.subnetMask"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].label",
+          "defaultPath": "properties.networkInterfaces[*].label"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].macAddress",
+          "defaultPath": "properties.networkInterfaces[*].macAddress"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].name",
+          "defaultPath": "properties.networkInterfaces[*].name"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].networkId",
+          "defaultPath": "properties.networkInterfaces[*].networkId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].networkMoName",
+          "defaultPath": "properties.networkInterfaces[*].networkMoName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].networkMoRefId",
+          "defaultPath": "properties.networkInterfaces[*].networkMoRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].nicType",
+          "defaultPath": "properties.networkInterfaces[*].nicType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/networkInterfaces[*].powerOnBoot",
+          "defaultPath": "properties.networkInterfaces[*].powerOnBoot"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/numCoresPerSocket",
+          "defaultPath": "properties.numCoresPerSocket"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/numCPUs",
+          "defaultPath": "properties.numCPUs"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/osName",
+          "defaultPath": "properties.osName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/toolsVersion",
+          "defaultPath": "properties.toolsVersion"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/toolsVersionStatus",
+          "defaultPath": "properties.toolsVersionStatus"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualMachineTemplates/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        }
+      ],
+      "resourceType": "virtualmachinetemplates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/customResourceName",
+          "defaultPath": "properties.customResourceName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/inventoryItemId",
+          "defaultPath": "properties.inventoryItemId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/moName",
+          "defaultPath": "properties.moName"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/moRefId",
+          "defaultPath": "properties.moRefId"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses",
+          "defaultPath": "properties.statuses"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*]",
+          "defaultPath": "properties.statuses[*]"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*].lastUpdatedAt",
+          "defaultPath": "properties.statuses[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*].message",
+          "defaultPath": "properties.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*].reason",
+          "defaultPath": "properties.statuses[*].reason"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*].severity",
+          "defaultPath": "properties.statuses[*].severity"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*].status",
+          "defaultPath": "properties.statuses[*].status"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/statuses[*].type",
+          "defaultPath": "properties.statuses[*].type"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/uuid",
+          "defaultPath": "properties.uuid"
+        },
+        {
+          "name": "Microsoft.ConnectedVMwarevSphere/virtualNetworks/vCenterId",
+          "defaultPath": "properties.vCenterId"
+        }
+      ],
+      "resourceType": "virtualnetworks"
+    }
+  ]
+}

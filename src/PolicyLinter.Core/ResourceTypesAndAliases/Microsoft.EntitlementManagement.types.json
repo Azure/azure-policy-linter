@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.EntitlementManagement",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "namespace": "Microsoft.DataLakeAnalytics",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/accountId",
+          "defaultPath": "properties.accountId"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies",
+          "defaultPath": "properties.computePolicies"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies[*]",
+          "defaultPath": "properties.computePolicies[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies[*].maxDegreeOfParallelismPerJob",
+          "defaultPath": "properties.computePolicies[*].properties.maxDegreeOfParallelismPerJob"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies[*].minPriorityPerJob",
+          "defaultPath": "properties.computePolicies[*].properties.minPriorityPerJob"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies[*].name",
+          "defaultPath": "properties.computePolicies[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies[*].objectId",
+          "defaultPath": "properties.computePolicies[*].properties.objectId"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies[*].objectType",
+          "defaultPath": "properties.computePolicies[*].properties.objectType"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/currentTier",
+          "defaultPath": "properties.currentTier"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts",
+          "defaultPath": "properties.dataLakeStoreAccounts"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts[*]",
+          "defaultPath": "properties.dataLakeStoreAccounts[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts[*].id",
+          "defaultPath": "properties.dataLakeStoreAccounts[*].id"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts[*].name",
+          "defaultPath": "properties.dataLakeStoreAccounts[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts[*].suffix",
+          "defaultPath": "properties.dataLakeStoreAccounts[*].properties.suffix"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/defaultDataLakeStoreAccount",
+          "defaultPath": "properties.defaultDataLakeStoreAccount"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/endIpAddress",
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallAllowAzureIps",
+          "defaultPath": "properties.firewallAllowAzureIps"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules",
+          "defaultPath": "properties.firewallRules"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules[*]",
+          "defaultPath": "properties.firewallRules[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules[*].endIpAddress",
+          "defaultPath": "properties.firewallRules[*].properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules[*].name",
+          "defaultPath": "properties.firewallRules[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules[*].startIpAddress",
+          "defaultPath": "properties.firewallRules[*].properties.startIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallState",
+          "defaultPath": "properties.firewallState"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/maxDegreeOfParallelism",
+          "defaultPath": "properties.maxDegreeOfParallelism"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/maxDegreeOfParallelismPerJob",
+          "defaultPath": "properties.maxDegreeOfParallelismPerJob"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/maxJobCount",
+          "defaultPath": "properties.maxJobCount"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/minPriorityPerJob",
+          "defaultPath": "properties.minPriorityPerJob"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/newTier",
+          "defaultPath": "properties.newTier"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/objectType",
+          "defaultPath": "properties.objectType"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/queryStoreRetention",
+          "defaultPath": "properties.queryStoreRetention"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/startIpAddress",
+          "defaultPath": "properties.startIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts",
+          "defaultPath": "properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts[*]",
+          "defaultPath": "properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts[*].accessKey",
+          "defaultPath": "properties.storageAccounts[*].properties.accessKey"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts[*].id",
+          "defaultPath": "properties.storageAccounts[*].id"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts[*].name",
+          "defaultPath": "properties.storageAccounts[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts[*].suffix",
+          "defaultPath": "properties.storageAccounts[*].properties.suffix"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/systemMaxDegreeOfParallelism",
+          "defaultPath": "properties.systemMaxDegreeOfParallelism"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/systemMaxJobCount",
+          "defaultPath": "properties.systemMaxJobCount"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies/maxDegreeOfParallelismPerJob",
+          "defaultPath": "properties.maxDegreeOfParallelismPerJob"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies/minPriorityPerJob",
+          "defaultPath": "properties.minPriorityPerJob"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/computePolicies/objectType",
+          "defaultPath": "properties.objectType"
+        }
+      ],
+      "resourceType": "accounts/computePolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts/suffix",
+          "defaultPath": "properties.suffix"
+        }
+      ],
+      "resourceType": "accounts/dataLakeStoreAccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules/endIpAddress",
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/firewallRules/startIpAddress",
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "accounts/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts/accessKey",
+          "defaultPath": "properties.accessKey"
+        },
+        {
+          "name": "Microsoft.DataLakeAnalytics/accounts/storageAccounts/suffix",
+          "defaultPath": "properties.suffix"
+        }
+      ],
+      "resourceType": "accounts/storageAccounts"
+    }
+  ]
+}
