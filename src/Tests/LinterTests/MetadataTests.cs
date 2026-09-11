@@ -26,6 +26,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        void PolicyLinter_AliasResolver_ResolveAliasCaseInsensitively()
+        {
+            var aliasResolver = new AliasResolver();
+
+            aliasResolver
+                .TryResolveAlias("microsoft.AppPlatform/Spring/apps.persistentDisk.usedInGB", out var alias)
+                .Should()
+                .BeTrue();
+
+            alias.Should().NotBeNull();
+            alias.Name.Should().Be("Microsoft.AppPlatform/Spring/apps.persistentDisk.usedInGB");
+        }
+
+        [Fact]
         void PolicyLinter_TypeMetadata_ResolveAlias()
         {
             var typeMetadata = new TypeMetadata(this.mockMetadataProvider, this.mockAliasResolver);

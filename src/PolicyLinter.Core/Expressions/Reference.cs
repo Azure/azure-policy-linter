@@ -30,6 +30,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
         /// <summary>
         /// A dictionary that maps function names to their corresponding reference kinds.
+        /// Policy function names are case insensitive.
         /// </summary>
         private static readonly ImmutableDictionary<string, ReferenceKind> FunctionNamesToReferenceKinds = new OrdinalInsensitiveDictionary<ReferenceKind>
         {
@@ -40,7 +41,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             ["requestContext"] = ReferenceKind.RequestContextProperty,
             ["current"] = ReferenceKind.CurrentArrayMember,
             ["claims"] = ReferenceKind.PolicyTokenClaims
-        }.ToImmutableDictionary();
+        }.ToImmutableDictionary(keyComparer: StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets or sets the kind of reference.
@@ -73,11 +74,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public CountExpressionScope? ReferencedCountExpressionScope { get; }
 
         /// <summary>
-        /// The property metadata of any resource properties referenced by this reference.
+        /// The metadata of the resource properties targeted by this reference.
+        /// This array will have an entry for every API version of the resource type targeted by this reference,
+        /// And what we know about that property in that API version (which might just be exists=false if the API version doesn't have it).
         /// </summary>
         /// <remarks>
-        /// If this array is empty, this isn't a field reference, or the field reference doesn't map to any metadata.
-        /// In the case of aliases, this means that the alias doesn't exist at all. It DOES NOT mean that the alias is pointing to properties that don't exist. In that case, we will return metadata with Exists = false.
+        /// Empty array indicates that the linter doesn't know about the targeted resource type, or it's API version.
+        /// In the case of aliases, this could also meant that the alias is not known to the linter.
         /// </remarks>
         public ImmutableArray<ResourcePropertyMetadata> ResourcePropertyMetadata { get; }
 

@@ -24,6 +24,8 @@ The linter does not reason across multiple policies, query the tenant, or evalua
 
 A rule does one specific check. If one idea covers multiple checks ("use parameterized effect with safe default value" really means parameterized effect + safe default value), it's multiple rules.
 
+A rule does not need exhaustive coverage. Prefer a simple check with clear, documented gaps over complex analysis that attempts to cover every possible form of the problem.
+
 A rule has well-defined applicability and preconditions - it knows exactly when it should fire and when it shouldn't. For example, a rule ensuring that a policy with a parameterized effect includes `Disabled` in its allowed values must first check that the effect is parameterized, and exit early if it isn't. It should not also flag that the effect should be parameterized in the first place - that's a separate best practice, captured by a different rule.
 
 The same principle applies when an idea describes two finding flavors with different severities or different remediations - for example, an Error for a structural conflict and an Informational for an adjacent observation. Those are two rules, sharing a target. Each gets its own identifier, title, description, and doc. Users get clean filtering, severities stay mono-typed, and descriptions don't have to branch on which case fired.
@@ -93,7 +95,7 @@ The description and the rule's documentation file are complementary, not redunda
 
 Every rule has a Markdown documentation file. Its filename matches the rule identifier; its first heading matches the rule's title. The file lives alongside the other rule docs in the repo.
 
-The doc has four expected pieces, in this order:
+The doc has three required pieces, followed by optional examples:
 
 - **A metadata table** at the top showing the rule's category, identifier, severity, and rule set. The reader skims this to triage the finding - they want to know how serious it is and whether they need to opt into a rule set to see it.
 - **A description** explaining what the rule checks and why it matters. Two to four sentences. Third-person, declarative ("The `like` operator..."). Written for the policy author who just hit the finding and wants context - not for someone learning the linter.

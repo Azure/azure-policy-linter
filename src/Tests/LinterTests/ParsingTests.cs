@@ -780,5 +780,100 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             result[0].Category.Should().Be(Category.Parsing);
             result[0].Description.Should().Contain("Failed to parse the provided policy definition JSON. Parsing error: Error converting value \"not an object\" to type 'Microsoft.Azure.Policy.PolicyLinter.Core.Parsing.PolicyRuleObject'. Path '', line 1, position 47.");
         }
+
+        [Theory]
+        [InlineData("field", ReferenceKind.ResourceField)]
+        [InlineData("FIELD", ReferenceKind.ResourceField)]
+        [InlineData("FiElD", ReferenceKind.ResourceField)]
+        [InlineData("parameters", ReferenceKind.PolicyParameterName)]
+        [InlineData("PaRaMeTeRs", ReferenceKind.PolicyParameterName)]
+        [InlineData("subscription", ReferenceKind.SubscriptionProperty)]
+        [InlineData("SuBsCrIpTiOn", ReferenceKind.SubscriptionProperty)]
+        [InlineData("resourceGroup", ReferenceKind.ResourceGroupProperty)]
+        [InlineData("RESOURCEGROUP", ReferenceKind.ResourceGroupProperty)]
+        [InlineData("requestContext", ReferenceKind.RequestContextProperty)]
+        [InlineData("REQUESTCONTEXT", ReferenceKind.RequestContextProperty)]
+        [InlineData("claims", ReferenceKind.PolicyTokenClaims)]
+        [InlineData("ClAiMs", ReferenceKind.PolicyTokenClaims)]
+        public void LinterTests_Parsing_ReferenceFunctionNamesAreCaseInsensitive(string functionName, ReferenceKind expectedKind)
+        {
+            var policy = @"
+                {
+                  ""properties"": {
+                    ""parameters"": {
+                      ""allowedLocation"": { ""type"": ""String"" }
+                    },
+                    ""policyRule"": {
+                      ""if"": {
+                        ""value"": ""[" + functionName + @"('allowedLocation')]"",
+                        ""equals"": ""eastus""
+                      },
+                      ""then"": { ""effect"": ""deny"" }
+                    }
+                  }
+                }";
+
+            var references = ParsingTests.CollectReferences(policy);
+
+            references.Should().ContainSingle();
+            references[0].Kind.Should().Be(expectedKind);
+        }
+
+        [Fact]
+        public void LinterTests_Parsing_CurrentFunctionNameIsCaseInsensitive()
+        {
+            var policy = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""count"": {
+                          ""field"": ""Microsoft.Test/widgets/items[*]"",
+                          ""where"": {
+                            ""value"": ""[CuRrEnT('Microsoft.Test/widgets/items[*].name')]"",
+                            ""equals"": ""approved""
+                          }
+                        },
+                        ""greater"": 0
+                      },
+                      ""then"": { ""effect"": ""deny"" }
+                    }
+                  }
+                }";
+
+            var references = ParsingTests.CollectReferences(policy);
+
+            references.Should().Contain(reference => reference.Kind == ReferenceKind.CurrentArrayMember);
+        }
+
+        /// <summary>
+        /// Lints a policy with a rule that records every reference the parser produced.
+        /// </summary>
+        private static List<Reference> CollectReferences(string policy)
+        {
+            var references = new List<Reference>();
+            var testRule = new TestPolicyDefinitionLinterRule(descriptionFormat: "Collects references")
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    expression.Visit(new PolicyExpressionVisitor
+                    {
+                        Visit = visited =>
+                        {
+                            if (visited is Reference reference)
+                            {
+                                references.Add(reference);
+                            }
+                        },
+                    });
+
+                    return Array.Empty<LinterOutput>();
+                }
+            };
+
+            _ = new PolicyLinter(new[] { testRule }, new MockTypeMetadata()).Lint(policy);
+
+            return references;
+        }
     }
 }
