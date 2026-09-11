@@ -13,6 +13,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// </summary>
     public class MockTypeMetadata : ITypeMetadata
     {
+        /// <inheritdoc/>
+        public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
+        {
+            result = null;
+            return false;
+        }
+
         /// <inheritdoc/>>
         public bool TryGetAliasPropertyMetadata(string aliasName, out ResourcePropertyMetadata[] result)
         {

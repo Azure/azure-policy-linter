@@ -5,9 +5,11 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
+    using System.Threading.Tasks;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Contracts;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
@@ -23,6 +25,105 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             this.mockAliasResolver = new MockAliasResolver(MockResourceMetadata.Aliases);
             this.mockMetadataProvider = new MockMetadataProvider(MockResourceMetadata.ResourceTypeMetadata);
+        }
+
+        [Theory]
+        [InlineData("SupportsTags, SupportsLocation", true, true)]
+        [InlineData(" supportstags , SUPPORTSLOCATION , ", true, true)]
+        [InlineData("SupportsTags", true, false)]
+        [InlineData("SupportsLocation", false, true)]
+        [InlineData("SupportsTags, SupportsExtension", true, false)]
+        [InlineData("None", false, false)]
+        [InlineData("FutureCapability", false, false)]
+        [InlineData("NotSupportsTags, NotSupportsLocation", false, false)]
+        [InlineData("", false, false)]
+        void ResourceTypeCapabilities_ParseFlags(string value, bool supportsTags, bool supportsLocation)
+        {
+            var capabilities = new ResourceTypeCapabilities(capabilities: value);
+
+            capabilities.SupportsTags.Should().Be(supportsTags);
+            capabilities.SupportsLocation.Should().Be(supportsLocation);
+        }
+
+        [Fact]
+        void ResourceTypeCapabilities_PreserveUnknownTokens()
+        {
+            var capabilities = new ResourceTypeCapabilities(capabilities: " SupportsTags, FutureCapability, ");
+
+            capabilities.Tokens.Should().Equal("SupportsTags", "FutureCapability");
+            Assert.Throws<ArgumentNullException>(() => new ResourceTypeCapabilities(capabilities: null));
+        }
+
+        [Theory]
+        [InlineData("Microsoft.Compute/virtualMachines", true, true)]
+        [InlineData("MICROSOFT.COMPUTE/VIRTUALMACHINES", true, true)]
+        [InlineData("Microsoft.Management/serviceGroups", true, false)]
+        [InlineData("Microsoft.Resources/deployments", true, false)]
+        [InlineData("Anyscale.Platform/cloudResources", true, true)]
+        [InlineData("Anyscale.Platform/agreements", false, false)]
+        void TypeMetadata_GetResourceTypeCapabilities(string resourceType, bool supportsTags, bool supportsLocation)
+        {
+            ITypeMetadata metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
+
+            metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities).Should().BeTrue();
+            capabilities.SupportsTags.Should().Be(supportsTags);
+            capabilities.SupportsLocation.Should().Be(supportsLocation);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData(" ")]
+        [InlineData("Microsoft.Compute")]
+        [InlineData("/virtualMachines")]
+        [InlineData("Microsoft.Compute/")]
+        [InlineData("Microsoft.Compute/not-a-real-type")]
+        [InlineData("Unknown.Provider/widgets")]
+        [InlineData("Microsoft.ApiManagement/gateways/configConnections")]
+        void TypeMetadata_UnknownCapabilities(string resourceType)
+        {
+            var metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
+
+            metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities).Should().BeFalse();
+            capabilities.Should().BeNull();
+        }
+
+        [Theory]
+        [InlineData("name")]
+        [InlineData("tags['key']")]
+        [InlineData("Microsoft.Compute/imagePublisher")]
+        [InlineData("Unknown.Provider/widgets/name")]
+        [InlineData("Anyscale.Platform/cloudResources/missing")]
+        [InlineData("Microsoft.Compute/virtualMachines/missing")]
+        void AliasResolver_UnknownAlias(string alias)
+        {
+            var resolver = new AliasResolver();
+
+            resolver.TryResolveAlias(alias: alias, resolvedAlias: out var result).Should().BeFalse();
+            result.Should().BeNull();
+        }
+
+        [Fact]
+        void Metadata_ConcurrentLookupsReuseCachedResults()
+        {
+            var metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
+            var resolver = new AliasResolver();
+            var capabilities = new ResourceTypeCapabilities[32];
+            var aliases = new AliasDetails[32];
+
+            Parallel.For(fromInclusive: 0, toExclusive: capabilities.Length, body: index =>
+            {
+                var resourceType = index % 2 == 0 ? "Microsoft.ApiManagement/service" : "microsoft.apimanagement/SERVICE";
+                metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out capabilities[index]).Should().BeTrue();
+                resolver.TryResolveAlias(
+                    alias: "Microsoft.ApiManagement/service/apis/operations/tags/displayName",
+                    resolvedAlias: out aliases[index]).Should().BeTrue();
+            });
+
+            Assert.All(collection: capabilities, action: value => Assert.Same(expected: capabilities[0], actual: value));
+            Assert.All(collection: aliases, action: value => Assert.Same(expected: aliases[0], actual: value));
+            aliases[0].DefaultPath.Should().Be("properties.displayName");
+            aliases[0].Paths.Should().BeEmpty();
         }
 
         [Fact]

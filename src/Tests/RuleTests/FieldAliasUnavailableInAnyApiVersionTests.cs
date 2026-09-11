@@ -413,6 +413,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         private sealed class TestTypeMetadata : ITypeMetadata
         {
+            /// <inheritdoc/>
+            public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
+            {
+                result = null;
+                return false;
+            }
+
             private readonly string alias;
             private readonly ResourcePropertyMetadata[] metadata;
 

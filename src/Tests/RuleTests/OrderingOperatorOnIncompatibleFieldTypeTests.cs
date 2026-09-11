@@ -24,6 +24,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// </summary>
         private sealed class FixedTypeMetadata : ITypeMetadata
         {
+            /// <inheritdoc/>
+            public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
+            {
+                result = null;
+                return false;
+            }
+
             private readonly string type;
 
             /// <summary>

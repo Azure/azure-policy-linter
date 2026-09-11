@@ -39,6 +39,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
             this.aliasResolver = aliasResolver;
         }
 
+        /// <inheritdoc/>
+        public bool TryGetResourceTypeCapabilities(string? resourceType, out ResourceTypeCapabilities? result)
+        {
+            return ResourceTypesAndAliases.TryGetCapabilities(resourceType: resourceType, result: out result);
+        }
+
         /// <inheritdoc/>>
         public bool TryGetAliasPropertyMetadata(string? aliasName, out ResourcePropertyMetadata[] result)
         {

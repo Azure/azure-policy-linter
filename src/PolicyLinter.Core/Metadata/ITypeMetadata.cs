@@ -12,6 +12,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
     public interface ITypeMetadata
     {
         /// <summary>
+        /// Gets the capabilities of a resource type from the public-cloud snapshot.
+        /// </summary>
+        /// <param name="resourceType">The fully qualified resource type.</param>
+        /// <param name="result">The capabilities, or null when the type or its capabilities are unknown.</param>
+        /// <returns>True when capabilities are known, including an explicit None value.</returns>
+        bool TryGetResourceTypeCapabilities(string? resourceType, out ResourceTypeCapabilities? result);
+
+        /// <summary>
         /// Get alias property metadata.
         /// </summary>
         /// <param name="aliasName">The alias.</param>
