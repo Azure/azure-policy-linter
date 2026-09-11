@@ -23,9 +23,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
         private const string TypesSuffix = ".types.json";
         private const string AliasesSuffix = ".aliases.json";
 
+        /// <summary>
+        /// Outer keys are provider namespaces, e.g. "Microsoft.Compute".
+        /// Inner keys are full alias names, e.g. "Microsoft.Compute/availabilitySets/managed".
+        /// Both lookups are case-insensitive.
+        /// </summary>
         private static readonly Dictionary<string, Lazy<ImmutableDictionary<string, AliasDetails>>> aliases =
             new(comparer: StringComparer.OrdinalIgnoreCase);
 
+        /// <summary>
+        /// Outer keys are provider namespaces, e.g. "Microsoft.Compute".
+        /// Inner keys are resource types without the namespace, e.g. "virtualMachines/extensions".
+        /// Both lookups are case-insensitive.
+        /// </summary>
         private static readonly Dictionary<string, Lazy<ImmutableDictionary<string, ResourceTypeCapabilities>>> capabilities =
             new(comparer: StringComparer.OrdinalIgnoreCase);
 
@@ -44,7 +54,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                     ResourceTypesAndAliases.aliases.Add(
                         key: providerNamespace,
                         value: new Lazy<ImmutableDictionary<string, AliasDetails>>(
-                            valueFactory: () => ResourceTypesAndAliases.LoadAliases(resourceName: name)));
+                            valueFactory: () => ResourceTypesAndAliases.LoadAliases(embeddedFileName: name)));
                 }
                 else if (name.EndsWith(value: ResourceTypesAndAliases.TypesSuffix, comparisonType: StringComparison.Ordinal))
                 {
@@ -52,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                     ResourceTypesAndAliases.capabilities.Add(
                         key: providerNamespace,
                         value: new Lazy<ImmutableDictionary<string, ResourceTypeCapabilities>>(
-                            valueFactory: () => ResourceTypesAndAliases.LoadCapabilities(resourceName: name)));
+                            valueFactory: () => ResourceTypesAndAliases.LoadCapabilities(embeddedFileName: name)));
                 }
             }
         }
@@ -90,19 +100,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                 && namespaceCapabilities.Value.TryGetValue(key: resourceType[(separator + 1)..], value: out result);
         }
 
-        private static ImmutableDictionary<string, AliasDetails> LoadAliases(string resourceName)
+        /// <summary>
+        /// Loads aliases from a namespace's snapshot.
+        /// </summary>
+        /// <param name="embeddedFileName">The JSON file's full assembly manifest name.</param>
+        /// <returns>A case-insensitive map from full alias name, e.g. "Microsoft.Compute/availabilitySets/managed", to alias details.</returns>
+        private static ImmutableDictionary<string, AliasDetails> LoadAliases(string embeddedFileName)
         {
             // For aliases shared by multiple resource types, the last entry wins.
-            return ResourceTypesAndAliases.LoadProvider(resourceName: resourceName).ResourceTypes
+            return ResourceTypesAndAliases.LoadProvider(embeddedFileName: embeddedFileName).ResourceTypes
                 .SelectMany(selector: type => type.Aliases)
                 .ToOrdinalInsensitiveDictionary(keySelector: alias => alias.Name, elementSelector: alias => alias)
                 .ToImmutableDictionary(keyComparer: StringComparer.OrdinalIgnoreCase);
         }
 
-        private static ImmutableDictionary<string, ResourceTypeCapabilities> LoadCapabilities(string resourceName)
+        /// <summary>
+        /// Loads known tag/location flags from a namespace's snapshot.
+        /// </summary>
+        /// <param name="embeddedFileName">The JSON file's full assembly manifest name.</param>
+        /// <returns>A case-insensitive map from resource type without the namespace, e.g. "virtualMachines/extensions", to flags.</returns>
+        private static ImmutableDictionary<string, ResourceTypeCapabilities> LoadCapabilities(string embeddedFileName)
         {
             var result = ImmutableDictionary.CreateBuilder<string, ResourceTypeCapabilities>(keyComparer: StringComparer.OrdinalIgnoreCase);
-            foreach (var type in ResourceTypesAndAliases.LoadProvider(resourceName: resourceName).ResourceTypes)
+            foreach (var type in ResourceTypesAndAliases.LoadProvider(embeddedFileName: embeddedFileName).ResourceTypes)
             {
                 var capabilities = type.Capabilities;
                 if (!string.IsNullOrWhiteSpace(value: capabilities))
@@ -123,14 +143,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
             return result.ToImmutable();
         }
 
-        private static ProviderTypesAndAliases LoadProvider(string resourceName)
+        /// <summary>
+        /// Deserializes a namespace's embedded JSON snapshot.
+        /// </summary>
+        /// <param name="embeddedFileName">The JSON file's full assembly manifest name.</param>
+        private static ProviderTypesAndAliases LoadProvider(string embeddedFileName)
         {
-            using var stream = typeof(ResourceTypesAndAliases).Assembly.GetManifestResourceStream(name: resourceName)
-                ?? throw new FileNotFoundException(message: $"Resource snapshot '{resourceName}' was not found.");
+            using var stream = typeof(ResourceTypesAndAliases).Assembly.GetManifestResourceStream(name: embeddedFileName)
+                ?? throw new FileNotFoundException(message: $"Resource snapshot '{embeddedFileName}' was not found.");
             using var streamReader = new StreamReader(stream: stream);
             using var reader = new JsonTextReader(reader: streamReader);
             return JsonExtensions.JsonObjectTypeSerializer.Deserialize<ProviderTypesAndAliases>(reader: reader)
-                ?? throw new JsonSerializationException(message: $"Resource snapshot '{resourceName}' is null.");
+                ?? throw new JsonSerializationException(message: $"Resource snapshot '{embeddedFileName}' is null.");
         }
     }
 

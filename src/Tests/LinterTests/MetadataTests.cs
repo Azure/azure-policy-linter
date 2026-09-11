@@ -50,6 +50,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             provider.Should().NotBeNull();
             provider.Namespace.Should().NotBeNullOrWhiteSpace();
+            resourceName.Should().BeOneOf(validValues: new[]
+            {
+                $"ResourceTypesAndAliases.{provider.Namespace}.types.json",
+                $"ResourceTypesAndAliases.{provider.Namespace}.aliases.json",
+            });
             provider.ResourceTypes.Should().NotBeNull();
             foreach (var type in provider.ResourceTypes)
             {
@@ -57,6 +62,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 type.Aliases.Should().NotBeNull();
             }
             reader.Read().Should().BeFalse(because: "the entire snapshot must be a single JSON document");
+        }
+
+        [Fact]
+        void AliasPathMetadata_EqualityUsesTypeAndAttributes()
+        {
+            var metadata = new AliasPathMetadata { Type = AliasPathTokenType.String, Attributes = AliasPathAttributes.Modifiable };
+            var same = new AliasPathMetadata { Type = AliasPathTokenType.String, Attributes = AliasPathAttributes.Modifiable };
+
+            metadata.Equals(obj: same).Should().BeTrue();
+            metadata.GetHashCode().Should().Be(same.GetHashCode());
+            metadata.Equals(obj: new AliasPathMetadata { Type = AliasPathTokenType.Boolean, Attributes = AliasPathAttributes.Modifiable }).Should().BeFalse();
+            metadata.Equals(obj: new AliasPathMetadata { Type = AliasPathTokenType.String, Attributes = AliasPathAttributes.None }).Should().BeFalse();
+            metadata.Equals(obj: null).Should().BeFalse();
+            metadata.Equals(obj: "not metadata").Should().BeFalse();
         }
 
         [Theory]
