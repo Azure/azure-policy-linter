@@ -21,7 +21,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// </summary>
     public class IfCondition : PolicyExpression
     {
-        private readonly Lazy<ImmutableArray<string>> referencedResourceTypes;
+        /// <summary>
+        /// Resource types collected on first access and cached for this condition.
+        /// </summary>
+        private readonly Lazy<ImmutableHashSet<string>> referencedResourceTypes;
 
         /// <summary>
         /// The condition expression.
@@ -29,11 +32,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public Condition Condition { get; }
 
         /// <summary>
-        /// Gets distinct resource types from resolved aliases and non-negated 'type' equals/in conditions.
-        /// Simple parameter operands use allowed values, or their default when no allowed values are defined.
+        /// Gets the referenced resource types, using case-insensitive matching.
         /// </summary>
-        /// <remarks>This is a list of references, not an evaluation of which resources the condition matches.</remarks>
-        public ImmutableArray<string> ReferencedResourceTypes => this.referencedResourceTypes.Value;
+        /// <remarks>
+        /// A best-effort, naive attempt to discover targeted resource types from references.
+        /// It does not account for the actual policy rule logic.
+        /// </remarks>
+        public ImmutableHashSet<string> ReferencedResourceTypes => this.referencedResourceTypes.Value;
 
         /// <summary>
         /// Creates an instance of the <see cref="IfCondition"/> class.
@@ -60,7 +65,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 parent: this,
                 countExpressionScopes: new Stack<CountExpressionScope>());
 
-            this.referencedResourceTypes = new Lazy<ImmutableArray<string>>(valueFactory: this.ExtractReferencedResourceTypes);
+            this.referencedResourceTypes = new Lazy<ImmutableHashSet<string>>(valueFactory: this.ExtractReferencedResourceTypes);
         }
 
         /// <inheritdoc/>
@@ -73,9 +78,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
         }
 
-        private ImmutableArray<string> ExtractReferencedResourceTypes()
+        private ImmutableHashSet<string> ExtractReferencedResourceTypes()
         {
-            var resourceTypes = new HashSet<string>(comparer: StringComparer.OrdinalIgnoreCase);
+            var resourceTypes = ImmutableHashSet.CreateBuilder<string>(equalityComparer: StringComparer.OrdinalIgnoreCase);
             this.Visit(visitor: new PolicyExpressionVisitor
             {
                 Visit = node =>
@@ -94,70 +99,52 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     }
                 }
             });
-            return resourceTypes.ToImmutableArray();
+            return resourceTypes.ToImmutable();
         }
 
-        private IEnumerable<string> ExtractResourceTypes(LeafCondition leaf, Property leafOperator)
+        private string[] ExtractResourceTypes(LeafCondition leaf, Property leafOperator)
         {
             var isEquals = leafOperator.Name.EqualsOrdinalInsensitively("equals");
             var isIn = leafOperator.Name.EqualsOrdinalInsensitively("in");
             var notCount = leaf.PathSegments.Count(predicate: segment => segment.EqualsOrdinalInsensitively("not"));
             if ((!isEquals && !isIn) || notCount % 2 != 0)
             {
-                yield break;
+                return Array.Empty<string>();
             }
 
-            IEnumerable<JToken> values;
-            if (leafOperator.HasLiteralValue)
-            {
-                if (isIn && leafOperator.Value is JArray array)
-                {
-                    values = array;
-                }
-                else if (isEquals && leafOperator.Value.Type == JTokenType.String)
-                {
-                    values = new[] { leafOperator.Value };
-                }
-                else
-                {
-                    yield break;
-                }
-            }
-            else
+            JToken? operand = leafOperator.Value;
+            JToken?[]? values = null;
+            if (!leafOperator.HasLiteralValue)
             {
                 // PolicyRule's parent is the definition, not its properties object.
                 var parameters = (this.Parent?.Parent as PolicyDefinition)?.Properties.Parameters;
-                if (leafOperator.Value.Type != JTokenType.String ||
+                if (operand.Type != JTokenType.String ||
                     leafOperator.LanguageExpressions.Length != 1 ||
                     !leafOperator.LanguageExpressions[0].IsSimpleParameterReference(parameterName: out var parameterName) ||
                     parameters == null ||
                     !parameters.TryGetValue(key: parameterName, value: out var parameter) ||
                     !parameter.Type.EqualsOrdinalInsensitively(isEquals ? PolicyParameterType.String : PolicyParameterType.Array))
                 {
-                    yield break;
+                    return Array.Empty<string>();
                 }
 
-                if (parameter.AllowedValues != null)
-                {
-                    values = parameter.AllowedValues;
-                }
-                else if (parameter.DefaultValue is JArray defaultArray)
-                {
-                    values = defaultArray;
-                }
-                else if (parameter.DefaultValue != null)
-                {
-                    values = new[] { parameter.DefaultValue };
-                }
-                else
-                {
-                    yield break;
-                }
+                values = parameter.AllowedValues;
+                operand = parameter.DefaultValue;
+            }
+            else if (isIn && operand is not JArray)
+            {
+                return Array.Empty<string>();
             }
 
+            if (values == null)
+            {
+                values = operand is JArray array ? array.ToArray() : new[] { operand };
+            }
+
+            var resourceTypes = new List<string>();
             foreach (var value in values)
             {
-                if (value.Type != JTokenType.String)
+                if (value?.Type != JTokenType.String)
                 {
                     continue;
                 }
@@ -166,9 +153,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 var segments = resourceType.Split(separator: '/');
                 if (segments.Length >= 2 && segments[0].Contains(value: '.', comparisonType: StringComparison.OrdinalIgnoreCase))
                 {
-                    yield return resourceType;
+                    resourceTypes.Add(item: resourceType);
                 }
             }
+            return resourceTypes.ToArray();
         }
     }
 }

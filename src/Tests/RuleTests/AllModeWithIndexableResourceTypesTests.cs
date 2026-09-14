@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var results = AllModeWithIndexableResourceTypesTests.Lint(mode: mode, condition: condition);
 
-            AllModeWithIndexableResourceTypesTests.AssertWarning(results: results);
+            AllModeWithIndexableResourceTypesTests.AssertInformational(results: results);
         }
 
         [Theory]
@@ -72,17 +72,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 condition: @"{ 'field': 'type', 'in': ""[parameters('types')]"" }",
                 parameters: "{ 'types': { 'type': 'Array', 'defaultValue': ['Contoso.Test/first', 'Contoso.Test/second'] } }");
 
-            AllModeWithIndexableResourceTypesTests.AssertWarning(results: results);
+            AllModeWithIndexableResourceTypesTests.AssertInformational(results: results);
         }
 
-        private static void AssertWarning(LinterOutput[] results)
+        private static void AssertInformational(LinterOutput[] results)
         {
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "all-mode-with-indexable-resource-types",
                 Title: "All Mode With Indexable Resource Types",
                 Category: Category.BestPractices,
-                Severity: Severity.Warning,
+                Severity: Severity.Informational,
                 LineNumber: 3,
                 LinePosition: 17,
                 Description: "The policy mode is 'All', and every referenced resource type supports tags and location. Consider 'Indexed' mode to restrict evaluation to resource types with those capabilities.",

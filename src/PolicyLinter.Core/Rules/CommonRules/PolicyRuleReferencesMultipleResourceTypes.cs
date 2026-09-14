@@ -6,6 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
@@ -35,14 +36,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
             var referencedResourceTypes = expression.ReferencedResourceTypes;
-            if (referencedResourceTypes.Length <= 1)
+            if (referencedResourceTypes.Count <= 1)
             {
                 return Array.Empty<LinterOutput>();
             }
 
             return new[]
             {
-                this.CreateInformational(expression: expression, string.Join(", ", referencedResourceTypes)),
+                this.CreateInformational(expression: expression, string.Join(", ", referencedResourceTypes
+                    .OrderBy(keySelector: resourceType => resourceType, comparer: StringComparer.OrdinalIgnoreCase)
+                    .ToArray())),
             };
         }
     }

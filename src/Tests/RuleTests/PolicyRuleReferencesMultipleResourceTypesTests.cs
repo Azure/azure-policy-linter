@@ -304,7 +304,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 29,
                 Path: "properties.policyRule.if",
-                Description: "The policy rule references multiple resource types: Microsoft.Storage/storageAccounts, Microsoft.Compute/virtualMachines. Targeting several related types is a valid pattern; if this is unintended, target a single type and group policies with an initiative.");
+                Description: "The policy rule references multiple resource types: Microsoft.Compute/virtualMachines, Microsoft.Storage/storageAccounts. Targeting several related types is a valid pattern; if this is unintended, target a single type and group policies with an initiative.");
 
             results.Should().ContainEquivalentOf(output);
         }

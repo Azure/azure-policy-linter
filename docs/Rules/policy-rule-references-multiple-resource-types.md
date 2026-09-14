@@ -6,21 +6,9 @@
 
 ## Description
 
-The policy rule's `if` condition references more than one resource type, counting both the types named in `type` field conditions and the types resolved from field aliases. Simple parameter operands contribute their `allowedValues`, or `defaultValue` when no allowed values are defined. Targeting several related types with `in` is valid; this finding is advisory so the author can confirm it is intentional.
+The policy references multiple resource types, which can broaden the set of resources it evaluates. This can be intentional; the finding is informational so the author can confirm the scope.
 
 ## Suggestions
 
 - If the multiple types are intentional (for example, governing tags or locations across multiple resource types), no change is needed.
 - If a single resource type was intended, narrow the `if` to that type and group per-type policies together in an initiative.
-
-### Correct (intentional multi-type)
-
-```json
-{
-  "field": "type",
-  "in": [
-    "Microsoft.Compute/virtualMachines",
-    "Microsoft.Compute/disks"
-  ]
-}
-```

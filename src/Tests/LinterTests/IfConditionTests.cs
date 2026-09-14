@@ -127,6 +127,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void IfCondition_ResourceTypeSetUsesCaseInsensitiveMembership()
+        {
+            var policy = IfConditionTests.CreatePolicy(
+                condition: "{ 'field': 'type', 'in': ['Contoso.Compute/widgets', 'contoso.compute/WIDGETS'] }");
+            var resourceTypes = policy.Properties.PolicyRule.If.ReferencedResourceTypes;
+
+            resourceTypes.Count.Should().Be(1);
+            resourceTypes.Contains(item: "CONTOSO.COMPUTE/WIDGETS").Should().BeTrue();
+            resourceTypes.Contains(item: "Contoso.Storage/accounts").Should().BeFalse();
+        }
+
+        [Fact]
         public void IfCondition_ResourceTypesAreComputedOnFirstAccessAndCached()
         {
             var policy = IfConditionTests.CreatePolicy(
@@ -140,7 +152,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             resourceTypes.Should().Equal("Contoso.Storage/accounts");
 
             parameter.DefaultValue = new JValue(value: "Contoso.Other/ignored");
-            condition.ReferencedResourceTypes.Equals(resourceTypes).Should().BeTrue();
+            condition.ReferencedResourceTypes.Should().BeSameAs(resourceTypes);
             condition.ReferencedResourceTypes.Should().Equal("Contoso.Storage/accounts");
         }
 

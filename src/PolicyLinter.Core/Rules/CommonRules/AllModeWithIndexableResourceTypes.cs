@@ -59,7 +59,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 }
             }
 
-            return new[] { this.CreateWarning(expression: mode) };
+            return new[] { this.CreateInformational(expression: mode) };
         }
     }
 }
