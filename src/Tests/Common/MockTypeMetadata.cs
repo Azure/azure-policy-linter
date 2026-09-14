@@ -6,6 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using System;
+    using System.Collections.Generic;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
 
     /// <summary>
@@ -13,11 +14,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// </summary>
     public class MockTypeMetadata : ITypeMetadata
     {
+        /// <summary>
+        /// Known capabilities, keyed case-insensitively by fully qualified resource type.
+        /// </summary>
+        public Dictionary<string, ResourceTypeCapabilities> Capabilities { get; } = new(comparer: StringComparer.OrdinalIgnoreCase);
+
         /// <inheritdoc/>
         public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
         {
             result = ResourceTypeCapabilities.None;
-            return false;
+            return resourceType != null && this.Capabilities.TryGetValue(key: resourceType, value: out result);
         }
 
         /// <inheritdoc/>>
