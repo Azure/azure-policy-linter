@@ -4,6 +4,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
+    using Newtonsoft.Json.Linq;
     using Xunit;
 
     /// <summary>
@@ -15,6 +16,41 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         /// The mock type metadata used for the tests.
         /// </summary>
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
+
+        [Theory]
+        [InlineData("equals", "{ 'type': 'String', 'allowedValues': ['Contoso.Compute/widgets', 'Contoso.Storage/accounts'] }")]
+        [InlineData("in", "{ 'type': 'Array', 'defaultValue': ['Contoso.Compute/widgets', 'Contoso.Storage/accounts'] }")]
+        public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_ParameterizedTypes(string conditionOperator, string parameter)
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new PolicyRuleReferencesMultipleResourceTypes() },
+                metadata: PolicyRuleReferencesMultipleResourceTypesTests.MockMetadata);
+            var policy = JObject.Parse(@"{
+                'properties': {
+                    'parameters': {},
+                    'policyRule': {
+                        'if': { 'field': 'type' },
+                        'then': { 'effect': 'audit' }
+                    }
+                }
+            }");
+            policy["properties"]["parameters"]["types"] = JObject.Parse(parameter);
+            policy["properties"]["policyRule"]["if"][conditionOperator] = "[parameters('types')]";
+
+            var results = linter.Lint(rawPolicyDefinition: policy.ToString());
+
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(new LinterOutput(
+                RuleIdentifier: "policy-rule-references-multiple-resource-types",
+                Title: "Policy Rule References Multiple Resource Types",
+                Category: Category.BestPractices,
+                Severity: Severity.Informational,
+                LineNumber: 13,
+                LinePosition: 13,
+                Description: "The policy rule references multiple resource types: Contoso.Compute/widgets, Contoso.Storage/accounts. Targeting several related types is a valid pattern; if this is unintended, target a single type and group policies with an initiative.",
+                Path: "properties.policyRule.if",
+                DocumentationUrl: "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/policy-rule-references-multiple-resource-types.md"));
+        }
 
         [Fact]
         public void RuleTests_PolicyRuleReferencesMultipleResourceTypes_SingleResourceType()
@@ -807,7 +843,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            // A parameterized ""in"" operand is not a literal array, so there is nothing to extract and no finding.
+            // No allowed values or default are available for this parameter.
             results.Should().BeEmpty();
         }
 
@@ -842,7 +878,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var results = linter.Lint(policyDefinition);
 
-            // A parameterized ""equals"" operand is not a literal resource type, so there is nothing to extract and no finding.
+            // No allowed values or default are available for this parameter.
             results.Should().BeEmpty();
         }
 
