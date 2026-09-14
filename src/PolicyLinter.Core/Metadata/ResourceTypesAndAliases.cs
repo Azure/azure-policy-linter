@@ -62,7 +62,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                     ResourceTypesAndAliases.capabilities.Add(
                         key: providerNamespace,
                         value: new Lazy<ImmutableDictionary<string, ResourceTypeCapabilities>>(
-                            valueFactory: () => ResourceTypesAndAliases.LoadCapabilities(embeddedFileName: name)));
+                            valueFactory: () => ResourceTypesAndAliases.LoadResourceTypeCapabilities(embeddedFileName: name)));
                 }
             }
         }
@@ -119,7 +119,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
         /// </summary>
         /// <param name="embeddedFileName">The JSON file's full assembly manifest name.</param>
         /// <returns>A case-insensitive map from resource type without the namespace, e.g. "virtualMachines/extensions", to flags.</returns>
-        private static ImmutableDictionary<string, ResourceTypeCapabilities> LoadCapabilities(string embeddedFileName)
+        private static ImmutableDictionary<string, ResourceTypeCapabilities> LoadResourceTypeCapabilities(string embeddedFileName)
         {
             var result = ImmutableDictionary.CreateBuilder<string, ResourceTypeCapabilities>(keyComparer: StringComparer.OrdinalIgnoreCase);
             foreach (var type in ResourceTypesAndAliases.LoadProvider(embeddedFileName: embeddedFileName).ResourceTypes)
