@@ -38,7 +38,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 mode: "'Indexed'", condition: $"{{ 'field': 'type', 'equals': '{resourceType}' }}");
 
             IndexedModeWithNonIndexableResourceTypesTests.AssertError(
-                results: results, resourceType: resourceType, lineNumber: 3, linePosition: 21, path: "properties.mode");
+                results: results, resourceTypes: resourceType, lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
         [Theory]
@@ -52,7 +52,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 mode: mode, condition: "{ 'field': 'type', 'equals': 'Contoso.Test/untracked' }");
 
             IndexedModeWithNonIndexableResourceTypesTests.AssertError(
-                results: results, resourceType: "Contoso.Test/untracked", lineNumber: lineNumber, linePosition: linePosition, path: path);
+                results: results, resourceTypes: "Contoso.Test/untracked", lineNumber: lineNumber, linePosition: linePosition, path: path);
         }
 
         [Theory]
@@ -84,7 +84,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 condition: "{ 'field': 'type', 'in': ['Unknown.Provider/widgets', 'Contoso.Test/tracked', 'Contoso.Test/untracked'] }");
 
             IndexedModeWithNonIndexableResourceTypesTests.AssertError(
-                results: results, resourceType: "Contoso.Test/untracked", lineNumber: 3, linePosition: 21, path: "properties.mode");
+                results: results, resourceTypes: "Contoso.Test/untracked", lineNumber: 3, linePosition: 21, path: "properties.mode");
+        }
+
+        [Fact]
+        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_ReportsAllAffectedTypes()
+        {
+            var results = IndexedModeWithNonIndexableResourceTypesTests.Lint(
+                mode: "'Indexed'",
+                condition: "{ 'field': 'type', 'in': ['Contoso.Test/untracked', 'Contoso.Test/tracked', 'Contoso.Test/tagsOnly', 'Contoso.Test/locationOnly', 'CONTOSO.TEST/UNTRACKED', 'Unknown.Provider/widgets'] }");
+
+            IndexedModeWithNonIndexableResourceTypesTests.AssertError(
+                results: results,
+                resourceTypes: "Contoso.Test/locationOnly, Contoso.Test/tagsOnly, Contoso.Test/untracked",
+                lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
         [Fact]
@@ -96,10 +109,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 parameters: "{ 'type': { 'type': 'String', 'defaultValue': 'Contoso.Test/untracked' } }");
 
             IndexedModeWithNonIndexableResourceTypesTests.AssertError(
-                results: results, resourceType: "Contoso.Test/untracked", lineNumber: 3, linePosition: 21, path: "properties.mode");
+                results: results, resourceTypes: "Contoso.Test/untracked", lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
-        private static void AssertError(LinterOutput[] results, string resourceType, int lineNumber, int linePosition, string path)
+        private static void AssertError(LinterOutput[] results, string resourceTypes, int lineNumber, int linePosition, string path)
         {
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(new LinterOutput(
@@ -109,7 +122,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Severity: Severity.Error,
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
-                Description: $"The policy mode 'Indexed' does not evaluate the referenced resource type '{resourceType}'. Set the mode to 'All' to include this resource type in policy evaluation.",
+                Description: $"The policy uses 'Indexed' mode, which skips evaluation of the referenced resource types: {resourceTypes}. Set the mode to 'All' to evaluate these types.",
                 Path: path,
                 DocumentationUrl: "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/indexed-mode-with-non-indexable-resource-types.md"));
         }

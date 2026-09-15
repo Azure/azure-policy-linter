@@ -139,6 +139,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void IfCondition_AliasMetadataDoesNotRequireCapabilities()
+        {
+            ITypeMetadata metadata = new AliasMetadata();
+
+            metadata.TryGetResourceTypeCapabilities(resourceType: "Contoso.Compute/widgets", result: out var capabilities)
+                .Should().BeFalse();
+            capabilities.Should().Be(ResourceTypeCapabilities.None);
+        }
+
+        [Fact]
         public void IfCondition_ResourceTypesAreComputedOnFirstAccessAndCached()
         {
             var policy = IfConditionTests.CreatePolicy(
@@ -171,12 +181,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         private sealed class AliasMetadata : ITypeMetadata
         {
-            public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
-            {
-                result = ResourceTypeCapabilities.None;
-                return false;
-            }
-
             public bool TryGetAliasPropertyMetadata(string aliasName, out ResourcePropertyMetadata[] result)
             {
                 result = Array.Empty<ResourcePropertyMetadata>();

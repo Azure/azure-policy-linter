@@ -250,13 +250,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         private sealed class TestTypeMetadata : ITypeMetadata
         {
-            /// <inheritdoc/>
-            public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
-            {
-                result = ResourceTypeCapabilities.None;
-                return false;
-            }
-
             private readonly Dictionary<string, ResourcePropertyMetadata[]> aliases =
                 new(StringComparer.OrdinalIgnoreCase)
                 {

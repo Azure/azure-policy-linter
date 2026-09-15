@@ -6,7 +6,7 @@
 
 ## Description
 
-`Indexed` mode causes the evaluation engine to skip the targeted non-indexable resource types. The policy therefore cannot audit or enforce its requirements on them, which is why this finding is an error. An omitted or null mode also uses `Indexed` semantics.
+The policy targets resource types that `Indexed` mode skips: types without both tags and location support, resource groups, or subscriptions.
 
 ## Suggestions
 

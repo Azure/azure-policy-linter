@@ -23,7 +23,7 @@ The node types you'll most often target as a rule author:
 | `PolicyDefinition` | Root. `Name?`, `Properties`. |
 | `PolicyDefinitionProperties` | `DisplayName?`, `Description?`, `PolicyType?`, `Mode?`, `Metadata?`, `Version?`, `Parameters` (case-insensitive dictionary), `ExternalEvaluationEnforcementSettings?`, `PolicyRule`. |
 | `PolicyRule` | `If` (IfCondition), `Then` (ThenExpression). |
-| `IfCondition` | Wraps a single `Condition`. `ReferencedResourceTypes` lazily collects resource types named by the condition and resolved aliases. |
+| `IfCondition` | Wraps a single `Condition`. |
 | `LeafCondition` | One condition: `Field?` / `Value?` / `Count?` (mutually exclusive) plus an `Operator?` (one of 18 supported operator names). |
 | `Quantifier` | `AllOf?`, `AnyOf?`, `Not?`. |
 | `ThenExpression` | Just `Effect` (a `Property`). The linter does **not** currently model effect details (`details.roleDefinitionIds`, `existenceCondition`, etc.) as typed nodes - if you need them, walk the raw `JToken`. |

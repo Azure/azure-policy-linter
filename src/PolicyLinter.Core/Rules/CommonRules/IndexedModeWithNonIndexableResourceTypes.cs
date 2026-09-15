@@ -6,6 +6,8 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
@@ -18,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Indexed Mode With Non-Indexable Resource Types";
         private const string RuleDescription =
-            "The policy mode 'Indexed' does not evaluate the referenced resource type '{0}'. Set the mode to 'All' to include this resource type in policy evaluation.";
+            "The policy uses 'Indexed' mode, which skips evaluation of the referenced resource types: {0}. Set the mode to 'All' to evaluate these types.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="IndexedModeWithNonIndexableResourceTypes"/> class.
@@ -47,6 +49,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
+            var skippedResourceTypes = new List<string>();
             foreach (var resourceType in expression.PolicyRule.If.ReferencedResourceTypes)
             {
                 if (!context.ResourceTypeMetadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities))
@@ -59,11 +62,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     resourceType.EqualsOrdinalInsensitively("Microsoft.Resources/subscriptions/resourceGroups") ||
                     resourceType.EqualsOrdinalInsensitively("Microsoft.Resources/subscriptions"))
                 {
-                    return new[] { this.CreateError(expression: mode != null ? mode : expression, resourceType) };
+                    skippedResourceTypes.Add(item: resourceType);
                 }
             }
 
-            return Array.Empty<LinterOutput>();
+            if (skippedResourceTypes.Count == 0)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[]
+            {
+                this.CreateError(expression: mode != null ? mode : expression, string.Join(", ", skippedResourceTypes
+                    .OrderBy(keySelector: resourceType => resourceType, comparer: StringComparer.OrdinalIgnoreCase)
+                    .ToArray())),
+            };
         }
     }
 }

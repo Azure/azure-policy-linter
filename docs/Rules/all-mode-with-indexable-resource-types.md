@@ -6,7 +6,7 @@
 
 ## Description
 
-The policy uses `All` mode for resource types that support tags and location. The policy still works; `Indexed` would limit evaluation to types that support both.
+The policy targets resource types that support tags and location but uses `All` mode. The policy still works, but `Indexed` mode is recommended.
 
 ## Suggestions
 

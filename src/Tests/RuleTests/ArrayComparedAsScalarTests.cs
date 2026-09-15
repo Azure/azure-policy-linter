@@ -382,13 +382,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private sealed class TestTypeMetadata : ITypeMetadata
         {
             /// <inheritdoc/>
-            public bool TryGetResourceTypeCapabilities(string resourceType, out ResourceTypeCapabilities result)
-            {
-                result = ResourceTypeCapabilities.None;
-                return false;
-            }
-
-            /// <inheritdoc/>
             public bool TryGetAliasPropertyMetadata(string aliasName, out ResourcePropertyMetadata[] result)
             {
                 if (string.Equals(aliasName, ArrayComparedAsScalarTests.ArrayAlias, StringComparison.OrdinalIgnoreCase) ||

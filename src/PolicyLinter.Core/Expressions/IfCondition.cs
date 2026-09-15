@@ -78,6 +78,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
         }
 
+        /// <summary>
+        /// Collects resource type names from type conditions and resolved field aliases.
+        /// </summary>
+        /// <returns>A case-insensitive set of resource type names.</returns>
         private ImmutableHashSet<string> ExtractReferencedResourceTypes()
         {
             var resourceTypes = ImmutableHashSet.CreateBuilder<string>(equalityComparer: StringComparer.OrdinalIgnoreCase);
@@ -87,22 +91,30 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 {
                     if (node is Reference reference && reference.IsResolvedFieldReference())
                     {
-                        resourceTypes.UnionWith(other: reference.ResourcePropertyMetadata
-                            .Select(selector: metadata => metadata.ResourceType)
-                            .ToArray());
+                        foreach (var metadata in reference.ResourcePropertyMetadata)
+                        {
+                            _ = resourceTypes.Add(item: metadata.ResourceType);
+                        }
                     }
                     else if (node is LeafCondition leaf &&
                         string.Equals(a: leaf.Field?.FieldAccessorReference?.Identifier, b: "type", comparisonType: StringComparison.OrdinalIgnoreCase) &&
                         leaf.Operator != null)
                     {
-                        resourceTypes.UnionWith(other: this.ExtractResourceTypes(leaf: leaf, leafOperator: leaf.Operator));
+                        resourceTypes.UnionWith(other: this.ExtractTypeConditionResourceTypes(leaf: leaf, leafOperator: leaf.Operator));
                     }
                 }
             });
             return resourceTypes.ToImmutable();
         }
 
-        private string[] ExtractResourceTypes(LeafCondition leaf, Property leafOperator)
+        /// <summary>
+        /// Extracts resource type names from a non-negated 'type' equals/in condition.
+        /// Uses literal operands or known values of a simple parameter reference.
+        /// </summary>
+        /// <param name="leaf">The type condition.</param>
+        /// <param name="leafOperator">The equals or in operator and its operand.</param>
+        /// <returns>The resource type names in the operand.</returns>
+        private string[] ExtractTypeConditionResourceTypes(LeafCondition leaf, Property leafOperator)
         {
             var isEquals = leafOperator.Name.EqualsOrdinalInsensitively("equals");
             var isIn = leafOperator.Name.EqualsOrdinalInsensitively("in");
@@ -112,33 +124,41 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 return Array.Empty<string>();
             }
 
-            JToken? operand = leafOperator.Value;
-            JToken?[]? values = null;
-            if (!leafOperator.HasLiteralValue)
+            var values = new List<JToken>();
+            if (leafOperator.HasLiteralValue)
+            {
+                if (isIn && leafOperator.Value is JArray array)
+                {
+                    values.AddRange(collection: array);
+                }
+                else if (isEquals)
+                {
+                    values.Add(item: leafOperator.Value);
+                }
+            }
+            else
             {
                 // PolicyRule's parent is the definition, not its properties object.
                 var parameters = (this.Parent?.Parent as PolicyDefinition)?.Properties.Parameters;
-                if (operand.Type != JTokenType.String ||
-                    leafOperator.LanguageExpressions.Length != 1 ||
-                    !leafOperator.LanguageExpressions[0].IsSimpleParameterReference(parameterName: out var parameterName) ||
-                    parameters == null ||
-                    !parameters.TryGetValue(key: parameterName, value: out var parameter) ||
+                if (!leafOperator.HasSimpleParameterizedValue(
+                        parameters: parameters, parameterName: out _, parameter: out var parameter) ||
                     !parameter.Type.EqualsOrdinalInsensitively(isEquals ? PolicyParameterType.String : PolicyParameterType.Array))
                 {
                     return Array.Empty<string>();
                 }
 
-                values = parameter.AllowedValues;
-                operand = parameter.DefaultValue;
-            }
-            else if (isIn && operand is not JArray)
-            {
-                return Array.Empty<string>();
-            }
-
-            if (values == null)
-            {
-                values = operand is JArray array ? array.ToArray() : new[] { operand };
+                if (parameter.AllowedValues != null)
+                {
+                    values.AddRange(collection: parameter.AllowedValues);
+                }
+                else if (parameter.DefaultValue is JArray defaultArray)
+                {
+                    values.AddRange(collection: defaultArray);
+                }
+                else if (parameter.DefaultValue != null)
+                {
+                    values.Add(item: parameter.DefaultValue);
+                }
             }
 
             var resourceTypes = new List<string>();

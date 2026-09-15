@@ -10,6 +10,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
@@ -123,9 +124,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Checks if the property has a simple parameterized value. e.g. "[parameters('paramName')]".
-        /// This method only checks for the simplest case of a property value that is a plain reference to a string parameter with a known name.
-        /// Any other fancy stuff like "parameters('param').value" or "concat(parameters('param'), 'value')" is not considered a **simple** parameterized property.
+        /// Gets the allowed and default values of a bare string-parameter reference.
         /// </summary>
         /// <param name="context">The linter rule evaluation context.</param>
         /// <param name="parameterName">Returns the parameter name if the property is parameterized.</param>
@@ -133,21 +132,36 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <param name="defaultValue">The parameter default value if defined.</param>
         public bool HasSimpleParameterizedValue(LinterContext context, out string parameterName, out string[]? allowedValues, out string? defaultValue)
         {
-            parameterName = string.Empty;
             allowedValues = null;
             defaultValue = null;
 
-            if (!this.HasLiteralValue &&
-                this.LanguageExpressions.Length == 1 &&
-                this.LanguageExpressions[0].IsSimpleParameterReference(out parameterName) &&
-                context.Parameters != null &&
-                context.Parameters.TryGetValue(parameterName, out var param) &&
-                param.TryAsConcreteType<string>(out allowedValues, out defaultValue))
-            {
-                return true;
-            }
+            return this.HasSimpleParameterizedValue(
+                    parameters: context.Parameters,
+                    parameterName: out parameterName,
+                    parameter: out var parameter) &&
+                parameter.TryAsConcreteType<string>(allowedValues: out allowedValues, defaultValue: out defaultValue);
+        }
 
-            return false;
+        /// <summary>
+        /// Resolves a bare parameter reference to its definition, including its allowed and default values.
+        /// </summary>
+        /// <param name="parameters">Policy parameters, keyed by parameter name.</param>
+        /// <param name="parameterName">The name used in the reference.</param>
+        /// <param name="parameter">The referenced parameter definition, or null if unresolved.</param>
+        public bool HasSimpleParameterizedValue(
+            ImmutableDictionary<string, Parameter>? parameters,
+            out string parameterName,
+            [NotNullWhen(true)] out Parameter? parameter)
+        {
+            parameterName = string.Empty;
+            parameter = null;
+
+            return this.Value.Type == JTokenType.String &&
+                !this.HasLiteralValue &&
+                this.LanguageExpressions.Length == 1 &&
+                this.LanguageExpressions[0].IsSimpleParameterReference(parameterName: out parameterName) &&
+                parameters != null &&
+                parameters.TryGetValue(key: parameterName, value: out parameter);
         }
     }
 }
