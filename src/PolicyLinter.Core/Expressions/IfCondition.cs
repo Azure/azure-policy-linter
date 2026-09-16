@@ -140,7 +140,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 // PolicyRule's parent is the definition, not its properties object.
                 var parameters = (this.Parent?.Parent as PolicyDefinition)?.Properties.Parameters;
-                if (!leafOperator.HasSimpleParameterizedValue(parameterName: out var parameterName) ||
+                if (!leafOperator.IsSimpleParameterReference(parameterName: out var parameterName) ||
                     parameters == null ||
                     !parameters.TryGetValue(key: parameterName, value: out var parameter) ||
                     !parameter.Type.EqualsOrdinalInsensitively(isEquals ? PolicyParameterType.String : PolicyParameterType.Array))

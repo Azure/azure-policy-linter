@@ -134,22 +134,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             allowedValues = null;
             defaultValue = null;
 
-            return this.HasSimpleParameterizedValue(parameterName: out parameterName) &&
+            return this.IsSimpleParameterReference(parameterName: out parameterName) &&
                 context.Parameters != null &&
                 context.Parameters.TryGetValue(key: parameterName, value: out var parameter) &&
                 parameter.TryAsConcreteType<string>(allowedValues: out allowedValues, defaultValue: out defaultValue);
         }
 
         /// <summary>
-        /// Gets the parameter name from a bare parameter reference, without resolving its value.
+        /// Checks whether the entire property value is a bare parameter reference.
         /// </summary>
         /// <param name="parameterName">The name used in the reference.</param>
-        public bool HasSimpleParameterizedValue(out string parameterName)
+        public bool IsSimpleParameterReference(out string parameterName)
         {
             parameterName = string.Empty;
 
             return this.Value.Type == JTokenType.String &&
-                !this.HasLiteralValue &&
                 this.LanguageExpressions.Length == 1 &&
                 this.LanguageExpressions[0].IsSimpleParameterReference(parameterName: out parameterName);
         }

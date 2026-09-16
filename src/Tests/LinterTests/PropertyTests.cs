@@ -46,7 +46,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var policy = PropertyTests.CreatePolicy(value: "\"[parameters('TYPES')]\"");
             var property = ((LeafCondition)policy.Properties.PolicyRule.If.Condition).Operator;
 
-            property.HasSimpleParameterizedValue(parameterName: out var name).Should().BeTrue();
+            property.IsSimpleParameterReference(parameterName: out var name).Should().BeTrue();
             name.Should().Be("TYPES");
 
             var context = new LinterContext(resourceTypeMetadata: new MockTypeMetadata(), parameters: policy.Properties.Parameters);
@@ -63,7 +63,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var policy = PropertyTests.CreatePolicy(value: "\"[parameters('missing')]\"");
             var property = ((LeafCondition)policy.Properties.PolicyRule.If.Condition).Operator;
 
-            property.HasSimpleParameterizedValue(parameterName: out var name).Should().BeTrue();
+            property.IsSimpleParameterReference(parameterName: out var name).Should().BeTrue();
             name.Should().Be("missing");
 
             var context = new LinterContext(resourceTypeMetadata: new MockTypeMetadata());
