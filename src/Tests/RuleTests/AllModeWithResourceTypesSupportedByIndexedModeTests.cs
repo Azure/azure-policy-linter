@@ -8,7 +8,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Newtonsoft.Json.Linq;
     using Xunit;
 
-    public class AllModeWithIndexableResourceTypesTests
+    public class AllModeWithResourceTypesSupportedByIndexedModeTests
     {
         private static readonly MockTypeMetadata Metadata = new()
         {
@@ -29,11 +29,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("'All'", "{ 'field': 'type', 'equals': 'Contoso.Test/first' }")]
         [InlineData("'aLl'", "{ 'field': 'type', 'equals': 'CONTOSO.TEST/FIRST' }")]
         [InlineData("'All'", "{ 'field': 'type', 'in': ['Contoso.Test/first', 'Contoso.Test/second'] }")]
-        public void RuleTests_AllModeWithIndexableResourceTypes_AllTypesSupportIndexed(string mode, string condition)
+        public void RuleTests_AllModeWithResourceTypesSupportedByIndexedMode_AllTypesSupportIndexed(string mode, string condition)
         {
-            var results = AllModeWithIndexableResourceTypesTests.Lint(mode: mode, condition: condition);
+            var results = AllModeWithResourceTypesSupportedByIndexedModeTests.Lint(mode: mode, condition: condition);
 
-            AllModeWithIndexableResourceTypesTests.AssertInformational(results: results);
+            AllModeWithResourceTypesSupportedByIndexedModeTests.AssertInformational(results: results);
         }
 
         [Theory]
@@ -42,9 +42,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("'Indexed'")]
         [InlineData("'Microsoft.Kubernetes.Data'")]
         [InlineData("\"[parameters('mode')]\"")]
-        public void RuleTests_AllModeWithIndexableResourceTypes_OtherModes(string mode)
+        public void RuleTests_AllModeWithResourceTypesSupportedByIndexedMode_OtherModes(string mode)
         {
-            AllModeWithIndexableResourceTypesTests.Lint(
+            AllModeWithResourceTypesSupportedByIndexedModeTests.Lint(
                 mode: mode, condition: "{ 'field': 'type', 'equals': 'Contoso.Test/first' }").Should().BeEmpty();
         }
 
@@ -59,35 +59,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("{ 'field': 'type', 'equals': 'Microsoft.Resources/resourceGroups' }")]
         [InlineData("{ 'field': 'type', 'equals': 'Microsoft.Resources/subscriptions/resourceGroups' }")]
         [InlineData("{ 'field': 'type', 'equals': 'Microsoft.Resources/subscriptions' }")]
-        public void RuleTests_AllModeWithIndexableResourceTypes_NotAllTypesSupportIndexed(string condition)
+        public void RuleTests_AllModeWithResourceTypesSupportedByIndexedMode_NotAllTypesSupportIndexed(string condition)
         {
-            AllModeWithIndexableResourceTypesTests.Lint(mode: "'All'", condition: condition).Should().BeEmpty();
+            AllModeWithResourceTypesSupportedByIndexedModeTests.Lint(mode: "'All'", condition: condition).Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_AllModeWithIndexableResourceTypes_SimpleParameter()
+        public void RuleTests_AllModeWithResourceTypesSupportedByIndexedMode_SimpleParameter()
         {
-            var results = AllModeWithIndexableResourceTypesTests.Lint(
+            var results = AllModeWithResourceTypesSupportedByIndexedModeTests.Lint(
                 mode: "'All'",
                 condition: @"{ 'field': 'type', 'in': ""[parameters('types')]"" }",
                 parameters: "{ 'types': { 'type': 'Array', 'defaultValue': ['Contoso.Test/first', 'Contoso.Test/second'] } }");
 
-            AllModeWithIndexableResourceTypesTests.AssertInformational(results: results);
+            AllModeWithResourceTypesSupportedByIndexedModeTests.AssertInformational(results: results);
         }
 
         private static void AssertInformational(LinterOutput[] results)
         {
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(new LinterOutput(
-                RuleIdentifier: "all-mode-with-indexable-resource-types",
-                Title: "All Mode With Indexable Resource Types",
+                RuleIdentifier: "all-mode-with-resource-types-supported-by-indexed-mode",
+                Title: "All Mode With Resource Types Supported by Indexed Mode",
                 Category: Category.BestPractices,
                 Severity: Severity.Informational,
                 LineNumber: 3,
                 LinePosition: 17,
                 Description: "The policy mode is 'All', and every referenced resource type supports tags and location. Consider 'Indexed' mode to restrict evaluation to resource types with those capabilities.",
                 Path: "properties.mode",
-                DocumentationUrl: "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/all-mode-with-indexable-resource-types.md"));
+                DocumentationUrl: "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/all-mode-with-resource-types-supported-by-indexed-mode.md"));
         }
 
         private static LinterOutput[] Lint(string mode, string condition, string parameters = null)
@@ -108,8 +108,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             }
             var policy = new JObject { ["properties"] = properties };
             var linter = new PolicyLinter(
-                rules: new ILinterRule[] { new AllModeWithIndexableResourceTypes() },
-                metadata: AllModeWithIndexableResourceTypesTests.Metadata);
+                rules: new ILinterRule[] { new AllModeWithResourceTypesSupportedByIndexedMode() },
+                metadata: AllModeWithResourceTypesSupportedByIndexedModeTests.Metadata);
             return linter.Lint(rawPolicyDefinition: policy.ToString());
         }
     }

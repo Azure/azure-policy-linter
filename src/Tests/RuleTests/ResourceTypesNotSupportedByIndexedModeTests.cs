@@ -8,7 +8,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Newtonsoft.Json.Linq;
     using Xunit;
 
-    public class IndexedModeWithNonIndexableResourceTypesTests
+    public class ResourceTypesNotSupportedByIndexedModeTests
     {
         private static readonly MockTypeMetadata Metadata = new()
         {
@@ -32,12 +32,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Microsoft.Resources/resourceGroups")]
         [InlineData("Microsoft.Resources/subscriptions/resourceGroups")]
         [InlineData("Microsoft.Resources/subscriptions")]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_RequiresAll(string resourceType)
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_RequiresAll(string resourceType)
         {
-            var results = IndexedModeWithNonIndexableResourceTypesTests.Lint(
+            var results = ResourceTypesNotSupportedByIndexedModeTests.Lint(
                 mode: "'Indexed'", condition: $"{{ 'field': 'type', 'equals': '{resourceType}' }}");
 
-            IndexedModeWithNonIndexableResourceTypesTests.AssertError(
+            ResourceTypesNotSupportedByIndexedModeTests.AssertError(
                 results: results, resourceTypes: resourceType, lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
@@ -45,13 +45,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("'iNdExEd'", 3, 21, "properties.mode")]
         [InlineData(null, 2, 17, "properties")]
         [InlineData("null", 2, 17, "properties")]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_IndexedAndDefaultModes(
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_IndexedAndDefaultModes(
             string mode, int lineNumber, int linePosition, string path)
         {
-            var results = IndexedModeWithNonIndexableResourceTypesTests.Lint(
+            var results = ResourceTypesNotSupportedByIndexedModeTests.Lint(
                 mode: mode, condition: "{ 'field': 'type', 'equals': 'Contoso.Test/untracked' }");
 
-            IndexedModeWithNonIndexableResourceTypesTests.AssertError(
+            ResourceTypesNotSupportedByIndexedModeTests.AssertError(
                 results: results, resourceTypes: "Contoso.Test/untracked", lineNumber: lineNumber, linePosition: linePosition, path: path);
         }
 
@@ -60,9 +60,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("'Microsoft.Kubernetes.Data'")]
         [InlineData("'UnknownMode'")]
         [InlineData("\"[parameters('mode')]\"")]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_OtherModes(string mode)
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_OtherModes(string mode)
         {
-            IndexedModeWithNonIndexableResourceTypesTests.Lint(
+            ResourceTypesNotSupportedByIndexedModeTests.Lint(
                 mode: mode, condition: "{ 'field': 'type', 'equals': 'Contoso.Test/untracked' }").Should().BeEmpty();
         }
 
@@ -71,44 +71,44 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("{ 'field': 'type', 'equals': 'Unknown.Provider/widgets' }")]
         [InlineData("{ 'field': 'type', 'in': [] }")]
         [InlineData("{ 'field': 'location', 'equals': 'westus' }")]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_NoKnownMismatch(string condition)
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_NoKnownMismatch(string condition)
         {
-            IndexedModeWithNonIndexableResourceTypesTests.Lint(mode: "'Indexed'", condition: condition).Should().BeEmpty();
+            ResourceTypesNotSupportedByIndexedModeTests.Lint(mode: "'Indexed'", condition: condition).Should().BeEmpty();
         }
 
         [Fact]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_MixedTypesReportKnownMismatch()
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_MixedTypesReportKnownMismatch()
         {
-            var results = IndexedModeWithNonIndexableResourceTypesTests.Lint(
+            var results = ResourceTypesNotSupportedByIndexedModeTests.Lint(
                 mode: "'Indexed'",
                 condition: "{ 'field': 'type', 'in': ['Unknown.Provider/widgets', 'Contoso.Test/tracked', 'Contoso.Test/untracked'] }");
 
-            IndexedModeWithNonIndexableResourceTypesTests.AssertError(
+            ResourceTypesNotSupportedByIndexedModeTests.AssertError(
                 results: results, resourceTypes: "Contoso.Test/untracked", lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
         [Fact]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_ReportsAllAffectedTypes()
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_ReportsAllAffectedTypes()
         {
-            var results = IndexedModeWithNonIndexableResourceTypesTests.Lint(
+            var results = ResourceTypesNotSupportedByIndexedModeTests.Lint(
                 mode: "'Indexed'",
                 condition: "{ 'field': 'type', 'in': ['Contoso.Test/untracked', 'Contoso.Test/tracked', 'Contoso.Test/tagsOnly', 'Contoso.Test/locationOnly', 'CONTOSO.TEST/UNTRACKED', 'Unknown.Provider/widgets'] }");
 
-            IndexedModeWithNonIndexableResourceTypesTests.AssertError(
+            ResourceTypesNotSupportedByIndexedModeTests.AssertError(
                 results: results,
                 resourceTypes: "Contoso.Test/locationOnly, Contoso.Test/tagsOnly, Contoso.Test/untracked",
                 lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
         [Fact]
-        public void RuleTests_IndexedModeWithNonIndexableResourceTypes_SimpleParameter()
+        public void RuleTests_ResourceTypesNotSupportedByIndexedMode_SimpleParameter()
         {
-            var results = IndexedModeWithNonIndexableResourceTypesTests.Lint(
+            var results = ResourceTypesNotSupportedByIndexedModeTests.Lint(
                 mode: "'Indexed'",
                 condition: @"{ 'field': 'type', 'equals': ""[parameters('type')]"" }",
                 parameters: "{ 'type': { 'type': 'String', 'defaultValue': 'Contoso.Test/untracked' } }");
 
-            IndexedModeWithNonIndexableResourceTypesTests.AssertError(
+            ResourceTypesNotSupportedByIndexedModeTests.AssertError(
                 results: results, resourceTypes: "Contoso.Test/untracked", lineNumber: 3, linePosition: 21, path: "properties.mode");
         }
 
@@ -116,15 +116,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(new LinterOutput(
-                RuleIdentifier: "indexed-mode-with-non-indexable-resource-types",
-                Title: "Indexed Mode With Non-Indexable Resource Types",
+                RuleIdentifier: "resource-types-not-supported-by-indexed-mode",
+                Title: "Resource Types Not Supported by Indexed Mode",
                 Category: Category.ResourceFields,
                 Severity: Severity.Error,
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Description: $"The policy uses 'Indexed' mode, which skips evaluation of the referenced resource types: {resourceTypes}. Set the mode to 'All' to evaluate these types.",
                 Path: path,
-                DocumentationUrl: "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/indexed-mode-with-non-indexable-resource-types.md"));
+                DocumentationUrl: "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/resource-types-not-supported-by-indexed-mode.md"));
         }
 
         private static LinterOutput[] Lint(string mode, string condition, string parameters = null)
@@ -145,8 +145,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             }
             var policy = new JObject { ["properties"] = properties };
             var linter = new PolicyLinter(
-                rules: new ILinterRule[] { new IndexedModeWithNonIndexableResourceTypes() },
-                metadata: IndexedModeWithNonIndexableResourceTypesTests.Metadata);
+                rules: new ILinterRule[] { new ResourceTypesNotSupportedByIndexedMode() },
+                metadata: ResourceTypesNotSupportedByIndexedModeTests.Metadata);
             return linter.Lint(rawPolicyDefinition: policy.ToString());
         }
     }

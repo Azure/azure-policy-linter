@@ -1,8 +1,8 @@
-# All Mode With Indexable Resource Types
+# All Mode With Resource Types Supported by Indexed Mode
 
 | Category | Identifier | Severity | Rule Set |
 |---|---|---|---|
-| BestPractices | all-mode-with-indexable-resource-types | Informational | default |
+| BestPractices | all-mode-with-resource-types-supported-by-indexed-mode | Informational | default |
 
 ## Description
 

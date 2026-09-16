@@ -16,20 +16,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Detects Indexed-mode policies referencing resource types that require All mode.
     /// </summary>
-    public sealed class IndexedModeWithNonIndexableResourceTypes : LinterRule<PolicyDefinitionProperties>
+    public sealed class ResourceTypesNotSupportedByIndexedMode : LinterRule<PolicyDefinitionProperties>
     {
-        private const string RuleTitle = "Indexed Mode With Non-Indexable Resource Types";
+        private const string RuleTitle = "Resource Types Not Supported by Indexed Mode";
         private const string RuleDescription =
             "The policy uses 'Indexed' mode, which skips evaluation of the referenced resource types: {0}. Set the mode to 'All' to evaluate these types.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="IndexedModeWithNonIndexableResourceTypes"/> class.
+        /// Initializes a new instance of the <see cref="ResourceTypesNotSupportedByIndexedMode"/> class.
         /// </summary>
-        public IndexedModeWithNonIndexableResourceTypes() : base(
-            identifier: "indexed-mode-with-non-indexable-resource-types",
+        public ResourceTypesNotSupportedByIndexedMode() : base(
+            identifier: "resource-types-not-supported-by-indexed-mode",
             category: Category.ResourceFields,
-            title: IndexedModeWithNonIndexableResourceTypes.RuleTitle,
-            descriptionFormat: IndexedModeWithNonIndexableResourceTypes.RuleDescription,
+            title: ResourceTypesNotSupportedByIndexedMode.RuleTitle,
+            descriptionFormat: ResourceTypesNotSupportedByIndexedMode.RuleDescription,
             applyToDerivedTypes: false)
         {
         }

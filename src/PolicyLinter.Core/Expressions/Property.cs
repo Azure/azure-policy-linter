@@ -10,7 +10,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
@@ -135,33 +134,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             allowedValues = null;
             defaultValue = null;
 
-            return this.HasSimpleParameterizedValue(
-                    parameters: context.Parameters,
-                    parameterName: out parameterName,
-                    parameter: out var parameter) &&
+            return this.HasSimpleParameterizedValue(parameterName: out parameterName) &&
+                context.Parameters != null &&
+                context.Parameters.TryGetValue(key: parameterName, value: out var parameter) &&
                 parameter.TryAsConcreteType<string>(allowedValues: out allowedValues, defaultValue: out defaultValue);
         }
 
         /// <summary>
-        /// Resolves a bare parameter reference to its definition, including its allowed and default values.
+        /// Gets the parameter name from a bare parameter reference, without resolving its value.
         /// </summary>
-        /// <param name="parameters">Policy parameters, keyed by parameter name.</param>
         /// <param name="parameterName">The name used in the reference.</param>
-        /// <param name="parameter">The referenced parameter definition, or null if unresolved.</param>
-        public bool HasSimpleParameterizedValue(
-            ImmutableDictionary<string, Parameter>? parameters,
-            out string parameterName,
-            [NotNullWhen(true)] out Parameter? parameter)
+        public bool HasSimpleParameterizedValue(out string parameterName)
         {
             parameterName = string.Empty;
-            parameter = null;
 
             return this.Value.Type == JTokenType.String &&
                 !this.HasLiteralValue &&
                 this.LanguageExpressions.Length == 1 &&
-                this.LanguageExpressions[0].IsSimpleParameterReference(parameterName: out parameterName) &&
-                parameters != null &&
-                parameters.TryGetValue(key: parameterName, value: out parameter);
+                this.LanguageExpressions[0].IsSimpleParameterReference(parameterName: out parameterName);
         }
     }
 }

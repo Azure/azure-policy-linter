@@ -41,16 +41,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void Property_SimpleArrayParameterDefinition()
+        public void Property_SimpleArrayParameterName()
         {
             var policy = PropertyTests.CreatePolicy(value: "\"[parameters('TYPES')]\"");
             var property = ((LeafCondition)policy.Properties.PolicyRule.If.Condition).Operator;
 
-            property.HasSimpleParameterizedValue(
-                parameters: policy.Properties.Parameters, parameterName: out var name, parameter: out var parameter)
-                .Should().BeTrue();
+            property.HasSimpleParameterizedValue(parameterName: out var name).Should().BeTrue();
             name.Should().Be("TYPES");
-            parameter.Should().BeSameAs(policy.Properties.Parameters["types"]);
 
             var context = new LinterContext(resourceTypeMetadata: new MockTypeMetadata(), parameters: policy.Properties.Parameters);
             property.HasSimpleParameterizedValue(
@@ -61,14 +58,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void Property_MissingParameterDefinitions()
+        public void Property_ParameterNameDoesNotRequireDefinition()
         {
-            var policy = PropertyTests.CreatePolicy(value: "\"[parameters('p')]\"");
+            var policy = PropertyTests.CreatePolicy(value: "\"[parameters('missing')]\"");
             var property = ((LeafCondition)policy.Properties.PolicyRule.If.Condition).Operator;
 
-            property.HasSimpleParameterizedValue(parameters: null, parameterName: out _, parameter: out var parameter)
+            property.HasSimpleParameterizedValue(parameterName: out var name).Should().BeTrue();
+            name.Should().Be("missing");
+
+            var context = new LinterContext(resourceTypeMetadata: new MockTypeMetadata());
+            property.HasSimpleParameterizedValue(
+                context: context, parameterName: out _, allowedValues: out var allowed, defaultValue: out var defaultValue)
                 .Should().BeFalse();
-            parameter.Should().BeNull();
+            allowed.Should().BeNull();
+            defaultValue.Should().BeNull();
         }
 
         private static PolicyDefinition CreatePolicy(string value)

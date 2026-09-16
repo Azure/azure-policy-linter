@@ -1,8 +1,8 @@
-# Indexed Mode With Non-Indexable Resource Types
+# Resource Types Not Supported by Indexed Mode
 
 | Category | Identifier | Severity | Rule Set |
 |---|---|---|---|
-| ResourceFields | indexed-mode-with-non-indexable-resource-types | Error | default |
+| ResourceFields | resource-types-not-supported-by-indexed-mode | Error | default |
 
 ## Description
 
