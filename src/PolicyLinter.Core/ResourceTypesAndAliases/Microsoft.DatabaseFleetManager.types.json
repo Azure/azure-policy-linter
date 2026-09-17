@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.DatabaseFleetManager",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "fleets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/authorizedPrincipals"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/firewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/fleetspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/fleetspaces/authorizedPrincipals"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/fleetspaces/databases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/fleetspaces/firewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fleets/tiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationTypes/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationTypes/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/routedOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

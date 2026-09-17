@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Inventory",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/physicalAzureHosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/physicalClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/physicalDatacenters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptionInternalProperties"
+    }
+  ]
+}

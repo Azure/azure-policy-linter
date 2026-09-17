@@ -1,0 +1,378 @@
+{
+  "namespace": "Microsoft.AAD",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AAD/domainServices/deploymentId",
+          "defaultPath": "properties.deploymentId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainConfigurationType",
+          "defaultPath": "properties.domainConfigurationType"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainControllerIpAddress",
+          "defaultPath": "properties.domainControllerIpAddress"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainControllerIpAddress[*]",
+          "defaultPath": "properties.domainControllerIpAddress[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainName",
+          "defaultPath": "properties.domainName"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings",
+          "defaultPath": "properties.domainSecuritySettings"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.kerberosArmoring",
+          "defaultPath": "properties.domainSecuritySettings.kerberosArmoring"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.kerberosRc4Encryption",
+          "defaultPath": "properties.domainSecuritySettings.kerberosRc4Encryption"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.ntlmV1",
+          "defaultPath": "properties.domainSecuritySettings.ntlmV1"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.syncKerberosPasswords",
+          "defaultPath": "properties.domainSecuritySettings.syncKerberosPasswords"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.syncNtlmPasswords",
+          "defaultPath": "properties.domainSecuritySettings.syncNtlmPasswords"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.syncOnPremPasswords",
+          "defaultPath": "properties.domainSecuritySettings.syncOnPremPasswords"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/domainSecuritySettings.tlsV1",
+          "defaultPath": "properties.domainSecuritySettings.tlsV1",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/filteredSync",
+          "defaultPath": "properties.filteredSync"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts",
+          "defaultPath": "properties.healthAlerts"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*]",
+          "defaultPath": "properties.healthAlerts[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].id",
+          "defaultPath": "properties.healthAlerts[*].id"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].issue",
+          "defaultPath": "properties.healthAlerts[*].issue"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].lastDetected",
+          "defaultPath": "properties.healthAlerts[*].lastDetected"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].name",
+          "defaultPath": "properties.healthAlerts[*].name"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].raised",
+          "defaultPath": "properties.healthAlerts[*].raised"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].resolutionUri",
+          "defaultPath": "properties.healthAlerts[*].resolutionUri"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthAlerts[*].severity",
+          "defaultPath": "properties.healthAlerts[*].severity"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthLastEvaluated",
+          "defaultPath": "properties.healthLastEvaluated"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthMonitors",
+          "defaultPath": "properties.healthMonitors"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthMonitors[*]",
+          "defaultPath": "properties.healthMonitors[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthMonitors[*].details",
+          "defaultPath": "properties.healthMonitors[*].details"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthMonitors[*].id",
+          "defaultPath": "properties.healthMonitors[*].id"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/healthMonitors[*].name",
+          "defaultPath": "properties.healthMonitors[*].name"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings",
+          "defaultPath": "properties.ldapsSettings"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.certificateNotAfter",
+          "defaultPath": "properties.ldapsSettings.certificateNotAfter"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.certificateThumbprint",
+          "defaultPath": "properties.ldapsSettings.certificateThumbprint"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.externalAccess",
+          "defaultPath": "properties.ldapsSettings.externalAccess"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.externalAccessIpAddress",
+          "defaultPath": "properties.ldapsSettings.externalAccessIpAddress"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.ldaps",
+          "defaultPath": "properties.ldapsSettings.ldaps"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.pfxCertificate",
+          "defaultPath": "properties.ldapsSettings.pfxCertificate"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.pfxCertificatePassword",
+          "defaultPath": "properties.ldapsSettings.pfxCertificatePassword"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/ldapsSettings.publicCertificate",
+          "defaultPath": "properties.ldapsSettings.publicCertificate"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/migrationProperties",
+          "defaultPath": "properties.migrationProperties"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/migrationProperties.migrationProgress",
+          "defaultPath": "properties.migrationProperties.migrationProgress"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/migrationProperties.migrationProgress.completionPercentage",
+          "defaultPath": "properties.migrationProperties.migrationProgress.completionPercentage"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/migrationProperties.migrationProgress.progressMessage",
+          "defaultPath": "properties.migrationProperties.migrationProgress.progressMessage"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/migrationProperties.oldSubnetId",
+          "defaultPath": "properties.migrationProperties.oldSubnetId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/migrationProperties.oldVnetSiteId",
+          "defaultPath": "properties.migrationProperties.oldVnetSiteId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/notificationSettings",
+          "defaultPath": "properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/notificationSettings.additionalRecipients",
+          "defaultPath": "properties.notificationSettings.additionalRecipients"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/notificationSettings.additionalRecipients[*]",
+          "defaultPath": "properties.notificationSettings.additionalRecipients[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/notificationSettings.notifyDcAdmins",
+          "defaultPath": "properties.notificationSettings.notifyDcAdmins"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/notificationSettings.notifyGlobalAdmins",
+          "defaultPath": "properties.notificationSettings.notifyGlobalAdmins"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets",
+          "defaultPath": "properties.replicaSets"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*]",
+          "defaultPath": "properties.replicaSets[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].domainControllerIpAddress",
+          "defaultPath": "properties.replicaSets[*].domainControllerIpAddress"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].domainControllerIpAddress[*]",
+          "defaultPath": "properties.replicaSets[*].domainControllerIpAddress[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].externalAccessIpAddress",
+          "defaultPath": "properties.replicaSets[*].externalAccessIpAddress"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts",
+          "defaultPath": "properties.replicaSets[*].healthAlerts"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*]",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].id",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].id"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].issue",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].issue"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].lastDetected",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].lastDetected"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].name",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].name"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].raised",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].raised"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].resolutionUri",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].resolutionUri"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthAlerts[*].severity",
+          "defaultPath": "properties.replicaSets[*].healthAlerts[*].severity"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthLastEvaluated",
+          "defaultPath": "properties.replicaSets[*].healthLastEvaluated"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthMonitors",
+          "defaultPath": "properties.replicaSets[*].healthMonitors"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthMonitors[*]",
+          "defaultPath": "properties.replicaSets[*].healthMonitors[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthMonitors[*].details",
+          "defaultPath": "properties.replicaSets[*].healthMonitors[*].details"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthMonitors[*].id",
+          "defaultPath": "properties.replicaSets[*].healthMonitors[*].id"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].healthMonitors[*].name",
+          "defaultPath": "properties.replicaSets[*].healthMonitors[*].name"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].location",
+          "defaultPath": "properties.replicaSets[*].location"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].replicaSetId",
+          "defaultPath": "properties.replicaSets[*].replicaSetId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].serviceStatus",
+          "defaultPath": "properties.replicaSets[*].serviceStatus"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].subnetId",
+          "defaultPath": "properties.replicaSets[*].subnetId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/replicaSets[*].vnetSiteId",
+          "defaultPath": "properties.replicaSets[*].vnetSiteId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings",
+          "defaultPath": "properties.resourceForestSettings"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.resourceForest",
+          "defaultPath": "properties.resourceForestSettings.resourceForest"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings",
+          "defaultPath": "properties.resourceForestSettings.settings"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings[*]",
+          "defaultPath": "properties.resourceForestSettings.settings[*]"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings[*].friendlyName",
+          "defaultPath": "properties.resourceForestSettings.settings[*].friendlyName"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings[*].remoteDnsIps",
+          "defaultPath": "properties.resourceForestSettings.settings[*].remoteDnsIps"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings[*].trustDirection",
+          "defaultPath": "properties.resourceForestSettings.settings[*].trustDirection"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings[*].trustedDomainFqdn",
+          "defaultPath": "properties.resourceForestSettings.settings[*].trustedDomainFqdn"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/resourceForestSettings.settings[*].trustPassword",
+          "defaultPath": "properties.resourceForestSettings.settings[*].trustPassword"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/serviceStatus",
+          "defaultPath": "properties.serviceStatus"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/syncOwner",
+          "defaultPath": "properties.syncOwner"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.AAD/domainServices/vnetSiteId",
+          "defaultPath": "properties.vnetSiteId"
+        }
+      ],
+      "resourceType": "DomainServices"
+    }
+  ]
+}

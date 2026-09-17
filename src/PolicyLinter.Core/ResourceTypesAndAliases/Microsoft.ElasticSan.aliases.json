@@ -1,0 +1,349 @@
+{
+  "namespace": "Microsoft.ElasticSan",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/availabilityZones",
+          "defaultPath": "properties.availabilityZones"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/availabilityZones[*]",
+          "defaultPath": "properties.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/baseSizeTiB",
+          "defaultPath": "properties.baseSizeTiB"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/extendedCapacitySizeTiB",
+          "defaultPath": "properties.extendedCapacitySizeTiB"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/sku.name",
+          "defaultPath": "properties.sku.name"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/sku.tier",
+          "defaultPath": "properties.sku.tier"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/totalIops",
+          "defaultPath": "properties.totalIops"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/totalMBps",
+          "defaultPath": "properties.totalMBps"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/totalSizeTiB",
+          "defaultPath": "properties.totalSizeTiB"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/totalVolumeSizeGiB",
+          "defaultPath": "properties.totalVolumeSizeGiB"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroupCount",
+          "defaultPath": "properties.volumeGroupCount"
+        }
+      ],
+      "resourceType": "elasticSans"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties",
+          "defaultPath": "properties.encryptionProperties"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.identity",
+          "defaultPath": "properties.encryptionProperties.identity"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.identity.userAssignedIdentity",
+          "defaultPath": "properties.encryptionProperties.identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties.currentVersionedKeyExpirationTimestamp",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties.currentVersionedKeyExpirationTimestamp"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties.currentVersionedKeyIdentifier",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties.currentVersionedKeyIdentifier"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties.keyVersion",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/encryptionProperties.keyVaultProperties.lastKeyRotationTimestamp",
+          "defaultPath": "properties.encryptionProperties.keyVaultProperties.lastKeyRotationTimestamp"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/networkAcls",
+          "defaultPath": "properties.networkAcls"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/networkAcls.virtualNetworkRules",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/networkAcls.virtualNetworkRules[*]",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*]"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/networkAcls.virtualNetworkRules[*].action",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].action"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/networkAcls.virtualNetworkRules[*].id",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].id"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/networkAcls.virtualNetworkRules[*].state",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].state"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/protocolType",
+          "defaultPath": "properties.protocolType"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumeGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "elasticSans/volumeGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots/creationData",
+          "defaultPath": "properties.creationData"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots/creationData.sourceId",
+          "defaultPath": "properties.creationData.sourceId"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots/sourceVolumeSizeGiB",
+          "defaultPath": "properties.sourceVolumeSizeGiB"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/snapshots/volumeName",
+          "defaultPath": "properties.volumeName"
+        }
+      ],
+      "resourceType": "elasticSans/volumeGroups/snapshots"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/creationData",
+          "defaultPath": "properties.creationData"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/creationData.createSource",
+          "defaultPath": "properties.creationData.createSource"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/creationData.sourceId",
+          "defaultPath": "properties.creationData.sourceId"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/creationData.sourceUri",
+          "defaultPath": "properties.creationData.sourceUri"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/managedBy",
+          "defaultPath": "properties.managedBy"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/managedBy.resourceId",
+          "defaultPath": "properties.managedBy.resourceId"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/sizeGiB",
+          "defaultPath": "properties.sizeGiB"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/storageTarget",
+          "defaultPath": "properties.storageTarget"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/storageTarget.provisioningState",
+          "defaultPath": "properties.storageTarget.provisioningState"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/storageTarget.status",
+          "defaultPath": "properties.storageTarget.status"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/storageTarget.targetIqn",
+          "defaultPath": "properties.storageTarget.targetIqn"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/storageTarget.targetPortalHostname",
+          "defaultPath": "properties.storageTarget.targetPortalHostname"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/storageTarget.targetPortalPort",
+          "defaultPath": "properties.storageTarget.targetPortalPort"
+        },
+        {
+          "name": "Microsoft.ElasticSan/elasticSans/volumegroups/volumes/volumeId",
+          "defaultPath": "properties.volumeId"
+        }
+      ],
+      "resourceType": "elasticSans/volumeGroups/volumes"
+    }
+  ]
+}

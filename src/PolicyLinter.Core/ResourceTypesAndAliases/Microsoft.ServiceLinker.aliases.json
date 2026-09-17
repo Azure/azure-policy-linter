@@ -1,0 +1,1513 @@
+{
+  "namespace": "Microsoft.ServiceLinker",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews",
+          "defaultPath": "properties.operationPreviews"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews[*]",
+          "defaultPath": "properties.operationPreviews[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews[*].action",
+          "defaultPath": "properties.operationPreviews[*].action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews[*].description",
+          "defaultPath": "properties.operationPreviews[*].description"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews[*].name",
+          "defaultPath": "properties.operationPreviews[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews[*].operationType",
+          "defaultPath": "properties.operationPreviews[*].operationType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/operationPreviews[*].scope",
+          "defaultPath": "properties.operationPreviews[*].scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.actionName",
+          "defaultPath": "properties.parameters.actionName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.accessKey",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.accessKey.permissions",
+          "defaultPath": "properties.parameters.authInfo.permissions"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.accessKey.permissions[*]",
+          "defaultPath": "properties.parameters.authInfo.permissions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.authType",
+          "defaultPath": "properties.parameters.authInfo.authType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.name",
+          "defaultPath": "properties.parameters.authInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretReference",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretReference.name",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretReference.version",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.version"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretUri",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretUri.value",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.rawValue",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.rawValue.value",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.secret.secretInfo.secretType",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.secretType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate.certificate",
+          "defaultPath": "properties.parameters.authInfo.certificate"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate.clientId",
+          "defaultPath": "properties.parameters.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate.principalId",
+          "defaultPath": "properties.parameters.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalCertificate.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret.clientId",
+          "defaultPath": "properties.parameters.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret.principalId",
+          "defaultPath": "properties.parameters.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.servicePrincipalSecret.secret",
+          "defaultPath": "properties.parameters.authInfo.secret"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.systemAssignedIdentity",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.systemAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.systemAssignedIdentity.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.systemAssignedIdentity.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAccount",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAccount.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAccount.principalId",
+          "defaultPath": "properties.parameters.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAccount.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAccount.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAssignedIdentity",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAssignedIdentity.clientId",
+          "defaultPath": "properties.parameters.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAssignedIdentity.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAssignedIdentity.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userAssignedIdentity.subscriptionId",
+          "defaultPath": "properties.parameters.authInfo.subscriptionId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.authInfo.userName",
+          "defaultPath": "properties.parameters.authInfo.userName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.clientType",
+          "defaultPath": "properties.parameters.clientType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.configurationInfo",
+          "defaultPath": "properties.parameters.configurationInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.configurationInfo.action",
+          "defaultPath": "properties.parameters.configurationInfo.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.configurationInfo.additionalConfigurations",
+          "defaultPath": "properties.parameters.configurationInfo.additionalConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.configurationInfo.customizedKeys",
+          "defaultPath": "properties.parameters.configurationInfo.customizedKeys"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.configurationInfo.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.configurationInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.provisioningState",
+          "defaultPath": "properties.parameters.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution",
+          "defaultPath": "properties.parameters.publicNetworkSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.action",
+          "defaultPath": "properties.parameters.publicNetworkSolution.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.publicNetworkSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.firewallRules",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.firewallRules.azureServices",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.azureServices"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.firewallRules.callerClientIP",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.callerClientIP"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.firewallRules.ipRanges",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.ipRanges"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.publicNetworkSolution.firewallRules.ipRanges[*]",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.ipRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.scope",
+          "defaultPath": "properties.parameters.scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.secretStore",
+          "defaultPath": "properties.parameters.secretStore"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.secretStore.keyVaultId",
+          "defaultPath": "properties.parameters.secretStore.keyVaultId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.secretStore.keyVaultSecretName",
+          "defaultPath": "properties.parameters.secretStore.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.AzureResource",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.AzureResource.id",
+          "defaultPath": "properties.parameters.targetService.id"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.AzureResource.resourceProperties",
+          "defaultPath": "properties.parameters.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.AzureResource.resourceProperties.KeyVault",
+          "defaultPath": "properties.parameters.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.AzureResource.resourceProperties.KeyVault.connectAsKubernetesCsiDriver",
+          "defaultPath": "properties.parameters.targetService.resourceProperties.connectAsKubernetesCsiDriver"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.AzureResource.resourceProperties.type",
+          "defaultPath": "properties.parameters.targetService.resourceProperties.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.ConfluentBootstrapServer",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.ConfluentBootstrapServer.endpoint",
+          "defaultPath": "properties.parameters.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.ConfluentSchemaRegistry",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.ConfluentSchemaRegistry.endpoint",
+          "defaultPath": "properties.parameters.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.SelfHostedServer",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.SelfHostedServer.endpoint",
+          "defaultPath": "properties.parameters.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.targetService.type",
+          "defaultPath": "properties.parameters.targetService.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.vNetSolution",
+          "defaultPath": "properties.parameters.vNetSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.vNetSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.vNetSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/parameters.vNetSolution.type",
+          "defaultPath": "properties.parameters.vNetSolution.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults",
+          "defaultPath": "properties.prerequisiteResults"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*]",
+          "defaultPath": "properties.prerequisiteResults[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].basicError",
+          "defaultPath": "properties.prerequisiteResults[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].basicError.code",
+          "defaultPath": "properties.prerequisiteResults[*].code"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].basicError.message",
+          "defaultPath": "properties.prerequisiteResults[*].message"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].permissionsMissing",
+          "defaultPath": "properties.prerequisiteResults[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].permissionsMissing.permissions",
+          "defaultPath": "properties.prerequisiteResults[*].permissions"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].permissionsMissing.permissions[*]",
+          "defaultPath": "properties.prerequisiteResults[*].permissions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].permissionsMissing.recommendedRole",
+          "defaultPath": "properties.prerequisiteResults[*].recommendedRole"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].permissionsMissing.scope",
+          "defaultPath": "properties.prerequisiteResults[*].scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/prerequisiteResults[*].type",
+          "defaultPath": "properties.prerequisiteResults[*].type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/dryruns/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "dryruns"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.accessKey",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.accessKey.permissions",
+          "defaultPath": "properties.authInfo.permissions"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.accessKey.permissions[*]",
+          "defaultPath": "properties.authInfo.permissions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.authType",
+          "defaultPath": "properties.authInfo.authType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.name",
+          "defaultPath": "properties.authInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secret",
+          "defaultPath": "properties.authInfo.secret"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.keyVaultSecretReference",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.keyVaultSecretReference.name",
+          "defaultPath": "properties.authInfo.secretInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.keyVaultSecretReference.version",
+          "defaultPath": "properties.authInfo.secretInfo.version"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.keyVaultSecretUri",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.keyVaultSecretUri.value",
+          "defaultPath": "properties.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.rawValue",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.rawValue.value",
+          "defaultPath": "properties.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.secret.secretInfo.secretType",
+          "defaultPath": "properties.authInfo.secretInfo.secretType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate.certificate",
+          "defaultPath": "properties.authInfo.certificate"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate.clientId",
+          "defaultPath": "properties.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate.principalId",
+          "defaultPath": "properties.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalCertificate.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret.clientId",
+          "defaultPath": "properties.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret.principalId",
+          "defaultPath": "properties.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.servicePrincipalSecret.secret",
+          "defaultPath": "properties.authInfo.secret"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.systemAssignedIdentity",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.systemAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.systemAssignedIdentity.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.systemAssignedIdentity.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAccount",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAccount.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAccount.principalId",
+          "defaultPath": "properties.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAccount.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAccount.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAssignedIdentity",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAssignedIdentity.clientId",
+          "defaultPath": "properties.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAssignedIdentity.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAssignedIdentity.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userAssignedIdentity.subscriptionId",
+          "defaultPath": "properties.authInfo.subscriptionId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/authInfo.userName",
+          "defaultPath": "properties.authInfo.userName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/clientType",
+          "defaultPath": "properties.clientType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/configurationInfo",
+          "defaultPath": "properties.configurationInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/configurationInfo.action",
+          "defaultPath": "properties.configurationInfo.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/configurationInfo.additionalConfigurations",
+          "defaultPath": "properties.configurationInfo.additionalConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/configurationInfo.customizedKeys",
+          "defaultPath": "properties.configurationInfo.customizedKeys"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/configurationInfo.deleteOrUpdateBehavior",
+          "defaultPath": "properties.configurationInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution",
+          "defaultPath": "properties.publicNetworkSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.action",
+          "defaultPath": "properties.publicNetworkSolution.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.publicNetworkSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.firewallRules",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.firewallRules.azureServices",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.azureServices"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.firewallRules.callerClientIP",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.callerClientIP"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.firewallRules.ipRanges",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.ipRanges"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/publicNetworkSolution.firewallRules.ipRanges[*]",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.ipRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/secretStore",
+          "defaultPath": "properties.secretStore"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/secretStore.keyVaultId",
+          "defaultPath": "properties.secretStore.keyVaultId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/secretStore.keyVaultSecretName",
+          "defaultPath": "properties.secretStore.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetId",
+          "defaultPath": "properties.targetId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.AzureResource",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.AzureResource.id",
+          "defaultPath": "properties.targetService.id"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.AzureResource.resourceProperties",
+          "defaultPath": "properties.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.AzureResource.resourceProperties.KeyVault",
+          "defaultPath": "properties.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.AzureResource.resourceProperties.KeyVault.connectAsKubernetesCsiDriver",
+          "defaultPath": "properties.targetService.resourceProperties.connectAsKubernetesCsiDriver"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.AzureResource.resourceProperties.type",
+          "defaultPath": "properties.targetService.resourceProperties.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.ConfluentBootstrapServer",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.ConfluentBootstrapServer.endpoint",
+          "defaultPath": "properties.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.ConfluentSchemaRegistry",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.ConfluentSchemaRegistry.endpoint",
+          "defaultPath": "properties.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.SelfHostedServer",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.SelfHostedServer.endpoint",
+          "defaultPath": "properties.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/targetService.type",
+          "defaultPath": "properties.targetService.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/vNetSolution",
+          "defaultPath": "properties.vNetSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/vNetSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.vNetSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/linkers/vNetSolution.type",
+          "defaultPath": "properties.vNetSolution.type"
+        }
+      ],
+      "resourceType": "linkers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.accessKey",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.accessKey.permissions",
+          "defaultPath": "properties.authInfo.permissions"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.accessKey.permissions[*]",
+          "defaultPath": "properties.authInfo.permissions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.authType",
+          "defaultPath": "properties.authInfo.authType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.name",
+          "defaultPath": "properties.authInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.keyVaultSecretReference",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.keyVaultSecretReference.name",
+          "defaultPath": "properties.authInfo.secretInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.keyVaultSecretReference.version",
+          "defaultPath": "properties.authInfo.secretInfo.version"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.keyVaultSecretUri",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.keyVaultSecretUri.value",
+          "defaultPath": "properties.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.rawValue",
+          "defaultPath": "properties.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.rawValue.value",
+          "defaultPath": "properties.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.secret.secretInfo.secretType",
+          "defaultPath": "properties.authInfo.secretInfo.secretType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate.certificate",
+          "defaultPath": "properties.authInfo.certificate"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate.clientId",
+          "defaultPath": "properties.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate.principalId",
+          "defaultPath": "properties.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalCertificate.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret.clientId",
+          "defaultPath": "properties.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret.principalId",
+          "defaultPath": "properties.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.servicePrincipalSecret.secret",
+          "defaultPath": "properties.authInfo.secret"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.systemAssignedIdentity",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.systemAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.systemAssignedIdentity.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.systemAssignedIdentity.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAccount",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAccount.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAccount.principalId",
+          "defaultPath": "properties.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAccount.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAccount.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAssignedIdentity",
+          "defaultPath": "properties.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAssignedIdentity.clientId",
+          "defaultPath": "properties.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAssignedIdentity.roles",
+          "defaultPath": "properties.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAssignedIdentity.roles[*]",
+          "defaultPath": "properties.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userAssignedIdentity.subscriptionId",
+          "defaultPath": "properties.authInfo.subscriptionId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/authInfo.userName",
+          "defaultPath": "properties.authInfo.userName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/clientType",
+          "defaultPath": "properties.clientType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/configurationInfo",
+          "defaultPath": "properties.configurationInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/configurationInfo.action",
+          "defaultPath": "properties.configurationInfo.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/configurationInfo.additionalConfigurations",
+          "defaultPath": "properties.configurationInfo.additionalConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/configurationInfo.customizedKeys",
+          "defaultPath": "properties.configurationInfo.customizedKeys"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/configurationInfo.deleteOrUpdateBehavior",
+          "defaultPath": "properties.configurationInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution",
+          "defaultPath": "properties.publicNetworkSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.action",
+          "defaultPath": "properties.publicNetworkSolution.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.publicNetworkSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.firewallRules",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.firewallRules.azureServices",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.azureServices"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.firewallRules.callerClientIP",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.callerClientIP"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.firewallRules.ipRanges",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.ipRanges"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/publicNetworkSolution.firewallRules.ipRanges[*]",
+          "defaultPath": "properties.publicNetworkSolution.firewallRules.ipRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/secretStore",
+          "defaultPath": "properties.secretStore"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/secretStore.keyVaultId",
+          "defaultPath": "properties.secretStore.keyVaultId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/secretStore.keyVaultSecretName",
+          "defaultPath": "properties.secretStore.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.AzureResource",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.AzureResource.id",
+          "defaultPath": "properties.targetService.id"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.AzureResource.resourceProperties",
+          "defaultPath": "properties.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.AzureResource.resourceProperties.KeyVault",
+          "defaultPath": "properties.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.AzureResource.resourceProperties.KeyVault.connectAsKubernetesCsiDriver",
+          "defaultPath": "properties.targetService.resourceProperties.connectAsKubernetesCsiDriver"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.AzureResource.resourceProperties.type",
+          "defaultPath": "properties.targetService.resourceProperties.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.ConfluentBootstrapServer",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.ConfluentBootstrapServer.endpoint",
+          "defaultPath": "properties.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.ConfluentSchemaRegistry",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.ConfluentSchemaRegistry.endpoint",
+          "defaultPath": "properties.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.SelfHostedServer",
+          "defaultPath": "properties.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.SelfHostedServer.endpoint",
+          "defaultPath": "properties.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/targetService.type",
+          "defaultPath": "properties.targetService.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/vNetSolution",
+          "defaultPath": "properties.vNetSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/vNetSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.vNetSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/connectors/vNetSolution.type",
+          "defaultPath": "properties.vNetSolution.type"
+        }
+      ],
+      "resourceType": "locations/connectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews",
+          "defaultPath": "properties.operationPreviews"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews[*]",
+          "defaultPath": "properties.operationPreviews[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews[*].action",
+          "defaultPath": "properties.operationPreviews[*].action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews[*].description",
+          "defaultPath": "properties.operationPreviews[*].description"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews[*].name",
+          "defaultPath": "properties.operationPreviews[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews[*].operationType",
+          "defaultPath": "properties.operationPreviews[*].operationType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/operationPreviews[*].scope",
+          "defaultPath": "properties.operationPreviews[*].scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.actionName",
+          "defaultPath": "properties.parameters.actionName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.accessKey",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.accessKey.permissions",
+          "defaultPath": "properties.parameters.authInfo.permissions"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.accessKey.permissions[*]",
+          "defaultPath": "properties.parameters.authInfo.permissions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.authType",
+          "defaultPath": "properties.parameters.authInfo.authType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.name",
+          "defaultPath": "properties.parameters.authInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretReference",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretReference.name",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.name"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretReference.version",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.version"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretUri",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.keyVaultSecretUri.value",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.rawValue",
+          "defaultPath": "properties.parameters.authInfo.secretInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.rawValue.value",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.value"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.secret.secretInfo.secretType",
+          "defaultPath": "properties.parameters.authInfo.secretInfo.secretType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate.certificate",
+          "defaultPath": "properties.parameters.authInfo.certificate"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate.clientId",
+          "defaultPath": "properties.parameters.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate.principalId",
+          "defaultPath": "properties.parameters.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalCertificate.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret.clientId",
+          "defaultPath": "properties.parameters.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret.principalId",
+          "defaultPath": "properties.parameters.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.servicePrincipalSecret.secret",
+          "defaultPath": "properties.parameters.authInfo.secret"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.systemAssignedIdentity",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.systemAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.systemAssignedIdentity.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.systemAssignedIdentity.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAccount",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAccount.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAccount.principalId",
+          "defaultPath": "properties.parameters.authInfo.principalId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAccount.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAccount.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAssignedIdentity",
+          "defaultPath": "properties.parameters.authInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAssignedIdentity.clientId",
+          "defaultPath": "properties.parameters.authInfo.clientId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAssignedIdentity.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.authInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAssignedIdentity.roles",
+          "defaultPath": "properties.parameters.authInfo.roles"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAssignedIdentity.roles[*]",
+          "defaultPath": "properties.parameters.authInfo.roles[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userAssignedIdentity.subscriptionId",
+          "defaultPath": "properties.parameters.authInfo.subscriptionId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.authInfo.userName",
+          "defaultPath": "properties.parameters.authInfo.userName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.clientType",
+          "defaultPath": "properties.parameters.clientType"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.configurationInfo",
+          "defaultPath": "properties.parameters.configurationInfo"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.configurationInfo.action",
+          "defaultPath": "properties.parameters.configurationInfo.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.configurationInfo.additionalConfigurations",
+          "defaultPath": "properties.parameters.configurationInfo.additionalConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.configurationInfo.customizedKeys",
+          "defaultPath": "properties.parameters.configurationInfo.customizedKeys"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.configurationInfo.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.configurationInfo.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.provisioningState",
+          "defaultPath": "properties.parameters.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution",
+          "defaultPath": "properties.parameters.publicNetworkSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.action",
+          "defaultPath": "properties.parameters.publicNetworkSolution.action"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.publicNetworkSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.firewallRules",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.firewallRules.azureServices",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.azureServices"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.firewallRules.callerClientIP",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.callerClientIP"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.firewallRules.ipRanges",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.ipRanges"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.publicNetworkSolution.firewallRules.ipRanges[*]",
+          "defaultPath": "properties.parameters.publicNetworkSolution.firewallRules.ipRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.scope",
+          "defaultPath": "properties.parameters.scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.secretStore",
+          "defaultPath": "properties.parameters.secretStore"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.secretStore.keyVaultId",
+          "defaultPath": "properties.parameters.secretStore.keyVaultId"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.secretStore.keyVaultSecretName",
+          "defaultPath": "properties.parameters.secretStore.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.AzureResource",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.AzureResource.id",
+          "defaultPath": "properties.parameters.targetService.id"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.AzureResource.resourceProperties",
+          "defaultPath": "properties.parameters.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.AzureResource.resourceProperties.KeyVault",
+          "defaultPath": "properties.parameters.targetService.resourceProperties"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.AzureResource.resourceProperties.KeyVault.connectAsKubernetesCsiDriver",
+          "defaultPath": "properties.parameters.targetService.resourceProperties.connectAsKubernetesCsiDriver"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.AzureResource.resourceProperties.type",
+          "defaultPath": "properties.parameters.targetService.resourceProperties.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.ConfluentBootstrapServer",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.ConfluentBootstrapServer.endpoint",
+          "defaultPath": "properties.parameters.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.ConfluentSchemaRegistry",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.ConfluentSchemaRegistry.endpoint",
+          "defaultPath": "properties.parameters.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.SelfHostedServer",
+          "defaultPath": "properties.parameters.targetService"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.SelfHostedServer.endpoint",
+          "defaultPath": "properties.parameters.targetService.endpoint"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.targetService.type",
+          "defaultPath": "properties.parameters.targetService.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.vNetSolution",
+          "defaultPath": "properties.parameters.vNetSolution"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.vNetSolution.deleteOrUpdateBehavior",
+          "defaultPath": "properties.parameters.vNetSolution.deleteOrUpdateBehavior"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/parameters.vNetSolution.type",
+          "defaultPath": "properties.parameters.vNetSolution.type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults",
+          "defaultPath": "properties.prerequisiteResults"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*]",
+          "defaultPath": "properties.prerequisiteResults[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].basicError",
+          "defaultPath": "properties.prerequisiteResults[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].basicError.code",
+          "defaultPath": "properties.prerequisiteResults[*].code"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].basicError.message",
+          "defaultPath": "properties.prerequisiteResults[*].message"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].permissionsMissing",
+          "defaultPath": "properties.prerequisiteResults[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].permissionsMissing.permissions",
+          "defaultPath": "properties.prerequisiteResults[*].permissions"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].permissionsMissing.permissions[*]",
+          "defaultPath": "properties.prerequisiteResults[*].permissions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].permissionsMissing.recommendedRole",
+          "defaultPath": "properties.prerequisiteResults[*].recommendedRole"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].permissionsMissing.scope",
+          "defaultPath": "properties.prerequisiteResults[*].scope"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/prerequisiteResults[*].type",
+          "defaultPath": "properties.prerequisiteResults[*].type"
+        },
+        {
+          "name": "Microsoft.ServiceLinker/locations/dryruns/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "locations/dryruns"
+    }
+  ]
+}

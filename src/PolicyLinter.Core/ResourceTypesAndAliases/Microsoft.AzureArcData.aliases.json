@@ -1,0 +1,1107 @@
+{
+  "namespace": "Microsoft.AzureArcData",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/basicLoginInformation",
+          "defaultPath": "properties.basicLoginInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/basicLoginInformation.password",
+          "defaultPath": "properties.basicLoginInformation.password"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/basicLoginInformation.username",
+          "defaultPath": "properties.basicLoginInformation.username"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/extensionId",
+          "defaultPath": "properties.extensionId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/infrastructure",
+          "defaultPath": "properties.infrastructure"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/lastUploadedDate",
+          "defaultPath": "properties.lastUploadedDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/logAnalyticsWorkspaceConfig",
+          "defaultPath": "properties.logAnalyticsWorkspaceConfig"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/logAnalyticsWorkspaceConfig.primaryKey",
+          "defaultPath": "properties.logAnalyticsWorkspaceConfig.primaryKey"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/logAnalyticsWorkspaceConfig.workspaceId",
+          "defaultPath": "properties.logAnalyticsWorkspaceConfig.workspaceId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/logsDashboardCredential",
+          "defaultPath": "properties.logsDashboardCredential"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/logsDashboardCredential.password",
+          "defaultPath": "properties.logsDashboardCredential.password"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/logsDashboardCredential.username",
+          "defaultPath": "properties.logsDashboardCredential.username"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/metricsDashboardCredential",
+          "defaultPath": "properties.metricsDashboardCredential"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/metricsDashboardCredential.password",
+          "defaultPath": "properties.metricsDashboardCredential.password"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/metricsDashboardCredential.username",
+          "defaultPath": "properties.metricsDashboardCredential.username"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/onPremiseProperty",
+          "defaultPath": "properties.onPremiseProperty"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/onPremiseProperty.id",
+          "defaultPath": "properties.onPremiseProperty.id"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/onPremiseProperty.publicSigningKey",
+          "defaultPath": "properties.onPremiseProperty.publicSigningKey"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/onPremiseProperty.signingCertificateThumbprint",
+          "defaultPath": "properties.onPremiseProperty.signingCertificateThumbprint"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadServicePrincipal",
+          "defaultPath": "properties.uploadServicePrincipal"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadServicePrincipal.authority",
+          "defaultPath": "properties.uploadServicePrincipal.authority"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadServicePrincipal.clientId",
+          "defaultPath": "properties.uploadServicePrincipal.clientId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadServicePrincipal.clientSecret",
+          "defaultPath": "properties.uploadServicePrincipal.clientSecret"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadServicePrincipal.tenantId",
+          "defaultPath": "properties.uploadServicePrincipal.tenantId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadWatermark",
+          "defaultPath": "properties.uploadWatermark"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadWatermark.logs",
+          "defaultPath": "properties.uploadWatermark.logs"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadWatermark.metrics",
+          "defaultPath": "properties.uploadWatermark.metrics"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/uploadWatermark.usages",
+          "defaultPath": "properties.uploadWatermark.usages"
+        }
+      ],
+      "resourceType": "DataControllers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/domainServiceAccountLoginInformation",
+          "defaultPath": "properties.domainServiceAccountLoginInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/domainServiceAccountLoginInformation.password",
+          "defaultPath": "properties.domainServiceAccountLoginInformation.password"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/domainServiceAccountLoginInformation.username",
+          "defaultPath": "properties.domainServiceAccountLoginInformation.username"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec",
+          "defaultPath": "properties.spec"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory",
+          "defaultPath": "properties.spec.activeDirectory"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.domainControllers",
+          "defaultPath": "properties.spec.activeDirectory.domainControllers"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.domainControllers.primaryDomainController",
+          "defaultPath": "properties.spec.activeDirectory.domainControllers.primaryDomainController"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.domainControllers.primaryDomainController.hostname",
+          "defaultPath": "properties.spec.activeDirectory.domainControllers.primaryDomainController.hostname"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.domainControllers.secondaryDomainControllers",
+          "defaultPath": "properties.spec.activeDirectory.domainControllers.secondaryDomainControllers"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.domainControllers.secondaryDomainControllers[*]",
+          "defaultPath": "properties.spec.activeDirectory.domainControllers.secondaryDomainControllers[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.domainControllers.secondaryDomainControllers[*].hostname",
+          "defaultPath": "properties.spec.activeDirectory.domainControllers.secondaryDomainControllers[*].hostname"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.netbiosDomainName",
+          "defaultPath": "properties.spec.activeDirectory.netbiosDomainName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.ouDistinguishedName",
+          "defaultPath": "properties.spec.activeDirectory.ouDistinguishedName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.realm",
+          "defaultPath": "properties.spec.activeDirectory.realm"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.activeDirectory.serviceAccountProvisioning",
+          "defaultPath": "properties.spec.activeDirectory.serviceAccountProvisioning"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.dns",
+          "defaultPath": "properties.spec.dns"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.dns.domainName",
+          "defaultPath": "properties.spec.dns.domainName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.dns.nameserverIPAddresses",
+          "defaultPath": "properties.spec.dns.nameserverIPAddresses"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.dns.nameserverIPAddresses[*]",
+          "defaultPath": "properties.spec.dns.nameserverIPAddresses[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.dns.preferK8sDnsForPtrLookups",
+          "defaultPath": "properties.spec.dns.preferK8sDnsForPtrLookups"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/spec.dns.replicas",
+          "defaultPath": "properties.spec.dns.replicas"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/status.lastUpdateTime",
+          "defaultPath": "properties.status.lastUpdateTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/status.observedGeneration",
+          "defaultPath": "properties.status.observedGeneration"
+        },
+        {
+          "name": "Microsoft.AzureArcData/dataControllers/activeDirectoryConnectors/status.state",
+          "defaultPath": "properties.status.state"
+        }
+      ],
+      "resourceType": "DataControllers/ActiveDirectoryConnectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/admin",
+          "defaultPath": "properties.admin"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/basicLoginInformation",
+          "defaultPath": "properties.basicLoginInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/basicLoginInformation.password",
+          "defaultPath": "properties.basicLoginInformation.password"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/basicLoginInformation.username",
+          "defaultPath": "properties.basicLoginInformation.username"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/dataControllerId",
+          "defaultPath": "properties.dataControllerId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/lastUploadedDate",
+          "defaultPath": "properties.lastUploadedDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku.dev",
+          "defaultPath": "sku.dev"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.AzureArcData/postgresInstances/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "PostgresInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/activeDirectoryInformation",
+          "defaultPath": "properties.activeDirectoryInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/activeDirectoryInformation.keytabInformation",
+          "defaultPath": "properties.activeDirectoryInformation.keytabInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/activeDirectoryInformation.keytabInformation.keytab",
+          "defaultPath": "properties.activeDirectoryInformation.keytabInformation.keytab"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/admin",
+          "defaultPath": "properties.admin"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/basicLoginInformation",
+          "defaultPath": "properties.basicLoginInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/basicLoginInformation.password",
+          "defaultPath": "properties.basicLoginInformation.password"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/basicLoginInformation.username",
+          "defaultPath": "properties.basicLoginInformation.username"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/dataControllerId",
+          "defaultPath": "properties.dataControllerId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/endTime",
+          "defaultPath": "properties.endTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/extensionId",
+          "defaultPath": "properties.extensionId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw",
+          "defaultPath": "properties.k8sRaw"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec",
+          "defaultPath": "properties.k8sRaw.spec"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.replicas",
+          "defaultPath": "properties.k8sRaw.spec.replicas"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.scheduling",
+          "defaultPath": "properties.k8sRaw.spec.scheduling"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.scheduling.default",
+          "defaultPath": "properties.k8sRaw.spec.scheduling.default"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.scheduling.default.resources",
+          "defaultPath": "properties.k8sRaw.spec.scheduling.default.resources"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.scheduling.default.resources.limits",
+          "defaultPath": "properties.k8sRaw.spec.scheduling.default.resources.limits"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.scheduling.default.resources.requests",
+          "defaultPath": "properties.k8sRaw.spec.scheduling.default.resources.requests"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security",
+          "defaultPath": "properties.k8sRaw.spec.security"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.accountName",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.accountName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.connector",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.connector"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.connector.name",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.connector.name"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.connector.namespace",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.connector.namespace"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.encryptionTypes",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.encryptionTypes"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.encryptionTypes[*]",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.encryptionTypes[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.activeDirectory.keytabSecret",
+          "defaultPath": "properties.k8sRaw.spec.security.activeDirectory.keytabSecret"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.adminLoginSecret",
+          "defaultPath": "properties.k8sRaw.spec.security.adminLoginSecret"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.serviceCertificateSecret",
+          "defaultPath": "properties.k8sRaw.spec.security.serviceCertificateSecret"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.transparentDataEncryption",
+          "defaultPath": "properties.k8sRaw.spec.security.transparentDataEncryption"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.transparentDataEncryption.mode",
+          "defaultPath": "properties.k8sRaw.spec.security.transparentDataEncryption.mode"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.security.transparentDataEncryption.protectorSecret",
+          "defaultPath": "properties.k8sRaw.spec.security.transparentDataEncryption.protectorSecret"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.settings",
+          "defaultPath": "properties.k8sRaw.spec.settings"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.settings.network",
+          "defaultPath": "properties.k8sRaw.spec.settings.network"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.settings.network.forceencryption",
+          "defaultPath": "properties.k8sRaw.spec.settings.network.forceencryption"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.settings.network.tlsciphers",
+          "defaultPath": "properties.k8sRaw.spec.settings.network.tlsciphers"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/k8sRaw.spec.settings.network.tlsprotocols",
+          "defaultPath": "properties.k8sRaw.spec.settings.network.tlsprotocols"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/lastUploadedDate",
+          "defaultPath": "properties.lastUploadedDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/licenseType",
+          "defaultPath": "properties.licenseType"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku.dev",
+          "defaultPath": "sku.dev"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/startTime",
+          "defaultPath": "properties.startTime"
+        }
+      ],
+      "resourceType": "SqlManagedInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/partnerManagedInstanceId",
+          "defaultPath": "properties.partnerManagedInstanceId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec",
+          "defaultPath": "properties.spec"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.partnerMI",
+          "defaultPath": "properties.spec.partnerMI"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.partnerMirroringCert",
+          "defaultPath": "properties.spec.partnerMirroringCert"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.partnerMirroringURL",
+          "defaultPath": "properties.spec.partnerMirroringURL"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.partnerSyncMode",
+          "defaultPath": "properties.spec.partnerSyncMode"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.role",
+          "defaultPath": "properties.spec.role"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.sharedName",
+          "defaultPath": "properties.spec.sharedName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlManagedInstances/failoverGroups/spec.sourceMI",
+          "defaultPath": "properties.spec.sourceMI"
+        }
+      ],
+      "resourceType": "SqlManagedInstances/FailoverGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/alwaysOnRole",
+          "defaultPath": "properties.alwaysOnRole"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/azureDefenderStatus",
+          "defaultPath": "properties.azureDefenderStatus"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/azureDefenderStatusLastUpdated",
+          "defaultPath": "properties.azureDefenderStatusLastUpdated"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/backupPolicy",
+          "defaultPath": "properties.backupPolicy"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/backupPolicy.differentialBackupHours",
+          "defaultPath": "properties.backupPolicy.differentialBackupHours"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/backupPolicy.fullBackupDays",
+          "defaultPath": "properties.backupPolicy.fullBackupDays"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/backupPolicy.retentionPeriodDays",
+          "defaultPath": "properties.backupPolicy.retentionPeriodDays"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/backupPolicy.transactionLogBackupMinutes",
+          "defaultPath": "properties.backupPolicy.transactionLogBackupMinutes"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/collation",
+          "defaultPath": "properties.collation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/containerResourceId",
+          "defaultPath": "properties.containerResourceId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/cores",
+          "defaultPath": "properties.cores"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/createTime",
+          "defaultPath": "properties.createTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/currentVersion",
+          "defaultPath": "properties.currentVersion"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/edition",
+          "defaultPath": "properties.edition"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster",
+          "defaultPath": "properties.failoverCluster"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster.hostNames",
+          "defaultPath": "properties.failoverCluster.hostNames"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster.hostNames[*]",
+          "defaultPath": "properties.failoverCluster.hostNames[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster.id",
+          "defaultPath": "properties.failoverCluster.id"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster.networkName",
+          "defaultPath": "properties.failoverCluster.networkName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster.sqlInstanceIds",
+          "defaultPath": "properties.failoverCluster.sqlInstanceIds"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/failoverCluster.sqlInstanceIds[*]",
+          "defaultPath": "properties.failoverCluster.sqlInstanceIds[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/hostType",
+          "defaultPath": "properties.hostType"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/instanceName",
+          "defaultPath": "properties.instanceName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/lastInventoryUploadTime",
+          "defaultPath": "properties.lastInventoryUploadTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/lastUsageUploadTime",
+          "defaultPath": "properties.lastUsageUploadTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/licenseType",
+          "defaultPath": "properties.licenseType"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/monitoring",
+          "defaultPath": "properties.monitoring"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/monitoring.enabled",
+          "paths": [
+            {
+              "path": "properties.monitoring.enabled",
+              "apiVersions": [
+                "2023-01-15-preview",
+                "2022-06-15-preview",
+                "2022-03-01-preview",
+                "2021-11-01",
+                "2021-08-01",
+                "2021-07-01-preview",
+                "2021-06-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.monitoring.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/patchLevel",
+          "defaultPath": "properties.patchLevel"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/productId",
+          "defaultPath": "properties.productId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/tcpDynamicPorts",
+          "defaultPath": "properties.tcpDynamicPorts"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/tcpStaticPorts",
+          "defaultPath": "properties.tcpStaticPorts"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/upgradeLockedUntil",
+          "defaultPath": "properties.upgradeLockedUntil"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/vCore",
+          "defaultPath": "properties.vCore"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "SqlServerInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/availabilityGroupId",
+          "defaultPath": "properties.availabilityGroupId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/collectionTimestamp",
+          "defaultPath": "properties.collectionTimestamp"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases",
+          "defaultPath": "properties.databases"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.nextLink",
+          "defaultPath": "properties.databases.nextLink"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value",
+          "defaultPath": "properties.databases.value"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*]",
+          "defaultPath": "properties.databases.value[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].databaseName",
+          "defaultPath": "properties.databases.value[*].databaseName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].databaseStateDescription",
+          "defaultPath": "properties.databases.value[*].databaseStateDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].isCommitParticipant",
+          "defaultPath": "properties.databases.value[*].isCommitParticipant"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].isLocal",
+          "defaultPath": "properties.databases.value[*].isLocal"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].isPrimaryReplica",
+          "defaultPath": "properties.databases.value[*].isPrimaryReplica"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].isSuspended",
+          "defaultPath": "properties.databases.value[*].isSuspended"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].replicaName",
+          "defaultPath": "properties.databases.value[*].replicaName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].suspendReasonDescription",
+          "defaultPath": "properties.databases.value[*].suspendReasonDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].synchronizationHealthDescription",
+          "defaultPath": "properties.databases.value[*].synchronizationHealthDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/databases.value[*].synchronizationStateDescription",
+          "defaultPath": "properties.databases.value[*].synchronizationStateDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info",
+          "defaultPath": "properties.info"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.automatedBackupPreferenceDescription",
+          "defaultPath": "properties.info.automatedBackupPreferenceDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.basicFeatures",
+          "defaultPath": "properties.info.basicFeatures"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.clusterTypeDescription",
+          "defaultPath": "properties.info.clusterTypeDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.dbFailover",
+          "defaultPath": "properties.info.dbFailover"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.dtcSupport",
+          "defaultPath": "properties.info.dtcSupport"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.failureConditionLevel",
+          "defaultPath": "properties.info.failureConditionLevel"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.healthCheckTimeout",
+          "defaultPath": "properties.info.healthCheckTimeout"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.isContained",
+          "defaultPath": "properties.info.isContained"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.isDistributed",
+          "defaultPath": "properties.info.isDistributed"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.primaryRecoveryHealthDescription",
+          "defaultPath": "properties.info.primaryRecoveryHealthDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.primaryReplica",
+          "defaultPath": "properties.info.primaryReplica"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.replicationPartnerType",
+          "defaultPath": "properties.info.replicationPartnerType"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.requiredSynchronizedSecondariesToCommit",
+          "defaultPath": "properties.info.requiredSynchronizedSecondariesToCommit"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.secondaryRecoveryHealthDescription",
+          "defaultPath": "properties.info.secondaryRecoveryHealthDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.synchronizationHealthDescription",
+          "defaultPath": "properties.info.synchronizationHealthDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/info.version",
+          "defaultPath": "properties.info.version"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/instanceName",
+          "defaultPath": "properties.instanceName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas",
+          "defaultPath": "properties.replicas"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.nextLink",
+          "defaultPath": "properties.replicas.nextLink"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value",
+          "defaultPath": "properties.replicas.value"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*]",
+          "defaultPath": "properties.replicas.value[*]"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure",
+          "defaultPath": "properties.replicas.value[*].configure"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.availabilityModeDescription",
+          "defaultPath": "properties.replicas.value[*].configure.availabilityModeDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.backupPriority",
+          "defaultPath": "properties.replicas.value[*].configure.backupPriority"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.endpointUrl",
+          "defaultPath": "properties.replicas.value[*].configure.endpointUrl"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.failoverModeDescription",
+          "defaultPath": "properties.replicas.value[*].configure.failoverModeDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.primaryRoleAllowConnectionsDescription",
+          "defaultPath": "properties.replicas.value[*].configure.primaryRoleAllowConnectionsDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.readOnlyRoutingUrl",
+          "defaultPath": "properties.replicas.value[*].configure.readOnlyRoutingUrl"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.readWriteRoutingUrl",
+          "defaultPath": "properties.replicas.value[*].configure.readWriteRoutingUrl"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.replicaCreateDate",
+          "defaultPath": "properties.replicas.value[*].configure.replicaCreateDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.replicaModifyDate",
+          "defaultPath": "properties.replicas.value[*].configure.replicaModifyDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.secondaryRoleAllowConnectionsDescription",
+          "defaultPath": "properties.replicas.value[*].configure.secondaryRoleAllowConnectionsDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.seedingModeDescription",
+          "defaultPath": "properties.replicas.value[*].configure.seedingModeDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].configure.sessionTimeout",
+          "defaultPath": "properties.replicas.value[*].configure.sessionTimeout"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].replicaId",
+          "defaultPath": "properties.replicas.value[*].replicaId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].replicaName",
+          "defaultPath": "properties.replicas.value[*].replicaName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state",
+          "defaultPath": "properties.replicas.value[*].state"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.availabilityGroupReplicaRole",
+          "defaultPath": "properties.replicas.value[*].state.availabilityGroupReplicaRole"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.connectedStateDescription",
+          "defaultPath": "properties.replicas.value[*].state.connectedStateDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.lastConnectErrorDescription",
+          "defaultPath": "properties.replicas.value[*].state.lastConnectErrorDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.lastConnectErrorTimestamp",
+          "defaultPath": "properties.replicas.value[*].state.lastConnectErrorTimestamp"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.operationalStateDescription",
+          "defaultPath": "properties.replicas.value[*].state.operationalStateDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.recoveryHealthDescription",
+          "defaultPath": "properties.replicas.value[*].state.recoveryHealthDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/replicas.value[*].state.synchronizationHealthDescription",
+          "defaultPath": "properties.replicas.value[*].state.synchronizationHealthDescription"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/availabilityGroups/serverName",
+          "defaultPath": "properties.serverName"
+        }
+      ],
+      "resourceType": "SqlServerInstances/AvailabilityGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupInformation",
+          "defaultPath": "properties.backupInformation"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupInformation.lastFullBackup",
+          "defaultPath": "properties.backupInformation.lastFullBackup"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupInformation.lastLogBackup",
+          "defaultPath": "properties.backupInformation.lastLogBackup"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupPolicy",
+          "defaultPath": "properties.backupPolicy"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupPolicy.differentialBackupHours",
+          "defaultPath": "properties.backupPolicy.differentialBackupHours"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupPolicy.fullBackupDays",
+          "defaultPath": "properties.backupPolicy.fullBackupDays"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupPolicy.retentionPeriodDays",
+          "defaultPath": "properties.backupPolicy.retentionPeriodDays"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/backupPolicy.transactionLogBackupMinutes",
+          "defaultPath": "properties.backupPolicy.transactionLogBackupMinutes"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/collationName",
+          "defaultPath": "properties.collationName"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/compatibilityLevel",
+          "defaultPath": "properties.compatibilityLevel"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/createMode",
+          "defaultPath": "properties.createMode"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseCreationDate",
+          "defaultPath": "properties.databaseCreationDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions",
+          "defaultPath": "properties.databaseOptions"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isAutoCloseOn",
+          "defaultPath": "properties.databaseOptions.isAutoCloseOn"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isAutoCreateStatsOn",
+          "defaultPath": "properties.databaseOptions.isAutoCreateStatsOn"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isAutoShrinkOn",
+          "defaultPath": "properties.databaseOptions.isAutoShrinkOn"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isAutoUpdateStatsOn",
+          "defaultPath": "properties.databaseOptions.isAutoUpdateStatsOn"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isEncrypted",
+          "defaultPath": "properties.databaseOptions.isEncrypted"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isMemoryOptimizationEnabled",
+          "defaultPath": "properties.databaseOptions.isMemoryOptimizationEnabled"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isRemoteDataArchiveEnabled",
+          "defaultPath": "properties.databaseOptions.isRemoteDataArchiveEnabled"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/databaseOptions.isTrustworthyOn",
+          "defaultPath": "properties.databaseOptions.isTrustworthyOn"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/earliestRestoreDate",
+          "defaultPath": "properties.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/isReadOnly",
+          "defaultPath": "properties.isReadOnly"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/lastDatabaseUploadTime",
+          "defaultPath": "properties.lastDatabaseUploadTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/recoveryMode",
+          "defaultPath": "properties.recoveryMode"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/restorePointInTime",
+          "defaultPath": "properties.restorePointInTime"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/sizeMB",
+          "defaultPath": "properties.sizeMB"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/sourceDatabaseId",
+          "defaultPath": "properties.sourceDatabaseId"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/spaceAvailableMB",
+          "defaultPath": "properties.spaceAvailableMB"
+        },
+        {
+          "name": "Microsoft.AzureArcData/sqlServerInstances/databases/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "SqlServerInstances/Databases"
+    }
+  ]
+}

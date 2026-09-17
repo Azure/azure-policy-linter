@@ -1,0 +1,316 @@
+{
+  "namespace": "Microsoft.Purview",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus",
+          "defaultPath": "properties.accountStatus"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.accountProvisioningState",
+          "defaultPath": "properties.accountStatus.accountProvisioningState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails",
+          "defaultPath": "properties.accountStatus.errorDetails"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.code",
+          "defaultPath": "properties.accountStatus.errorDetails.code"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details",
+          "defaultPath": "properties.accountStatus.errorDetails.details"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details[*]",
+          "defaultPath": "properties.accountStatus.errorDetails.details[*]"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details[*].code",
+          "defaultPath": "properties.accountStatus.errorDetails.details[*].code"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details[*].details",
+          "defaultPath": "properties.accountStatus.errorDetails.details[*].details"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details[*].details[*]",
+          "defaultPath": "properties.accountStatus.errorDetails.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details[*].message",
+          "defaultPath": "properties.accountStatus.errorDetails.details[*].message"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.details[*].target",
+          "defaultPath": "properties.accountStatus.errorDetails.details[*].target"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.message",
+          "defaultPath": "properties.accountStatus.errorDetails.message"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/accountStatus.errorDetails.target",
+          "defaultPath": "properties.accountStatus.errorDetails.target"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/cloudConnectors",
+          "defaultPath": "properties.cloudConnectors"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/cloudConnectors.awsExternalId",
+          "defaultPath": "properties.cloudConnectors.awsExternalId"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/createdByObjectId",
+          "defaultPath": "properties.createdByObjectId"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/endpoints",
+          "defaultPath": "properties.endpoints"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/endpoints.catalog",
+          "defaultPath": "properties.endpoints.catalog"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/endpoints.guardian",
+          "defaultPath": "properties.endpoints.guardian"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/endpoints.scan",
+          "defaultPath": "properties.endpoints.scan"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/ingestionStorage",
+          "defaultPath": "properties.ingestionStorage"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/ingestionStorage.id",
+          "defaultPath": "properties.ingestionStorage.id"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/ingestionStorage.primaryEndpoint",
+          "defaultPath": "properties.ingestionStorage.primaryEndpoint"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/ingestionStorage.publicNetworkAccess",
+          "defaultPath": "properties.ingestionStorage.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedEventHubState",
+          "defaultPath": "properties.managedEventHubState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedResourceGroupName",
+          "defaultPath": "properties.managedResourceGroupName"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedResources",
+          "defaultPath": "properties.managedResources"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedResources.eventHubNamespace",
+          "defaultPath": "properties.managedResources.eventHubNamespace"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedResources.resourceGroup",
+          "defaultPath": "properties.managedResources.resourceGroup"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedResources.storageAccount",
+          "defaultPath": "properties.managedResources.storageAccount"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/managedResourcesPublicNetworkAccess",
+          "defaultPath": "properties.managedResourcesPublicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData",
+          "defaultPath": "properties.systemData"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData.createdAt",
+          "defaultPath": "properties.systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData.createdBy",
+          "defaultPath": "properties.systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData.createdByType",
+          "defaultPath": "properties.systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData.lastModifiedAt",
+          "defaultPath": "properties.systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData.lastModifiedBy",
+          "defaultPath": "properties.systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/systemData.lastModifiedByType",
+          "defaultPath": "properties.systemData.lastModifiedByType"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/credentials.identityId",
+          "defaultPath": "properties.credentials.identityId"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/credentials.type",
+          "defaultPath": "properties.credentials.type"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/eventHubPartitionId",
+          "defaultPath": "properties.eventHubPartitionId"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/eventHubResourceId",
+          "defaultPath": "properties.eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/eventHubType",
+          "defaultPath": "properties.eventHubType"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/eventStreamingState",
+          "defaultPath": "properties.eventStreamingState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/kafkaConfigurations/eventStreamingType",
+          "defaultPath": "properties.eventStreamingType"
+        }
+      ],
+      "resourceType": "accounts/kafkaConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Purview/accounts/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/privateEndpointConnections"
+    }
+  ]
+}

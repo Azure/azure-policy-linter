@@ -1,0 +1,147 @@
+{
+  "namespace": "Microsoft.HealthDataAIServices",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/serviceUrl",
+          "defaultPath": "properties.serviceUrl"
+        }
+      ],
+      "resourceType": "deidServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthDataAIServices/deidServices/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "deidServices/privateEndpointConnections"
+    }
+  ]
+}

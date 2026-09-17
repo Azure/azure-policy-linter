@@ -1,0 +1,161 @@
+{
+  "namespace": "Microsoft.EventGrid",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "domains"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "domains/eventSubscriptions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "domains/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "domains/topics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "domains/topics/eventSubscriptions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "eventSubscriptions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "extensionTopics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/eventSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/topicTypes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/caCertificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/clientGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/clients"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/permissionBindings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/topicSpaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationsStatus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "partnerConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "partnerDestinations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "partnerNamespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "partnerNamespaces/channels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "partnerNamespaces/eventChannels"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "partnerNamespaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "partnerRegistrations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "partnerTopics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "partnerTopics/eventSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "systemTopics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "systemTopics/eventSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "topics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "topics/eventSubscriptions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "topics/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "topicTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "verifiedPartners"
+    }
+  ]
+}

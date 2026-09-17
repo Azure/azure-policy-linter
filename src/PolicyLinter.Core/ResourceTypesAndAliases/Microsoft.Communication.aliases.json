@@ -1,0 +1,402 @@
+{
+  "namespace": "Microsoft.Communication",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/communicationServices/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2024-09-01-preview",
+                "2023-06-01-preview",
+                "2023-04-01",
+                "2023-04-01-preview",
+                "2023-03-31",
+                "2023-03-01-preview",
+                "2022-07-01-preview",
+                "2021-10-01-preview",
+                "2020-08-20",
+                "2020-08-20-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/immutableResourceId",
+          "defaultPath": "properties.immutableResourceId"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/linkedDomains",
+          "defaultPath": "properties.linkedDomains"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/linkedDomains[*]",
+          "defaultPath": "properties.linkedDomains[*]"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/notificationHubId",
+          "defaultPath": "properties.notificationHubId"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2024-09-01-preview",
+                "2023-06-01-preview",
+                "2023-04-01",
+                "2023-04-01-preview",
+                "2023-03-31",
+                "2023-03-01-preview",
+                "2022-07-01-preview",
+                "2021-10-01-preview",
+                "2020-08-20",
+                "2020-08-20-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "CommunicationServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/communicationServices/smtpUsernames/entraApplicationId",
+          "defaultPath": "properties.entraApplicationId"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/smtpUsernames/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.Communication/communicationServices/smtpUsernames/username",
+          "defaultPath": "properties.username"
+        }
+      ],
+      "resourceType": "CommunicationServices/SmtpUsernames"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/emailServices/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "EmailServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/emailServices/domains/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/domainManagement",
+          "defaultPath": "properties.domainManagement"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/fromSenderDomain",
+          "defaultPath": "properties.fromSenderDomain"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/mailFromSenderDomain",
+          "defaultPath": "properties.mailFromSenderDomain"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/userEngagementTracking",
+          "defaultPath": "properties.userEngagementTracking"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/validSenderUsernames",
+          "defaultPath": "properties.validSenderUsernames"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords",
+          "defaultPath": "properties.verificationRecords"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM",
+          "defaultPath": "properties.verificationRecords.DKIM"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM.name",
+          "defaultPath": "properties.verificationRecords.DKIM.name"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM.ttl",
+          "defaultPath": "properties.verificationRecords.DKIM.ttl"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM.type",
+          "defaultPath": "properties.verificationRecords.DKIM.type"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM.value",
+          "defaultPath": "properties.verificationRecords.DKIM.value"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM2",
+          "defaultPath": "properties.verificationRecords.DKIM2"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM2.name",
+          "defaultPath": "properties.verificationRecords.DKIM2.name"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM2.ttl",
+          "defaultPath": "properties.verificationRecords.DKIM2.ttl"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM2.type",
+          "defaultPath": "properties.verificationRecords.DKIM2.type"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DKIM2.value",
+          "defaultPath": "properties.verificationRecords.DKIM2.value"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DMARC",
+          "defaultPath": "properties.verificationRecords.DMARC"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DMARC.name",
+          "defaultPath": "properties.verificationRecords.DMARC.name"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DMARC.ttl",
+          "defaultPath": "properties.verificationRecords.DMARC.ttl"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DMARC.type",
+          "defaultPath": "properties.verificationRecords.DMARC.type"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.DMARC.value",
+          "defaultPath": "properties.verificationRecords.DMARC.value"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.Domain",
+          "defaultPath": "properties.verificationRecords.Domain"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.Domain.name",
+          "defaultPath": "properties.verificationRecords.Domain.name"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.Domain.ttl",
+          "defaultPath": "properties.verificationRecords.Domain.ttl"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.Domain.type",
+          "defaultPath": "properties.verificationRecords.Domain.type"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.Domain.value",
+          "defaultPath": "properties.verificationRecords.Domain.value"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.SPF",
+          "defaultPath": "properties.verificationRecords.SPF"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.SPF.name",
+          "defaultPath": "properties.verificationRecords.SPF.name"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.SPF.ttl",
+          "defaultPath": "properties.verificationRecords.SPF.ttl"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.SPF.type",
+          "defaultPath": "properties.verificationRecords.SPF.type"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationRecords.SPF.value",
+          "defaultPath": "properties.verificationRecords.SPF.value"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates",
+          "defaultPath": "properties.verificationStates"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DKIM",
+          "defaultPath": "properties.verificationStates.DKIM"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DKIM.errorCode",
+          "defaultPath": "properties.verificationStates.DKIM.errorCode"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DKIM.status",
+          "defaultPath": "properties.verificationStates.DKIM.status"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DKIM2",
+          "defaultPath": "properties.verificationStates.DKIM2"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DKIM2.errorCode",
+          "defaultPath": "properties.verificationStates.DKIM2.errorCode"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DKIM2.status",
+          "defaultPath": "properties.verificationStates.DKIM2.status"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DMARC",
+          "defaultPath": "properties.verificationStates.DMARC"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DMARC.errorCode",
+          "defaultPath": "properties.verificationStates.DMARC.errorCode"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.DMARC.status",
+          "defaultPath": "properties.verificationStates.DMARC.status"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.Domain",
+          "defaultPath": "properties.verificationStates.Domain"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.Domain.errorCode",
+          "defaultPath": "properties.verificationStates.Domain.errorCode"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.Domain.status",
+          "defaultPath": "properties.verificationStates.Domain.status"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.SPF",
+          "defaultPath": "properties.verificationStates.SPF"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.SPF.errorCode",
+          "defaultPath": "properties.verificationStates.SPF.errorCode"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/verificationStates.SPF.status",
+          "defaultPath": "properties.verificationStates.SPF.status"
+        }
+      ],
+      "resourceType": "EmailServices/Domains"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/emailServices/domains/senderUsernames/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/senderUsernames/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/senderUsernames/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/senderUsernames/username",
+          "defaultPath": "properties.username"
+        }
+      ],
+      "resourceType": "EmailServices/Domains/SenderUsernames"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/createdTimeStamp",
+          "defaultPath": "properties.createdTimeStamp"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/lastUpdatedTimeStamp",
+          "defaultPath": "properties.lastUpdatedTimeStamp"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/listName",
+          "defaultPath": "properties.listName"
+        }
+      ],
+      "resourceType": "EmailServices/Domains/SuppressionLists"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses/dataLocation",
+          "defaultPath": "properties.dataLocation"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses/email",
+          "defaultPath": "properties.email"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses/firstName",
+          "defaultPath": "properties.firstName"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses/lastModified",
+          "defaultPath": "properties.lastModified"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses/lastName",
+          "defaultPath": "properties.lastName"
+        },
+        {
+          "name": "Microsoft.Communication/emailServices/domains/suppressionLists/suppressionListAddresses/notes",
+          "defaultPath": "properties.notes"
+        }
+      ],
+      "resourceType": "EmailServices/Domains/SuppressionLists/SuppressionListAddresses"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "namespace": "PURESTORAGE.BLOCK",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "activateSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "reservations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storagePools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/avsStorageContainers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/avsStorageContainers/volumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/avsVms"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/avsVms/avsVmVolumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/recoverableVolumeGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storagePools/volumeGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/volumeGroups/snapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storagePools/volumeGroups/volumes"
+    }
+  ]
+}

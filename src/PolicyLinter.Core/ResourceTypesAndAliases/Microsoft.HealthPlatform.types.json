@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.HealthPlatform",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    }
+  ]
+}

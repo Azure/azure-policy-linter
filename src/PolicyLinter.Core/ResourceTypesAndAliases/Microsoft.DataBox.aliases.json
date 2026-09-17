@@ -1,0 +1,786 @@
+{
+  "namespace": "Microsoft.DataBox",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Databox/jobs/cancellationReason",
+          "defaultPath": "properties.cancellationReason"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/deliveryInfo",
+          "defaultPath": "properties.deliveryInfo"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/deliveryInfo.scheduledDateTime",
+          "defaultPath": "properties.deliveryInfo.scheduledDateTime"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/deliveryType",
+          "defaultPath": "properties.deliveryType"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details",
+          "defaultPath": "properties.details"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.chainOfCustodySasKey",
+          "defaultPath": "properties.details.chainOfCustodySasKey"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails",
+          "defaultPath": "properties.details.contactDetails"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.contactName",
+          "defaultPath": "properties.details.contactDetails.contactName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.emailList",
+          "defaultPath": "properties.details.contactDetails.emailList"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.emailList[*]",
+          "defaultPath": "properties.details.contactDetails.emailList[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.mobile",
+          "defaultPath": "properties.details.contactDetails.mobile"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.notificationPreference",
+          "defaultPath": "properties.details.contactDetails.notificationPreference"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.notificationPreference[*]",
+          "defaultPath": "properties.details.contactDetails.notificationPreference[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.notificationPreference[*].sendNotification",
+          "defaultPath": "properties.details.contactDetails.notificationPreference[*].sendNotification"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.notificationPreference[*].stageName",
+          "defaultPath": "properties.details.contactDetails.notificationPreference[*].stageName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.phone",
+          "defaultPath": "properties.details.contactDetails.phone"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.contactDetails.phoneExtension",
+          "defaultPath": "properties.details.contactDetails.phoneExtension"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.copyLogDetails",
+          "defaultPath": "properties.details.copyLogDetails"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.copyLogDetails[*]",
+          "defaultPath": "properties.details.copyLogDetails[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.copyLogDetails[*].copyLogDetailsType",
+          "defaultPath": "properties.details.copyLogDetails[*].copyLogDetailsType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBox.accountName",
+          "defaultPath": "properties.details.copyLogDetails[*].accountName"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBox.copyLogLink",
+          "defaultPath": "properties.details.copyLogDetails[*].copyLogLink"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBox.copyVerboseLogLink",
+          "defaultPath": "properties.details.copyLogDetails[*].copyVerboseLogLink"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBoxDisk.diskSerialNumber",
+          "defaultPath": "properties.details.copyLogDetails[*].diskSerialNumber"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBoxDisk.errorLogLink",
+          "defaultPath": "properties.details.copyLogDetails[*].errorLogLink"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBoxDisk.verboseLogLink",
+          "defaultPath": "properties.details.copyLogDetails[*].verboseLogLink"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBoxHeavy.copyLogLink[*]",
+          "defaultPath": "properties.details.copyLogDetails[*].copyLogLink[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.copyLogDetails[*].DataBoxHeavy.copyVerboseLogLink[*]",
+          "defaultPath": "properties.details.copyLogDetails[*].copyVerboseLogLink[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk",
+          "defaultPath": "properties.details"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.copyProgress",
+          "defaultPath": "properties.details.copyProgress"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.copyProgress[*]",
+          "defaultPath": "properties.details.copyProgress[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.copyProgress[*].bytesCopied",
+          "defaultPath": "properties.details.copyProgress[*].bytesCopied"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.copyProgress[*].percentComplete",
+          "defaultPath": "properties.details.copyProgress[*].percentComplete"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.copyProgress[*].serialNumber",
+          "defaultPath": "properties.details.copyProgress[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.copyProgress[*].status",
+          "defaultPath": "properties.details.copyProgress[*].status"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.disksAndSizeDetails",
+          "defaultPath": "properties.details.disksAndSizeDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.passkey",
+          "defaultPath": "properties.details.passkey"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxDisk.preferredDisks",
+          "defaultPath": "properties.details.preferredDisks"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].accountId",
+          "defaultPath": "properties.details.copyProgress[*].accountId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].bytesProcessed",
+          "defaultPath": "properties.details.copyProgress[*].bytesProcessed"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].bytesSentToCloud",
+          "defaultPath": "properties.details.copyProgress[*].bytesSentToCloud"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].dataAccountType",
+          "defaultPath": "properties.details.copyProgress[*].dataAccountType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].dataDestinationType",
+          "defaultPath": "properties.details.copyProgress[*].dataDestinationType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].directoriesErroredOut",
+          "defaultPath": "properties.details.copyProgress[*].directoriesErroredOut"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].filesErroredOut",
+          "defaultPath": "properties.details.copyProgress[*].filesErroredOut"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].filesProcessed",
+          "defaultPath": "properties.details.copyProgress[*].filesProcessed"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].invalidDirectoriesProcessed",
+          "defaultPath": "properties.details.copyProgress[*].invalidDirectoriesProcessed"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].invalidFileBytesUploaded",
+          "defaultPath": "properties.details.copyProgress[*].invalidFileBytesUploaded"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].invalidFilesProcessed",
+          "defaultPath": "properties.details.copyProgress[*].invalidFilesProcessed"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].isEnumerationInProgress",
+          "defaultPath": "properties.details.copyProgress[*].isEnumerationInProgress"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].renamedContainerCount",
+          "defaultPath": "properties.details.copyProgress[*].renamedContainerCount"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].storageAccountName",
+          "defaultPath": "properties.details.copyProgress[*].storageAccountName"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].totalBytesToProcess",
+          "defaultPath": "properties.details.copyProgress[*].totalBytesToProcess"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].totalFilesToProcess",
+          "defaultPath": "properties.details.copyProgress[*].totalFilesToProcess"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.copyProgress[*].transferType",
+          "defaultPath": "properties.details.copyProgress[*].transferType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.DataBoxHeavy.devicePassword",
+          "defaultPath": "properties.details.devicePassword"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails",
+          "defaultPath": "properties.details.dataExportDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*]",
+          "defaultPath": "properties.details.dataExportDetails[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].accountDetails.dataAccountType",
+          "defaultPath": "properties.details.dataExportDetails[*].accountDetails.dataAccountType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].accountDetails.ManagedDisk",
+          "defaultPath": "properties.details.dataExportDetails[*].accountDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].accountDetails.ManagedDisk.resourceGroupId",
+          "defaultPath": "properties.details.dataExportDetails[*].accountDetails.resourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].accountDetails.ManagedDisk.stagingStorageAccountId",
+          "defaultPath": "properties.details.dataExportDetails[*].accountDetails.stagingStorageAccountId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].accountDetails.sharePassword",
+          "defaultPath": "properties.details.dataExportDetails[*].accountDetails.sharePassword"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].accountDetails.StorageAccount.storageAccountId",
+          "defaultPath": "properties.details.dataExportDetails[*].accountDetails.storageAccountId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].logCollectionLevel",
+          "defaultPath": "properties.details.dataExportDetails[*].logCollectionLevel"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferAllDetails",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferAllDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferAllDetails.include",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferAllDetails.include"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferAllDetails.include.dataAccountType",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferAllDetails.include.dataAccountType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferAllDetails.include.transferAllBlobs",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferAllDetails.include.transferAllBlobs"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferAllDetails.include.transferAllFiles",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferAllDetails.include.transferAllFiles"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferConfigurationType",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferConfigurationType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePathList",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePathList"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePathList[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePathList[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePrefixList",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePrefixList"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePrefixList[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.filePrefixList[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.fileShareList",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.fileShareList"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.fileShareList[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.azureFileFilterDetails.fileShareList[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPathList",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPathList"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPathList[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPathList[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPrefixList",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPrefixList"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPrefixList[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.blobPrefixList[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.containerList",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.containerList"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.containerList[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.blobFilterDetails.containerList[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.dataAccountType",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.dataAccountType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails[*]",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails[*].filterFilePath",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails[*].filterFilePath"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails[*].filterFileType",
+          "defaultPath": "properties.details.dataExportDetails[*].transferConfiguration.transferFilterDetails.include.filterFileDetails[*].filterFileType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails",
+          "defaultPath": "properties.details.dataImportDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*]",
+          "defaultPath": "properties.details.dataImportDetails[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*].accountDetails.dataAccountType",
+          "defaultPath": "properties.details.dataImportDetails[*].accountDetails.dataAccountType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*].accountDetails.ManagedDisk",
+          "defaultPath": "properties.details.dataImportDetails[*].accountDetails"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*].accountDetails.ManagedDisk.resourceGroupId",
+          "defaultPath": "properties.details.dataImportDetails[*].accountDetails.resourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*].accountDetails.ManagedDisk.stagingStorageAccountId",
+          "defaultPath": "properties.details.dataImportDetails[*].accountDetails.stagingStorageAccountId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*].accountDetails.sharePassword",
+          "defaultPath": "properties.details.dataImportDetails[*].accountDetails.sharePassword"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.dataImportDetails[*].accountDetails.StorageAccount.storageAccountId",
+          "defaultPath": "properties.details.dataImportDetails[*].accountDetails.storageAccountId"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.deliveryPackage",
+          "defaultPath": "properties.details.deliveryPackage"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.deliveryPackage.carrierName",
+          "defaultPath": "properties.details.deliveryPackage.carrierName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.deliveryPackage.trackingId",
+          "defaultPath": "properties.details.deliveryPackage.trackingId"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.deliveryPackage.trackingUrl",
+          "defaultPath": "properties.details.deliveryPackage.trackingUrl"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.destinationAccountDetails",
+          "defaultPath": "properties.details.destinationAccountDetails"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.destinationAccountDetails[*]",
+          "defaultPath": "properties.details.destinationAccountDetails[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.destinationAccountDetails[*].accountId",
+          "defaultPath": "properties.details.destinationAccountDetails[*].accountId"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.destinationAccountDetails[*].dataDestinationType",
+          "defaultPath": "properties.details.destinationAccountDetails[*].dataDestinationType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.destinationAccountDetails[*].ManagedDisk.resourceGroupId",
+          "defaultPath": "properties.details.destinationAccountDetails[*].resourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.destinationAccountDetails[*].ManagedDisk.stagingStorageAccountId",
+          "defaultPath": "properties.details.destinationAccountDetails[*].stagingStorageAccountId"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.destinationAccountDetails[*].sharePassword",
+          "defaultPath": "properties.details.destinationAccountDetails[*].sharePassword"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.destinationAccountDetails[*].StorageAccount.storageAccountId",
+          "defaultPath": "properties.details.destinationAccountDetails[*].storageAccountId"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.errorDetails",
+          "defaultPath": "properties.details.errorDetails"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.errorDetails[*]",
+          "defaultPath": "properties.details.errorDetails[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.errorDetails[*].errorCode",
+          "defaultPath": "properties.details.errorDetails[*].errorCode"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.errorDetails[*].errorMessage",
+          "defaultPath": "properties.details.errorDetails[*].errorMessage"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.errorDetails[*].exceptionMessage",
+          "defaultPath": "properties.details.errorDetails[*].exceptionMessage"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.errorDetails[*].recommendedAction",
+          "defaultPath": "properties.details.errorDetails[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.expectedDataSizeInTeraBytes",
+          "defaultPath": "properties.details.expectedDataSizeInTeraBytes"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobDetailsType",
+          "defaultPath": "properties.details.jobDetailsType"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages",
+          "defaultPath": "properties.details.jobStages"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*]",
+          "defaultPath": "properties.details.jobStages[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].displayName",
+          "defaultPath": "properties.details.jobStages[*].displayName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].errorDetails",
+          "defaultPath": "properties.details.jobStages[*].errorDetails"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].errorDetails[*]",
+          "defaultPath": "properties.details.jobStages[*].errorDetails[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].errorDetails[*].errorCode",
+          "defaultPath": "properties.details.jobStages[*].errorDetails[*].errorCode"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].errorDetails[*].errorMessage",
+          "defaultPath": "properties.details.jobStages[*].errorDetails[*].errorMessage"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].errorDetails[*].exceptionMessage",
+          "defaultPath": "properties.details.jobStages[*].errorDetails[*].exceptionMessage"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].errorDetails[*].recommendedAction",
+          "defaultPath": "properties.details.jobStages[*].errorDetails[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].jobStageDetails",
+          "defaultPath": "properties.details.jobStages[*].jobStageDetails"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].stageName",
+          "defaultPath": "properties.details.jobStages[*].stageName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].stageStatus",
+          "defaultPath": "properties.details.jobStages[*].stageStatus"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.jobStages[*].stageTime",
+          "defaultPath": "properties.details.jobStages[*].stageTime"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey",
+          "defaultPath": "properties.details.keyEncryptionKey"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.identityProperties",
+          "defaultPath": "properties.details.keyEncryptionKey.identityProperties"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.identityProperties.type",
+          "defaultPath": "properties.details.keyEncryptionKey.identityProperties.type"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.identityProperties.userAssigned",
+          "defaultPath": "properties.details.keyEncryptionKey.identityProperties.userAssigned"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.identityProperties.userAssigned.resourceId",
+          "defaultPath": "properties.details.keyEncryptionKey.identityProperties.userAssigned.resourceId"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.kekType",
+          "defaultPath": "properties.details.keyEncryptionKey.kekType"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.kekUrl",
+          "defaultPath": "properties.details.keyEncryptionKey.kekUrl"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.keyEncryptionKey.kekVaultResourceID",
+          "defaultPath": "properties.details.keyEncryptionKey.kekVaultResourceID"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.preferences",
+          "defaultPath": "properties.details.preferences"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.preferences.encryptionPreferences",
+          "defaultPath": "properties.details.preferences.encryptionPreferences"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/details.preferences.encryptionPreferences.doubleEncryption",
+          "defaultPath": "properties.details.preferences.encryptionPreferences.doubleEncryption"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.preferences.preferredDataCenterRegion",
+          "defaultPath": "properties.details.preferences.preferredDataCenterRegion"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.preferences.preferredDataCenterRegion[*]",
+          "defaultPath": "properties.details.preferences.preferredDataCenterRegion[*]"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.preferences.transportPreferences",
+          "defaultPath": "properties.details.preferences.transportPreferences"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.preferences.transportPreferences.preferredShipmentType",
+          "defaultPath": "properties.details.preferences.transportPreferences.preferredShipmentType"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.returnPackage",
+          "defaultPath": "properties.details.returnPackage"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.returnPackage.carrierName",
+          "defaultPath": "properties.details.returnPackage.carrierName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.returnPackage.trackingId",
+          "defaultPath": "properties.details.returnPackage.trackingId"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.returnPackage.trackingUrl",
+          "defaultPath": "properties.details.returnPackage.trackingUrl"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.reverseShipmentLabelSasKey",
+          "defaultPath": "properties.details.reverseShipmentLabelSasKey"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress",
+          "defaultPath": "properties.details.shippingAddress"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.addressType",
+          "defaultPath": "properties.details.shippingAddress.addressType"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.city",
+          "defaultPath": "properties.details.shippingAddress.city"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.companyName",
+          "defaultPath": "properties.details.shippingAddress.companyName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.country",
+          "defaultPath": "properties.details.shippingAddress.country"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.postalCode",
+          "defaultPath": "properties.details.shippingAddress.postalCode"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.stateOrProvince",
+          "defaultPath": "properties.details.shippingAddress.stateOrProvince"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.streetAddress1",
+          "defaultPath": "properties.details.shippingAddress.streetAddress1"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.streetAddress2",
+          "defaultPath": "properties.details.shippingAddress.streetAddress2"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.streetAddress3",
+          "defaultPath": "properties.details.shippingAddress.streetAddress3"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/details.shippingAddress.zipExtendedCode",
+          "defaultPath": "properties.details.shippingAddress.zipExtendedCode"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.additionalInfo",
+          "defaultPath": "properties.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.additionalInfo[*]",
+          "defaultPath": "properties.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.additionalInfo[*].type",
+          "defaultPath": "properties.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/error.code",
+          "defaultPath": "properties.error.code"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details",
+          "defaultPath": "properties.error.details"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*]",
+          "defaultPath": "properties.error.details[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].additionalInfo",
+          "defaultPath": "properties.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].code",
+          "defaultPath": "properties.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].details",
+          "defaultPath": "properties.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].details[*]",
+          "defaultPath": "properties.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].message",
+          "defaultPath": "properties.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.details[*].target",
+          "defaultPath": "properties.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/error.message",
+          "defaultPath": "properties.error.message"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/error.target",
+          "defaultPath": "properties.error.target"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/isCancellable",
+          "defaultPath": "properties.isCancellable"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/isCancellableWithoutFee",
+          "defaultPath": "properties.isCancellableWithoutFee"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/isDeletable",
+          "defaultPath": "properties.isDeletable"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/isPrepareToShipEnabled",
+          "defaultPath": "properties.isPrepareToShipEnabled"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/isShippingAddressEditable",
+          "defaultPath": "properties.isShippingAddressEditable"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/sku.displayName",
+          "defaultPath": "sku.displayName"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/startTime",
+          "defaultPath": "properties.startTime"
+        },
+        {
+          "name": "Microsoft.Databox/jobs/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DataBox/jobs/transferType",
+          "defaultPath": "properties.transferType"
+        }
+      ],
+      "resourceType": "jobs"
+    }
+  ]
+}

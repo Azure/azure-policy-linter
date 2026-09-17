@@ -1,0 +1,501 @@
+{
+  "namespace": "Microsoft.Web",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "aigateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apiAcls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apis"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apis/apiAcls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apis/connectionAcls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apis/connections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apis/connections/connectionAcls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/apis/localizedDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/connectionAcls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "apiManagementAccounts/connections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "aseregions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "availableStacks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingMeters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectionGateways"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectorgateways"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerApps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "customApis"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "customhostnameSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deploymentLocations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "freeTrialStaticWebApps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "functionAppStacks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateGithubAccessTokenForAppserviceCLI"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "georegions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hostingEnvironments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "hostingenvironments/configurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostingEnvironments/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostingEnvironments/multiRolePools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "hostingEnvironments/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostingEnvironments/workerPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "ishostingenvironmentnameavailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "ishostnameavailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "isusernameavailable"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "kubeEnvironments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listSitesAssignedToHostName"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/apiOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectionGatewayInstallations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/extractApiDefinitionFromWsdl"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/functionAppStacks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getNetworkPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/listVirtualNetworkIntegrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/listWsdlInterfaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedApis"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/previewStaticSiteWorkflowFile"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/purgeUnusedVirtualNetworkIntegration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/runtimes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/staticSitesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/staticSitesOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateDeleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/webAppStacks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publishingUsers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceHealthMetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "runtimes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "serverFarms"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "serverFarms/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "serverFarms/firstPartyApps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "serverFarms/firstPartyApps/keyVaultSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "serverfarms/virtualnetworkconnections/gateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "serverfarms/virtualnetworkconnections/routes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sites"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/basicPublishingCredentialsPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/basicPublishingCredentialsPolicies/ftp"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/basicPublishingCredentialsPolicies/scm"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/config"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/domainownershipidentifiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/hostNameBindings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/hybridconnection"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/hybridconnectionnamespaces/relays"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/networkConfig"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sites/premieraddons"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/privateaccess"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/publiccertificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/sitecontainers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sites/slots"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/basicPublishingCredentialsPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/slots/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/config"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/domainownershipidentifiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/slots/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/slots/hostNameBindings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/hybridconnection"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/hybridconnectionnamespaces/relays"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sites/slots/networkConfig"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/premieraddons"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/publiccertificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/sitecontainers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/sourcecontrols"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/virtualnetworkconnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/slots/virtualnetworkconnections/gateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/sourcecontrols"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/virtualnetworkconnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "sites/virtualnetworkconnections/gateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sourceControls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSiteRegions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "staticSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/builds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/builds/databaseConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/builds/linkedBackends"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/builds/userProvidedFunctionApps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/databaseConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/linkedBackends"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "staticSites/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "staticSites/userProvidedFunctionApps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "verifyHostingEnvironmentVnet"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "webAppStacks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workerApps"
+    }
+  ]
+}

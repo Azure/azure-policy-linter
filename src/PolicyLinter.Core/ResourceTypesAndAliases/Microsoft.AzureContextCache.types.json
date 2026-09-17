@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.AzureContextCache",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/containers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "namespace": "Microsoft.NetApp",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "activeDirectoryConfigs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticAccounts/elasticBackupPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticAccounts/elasticBackupVaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "elasticAccounts/elasticBackupVaults/elasticBackups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticAccounts/elasticCapacityPools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticAccounts/elasticCapacityPools/elasticVolumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "elasticAccounts/elasticCapacityPools/elasticVolumes/elasticSnapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticAccounts/elasticSnapshotPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "externalCacheConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "externalClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "externalClusters/clusterPeers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "externalClusters/clusterPeers/svmPeers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "externalClusters/externalSvms"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "externalClusters/externalSvms/externalCaches"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "externalClusters/externalSvms/externalVolumes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hybridReplications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkFilePathAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/CheckInventory"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkQuotaAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/elasticRegionInfos"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/queryNetworkSiblingSet"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/QuotaLimits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/regionInfo"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/regionInfos"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updateNetworkSiblingSet"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/Usages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/accountBackups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/backupPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/backupVaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/backupVaults/backups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/capacityPools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/capacityPools/caches"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/capacityPools/volumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/backups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/buckets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/directoryQuotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/mountTargets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/ransomwareReports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/snapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/subvolumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/capacityPools/volumes/volumeQuotaRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/consistencyGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/consistencyGroups/consistencyGroupSnapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/quotaLimits"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "netAppAccounts/snapshotPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/vaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "netAppAccounts/volumeGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "policyGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "policyGroups/extendedSnapshotRetentionPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scaleAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scaleAccounts/scaleCapacityPools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scaleAccounts/scaleCapacityPools/scaleVolumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scaleAccounts/scaleCapacityPools/scaleVolumes/scaleSnapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scaleAccounts/scaleSnapshotPolicies"
+    }
+  ]
+}

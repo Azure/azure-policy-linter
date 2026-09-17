@@ -1,0 +1,89 @@
+{
+  "namespace": "Microsoft.HealthcareApis",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateMedtechMappings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/analyticsconnectors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/dicomservices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/eventGridFilters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/fhirservices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/iotconnectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/iotconnectors/destinations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/iotconnectors/fhirdestinations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/privateLinkResources"
+    }
+  ]
+}

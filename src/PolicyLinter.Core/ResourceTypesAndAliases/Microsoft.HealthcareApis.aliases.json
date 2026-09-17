@@ -1,0 +1,781 @@
+{
+  "namespace": "Microsoft.HealthcareApis",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/services/accessPolicies",
+          "defaultPath": "properties.accessPolicies"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/accessPolicies[*]",
+          "defaultPath": "properties.accessPolicies[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/accessPolicies[*].objectId",
+          "defaultPath": "properties.accessPolicies[*].objectId"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration",
+          "defaultPath": "properties.acrConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.loginServers",
+          "defaultPath": "properties.acrConfiguration.loginServers"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.loginServers[*]",
+          "defaultPath": "properties.acrConfiguration.loginServers[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.ociArtifacts",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.ociArtifacts[*]",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.ociArtifacts[*].digest",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*].digest"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.ociArtifacts[*].imageName",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*].imageName"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/acrConfiguration.ociArtifacts[*].loginServer",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*].loginServer"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/authenticationConfiguration",
+          "defaultPath": "properties.authenticationConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/authenticationConfiguration.audience",
+          "defaultPath": "properties.authenticationConfiguration.audience"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/authenticationConfiguration.authority",
+          "defaultPath": "properties.authenticationConfiguration.authority"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/authenticationConfiguration.smartProxyEnabled",
+          "defaultPath": "properties.authenticationConfiguration.smartProxyEnabled"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration",
+          "defaultPath": "properties.corsConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.allowCredentials",
+          "defaultPath": "properties.corsConfiguration.allowCredentials"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.headers",
+          "defaultPath": "properties.corsConfiguration.headers"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.headers[*]",
+          "defaultPath": "properties.corsConfiguration.headers[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.maxAge",
+          "defaultPath": "properties.corsConfiguration.maxAge"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.methods",
+          "defaultPath": "properties.corsConfiguration.methods"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.methods[*]",
+          "defaultPath": "properties.corsConfiguration.methods[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.origins",
+          "defaultPath": "properties.corsConfiguration.origins"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/corsConfiguration.origins[*]",
+          "defaultPath": "properties.corsConfiguration.origins[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/cosmosDbConfiguration",
+          "defaultPath": "properties.cosmosDbConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/cosmosDbConfiguration.crossTenantCmkApplicationId",
+          "defaultPath": "properties.cosmosDbConfiguration.crossTenantCmkApplicationId"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/cosmosDbConfiguration.keyVaultKeyUri",
+          "defaultPath": "properties.cosmosDbConfiguration.keyVaultKeyUri"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/cosmosDbConfiguration.offerThroughput",
+          "defaultPath": "properties.cosmosDbConfiguration.offerThroughput"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/exportConfiguration",
+          "defaultPath": "properties.exportConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/exportConfiguration.storageAccountName",
+          "defaultPath": "properties.exportConfiguration.storageAccountName"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/importConfiguration",
+          "defaultPath": "properties.importConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/importConfiguration.enabled",
+          "defaultPath": "properties.importConfiguration.enabled"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/importConfiguration.initialImportMode",
+          "defaultPath": "properties.importConfiguration.initialImportMode"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/importConfiguration.integrationDataStore",
+          "defaultPath": "properties.importConfiguration.integrationDataStore"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        }
+      ],
+      "resourceType": "services"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/services/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "services/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        }
+      ],
+      "resourceType": "workspaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/authenticationConfiguration",
+          "defaultPath": "properties.authenticationConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/authenticationConfiguration.audiences",
+          "defaultPath": "properties.authenticationConfiguration.audiences"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/authenticationConfiguration.audiences[*]",
+          "defaultPath": "properties.authenticationConfiguration.audiences[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/authenticationConfiguration.authority",
+          "defaultPath": "properties.authenticationConfiguration.authority"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration",
+          "defaultPath": "properties.corsConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.allowCredentials",
+          "defaultPath": "properties.corsConfiguration.allowCredentials"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.headers",
+          "defaultPath": "properties.corsConfiguration.headers"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.headers[*]",
+          "defaultPath": "properties.corsConfiguration.headers[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.maxAge",
+          "defaultPath": "properties.corsConfiguration.maxAge"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.methods",
+          "defaultPath": "properties.corsConfiguration.methods"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.methods[*]",
+          "defaultPath": "properties.corsConfiguration.methods[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.origins",
+          "defaultPath": "properties.corsConfiguration.origins"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/corsConfiguration.origins[*]",
+          "defaultPath": "properties.corsConfiguration.origins[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/enableDataPartitions",
+          "defaultPath": "properties.enableDataPartitions"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/encryption.customerManagedKeyEncryption",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/eventState",
+          "defaultPath": "properties.eventState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/serviceUrl",
+          "defaultPath": "properties.serviceUrl"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/storageConfiguration",
+          "defaultPath": "properties.storageConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/storageConfiguration.fileSystemName",
+          "defaultPath": "properties.storageConfiguration.fileSystemName"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/dicomservices/storageConfiguration.storageResourceId",
+          "defaultPath": "properties.storageConfiguration.storageResourceId"
+        }
+      ],
+      "resourceType": "workspaces/dicomservices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/accessPolicies",
+          "defaultPath": "properties.accessPolicies"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/accessPolicies[*]",
+          "defaultPath": "properties.accessPolicies[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/accessPolicies[*].objectId",
+          "defaultPath": "properties.accessPolicies[*].objectId"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration",
+          "defaultPath": "properties.acrConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.loginServers",
+          "defaultPath": "properties.acrConfiguration.loginServers"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.loginServers[*]",
+          "defaultPath": "properties.acrConfiguration.loginServers[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.ociArtifacts",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.ociArtifacts[*]",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.ociArtifacts[*].digest",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*].digest"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.ociArtifacts[*].imageName",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*].imageName"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/acrConfiguration.ociArtifacts[*].loginServer",
+          "defaultPath": "properties.acrConfiguration.ociArtifacts[*].loginServer"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration",
+          "defaultPath": "properties.authenticationConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.audience",
+          "defaultPath": "properties.authenticationConfiguration.audience"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.authority",
+          "defaultPath": "properties.authenticationConfiguration.authority"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*]",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].applications",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].applications"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].applications[*]",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].applications[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].applications[*].allowedDataActions",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].applications[*].allowedDataActions"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].applications[*].allowedDataActions[*]",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].applications[*].allowedDataActions[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].applications[*].audience",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].applications[*].audience"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].applications[*].clientId",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].applications[*].clientId"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartIdentityProviders[*].authority",
+          "defaultPath": "properties.authenticationConfiguration.smartIdentityProviders[*].authority"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/authenticationConfiguration.smartProxyEnabled",
+          "defaultPath": "properties.authenticationConfiguration.smartProxyEnabled"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration",
+          "defaultPath": "properties.corsConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.allowCredentials",
+          "defaultPath": "properties.corsConfiguration.allowCredentials"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.headers",
+          "defaultPath": "properties.corsConfiguration.headers"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.headers[*]",
+          "defaultPath": "properties.corsConfiguration.headers[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.maxAge",
+          "defaultPath": "properties.corsConfiguration.maxAge"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.methods",
+          "defaultPath": "properties.corsConfiguration.methods"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.methods[*]",
+          "defaultPath": "properties.corsConfiguration.methods[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.origins",
+          "defaultPath": "properties.corsConfiguration.origins"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/corsConfiguration.origins[*]",
+          "defaultPath": "properties.corsConfiguration.origins[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/encryption.customerManagedKeyEncryption",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/eventState",
+          "defaultPath": "properties.eventState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/exportConfiguration",
+          "defaultPath": "properties.exportConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/exportConfiguration.storageAccountName",
+          "defaultPath": "properties.exportConfiguration.storageAccountName"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/implementationGuidesConfiguration",
+          "defaultPath": "properties.implementationGuidesConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/implementationGuidesConfiguration.usCoreMissingData",
+          "defaultPath": "properties.implementationGuidesConfiguration.usCoreMissingData"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/importConfiguration",
+          "defaultPath": "properties.importConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/importConfiguration.enabled",
+          "defaultPath": "properties.importConfiguration.enabled"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/importConfiguration.initialImportMode",
+          "defaultPath": "properties.importConfiguration.initialImportMode"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/importConfiguration.integrationDataStore",
+          "defaultPath": "properties.importConfiguration.integrationDataStore"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/resourceVersionPolicyConfiguration",
+          "defaultPath": "properties.resourceVersionPolicyConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/resourceVersionPolicyConfiguration.default",
+          "defaultPath": "properties.resourceVersionPolicyConfiguration.default"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/fhirservices/resourceVersionPolicyConfiguration.resourceTypeOverrides",
+          "defaultPath": "properties.resourceVersionPolicyConfiguration.resourceTypeOverrides"
+        }
+      ],
+      "resourceType": "workspaces/fhirservices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/deviceMapping",
+          "defaultPath": "properties.deviceMapping"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/ingestionEndpointConfiguration",
+          "defaultPath": "properties.ingestionEndpointConfiguration"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/ingestionEndpointConfiguration.consumerGroup",
+          "defaultPath": "properties.ingestionEndpointConfiguration.consumerGroup"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/ingestionEndpointConfiguration.eventHubName",
+          "defaultPath": "properties.ingestionEndpointConfiguration.eventHubName"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/ingestionEndpointConfiguration.fullyQualifiedEventHubNamespace",
+          "defaultPath": "properties.ingestionEndpointConfiguration.fullyQualifiedEventHubNamespace"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "workspaces/iotconnectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/fhirMapping",
+          "defaultPath": "properties.fhirMapping"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/fhirServiceResourceId",
+          "defaultPath": "properties.fhirServiceResourceId"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/iotconnectors/fhirdestinations/resourceIdentityResolutionType",
+          "defaultPath": "properties.resourceIdentityResolutionType"
+        }
+      ],
+      "resourceType": "workspaces/iotconnectors/fhirdestinations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HealthcareApis/workspaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "workspaces/privateEndpointConnections"
+    }
+  ]
+}

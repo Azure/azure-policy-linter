@@ -1,0 +1,237 @@
+{
+  "namespace": "Microsoft.Resources",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "batch"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "builtInTemplateSpecs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "builtInTemplateSpecs/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "bulkDelete"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "calculateTemplateHash"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "changes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkPolicyCompliance"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkresourcename"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkZonePeers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataBoundaries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "decompileBicep"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedResources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "deleteOptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsExtension",
+      "resourceType": "deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deployments/operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "deploymentScripts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deploymentScripts/logs"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "deploymentStacks"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "deploymentStacksWhatIfResults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "links"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/batchOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/batchOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deploymentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deploymentScriptOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deploymentStackOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deploymentStackOperationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deploymentStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/exportResourceTemplate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/moboOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyDeploymentJobs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "moboBrokers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "notifyResourceJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "populateRegionalMoveTargetResource"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "regionalMoveContainers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "relayRegionalMoveRequest"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resourceGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resources"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "snapshots"
+    },
+    {
+      "capabilities": "SupportsTags",
+      "resourceType": "subscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/providers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "subscriptions/resourceGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/resourcegroups/resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/tagnames"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/tagNames/tagValues"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions/tagsoperationresults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "tags"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "tagsoperationresults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "templateSpecs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "templateSpecs/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenants"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateResources"
+    }
+  ]
+}

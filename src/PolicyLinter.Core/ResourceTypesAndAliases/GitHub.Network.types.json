@@ -1,0 +1,17 @@
+{
+  "namespace": "GitHub.Network",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

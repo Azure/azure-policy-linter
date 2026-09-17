@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.HybridCloud",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudConnectors"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.ManagedIdentity",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Identities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateIdentities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateIdentities/migrationOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "userAssignedIdentities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "userAssignedIdentities/federatedIdentityCredentials"
+    }
+  ]
+}

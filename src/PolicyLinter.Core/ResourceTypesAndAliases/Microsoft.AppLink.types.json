@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.AppLink",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applinks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applinks/applinkmembers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applinks/applinkmembers/upgradeHistories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/availableVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.AVS",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkQuotaAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkTrialAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serviceComponents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateClouds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/addons"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/authorizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/cloudLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/clusters/datastores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/clusters/placementPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/clusters/virtualMachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/globalReachConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/hcxEnterpriseSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/iscsiPaths"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/licenses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/maintenances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/scriptExecutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/scriptPackages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/scriptPackages/scriptCmdlets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/skuMigrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/dhcpConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/dnsServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/dnsZones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/gateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/portMirroringProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/publicIPs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/segments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/virtualMachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateClouds/workloadNetworks/vmGroups"
+    }
+  ]
+}

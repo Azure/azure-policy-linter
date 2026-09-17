@@ -1,0 +1,468 @@
+{
+  "namespace": "Microsoft.Solutions",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/artifacts",
+          "defaultPath": "properties.artifacts"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/artifacts[*]",
+          "defaultPath": "properties.artifacts[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/artifacts[*].name",
+          "defaultPath": "properties.artifacts[*].name"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/artifacts[*].type",
+          "defaultPath": "properties.artifacts[*].type"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/artifacts[*].uri",
+          "defaultPath": "properties.artifacts[*].uri"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/authorizations",
+          "defaultPath": "properties.authorizations"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/authorizations[*]",
+          "defaultPath": "properties.authorizations[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/authorizations[*].principalId",
+          "defaultPath": "properties.authorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/authorizations[*].roleDefinitionId",
+          "defaultPath": "properties.authorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/createUiDefinition",
+          "defaultPath": "properties.createUiDefinition"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/deploymentPolicy",
+          "defaultPath": "properties.deploymentPolicy"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/deploymentPolicy.deploymentMode",
+          "defaultPath": "properties.deploymentPolicy.deploymentMode"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/lockingPolicy",
+          "defaultPath": "properties.lockingPolicy"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/lockingPolicy.allowedActions",
+          "defaultPath": "properties.lockingPolicy.allowedActions"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/lockingPolicy.allowedActions[*]",
+          "defaultPath": "properties.lockingPolicy.allowedActions[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/lockLevel",
+          "defaultPath": "properties.lockLevel"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/mainTemplate",
+          "defaultPath": "properties.mainTemplate"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/managementPolicy",
+          "defaultPath": "properties.managementPolicy"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/managementPolicy.mode",
+          "defaultPath": "properties.managementPolicy.mode"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/notificationPolicy",
+          "defaultPath": "properties.notificationPolicy"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/notificationPolicy.notificationEndpoints",
+          "defaultPath": "properties.notificationPolicy.notificationEndpoints"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/notificationPolicy.notificationEndpoints[*]",
+          "defaultPath": "properties.notificationPolicy.notificationEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/notificationPolicy.notificationEndpoints[*].uri",
+          "defaultPath": "properties.notificationPolicy.notificationEndpoints[*].uri"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/packageFileUri",
+          "defaultPath": "properties.packageFileUri"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/policies",
+          "defaultPath": "properties.policies"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/policies[*]",
+          "defaultPath": "properties.policies[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/policies[*].name",
+          "defaultPath": "properties.policies[*].name"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/policies[*].parameters",
+          "defaultPath": "properties.policies[*].parameters"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/policies[*].policyDefinitionId",
+          "defaultPath": "properties.policies[*].policyDefinitionId"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku.model",
+          "defaultPath": "sku.model"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Solutions/applicationDefinitions/storageAccountId",
+          "defaultPath": "properties.storageAccountId"
+        }
+      ],
+      "resourceType": "applicationDefinitions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Solutions/applications/applicationDefinitionId",
+          "defaultPath": "properties.applicationDefinitionId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/artifacts",
+          "defaultPath": "properties.artifacts"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/artifacts[*]",
+          "defaultPath": "properties.artifacts[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/artifacts[*].name",
+          "defaultPath": "properties.artifacts[*].name"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/artifacts[*].type",
+          "defaultPath": "properties.artifacts[*].type"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/artifacts[*].uri",
+          "defaultPath": "properties.artifacts[*].uri"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/authorizations",
+          "defaultPath": "properties.authorizations"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/authorizations[*]",
+          "defaultPath": "properties.authorizations[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/authorizations[*].principalId",
+          "defaultPath": "properties.authorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/authorizations[*].roleDefinitionId",
+          "defaultPath": "properties.authorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/billingDetails",
+          "defaultPath": "properties.billingDetails"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/billingDetails.resourceUsageId",
+          "defaultPath": "properties.billingDetails.resourceUsageId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/createdBy.applicationId",
+          "defaultPath": "properties.createdBy.applicationId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/createdBy.oid",
+          "defaultPath": "properties.createdBy.oid"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/createdBy.puid",
+          "defaultPath": "properties.createdBy.puid"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/customerSupport",
+          "defaultPath": "properties.customerSupport"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/customerSupport.contactName",
+          "defaultPath": "properties.customerSupport.contactName"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/customerSupport.email",
+          "defaultPath": "properties.customerSupport.email"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/customerSupport.phone",
+          "defaultPath": "properties.customerSupport.phone"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy",
+          "defaultPath": "properties.jitAccessPolicy"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitAccessEnabled",
+          "defaultPath": "properties.jitAccessPolicy.jitAccessEnabled"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitApprovalMode",
+          "defaultPath": "properties.jitAccessPolicy.jitApprovalMode"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitApprovers",
+          "defaultPath": "properties.jitAccessPolicy.jitApprovers"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitApprovers[*]",
+          "defaultPath": "properties.jitAccessPolicy.jitApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitApprovers[*].displayName",
+          "defaultPath": "properties.jitAccessPolicy.jitApprovers[*].displayName"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitApprovers[*].id",
+          "defaultPath": "properties.jitAccessPolicy.jitApprovers[*].id"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.jitApprovers[*].type",
+          "defaultPath": "properties.jitAccessPolicy.jitApprovers[*].type"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/jitAccessPolicy.maximumJitAccessDuration",
+          "defaultPath": "properties.jitAccessPolicy.maximumJitAccessDuration"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/managedBy",
+          "defaultPath": "managedBy"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/managedResourceGroupId",
+          "defaultPath": "properties.managedResourceGroupId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/managementMode",
+          "defaultPath": "properties.managementMode"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/outputs",
+          "defaultPath": "properties.outputs"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/publisherTenantId",
+          "defaultPath": "properties.publisherTenantId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku.model",
+          "defaultPath": "sku.model"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/supportUrls",
+          "defaultPath": "properties.supportUrls"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/supportUrls.governmentCloud",
+          "defaultPath": "properties.supportUrls.governmentCloud"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/supportUrls.publicAzure",
+          "defaultPath": "properties.supportUrls.publicAzure"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/uiDefinitionUri",
+          "defaultPath": "properties.uiDefinitionUri"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/updatedBy.applicationId",
+          "defaultPath": "properties.updatedBy.applicationId"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/updatedBy.oid",
+          "defaultPath": "properties.updatedBy.oid"
+        },
+        {
+          "name": "Microsoft.Solutions/applications/updatedBy.puid",
+          "defaultPath": "properties.updatedBy.puid"
+        }
+      ],
+      "resourceType": "applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Solutions/jitRequests/applicationResourceId",
+          "defaultPath": "properties.applicationResourceId"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/createdBy.applicationId",
+          "defaultPath": "properties.createdBy.applicationId"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/createdBy.oid",
+          "defaultPath": "properties.createdBy.oid"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/createdBy.puid",
+          "defaultPath": "properties.createdBy.puid"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitAuthorizationPolicies",
+          "defaultPath": "properties.jitAuthorizationPolicies"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitAuthorizationPolicies[*]",
+          "defaultPath": "properties.jitAuthorizationPolicies[*]"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitAuthorizationPolicies[*].principalId",
+          "defaultPath": "properties.jitAuthorizationPolicies[*].principalId"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitAuthorizationPolicies[*].roleDefinitionId",
+          "defaultPath": "properties.jitAuthorizationPolicies[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitRequestState",
+          "defaultPath": "properties.jitRequestState"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitSchedulingPolicy",
+          "defaultPath": "properties.jitSchedulingPolicy"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitSchedulingPolicy.duration",
+          "defaultPath": "properties.jitSchedulingPolicy.duration"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitSchedulingPolicy.startTime",
+          "defaultPath": "properties.jitSchedulingPolicy.startTime"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/jitSchedulingPolicy.type",
+          "defaultPath": "properties.jitSchedulingPolicy.type"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/publisherTenantId",
+          "defaultPath": "properties.publisherTenantId"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/updatedBy.applicationId",
+          "defaultPath": "properties.updatedBy.applicationId"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/updatedBy.oid",
+          "defaultPath": "properties.updatedBy.oid"
+        },
+        {
+          "name": "Microsoft.Solutions/jitRequests/updatedBy.puid",
+          "defaultPath": "properties.updatedBy.puid"
+        }
+      ],
+      "resourceType": "jitRequests"
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "namespace": "Microsoft.CognitiveServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/arcDeployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/capabilityhosts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/commitmentplans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/computes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/connections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/defenderForAISettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/encryptionScopes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/managedComputeDeployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/managedNetworks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/managedNetworks/outboundRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/privateLinkResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts/projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/projects/applications"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/projects/applications/agentdeployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/projects/capabilityhosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/projects/connections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/projects/workbenches"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/raiBlocklists"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/raiBlocklists/raiBlocklistItems"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/raiPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/raiToolLabels"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/raiTopics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "attestationDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "attestations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "calculateModelCapacity"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkDomainAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "commitmentPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkSkuAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/commitmentTiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/computeoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedComputeUsages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/modelCapacities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/models"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/networkSecurityPerimeterProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/networkSecurityPerimeterProxies/profileProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/networkSecurityPerimeterProxies/profileProxies/accessRuleProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/raiContentFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/resourceGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/resourceGroups/deletedAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedComputeCapacities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "modelCapacities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "quotaTiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "raiExternalSafetyProviders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "raiPolicy"
+    }
+  ]
+}

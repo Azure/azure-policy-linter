@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.SoftwarePlan",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "hybridUseBenefits"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "licenseSummary"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "licenseSummaryOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "refreshLicenseSummary"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "softwareBenefits"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "softwareLicenses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "softwareLicenses/productDownloadOptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "softwareLicenses/productKeys"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "softwarePerpetualProducts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "softwarePerpetualProducts/productDownloadOptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "softwarePerpetualProducts/productKeys"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "softwareSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "softwareSubscriptions/productDownloadOptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "softwareSubscriptions/productKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateSoftwareBenefitCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateSoftwareLicenseCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateSoftwarePerpetualProductCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateSoftwareSubscriptionCreate"
+    }
+  ]
+}

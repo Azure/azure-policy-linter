@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.HardwareSecurityModules",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudHsmClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dedicatedHSMs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/cloudHsmOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/paymentHsmOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "paymentHsmClusters"
+    }
+  ]
+}

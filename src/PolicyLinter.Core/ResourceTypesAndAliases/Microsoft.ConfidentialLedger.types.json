@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.ConfidentialLedger",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Ledgers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/operationstatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ManagedCCFs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

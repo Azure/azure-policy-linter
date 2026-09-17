@@ -1,0 +1,2194 @@
+{
+  "namespace": "Microsoft.Authorization",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/denyAssignments/condition",
+          "defaultPath": "properties.condition"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/conditionVersion",
+          "defaultPath": "properties.conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/denyAssignmentEffect",
+          "defaultPath": "properties.denyAssignmentEffect"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/denyAssignmentName",
+          "defaultPath": "properties.denyAssignmentName"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/doNotApplyToChildScopes",
+          "defaultPath": "properties.doNotApplyToChildScopes"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/excludePrincipals",
+          "defaultPath": "properties.excludePrincipals"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/excludePrincipals[*]",
+          "defaultPath": "properties.excludePrincipals[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/excludePrincipals[*].id",
+          "defaultPath": "properties.excludePrincipals[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/excludePrincipals[*].type",
+          "defaultPath": "properties.excludePrincipals[*].type"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/isSystemProtected",
+          "defaultPath": "properties.isSystemProtected"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions",
+          "defaultPath": "properties.permissions"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*]",
+          "defaultPath": "properties.permissions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].actions",
+          "defaultPath": "properties.permissions[*].actions"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].actions[*]",
+          "defaultPath": "properties.permissions[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].condition",
+          "defaultPath": "properties.permissions[*].condition"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].conditionVersion",
+          "defaultPath": "properties.permissions[*].conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].dataActions",
+          "defaultPath": "properties.permissions[*].dataActions"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].dataActions[*]",
+          "defaultPath": "properties.permissions[*].dataActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].notActions",
+          "defaultPath": "properties.permissions[*].notActions"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].notActions[*]",
+          "defaultPath": "properties.permissions[*].notActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].notDataActions",
+          "defaultPath": "properties.permissions[*].notDataActions"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/permissions[*].notDataActions[*]",
+          "defaultPath": "properties.permissions[*].notDataActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/principals",
+          "defaultPath": "properties.principals"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/principals[*]",
+          "defaultPath": "properties.principals[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/principals[*].id",
+          "defaultPath": "properties.principals[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/principals[*].type",
+          "defaultPath": "properties.principals[*].type"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.Authorization/denyAssignments/updatedOn",
+          "defaultPath": "properties.updatedOn"
+        }
+      ],
+      "resourceType": "denyAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/locks/level",
+          "paths": [
+            {
+              "path": "properties.level",
+              "apiVersions": [
+                "2015-01-01",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2016-09-01",
+                "2017-04-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.level"
+        },
+        {
+          "name": "Microsoft.Authorization/locks/notes",
+          "defaultPath": "properties.notes"
+        },
+        {
+          "name": "Microsoft.Authorization/locks/owners",
+          "defaultPath": "properties.owners"
+        },
+        {
+          "name": "Microsoft.Authorization/locks/owners[*]",
+          "defaultPath": "properties.owners[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/locks/owners[*].applicationId",
+          "defaultPath": "properties.owners[*].applicationId"
+        }
+      ],
+      "resourceType": "locks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policyassignments/assignmentType",
+          "defaultPath": "properties.assignmentType"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/definitionVersion",
+          "defaultPath": "properties.definitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/effectiveDefinitionVersion",
+          "defaultPath": "properties.effectiveDefinitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/enforcementMode",
+          "defaultPath": "properties.enforcementMode"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/instanceId",
+          "defaultPath": "properties.instanceId"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/latestDefinitionVersion",
+          "defaultPath": "properties.latestDefinitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/nonComplianceMessages",
+          "defaultPath": "properties.nonComplianceMessages"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/nonComplianceMessages[*]",
+          "defaultPath": "properties.nonComplianceMessages[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/nonComplianceMessages[*].message",
+          "defaultPath": "properties.nonComplianceMessages[*].message"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/nonComplianceMessages[*].policyDefinitionReferenceId",
+          "defaultPath": "properties.nonComplianceMessages[*].policyDefinitionReferenceId"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/notScopes",
+          "defaultPath": "properties.notScopes"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/notScopes[*]",
+          "defaultPath": "properties.notScopes[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides",
+          "defaultPath": "properties.overrides"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*]",
+          "defaultPath": "properties.overrides[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].kind",
+          "defaultPath": "properties.overrides[*].kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors",
+          "defaultPath": "properties.overrides[*].selectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*]",
+          "defaultPath": "properties.overrides[*].selectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*].in",
+          "defaultPath": "properties.overrides[*].selectors[*].in"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*].in[*]",
+          "defaultPath": "properties.overrides[*].selectors[*].in[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*].kind",
+          "defaultPath": "properties.overrides[*].selectors[*].kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*].notIn",
+          "defaultPath": "properties.overrides[*].selectors[*].notIn"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*].notIn[*]",
+          "defaultPath": "properties.overrides[*].selectors[*].notIn[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].selectors[*].progress",
+          "defaultPath": "properties.overrides[*].selectors[*].progress"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/overrides[*].value",
+          "defaultPath": "properties.overrides[*].value"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/policyDefinitionId",
+          "defaultPath": "properties.policyDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors",
+          "defaultPath": "properties.resourceSelectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*]",
+          "defaultPath": "properties.resourceSelectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].name",
+          "defaultPath": "properties.resourceSelectors[*].name"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors",
+          "defaultPath": "properties.resourceSelectors[*].selectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*].in",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].in"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*].in[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].in[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*].kind",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*].notIn",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].notIn"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*].notIn[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].notIn[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/resourceSelectors[*].selectors[*].progress",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].progress"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/selfServeExemptionSettings",
+          "defaultPath": "properties.selfServeExemptionSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/selfServeExemptionSettings.enabled",
+          "defaultPath": "properties.selfServeExemptionSettings.enabled"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/selfServeExemptionSettings.policyDefinitionReferenceIds",
+          "defaultPath": "properties.selfServeExemptionSettings.policyDefinitionReferenceIds"
+        },
+        {
+          "name": "Microsoft.Authorization/policyassignments/selfServeExemptionSettings.policyDefinitionReferenceIds[*]",
+          "defaultPath": "properties.selfServeExemptionSettings.policyDefinitionReferenceIds[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Authorization/policyAssignments/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "policyAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings.endpointSettings",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.endpointSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings.endpointSettings.kind",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.endpointSettings.kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings.missingTokenAction",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.missingTokenAction"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings.resultLifespan",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.resultLifespan"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings.roleDefinitionIds",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.roleDefinitionIds"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/externalEvaluationEnforcementSettings.roleDefinitionIds[*]",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.roleDefinitionIds[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/policyRule",
+          "defaultPath": "properties.policyRule"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/policyType",
+          "defaultPath": "properties.policyType"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/versions",
+          "defaultPath": "properties.versions"
+        },
+        {
+          "name": "Microsoft.Authorization/policydefinitions/versions[*]",
+          "defaultPath": "properties.versions[*]"
+        }
+      ],
+      "resourceType": "policyDefinitions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings.endpointSettings",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.endpointSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings.endpointSettings.kind",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.endpointSettings.kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings.missingTokenAction",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.missingTokenAction"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings.resultLifespan",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.resultLifespan"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings.roleDefinitionIds",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.roleDefinitionIds"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/externalEvaluationEnforcementSettings.roleDefinitionIds[*]",
+          "defaultPath": "properties.externalEvaluationEnforcementSettings.roleDefinitionIds[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/policyType",
+          "defaultPath": "properties.policyType"
+        },
+        {
+          "name": "Microsoft.Authorization/policyDefinitions/versions/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "policyDefinitions/versions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/assignmentScopeValidation",
+          "defaultPath": "properties.assignmentScopeValidation"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/policyAssignmentId",
+          "defaultPath": "properties.policyAssignmentId"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/policyAssignmentInstanceId",
+          "defaultPath": "properties.policyAssignmentInstanceId"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/policyDefinitionReferenceIds",
+          "defaultPath": "properties.policyDefinitionReferenceIds"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/policyDefinitionReferenceIds[*]",
+          "defaultPath": "properties.policyDefinitionReferenceIds[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors",
+          "defaultPath": "properties.resourceSelectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*]",
+          "defaultPath": "properties.resourceSelectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].name",
+          "defaultPath": "properties.resourceSelectors[*].name"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors",
+          "defaultPath": "properties.resourceSelectors[*].selectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors[*].in",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].in"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors[*].in[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].in[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors[*].kind",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors[*].notIn",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].notIn"
+        },
+        {
+          "name": "Microsoft.Authorization/policyEnrollments/resourceSelectors[*].selectors[*].notIn[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].notIn[*]"
+        }
+      ],
+      "resourceType": "policyEnrollments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policyExemptions/assignmentScopeValidation",
+          "defaultPath": "properties.assignmentScopeValidation"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/exemptionCategory",
+          "defaultPath": "properties.exemptionCategory"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/expiresOn",
+          "defaultPath": "properties.expiresOn"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/policyAssignmentId",
+          "defaultPath": "properties.policyAssignmentId"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/policyDefinitionReferenceIds",
+          "defaultPath": "properties.policyDefinitionReferenceIds"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/policyDefinitionReferenceIds[*]",
+          "defaultPath": "properties.policyDefinitionReferenceIds[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors",
+          "defaultPath": "properties.resourceSelectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*]",
+          "defaultPath": "properties.resourceSelectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].name",
+          "defaultPath": "properties.resourceSelectors[*].name"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors",
+          "defaultPath": "properties.resourceSelectors[*].selectors"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors[*].in",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].in"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors[*].in[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].in[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors[*].kind",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].kind"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors[*].notIn",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].notIn"
+        },
+        {
+          "name": "Microsoft.Authorization/policyExemptions/resourceSelectors[*].selectors[*].notIn[*]",
+          "defaultPath": "properties.resourceSelectors[*].selectors[*].notIn[*]"
+        }
+      ],
+      "resourceType": "policyExemptions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups",
+          "defaultPath": "properties.policyDefinitionGroups"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups[*]",
+          "defaultPath": "properties.policyDefinitionGroups[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups[*].additionalMetadataId",
+          "defaultPath": "properties.policyDefinitionGroups[*].additionalMetadataId"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups[*].category",
+          "defaultPath": "properties.policyDefinitionGroups[*].category"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups[*].description",
+          "defaultPath": "properties.policyDefinitionGroups[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups[*].displayName",
+          "defaultPath": "properties.policyDefinitionGroups[*].displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitionGroups[*].name",
+          "defaultPath": "properties.policyDefinitionGroups[*].name"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions",
+          "defaultPath": "properties.policyDefinitions"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*]",
+          "defaultPath": "properties.policyDefinitions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].definitionVersion",
+          "defaultPath": "properties.policyDefinitions[*].definitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].effectiveDefinitionVersion",
+          "defaultPath": "properties.policyDefinitions[*].effectiveDefinitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].groupNames",
+          "defaultPath": "properties.policyDefinitions[*].groupNames"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].groupNames[*]",
+          "defaultPath": "properties.policyDefinitions[*].groupNames[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].latestDefinitionVersion",
+          "defaultPath": "properties.policyDefinitions[*].latestDefinitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].parameters",
+          "defaultPath": "properties.policyDefinitions[*].parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].policyDefinitionId",
+          "defaultPath": "properties.policyDefinitions[*].policyDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyDefinitions[*].policyDefinitionReferenceId",
+          "defaultPath": "properties.policyDefinitions[*].policyDefinitionReferenceId"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/policyType",
+          "defaultPath": "properties.policyType"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions",
+          "defaultPath": "properties.versions"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions[*]",
+          "defaultPath": "properties.versions[*]"
+        }
+      ],
+      "resourceType": "policySetDefinitions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups",
+          "defaultPath": "properties.policyDefinitionGroups"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups[*]",
+          "defaultPath": "properties.policyDefinitionGroups[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups[*].additionalMetadataId",
+          "defaultPath": "properties.policyDefinitionGroups[*].additionalMetadataId"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups[*].category",
+          "defaultPath": "properties.policyDefinitionGroups[*].category"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups[*].description",
+          "defaultPath": "properties.policyDefinitionGroups[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups[*].displayName",
+          "defaultPath": "properties.policyDefinitionGroups[*].displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitionGroups[*].name",
+          "defaultPath": "properties.policyDefinitionGroups[*].name"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions",
+          "defaultPath": "properties.policyDefinitions"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*]",
+          "defaultPath": "properties.policyDefinitions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].definitionVersion",
+          "defaultPath": "properties.policyDefinitions[*].definitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].effectiveDefinitionVersion",
+          "defaultPath": "properties.policyDefinitions[*].effectiveDefinitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].groupNames",
+          "defaultPath": "properties.policyDefinitions[*].groupNames"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].groupNames[*]",
+          "defaultPath": "properties.policyDefinitions[*].groupNames[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].latestDefinitionVersion",
+          "defaultPath": "properties.policyDefinitions[*].latestDefinitionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].parameters",
+          "defaultPath": "properties.policyDefinitions[*].parameters"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].policyDefinitionId",
+          "defaultPath": "properties.policyDefinitions[*].policyDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyDefinitions[*].policyDefinitionReferenceId",
+          "defaultPath": "properties.policyDefinitions[*].policyDefinitionReferenceId"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/policyType",
+          "defaultPath": "properties.policyType"
+        },
+        {
+          "name": "Microsoft.Authorization/policySetDefinitions/versions/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "policySetDefinitions/versions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/roleAssignments/canDelegate",
+          "defaultPath": "properties.canDelegate"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/condition",
+          "defaultPath": "properties.condition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/conditionVersion",
+          "defaultPath": "properties.conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/delegatedManagedIdentityResourceId",
+          "defaultPath": "properties.delegatedManagedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/principalId",
+          "paths": [
+            {
+              "path": "properties.principalId",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2017-10-01-preview",
+                "2018-01-01-preview",
+                "2018-01-01",
+                "2018-09-01-preview",
+                "2018-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/principalType",
+          "paths": [
+            {
+              "path": "properties.principalType",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2017-10-01-preview",
+                "2018-01-01-preview",
+                "2018-01-01",
+                "2018-09-01-preview",
+                "2018-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/roleDefinitionId",
+          "paths": [
+            {
+              "path": "properties.roleDefinitionId",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2017-10-01-preview",
+                "2018-01-01-preview",
+                "2018-01-01",
+                "2018-09-01-preview",
+                "2018-12-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignments/updatedOn",
+          "defaultPath": "properties.updatedOn"
+        }
+      ],
+      "resourceType": "roleAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/assignmentType",
+          "defaultPath": "properties.assignmentType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/condition",
+          "defaultPath": "properties.condition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/conditionVersion",
+          "defaultPath": "properties.conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/endDateTime",
+          "defaultPath": "properties.endDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties",
+          "defaultPath": "properties.expandedProperties"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.principal",
+          "defaultPath": "properties.expandedProperties.principal"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.principal.displayName",
+          "defaultPath": "properties.expandedProperties.principal.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.principal.email",
+          "defaultPath": "properties.expandedProperties.principal.email"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.principal.id",
+          "defaultPath": "properties.expandedProperties.principal.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.principal.type",
+          "defaultPath": "properties.expandedProperties.principal.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.roleDefinition",
+          "defaultPath": "properties.expandedProperties.roleDefinition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.roleDefinition.displayName",
+          "defaultPath": "properties.expandedProperties.roleDefinition.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.roleDefinition.id",
+          "defaultPath": "properties.expandedProperties.roleDefinition.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.roleDefinition.type",
+          "defaultPath": "properties.expandedProperties.roleDefinition.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.scope",
+          "defaultPath": "properties.expandedProperties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.scope.displayName",
+          "defaultPath": "properties.expandedProperties.scope.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.scope.id",
+          "defaultPath": "properties.expandedProperties.scope.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/expandedProperties.scope.type",
+          "defaultPath": "properties.expandedProperties.scope.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/linkedRoleEligibilityScheduleId",
+          "defaultPath": "properties.linkedRoleEligibilityScheduleId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/linkedRoleEligibilityScheduleInstanceId",
+          "defaultPath": "properties.linkedRoleEligibilityScheduleInstanceId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/memberType",
+          "defaultPath": "properties.memberType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/originRoleAssignmentId",
+          "defaultPath": "properties.originRoleAssignmentId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/roleAssignmentScheduleId",
+          "defaultPath": "properties.roleAssignmentScheduleId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/roleDefinitionId",
+          "defaultPath": "properties.roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/startDateTime",
+          "defaultPath": "properties.startDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleInstances/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "roleAssignmentScheduleInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/approvalId",
+          "defaultPath": "properties.approvalId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/condition",
+          "defaultPath": "properties.condition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/conditionVersion",
+          "defaultPath": "properties.conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties",
+          "defaultPath": "properties.expandedProperties"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.principal",
+          "defaultPath": "properties.expandedProperties.principal"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.principal.displayName",
+          "defaultPath": "properties.expandedProperties.principal.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.principal.email",
+          "defaultPath": "properties.expandedProperties.principal.email"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.principal.id",
+          "defaultPath": "properties.expandedProperties.principal.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.principal.type",
+          "defaultPath": "properties.expandedProperties.principal.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.roleDefinition",
+          "defaultPath": "properties.expandedProperties.roleDefinition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.roleDefinition.displayName",
+          "defaultPath": "properties.expandedProperties.roleDefinition.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.roleDefinition.id",
+          "defaultPath": "properties.expandedProperties.roleDefinition.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.roleDefinition.type",
+          "defaultPath": "properties.expandedProperties.roleDefinition.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.scope",
+          "defaultPath": "properties.expandedProperties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.scope.displayName",
+          "defaultPath": "properties.expandedProperties.scope.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.scope.id",
+          "defaultPath": "properties.expandedProperties.scope.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/expandedProperties.scope.type",
+          "defaultPath": "properties.expandedProperties.scope.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/justification",
+          "defaultPath": "properties.justification"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/linkedRoleEligibilityScheduleId",
+          "defaultPath": "properties.linkedRoleEligibilityScheduleId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/requestorId",
+          "defaultPath": "properties.requestorId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/requestType",
+          "defaultPath": "properties.requestType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/roleDefinitionId",
+          "defaultPath": "properties.roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scheduleInfo",
+          "defaultPath": "properties.scheduleInfo"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scheduleInfo.expiration",
+          "defaultPath": "properties.scheduleInfo.expiration"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scheduleInfo.expiration.duration",
+          "defaultPath": "properties.scheduleInfo.expiration.duration"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scheduleInfo.expiration.endDateTime",
+          "defaultPath": "properties.scheduleInfo.expiration.endDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scheduleInfo.expiration.type",
+          "defaultPath": "properties.scheduleInfo.expiration.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scheduleInfo.startDateTime",
+          "defaultPath": "properties.scheduleInfo.startDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/targetRoleAssignmentScheduleId",
+          "defaultPath": "properties.targetRoleAssignmentScheduleId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/targetRoleAssignmentScheduleInstanceId",
+          "defaultPath": "properties.targetRoleAssignmentScheduleInstanceId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/ticketInfo",
+          "defaultPath": "properties.ticketInfo"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/ticketInfo.ticketNumber",
+          "defaultPath": "properties.ticketInfo.ticketNumber"
+        },
+        {
+          "name": "Microsoft.Authorization/roleAssignmentScheduleRequests/ticketInfo.ticketSystem",
+          "defaultPath": "properties.ticketInfo.ticketSystem"
+        }
+      ],
+      "resourceType": "roleAssignmentScheduleRequests"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/assignableScopes",
+          "defaultPath": "properties.assignableScopes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/assignableScopes[*]",
+          "defaultPath": "properties.assignableScopes[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions",
+          "defaultPath": "properties.permissions"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions.actions[*]",
+          "paths": [
+            {
+              "path": "properties.permissions.actions[*]",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2017-10-01-preview",
+                "2018-01-01-preview",
+                "2018-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.permissions.actions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions.notActions[*]",
+          "paths": [
+            {
+              "path": "properties.permissions.notActions[*]",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2017-10-01-preview",
+                "2018-01-01-preview",
+                "2018-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.permissions.notActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*]",
+          "defaultPath": "properties.permissions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].actions",
+          "defaultPath": "properties.permissions[*].actions"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].actions[*]",
+          "defaultPath": "properties.permissions[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].condition",
+          "defaultPath": "properties.permissions[*].condition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].conditionVersion",
+          "defaultPath": "properties.permissions[*].conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].dataActions",
+          "defaultPath": "properties.permissions[*].dataActions"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].dataActions[*]",
+          "defaultPath": "properties.permissions[*].dataActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].notActions",
+          "defaultPath": "properties.permissions[*].notActions"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].notActions[*]",
+          "defaultPath": "properties.permissions[*].notActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].notDataActions",
+          "defaultPath": "properties.permissions[*].notDataActions"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/permissions[*].notDataActions[*]",
+          "defaultPath": "properties.permissions[*].notDataActions[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/roleName",
+          "paths": [
+            {
+              "path": "properties.roleName",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2017-10-01-preview",
+                "2018-01-01-preview",
+                "2018-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.roleName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/type",
+          "paths": [
+            {
+              "path": "properties.type",
+              "apiVersions": [
+                "2014-04-01-preview",
+                "2014-07-01-preview",
+                "2014-10-01-preview",
+                "2015-05-01-preview",
+                "2015-06-01",
+                "2015-07-01",
+                "2016-07-01",
+                "2017-05-01",
+                "2017-09-01",
+                "2018-01-01-preview",
+                "2018-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.Authorization/roleDefinitions/updatedOn",
+          "defaultPath": "properties.updatedOn"
+        }
+      ],
+      "resourceType": "roleDefinitions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/approvalId",
+          "defaultPath": "properties.approvalId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/condition",
+          "defaultPath": "properties.condition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/conditionVersion",
+          "defaultPath": "properties.conditionVersion"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties",
+          "defaultPath": "properties.expandedProperties"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.principal",
+          "defaultPath": "properties.expandedProperties.principal"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.principal.displayName",
+          "defaultPath": "properties.expandedProperties.principal.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.principal.email",
+          "defaultPath": "properties.expandedProperties.principal.email"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.principal.id",
+          "defaultPath": "properties.expandedProperties.principal.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.principal.type",
+          "defaultPath": "properties.expandedProperties.principal.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.roleDefinition",
+          "defaultPath": "properties.expandedProperties.roleDefinition"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.roleDefinition.displayName",
+          "defaultPath": "properties.expandedProperties.roleDefinition.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.roleDefinition.id",
+          "defaultPath": "properties.expandedProperties.roleDefinition.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.roleDefinition.type",
+          "defaultPath": "properties.expandedProperties.roleDefinition.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.scope",
+          "defaultPath": "properties.expandedProperties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.scope.displayName",
+          "defaultPath": "properties.expandedProperties.scope.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.scope.id",
+          "defaultPath": "properties.expandedProperties.scope.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/expandedProperties.scope.type",
+          "defaultPath": "properties.expandedProperties.scope.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/justification",
+          "defaultPath": "properties.justification"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/requestorId",
+          "defaultPath": "properties.requestorId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/requestType",
+          "defaultPath": "properties.requestType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/roleDefinitionId",
+          "defaultPath": "properties.roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scheduleInfo",
+          "defaultPath": "properties.scheduleInfo"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scheduleInfo.expiration",
+          "defaultPath": "properties.scheduleInfo.expiration"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scheduleInfo.expiration.duration",
+          "defaultPath": "properties.scheduleInfo.expiration.duration"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scheduleInfo.expiration.endDateTime",
+          "defaultPath": "properties.scheduleInfo.expiration.endDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scheduleInfo.expiration.type",
+          "defaultPath": "properties.scheduleInfo.expiration.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scheduleInfo.startDateTime",
+          "defaultPath": "properties.scheduleInfo.startDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/targetRoleEligibilityScheduleId",
+          "defaultPath": "properties.targetRoleEligibilityScheduleId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/targetRoleEligibilityScheduleInstanceId",
+          "defaultPath": "properties.targetRoleEligibilityScheduleInstanceId"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/ticketInfo",
+          "defaultPath": "properties.ticketInfo"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/ticketInfo.ticketNumber",
+          "defaultPath": "properties.ticketInfo.ticketNumber"
+        },
+        {
+          "name": "Microsoft.Authorization/roleEligibilityScheduleRequests/ticketInfo.ticketSystem",
+          "defaultPath": "properties.ticketInfo.ticketSystem"
+        }
+      ],
+      "resourceType": "roleEligibilityScheduleRequests"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules",
+          "defaultPath": "properties.effectiveRules"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*]",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].id",
+          "defaultPath": "properties.effectiveRules[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting",
+          "defaultPath": "properties.effectiveRules[*].setting"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalMode",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalMode"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*]",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].approvalStageTimeOutInDays",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].approvalStageTimeOutInDays"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationApprovers"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*]",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].description",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationApprovers[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].id",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationApprovers[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].isBackup",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationApprovers[*].isBackup"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].userType",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationApprovers[*].userType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationTimeInMinutes",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].escalationTimeInMinutes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].isApproverJustificationRequired",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].isApproverJustificationRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].isEscalationEnabled",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].isEscalationEnabled"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].primaryApprovers"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*]",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].primaryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].description",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].primaryApprovers[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].id",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].primaryApprovers[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].isBackup",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].primaryApprovers[*].isBackup"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].userType",
+          "defaultPath": "properties.effectiveRules[*].setting.approvalStages[*].primaryApprovers[*].userType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.isApprovalRequired",
+          "defaultPath": "properties.effectiveRules[*].setting.isApprovalRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.isApprovalRequiredForExtension",
+          "defaultPath": "properties.effectiveRules[*].setting.isApprovalRequiredForExtension"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyApprovalRule.setting.isRequestorJustificationRequired",
+          "defaultPath": "properties.effectiveRules[*].setting.isRequestorJustificationRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyAuthenticationContextRule",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyAuthenticationContextRule.claimValue",
+          "defaultPath": "properties.effectiveRules[*].claimValue"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyAuthenticationContextRule.isEnabled",
+          "defaultPath": "properties.effectiveRules[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyEnablementRule",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyEnablementRule.enabledRules",
+          "defaultPath": "properties.effectiveRules[*].enabledRules"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyEnablementRule.enabledRules[*]",
+          "defaultPath": "properties.effectiveRules[*].enabledRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.exceptionMembers",
+          "defaultPath": "properties.effectiveRules[*].exceptionMembers"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*]",
+          "defaultPath": "properties.effectiveRules[*].exceptionMembers[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].description",
+          "defaultPath": "properties.effectiveRules[*].exceptionMembers[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].id",
+          "defaultPath": "properties.effectiveRules[*].exceptionMembers[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].isBackup",
+          "defaultPath": "properties.effectiveRules[*].exceptionMembers[*].isBackup"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].userType",
+          "defaultPath": "properties.effectiveRules[*].exceptionMembers[*].userType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.isExpirationRequired",
+          "defaultPath": "properties.effectiveRules[*].isExpirationRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyExpirationRule.maximumDuration",
+          "defaultPath": "properties.effectiveRules[*].maximumDuration"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule.isDefaultRecipientsEnabled",
+          "defaultPath": "properties.effectiveRules[*].isDefaultRecipientsEnabled"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule.notificationLevel",
+          "defaultPath": "properties.effectiveRules[*].notificationLevel"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule.notificationRecipients",
+          "defaultPath": "properties.effectiveRules[*].notificationRecipients"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule.notificationRecipients[*]",
+          "defaultPath": "properties.effectiveRules[*].notificationRecipients[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule.notificationType",
+          "defaultPath": "properties.effectiveRules[*].notificationType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyNotificationRule.recipientType",
+          "defaultPath": "properties.effectiveRules[*].recipientType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule",
+          "defaultPath": "properties.effectiveRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings",
+          "defaultPath": "properties.effectiveRules[*].pimOnlyModeSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludedAssignmentTypes",
+          "defaultPath": "properties.effectiveRules[*].pimOnlyModeSettings.excludedAssignmentTypes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludedAssignmentTypes[*]",
+          "defaultPath": "properties.effectiveRules[*].pimOnlyModeSettings.excludedAssignmentTypes[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludes",
+          "defaultPath": "properties.effectiveRules[*].pimOnlyModeSettings.excludes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludes[*]",
+          "defaultPath": "properties.effectiveRules[*].pimOnlyModeSettings.excludes[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.mode",
+          "defaultPath": "properties.effectiveRules[*].pimOnlyModeSettings.mode"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].ruleType",
+          "defaultPath": "properties.effectiveRules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target",
+          "defaultPath": "properties.effectiveRules[*].target"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.caller",
+          "defaultPath": "properties.effectiveRules[*].target.caller"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.enforcedSettings",
+          "defaultPath": "properties.effectiveRules[*].target.enforcedSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.enforcedSettings[*]",
+          "defaultPath": "properties.effectiveRules[*].target.enforcedSettings[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.inheritableSettings",
+          "defaultPath": "properties.effectiveRules[*].target.inheritableSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.inheritableSettings[*]",
+          "defaultPath": "properties.effectiveRules[*].target.inheritableSettings[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.level",
+          "defaultPath": "properties.effectiveRules[*].target.level"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.operations",
+          "defaultPath": "properties.effectiveRules[*].target.operations"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.operations[*]",
+          "defaultPath": "properties.effectiveRules[*].target.operations[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.targetObjects",
+          "defaultPath": "properties.effectiveRules[*].target.targetObjects"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/effectiveRules[*].target.targetObjects[*]",
+          "defaultPath": "properties.effectiveRules[*].target.targetObjects[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/isOrganizationDefault",
+          "defaultPath": "properties.isOrganizationDefault"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/lastModifiedBy",
+          "defaultPath": "properties.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/lastModifiedBy.displayName",
+          "defaultPath": "properties.lastModifiedBy.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/lastModifiedBy.email",
+          "defaultPath": "properties.lastModifiedBy.email"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/lastModifiedBy.id",
+          "defaultPath": "properties.lastModifiedBy.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/lastModifiedBy.type",
+          "defaultPath": "properties.lastModifiedBy.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/lastModifiedDateTime",
+          "defaultPath": "properties.lastModifiedDateTime"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/policyProperties",
+          "defaultPath": "properties.policyProperties"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/policyProperties.scope",
+          "defaultPath": "properties.policyProperties.scope"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/policyProperties.scope.displayName",
+          "defaultPath": "properties.policyProperties.scope.displayName"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/policyProperties.scope.id",
+          "defaultPath": "properties.policyProperties.scope.id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/policyProperties.scope.type",
+          "defaultPath": "properties.policyProperties.scope.type"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules",
+          "defaultPath": "properties.rules"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*]",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].id",
+          "defaultPath": "properties.rules[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting",
+          "defaultPath": "properties.rules[*].setting"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalMode",
+          "defaultPath": "properties.rules[*].setting.approvalMode"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages",
+          "defaultPath": "properties.rules[*].setting.approvalStages"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*]",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].approvalStageTimeOutInDays",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].approvalStageTimeOutInDays"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationApprovers"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*]",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].description",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationApprovers[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].id",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationApprovers[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].isBackup",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationApprovers[*].isBackup"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationApprovers[*].userType",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationApprovers[*].userType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].escalationTimeInMinutes",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].escalationTimeInMinutes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].isApproverJustificationRequired",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].isApproverJustificationRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].isEscalationEnabled",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].isEscalationEnabled"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].primaryApprovers"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*]",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].primaryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].description",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].primaryApprovers[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].id",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].primaryApprovers[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].isBackup",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].primaryApprovers[*].isBackup"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.approvalStages[*].primaryApprovers[*].userType",
+          "defaultPath": "properties.rules[*].setting.approvalStages[*].primaryApprovers[*].userType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.isApprovalRequired",
+          "defaultPath": "properties.rules[*].setting.isApprovalRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.isApprovalRequiredForExtension",
+          "defaultPath": "properties.rules[*].setting.isApprovalRequiredForExtension"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyApprovalRule.setting.isRequestorJustificationRequired",
+          "defaultPath": "properties.rules[*].setting.isRequestorJustificationRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyAuthenticationContextRule",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyAuthenticationContextRule.claimValue",
+          "defaultPath": "properties.rules[*].claimValue"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyAuthenticationContextRule.isEnabled",
+          "defaultPath": "properties.rules[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyEnablementRule",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyEnablementRule.enabledRules",
+          "defaultPath": "properties.rules[*].enabledRules"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyEnablementRule.enabledRules[*]",
+          "defaultPath": "properties.rules[*].enabledRules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.exceptionMembers",
+          "defaultPath": "properties.rules[*].exceptionMembers"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*]",
+          "defaultPath": "properties.rules[*].exceptionMembers[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].description",
+          "defaultPath": "properties.rules[*].exceptionMembers[*].description"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].id",
+          "defaultPath": "properties.rules[*].exceptionMembers[*].id"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].isBackup",
+          "defaultPath": "properties.rules[*].exceptionMembers[*].isBackup"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.exceptionMembers[*].userType",
+          "defaultPath": "properties.rules[*].exceptionMembers[*].userType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.isExpirationRequired",
+          "defaultPath": "properties.rules[*].isExpirationRequired"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyExpirationRule.maximumDuration",
+          "defaultPath": "properties.rules[*].maximumDuration"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule.isDefaultRecipientsEnabled",
+          "defaultPath": "properties.rules[*].isDefaultRecipientsEnabled"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule.notificationLevel",
+          "defaultPath": "properties.rules[*].notificationLevel"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule.notificationRecipients",
+          "defaultPath": "properties.rules[*].notificationRecipients"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule.notificationRecipients[*]",
+          "defaultPath": "properties.rules[*].notificationRecipients[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule.notificationType",
+          "defaultPath": "properties.rules[*].notificationType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyNotificationRule.recipientType",
+          "defaultPath": "properties.rules[*].recipientType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings",
+          "defaultPath": "properties.rules[*].pimOnlyModeSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludedAssignmentTypes",
+          "defaultPath": "properties.rules[*].pimOnlyModeSettings.excludedAssignmentTypes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludedAssignmentTypes[*]",
+          "defaultPath": "properties.rules[*].pimOnlyModeSettings.excludedAssignmentTypes[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludes",
+          "defaultPath": "properties.rules[*].pimOnlyModeSettings.excludes"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.excludes[*]",
+          "defaultPath": "properties.rules[*].pimOnlyModeSettings.excludes[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].RoleManagementPolicyPimOnlyModeRule.pimOnlyModeSettings.mode",
+          "defaultPath": "properties.rules[*].pimOnlyModeSettings.mode"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].ruleType",
+          "defaultPath": "properties.rules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target",
+          "defaultPath": "properties.rules[*].target"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.caller",
+          "defaultPath": "properties.rules[*].target.caller"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.enforcedSettings",
+          "defaultPath": "properties.rules[*].target.enforcedSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.enforcedSettings[*]",
+          "defaultPath": "properties.rules[*].target.enforcedSettings[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.inheritableSettings",
+          "defaultPath": "properties.rules[*].target.inheritableSettings"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.inheritableSettings[*]",
+          "defaultPath": "properties.rules[*].target.inheritableSettings[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.level",
+          "defaultPath": "properties.rules[*].target.level"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.operations",
+          "defaultPath": "properties.rules[*].target.operations"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.operations[*]",
+          "defaultPath": "properties.rules[*].target.operations[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.targetObjects",
+          "defaultPath": "properties.rules[*].target.targetObjects"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/rules[*].target.targetObjects[*]",
+          "defaultPath": "properties.rules[*].target.targetObjects[*]"
+        },
+        {
+          "name": "Microsoft.Authorization/roleManagementPolicies/scope",
+          "defaultPath": "properties.scope"
+        }
+      ],
+      "resourceType": "roleManagementPolicies"
+    }
+  ]
+}

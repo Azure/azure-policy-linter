@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.DataBox",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "jobs/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availableSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/expresspods"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/regionConfiguration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/serviceHealth"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateAddress"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateInputs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

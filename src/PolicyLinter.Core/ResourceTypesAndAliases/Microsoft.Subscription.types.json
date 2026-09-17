@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.Subscription",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "acceptChangeTenant"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "acceptOwnership"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "acceptOwnershipStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "aliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cancel"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "changeTenantRequest"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "changeTenantStatus"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "CreateSubscription"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "directories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "enable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "rename"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "SubscriptionDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "SubscriptionOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "supportPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "transfers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateCancel"
+    }
+  ]
+}

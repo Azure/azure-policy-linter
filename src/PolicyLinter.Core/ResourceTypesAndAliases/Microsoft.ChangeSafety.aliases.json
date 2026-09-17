@@ -1,0 +1,31 @@
+{
+  "namespace": "Microsoft.ChangeSafety",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ChangeSafety/changeRecords/changeType",
+          "defaultPath": "properties.changeType"
+        },
+        {
+          "name": "Microsoft.ChangeSafety/changeRecords/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "changerecords"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ChangeSafety/changeRecords/stageProgressions/stageReference",
+          "defaultPath": "properties.stageReference"
+        },
+        {
+          "name": "Microsoft.ChangeSafety/changeRecords/stageProgressions/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "changerecords/stageprogressions"
+    }
+  ]
+}

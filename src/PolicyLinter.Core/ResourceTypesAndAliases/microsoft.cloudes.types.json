@@ -1,0 +1,9 @@
+{
+  "namespace": "microsoft.cloudes",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    }
+  ]
+}

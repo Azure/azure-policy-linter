@@ -1,0 +1,69 @@
+{
+  "namespace": "Microsoft.LabServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labaccounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labAccounts/galleryImages"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labAccounts/labs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labAccounts/labs/environmentSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labAccounts/labs/users"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labplans"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labPlans/images"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "labs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/schedules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "labs/users"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "users"
+    }
+  ]
+}

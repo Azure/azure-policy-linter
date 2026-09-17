@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.DeviceOnboarding",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "deviceStates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "discoveryServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "discoveryServices/ownershipVoucherPublicKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "onboardingServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "onboardingServices/policies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

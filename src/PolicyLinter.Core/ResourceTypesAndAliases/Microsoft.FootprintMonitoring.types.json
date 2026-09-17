@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.FootprintMonitoring",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "profiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/experiments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/measurementEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "profiles/measurementEndpoints/conditions"
+    }
+  ]
+}

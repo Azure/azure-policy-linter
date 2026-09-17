@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.ArcContainerStorage",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "EdgeStorageConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "EdgeVolumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.Syntex",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "documentProcessors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

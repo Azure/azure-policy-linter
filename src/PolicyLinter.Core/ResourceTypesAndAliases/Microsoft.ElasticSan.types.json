@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.ElasticSan",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticSans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "elasticSans/volumeGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "elasticSans/volumeGroups/snapshots"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "elasticSans/volumeGroups/volumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/asyncoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

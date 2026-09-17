@@ -1,0 +1,2935 @@
+{
+  "namespace": "Microsoft.DevTestLab",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement",
+          "defaultPath": "properties.announcement"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.enabled",
+          "defaultPath": "properties.announcement.enabled"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.expirationDate",
+          "defaultPath": "properties.announcement.expirationDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.expired",
+          "defaultPath": "properties.announcement.expired"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.markdown",
+          "defaultPath": "properties.announcement.markdown"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.provisioningState",
+          "defaultPath": "properties.announcement.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.title",
+          "defaultPath": "properties.announcement.title"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/announcement.uniqueIdentifier",
+          "defaultPath": "properties.announcement.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactsStorageAccount",
+          "defaultPath": "properties.artifactsStorageAccount"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/defaultPremiumStorageAccount",
+          "defaultPath": "properties.defaultPremiumStorageAccount"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/defaultStorageAccount",
+          "defaultPath": "properties.defaultStorageAccount"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/defaultVirtualNetworkId",
+          "defaultPath": "properties.defaultVirtualNetworkId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/environmentPermission",
+          "defaultPath": "properties.environmentPermission"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/extendedProperties",
+          "defaultPath": "properties.extendedProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/extendedProperties.additionalProperties",
+          "defaultPath": "properties.extendedProperties.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/labStorageType",
+          "defaultPath": "properties.labStorageType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/loadBalancerId",
+          "defaultPath": "properties.loadBalancerId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/mandatoryArtifactsResourceIdsLinux",
+          "defaultPath": "properties.mandatoryArtifactsResourceIdsLinux"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/mandatoryArtifactsResourceIdsLinux[*]",
+          "defaultPath": "properties.mandatoryArtifactsResourceIdsLinux[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/mandatoryArtifactsResourceIdsWindows",
+          "defaultPath": "properties.mandatoryArtifactsResourceIdsWindows"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/mandatoryArtifactsResourceIdsWindows[*]",
+          "defaultPath": "properties.mandatoryArtifactsResourceIdsWindows[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/networkSecurityGroupId",
+          "defaultPath": "properties.networkSecurityGroupId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/premiumDataDisks",
+          "defaultPath": "properties.premiumDataDisks"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/premiumDataDiskStorageAccount",
+          "defaultPath": "properties.premiumDataDiskStorageAccount"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/publicIpId",
+          "defaultPath": "properties.publicIpId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/storageAccounts",
+          "defaultPath": "properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/storageAccounts[*]",
+          "defaultPath": "properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/support",
+          "defaultPath": "properties.support"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/support.enabled",
+          "defaultPath": "properties.support.enabled"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/support.markdown",
+          "defaultPath": "properties.support.markdown"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/vaultName",
+          "defaultPath": "properties.vaultName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/vmCreationResourceGroup",
+          "defaultPath": "properties.vmCreationResourceGroup"
+        }
+      ],
+      "resourceType": "labs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/armTemplateFolderPath",
+          "defaultPath": "properties.armTemplateFolderPath"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/branchRef",
+          "defaultPath": "properties.branchRef"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/securityToken",
+          "defaultPath": "properties.securityToken"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/sourceType",
+          "defaultPath": "properties.sourceType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/artifactSources/uri",
+          "defaultPath": "properties.uri"
+        }
+      ],
+      "resourceType": "labs/artifactSources"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/currencyCode",
+          "defaultPath": "properties.currencyCode"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/endDateTime",
+          "defaultPath": "properties.endDateTime"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostDetails",
+          "defaultPath": "properties.labCostDetails"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostDetails[*]",
+          "defaultPath": "properties.labCostDetails[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostDetails[*].cost",
+          "defaultPath": "properties.labCostDetails[*].cost"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostDetails[*].costType",
+          "defaultPath": "properties.labCostDetails[*].costType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostDetails[*].date",
+          "defaultPath": "properties.labCostDetails[*].date"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostSummary",
+          "defaultPath": "properties.labCostSummary"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/labCostSummary.estimatedLabCost",
+          "defaultPath": "properties.labCostSummary.estimatedLabCost"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts",
+          "defaultPath": "properties.resourceCosts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*]",
+          "defaultPath": "properties.resourceCosts[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].externalResourceId",
+          "defaultPath": "properties.resourceCosts[*].externalResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourceCost",
+          "defaultPath": "properties.resourceCosts[*].resourceCost"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourceId",
+          "defaultPath": "properties.resourceCosts[*].resourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourcename",
+          "defaultPath": "properties.resourceCosts[*].resourcename"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourceOwner",
+          "defaultPath": "properties.resourceCosts[*].resourceOwner"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourcePricingTier",
+          "defaultPath": "properties.resourceCosts[*].resourcePricingTier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourceStatus",
+          "defaultPath": "properties.resourceCosts[*].resourceStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourceType",
+          "defaultPath": "properties.resourceCosts[*].resourceType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/resourceCosts[*].resourceUId",
+          "defaultPath": "properties.resourceCosts[*].resourceUId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/startDateTime",
+          "defaultPath": "properties.startDateTime"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost",
+          "defaultPath": "properties.targetCost"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds",
+          "defaultPath": "properties.targetCost.costThresholds"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*]",
+          "defaultPath": "properties.targetCost.costThresholds[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*].displayOnChart",
+          "defaultPath": "properties.targetCost.costThresholds[*].displayOnChart"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*].notificationSent",
+          "defaultPath": "properties.targetCost.costThresholds[*].notificationSent"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*].percentageThreshold",
+          "defaultPath": "properties.targetCost.costThresholds[*].percentageThreshold"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*].percentageThreshold.thresholdValue",
+          "defaultPath": "properties.targetCost.costThresholds[*].percentageThreshold.thresholdValue"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*].sendNotificationWhenExceeded",
+          "defaultPath": "properties.targetCost.costThresholds[*].sendNotificationWhenExceeded"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.costThresholds[*].thresholdId",
+          "defaultPath": "properties.targetCost.costThresholds[*].thresholdId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.cycleEndDateTime",
+          "defaultPath": "properties.targetCost.cycleEndDateTime"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.cycleStartDateTime",
+          "defaultPath": "properties.targetCost.cycleStartDateTime"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.cycleType",
+          "defaultPath": "properties.targetCost.cycleType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.status",
+          "defaultPath": "properties.targetCost.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/targetCost.target",
+          "defaultPath": "properties.targetCost.target"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/costs/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/costs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/author",
+          "defaultPath": "properties.author"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/customImagePlan",
+          "defaultPath": "properties.customImagePlan"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/customImagePlan.id",
+          "defaultPath": "properties.customImagePlan.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/customImagePlan.offer",
+          "defaultPath": "properties.customImagePlan.offer"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/customImagePlan.publisher",
+          "defaultPath": "properties.customImagePlan.publisher"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/dataDiskStorageInfo",
+          "defaultPath": "properties.dataDiskStorageInfo"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/dataDiskStorageInfo[*]",
+          "defaultPath": "properties.dataDiskStorageInfo[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/dataDiskStorageInfo[*].lun",
+          "defaultPath": "properties.dataDiskStorageInfo[*].lun"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/dataDiskStorageInfo[*].storageType",
+          "defaultPath": "properties.dataDiskStorageInfo[*].storageType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/isPlanAuthorized",
+          "defaultPath": "properties.isPlanAuthorized"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/managedImageId",
+          "defaultPath": "properties.managedImageId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/managedSnapshotId",
+          "defaultPath": "properties.managedSnapshotId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vhd",
+          "defaultPath": "properties.vhd"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vhd.imageName",
+          "defaultPath": "properties.vhd.imageName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vhd.osType",
+          "defaultPath": "properties.vhd.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vhd.sysPrep",
+          "defaultPath": "properties.vhd.sysPrep"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm",
+          "defaultPath": "properties.vm"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm.linuxOsInfo",
+          "defaultPath": "properties.vm.linuxOsInfo"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm.linuxOsInfo.linuxOsState",
+          "defaultPath": "properties.vm.linuxOsInfo.linuxOsState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm.sourceVmId",
+          "defaultPath": "properties.vm.sourceVmId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm.sysPrep",
+          "defaultPath": "properties.vm.sysPrep"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm.windowsOsInfo",
+          "defaultPath": "properties.vm.windowsOsInfo"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/customImages/vm.windowsOsInfo.windowsOsState",
+          "defaultPath": "properties.vm.windowsOsInfo.windowsOsState"
+        }
+      ],
+      "resourceType": "labs/customImages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/author",
+          "defaultPath": "properties.author"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent",
+          "defaultPath": "properties.formulaContent"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.allowClaim",
+          "defaultPath": "properties.formulaContent.properties.allowClaim"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.id",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.createdDate",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.dailyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.dailyRecurrence.time",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.hourlyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.hourlyRecurrence.minute",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.id",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.location",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.name",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.notificationSettings",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.notificationSettings.status",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.notificationSettings.timeInMinutes",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.notificationSettings.webhookUrl",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.provisioningState",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.status",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.tags",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.tags.additionalProperties",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.targetResourceId",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.taskType",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.timeZoneId",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.type",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.uniqueIdentifier",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.weeklyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.weeklyRecurrence.time",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.weeklyRecurrence.weekdays",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsShutdown.weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.createdDate",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.dailyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.dailyRecurrence.time",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.hourlyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.hourlyRecurrence.minute",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.id",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.location",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.name",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.notificationSettings",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.notificationSettings.status",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.notificationSettings.timeInMinutes",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.notificationSettings.webhookUrl",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.provisioningState",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.status",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.tags",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.tags.additionalProperties",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.targetResourceId",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.taskType",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.timeZoneId",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.type",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.uniqueIdentifier",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.weeklyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.weeklyRecurrence.time",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.weeklyRecurrence.weekdays",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.labVmsStartup.weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.location",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.name",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.tags",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.tags.additionalProperties",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.applicableSchedule.type",
+          "defaultPath": "properties.formulaContent.properties.applicableSchedule.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifactDeploymentStatus",
+          "defaultPath": "properties.formulaContent.properties.artifactDeploymentStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifactDeploymentStatus.artifactsApplied",
+          "defaultPath": "properties.formulaContent.properties.artifactDeploymentStatus.artifactsApplied"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifactDeploymentStatus.deploymentStatus",
+          "defaultPath": "properties.formulaContent.properties.artifactDeploymentStatus.deploymentStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifactDeploymentStatus.totalArtifacts",
+          "defaultPath": "properties.formulaContent.properties.artifactDeploymentStatus.totalArtifacts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts",
+          "defaultPath": "properties.formulaContent.properties.artifacts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*]",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].artifactId",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].artifactId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].artifactTitle",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].artifactTitle"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].deploymentStatusMessage",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].deploymentStatusMessage"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].installTime",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].installTime"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].parameters",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].parameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].parameters[*]",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].parameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].parameters[*].name",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].parameters[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].parameters[*].value",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].parameters[*].value"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].status",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.artifacts[*].vmExtensionStatusMessage",
+          "defaultPath": "properties.formulaContent.properties.artifacts[*].vmExtensionStatusMessage"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.bulkCreationParameters",
+          "defaultPath": "properties.formulaContent.properties.bulkCreationParameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.bulkCreationParameters.instanceCount",
+          "defaultPath": "properties.formulaContent.properties.bulkCreationParameters.instanceCount"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeId",
+          "defaultPath": "properties.formulaContent.properties.computeId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm",
+          "defaultPath": "properties.formulaContent.properties.computeVm"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDiskIds",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDiskIds"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDiskIds[*]",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDiskIds[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDisks",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDisks"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDisks[*]",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDisks[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDisks[*].diskSizeGiB",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDisks[*].diskSizeGiB"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDisks[*].diskUri",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDisks[*].diskUri"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDisks[*].managedDiskId",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDisks[*].managedDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.dataDisks[*].name",
+          "defaultPath": "properties.formulaContent.properties.computeVm.dataDisks[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.networkInterfaceId",
+          "defaultPath": "properties.formulaContent.properties.computeVm.networkInterfaceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.osDiskId",
+          "defaultPath": "properties.formulaContent.properties.computeVm.osDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.osType",
+          "defaultPath": "properties.formulaContent.properties.computeVm.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.statuses",
+          "defaultPath": "properties.formulaContent.properties.computeVm.statuses"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.statuses[*]",
+          "defaultPath": "properties.formulaContent.properties.computeVm.statuses[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.statuses[*].code",
+          "defaultPath": "properties.formulaContent.properties.computeVm.statuses[*].code"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.statuses[*].displayStatus",
+          "defaultPath": "properties.formulaContent.properties.computeVm.statuses[*].displayStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.statuses[*].message",
+          "defaultPath": "properties.formulaContent.properties.computeVm.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.computeVm.vmSize",
+          "defaultPath": "properties.formulaContent.properties.computeVm.vmSize"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.createdByUser",
+          "defaultPath": "properties.formulaContent.properties.createdByUser"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.createdByUserId",
+          "defaultPath": "properties.formulaContent.properties.createdByUserId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.createdDate",
+          "defaultPath": "properties.formulaContent.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.customImageId",
+          "defaultPath": "properties.formulaContent.properties.customImageId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*]",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*].attachNewDataDiskOptions",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*].attachNewDataDiskOptions"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*].attachNewDataDiskOptions.diskName",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*].attachNewDataDiskOptions.diskName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*].attachNewDataDiskOptions.diskSizeGiB",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*].attachNewDataDiskOptions.diskSizeGiB"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*].attachNewDataDiskOptions.diskType",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*].attachNewDataDiskOptions.diskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*].existingLabDiskId",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*].existingLabDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.dataDiskParameters[*].hostCaching",
+          "defaultPath": "properties.formulaContent.properties.dataDiskParameters[*].hostCaching"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.disallowPublicIpAddress",
+          "defaultPath": "properties.formulaContent.properties.disallowPublicIpAddress"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.environmentId",
+          "defaultPath": "properties.formulaContent.properties.environmentId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.expirationDate",
+          "defaultPath": "properties.formulaContent.properties.expirationDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.fqdn",
+          "defaultPath": "properties.formulaContent.properties.fqdn"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.galleryImageReference",
+          "defaultPath": "properties.formulaContent.properties.galleryImageReference"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.galleryImageReference.offer",
+          "defaultPath": "properties.formulaContent.properties.galleryImageReference.offer"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.galleryImageReference.osType",
+          "defaultPath": "properties.formulaContent.properties.galleryImageReference.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.galleryImageReference.publisher",
+          "defaultPath": "properties.formulaContent.properties.galleryImageReference.publisher"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.galleryImageReference.sku",
+          "defaultPath": "properties.formulaContent.properties.galleryImageReference.sku"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.galleryImageReference.version",
+          "defaultPath": "properties.formulaContent.properties.galleryImageReference.version"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.id",
+          "defaultPath": "properties.formulaContent.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.isAuthenticationWithSshKey",
+          "defaultPath": "properties.formulaContent.properties.isAuthenticationWithSshKey"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.labSubnetName",
+          "defaultPath": "properties.formulaContent.properties.labSubnetName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.labVirtualNetworkId",
+          "defaultPath": "properties.formulaContent.properties.labVirtualNetworkId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.lastKnownPowerState",
+          "defaultPath": "properties.formulaContent.properties.lastKnownPowerState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.location",
+          "defaultPath": "properties.formulaContent.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.name",
+          "defaultPath": "properties.formulaContent.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface",
+          "defaultPath": "properties.formulaContent.properties.networkInterface"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.dnsName",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.dnsName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.privateIpAddress",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.privateIpAddress"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.publicIpAddress",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.publicIpAddress"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.publicIpAddressId",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.publicIpAddressId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.rdpAuthority",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.rdpAuthority"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sharedPublicIpAddressConfiguration",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sharedPublicIpAddressConfiguration"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*]",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].backendPort",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].backendPort"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].frontendPort",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].frontendPort"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].transportProtocol",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].transportProtocol"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.sshAuthority",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.sshAuthority"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.subnetId",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.subnetId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.networkInterface.virtualNetworkId",
+          "defaultPath": "properties.formulaContent.properties.networkInterface.virtualNetworkId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.notes",
+          "defaultPath": "properties.formulaContent.properties.notes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.osType",
+          "defaultPath": "properties.formulaContent.properties.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.ownerObjectId",
+          "defaultPath": "properties.formulaContent.properties.ownerObjectId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.ownerUserPrincipalName",
+          "defaultPath": "properties.formulaContent.properties.ownerUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.password",
+          "defaultPath": "properties.formulaContent.properties.password"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.planId",
+          "defaultPath": "properties.formulaContent.properties.planId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.provisioningState",
+          "defaultPath": "properties.formulaContent.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*]",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].dailyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].dailyRecurrence.time",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].hourlyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].hourlyRecurrence.minute",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].location",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].name",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].notificationSettings",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].notificationSettings.emailRecipient",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].notificationSettings.notificationLocale",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].notificationSettings.status",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].notificationSettings.timeInMinutes",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].notificationSettings.webhookUrl",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].status",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].tags",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].tags.additionalProperties",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].targetResourceId",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].taskType",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].timeZoneId",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].weeklyRecurrence",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].weeklyRecurrence.time",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].weeklyRecurrence.weekdays",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.scheduleParameters[*].weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.formulaContent.properties.scheduleParameters[*].properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.size",
+          "defaultPath": "properties.formulaContent.properties.size"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.sshKey",
+          "defaultPath": "properties.formulaContent.properties.sshKey"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.storageType",
+          "defaultPath": "properties.formulaContent.properties.storageType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.tags",
+          "defaultPath": "properties.formulaContent.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.tags.additionalProperties",
+          "defaultPath": "properties.formulaContent.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.type",
+          "defaultPath": "properties.formulaContent.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.uniqueIdentifier",
+          "defaultPath": "properties.formulaContent.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.userName",
+          "defaultPath": "properties.formulaContent.properties.userName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/formulaContent.virtualMachineCreationSource",
+          "defaultPath": "properties.formulaContent.properties.virtualMachineCreationSource"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/vm",
+          "defaultPath": "properties.vm"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/formulas/vm.labVmId",
+          "defaultPath": "properties.vm.labVmId"
+        }
+      ],
+      "resourceType": "labs/formulas"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/emailRecipient",
+          "defaultPath": "properties.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/events",
+          "defaultPath": "properties.events"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/events[*]",
+          "defaultPath": "properties.events[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/events[*].eventName",
+          "defaultPath": "properties.events[*].eventName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/notificationLocale",
+          "defaultPath": "properties.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/notificationChannels/webHookUrl",
+          "defaultPath": "properties.webHookUrl"
+        }
+      ],
+      "resourceType": "labs/notificationChannels"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/evaluatorType",
+          "defaultPath": "properties.evaluatorType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/factData",
+          "defaultPath": "properties.factData"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/factName",
+          "defaultPath": "properties.factName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/threshold",
+          "defaultPath": "properties.threshold"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/policySets/policies/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/policySets/policies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/dailyRecurrence",
+          "defaultPath": "properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/dailyRecurrence.time",
+          "defaultPath": "properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/hourlyRecurrence",
+          "defaultPath": "properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/hourlyRecurrence.minute",
+          "defaultPath": "properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/notificationSettings",
+          "defaultPath": "properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/notificationSettings.emailRecipient",
+          "defaultPath": "properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/notificationSettings.notificationLocale",
+          "defaultPath": "properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/notificationSettings.status",
+          "defaultPath": "properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/notificationSettings.timeInMinutes",
+          "defaultPath": "properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/notificationSettings.webhookUrl",
+          "defaultPath": "properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/taskType",
+          "defaultPath": "properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/timeZoneId",
+          "defaultPath": "properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/weeklyRecurrence",
+          "defaultPath": "properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/weeklyRecurrence.time",
+          "defaultPath": "properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/weeklyRecurrence.weekdays",
+          "defaultPath": "properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/schedules/weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.weeklyRecurrence.weekdays[*]"
+        }
+      ],
+      "resourceType": "labs/schedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/users/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/identity",
+          "defaultPath": "properties.identity"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/identity.appId",
+          "defaultPath": "properties.identity.appId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/identity.objectId",
+          "defaultPath": "properties.identity.objectId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/identity.principalId",
+          "defaultPath": "properties.identity.principalId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/identity.principalName",
+          "defaultPath": "properties.identity.principalName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/identity.tenantId",
+          "defaultPath": "properties.identity.tenantId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/secretStore",
+          "defaultPath": "properties.secretStore"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/secretStore.keyVaultId",
+          "defaultPath": "properties.secretStore.keyVaultId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/secretStore.keyVaultUri",
+          "defaultPath": "properties.secretStore.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/users"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/diskBlobName",
+          "defaultPath": "properties.diskBlobName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/diskSizeGiB",
+          "defaultPath": "properties.diskSizeGiB"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/diskType",
+          "defaultPath": "properties.diskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/diskUri",
+          "defaultPath": "properties.diskUri"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/hostCaching",
+          "defaultPath": "properties.hostCaching"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/leasedByLabVmId",
+          "defaultPath": "properties.leasedByLabVmId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/managedDiskId",
+          "defaultPath": "properties.managedDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/disks/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/users/disks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/armTemplateDisplayName",
+          "defaultPath": "properties.armTemplateDisplayName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/createdByUser",
+          "defaultPath": "properties.createdByUser"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/deploymentProperties",
+          "defaultPath": "properties.deploymentProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/deploymentProperties.armTemplateId",
+          "defaultPath": "properties.deploymentProperties.armTemplateId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/deploymentProperties.parameters",
+          "defaultPath": "properties.deploymentProperties.parameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/deploymentProperties.parameters[*]",
+          "defaultPath": "properties.deploymentProperties.parameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/deploymentProperties.parameters[*].name",
+          "defaultPath": "properties.deploymentProperties.parameters[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/deploymentProperties.parameters[*].value",
+          "defaultPath": "properties.deploymentProperties.parameters[*].value"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/resourceGroupId",
+          "defaultPath": "properties.resourceGroupId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/environments/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/users/environments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/users/secrets/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/secrets/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/secrets/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "labs/users/secrets"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule",
+          "defaultPath": "properties.applicableSchedule"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.id",
+          "defaultPath": "properties.applicableSchedule.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.createdDate",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.dailyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.dailyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.hourlyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.hourlyRecurrence.minute",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.id",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.location",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.name",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.notificationSettings",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.notificationSettings.emailRecipient",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.notificationSettings.notificationLocale",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.notificationSettings.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.notificationSettings.timeInMinutes",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.notificationSettings.webhookUrl",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.provisioningState",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.tags",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.tags.additionalProperties",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.targetResourceId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.taskType",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.timeZoneId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.type",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.uniqueIdentifier",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.weeklyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.weeklyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.weeklyRecurrence.weekdays",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsShutdown.weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.createdDate",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.dailyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.dailyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.hourlyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.hourlyRecurrence.minute",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.id",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.location",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.name",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.notificationSettings",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.notificationSettings.emailRecipient",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.notificationSettings.notificationLocale",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.notificationSettings.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.notificationSettings.timeInMinutes",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.notificationSettings.webhookUrl",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.provisioningState",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.tags",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.tags.additionalProperties",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.targetResourceId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.taskType",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.timeZoneId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.type",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.uniqueIdentifier",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.weeklyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.weeklyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.weeklyRecurrence.weekdays",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.labVmsStartup.weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.location",
+          "defaultPath": "properties.applicableSchedule.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.name",
+          "defaultPath": "properties.applicableSchedule.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.tags",
+          "defaultPath": "properties.applicableSchedule.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.tags.additionalProperties",
+          "defaultPath": "properties.applicableSchedule.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/applicableSchedule.type",
+          "defaultPath": "properties.applicableSchedule.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/environmentId",
+          "defaultPath": "properties.environmentId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/externalServiceFabricId",
+          "defaultPath": "properties.externalServiceFabricId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/users/serviceFabrics"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/dailyRecurrence",
+          "defaultPath": "properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/dailyRecurrence.time",
+          "defaultPath": "properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/hourlyRecurrence",
+          "defaultPath": "properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/hourlyRecurrence.minute",
+          "defaultPath": "properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/notificationSettings",
+          "defaultPath": "properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/notificationSettings.emailRecipient",
+          "defaultPath": "properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/notificationSettings.notificationLocale",
+          "defaultPath": "properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/notificationSettings.status",
+          "defaultPath": "properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/notificationSettings.timeInMinutes",
+          "defaultPath": "properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/notificationSettings.webhookUrl",
+          "defaultPath": "properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/taskType",
+          "defaultPath": "properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/timeZoneId",
+          "defaultPath": "properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/weeklyRecurrence",
+          "defaultPath": "properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/weeklyRecurrence.time",
+          "defaultPath": "properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/weeklyRecurrence.weekdays",
+          "defaultPath": "properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/users/serviceFabrics/schedules/weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.weeklyRecurrence.weekdays[*]"
+        }
+      ],
+      "resourceType": "labs/users/serviceFabrics/schedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/allowClaim",
+          "defaultPath": "properties.allowClaim"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule",
+          "defaultPath": "properties.applicableSchedule"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.id",
+          "defaultPath": "properties.applicableSchedule.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.createdDate",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.dailyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.dailyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.hourlyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.hourlyRecurrence.minute",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.id",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.location",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.name",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.notificationSettings",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.notificationSettings.emailRecipient",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.notificationSettings.notificationLocale",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.notificationSettings.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.notificationSettings.timeInMinutes",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.notificationSettings.webhookUrl",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.provisioningState",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.tags",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.tags.additionalProperties",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.targetResourceId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.taskType",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.timeZoneId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.type",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.uniqueIdentifier",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.weeklyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.weeklyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.weeklyRecurrence.weekdays",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsShutdown.weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsShutdown.properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.createdDate",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.dailyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.dailyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.hourlyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.hourlyRecurrence.minute",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.id",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.location",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.name",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.notificationSettings",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.notificationSettings.emailRecipient",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.notificationSettings.notificationLocale",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.notificationSettings.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.notificationSettings.timeInMinutes",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.notificationSettings.webhookUrl",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.provisioningState",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.status",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.tags",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.tags.additionalProperties",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.targetResourceId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.taskType",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.timeZoneId",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.type",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.uniqueIdentifier",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.weeklyRecurrence",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.weeklyRecurrence.time",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.weeklyRecurrence.weekdays",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.labVmsStartup.weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.applicableSchedule.properties.labVmsStartup.properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.location",
+          "defaultPath": "properties.applicableSchedule.location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.name",
+          "defaultPath": "properties.applicableSchedule.name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.tags",
+          "defaultPath": "properties.applicableSchedule.tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.tags.additionalProperties",
+          "defaultPath": "properties.applicableSchedule.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/applicableSchedule.type",
+          "defaultPath": "properties.applicableSchedule.type"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifactDeploymentStatus",
+          "defaultPath": "properties.artifactDeploymentStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifactDeploymentStatus.artifactsApplied",
+          "defaultPath": "properties.artifactDeploymentStatus.artifactsApplied"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifactDeploymentStatus.deploymentStatus",
+          "defaultPath": "properties.artifactDeploymentStatus.deploymentStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifactDeploymentStatus.totalArtifacts",
+          "defaultPath": "properties.artifactDeploymentStatus.totalArtifacts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts",
+          "defaultPath": "properties.artifacts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*]",
+          "defaultPath": "properties.artifacts[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].artifactId",
+          "defaultPath": "properties.artifacts[*].artifactId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].artifactTitle",
+          "defaultPath": "properties.artifacts[*].artifactTitle"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].deploymentStatusMessage",
+          "defaultPath": "properties.artifacts[*].deploymentStatusMessage"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].installTime",
+          "defaultPath": "properties.artifacts[*].installTime"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].parameters",
+          "defaultPath": "properties.artifacts[*].parameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].parameters[*]",
+          "defaultPath": "properties.artifacts[*].parameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].parameters[*].name",
+          "defaultPath": "properties.artifacts[*].parameters[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].parameters[*].value",
+          "defaultPath": "properties.artifacts[*].parameters[*].value"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].status",
+          "defaultPath": "properties.artifacts[*].status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/artifacts[*].vmExtensionStatusMessage",
+          "defaultPath": "properties.artifacts[*].vmExtensionStatusMessage"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeId",
+          "defaultPath": "properties.computeId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm",
+          "defaultPath": "properties.computeVm"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDiskIds",
+          "defaultPath": "properties.computeVm.dataDiskIds"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDiskIds[*]",
+          "defaultPath": "properties.computeVm.dataDiskIds[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDisks",
+          "defaultPath": "properties.computeVm.dataDisks"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDisks[*]",
+          "defaultPath": "properties.computeVm.dataDisks[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDisks[*].diskSizeGiB",
+          "defaultPath": "properties.computeVm.dataDisks[*].diskSizeGiB"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDisks[*].diskUri",
+          "defaultPath": "properties.computeVm.dataDisks[*].diskUri"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDisks[*].managedDiskId",
+          "defaultPath": "properties.computeVm.dataDisks[*].managedDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.dataDisks[*].name",
+          "defaultPath": "properties.computeVm.dataDisks[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.networkInterfaceId",
+          "defaultPath": "properties.computeVm.networkInterfaceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.osDiskId",
+          "defaultPath": "properties.computeVm.osDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.osType",
+          "defaultPath": "properties.computeVm.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.statuses",
+          "defaultPath": "properties.computeVm.statuses"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.statuses[*]",
+          "defaultPath": "properties.computeVm.statuses[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.statuses[*].code",
+          "defaultPath": "properties.computeVm.statuses[*].code"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.statuses[*].displayStatus",
+          "defaultPath": "properties.computeVm.statuses[*].displayStatus"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.statuses[*].message",
+          "defaultPath": "properties.computeVm.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/computeVm.vmSize",
+          "defaultPath": "properties.computeVm.vmSize"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/createdByUser",
+          "defaultPath": "properties.createdByUser"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/createdByUserId",
+          "defaultPath": "properties.createdByUserId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/customImageId",
+          "defaultPath": "properties.customImageId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters",
+          "defaultPath": "properties.dataDiskParameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*]",
+          "defaultPath": "properties.dataDiskParameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*].attachNewDataDiskOptions",
+          "defaultPath": "properties.dataDiskParameters[*].attachNewDataDiskOptions"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*].attachNewDataDiskOptions.diskName",
+          "defaultPath": "properties.dataDiskParameters[*].attachNewDataDiskOptions.diskName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*].attachNewDataDiskOptions.diskSizeGiB",
+          "defaultPath": "properties.dataDiskParameters[*].attachNewDataDiskOptions.diskSizeGiB"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*].attachNewDataDiskOptions.diskType",
+          "defaultPath": "properties.dataDiskParameters[*].attachNewDataDiskOptions.diskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*].existingLabDiskId",
+          "defaultPath": "properties.dataDiskParameters[*].existingLabDiskId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/dataDiskParameters[*].hostCaching",
+          "defaultPath": "properties.dataDiskParameters[*].hostCaching"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/disallowPublicIpAddress",
+          "defaultPath": "properties.disallowPublicIpAddress"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/environmentId",
+          "defaultPath": "properties.environmentId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/expirationDate",
+          "defaultPath": "properties.expirationDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/galleryImageReference",
+          "defaultPath": "properties.galleryImageReference"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/galleryImageReference.offer",
+          "defaultPath": "properties.galleryImageReference.offer"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/galleryImageReference.osType",
+          "defaultPath": "properties.galleryImageReference.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/galleryImageReference.publisher",
+          "defaultPath": "properties.galleryImageReference.publisher"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/galleryImageReference.sku",
+          "defaultPath": "properties.galleryImageReference.sku"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/galleryImageReference.version",
+          "defaultPath": "properties.galleryImageReference.version"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/isAuthenticationWithSshKey",
+          "defaultPath": "properties.isAuthenticationWithSshKey"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/labSubnetName",
+          "defaultPath": "properties.labSubnetName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/labVirtualNetworkId",
+          "defaultPath": "properties.labVirtualNetworkId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/lastKnownPowerState",
+          "defaultPath": "properties.lastKnownPowerState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface",
+          "defaultPath": "properties.networkInterface"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.dnsName",
+          "defaultPath": "properties.networkInterface.dnsName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.privateIpAddress",
+          "defaultPath": "properties.networkInterface.privateIpAddress"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.publicIpAddress",
+          "defaultPath": "properties.networkInterface.publicIpAddress"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.publicIpAddressId",
+          "defaultPath": "properties.networkInterface.publicIpAddressId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.rdpAuthority",
+          "defaultPath": "properties.networkInterface.rdpAuthority"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sharedPublicIpAddressConfiguration",
+          "defaultPath": "properties.networkInterface.sharedPublicIpAddressConfiguration"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules",
+          "defaultPath": "properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*]",
+          "defaultPath": "properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].backendPort",
+          "defaultPath": "properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].backendPort"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].frontendPort",
+          "defaultPath": "properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].frontendPort"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].transportProtocol",
+          "defaultPath": "properties.networkInterface.sharedPublicIpAddressConfiguration.inboundNatRules[*].transportProtocol"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.sshAuthority",
+          "defaultPath": "properties.networkInterface.sshAuthority"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.subnetId",
+          "defaultPath": "properties.networkInterface.subnetId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/networkInterface.virtualNetworkId",
+          "defaultPath": "properties.networkInterface.virtualNetworkId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/notes",
+          "defaultPath": "properties.notes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/ownerObjectId",
+          "defaultPath": "properties.ownerObjectId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/ownerUserPrincipalName",
+          "defaultPath": "properties.ownerUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/password",
+          "defaultPath": "properties.password"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/planId",
+          "defaultPath": "properties.planId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters",
+          "defaultPath": "properties.scheduleParameters"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*]",
+          "defaultPath": "properties.scheduleParameters[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].dailyRecurrence",
+          "defaultPath": "properties.scheduleParameters[*].properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].dailyRecurrence.time",
+          "defaultPath": "properties.scheduleParameters[*].properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].hourlyRecurrence",
+          "defaultPath": "properties.scheduleParameters[*].properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].hourlyRecurrence.minute",
+          "defaultPath": "properties.scheduleParameters[*].properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].location",
+          "defaultPath": "properties.scheduleParameters[*].location"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].name",
+          "defaultPath": "properties.scheduleParameters[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].notificationSettings",
+          "defaultPath": "properties.scheduleParameters[*].properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].notificationSettings.emailRecipient",
+          "defaultPath": "properties.scheduleParameters[*].properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].notificationSettings.notificationLocale",
+          "defaultPath": "properties.scheduleParameters[*].properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].notificationSettings.status",
+          "defaultPath": "properties.scheduleParameters[*].properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].notificationSettings.timeInMinutes",
+          "defaultPath": "properties.scheduleParameters[*].properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].notificationSettings.webhookUrl",
+          "defaultPath": "properties.scheduleParameters[*].properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].status",
+          "defaultPath": "properties.scheduleParameters[*].properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].tags",
+          "defaultPath": "properties.scheduleParameters[*].tags"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].tags.additionalProperties",
+          "defaultPath": "properties.scheduleParameters[*].tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].targetResourceId",
+          "defaultPath": "properties.scheduleParameters[*].properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].taskType",
+          "defaultPath": "properties.scheduleParameters[*].properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].timeZoneId",
+          "defaultPath": "properties.scheduleParameters[*].properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].weeklyRecurrence",
+          "defaultPath": "properties.scheduleParameters[*].properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].weeklyRecurrence.time",
+          "defaultPath": "properties.scheduleParameters[*].properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].weeklyRecurrence.weekdays",
+          "defaultPath": "properties.scheduleParameters[*].properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/scheduleParameters[*].weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.scheduleParameters[*].properties.weeklyRecurrence.weekdays[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/size",
+          "defaultPath": "properties.size"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/sshKey",
+          "defaultPath": "properties.sshKey"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/storageType",
+          "defaultPath": "properties.storageType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/userName",
+          "defaultPath": "properties.userName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/virtualMachineCreationSource",
+          "defaultPath": "properties.virtualMachineCreationSource"
+        }
+      ],
+      "resourceType": "labs/virtualMachines"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/dailyRecurrence",
+          "defaultPath": "properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/dailyRecurrence.time",
+          "defaultPath": "properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/hourlyRecurrence",
+          "defaultPath": "properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/hourlyRecurrence.minute",
+          "defaultPath": "properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/notificationSettings",
+          "defaultPath": "properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/notificationSettings.emailRecipient",
+          "defaultPath": "properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/notificationSettings.notificationLocale",
+          "defaultPath": "properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/notificationSettings.status",
+          "defaultPath": "properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/notificationSettings.timeInMinutes",
+          "defaultPath": "properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/notificationSettings.webhookUrl",
+          "defaultPath": "properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/taskType",
+          "defaultPath": "properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/timeZoneId",
+          "defaultPath": "properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/weeklyRecurrence",
+          "defaultPath": "properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/weeklyRecurrence.time",
+          "defaultPath": "properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/weeklyRecurrence.weekdays",
+          "defaultPath": "properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualMachines/schedules/weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.weeklyRecurrence.weekdays[*]"
+        }
+      ],
+      "resourceType": "labs/virtualMachines/schedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/allowedSubnets",
+          "defaultPath": "properties.allowedSubnets"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/allowedSubnets[*]",
+          "defaultPath": "properties.allowedSubnets[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/allowedSubnets[*].allowPublicIp",
+          "defaultPath": "properties.allowedSubnets[*].allowPublicIp"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/allowedSubnets[*].labSubnetName",
+          "defaultPath": "properties.allowedSubnets[*].labSubnetName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/allowedSubnets[*].resourceId",
+          "defaultPath": "properties.allowedSubnets[*].resourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/externalProviderResourceId",
+          "defaultPath": "properties.externalProviderResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/externalSubnets",
+          "defaultPath": "properties.externalSubnets"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/externalSubnets[*]",
+          "defaultPath": "properties.externalSubnets[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/externalSubnets[*].id",
+          "defaultPath": "properties.externalSubnets[*].id"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/externalSubnets[*].name",
+          "defaultPath": "properties.externalSubnets[*].name"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides",
+          "defaultPath": "properties.subnetOverrides"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*]",
+          "defaultPath": "properties.subnetOverrides[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].labSubnetName",
+          "defaultPath": "properties.subnetOverrides[*].labSubnetName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].resourceId",
+          "defaultPath": "properties.subnetOverrides[*].resourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].sharedPublicIpAddressConfiguration",
+          "defaultPath": "properties.subnetOverrides[*].sharedPublicIpAddressConfiguration"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts",
+          "defaultPath": "properties.subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts[*]",
+          "defaultPath": "properties.subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts[*]"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts[*].backendPort",
+          "defaultPath": "properties.subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts[*].backendPort"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts[*].transportProtocol",
+          "defaultPath": "properties.subnetOverrides[*].sharedPublicIpAddressConfiguration.allowedPorts[*].transportProtocol"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].useInVmCreationPermission",
+          "defaultPath": "properties.subnetOverrides[*].useInVmCreationPermission"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].usePublicIpAddressPermission",
+          "defaultPath": "properties.subnetOverrides[*].usePublicIpAddressPermission"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/subnetOverrides[*].virtualNetworkPoolName",
+          "defaultPath": "properties.subnetOverrides[*].virtualNetworkPoolName"
+        },
+        {
+          "name": "Microsoft.DevTestLab/labs/virtualNetworks/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labs/virtualNetworks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevTestLab/schedules/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/dailyRecurrence",
+          "defaultPath": "properties.dailyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/dailyRecurrence.time",
+          "defaultPath": "properties.dailyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/hourlyRecurrence",
+          "defaultPath": "properties.hourlyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/hourlyRecurrence.minute",
+          "defaultPath": "properties.hourlyRecurrence.minute"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/notificationSettings",
+          "defaultPath": "properties.notificationSettings"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/notificationSettings.emailRecipient",
+          "defaultPath": "properties.notificationSettings.emailRecipient"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/notificationSettings.notificationLocale",
+          "defaultPath": "properties.notificationSettings.notificationLocale"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/notificationSettings.status",
+          "defaultPath": "properties.notificationSettings.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/notificationSettings.timeInMinutes",
+          "defaultPath": "properties.notificationSettings.timeInMinutes"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/notificationSettings.webhookUrl",
+          "defaultPath": "properties.notificationSettings.webhookUrl"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/taskType",
+          "defaultPath": "properties.taskType"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/timeZoneId",
+          "defaultPath": "properties.timeZoneId"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/weeklyRecurrence",
+          "defaultPath": "properties.weeklyRecurrence"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/weeklyRecurrence.time",
+          "defaultPath": "properties.weeklyRecurrence.time"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/weeklyRecurrence.weekdays",
+          "defaultPath": "properties.weeklyRecurrence.weekdays"
+        },
+        {
+          "name": "Microsoft.DevTestLab/schedules/weeklyRecurrence.weekdays[*]",
+          "defaultPath": "properties.weeklyRecurrence.weekdays[*]"
+        }
+      ],
+      "resourceType": "schedules"
+    }
+  ]
+}

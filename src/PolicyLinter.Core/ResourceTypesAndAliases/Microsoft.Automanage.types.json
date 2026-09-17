@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.Automanage",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "bestPractices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "bestPractices/versions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "configurationProfileAssignments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configurationProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configurationProfiles/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "patchJobConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "patchJobConfigurations/patchJobs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "patchSchedules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "patchSchedules/associations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "patchTiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "servicePrincipals"
+    }
+  ]
+}

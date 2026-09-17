@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.AzurePlaywrightService",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/quotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/quotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

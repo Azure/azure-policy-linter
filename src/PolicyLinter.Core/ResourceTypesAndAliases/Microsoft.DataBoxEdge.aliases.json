@@ -1,0 +1,895 @@
+{
+  "namespace": "Microsoft.DataBoxEdge",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/configuredRoleTypes",
+          "defaultPath": "properties.configuredRoleTypes"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/configuredRoleTypes[*]",
+          "defaultPath": "properties.configuredRoleTypes[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/culture",
+          "defaultPath": "properties.culture"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/dataBoxEdgeDeviceStatus",
+          "defaultPath": "properties.dataBoxEdgeDeviceStatus"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/deviceHcsVersion",
+          "defaultPath": "properties.deviceHcsVersion"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/deviceLocalCapacity",
+          "defaultPath": "properties.deviceLocalCapacity"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/deviceModel",
+          "defaultPath": "properties.deviceModel"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/deviceSoftwareVersion",
+          "defaultPath": "properties.deviceSoftwareVersion"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/deviceType",
+          "defaultPath": "properties.deviceType"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/modelDescription",
+          "defaultPath": "properties.modelDescription"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/nodeCount",
+          "defaultPath": "properties.nodeCount"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/DataBoxEdgeDevices/timeZone",
+          "defaultPath": "properties.timeZone"
+        }
+      ],
+      "resourceType": "DataBoxEdgeDevices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/bandwidthSchedules/days",
+          "defaultPath": "properties.days"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/bandwidthSchedules/days[*]",
+          "defaultPath": "properties.days[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/bandwidthSchedules/rateInMbps",
+          "defaultPath": "properties.rateInMbps"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/bandwidthSchedules/start",
+          "defaultPath": "properties.start"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/bandwidthSchedules/stop",
+          "defaultPath": "properties.stop"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/bandwidthSchedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/contactInformation",
+          "defaultPath": "properties.contactInformation"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/contactInformation.companyName",
+          "defaultPath": "properties.contactInformation.companyName"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/contactInformation.contactPerson",
+          "defaultPath": "properties.contactInformation.contactPerson"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/contactInformation.emailList",
+          "defaultPath": "properties.contactInformation.emailList"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/contactInformation.emailList[*]",
+          "defaultPath": "properties.contactInformation.emailList[*]"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/contactInformation.phone",
+          "defaultPath": "properties.contactInformation.phone"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/currentStatus",
+          "defaultPath": "properties.currentStatus"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/currentStatus.additionalOrderDetails",
+          "defaultPath": "properties.currentStatus.additionalOrderDetails"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/currentStatus.comments",
+          "defaultPath": "properties.currentStatus.comments"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/currentStatus.status",
+          "defaultPath": "properties.currentStatus.status"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/currentStatus.updateDateTime",
+          "defaultPath": "properties.currentStatus.updateDateTime"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.contactInformation",
+          "defaultPath": "properties.contactInformation"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.contactInformation.companyName",
+          "defaultPath": "properties.contactInformation.companyName"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.contactInformation.contactPerson",
+          "defaultPath": "properties.contactInformation.contactPerson"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.contactInformation.emailList",
+          "defaultPath": "properties.contactInformation.emailList"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.contactInformation.emailList[*]",
+          "defaultPath": "properties.contactInformation.emailList[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.contactInformation.phone",
+          "defaultPath": "properties.contactInformation.phone"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.currentStatus",
+          "defaultPath": "properties.currentStatus"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.currentStatus.additionalOrderDetails",
+          "defaultPath": "properties.currentStatus.additionalOrderDetails"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.currentStatus.comments",
+          "defaultPath": "properties.currentStatus.comments"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.currentStatus.status",
+          "defaultPath": "properties.currentStatus.status"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.currentStatus.updateDateTime",
+          "defaultPath": "properties.currentStatus.updateDateTime"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.deliveryTrackingInfo",
+          "defaultPath": "properties.deliveryTrackingInfo"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.deliveryTrackingInfo[*]",
+          "defaultPath": "properties.deliveryTrackingInfo[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.deliveryTrackingInfo[*].carrierName",
+          "defaultPath": "properties.deliveryTrackingInfo[*].carrierName"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.deliveryTrackingInfo[*].serialNumber",
+          "defaultPath": "properties.deliveryTrackingInfo[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.deliveryTrackingInfo[*].trackingId",
+          "defaultPath": "properties.deliveryTrackingInfo[*].trackingId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.deliveryTrackingInfo[*].trackingUrl",
+          "defaultPath": "properties.deliveryTrackingInfo[*].trackingUrl"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.orderHistory",
+          "defaultPath": "properties.orderHistory"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.orderHistory[*]",
+          "defaultPath": "properties.orderHistory[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.orderHistory[*].additionalOrderDetails",
+          "defaultPath": "properties.orderHistory[*].additionalOrderDetails"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.orderHistory[*].comments",
+          "defaultPath": "properties.orderHistory[*].comments"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.orderHistory[*].status",
+          "defaultPath": "properties.orderHistory[*].status"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.orderHistory[*].updateDateTime",
+          "defaultPath": "properties.orderHistory[*].updateDateTime"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.returnTrackingInfo",
+          "defaultPath": "properties.returnTrackingInfo"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.returnTrackingInfo[*]",
+          "defaultPath": "properties.returnTrackingInfo[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.returnTrackingInfo[*].carrierName",
+          "defaultPath": "properties.returnTrackingInfo[*].carrierName"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.returnTrackingInfo[*].serialNumber",
+          "defaultPath": "properties.returnTrackingInfo[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.returnTrackingInfo[*].trackingId",
+          "defaultPath": "properties.returnTrackingInfo[*].trackingId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.returnTrackingInfo[*].trackingUrl",
+          "defaultPath": "properties.returnTrackingInfo[*].trackingUrl"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress",
+          "defaultPath": "properties.shippingAddress"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.addressLine1",
+          "defaultPath": "properties.shippingAddress.addressLine1"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.addressLine2",
+          "defaultPath": "properties.shippingAddress.addressLine2"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.addressLine3",
+          "defaultPath": "properties.shippingAddress.addressLine3"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.city",
+          "defaultPath": "properties.shippingAddress.city"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.country",
+          "defaultPath": "properties.shippingAddress.country"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.postalCode",
+          "defaultPath": "properties.shippingAddress.postalCode"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/orders/default.shippingAddress.state",
+          "defaultPath": "properties.shippingAddress.state"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/deliveryTrackingInfo",
+          "defaultPath": "properties.deliveryTrackingInfo"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/deliveryTrackingInfo[*]",
+          "defaultPath": "properties.deliveryTrackingInfo[*]"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/deliveryTrackingInfo[*].carrierName",
+          "defaultPath": "properties.deliveryTrackingInfo[*].carrierName"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/deliveryTrackingInfo[*].serialNumber",
+          "defaultPath": "properties.deliveryTrackingInfo[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/deliveryTrackingInfo[*].trackingId",
+          "defaultPath": "properties.deliveryTrackingInfo[*].trackingId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/deliveryTrackingInfo[*].trackingUrl",
+          "defaultPath": "properties.deliveryTrackingInfo[*].trackingUrl"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/orderHistory",
+          "defaultPath": "properties.orderHistory"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/orderHistory[*]",
+          "defaultPath": "properties.orderHistory[*]"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/orderHistory[*].additionalOrderDetails",
+          "defaultPath": "properties.orderHistory[*].additionalOrderDetails"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/orderHistory[*].comments",
+          "defaultPath": "properties.orderHistory[*].comments"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/orderHistory[*].status",
+          "defaultPath": "properties.orderHistory[*].status"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/orderHistory[*].updateDateTime",
+          "defaultPath": "properties.orderHistory[*].updateDateTime"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/returnTrackingInfo",
+          "defaultPath": "properties.returnTrackingInfo"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/returnTrackingInfo[*]",
+          "defaultPath": "properties.returnTrackingInfo[*]"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/returnTrackingInfo[*].carrierName",
+          "defaultPath": "properties.returnTrackingInfo[*].carrierName"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/returnTrackingInfo[*].serialNumber",
+          "defaultPath": "properties.returnTrackingInfo[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/returnTrackingInfo[*].trackingId",
+          "defaultPath": "properties.returnTrackingInfo[*].trackingId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/returnTrackingInfo[*].trackingUrl",
+          "defaultPath": "properties.returnTrackingInfo[*].trackingUrl"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/serialNumber",
+          "defaultPath": "properties.serialNumber"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress",
+          "defaultPath": "properties.shippingAddress"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.addressLine1",
+          "defaultPath": "properties.shippingAddress.addressLine1"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.addressLine2",
+          "defaultPath": "properties.shippingAddress.addressLine2"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.addressLine3",
+          "defaultPath": "properties.shippingAddress.addressLine3"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.city",
+          "defaultPath": "properties.shippingAddress.city"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.country",
+          "defaultPath": "properties.shippingAddress.country"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.postalCode",
+          "defaultPath": "properties.shippingAddress.postalCode"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/shippingAddress.state",
+          "defaultPath": "properties.shippingAddress.state"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/orders"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.hostPlatform",
+          "defaultPath": "properties.hostPlatform"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.hostPlatformType",
+          "defaultPath": "properties.hostPlatformType"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails",
+          "defaultPath": "properties.ioTDeviceDetails"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.authentication",
+          "defaultPath": "properties.ioTDeviceDetails.authentication"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.authentication.symmetricKey",
+          "defaultPath": "properties.ioTDeviceDetails.authentication.symmetricKey"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.authentication.symmetricKey.connectionString",
+          "defaultPath": "properties.ioTDeviceDetails.authentication.symmetricKey.connectionString"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.authentication.symmetricKey.connectionString.encryptionAlgorithm",
+          "defaultPath": "properties.ioTDeviceDetails.authentication.symmetricKey.connectionString.encryptionAlgorithm"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.authentication.symmetricKey.connectionString.encryptionCertThumbprint",
+          "defaultPath": "properties.ioTDeviceDetails.authentication.symmetricKey.connectionString.encryptionCertThumbprint"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.authentication.symmetricKey.connectionString.value",
+          "defaultPath": "properties.ioTDeviceDetails.authentication.symmetricKey.connectionString.value"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.deviceId",
+          "defaultPath": "properties.ioTDeviceDetails.deviceId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.ioTHostHub",
+          "defaultPath": "properties.ioTDeviceDetails.ioTHostHub"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTDeviceDetails.ioTHostHubId",
+          "defaultPath": "properties.ioTDeviceDetails.ioTHostHubId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo",
+          "defaultPath": "properties.ioTEdgeAgentInfo"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageName",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageName"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository.imageRepositoryUrl",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository.imageRepositoryUrl"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository.password",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository.password"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository.password.encryptionAlgorithm",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository.password.encryptionAlgorithm"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository.password.encryptionCertThumbprint",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository.password.encryptionCertThumbprint"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository.password.value",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository.password.value"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.imageRepository.userName",
+          "defaultPath": "properties.ioTEdgeAgentInfo.imageRepository.userName"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeAgentInfo.tag",
+          "defaultPath": "properties.ioTEdgeAgentInfo.tag"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails",
+          "defaultPath": "properties.ioTEdgeDeviceDetails"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.authentication",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.authentication"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.authentication.symmetricKey",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.authentication.symmetricKey"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString.encryptionAlgorithm",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString.encryptionAlgorithm"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString.encryptionCertThumbprint",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString.encryptionCertThumbprint"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString.value",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.authentication.symmetricKey.connectionString.value"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.deviceId",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.deviceId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.ioTHostHub",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.ioTHostHub"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.ioTEdgeDeviceDetails.ioTHostHubId",
+          "defaultPath": "properties.ioTEdgeDeviceDetails.ioTHostHubId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.roleStatus",
+          "defaultPath": "properties.roleStatus"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings",
+          "defaultPath": "properties.shareMappings"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings[*]",
+          "defaultPath": "properties.shareMappings[*]"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings[*].mountPoint",
+          "defaultPath": "properties.shareMappings[*].mountPoint"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings[*].mountType",
+          "defaultPath": "properties.shareMappings[*].mountType"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings[*].roleId",
+          "defaultPath": "properties.shareMappings[*].roleId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings[*].roleType",
+          "defaultPath": "properties.shareMappings[*].roleType"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/IOT.shareMappings[*].shareId",
+          "defaultPath": "properties.shareMappings[*].shareId"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/roles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/accessProtocol",
+          "defaultPath": "properties.accessProtocol"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/azureContainerInfo",
+          "defaultPath": "properties.azureContainerInfo"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/azureContainerInfo.containerName",
+          "defaultPath": "properties.azureContainerInfo.containerName"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/azureContainerInfo.dataFormat",
+          "defaultPath": "properties.azureContainerInfo.dataFormat"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/azureContainerInfo.storageAccountCredentialId",
+          "defaultPath": "properties.azureContainerInfo.storageAccountCredentialId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/clientAccessRights",
+          "defaultPath": "properties.clientAccessRights"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/clientAccessRights[*]",
+          "defaultPath": "properties.clientAccessRights[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/clientAccessRights[*].accessPermission",
+          "defaultPath": "properties.clientAccessRights[*].accessPermission"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/clientAccessRights[*].client",
+          "defaultPath": "properties.clientAccessRights[*].client"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/dataPolicy",
+          "defaultPath": "properties.dataPolicy"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/monitoringStatus",
+          "defaultPath": "properties.monitoringStatus"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/refreshDetails",
+          "defaultPath": "properties.refreshDetails"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/refreshDetails.errorManifestFile",
+          "defaultPath": "properties.refreshDetails.errorManifestFile"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/refreshDetails.inProgressRefreshJobId",
+          "defaultPath": "properties.refreshDetails.inProgressRefreshJobId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/refreshDetails.lastCompletedRefreshJobTimeInUTC",
+          "defaultPath": "properties.refreshDetails.lastCompletedRefreshJobTimeInUTC"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/refreshDetails.lastJob",
+          "defaultPath": "properties.refreshDetails.lastJob"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareMappings",
+          "defaultPath": "properties.shareMappings"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareMappings[*]",
+          "defaultPath": "properties.shareMappings[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareMappings[*].mountPoint",
+          "defaultPath": "properties.shareMappings[*].mountPoint"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/shareMappings[*].mountType",
+          "defaultPath": "properties.shareMappings[*].mountType"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareMappings[*].roleId",
+          "defaultPath": "properties.shareMappings[*].roleId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareMappings[*].roleType",
+          "defaultPath": "properties.shareMappings[*].roleType"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareMappings[*].shareId",
+          "defaultPath": "properties.shareMappings[*].shareId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/shareStatus",
+          "defaultPath": "properties.shareStatus"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/userAccessRights",
+          "defaultPath": "properties.userAccessRights"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/userAccessRights[*]",
+          "defaultPath": "properties.userAccessRights[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/userAccessRights[*].accessType",
+          "defaultPath": "properties.userAccessRights[*].accessType"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/shares/userAccessRights[*].userId",
+          "defaultPath": "properties.userAccessRights[*].userId"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/shares"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/accountKey",
+          "defaultPath": "properties.accountKey"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/accountKey.encryptionAlgorithm",
+          "defaultPath": "properties.accountKey.encryptionAlgorithm"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/accountKey.encryptionCertThumbprint",
+          "defaultPath": "properties.accountKey.encryptionCertThumbprint"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/accountKey.value",
+          "defaultPath": "properties.accountKey.value"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/accountType",
+          "defaultPath": "properties.accountType"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/alias",
+          "defaultPath": "properties.alias"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/blobDomainName",
+          "defaultPath": "properties.blobDomainName"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/connectionString",
+          "defaultPath": "properties.connectionString"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/sslStatus",
+          "defaultPath": "properties.sslStatus"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/storageAccountId",
+          "defaultPath": "properties.storageAccountId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccountCredentials/userName",
+          "defaultPath": "properties.userName"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/storageAccountCredentials"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/blobEndpoint",
+          "defaultPath": "properties.blobEndpoint"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containerCount",
+          "defaultPath": "properties.containerCount"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/dataPolicy",
+          "defaultPath": "properties.dataPolicy"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/storageAccountCredentialId",
+          "defaultPath": "properties.storageAccountCredentialId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/storageAccountStatus",
+          "defaultPath": "properties.storageAccountStatus"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/storageAccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/containerStatus",
+          "defaultPath": "properties.containerStatus"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/createdDateTime",
+          "defaultPath": "properties.createdDateTime"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/refreshDetails",
+          "defaultPath": "properties.refreshDetails"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/refreshDetails.errorManifestFile",
+          "defaultPath": "properties.refreshDetails.errorManifestFile"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/refreshDetails.inProgressRefreshJobId",
+          "defaultPath": "properties.refreshDetails.inProgressRefreshJobId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/refreshDetails.lastCompletedRefreshJobTimeInUTC",
+          "defaultPath": "properties.refreshDetails.lastCompletedRefreshJobTimeInUTC"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/storageAccounts/containers/refreshDetails.lastJob",
+          "defaultPath": "properties.refreshDetails.lastJob"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/storageAccounts/containers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/FileEvent.customContextTag",
+          "defaultPath": "properties.customContextTag"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/FileEvent.sinkInfo",
+          "defaultPath": "properties.sinkInfo"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/FileEvent.sinkInfo.roleId",
+          "defaultPath": "properties.sinkInfo.roleId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/FileEvent.sourceInfo",
+          "defaultPath": "properties.sourceInfo"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/FileEvent.sourceInfo.shareId",
+          "defaultPath": "properties.sourceInfo.shareId"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/PeriodicTimerEvent.sourceInfo.schedule",
+          "defaultPath": "properties.sourceInfo.schedule"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/PeriodicTimerEvent.sourceInfo.startTime",
+          "defaultPath": "properties.sourceInfo.startTime"
+        },
+        {
+          "name": "Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/PeriodicTimerEvent.sourceInfo.topic",
+          "defaultPath": "properties.sourceInfo.topic"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/triggers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/encryptedPassword",
+          "defaultPath": "properties.encryptedPassword"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/encryptedPassword.encryptionAlgorithm",
+          "defaultPath": "properties.encryptedPassword.encryptionAlgorithm"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/encryptedPassword.encryptionCertThumbprint",
+          "defaultPath": "properties.encryptedPassword.encryptionCertThumbprint"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/encryptedPassword.value",
+          "defaultPath": "properties.encryptedPassword.value"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/shareAccessRights",
+          "defaultPath": "properties.shareAccessRights"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/shareAccessRights[*]",
+          "defaultPath": "properties.shareAccessRights[*]"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/shareAccessRights[*].accessType",
+          "defaultPath": "properties.shareAccessRights[*].accessType"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/shareAccessRights[*].shareId",
+          "defaultPath": "properties.shareAccessRights[*].shareId"
+        },
+        {
+          "name": "Microsoft.DataboxEdge/dataBoxEdgeDevices/users/userType",
+          "defaultPath": "properties.userType"
+        }
+      ],
+      "resourceType": "dataBoxEdgeDevices/users"
+    }
+  ]
+}

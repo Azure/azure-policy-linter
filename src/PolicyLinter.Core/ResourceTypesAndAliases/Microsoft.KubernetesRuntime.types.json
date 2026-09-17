@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.KubernetesRuntime",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "bfdProfiles"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "bgpPeers"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "loadBalancers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "services"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "storageClasses"
+    }
+  ]
+}

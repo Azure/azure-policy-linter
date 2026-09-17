@@ -1,0 +1,41 @@
+{
+  "namespace": "Microsoft.MySqlDiscovery",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "MySQLSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MySQLSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MySQLSites/ErrorSummaries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MySQLSites/MySQLServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MySQLSites/Refresh"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MySQLSites/Summaries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

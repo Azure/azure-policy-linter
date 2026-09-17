@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.SerialConsole",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "consoleServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/consoleServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "serialPorts"
+    }
+  ]
+}

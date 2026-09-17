@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.GraphServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RegisteredSubscriptions"
+    }
+  ]
+}

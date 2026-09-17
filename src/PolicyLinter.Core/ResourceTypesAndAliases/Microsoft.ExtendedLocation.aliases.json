@@ -1,0 +1,99 @@
+{
+  "namespace": "Microsoft.ExtendedLocation",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/authentication",
+          "defaultPath": "properties.authentication"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/authentication.type",
+          "defaultPath": "properties.authentication.type"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/authentication.value",
+          "defaultPath": "properties.authentication.value"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/clusterExtensionIds",
+          "defaultPath": "properties.clusterExtensionIds"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/clusterExtensionIds[*]",
+          "defaultPath": "properties.clusterExtensionIds[*]"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/hostResourceId",
+          "defaultPath": "properties.hostResourceId"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/hostType",
+          "defaultPath": "properties.hostType"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/namespace",
+          "defaultPath": "properties.namespace"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "customLocations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/priority",
+          "defaultPath": "properties.priority"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector",
+          "defaultPath": "properties.selector"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchExpressions",
+          "defaultPath": "properties.selector.matchExpressions"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchExpressions[*]",
+          "defaultPath": "properties.selector.matchExpressions[*]"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchExpressions[*].key",
+          "defaultPath": "properties.selector.matchExpressions[*].key"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchExpressions[*].operator",
+          "defaultPath": "properties.selector.matchExpressions[*].operator"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchExpressions[*].values",
+          "defaultPath": "properties.selector.matchExpressions[*].values"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchExpressions[*].values[*]",
+          "defaultPath": "properties.selector.matchExpressions[*].values[*]"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/selector.matchLabels",
+          "defaultPath": "properties.selector.matchLabels"
+        },
+        {
+          "name": "Microsoft.ExtendedLocation/customLocations/resourceSyncRules/targetResourceGroup",
+          "defaultPath": "properties.targetResourceGroup"
+        }
+      ],
+      "resourceType": "customLocations/resourceSyncRules"
+    }
+  ]
+}

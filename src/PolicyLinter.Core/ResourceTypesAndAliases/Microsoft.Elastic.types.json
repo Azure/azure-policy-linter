@@ -1,0 +1,49 @@
+{
+  "namespace": "Microsoft.Elastic",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "elasticVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getElasticOrganizationToAzureSubscriptionMapping"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getOrganizationApiKey"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "monitors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/monitoredSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/openAIIntegrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/tagRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

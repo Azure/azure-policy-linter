@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.VerifiedId",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Authorities"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Hardware",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "orderPreview"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "orders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "returnPreview"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "returns"
+    }
+  ]
+}

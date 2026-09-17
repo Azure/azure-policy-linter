@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.RemoteApp",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "collections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "collections/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "collections/securityprincipals"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "templateImages"
+    }
+  ]
+}

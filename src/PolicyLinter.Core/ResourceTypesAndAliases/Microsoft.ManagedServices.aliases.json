@@ -1,0 +1,271 @@
+{
+  "namespace": "Microsoft.ManagedServices",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition",
+          "defaultPath": "properties.registrationDefinition"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations[*]",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations[*].delegatedRoleDefinitionIds",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations[*].delegatedRoleDefinitionIds"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations[*].delegatedRoleDefinitionIds[*]",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations[*].delegatedRoleDefinitionIds[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations[*].principalId",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations[*].principalIdDisplayName",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations[*].principalIdDisplayName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.authorizations[*].roleDefinitionId",
+          "defaultPath": "properties.registrationDefinition.properties.authorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.description",
+          "defaultPath": "properties.registrationDefinition.properties.description"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.eligibleAuthorizations",
+          "defaultPath": "properties.registrationDefinition.properties.eligibleAuthorizations"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.eligibleAuthorizations[*]",
+          "defaultPath": "properties.registrationDefinition.properties.eligibleAuthorizations[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.eligibleAuthorizations[*].justInTimeAccessPolicy",
+          "defaultPath": "properties.registrationDefinition.properties.eligibleAuthorizations[*].justInTimeAccessPolicy"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.eligibleAuthorizations[*].principalId",
+          "defaultPath": "properties.registrationDefinition.properties.eligibleAuthorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.eligibleAuthorizations[*].principalIdDisplayName",
+          "defaultPath": "properties.registrationDefinition.properties.eligibleAuthorizations[*].principalIdDisplayName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.eligibleAuthorizations[*].roleDefinitionId",
+          "defaultPath": "properties.registrationDefinition.properties.eligibleAuthorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.id",
+          "defaultPath": "properties.registrationDefinition.id"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.managedByTenantId",
+          "defaultPath": "properties.registrationDefinition.properties.managedByTenantId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.managedByTenantName",
+          "defaultPath": "properties.registrationDefinition.properties.managedByTenantName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.manageeTenantId",
+          "defaultPath": "properties.registrationDefinition.properties.manageeTenantId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.manageeTenantName",
+          "defaultPath": "properties.registrationDefinition.properties.manageeTenantName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.name",
+          "defaultPath": "properties.registrationDefinition.name"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.plan",
+          "defaultPath": "properties.registrationDefinition.plan"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.plan.name",
+          "defaultPath": "properties.registrationDefinition.plan.name"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.plan.product",
+          "defaultPath": "properties.registrationDefinition.plan.product"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.plan.publisher",
+          "defaultPath": "properties.registrationDefinition.plan.publisher"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.plan.version",
+          "defaultPath": "properties.registrationDefinition.plan.version"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.provisioningState",
+          "defaultPath": "properties.registrationDefinition.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.registrationDefinitionName",
+          "defaultPath": "properties.registrationDefinition.properties.registrationDefinitionName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData",
+          "defaultPath": "properties.registrationDefinition.systemData"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData.createdAt",
+          "defaultPath": "properties.registrationDefinition.systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData.createdBy",
+          "defaultPath": "properties.registrationDefinition.systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData.createdByType",
+          "defaultPath": "properties.registrationDefinition.systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData.lastModifiedAt",
+          "defaultPath": "properties.registrationDefinition.systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData.lastModifiedBy",
+          "defaultPath": "properties.registrationDefinition.systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.systemData.lastModifiedByType",
+          "defaultPath": "properties.registrationDefinition.systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinition.type",
+          "defaultPath": "properties.registrationDefinition.type"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationAssignments/registrationDefinitionId",
+          "defaultPath": "properties.registrationDefinitionId"
+        }
+      ],
+      "resourceType": "registrationAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations",
+          "defaultPath": "properties.authorizations"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations[*]",
+          "defaultPath": "properties.authorizations[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations[*].delegatedRoleDefinitionIds",
+          "defaultPath": "properties.authorizations[*].delegatedRoleDefinitionIds"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations[*].delegatedRoleDefinitionIds[*]",
+          "defaultPath": "properties.authorizations[*].delegatedRoleDefinitionIds[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations[*].principalId",
+          "defaultPath": "properties.authorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations[*].principalIdDisplayName",
+          "defaultPath": "properties.authorizations[*].principalIdDisplayName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/authorizations[*].roleDefinitionId",
+          "defaultPath": "properties.authorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations",
+          "defaultPath": "properties.eligibleAuthorizations"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*]",
+          "defaultPath": "properties.eligibleAuthorizations[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers[*]",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers[*]"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers[*].principalId",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers[*].principalId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers[*].principalIdDisplayName",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy.managedByTenantApprovers[*].principalIdDisplayName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy.maximumActivationDuration",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy.maximumActivationDuration"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].justInTimeAccessPolicy.multiFactorAuthProvider",
+          "defaultPath": "properties.eligibleAuthorizations[*].justInTimeAccessPolicy.multiFactorAuthProvider"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].principalId",
+          "defaultPath": "properties.eligibleAuthorizations[*].principalId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].principalIdDisplayName",
+          "defaultPath": "properties.eligibleAuthorizations[*].principalIdDisplayName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/eligibleAuthorizations[*].roleDefinitionId",
+          "defaultPath": "properties.eligibleAuthorizations[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/managedByTenantId",
+          "defaultPath": "properties.managedByTenantId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/managedByTenantName",
+          "defaultPath": "properties.managedByTenantName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/manageeTenantId",
+          "defaultPath": "properties.manageeTenantId"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/manageeTenantName",
+          "defaultPath": "properties.manageeTenantName"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ManagedServices/registrationDefinitions/registrationDefinitionName",
+          "defaultPath": "properties.registrationDefinitionName"
+        }
+      ],
+      "resourceType": "registrationDefinitions"
+    }
+  ]
+}

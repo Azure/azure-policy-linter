@@ -1,0 +1,1646 @@
+{
+  "namespace": "Microsoft.Migrate",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/assessmentSolutionId",
+          "defaultPath": "properties.assessmentSolutionId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/customerStorageAccountArmId",
+          "defaultPath": "properties.customerStorageAccountArmId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/customerWorkspaceId",
+          "defaultPath": "properties.customerWorkspaceId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/customerWorkspaceLocation",
+          "defaultPath": "properties.customerWorkspaceLocation"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/lastAssessmentTimestamp",
+          "defaultPath": "properties.lastAssessmentTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/numberOfAssessments",
+          "defaultPath": "properties.numberOfAssessments"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/numberOfGroups",
+          "defaultPath": "properties.numberOfGroups"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/numberOfMachines",
+          "defaultPath": "properties.numberOfMachines"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].eTag",
+          "defaultPath": "properties.privateEndpointConnections[*].eTag"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/projectStatus",
+          "defaultPath": "properties.projectStatus"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/serviceEndpoint",
+          "defaultPath": "properties.serviceEndpoint"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "assessmentProjects"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/areAssessmentsRunning",
+          "defaultPath": "properties.areAssessmentsRunning"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments",
+          "defaultPath": "properties.assessments"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments[*]",
+          "defaultPath": "properties.assessments[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/groupStatus",
+          "defaultPath": "properties.groupStatus"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/groups/groupType",
+          "defaultPath": "properties.groupType"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/machineCount",
+          "defaultPath": "properties.machineCount"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "assessmentprojects/groups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureDiskType",
+          "defaultPath": "properties.azureDiskType"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureHybridUseBenefit",
+          "defaultPath": "properties.azureHybridUseBenefit"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureLocation",
+          "defaultPath": "properties.azureLocation"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureOfferCode",
+          "defaultPath": "properties.azureOfferCode"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azurePricingTier",
+          "defaultPath": "properties.azurePricingTier"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureStorageRedundancy",
+          "defaultPath": "properties.azureStorageRedundancy"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureVmFamilies",
+          "defaultPath": "properties.azureVmFamilies"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/azureVmFamilies[*]",
+          "defaultPath": "properties.azureVmFamilies[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/confidenceRatingInPercentage",
+          "defaultPath": "properties.confidenceRatingInPercentage"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/currency",
+          "defaultPath": "properties.currency"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/discountPercentage",
+          "defaultPath": "properties.discountPercentage"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/eaSubscriptionId",
+          "defaultPath": "properties.eaSubscriptionId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/monthlyBandwidthCost",
+          "defaultPath": "properties.monthlyBandwidthCost"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/monthlyComputeCost",
+          "defaultPath": "properties.monthlyComputeCost"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/monthlyPremiumStorageCost",
+          "defaultPath": "properties.monthlyPremiumStorageCost"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/monthlyStandardSSDStorageCost",
+          "defaultPath": "properties.monthlyStandardSSDStorageCost"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/monthlyStorageCost",
+          "defaultPath": "properties.monthlyStorageCost"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/numberOfMachines",
+          "defaultPath": "properties.numberOfMachines"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/percentile",
+          "defaultPath": "properties.percentile"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/perfDataEndTime",
+          "defaultPath": "properties.perfDataEndTime"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/perfDataStartTime",
+          "defaultPath": "properties.perfDataStartTime"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/pricesTimestamp",
+          "defaultPath": "properties.pricesTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/reservedInstance",
+          "defaultPath": "properties.reservedInstance"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/scalingFactor",
+          "defaultPath": "properties.scalingFactor"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/sizingCriterion",
+          "defaultPath": "properties.sizingCriterion"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/stage",
+          "defaultPath": "properties.stage"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/timeRange",
+          "defaultPath": "properties.timeRange"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/vmUptime",
+          "defaultPath": "properties.vmUptime"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/vmUptime.daysPerMonth",
+          "defaultPath": "properties.vmUptime.daysPerMonth"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/groups/assessments/vmUptime.hoursPerDay",
+          "defaultPath": "properties.vmUptime.hoursPerDay"
+        }
+      ],
+      "resourceType": "assessmentprojects/groups/assessments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties",
+          "defaultPath": "properties.agentProperties"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.id",
+          "defaultPath": "properties.agentProperties.id"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.lastHeartbeatUtc",
+          "defaultPath": "properties.agentProperties.lastHeartbeatUtc"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.spnDetails",
+          "defaultPath": "properties.agentProperties.spnDetails"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.spnDetails.applicationId",
+          "defaultPath": "properties.agentProperties.spnDetails.applicationId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.spnDetails.audience",
+          "defaultPath": "properties.agentProperties.spnDetails.audience"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.spnDetails.authority",
+          "defaultPath": "properties.agentProperties.spnDetails.authority"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.spnDetails.objectId",
+          "defaultPath": "properties.agentProperties.spnDetails.objectId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.spnDetails.tenantId",
+          "defaultPath": "properties.agentProperties.spnDetails.tenantId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/agentProperties.version",
+          "defaultPath": "properties.agentProperties.version"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/discoverySiteId",
+          "defaultPath": "properties.discoverySiteId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/hypervcollectors/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "assessmentprojects/hypervcollectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/importcollectors/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/importcollectors/discoverySiteId",
+          "defaultPath": "properties.discoverySiteId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/importcollectors/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "assessmentprojects/importcollectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "assessmentprojects/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties",
+          "defaultPath": "properties.agentProperties"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.id",
+          "defaultPath": "properties.agentProperties.id"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.lastHeartbeatUtc",
+          "defaultPath": "properties.agentProperties.lastHeartbeatUtc"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.spnDetails",
+          "defaultPath": "properties.agentProperties.spnDetails"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.spnDetails.applicationId",
+          "defaultPath": "properties.agentProperties.spnDetails.applicationId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.spnDetails.audience",
+          "defaultPath": "properties.agentProperties.spnDetails.audience"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.spnDetails.authority",
+          "defaultPath": "properties.agentProperties.spnDetails.authority"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.spnDetails.objectId",
+          "defaultPath": "properties.agentProperties.spnDetails.objectId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.spnDetails.tenantId",
+          "defaultPath": "properties.agentProperties.spnDetails.tenantId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/agentProperties.version",
+          "defaultPath": "properties.agentProperties.version"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/discoverySiteId",
+          "defaultPath": "properties.discoverySiteId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentProjects/servercollectors/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "assessmentprojects/servercollectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties",
+          "defaultPath": "properties.agentProperties"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.id",
+          "defaultPath": "properties.agentProperties.id"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.lastHeartbeatUtc",
+          "defaultPath": "properties.agentProperties.lastHeartbeatUtc"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.spnDetails",
+          "defaultPath": "properties.agentProperties.spnDetails"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.spnDetails.applicationId",
+          "defaultPath": "properties.agentProperties.spnDetails.applicationId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.spnDetails.audience",
+          "defaultPath": "properties.agentProperties.spnDetails.audience"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.spnDetails.authority",
+          "defaultPath": "properties.agentProperties.spnDetails.authority"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.spnDetails.objectId",
+          "defaultPath": "properties.agentProperties.spnDetails.objectId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.spnDetails.tenantId",
+          "defaultPath": "properties.agentProperties.spnDetails.tenantId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/agentProperties.version",
+          "defaultPath": "properties.agentProperties.version"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/discoverySiteId",
+          "defaultPath": "properties.discoverySiteId"
+        },
+        {
+          "name": "Microsoft.Migrate/assessmentprojects/vmwarecollectors/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "assessmentprojects/vmwarecollectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/migrateprojects/lastSummaryRefreshedTime",
+          "defaultPath": "properties.lastSummaryRefreshedTime"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].eTag",
+          "defaultPath": "properties.privateEndpointConnections[*].eTag"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/refreshSummaryState",
+          "defaultPath": "properties.refreshSummaryState"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/registeredTools",
+          "defaultPath": "properties.registeredTools"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/registeredTools[*]",
+          "defaultPath": "properties.registeredTools[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/serviceEndpoint",
+          "defaultPath": "properties.serviceEndpoint"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/summary",
+          "defaultPath": "properties.summary"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/utilityStorageAccountId",
+          "defaultPath": "properties.utilityStorageAccountId"
+        }
+      ],
+      "resourceType": "migrateprojects"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        }
+      ],
+      "resourceType": "migrateprojects/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/cleanupState",
+          "defaultPath": "properties.cleanupState"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/details",
+          "defaultPath": "properties.details"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/details.assessmentCount",
+          "defaultPath": "properties.details.assessmentCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/details.extendedDetails",
+          "defaultPath": "properties.details.extendedDetails"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/details.groupCount",
+          "defaultPath": "properties.details.groupCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/goal",
+          "defaultPath": "properties.goal"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/purpose",
+          "defaultPath": "properties.purpose"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/summary",
+          "defaultPath": "properties.summary"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Databases",
+          "defaultPath": "properties.summary"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Databases.databaseInstancesAssessedCount",
+          "defaultPath": "properties.summary.databaseInstancesAssessedCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Databases.databasesAssessedCount",
+          "defaultPath": "properties.summary.databasesAssessedCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Databases.migrationReadyCount",
+          "defaultPath": "properties.summary.migrationReadyCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/summary.instanceType",
+          "defaultPath": "properties.summary.instanceType"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Servers",
+          "defaultPath": "properties.summary"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Servers.assessedCount",
+          "defaultPath": "properties.summary.assessedCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Servers.discoveredCount",
+          "defaultPath": "properties.summary.discoveredCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Servers.migratedCount",
+          "defaultPath": "properties.summary.migratedCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Servers.replicatingCount",
+          "defaultPath": "properties.summary.replicatingCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateProjects/solutions/summary.Servers.testMigratedCount",
+          "defaultPath": "properties.summary.testMigratedCount"
+        },
+        {
+          "name": "Microsoft.Migrate/migrateprojects/solutions/tool",
+          "defaultPath": "properties.tool"
+        }
+      ],
+      "resourceType": "migrateprojects/solutions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors",
+          "defaultPath": "properties.errors"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.code",
+          "defaultPath": "properties.errors.properties.code"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details",
+          "defaultPath": "properties.errors.properties.details"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details[*]",
+          "defaultPath": "properties.errors.properties.details[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details[*].code",
+          "defaultPath": "properties.errors.properties.details[*].code"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details[*].details",
+          "defaultPath": "properties.errors.properties.details[*].details"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details[*].details[*]",
+          "defaultPath": "properties.errors.properties.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details[*].message",
+          "defaultPath": "properties.errors.properties.details[*].message"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.details[*].target",
+          "defaultPath": "properties.errors.properties.details[*].target"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.message",
+          "defaultPath": "properties.errors.properties.message"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/errors.target",
+          "defaultPath": "properties.errors.properties.target"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/sourceRegion",
+          "defaultPath": "properties.sourceRegion"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/targetRegion",
+          "defaultPath": "properties.targetRegion"
+        }
+      ],
+      "resourceType": "moveCollections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn",
+          "defaultPath": "properties.dependsOn"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*]",
+          "defaultPath": "properties.dependsOn[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].automaticResolution",
+          "defaultPath": "properties.dependsOn[*].automaticResolution"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].automaticResolution.moveResourceId",
+          "defaultPath": "properties.dependsOn[*].automaticResolution.moveResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].dependencyType",
+          "defaultPath": "properties.dependsOn[*].dependencyType"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].id",
+          "defaultPath": "properties.dependsOn[*].id"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].isOptional",
+          "defaultPath": "properties.dependsOn[*].isOptional"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].manualResolution",
+          "defaultPath": "properties.dependsOn[*].manualResolution"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].manualResolution.targetId",
+          "defaultPath": "properties.dependsOn[*].manualResolution.targetId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].resolutionStatus",
+          "defaultPath": "properties.dependsOn[*].resolutionStatus"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOn[*].resolutionType",
+          "defaultPath": "properties.dependsOn[*].resolutionType"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOnOverrides",
+          "defaultPath": "properties.dependsOnOverrides"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOnOverrides[*]",
+          "defaultPath": "properties.dependsOnOverrides[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOnOverrides[*].id",
+          "defaultPath": "properties.dependsOnOverrides[*].id"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/dependsOnOverrides[*].targetId",
+          "defaultPath": "properties.dependsOnOverrides[*].targetId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors",
+          "defaultPath": "properties.errors"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.code",
+          "defaultPath": "properties.errors.properties.code"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details",
+          "defaultPath": "properties.errors.properties.details"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details[*]",
+          "defaultPath": "properties.errors.properties.details[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details[*].code",
+          "defaultPath": "properties.errors.properties.details[*].code"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details[*].details",
+          "defaultPath": "properties.errors.properties.details[*].details"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details[*].details[*]",
+          "defaultPath": "properties.errors.properties.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details[*].message",
+          "defaultPath": "properties.errors.properties.details[*].message"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.details[*].target",
+          "defaultPath": "properties.errors.properties.details[*].target"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.message",
+          "defaultPath": "properties.errors.properties.message"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/errors.target",
+          "defaultPath": "properties.errors.properties.target"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/existingTargetId",
+          "defaultPath": "properties.existingTargetId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/isResolveRequired",
+          "defaultPath": "properties.isResolveRequired"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus",
+          "defaultPath": "properties.moveStatus"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors",
+          "defaultPath": "properties.moveStatus.errors"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.code",
+          "defaultPath": "properties.moveStatus.errors.properties.code"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details",
+          "defaultPath": "properties.moveStatus.errors.properties.details"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details[*]",
+          "defaultPath": "properties.moveStatus.errors.properties.details[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details[*].code",
+          "defaultPath": "properties.moveStatus.errors.properties.details[*].code"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details[*].details",
+          "defaultPath": "properties.moveStatus.errors.properties.details[*].details"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details[*].details[*]",
+          "defaultPath": "properties.moveStatus.errors.properties.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details[*].message",
+          "defaultPath": "properties.moveStatus.errors.properties.details[*].message"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.details[*].target",
+          "defaultPath": "properties.moveStatus.errors.properties.details[*].target"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.message",
+          "defaultPath": "properties.moveStatus.errors.properties.message"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.errors.target",
+          "defaultPath": "properties.moveStatus.errors.properties.target"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.jobStatus",
+          "defaultPath": "properties.moveStatus.jobStatus"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.jobStatus.jobName",
+          "defaultPath": "properties.moveStatus.jobStatus.jobName"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.jobStatus.jobProgress",
+          "defaultPath": "properties.moveStatus.jobStatus.jobProgress"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/moveStatus.moveState",
+          "defaultPath": "properties.moveStatus.moveState"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-availabilitySets",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-availabilitySets.faultDomain",
+          "defaultPath": "properties.resourceSettings.faultDomain"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-availabilitySets.updateDomain",
+          "defaultPath": "properties.resourceSettings.updateDomain"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-virtualMachines",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-virtualMachines.targetAvailabilitySetId",
+          "defaultPath": "properties.resourceSettings.targetAvailabilitySetId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-virtualMachines.targetAvailabilityZone",
+          "defaultPath": "properties.resourceSettings.targetAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Compute-virtualMachines.targetVmSize",
+          "defaultPath": "properties.resourceSettings.targetVmSize"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.backendAddressPools",
+          "defaultPath": "properties.resourceSettings.backendAddressPools"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.backendAddressPools[*]",
+          "defaultPath": "properties.resourceSettings.backendAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.backendAddressPools[*].name",
+          "defaultPath": "properties.resourceSettings.backendAddressPools[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*]",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].name",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].privateIpAddress",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].privateIpAddress"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].privateIpAllocationMethod",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].privateIpAllocationMethod"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].subnet",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].subnet"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].subnet.name",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].subnet.name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].subnet.sourceArmResourceId",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].subnet.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].zones",
+          "defaultPath": "properties.resourceSettings.frontendIPConfigurations[*].zones"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.sku",
+          "defaultPath": "properties.resourceSettings.sku"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-loadBalancers.zones",
+          "defaultPath": "properties.resourceSettings.zones"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.enableAcceleratedNetworking",
+          "defaultPath": "properties.resourceSettings.enableAcceleratedNetworking"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations",
+          "defaultPath": "properties.resourceSettings.ipConfigurations"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*]",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools[*]",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools[*].name",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools[*].sourceArmResourceId",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools[*].sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerNatRules"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules[*]",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerNatRules[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules[*].name",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerNatRules[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules[*].sourceArmResourceId",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].loadBalancerNatRules[*].sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].name",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].primary",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].primary"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].privateIpAddress",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].privateIpAddress"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].privateIpAllocationMethod",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].privateIpAllocationMethod"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].publicIp",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].publicIp"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].publicIp.sourceArmResourceId",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].publicIp.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].subnet",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].subnet"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].subnet.name",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].subnet.name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].subnet.sourceArmResourceId",
+          "defaultPath": "properties.resourceSettings.ipConfigurations[*].subnet.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules",
+          "defaultPath": "properties.resourceSettings.securityRules"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*]",
+          "defaultPath": "properties.resourceSettings.securityRules[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].access",
+          "defaultPath": "properties.resourceSettings.securityRules[*].access"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].description",
+          "defaultPath": "properties.resourceSettings.securityRules[*].description"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].destinationAddressPrefix",
+          "defaultPath": "properties.resourceSettings.securityRules[*].destinationAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].destinationPortRange",
+          "defaultPath": "properties.resourceSettings.securityRules[*].destinationPortRange"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].direction",
+          "defaultPath": "properties.resourceSettings.securityRules[*].direction"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].name",
+          "defaultPath": "properties.resourceSettings.securityRules[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].priority",
+          "defaultPath": "properties.resourceSettings.securityRules[*].priority"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].protocol",
+          "defaultPath": "properties.resourceSettings.securityRules[*].protocol"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].sourceAddressPrefix",
+          "defaultPath": "properties.resourceSettings.securityRules[*].sourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].sourcePortRange",
+          "defaultPath": "properties.resourceSettings.securityRules[*].sourcePortRange"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-publicIPAddresses",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-publicIPAddresses.domainNameLabel",
+          "defaultPath": "properties.resourceSettings.domainNameLabel"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-publicIPAddresses.fqdn",
+          "defaultPath": "properties.resourceSettings.fqdn"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-publicIPAddresses.publicIpAllocationMethod",
+          "defaultPath": "properties.resourceSettings.publicIpAllocationMethod"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-publicIPAddresses.sku",
+          "defaultPath": "properties.resourceSettings.sku"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-publicIPAddresses.zones",
+          "defaultPath": "properties.resourceSettings.zones"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.addressSpace",
+          "defaultPath": "properties.resourceSettings.addressSpace"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.addressSpace[*]",
+          "defaultPath": "properties.resourceSettings.addressSpace[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.dnsServers",
+          "defaultPath": "properties.resourceSettings.dnsServers"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.dnsServers[*]",
+          "defaultPath": "properties.resourceSettings.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.enableDdosProtection",
+          "defaultPath": "properties.resourceSettings.enableDdosProtection"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.subnets",
+          "defaultPath": "properties.resourceSettings.subnets"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.subnets[*]",
+          "defaultPath": "properties.resourceSettings.subnets[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.subnets[*].addressPrefix",
+          "defaultPath": "properties.resourceSettings.subnets[*].addressPrefix"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.subnets[*].name",
+          "defaultPath": "properties.resourceSettings.subnets[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.subnets[*].networkSecurityGroup",
+          "defaultPath": "properties.resourceSettings.subnets[*].networkSecurityGroup"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Network-virtualNetworks.subnets[*].networkSecurityGroup.sourceArmResourceId",
+          "defaultPath": "properties.resourceSettings.subnets[*].networkSecurityGroup.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Sql-servers-databases",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Sql-servers-databases.zoneRedundant",
+          "defaultPath": "properties.resourceSettings.zoneRedundant"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Sql-servers-elasticPools",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.Microsoft-Sql-servers-elasticPools.zoneRedundant",
+          "defaultPath": "properties.resourceSettings.zoneRedundant"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.resourceType",
+          "defaultPath": "properties.resourceSettings.resourceType"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/resourceSettings.targetResourceName",
+          "defaultPath": "properties.resourceSettings.targetResourceName"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceId",
+          "defaultPath": "properties.sourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-availabilitySets",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-availabilitySets.faultDomain",
+          "defaultPath": "properties.sourceResourceSettings.faultDomain"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-availabilitySets.updateDomain",
+          "defaultPath": "properties.sourceResourceSettings.updateDomain"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-virtualMachines",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-virtualMachines.targetAvailabilitySetId",
+          "defaultPath": "properties.sourceResourceSettings.targetAvailabilitySetId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-virtualMachines.targetAvailabilityZone",
+          "defaultPath": "properties.sourceResourceSettings.targetAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Compute-virtualMachines.targetVmSize",
+          "defaultPath": "properties.sourceResourceSettings.targetVmSize"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.backendAddressPools",
+          "defaultPath": "properties.sourceResourceSettings.backendAddressPools"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.backendAddressPools[*]",
+          "defaultPath": "properties.sourceResourceSettings.backendAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.backendAddressPools[*].name",
+          "defaultPath": "properties.sourceResourceSettings.backendAddressPools[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*]",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].name",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].privateIpAddress",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].privateIpAddress"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].privateIpAllocationMethod",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].privateIpAllocationMethod"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].subnet",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].subnet"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].subnet.name",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].subnet.name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].subnet.sourceArmResourceId",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].subnet.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.frontendIPConfigurations[*].zones",
+          "defaultPath": "properties.sourceResourceSettings.frontendIPConfigurations[*].zones"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.sku",
+          "defaultPath": "properties.sourceResourceSettings.sku"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-loadBalancers.zones",
+          "defaultPath": "properties.sourceResourceSettings.zones"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.enableAcceleratedNetworking",
+          "defaultPath": "properties.sourceResourceSettings.enableAcceleratedNetworking"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*]",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools[*]",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools[*].name",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerBackendAddressPools[*].sourceArmResourceId",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerBackendAddressPools[*].sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerNatRules"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules[*]",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerNatRules[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules[*].name",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerNatRules[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].loadBalancerNatRules[*].sourceArmResourceId",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].loadBalancerNatRules[*].sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].name",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].primary",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].primary"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].privateIpAddress",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].privateIpAddress"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].privateIpAllocationMethod",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].privateIpAllocationMethod"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].publicIp",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].publicIp"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].publicIp.sourceArmResourceId",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].publicIp.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].subnet",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].subnet"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].subnet.name",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].subnet.name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkInterfaces.ipConfigurations[*].subnet.sourceArmResourceId",
+          "defaultPath": "properties.sourceResourceSettings.ipConfigurations[*].subnet.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules",
+          "defaultPath": "properties.sourceResourceSettings.securityRules"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*]",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].access",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].access"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].description",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].description"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].destinationAddressPrefix",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].destinationAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].destinationPortRange",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].destinationPortRange"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].direction",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].direction"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].name",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].priority",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].priority"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].protocol",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].protocol"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].sourceAddressPrefix",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].sourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-networkSecurityGroups.securityRules[*].sourcePortRange",
+          "defaultPath": "properties.sourceResourceSettings.securityRules[*].sourcePortRange"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-publicIPAddresses",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-publicIPAddresses.domainNameLabel",
+          "defaultPath": "properties.sourceResourceSettings.domainNameLabel"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-publicIPAddresses.fqdn",
+          "defaultPath": "properties.sourceResourceSettings.fqdn"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-publicIPAddresses.publicIpAllocationMethod",
+          "defaultPath": "properties.sourceResourceSettings.publicIpAllocationMethod"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-publicIPAddresses.sku",
+          "defaultPath": "properties.sourceResourceSettings.sku"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-publicIPAddresses.zones",
+          "defaultPath": "properties.sourceResourceSettings.zones"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.addressSpace",
+          "defaultPath": "properties.sourceResourceSettings.addressSpace"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.addressSpace[*]",
+          "defaultPath": "properties.sourceResourceSettings.addressSpace[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.dnsServers",
+          "defaultPath": "properties.sourceResourceSettings.dnsServers"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.dnsServers[*]",
+          "defaultPath": "properties.sourceResourceSettings.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.enableDdosProtection",
+          "defaultPath": "properties.sourceResourceSettings.enableDdosProtection"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.subnets",
+          "defaultPath": "properties.sourceResourceSettings.subnets"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.subnets[*]",
+          "defaultPath": "properties.sourceResourceSettings.subnets[*]"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.subnets[*].addressPrefix",
+          "defaultPath": "properties.sourceResourceSettings.subnets[*].addressPrefix"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.subnets[*].name",
+          "defaultPath": "properties.sourceResourceSettings.subnets[*].name"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.subnets[*].networkSecurityGroup",
+          "defaultPath": "properties.sourceResourceSettings.subnets[*].networkSecurityGroup"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Network-virtualNetworks.subnets[*].networkSecurityGroup.sourceArmResourceId",
+          "defaultPath": "properties.sourceResourceSettings.subnets[*].networkSecurityGroup.sourceArmResourceId"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Sql-servers-databases",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Sql-servers-databases.zoneRedundant",
+          "defaultPath": "properties.sourceResourceSettings.zoneRedundant"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Sql-servers-elasticPools",
+          "defaultPath": "properties.sourceResourceSettings"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.Microsoft-Sql-servers-elasticPools.zoneRedundant",
+          "defaultPath": "properties.sourceResourceSettings.zoneRedundant"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.resourceType",
+          "defaultPath": "properties.sourceResourceSettings.resourceType"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/sourceResourceSettings.targetResourceName",
+          "defaultPath": "properties.sourceResourceSettings.targetResourceName"
+        },
+        {
+          "name": "Microsoft.Migrate/moveCollections/moveResources/targetId",
+          "defaultPath": "properties.targetId"
+        }
+      ],
+      "resourceType": "moveCollections/moveResources"
+    }
+  ]
+}

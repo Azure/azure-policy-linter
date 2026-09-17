@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.ComputeLimit",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/features"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/guestSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sharedLimitCaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sharedLimitCaps/memberCapOverrides"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sharedLimits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/trustedHostSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vmFamilies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.StorageMover",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageMovers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageMovers/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageMovers/connections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageMovers/endpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageMovers/projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageMovers/projects/jobDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageMovers/projects/jobDefinitions/jobRuns"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "namespace": "Microsoft.DeviceUpdate",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts/agents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts/instances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "linkedAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateAccounts/activeDeployments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateAccounts/agents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateAccounts/deployments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateAccounts/deviceClasses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateAccounts/updates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "updateInstances"
+    }
+  ]
+}

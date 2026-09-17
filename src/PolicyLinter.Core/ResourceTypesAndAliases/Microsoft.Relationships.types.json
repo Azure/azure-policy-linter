@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.Relationships",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "contains"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dependencyOf"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationsStatuses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "serviceGroupMember"
+    }
+  ]
+}

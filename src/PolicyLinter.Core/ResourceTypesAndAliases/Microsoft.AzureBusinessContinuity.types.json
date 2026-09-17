@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.AzureBusinessContinuity",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "deletedUnifiedProtectedItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "unifiedProtectedItems"
+    }
+  ]
+}

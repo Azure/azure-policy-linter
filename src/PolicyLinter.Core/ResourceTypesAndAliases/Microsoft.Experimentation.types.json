@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.Experimentation",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "experimentWorkspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

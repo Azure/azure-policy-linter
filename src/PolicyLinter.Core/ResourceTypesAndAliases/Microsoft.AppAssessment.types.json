@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.AppAssessment",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/osVersions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "migrateProjects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/assessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/assessments/assessedApplications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/assessments/assessedApplications/machines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/assessments/assessedMachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/assessments/assessedMachines/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/assessments/machinesToAssess"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/sites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/sites/applianceConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateProjects/sites/machines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

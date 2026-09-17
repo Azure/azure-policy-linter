@@ -1,0 +1,217 @@
+{
+  "namespace": "Microsoft.Synapse",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "kustoOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/kustoPoolCheckNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/kustoPoolOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sqlDatabaseAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sqlDatabaseOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sqlPoolAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sqlPoolOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkHubs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/administrators"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/auditingSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/azureADOnlyAuthentications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/bigDataPools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/dedicatedSQLminimalTlsSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/extendedAuditingSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/firewallRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/integrationruntimes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/keys"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/kustoPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/kustoPools/attacheddatabaseconfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/kustoPools/databases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/kustoPools/databases/dataconnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/kustoPools/Databases/PrincipalAssignments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/kustoPools/PrincipalAssignments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/managedIdentitySqlControlSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/operationStatuses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/securityAlertPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlAdministrators"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/sqlDatabases"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/sqlPools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/auditingSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/dataMaskingPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/dataMaskingPolicies/rules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/extendedAuditingSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/maintenanceWindows"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/metadataSync"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/schemas/tables/columns/sensitivityLabels"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/securityAlertPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/transparentDataEncryption"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/vulnerabilityAssessments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/vulnerabilityAssessments/rules/baselines"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/workloadGroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/sqlPools/workloadGroups/workloadClassifiers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/usages"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/vulnerabilityAssessments"
+    }
+  ]
+}

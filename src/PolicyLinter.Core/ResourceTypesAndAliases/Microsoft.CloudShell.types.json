@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.CloudShell",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "operations"
+    }
+  ]
+}

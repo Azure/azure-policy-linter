@@ -1,0 +1,395 @@
+{
+  "namespace": "Microsoft.DomainRegistration",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DomainRegistration/domains/authCode",
+          "defaultPath": "properties.authCode"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/autoRenew",
+          "defaultPath": "properties.autoRenew"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/consent",
+          "defaultPath": "properties.consent"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/consent.agreedAt",
+          "defaultPath": "properties.consent.agreedAt"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/consent.agreedBy",
+          "defaultPath": "properties.consent.agreedBy"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/consent.agreementKeys",
+          "defaultPath": "properties.consent.agreementKeys"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/consent.agreementKeys[*]",
+          "defaultPath": "properties.consent.agreementKeys[*]"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin",
+          "defaultPath": "properties.contactAdmin"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing",
+          "defaultPath": "properties.contactAdmin.addressMailing"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing.address1",
+          "defaultPath": "properties.contactAdmin.addressMailing.address1"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing.address2",
+          "defaultPath": "properties.contactAdmin.addressMailing.address2"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing.city",
+          "defaultPath": "properties.contactAdmin.addressMailing.city"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing.country",
+          "defaultPath": "properties.contactAdmin.addressMailing.country"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing.postalCode",
+          "defaultPath": "properties.contactAdmin.addressMailing.postalCode"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.addressMailing.state",
+          "defaultPath": "properties.contactAdmin.addressMailing.state"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.email",
+          "defaultPath": "properties.contactAdmin.email"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.fax",
+          "defaultPath": "properties.contactAdmin.fax"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.jobTitle",
+          "defaultPath": "properties.contactAdmin.jobTitle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.nameFirst",
+          "defaultPath": "properties.contactAdmin.nameFirst"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.nameLast",
+          "defaultPath": "properties.contactAdmin.nameLast"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.nameMiddle",
+          "defaultPath": "properties.contactAdmin.nameMiddle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.organization",
+          "defaultPath": "properties.contactAdmin.organization"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactAdmin.phone",
+          "defaultPath": "properties.contactAdmin.phone"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling",
+          "defaultPath": "properties.contactBilling"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing",
+          "defaultPath": "properties.contactBilling.addressMailing"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing.address1",
+          "defaultPath": "properties.contactBilling.addressMailing.address1"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing.address2",
+          "defaultPath": "properties.contactBilling.addressMailing.address2"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing.city",
+          "defaultPath": "properties.contactBilling.addressMailing.city"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing.country",
+          "defaultPath": "properties.contactBilling.addressMailing.country"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing.postalCode",
+          "defaultPath": "properties.contactBilling.addressMailing.postalCode"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.addressMailing.state",
+          "defaultPath": "properties.contactBilling.addressMailing.state"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.email",
+          "defaultPath": "properties.contactBilling.email"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.fax",
+          "defaultPath": "properties.contactBilling.fax"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.jobTitle",
+          "defaultPath": "properties.contactBilling.jobTitle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.nameFirst",
+          "defaultPath": "properties.contactBilling.nameFirst"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.nameLast",
+          "defaultPath": "properties.contactBilling.nameLast"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.nameMiddle",
+          "defaultPath": "properties.contactBilling.nameMiddle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.organization",
+          "defaultPath": "properties.contactBilling.organization"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactBilling.phone",
+          "defaultPath": "properties.contactBilling.phone"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant",
+          "defaultPath": "properties.contactRegistrant"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing",
+          "defaultPath": "properties.contactRegistrant.addressMailing"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing.address1",
+          "defaultPath": "properties.contactRegistrant.addressMailing.address1"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing.address2",
+          "defaultPath": "properties.contactRegistrant.addressMailing.address2"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing.city",
+          "defaultPath": "properties.contactRegistrant.addressMailing.city"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing.country",
+          "defaultPath": "properties.contactRegistrant.addressMailing.country"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing.postalCode",
+          "defaultPath": "properties.contactRegistrant.addressMailing.postalCode"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.addressMailing.state",
+          "defaultPath": "properties.contactRegistrant.addressMailing.state"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.email",
+          "defaultPath": "properties.contactRegistrant.email"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.fax",
+          "defaultPath": "properties.contactRegistrant.fax"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.jobTitle",
+          "defaultPath": "properties.contactRegistrant.jobTitle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.nameFirst",
+          "defaultPath": "properties.contactRegistrant.nameFirst"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.nameLast",
+          "defaultPath": "properties.contactRegistrant.nameLast"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.nameMiddle",
+          "defaultPath": "properties.contactRegistrant.nameMiddle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.organization",
+          "defaultPath": "properties.contactRegistrant.organization"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactRegistrant.phone",
+          "defaultPath": "properties.contactRegistrant.phone"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech",
+          "defaultPath": "properties.contactTech"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing",
+          "defaultPath": "properties.contactTech.addressMailing"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing.address1",
+          "defaultPath": "properties.contactTech.addressMailing.address1"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing.address2",
+          "defaultPath": "properties.contactTech.addressMailing.address2"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing.city",
+          "defaultPath": "properties.contactTech.addressMailing.city"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing.country",
+          "defaultPath": "properties.contactTech.addressMailing.country"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing.postalCode",
+          "defaultPath": "properties.contactTech.addressMailing.postalCode"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.addressMailing.state",
+          "defaultPath": "properties.contactTech.addressMailing.state"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.email",
+          "defaultPath": "properties.contactTech.email"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.fax",
+          "defaultPath": "properties.contactTech.fax"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.jobTitle",
+          "defaultPath": "properties.contactTech.jobTitle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.nameFirst",
+          "defaultPath": "properties.contactTech.nameFirst"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.nameLast",
+          "defaultPath": "properties.contactTech.nameLast"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.nameMiddle",
+          "defaultPath": "properties.contactTech.nameMiddle"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.organization",
+          "defaultPath": "properties.contactTech.organization"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/contactTech.phone",
+          "defaultPath": "properties.contactTech.phone"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/dnsType",
+          "defaultPath": "properties.dnsType"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/dnsZoneId",
+          "defaultPath": "properties.dnsZoneId"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/domainNotRenewableReasons",
+          "defaultPath": "properties.domainNotRenewableReasons"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/domainNotRenewableReasons[*]",
+          "defaultPath": "properties.domainNotRenewableReasons[*]"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/expirationTime",
+          "defaultPath": "properties.expirationTime"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/lastRenewedTime",
+          "defaultPath": "properties.lastRenewedTime"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames",
+          "defaultPath": "properties.managedHostNames"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*]",
+          "defaultPath": "properties.managedHostNames[*]"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].azureResourceName",
+          "defaultPath": "properties.managedHostNames[*].azureResourceName"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].azureResourceType",
+          "defaultPath": "properties.managedHostNames[*].azureResourceType"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].customHostNameDnsRecordType",
+          "defaultPath": "properties.managedHostNames[*].customHostNameDnsRecordType"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].hostNameType",
+          "defaultPath": "properties.managedHostNames[*].hostNameType"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].name",
+          "defaultPath": "properties.managedHostNames[*].name"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].siteNames",
+          "defaultPath": "properties.managedHostNames[*].siteNames"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/managedHostNames[*].siteNames[*]",
+          "defaultPath": "properties.managedHostNames[*].siteNames[*]"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/nameServers",
+          "defaultPath": "properties.nameServers"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/nameServers[*]",
+          "defaultPath": "properties.nameServers[*]"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/privacy",
+          "defaultPath": "properties.privacy"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/readyForDnsRecordManagement",
+          "defaultPath": "properties.readyForDnsRecordManagement"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/registrationStatus",
+          "defaultPath": "properties.registrationStatus"
+        },
+        {
+          "name": "Microsoft.DomainRegistration/domains/targetDnsType",
+          "defaultPath": "properties.targetDnsType"
+        }
+      ],
+      "resourceType": "domains"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DomainRegistration/domains/domainOwnershipIdentifiers/ownershipId",
+          "defaultPath": "properties.ownershipId"
+        }
+      ],
+      "resourceType": "domains/domainOwnershipIdentifiers"
+    }
+  ]
+}

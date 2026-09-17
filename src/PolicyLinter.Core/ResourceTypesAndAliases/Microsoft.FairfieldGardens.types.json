@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.FairfieldGardens",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "DeviceProvisioningStates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ProvisioningResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ProvisioningResources/ProvisioningPolicies"
+    }
+  ]
+}

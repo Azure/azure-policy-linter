@@ -1,0 +1,1772 @@
+{
+  "namespace": "Microsoft.DBforPostgreSQL",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/administratorLogin",
+          "defaultPath": "properties.administratorLogin"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/administratorLoginPassword",
+          "defaultPath": "properties.administratorLoginPassword"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/authConfig",
+          "defaultPath": "properties.authConfig"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/authConfig.activeDirectoryAuth",
+          "defaultPath": "properties.authConfig.activeDirectoryAuth"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/authConfig.activeDirectoryAuthEnabled",
+          "defaultPath": "properties.authConfig.activeDirectoryAuthEnabled"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/authConfig.passwordAuth",
+          "defaultPath": "properties.authConfig.passwordAuth"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/authConfig.passwordAuthEnabled",
+          "defaultPath": "properties.authConfig.passwordAuthEnabled"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/authConfig.tenantId",
+          "defaultPath": "properties.authConfig.tenantId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/availabilityZone",
+          "defaultPath": "properties.availabilityZone"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/backup",
+          "defaultPath": "properties.backup"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/backup.backupRetentionDays",
+          "defaultPath": "properties.backup.backupRetentionDays"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/backup.earliestRestoreDate",
+          "defaultPath": "properties.backup.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/backup.geoRedundantBackup",
+          "defaultPath": "properties.backup.geoRedundantBackup"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/byokEnforcement",
+          "defaultPath": "properties.byokEnforcement"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/cluster",
+          "defaultPath": "properties.cluster"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/cluster.clusterSize",
+          "defaultPath": "properties.cluster.clusterSize"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/cluster.defaultDatabaseName",
+          "defaultPath": "properties.cluster.defaultDatabaseName"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/createMode",
+          "defaultPath": "properties.createMode"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption",
+          "defaultPath": "properties.dataEncryption"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.geoBackupEncryptionKeyStatus",
+          "defaultPath": "properties.dataEncryption.geoBackupEncryptionKeyStatus"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.geoBackupFederatedIdentityClientId",
+          "defaultPath": "properties.dataEncryption.geoBackupFederatedIdentityClientId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.geoBackupKeyURI",
+          "defaultPath": "properties.dataEncryption.geoBackupKeyURI"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.geoBackupUserAssignedIdentityId",
+          "defaultPath": "properties.dataEncryption.geoBackupUserAssignedIdentityId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.primaryEncryptionKeyStatus",
+          "defaultPath": "properties.dataEncryption.primaryEncryptionKeyStatus"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.primaryFederatedIdentityClientId",
+          "defaultPath": "properties.dataEncryption.primaryFederatedIdentityClientId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.primaryKeyURI",
+          "defaultPath": "properties.dataEncryption.primaryKeyURI"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.primaryUserAssignedIdentityId",
+          "defaultPath": "properties.dataEncryption.primaryUserAssignedIdentityId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/dataEncryption.type",
+          "defaultPath": "properties.dataEncryption.type"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/delegatedSubnetArguments",
+          "defaultPath": "properties.delegatedSubnetArguments"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/delegatedSubnetArguments.subnetArmResourceId",
+          "defaultPath": "properties.delegatedSubnetArguments.subnetArmResourceId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/earliestRestoreDate",
+          "defaultPath": "properties.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/fullyQualifiedDomainName",
+          "defaultPath": "properties.fullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/haEnabled",
+          "defaultPath": "properties.haEnabled"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/haState",
+          "defaultPath": "properties.haState"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/highAvailability",
+          "defaultPath": "properties.highAvailability"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/highAvailability.mode",
+          "defaultPath": "properties.highAvailability.mode"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/highAvailability.standbyAvailabilityZone",
+          "defaultPath": "properties.highAvailability.standbyAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/highAvailability.state",
+          "defaultPath": "properties.highAvailability.state"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/logBackupStorageSku",
+          "defaultPath": "properties.logBackupStorageSku"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/maintenanceWindow",
+          "defaultPath": "properties.maintenanceWindow"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/maintenanceWindow.customWindow",
+          "defaultPath": "properties.maintenanceWindow.customWindow"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/maintenanceWindow.dayOfWeek",
+          "defaultPath": "properties.maintenanceWindow.dayOfWeek"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/maintenanceWindow.startHour",
+          "defaultPath": "properties.maintenanceWindow.startHour"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/maintenanceWindow.startMinute",
+          "defaultPath": "properties.maintenanceWindow.startMinute"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/minorVersion",
+          "defaultPath": "properties.minorVersion"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/network",
+          "defaultPath": "properties.network"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/network.delegatedSubnetResourceId",
+          "defaultPath": "properties.network.delegatedSubnetResourceId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/network.privateDnsZoneArmResourceId",
+          "defaultPath": "properties.network.privateDnsZoneArmResourceId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/network.publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-02-14-privatepreview",
+                "2020-02-14-preview",
+                "2020-11-05-preview",
+                "2021-04-10-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.network.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/pointInTimeUTC",
+          "defaultPath": "properties.pointInTimeUTC"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateDnsZoneArguments",
+          "defaultPath": "properties.privateDnsZoneArguments"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateDnsZoneArguments.privateDnsZoneArmResourceId",
+          "defaultPath": "properties.privateDnsZoneArguments.privateDnsZoneArmResourceId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-02-14-privatepreview",
+                "2020-02-14-preview",
+                "2020-11-05-preview",
+                "2021-04-10-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.network.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replica",
+          "defaultPath": "properties.replica"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replica.capacity",
+          "defaultPath": "properties.replica.capacity"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replica.promoteMode",
+          "defaultPath": "properties.replica.promoteMode"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replica.promoteOption",
+          "defaultPath": "properties.replica.promoteOption"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replica.replicationState",
+          "defaultPath": "properties.replica.replicationState"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replica.role",
+          "defaultPath": "properties.replica.role"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replicaCapacity",
+          "defaultPath": "properties.replicaCapacity"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/replicationRole",
+          "defaultPath": "properties.replicationRole"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sourceResourceGroupName",
+          "defaultPath": "properties.sourceResourceGroupName"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sourceServerName",
+          "defaultPath": "properties.sourceServerName"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sourceServerResourceId",
+          "defaultPath": "properties.sourceServerResourceId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/sourceSubscriptionId",
+          "defaultPath": "properties.sourceSubscriptionId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/standbyAvailabilityZone",
+          "defaultPath": "properties.standbyAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/standbyCount",
+          "defaultPath": "properties.standbyCount"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage",
+          "defaultPath": "properties.storage"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage.autoGrow",
+          "defaultPath": "properties.storage.autoGrow"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage.iops",
+          "defaultPath": "properties.storage.iops"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage.storageSizeGB",
+          "defaultPath": "properties.storage.storageSizeGB"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage.throughput",
+          "defaultPath": "properties.storage.throughput"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage.tier",
+          "defaultPath": "properties.storage.tier"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storage.type",
+          "defaultPath": "properties.storage.type"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storageProfile.backupRetentionDays",
+          "defaultPath": "properties.storageProfile.backupRetentionDays"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storageProfile.earliestRestoreDate",
+          "defaultPath": "properties.storageProfile.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storageProfile.geoRedundantBackup",
+          "defaultPath": "properties.storageProfile.geoRedundantBackup"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/storageProfile.storageMB",
+          "defaultPath": "properties.storageProfile.storageMB"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "flexibleServers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/administrators/principalName",
+          "defaultPath": "properties.principalName"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/administrators/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/administrators/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "flexibleServers/administrators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/advancedThreatProtectionSettings/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/advancedThreatProtectionSettings/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "flexibleServers/advancedThreatProtectionSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/allowedValues",
+          "defaultPath": "properties.allowedValues"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/dataType",
+          "defaultPath": "properties.dataType"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/defaultValue",
+          "defaultPath": "properties.defaultValue"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/documentationLink",
+          "defaultPath": "properties.documentationLink"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/isConfigPendingRestart",
+          "defaultPath": "properties.isConfigPendingRestart"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/isDynamicConfig",
+          "defaultPath": "properties.isDynamicConfig"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/isReadOnly",
+          "defaultPath": "properties.isReadOnly"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/unit",
+          "defaultPath": "properties.unit"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/configurations/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "flexibleServers/configurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/databases/charset",
+          "defaultPath": "properties.charset"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/databases/collation",
+          "defaultPath": "properties.collation"
+        }
+      ],
+      "resourceType": "flexibleServers/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/firewallRules/endIpAddress",
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSql/flexibleServers/firewallRules/startIpAddress",
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "flexibleServers/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/cancel",
+          "defaultPath": "properties.cancel"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus",
+          "defaultPath": "properties.currentStatus"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.currentSubState",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.currentSubState"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.dbDetails",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.dbDetails"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*]",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].databaseName",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].databaseName"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].endedOn",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].endedOn"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].startedOn",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].startedOn"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*]",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages[*]",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages[*].message",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages[*].message"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages[*].state",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].messages[*].state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].state",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].type",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.dbLevelValidationDetails[*].summary[*].type"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*]",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages[*]",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages[*].message",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages[*].message"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages[*].state",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].messages[*].state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].state",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].type",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.serverLevelValidationDetails[*].type"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.status",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.status"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.validationEndTimeInUtc",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.validationEndTimeInUtc"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.currentSubStateDetails.validationDetails.validationStartTimeInUtc",
+          "defaultPath": "properties.currentStatus.currentSubStateDetails.validationDetails.validationStartTimeInUtc"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.error",
+          "defaultPath": "properties.currentStatus.error"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/currentStatus.state",
+          "defaultPath": "properties.currentStatus.state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dBsToCancelMigrationOn",
+          "defaultPath": "properties.dBsToCancelMigrationOn"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dBsToCancelMigrationOn[*]",
+          "defaultPath": "properties.dBsToCancelMigrationOn[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dBsToMigrate",
+          "defaultPath": "properties.dBsToMigrate"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dBsToMigrate[*]",
+          "defaultPath": "properties.dBsToMigrate[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dBsToTiggerCutoverOn",
+          "defaultPath": "properties.dBsToTiggerCutoverOn"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dBsToTiggerCutoverOn[*]",
+          "defaultPath": "properties.dBsToTiggerCutoverOn[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dbsToTriggerCutoverOn",
+          "defaultPath": "properties.dbsToTriggerCutoverOn"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/dbsToTriggerCutoverOn[*]",
+          "defaultPath": "properties.dbsToTriggerCutoverOn[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrateRoles",
+          "defaultPath": "properties.migrateRoles"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationDetailsLevel",
+          "defaultPath": "properties.migrationDetailsLevel"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationId",
+          "defaultPath": "properties.migrationId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationInstanceResourceId",
+          "defaultPath": "properties.migrationInstanceResourceId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationMode",
+          "defaultPath": "properties.migrationMode"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationName",
+          "defaultPath": "properties.migrationName"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationOption",
+          "defaultPath": "properties.migrationOption"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationResourceGroup",
+          "defaultPath": "properties.migrationResourceGroup"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationResourceGroup.resourceId",
+          "defaultPath": "properties.migrationResourceGroup.resourceId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationResourceGroup.subnetResourceId",
+          "defaultPath": "properties.migrationResourceGroup.subnetResourceId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationWindowEndTimeInUtc",
+          "defaultPath": "properties.migrationWindowEndTimeInUtc"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/migrationWindowStartTimeInUtc",
+          "defaultPath": "properties.migrationWindowStartTimeInUtc"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/overwriteDBsInTarget",
+          "defaultPath": "properties.overwriteDBsInTarget"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters",
+          "defaultPath": "properties.secretParameters"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.aadApp",
+          "defaultPath": "properties.secretParameters.aadApp"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.aadApp.aadSecret",
+          "defaultPath": "properties.secretParameters.aadApp.aadSecret"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.aadApp.clientId",
+          "defaultPath": "properties.secretParameters.aadApp.clientId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.aadApp.tenantId",
+          "defaultPath": "properties.secretParameters.aadApp.tenantId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.adminCredentials",
+          "defaultPath": "properties.secretParameters.adminCredentials"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.adminCredentials.sourceServerPassword",
+          "defaultPath": "properties.secretParameters.adminCredentials.sourceServerPassword"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.adminCredentials.targetServerPassword",
+          "defaultPath": "properties.secretParameters.adminCredentials.targetServerPassword"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.sourceServerUsername",
+          "defaultPath": "properties.secretParameters.sourceServerUsername"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/secretParameters.targetServerUsername",
+          "defaultPath": "properties.secretParameters.targetServerUsername"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/setupLogicalReplicationOnSourceDBIfNeeded",
+          "defaultPath": "properties.setupLogicalReplicationOnSourceDBIfNeeded"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerFullyQualifiedDomainName",
+          "defaultPath": "properties.sourceDBServerFullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata",
+          "defaultPath": "properties.sourceDBServerMetadata"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata.location",
+          "defaultPath": "properties.sourceDBServerMetadata.location"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata.sku",
+          "defaultPath": "properties.sourceDBServerMetadata.sku"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata.sku.name",
+          "defaultPath": "properties.sourceDBServerMetadata.sku.name"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata.sku.tier",
+          "defaultPath": "properties.sourceDBServerMetadata.sku.tier"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata.storageMB",
+          "defaultPath": "properties.sourceDBServerMetadata.storageMB"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerMetadata.version",
+          "defaultPath": "properties.sourceDBServerMetadata.version"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceDBServerResourceId",
+          "defaultPath": "properties.sourceDBServerResourceId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sourceType",
+          "defaultPath": "properties.sourceType"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/sslMode",
+          "defaultPath": "properties.sslMode"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/startDataMigration",
+          "defaultPath": "properties.startDataMigration"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerFullyQualifiedDomainName",
+          "defaultPath": "properties.targetDBServerFullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata",
+          "defaultPath": "properties.targetDBServerMetadata"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata.location",
+          "defaultPath": "properties.targetDBServerMetadata.location"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata.sku",
+          "defaultPath": "properties.targetDBServerMetadata.sku"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata.sku.name",
+          "defaultPath": "properties.targetDBServerMetadata.sku.name"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata.sku.tier",
+          "defaultPath": "properties.targetDBServerMetadata.sku.tier"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata.storageMB",
+          "defaultPath": "properties.targetDBServerMetadata.storageMB"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerMetadata.version",
+          "defaultPath": "properties.targetDBServerMetadata.version"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/targetDBServerResourceId",
+          "defaultPath": "properties.targetDBServerResourceId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/triggerCutover",
+          "defaultPath": "properties.triggerCutover"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/migrations/userAssignedIdentityResourceId",
+          "defaultPath": "properties.userAssignedIdentityResourceId"
+        }
+      ],
+      "resourceType": "flexibleServers/migrations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "flexibleServers/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/endpointType",
+          "defaultPath": "properties.endpointType"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/members",
+          "defaultPath": "properties.members"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/members[*]",
+          "defaultPath": "properties.members[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/virtualEndpoints",
+          "defaultPath": "properties.virtualEndpoints"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/flexibleServers/virtualendpoints/virtualEndpoints[*]",
+          "defaultPath": "properties.virtualEndpoints[*]"
+        }
+      ],
+      "resourceType": "flexibleServers/virtualendpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/serverGroupsv2/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "serverGroupsv2/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/administratorLogin",
+          "paths": [
+            {
+              "path": "properties.administratorLogin",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.administratorLogin"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/earliestRestoreDate",
+          "paths": [
+            {
+              "path": "properties.earliestRestoreDate",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.earliestRestoreDate"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/fullyQualifiedDomainName",
+          "paths": [
+            {
+              "path": "properties.fullyQualifiedDomainName",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.fullyQualifiedDomainName"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/infrastructureEncryption",
+          "defaultPath": "properties.infrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/masterServerId",
+          "paths": [
+            {
+              "path": "properties.masterServerId",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.masterServerId"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/minimalTlsVersion",
+          "defaultPath": "properties.minimalTlsVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2017-12-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/replicaCapacity",
+          "paths": [
+            {
+              "path": "properties.replicaCapacity",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.replicaCapacity"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/replicationRole",
+          "paths": [
+            {
+              "path": "properties.replicationRole",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.replicationRole"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sku.capacity",
+          "paths": [
+            {
+              "path": "sku.capacity",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sku.family",
+          "paths": [
+            {
+              "path": "sku.family",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sku.name",
+          "paths": [
+            {
+              "path": "sku.name",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sku.tier",
+          "paths": [
+            {
+              "path": "sku.tier",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/sslEnforcement",
+          "defaultPath": "properties.sslEnforcement",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/storageProfile",
+          "paths": [
+            {
+              "path": "properties.storageProfile",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/storageProfile.backupRetentionDays",
+          "paths": [
+            {
+              "path": "properties.storageProfile.backupRetentionDays",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile.backupRetentionDays"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/storageProfile.geoRedundantBackup",
+          "paths": [
+            {
+              "path": "properties.storageProfile.geoRedundantBackup",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile.geoRedundantBackup"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/storageProfile.storageAutogrow",
+          "defaultPath": "properties.storageProfile.storageAutogrow"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/storageProfile.storageMB",
+          "paths": [
+            {
+              "path": "properties.storageProfile.storageMB",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageProfile.storageMB"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/userVisibleState",
+          "paths": [
+            {
+              "path": "properties.userVisibleState",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.userVisibleState"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/version",
+          "paths": [
+            {
+              "path": "properties.version",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "servers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/administrators/activeDirectory.administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/administrators/activeDirectory.login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/administrators/activeDirectory.sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/administrators/activeDirectory.tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSQL/servers/Administrators/administratorType",
+          "defaultPath": "properties.administratorType"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSQL/servers/Administrators/login",
+          "defaultPath": "properties.login"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSQL/servers/Administrators/sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.DBForPostgreSQL/servers/Administrators/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "servers/administrators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/configurations/allowedValues",
+          "defaultPath": "properties.allowedValues"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/configurations/dataType",
+          "defaultPath": "properties.dataType"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/configurations/defaultValue",
+          "defaultPath": "properties.defaultValue"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/configurations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/configurations/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/configurations/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "servers/configurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/databases/charset",
+          "defaultPath": "properties.charset"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/databases/collation",
+          "defaultPath": "properties.collation"
+        }
+      ],
+      "resourceType": "servers/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/firewallRules/endIpAddress",
+          "paths": [
+            {
+              "path": "properties.endIpAddress",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/firewallRules/startIpAddress",
+          "paths": [
+            {
+              "path": "properties.startIpAddress",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "servers/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/keys/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/keys/serverKeyType",
+          "defaultPath": "properties.serverKeyType"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/keys/uri",
+          "defaultPath": "properties.uri"
+        }
+      ],
+      "resourceType": "servers/keys"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "servers/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.disabledAlerts",
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.disabledAlerts[*]",
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.emailAccountAdmins",
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.emailAddresses",
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.emailAddresses[*]",
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.retentionDays",
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.storageAccountAccessKey",
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/Default.storageEndpoint",
+          "defaultPath": "properties.storageEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/disabledAlerts",
+          "paths": [
+            {
+              "path": "properties.disabledAlerts",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.disabledAlerts"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/disabledAlerts[*]",
+          "paths": [
+            {
+              "path": "properties.disabledAlerts[*]",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.disabledAlerts[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/emailAccountAdmins",
+          "paths": [
+            {
+              "path": "properties.emailAccountAdmins",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emailAccountAdmins"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/emailAddresses",
+          "paths": [
+            {
+              "path": "properties.emailAddresses",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/emailAddresses[*]",
+          "paths": [
+            {
+              "path": "properties.emailAddresses[*]",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/retentionDays",
+          "paths": [
+            {
+              "path": "properties.retentionDays",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.retentionDays"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/storageAccountAccessKey",
+          "paths": [
+            {
+              "path": "properties.storageAccountAccessKey",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageAccountAccessKey"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/securityAlertPolicies/storageEndpoint",
+          "paths": [
+            {
+              "path": "properties.storageEndpoint",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.storageEndpoint"
+        }
+      ],
+      "resourceType": "servers/securityAlertPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/ignoreMissingVnetServiceEndpoint",
+          "paths": [
+            {
+              "path": "properties.ignoreMissingVnetServiceEndpoint",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.ignoreMissingVnetServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/virtualNetworkSubnetId",
+          "paths": [
+            {
+              "path": "properties.virtualNetworkSubnetId",
+              "apiVersions": [
+                "2016-02-01-privatepreview",
+                "2017-04-30-preview",
+                "2017-12-01",
+                "2017-12-01-preview",
+                "2018-03-29-privatepreview",
+                "2018-06-01-privatepreview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.virtualNetworkSubnetId"
+        }
+      ],
+      "resourceType": "servers/virtualNetworkRules"
+    }
+  ]
+}

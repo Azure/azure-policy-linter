@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.HybridContainerService",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "kubernetesVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "provisionedClusterInstances"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "provisionedClusterInstances/agentPools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "provisionedClusterInstances/hybridIdentityMetadata"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "provisionedClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "provisionedClusters/agentPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "provisionedClusters/hybridIdentityMetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "provisionedClusters/upgradeProfiles"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "skus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageSpaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualNetworks"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "namespace": "NewRelic.Observability",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "activateSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getSaaSInfo"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "monitors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/monitoredSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/tagRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "organizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "plans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

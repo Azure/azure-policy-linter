@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.HDInsight",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/operationresults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "clusters/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/azureasyncoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/billingSpecs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateCreateRequest"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

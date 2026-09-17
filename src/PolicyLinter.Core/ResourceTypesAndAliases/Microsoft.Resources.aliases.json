@@ -1,0 +1,808 @@
+{
+  "namespace": "Microsoft.Resources",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/deployments/debugSetting",
+          "defaultPath": "properties.debugSetting"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/debugSetting.detailLevel",
+          "defaultPath": "properties.debugSetting.detailLevel"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/onErrorDeployment",
+          "defaultPath": "properties.onErrorDeployment"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/onErrorDeployment.deploymentName",
+          "defaultPath": "properties.onErrorDeployment.deploymentName"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/onErrorDeployment.type",
+          "defaultPath": "properties.onErrorDeployment.type"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/parametersLink",
+          "defaultPath": "properties.parametersLink"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/parametersLink.contentVersion",
+          "defaultPath": "properties.parametersLink.contentVersion"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/parametersLink.uri",
+          "defaultPath": "properties.parametersLink.uri"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/template",
+          "defaultPath": "properties.template"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/templateLink",
+          "defaultPath": "properties.templateLink"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/templateLink.contentVersion",
+          "defaultPath": "properties.templateLink.contentVersion"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/templateLink.id",
+          "defaultPath": "properties.templateLink.id"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/templateLink.queryString",
+          "defaultPath": "properties.templateLink.queryString"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/templateLink.relativePath",
+          "defaultPath": "properties.templateLink.relativePath"
+        },
+        {
+          "name": "Microsoft.Resources/deployments/templateLink.uri",
+          "defaultPath": "properties.templateLink.uri"
+        }
+      ],
+      "resourceType": "deployments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzureCLI.azCliVersion",
+          "defaultPath": "properties.azCliVersion"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.arguments",
+          "defaultPath": "properties.arguments"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.azPowerShellVersion",
+          "defaultPath": "properties.azPowerShellVersion"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.cleanupPreference",
+          "defaultPath": "properties.cleanupPreference"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.containerSettings",
+          "defaultPath": "properties.containerSettings"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.containerSettings.containerGroupName",
+          "defaultPath": "properties.containerSettings.containerGroupName"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.environmentVariables",
+          "defaultPath": "properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.environmentVariables[*]",
+          "defaultPath": "properties.environmentVariables[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.environmentVariables[*].name",
+          "defaultPath": "properties.environmentVariables[*].name"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.environmentVariables[*].secureValue",
+          "defaultPath": "properties.environmentVariables[*].secureValue"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.environmentVariables[*].value",
+          "defaultPath": "properties.environmentVariables[*].value"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.forceUpdateTag",
+          "defaultPath": "properties.forceUpdateTag"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.outputs",
+          "defaultPath": "properties.outputs"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.primaryScriptUri",
+          "defaultPath": "properties.primaryScriptUri"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.retentionInterval",
+          "defaultPath": "properties.retentionInterval"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.scriptContent",
+          "defaultPath": "properties.scriptContent"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.containerInstanceId",
+          "defaultPath": "properties.status.containerInstanceId"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.endTime",
+          "defaultPath": "properties.status.endTime"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error",
+          "defaultPath": "properties.status.error"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.additionalInfo",
+          "defaultPath": "properties.status.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.additionalInfo[*]",
+          "defaultPath": "properties.status.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.additionalInfo[*].type",
+          "defaultPath": "properties.status.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.code",
+          "defaultPath": "properties.status.error.code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details",
+          "defaultPath": "properties.status.error.details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*]",
+          "defaultPath": "properties.status.error.details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].additionalInfo",
+          "defaultPath": "properties.status.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.status.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.status.error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].code",
+          "defaultPath": "properties.status.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].details",
+          "defaultPath": "properties.status.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].details[*]",
+          "defaultPath": "properties.status.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].message",
+          "defaultPath": "properties.status.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.details[*].target",
+          "defaultPath": "properties.status.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.message",
+          "defaultPath": "properties.status.error.message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.error.target",
+          "defaultPath": "properties.status.error.target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.expirationTime",
+          "defaultPath": "properties.status.expirationTime"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.startTime",
+          "defaultPath": "properties.status.startTime"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.status.storageAccountId",
+          "defaultPath": "properties.status.storageAccountId"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.storageAccountSettings",
+          "defaultPath": "properties.storageAccountSettings"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.storageAccountSettings.storageAccountKey",
+          "defaultPath": "properties.storageAccountSettings.storageAccountKey"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.storageAccountSettings.storageAccountName",
+          "defaultPath": "properties.storageAccountSettings.storageAccountName"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.supportingScriptUris",
+          "defaultPath": "properties.supportingScriptUris"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.supportingScriptUris[*]",
+          "defaultPath": "properties.supportingScriptUris[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentScripts/AzurePowerShell.timeout",
+          "defaultPath": "properties.timeout"
+        }
+      ],
+      "resourceType": "deploymentScripts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/deploymentStacks/actionOnUnmanage",
+          "defaultPath": "properties.actionOnUnmanage"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/actionOnUnmanage.managementGroups",
+          "defaultPath": "properties.actionOnUnmanage.managementGroups"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/actionOnUnmanage.resourceGroups",
+          "defaultPath": "properties.actionOnUnmanage.resourceGroups"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/actionOnUnmanage.resources",
+          "defaultPath": "properties.actionOnUnmanage.resources"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/bypassStackOutOfSyncError",
+          "defaultPath": "properties.bypassStackOutOfSyncError"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/correlationId",
+          "defaultPath": "properties.correlationId"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/debugSetting",
+          "defaultPath": "properties.debugSetting"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/debugSetting.detailLevel",
+          "defaultPath": "properties.debugSetting.detailLevel"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/deletedResources",
+          "defaultPath": "properties.deletedResources"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/deletedResources[*]",
+          "defaultPath": "properties.deletedResources[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/deletedResources[*].id",
+          "defaultPath": "properties.deletedResources[*].id"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings",
+          "defaultPath": "properties.denySettings"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings.applyToChildScopes",
+          "defaultPath": "properties.denySettings.applyToChildScopes"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings.excludedActions",
+          "defaultPath": "properties.denySettings.excludedActions"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings.excludedActions[*]",
+          "defaultPath": "properties.denySettings.excludedActions[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings.excludedPrincipals",
+          "defaultPath": "properties.denySettings.excludedPrincipals"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings.excludedPrincipals[*]",
+          "defaultPath": "properties.denySettings.excludedPrincipals[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/denySettings.mode",
+          "defaultPath": "properties.denySettings.mode"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/deploymentId",
+          "defaultPath": "properties.deploymentId"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/deploymentScope",
+          "defaultPath": "properties.deploymentScope"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/detachedResources",
+          "defaultPath": "properties.detachedResources"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/detachedResources[*]",
+          "defaultPath": "properties.detachedResources[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/detachedResources[*].id",
+          "defaultPath": "properties.detachedResources[*].id"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/duration",
+          "defaultPath": "properties.duration"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.additionalInfo",
+          "defaultPath": "properties.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.additionalInfo[*]",
+          "defaultPath": "properties.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.additionalInfo[*].type",
+          "defaultPath": "properties.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.code",
+          "defaultPath": "properties.error.code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details",
+          "defaultPath": "properties.error.details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*]",
+          "defaultPath": "properties.error.details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].additionalInfo",
+          "defaultPath": "properties.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].code",
+          "defaultPath": "properties.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].details",
+          "defaultPath": "properties.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].details[*]",
+          "defaultPath": "properties.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].message",
+          "defaultPath": "properties.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.details[*].target",
+          "defaultPath": "properties.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error",
+          "defaultPath": "properties.error.error"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.additionalInfo",
+          "defaultPath": "properties.error.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.additionalInfo[*]",
+          "defaultPath": "properties.error.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.additionalInfo[*].type",
+          "defaultPath": "properties.error.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.code",
+          "defaultPath": "properties.error.error.code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details",
+          "defaultPath": "properties.error.error.details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*]",
+          "defaultPath": "properties.error.error.details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].additionalInfo",
+          "defaultPath": "properties.error.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.error.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.error.error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].code",
+          "defaultPath": "properties.error.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].details",
+          "defaultPath": "properties.error.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].details[*]",
+          "defaultPath": "properties.error.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].message",
+          "defaultPath": "properties.error.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.details[*].target",
+          "defaultPath": "properties.error.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.message",
+          "defaultPath": "properties.error.error.message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.error.target",
+          "defaultPath": "properties.error.error.target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.message",
+          "defaultPath": "properties.error.message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/error.target",
+          "defaultPath": "properties.error.target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources",
+          "defaultPath": "properties.failedResources"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*]",
+          "defaultPath": "properties.failedResources[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error",
+          "defaultPath": "properties.failedResources[*].error"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.additionalInfo",
+          "defaultPath": "properties.failedResources[*].error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.additionalInfo[*]",
+          "defaultPath": "properties.failedResources[*].error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.additionalInfo[*].type",
+          "defaultPath": "properties.failedResources[*].error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.code",
+          "defaultPath": "properties.failedResources[*].error.code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details",
+          "defaultPath": "properties.failedResources[*].error.details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*]",
+          "defaultPath": "properties.failedResources[*].error.details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].additionalInfo",
+          "defaultPath": "properties.failedResources[*].error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.failedResources[*].error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.failedResources[*].error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].code",
+          "defaultPath": "properties.failedResources[*].error.details[*].code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].details",
+          "defaultPath": "properties.failedResources[*].error.details[*].details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].details[*]",
+          "defaultPath": "properties.failedResources[*].error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].message",
+          "defaultPath": "properties.failedResources[*].error.details[*].message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.details[*].target",
+          "defaultPath": "properties.failedResources[*].error.details[*].target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error",
+          "defaultPath": "properties.failedResources[*].error.error"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.additionalInfo",
+          "defaultPath": "properties.failedResources[*].error.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.additionalInfo[*]",
+          "defaultPath": "properties.failedResources[*].error.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.additionalInfo[*].type",
+          "defaultPath": "properties.failedResources[*].error.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.code",
+          "defaultPath": "properties.failedResources[*].error.error.code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details",
+          "defaultPath": "properties.failedResources[*].error.error.details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*]",
+          "defaultPath": "properties.failedResources[*].error.error.details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].additionalInfo",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].code",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].details",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].details[*]",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].message",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.details[*].target",
+          "defaultPath": "properties.failedResources[*].error.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.message",
+          "defaultPath": "properties.failedResources[*].error.error.message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.error.target",
+          "defaultPath": "properties.failedResources[*].error.error.target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.message",
+          "defaultPath": "properties.failedResources[*].error.message"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].error.target",
+          "defaultPath": "properties.failedResources[*].error.target"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/failedResources[*].id",
+          "defaultPath": "properties.failedResources[*].id"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/parametersLink",
+          "defaultPath": "properties.parametersLink"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/parametersLink.contentVersion",
+          "defaultPath": "properties.parametersLink.contentVersion"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/parametersLink.uri",
+          "defaultPath": "properties.parametersLink.uri"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/resources",
+          "defaultPath": "properties.resources"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/resources[*]",
+          "defaultPath": "properties.resources[*]"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/resources[*].denyStatus",
+          "defaultPath": "properties.resources[*].denyStatus"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/resources[*].id",
+          "defaultPath": "properties.resources[*].id"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/resources[*].status",
+          "defaultPath": "properties.resources[*].status"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/templateLink",
+          "defaultPath": "properties.templateLink"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/templateLink.contentVersion",
+          "defaultPath": "properties.templateLink.contentVersion"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/templateLink.id",
+          "defaultPath": "properties.templateLink.id"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/templateLink.queryString",
+          "defaultPath": "properties.templateLink.queryString"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/templateLink.relativePath",
+          "defaultPath": "properties.templateLink.relativePath"
+        },
+        {
+          "name": "Microsoft.Resources/deploymentStacks/templateLink.uri",
+          "defaultPath": "properties.templateLink.uri"
+        }
+      ],
+      "resourceType": "deploymentStacks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/links/notes",
+          "defaultPath": "properties.notes"
+        },
+        {
+          "name": "Microsoft.Resources/links/sourceId",
+          "defaultPath": "properties.sourceId"
+        },
+        {
+          "name": "Microsoft.Resources/links/targetId",
+          "defaultPath": "properties.targetId"
+        }
+      ],
+      "resourceType": "links"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/tags/default.tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.Resources/tags/tags",
+          "defaultPath": "properties.tags"
+        }
+      ],
+      "resourceType": "tags"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/templateSpecs/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions",
+          "defaultPath": "properties.versions"
+        }
+      ],
+      "resourceType": "templateSpecs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/artifacts",
+          "defaultPath": "properties.artifacts"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/artifacts[*]",
+          "defaultPath": "properties.artifacts[*]"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/artifacts[*].kind",
+          "defaultPath": "properties.artifacts[*].kind"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/artifacts[*].path",
+          "defaultPath": "properties.artifacts[*].path"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/artifacts[*].template",
+          "defaultPath": "properties.artifacts[*]"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/linkedTemplates",
+          "defaultPath": "properties.linkedTemplates"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/linkedTemplates[*]",
+          "defaultPath": "properties.linkedTemplates[*]"
+        },
+        {
+          "name": "Microsoft.Resources/templateSpecs/versions/linkedTemplates[*].path",
+          "defaultPath": "properties.linkedTemplates[*].path"
+        }
+      ],
+      "resourceType": "templateSpecs/versions"
+    }
+  ]
+}

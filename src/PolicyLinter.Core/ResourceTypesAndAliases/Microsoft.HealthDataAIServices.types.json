@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.HealthDataAIServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "deidServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deidServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deidServices/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

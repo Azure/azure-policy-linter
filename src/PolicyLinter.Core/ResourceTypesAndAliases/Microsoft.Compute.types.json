@@ -1,0 +1,449 @@
+{
+  "namespace": "Microsoft.Compute",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "availabilitySets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "capacityBlocks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "capacityReservationGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "capacityReservationGroups/capacityReservations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudServices/networkInterfaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudServices/publicIPAddresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudServices/roleInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudServices/roleInstances/networkInterfaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudServices/roles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "diskAccesses"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "diskAccesses/privateEndpointConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "diskEncryptionSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "disks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/applications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/applications/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/images"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/images/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/instanceProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/instanceProfiles/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/inVMAccessControlProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/inVMAccessControlProfiles/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/remoteContainerImages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/scripts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/scripts/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleries/serviceArtifacts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hostGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hostGroups/hosts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "images"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "interconnectBlocks"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/acknowledgeBulkOperationErrors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/artifactPublishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/autoUpgradableExtensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/bulkCreateCustom"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capacityBlocks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capsoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/cloudServiceOsFamilies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/cloudServiceOsVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/communityGalleries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/csoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/diagnosticOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/diagnosticRunCommands"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/diagnostics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/diskoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/edgeZones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/edgeZones/publishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/edgeZones/vmimages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/galleries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/listBulkOperationErrors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/logAnalytics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/placementRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/placementScores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/publishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/recommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/runCommands"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sharedGalleries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sharedGallerySubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/skuMixPlacementScores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/spotEvictionRates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/spotPriceHistory"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/systemInfo"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/tenantLevelSharedGallerySubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkcancel"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkcreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkdeallocate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkdelete"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkgetoperationstatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkhibernate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkreimage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkstart"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualmachinesbulkvdiFlexCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachineScaleSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vmFamilyRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vmSizeRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vmSizes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vmssmulticloudoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vsmoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "payloadGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "proximityPlacementGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "restorePointCollections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "restorePointCollections/restorePoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "restorePointCollections/restorePoints/diskRestorePoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sharedVMExtensions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sharedVMExtensions/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sharedVMImages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sharedVMImages/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "snapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sshPublicKeys"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachines"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachines/diagnosticRunCommands"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachines/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachines/metricDefinitions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachines/runCommands"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachines/VMApplications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachineScaleSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/disks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/networkInterfaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/publicIPAddresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/virtualMachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/virtualMachines/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualMachineScaleSets/virtualMachines/networkInterfaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "virtualMachineScaleSets/virtualMachines/runCommands"
+    }
+  ]
+}

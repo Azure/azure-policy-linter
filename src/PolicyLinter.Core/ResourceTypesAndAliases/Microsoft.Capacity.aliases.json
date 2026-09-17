@@ -1,0 +1,42 @@
+{
+  "namespace": "Microsoft.Capacity",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/currentValue",
+          "defaultPath": "properties.currentValue"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/limit",
+          "defaultPath": "properties.limit"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/name.localizedValue",
+          "defaultPath": "properties.name.localizedValue"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/name.value",
+          "defaultPath": "properties.name.value"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/quotaPeriod",
+          "defaultPath": "properties.quotaPeriod"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/resourceType",
+          "defaultPath": "properties.resourceType"
+        },
+        {
+          "name": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/unit",
+          "defaultPath": "properties.unit"
+        }
+      ],
+      "resourceType": "resourceProviders/locations/serviceLimits"
+    }
+  ]
+}

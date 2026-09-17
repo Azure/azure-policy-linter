@@ -1,0 +1,4418 @@
+{
+  "namespace": "Microsoft.Security",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/advancedThreatProtectionSettings/current.isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/advancedThreatProtectionSettings/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        }
+      ],
+      "resourceType": "advancedThreatProtectionSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/alerts/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha",
+                "2019-01-01-alpha",
+                "2019-01-01-beta",
+                "2019-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "alerts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/alertType",
+          "defaultPath": "properties.alertType"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/comment",
+          "defaultPath": "properties.comment"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/expirationDateUtc",
+          "defaultPath": "properties.expirationDateUtc"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/lastModifiedUtc",
+          "defaultPath": "properties.lastModifiedUtc"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/reason",
+          "defaultPath": "properties.reason"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/suppressionAlertsScope",
+          "defaultPath": "properties.suppressionAlertsScope"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/suppressionAlertsScope.allOf",
+          "defaultPath": "properties.suppressionAlertsScope.allOf"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/suppressionAlertsScope.allOf[*]",
+          "defaultPath": "properties.suppressionAlertsScope.allOf[*]"
+        },
+        {
+          "name": "Microsoft.Security/alertsSuppressionRules/suppressionAlertsScope.allOf[*].field",
+          "defaultPath": "properties.suppressionAlertsScope.allOf[*].field"
+        }
+      ],
+      "resourceType": "alertsSuppressionRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/assessmentMetadata/assessmentType",
+          "defaultPath": "properties.assessmentType"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/categories",
+          "defaultPath": "properties.categories"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/categories[*]",
+          "defaultPath": "properties.categories[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/category",
+          "defaultPath": "properties.category"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/category[*]",
+          "defaultPath": "properties.category[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/implementationEffort",
+          "defaultPath": "properties.implementationEffort"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/partnerData",
+          "defaultPath": "properties.partnerData"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/partnerData.partnerName",
+          "defaultPath": "properties.partnerData.partnerName"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/partnerData.productName",
+          "defaultPath": "properties.partnerData.productName"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/partnerData.secret",
+          "defaultPath": "properties.partnerData.secret"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/plannedDeprecationDate",
+          "defaultPath": "properties.plannedDeprecationDate"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/policyDefinitionId",
+          "defaultPath": "properties.policyDefinitionId"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/preview",
+          "defaultPath": "properties.preview"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/publishDates",
+          "defaultPath": "properties.publishDates"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/publishDates.GA",
+          "defaultPath": "properties.publishDates.GA"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/publishDates.public",
+          "defaultPath": "properties.publishDates.public"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/remediationDescription",
+          "defaultPath": "properties.remediationDescription"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/severity",
+          "defaultPath": "properties.severity"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/tactics",
+          "defaultPath": "properties.tactics"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/tactics[*]",
+          "defaultPath": "properties.tactics[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/techniques",
+          "defaultPath": "properties.techniques"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/techniques[*]",
+          "defaultPath": "properties.techniques[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/threats",
+          "defaultPath": "properties.threats"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/threats[*]",
+          "defaultPath": "properties.threats[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessmentMetadata/userImpact",
+          "defaultPath": "properties.userImpact"
+        }
+      ],
+      "resourceType": "assessmentMetadata"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/assessments/additionalData",
+          "defaultPath": "properties.additionalData"
+        },
+        {
+          "name": "Microsoft.Security/assessments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/links",
+          "defaultPath": "properties.links"
+        },
+        {
+          "name": "Microsoft.Security/assessments/links.azurePortalUri",
+          "defaultPath": "properties.links.azurePortalUri"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.assessmentType",
+          "defaultPath": "properties.metadata.assessmentType"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.categories",
+          "defaultPath": "properties.metadata.categories"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.categories[*]",
+          "defaultPath": "properties.metadata.categories[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.category",
+          "defaultPath": "properties.metadata.category"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.category[*]",
+          "defaultPath": "properties.metadata.category[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.description",
+          "defaultPath": "properties.metadata.description"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.displayName",
+          "defaultPath": "properties.metadata.displayName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.implementationEffort",
+          "defaultPath": "properties.metadata.implementationEffort"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.partnerData",
+          "defaultPath": "properties.metadata.partnerData"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.partnerData.partnerName",
+          "defaultPath": "properties.metadata.partnerData.partnerName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.partnerData.productName",
+          "defaultPath": "properties.metadata.partnerData.productName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.partnerData.secret",
+          "defaultPath": "properties.metadata.partnerData.secret"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.policyDefinitionId",
+          "defaultPath": "properties.metadata.policyDefinitionId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.preview",
+          "defaultPath": "properties.metadata.preview"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.remediationDescription",
+          "defaultPath": "properties.metadata.remediationDescription"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.severity",
+          "defaultPath": "properties.metadata.severity"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.threats",
+          "defaultPath": "properties.metadata.threats"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.threats[*]",
+          "defaultPath": "properties.metadata.threats[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/metadata.userImpact",
+          "defaultPath": "properties.metadata.userImpact"
+        },
+        {
+          "name": "Microsoft.Security/assessments/partnersData",
+          "defaultPath": "properties.partnersData"
+        },
+        {
+          "name": "Microsoft.Security/assessments/partnersData.partnerName",
+          "defaultPath": "properties.partnersData.partnerName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/partnersData.secret",
+          "defaultPath": "properties.partnersData.secret"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails",
+          "defaultPath": "properties.resourceDetails"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.Azure",
+          "defaultPath": "properties.resourceDetails"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.Azure.id",
+          "defaultPath": "properties.resourceDetails.id"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.machineName",
+          "defaultPath": "properties.resourceDetails.machineName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremise",
+          "defaultPath": "properties.resourceDetails"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremise.machineName",
+          "defaultPath": "properties.resourceDetails.machineName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremise.sourceComputerId",
+          "defaultPath": "properties.resourceDetails.sourceComputerId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremise.vmuuid",
+          "defaultPath": "properties.resourceDetails.vmuuid"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremise.workspaceId",
+          "defaultPath": "properties.resourceDetails.workspaceId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremiseSql",
+          "defaultPath": "properties.resourceDetails"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremiseSql.databaseName",
+          "defaultPath": "properties.resourceDetails.databaseName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.OnPremiseSql.serverName",
+          "defaultPath": "properties.resourceDetails.serverName"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.source",
+          "defaultPath": "properties.resourceDetails.source"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.sourceComputerId",
+          "defaultPath": "properties.resourceDetails.sourceComputerId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.vmuuid",
+          "defaultPath": "properties.resourceDetails.vmuuid"
+        },
+        {
+          "name": "Microsoft.Security/assessments/resourceDetails.workspaceId",
+          "defaultPath": "properties.resourceDetails.workspaceId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk",
+          "defaultPath": "properties.risk"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.attackPathsReferences",
+          "defaultPath": "properties.risk.attackPathsReferences"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.attackPathsReferences[*]",
+          "defaultPath": "properties.risk.attackPathsReferences[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.isContextualRisk",
+          "defaultPath": "properties.risk.isContextualRisk"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.level",
+          "defaultPath": "properties.risk.level"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths",
+          "defaultPath": "properties.risk.paths"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*]",
+          "defaultPath": "properties.risk.paths[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].edges",
+          "defaultPath": "properties.risk.paths[*].edges"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].edges[*]",
+          "defaultPath": "properties.risk.paths[*].edges[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].edges[*].id",
+          "defaultPath": "properties.risk.paths[*].edges[*].id"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].edges[*].sourceId",
+          "defaultPath": "properties.risk.paths[*].edges[*].sourceId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].edges[*].targetId",
+          "defaultPath": "properties.risk.paths[*].edges[*].targetId"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].id",
+          "defaultPath": "properties.risk.paths[*].id"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].nodes",
+          "defaultPath": "properties.risk.paths[*].nodes"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].nodes[*]",
+          "defaultPath": "properties.risk.paths[*].nodes[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].nodes[*].id",
+          "defaultPath": "properties.risk.paths[*].nodes[*].id"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].nodes[*].nodePropertiesLabel",
+          "defaultPath": "properties.risk.paths[*].nodes[*].nodePropertiesLabel"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.paths[*].nodes[*].nodePropertiesLabel[*]",
+          "defaultPath": "properties.risk.paths[*].nodes[*].nodePropertiesLabel[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.riskFactors",
+          "defaultPath": "properties.risk.riskFactors"
+        },
+        {
+          "name": "Microsoft.Security/assessments/risk.riskFactors[*]",
+          "defaultPath": "properties.risk.riskFactors[*]"
+        },
+        {
+          "name": "Microsoft.Security/assessments/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Security/assessments/status.cause",
+          "defaultPath": "properties.status.cause"
+        },
+        {
+          "name": "Microsoft.Security/assessments/status.code",
+          "defaultPath": "properties.status.code"
+        },
+        {
+          "name": "Microsoft.Security/assessments/status.description",
+          "defaultPath": "properties.status.description"
+        }
+      ],
+      "resourceType": "assessments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/additionalData",
+          "defaultPath": "properties.additionalData"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/additionalData.ticketLink",
+          "defaultPath": "properties.additionalData.ticketLink"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/additionalData.ticketNumber",
+          "defaultPath": "properties.additionalData.ticketNumber"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/additionalData.ticketStatus",
+          "defaultPath": "properties.additionalData.ticketStatus"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/governanceEmailNotification",
+          "defaultPath": "properties.governanceEmailNotification"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/governanceEmailNotification.disableManagerEmailNotification",
+          "defaultPath": "properties.governanceEmailNotification.disableManagerEmailNotification"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/governanceEmailNotification.disableOwnerEmailNotification",
+          "defaultPath": "properties.governanceEmailNotification.disableOwnerEmailNotification"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/isGracePeriod",
+          "defaultPath": "properties.isGracePeriod"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/owner",
+          "defaultPath": "properties.owner"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/remediationDueDate",
+          "defaultPath": "properties.remediationDueDate"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/remediationEta",
+          "defaultPath": "properties.remediationEta"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/remediationEta.eta",
+          "defaultPath": "properties.remediationEta.eta"
+        },
+        {
+          "name": "Microsoft.Security/assessments/governanceAssignments/remediationEta.justification",
+          "defaultPath": "properties.remediationEta.justification"
+        }
+      ],
+      "resourceType": "assessments/governanceAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/assignments/additionalData",
+          "defaultPath": "properties.additionalData"
+        },
+        {
+          "name": "Microsoft.Security/assignments/additionalData.exemptionCategory",
+          "defaultPath": "properties.additionalData.exemptionCategory"
+        },
+        {
+          "name": "Microsoft.Security/assignments/assignedComponent",
+          "defaultPath": "properties.assignedComponent"
+        },
+        {
+          "name": "Microsoft.Security/assignments/assignedComponent.key",
+          "defaultPath": "properties.assignedComponent.key"
+        },
+        {
+          "name": "Microsoft.Security/assignments/assignedStandard",
+          "defaultPath": "properties.assignedStandard"
+        },
+        {
+          "name": "Microsoft.Security/assignments/assignedStandard.id",
+          "defaultPath": "properties.assignedStandard.id"
+        },
+        {
+          "name": "Microsoft.Security/assignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/assignments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/assignments/effect",
+          "defaultPath": "properties.effect"
+        },
+        {
+          "name": "Microsoft.Security/assignments/expiresOn",
+          "defaultPath": "properties.expiresOn"
+        },
+        {
+          "name": "Microsoft.Security/assignments/scope",
+          "defaultPath": "properties.scope"
+        }
+      ],
+      "resourceType": "assignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/automations/actions",
+          "defaultPath": "properties.actions"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*]",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].actionType",
+          "defaultPath": "properties.actions[*].actionType"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].EventHub",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].EventHub.connectionString",
+          "defaultPath": "properties.actions[*].connectionString"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].EventHub.eventHubResourceId",
+          "defaultPath": "properties.actions[*].eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].EventHub.isTrustedServiceEnabled",
+          "defaultPath": "properties.actions[*].isTrustedServiceEnabled"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].EventHub.sasPolicyName",
+          "defaultPath": "properties.actions[*].sasPolicyName"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].LogicApp",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].LogicApp.logicAppResourceId",
+          "defaultPath": "properties.actions[*].logicAppResourceId"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].LogicApp.uri",
+          "defaultPath": "properties.actions[*].uri"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].Workspace",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/actions[*].Workspace.workspaceResourceId",
+          "defaultPath": "properties.actions[*].workspaceResourceId"
+        },
+        {
+          "name": "Microsoft.Security/automations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/automations/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/automations/scopes",
+          "defaultPath": "properties.scopes"
+        },
+        {
+          "name": "Microsoft.Security/automations/scopes[*]",
+          "defaultPath": "properties.scopes[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/scopes[*].description",
+          "defaultPath": "properties.scopes[*].description"
+        },
+        {
+          "name": "Microsoft.Security/automations/scopes[*].scopePath",
+          "defaultPath": "properties.scopes[*].scopePath"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources",
+          "defaultPath": "properties.sources"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*]",
+          "defaultPath": "properties.sources[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].eventSource",
+          "defaultPath": "properties.sources[*].eventSource"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets",
+          "defaultPath": "properties.sources[*].ruleSets"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*]",
+          "defaultPath": "properties.sources[*].ruleSets[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*].rules",
+          "defaultPath": "properties.sources[*].ruleSets[*].rules"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*].rules[*]",
+          "defaultPath": "properties.sources[*].ruleSets[*].rules[*]"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*].rules[*].expectedValue",
+          "defaultPath": "properties.sources[*].ruleSets[*].rules[*].expectedValue"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*].rules[*].operator",
+          "defaultPath": "properties.sources[*].ruleSets[*].rules[*].operator"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*].rules[*].propertyJPath",
+          "defaultPath": "properties.sources[*].ruleSets[*].rules[*].propertyJPath"
+        },
+        {
+          "name": "Microsoft.Security/automations/sources[*].ruleSets[*].rules[*].propertyType",
+          "defaultPath": "properties.sources[*].ruleSets[*].rules[*].propertyType"
+        }
+      ],
+      "resourceType": "automations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/AutoProvisioningSettings/autoProvision",
+          "defaultPath": "properties.autoProvision"
+        }
+      ],
+      "resourceType": "AutoProvisioningSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/complianceResults/resourceStatus",
+          "paths": [
+            {
+              "path": "properties.resourceStatus",
+              "apiVersions": [
+                "2017-08-01",
+                "2017-08-01-beta",
+                "2017-08-02-beta",
+                "2017-08-03-beta",
+                "2017-08-04-beta",
+                "2017-08-01-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.resourceStatus"
+        }
+      ],
+      "resourceType": "complianceResults"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/customRecommendations/assessmentKey",
+          "defaultPath": "properties.assessmentKey"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/cloudProviders",
+          "defaultPath": "properties.cloudProviders"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/cloudProviders[*]",
+          "defaultPath": "properties.cloudProviders[*]"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/query",
+          "defaultPath": "properties.query"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/remediationDescription",
+          "defaultPath": "properties.remediationDescription"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/securityIssue",
+          "defaultPath": "properties.securityIssue"
+        },
+        {
+          "name": "Microsoft.Security/customRecommendations/severity",
+          "defaultPath": "properties.severity"
+        }
+      ],
+      "resourceType": "customRecommendations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning",
+          "defaultPath": "properties.malwareScanning"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.automatedResponse",
+          "defaultPath": "properties.malwareScanning.automatedResponse"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.blobScanResultsOptions",
+          "defaultPath": "properties.malwareScanning.blobScanResultsOptions"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload",
+          "defaultPath": "properties.malwareScanning.onUpload"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.capGBPerMonth",
+          "defaultPath": "properties.malwareScanning.onUpload.capGBPerMonth"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.filters",
+          "defaultPath": "properties.malwareScanning.onUpload.filters"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.filters.excludeBlobsWithPrefix",
+          "defaultPath": "properties.malwareScanning.onUpload.filters.excludeBlobsWithPrefix"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.filters.excludeBlobsWithPrefix[*]",
+          "defaultPath": "properties.malwareScanning.onUpload.filters.excludeBlobsWithPrefix[*]"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.filters.excludeBlobsWithSuffix",
+          "defaultPath": "properties.malwareScanning.onUpload.filters.excludeBlobsWithSuffix"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.filters.excludeBlobsWithSuffix[*]",
+          "defaultPath": "properties.malwareScanning.onUpload.filters.excludeBlobsWithSuffix[*]"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.onUpload.isEnabled",
+          "defaultPath": "properties.malwareScanning.onUpload.isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.operationStatus",
+          "defaultPath": "properties.malwareScanning.operationStatus"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.operationStatus.code",
+          "defaultPath": "properties.malwareScanning.operationStatus.code"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.operationStatus.message",
+          "defaultPath": "properties.malwareScanning.operationStatus.message"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/malwareScanning.scanResultsEventGridTopicResourceId",
+          "defaultPath": "properties.malwareScanning.scanResultsEventGridTopicResourceId"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/overrideSubscriptionLevelSettings",
+          "defaultPath": "properties.overrideSubscriptionLevelSettings"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/sensitiveDataDiscovery",
+          "defaultPath": "properties.sensitiveDataDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/sensitiveDataDiscovery.isEnabled",
+          "defaultPath": "properties.sensitiveDataDiscovery.isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/sensitiveDataDiscovery.operationStatus",
+          "defaultPath": "properties.sensitiveDataDiscovery.operationStatus"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/sensitiveDataDiscovery.operationStatus.code",
+          "defaultPath": "properties.sensitiveDataDiscovery.operationStatus.code"
+        },
+        {
+          "name": "Microsoft.Security/defenderForStorageSettings/sensitiveDataDiscovery.operationStatus.message",
+          "defaultPath": "properties.sensitiveDataDiscovery.operationStatus.message"
+        }
+      ],
+      "resourceType": "defenderForStorageSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules",
+          "defaultPath": "properties.allowlistRules"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*]",
+          "defaultPath": "properties.allowlistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].AllowlistCustomAlertRule",
+          "defaultPath": "properties.allowlistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].AllowlistCustomAlertRule.allowlistValues",
+          "defaultPath": "properties.allowlistRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].AllowlistCustomAlertRule.allowlistValues[*]",
+          "defaultPath": "properties.allowlistRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].allowlistValues",
+          "defaultPath": "properties.allowlistRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].allowlistValues[*]",
+          "defaultPath": "properties.allowlistRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].DenylistCustomAlertRule",
+          "defaultPath": "properties.allowlistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].DenylistCustomAlertRule.denylistValues",
+          "defaultPath": "properties.allowlistRules[*].denylistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].DenylistCustomAlertRule.denylistValues[*]",
+          "defaultPath": "properties.allowlistRules[*].denylistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].description",
+          "defaultPath": "properties.allowlistRules[*].description"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].displayName",
+          "defaultPath": "properties.allowlistRules[*].displayName"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].isEnabled",
+          "defaultPath": "properties.allowlistRules[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].ListCustomAlertRule",
+          "defaultPath": "properties.allowlistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].ListCustomAlertRule.valueType",
+          "defaultPath": "properties.allowlistRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].maxThreshold",
+          "defaultPath": "properties.allowlistRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].minThreshold",
+          "defaultPath": "properties.allowlistRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].ruleType",
+          "defaultPath": "properties.allowlistRules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].ThresholdCustomAlertRule",
+          "defaultPath": "properties.allowlistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].ThresholdCustomAlertRule.maxThreshold",
+          "defaultPath": "properties.allowlistRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].ThresholdCustomAlertRule.minThreshold",
+          "defaultPath": "properties.allowlistRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].TimeWindowCustomAlertRule",
+          "defaultPath": "properties.allowlistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].TimeWindowCustomAlertRule.timeWindowSize",
+          "defaultPath": "properties.allowlistRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].timeWindowSize",
+          "defaultPath": "properties.allowlistRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/allowlistRules[*].valueType",
+          "defaultPath": "properties.allowlistRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules",
+          "defaultPath": "properties.denylistRules"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*]",
+          "defaultPath": "properties.denylistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].AllowlistCustomAlertRule",
+          "defaultPath": "properties.denylistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].AllowlistCustomAlertRule.allowlistValues",
+          "defaultPath": "properties.denylistRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].AllowlistCustomAlertRule.allowlistValues[*]",
+          "defaultPath": "properties.denylistRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].allowlistValues",
+          "defaultPath": "properties.denylistRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].allowlistValues[*]",
+          "defaultPath": "properties.denylistRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].DenylistCustomAlertRule",
+          "defaultPath": "properties.denylistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].DenylistCustomAlertRule.denylistValues",
+          "defaultPath": "properties.denylistRules[*].denylistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].DenylistCustomAlertRule.denylistValues[*]",
+          "defaultPath": "properties.denylistRules[*].denylistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].denylistValues",
+          "defaultPath": "properties.denylistRules[*].denylistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].denylistValues[*]",
+          "defaultPath": "properties.denylistRules[*].denylistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].description",
+          "defaultPath": "properties.denylistRules[*].description"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].displayName",
+          "defaultPath": "properties.denylistRules[*].displayName"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].isEnabled",
+          "defaultPath": "properties.denylistRules[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].ListCustomAlertRule",
+          "defaultPath": "properties.denylistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].ListCustomAlertRule.valueType",
+          "defaultPath": "properties.denylistRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].maxThreshold",
+          "defaultPath": "properties.denylistRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].minThreshold",
+          "defaultPath": "properties.denylistRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].ruleType",
+          "defaultPath": "properties.denylistRules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].ThresholdCustomAlertRule",
+          "defaultPath": "properties.denylistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].ThresholdCustomAlertRule.maxThreshold",
+          "defaultPath": "properties.denylistRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].ThresholdCustomAlertRule.minThreshold",
+          "defaultPath": "properties.denylistRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].TimeWindowCustomAlertRule",
+          "defaultPath": "properties.denylistRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].TimeWindowCustomAlertRule.timeWindowSize",
+          "defaultPath": "properties.denylistRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].timeWindowSize",
+          "defaultPath": "properties.denylistRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/denylistRules[*].valueType",
+          "defaultPath": "properties.denylistRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules",
+          "defaultPath": "properties.thresholdRules"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*]",
+          "defaultPath": "properties.thresholdRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].AllowlistCustomAlertRule",
+          "defaultPath": "properties.thresholdRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].AllowlistCustomAlertRule.allowlistValues",
+          "defaultPath": "properties.thresholdRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].AllowlistCustomAlertRule.allowlistValues[*]",
+          "defaultPath": "properties.thresholdRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].allowlistValues",
+          "defaultPath": "properties.thresholdRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].allowlistValues[*]",
+          "defaultPath": "properties.thresholdRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].DenylistCustomAlertRule",
+          "defaultPath": "properties.thresholdRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].DenylistCustomAlertRule.denylistValues",
+          "defaultPath": "properties.thresholdRules[*].denylistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].DenylistCustomAlertRule.denylistValues[*]",
+          "defaultPath": "properties.thresholdRules[*].denylistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].description",
+          "defaultPath": "properties.thresholdRules[*].description"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].displayName",
+          "defaultPath": "properties.thresholdRules[*].displayName"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].isEnabled",
+          "defaultPath": "properties.thresholdRules[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].ListCustomAlertRule",
+          "defaultPath": "properties.thresholdRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].ListCustomAlertRule.valueType",
+          "defaultPath": "properties.thresholdRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].maxThreshold",
+          "defaultPath": "properties.thresholdRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].minThreshold",
+          "defaultPath": "properties.thresholdRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].ruleType",
+          "defaultPath": "properties.thresholdRules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].ThresholdCustomAlertRule",
+          "defaultPath": "properties.thresholdRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].ThresholdCustomAlertRule.maxThreshold",
+          "defaultPath": "properties.thresholdRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].ThresholdCustomAlertRule.minThreshold",
+          "defaultPath": "properties.thresholdRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].TimeWindowCustomAlertRule",
+          "defaultPath": "properties.thresholdRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].TimeWindowCustomAlertRule.timeWindowSize",
+          "defaultPath": "properties.thresholdRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].timeWindowSize",
+          "defaultPath": "properties.thresholdRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/thresholdRules[*].valueType",
+          "defaultPath": "properties.thresholdRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules",
+          "defaultPath": "properties.timeWindowRules"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*]",
+          "defaultPath": "properties.timeWindowRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].AllowlistCustomAlertRule",
+          "defaultPath": "properties.timeWindowRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].AllowlistCustomAlertRule.allowlistValues",
+          "defaultPath": "properties.timeWindowRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].AllowlistCustomAlertRule.allowlistValues[*]",
+          "defaultPath": "properties.timeWindowRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].allowlistValues",
+          "defaultPath": "properties.timeWindowRules[*].allowlistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].allowlistValues[*]",
+          "defaultPath": "properties.timeWindowRules[*].allowlistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].DenylistCustomAlertRule",
+          "defaultPath": "properties.timeWindowRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].DenylistCustomAlertRule.denylistValues",
+          "defaultPath": "properties.timeWindowRules[*].denylistValues"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].DenylistCustomAlertRule.denylistValues[*]",
+          "defaultPath": "properties.timeWindowRules[*].denylistValues[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].description",
+          "defaultPath": "properties.timeWindowRules[*].description"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].displayName",
+          "defaultPath": "properties.timeWindowRules[*].displayName"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].isEnabled",
+          "defaultPath": "properties.timeWindowRules[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].ListCustomAlertRule",
+          "defaultPath": "properties.timeWindowRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].ListCustomAlertRule.valueType",
+          "defaultPath": "properties.timeWindowRules[*].valueType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].maxThreshold",
+          "defaultPath": "properties.timeWindowRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].minThreshold",
+          "defaultPath": "properties.timeWindowRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].ruleType",
+          "defaultPath": "properties.timeWindowRules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].ThresholdCustomAlertRule",
+          "defaultPath": "properties.timeWindowRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].ThresholdCustomAlertRule.maxThreshold",
+          "defaultPath": "properties.timeWindowRules[*].maxThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].ThresholdCustomAlertRule.minThreshold",
+          "defaultPath": "properties.timeWindowRules[*].minThreshold"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].TimeWindowCustomAlertRule",
+          "defaultPath": "properties.timeWindowRules[*]"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].TimeWindowCustomAlertRule.timeWindowSize",
+          "defaultPath": "properties.timeWindowRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].timeWindowSize",
+          "defaultPath": "properties.timeWindowRules[*].timeWindowSize"
+        },
+        {
+          "name": "Microsoft.Security/deviceSecurityGroups/timeWindowRules[*].valueType",
+          "defaultPath": "properties.timeWindowRules[*].valueType"
+        }
+      ],
+      "resourceType": "deviceSecurityGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/governanceRules/conditionSets",
+          "defaultPath": "properties.conditionSets"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/conditionSets[*]",
+          "defaultPath": "properties.conditionSets[*]"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/excludedScopes",
+          "defaultPath": "properties.excludedScopes"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/excludedScopes[*]",
+          "defaultPath": "properties.excludedScopes[*]"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/governanceEmailNotification",
+          "defaultPath": "properties.governanceEmailNotification"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/governanceEmailNotification.disableManagerEmailNotification",
+          "defaultPath": "properties.governanceEmailNotification.disableManagerEmailNotification"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/governanceEmailNotification.disableOwnerEmailNotification",
+          "defaultPath": "properties.governanceEmailNotification.disableOwnerEmailNotification"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/includeMemberScopes",
+          "defaultPath": "properties.includeMemberScopes"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/isDisabled",
+          "defaultPath": "properties.isDisabled"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/isGracePeriod",
+          "defaultPath": "properties.isGracePeriod"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/metadata.createdBy",
+          "defaultPath": "properties.metadata.createdBy"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/metadata.createdOn",
+          "defaultPath": "properties.metadata.createdOn"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/metadata.updatedBy",
+          "defaultPath": "properties.metadata.updatedBy"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/metadata.updatedOn",
+          "defaultPath": "properties.metadata.updatedOn"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/ownerSource",
+          "defaultPath": "properties.ownerSource"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/ownerSource.type",
+          "defaultPath": "properties.ownerSource.type"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/ownerSource.value",
+          "defaultPath": "properties.ownerSource.value"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/remediationTimeframe",
+          "defaultPath": "properties.remediationTimeframe"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/rulePriority",
+          "defaultPath": "properties.rulePriority"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/ruleType",
+          "defaultPath": "properties.ruleType"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/sourceResourceType",
+          "defaultPath": "properties.sourceResourceType"
+        },
+        {
+          "name": "Microsoft.Security/governanceRules/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "governanceRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/effective.informationTypes",
+          "defaultPath": "properties.informationTypes"
+        },
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/effective.labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/effective.lastModifiedUtc",
+          "defaultPath": "properties.lastModifiedUtc"
+        },
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/effective.version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/informationTypes",
+          "defaultPath": "properties.informationTypes"
+        },
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.Security/InformationProtectionPolicies/lastModifiedUtc",
+          "defaultPath": "properties.lastModifiedUtc"
+        },
+        {
+          "name": "Microsoft.Security/informationProtectionPolicies/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "InformationProtectionPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/additionalWorkspaces",
+          "defaultPath": "properties.additionalWorkspaces"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/additionalWorkspaces[*]",
+          "defaultPath": "properties.additionalWorkspaces[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/additionalWorkspaces[*].dataTypes",
+          "defaultPath": "properties.additionalWorkspaces[*].dataTypes"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/additionalWorkspaces[*].dataTypes[*]",
+          "defaultPath": "properties.additionalWorkspaces[*].dataTypes[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/additionalWorkspaces[*].type",
+          "defaultPath": "properties.additionalWorkspaces[*].type"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/additionalWorkspaces[*].workspace",
+          "defaultPath": "properties.additionalWorkspaces[*].workspace"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/autoDiscoveredResources",
+          "defaultPath": "properties.autoDiscoveredResources"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/autoDiscoveredResources[*]",
+          "defaultPath": "properties.autoDiscoveredResources[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/disabledDataSources",
+          "defaultPath": "properties.disabledDataSources"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/disabledDataSources[*]",
+          "defaultPath": "properties.disabledDataSources[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/export",
+          "defaultPath": "properties.export"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/export[*]",
+          "defaultPath": "properties.export[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/iotHubs",
+          "defaultPath": "properties.iotHubs"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/iotHubs[*]",
+          "defaultPath": "properties.iotHubs[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/recommendationsConfiguration",
+          "defaultPath": "properties.recommendationsConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/recommendationsConfiguration[*]",
+          "defaultPath": "properties.recommendationsConfiguration[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/recommendationsConfiguration[*].name",
+          "defaultPath": "properties.recommendationsConfiguration[*].name"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/recommendationsConfiguration[*].recommendationType",
+          "defaultPath": "properties.recommendationsConfiguration[*].recommendationType"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/recommendationsConfiguration[*].status",
+          "defaultPath": "properties.recommendationsConfiguration[*].status"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/unmaskedIpLoggingStatus",
+          "defaultPath": "properties.unmaskedIpLoggingStatus"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/userDefinedResources",
+          "defaultPath": "properties.userDefinedResources"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/userDefinedResources.query",
+          "defaultPath": "properties.userDefinedResources.query"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/userDefinedResources.querySubscriptions",
+          "defaultPath": "properties.userDefinedResources.querySubscriptions"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/userDefinedResources.querySubscriptions[*]",
+          "defaultPath": "properties.userDefinedResources.querySubscriptions[*]"
+        },
+        {
+          "name": "Microsoft.Security/iotSecuritySolutions/workspace",
+          "defaultPath": "properties.workspace"
+        }
+      ],
+      "resourceType": "iotSecuritySolutions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/locations/alerts/state",
+          "paths": [
+            {
+              "path": "properties.state",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha",
+                "2019-01-01-alpha",
+                "2019-01-01-beta",
+                "2019-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "locations/alerts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests",
+          "defaultPath": "properties.requests"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*]",
+          "defaultPath": "properties.requests[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].justification",
+          "defaultPath": "properties.requests[*].justification"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].requestor",
+          "defaultPath": "properties.requests[*].requestor"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].startTimeUtc",
+          "defaultPath": "properties.requests[*].startTimeUtc"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines",
+          "defaultPath": "properties.requests[*].virtualMachines"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*]",
+          "defaultPath": "properties.requests[*].virtualMachines[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].id",
+          "defaultPath": "properties.requests[*].virtualMachines[*].id"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*]",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].allowedSourceAddressPrefix",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].allowedSourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].allowedSourceAddressPrefixes",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].allowedSourceAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].allowedSourceAddressPrefixes[*]",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].allowedSourceAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].endTimeUtc",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].endTimeUtc"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].mappedPort",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].mappedPort"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].number",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].number"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].status",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].status"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/requests[*].virtualMachines[*].ports[*].statusReason",
+          "defaultPath": "properties.requests[*].virtualMachines[*].ports[*].statusReason"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines",
+          "defaultPath": "properties.virtualMachines"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*]",
+          "defaultPath": "properties.virtualMachines[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].id",
+          "defaultPath": "properties.virtualMachines[*].id"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports",
+          "defaultPath": "properties.virtualMachines[*].ports"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*]",
+          "defaultPath": "properties.virtualMachines[*].ports[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*].allowedSourceAddressPrefix",
+          "defaultPath": "properties.virtualMachines[*].ports[*].allowedSourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*].allowedSourceAddressPrefixes",
+          "defaultPath": "properties.virtualMachines[*].ports[*].allowedSourceAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*].allowedSourceAddressPrefixes[*]",
+          "defaultPath": "properties.virtualMachines[*].ports[*].allowedSourceAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*].maxRequestAccessDuration",
+          "defaultPath": "properties.virtualMachines[*].ports[*].maxRequestAccessDuration"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*].number",
+          "defaultPath": "properties.virtualMachines[*].ports[*].number"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].ports[*].protocol",
+          "defaultPath": "properties.virtualMachines[*].ports[*].protocol"
+        },
+        {
+          "name": "Microsoft.Security/locations/jitNetworkAccessPolicies/virtualMachines[*].publicIpAddress",
+          "defaultPath": "properties.virtualMachines[*].publicIpAddress"
+        }
+      ],
+      "resourceType": "locations/jitNetworkAccessPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/policies/logCollection",
+          "paths": [
+            {
+              "path": "properties.logCollection",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.logCollection"
+        },
+        {
+          "name": "Microsoft.Security/policies/logsConfiguration",
+          "paths": [
+            {
+              "path": "properties.logsConfiguration",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.logsConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/policies/logsConfiguration.storages",
+          "paths": [
+            {
+              "path": "properties.logsConfiguration.storages",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.logsConfiguration.storages"
+        },
+        {
+          "name": "Microsoft.Security/policies/name",
+          "paths": [
+            {
+              "path": "properties.name",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.Security/policies/omsWorkspaceConfiguration",
+          "paths": [
+            {
+              "path": "properties.omsWorkspaceConfiguration",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.omsWorkspaceConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/policies/omsWorkspaceConfiguration.workspaces",
+          "paths": [
+            {
+              "path": "properties.omsWorkspaceConfiguration.workspaces",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.omsWorkspaceConfiguration.workspaces"
+        },
+        {
+          "name": "Microsoft.Security/policies/policyLevel",
+          "paths": [
+            {
+              "path": "properties.policyLevel",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.policyLevel"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration.active",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration.active",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration.active"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration.level",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration.level",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration.level"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration.resourceGroup",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration.resourceGroup",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration.resourceGroup"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration.selectedPricingTier",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration.selectedPricingTier",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration.selectedPricingTier"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration.standardBundles",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration.standardBundles",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration.standardBundles"
+        },
+        {
+          "name": "Microsoft.Security/policies/pricingConfiguration.standardBundles[*]",
+          "paths": [
+            {
+              "path": "properties.pricingConfiguration.standardBundles[*]",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingConfiguration.standardBundles[*]"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations",
+          "paths": [
+            {
+              "path": "properties.recommendations",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.acls",
+          "paths": [
+            {
+              "path": "properties.recommendations.acls",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.acls"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.antimalware",
+          "paths": [
+            {
+              "path": "properties.recommendations.antimalware",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.antimalware"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.appWhitelisting",
+          "paths": [
+            {
+              "path": "properties.recommendations.appWhitelisting",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.appWhitelisting"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.baseline",
+          "paths": [
+            {
+              "path": "properties.recommendations.baseline",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.baseline"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.diskEncryption",
+          "paths": [
+            {
+              "path": "properties.recommendations.diskEncryption",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.diskEncryption"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.jitNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.recommendations.jitNetworkAccess",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.jitNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.ngfw",
+          "paths": [
+            {
+              "path": "properties.recommendations.ngfw",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.ngfw"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.nsgs",
+          "paths": [
+            {
+              "path": "properties.recommendations.nsgs",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.nsgs"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.patch",
+          "paths": [
+            {
+              "path": "properties.recommendations.patch",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.patch"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.sqlAuditing",
+          "paths": [
+            {
+              "path": "properties.recommendations.sqlAuditing",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.sqlAuditing"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.sqlTde",
+          "paths": [
+            {
+              "path": "properties.recommendations.sqlTde",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.sqlTde"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.storageEncryption",
+          "paths": [
+            {
+              "path": "properties.recommendations.storageEncryption",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.storageEncryption"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.vulnerabilityAssessment",
+          "paths": [
+            {
+              "path": "properties.recommendations.vulnerabilityAssessment",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.vulnerabilityAssessment"
+        },
+        {
+          "name": "Microsoft.Security/policies/recommendations.waf",
+          "paths": [
+            {
+              "path": "properties.recommendations.waf",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.recommendations.waf"
+        },
+        {
+          "name": "Microsoft.Security/policies/securityContactConfiguration",
+          "paths": [
+            {
+              "path": "properties.securityContactConfiguration",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityContactConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/policies/securityContactConfiguration.areNotificationsOn",
+          "paths": [
+            {
+              "path": "properties.securityContactConfiguration.areNotificationsOn",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityContactConfiguration.areNotificationsOn"
+        },
+        {
+          "name": "Microsoft.Security/policies/securityContactConfiguration.securityContactEmails",
+          "paths": [
+            {
+              "path": "properties.securityContactConfiguration.securityContactEmails",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityContactConfiguration.securityContactEmails"
+        },
+        {
+          "name": "Microsoft.Security/policies/securityContactConfiguration.securityContactEmails[*]",
+          "paths": [
+            {
+              "path": "properties.securityContactConfiguration.securityContactEmails[*]",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityContactConfiguration.securityContactEmails[*]"
+        },
+        {
+          "name": "Microsoft.Security/policies/securityContactConfiguration.securityContactPhone",
+          "paths": [
+            {
+              "path": "properties.securityContactConfiguration.securityContactPhone",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityContactConfiguration.securityContactPhone"
+        },
+        {
+          "name": "Microsoft.Security/policies/securityContactConfiguration.sendToAdminOn",
+          "paths": [
+            {
+              "path": "properties.securityContactConfiguration.sendToAdminOn",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.securityContactConfiguration.sendToAdminOn"
+        },
+        {
+          "name": "Microsoft.Security/policies/unique",
+          "paths": [
+            {
+              "path": "properties.unique",
+              "apiVersions": [
+                "2015-06-01-preview",
+                "2016-01-15-alpha",
+                "2017-01-01-alpha",
+                "2016-01-01-alpha",
+                "2016-01-02-alpha",
+                "2016-01-03-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.unique"
+        }
+      ],
+      "resourceType": "policies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/pricings/deprecated",
+          "defaultPath": "properties.deprecated"
+        },
+        {
+          "name": "Microsoft.Security/pricings/enablementTime",
+          "defaultPath": "properties.enablementTime"
+        },
+        {
+          "name": "Microsoft.Security/pricings/enforce",
+          "defaultPath": "properties.enforce"
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions",
+          "defaultPath": "properties.extensions"
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*]",
+          "paths": [
+            {
+              "path": "properties.extensions[*]",
+              "apiVersions": [
+                "2022-03-01",
+                "2018-06-01",
+                "2017-08-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.extensions[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].additionalExtensionProperties",
+          "paths": [
+            {
+              "path": "properties.extensions[*].additionalExtensionProperties",
+              "apiVersions": [
+                "2022-03-01",
+                "2018-06-01",
+                "2017-08-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.extensions[*].additionalExtensionProperties",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].isEnabled",
+          "paths": [
+            {
+              "path": "properties.extensions[*].isEnabled",
+              "apiVersions": [
+                "2022-03-01",
+                "2018-06-01",
+                "2017-08-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.extensions[*].isEnabled",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].name",
+          "defaultPath": "properties.extensions[*].name"
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].operationStatus",
+          "defaultPath": "properties.extensions[*].operationStatus"
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].operationStatus.code",
+          "defaultPath": "properties.extensions[*].operationStatus.code"
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].operationStatus.message",
+          "defaultPath": "properties.extensions[*].operationStatus.message"
+        },
+        {
+          "name": "Microsoft.Security/pricings/extensions[*].securityOperatorResourceId",
+          "defaultPath": "properties.extensions[*].securityOperatorResourceId"
+        },
+        {
+          "name": "Microsoft.Security/pricings/freeTrialRemainingTime",
+          "defaultPath": "properties.freeTrialRemainingTime"
+        },
+        {
+          "name": "Microsoft.Security/pricings/inherited",
+          "defaultPath": "properties.inherited"
+        },
+        {
+          "name": "Microsoft.Security/pricings/inheritedFrom",
+          "defaultPath": "properties.inheritedFrom"
+        },
+        {
+          "name": "Microsoft.Security/pricings/managedBy",
+          "defaultPath": "properties.managedBy"
+        },
+        {
+          "name": "Microsoft.Security/pricings/originatedFrom",
+          "defaultPath": "properties.originatedFrom"
+        },
+        {
+          "name": "Microsoft.Security/pricings/pricingTier",
+          "paths": [
+            {
+              "path": "properties.pricingTier",
+              "apiVersions": [
+                "2017-08-01-preview",
+                "2017-08-01-beta",
+                "2017-08-02-beta",
+                "2017-08-03-beta",
+                "2017-08-04-beta",
+                "2017-08-01-alpha",
+                "2018-06-01",
+                "2018-06-01-beta",
+                "2018-06-02-beta",
+                "2018-06-03-beta",
+                "2018-06-04-beta",
+                "2018-06-01-alpha"
+              ]
+            }
+          ],
+          "defaultPath": "properties.pricingTier"
+        },
+        {
+          "name": "Microsoft.Security/pricings/replacedBy",
+          "defaultPath": "properties.replacedBy"
+        },
+        {
+          "name": "Microsoft.Security/pricings/replacedBy[*]",
+          "defaultPath": "properties.replacedBy[*]"
+        },
+        {
+          "name": "Microsoft.Security/pricings/resourcesCoverageStatus",
+          "defaultPath": "properties.resourcesCoverageStatus"
+        },
+        {
+          "name": "Microsoft.Security/pricings/securityOperatorResourceId",
+          "defaultPath": "properties.securityOperatorResourceId"
+        },
+        {
+          "name": "Microsoft.Security/pricings/subPlan",
+          "defaultPath": "properties.subPlan"
+        }
+      ],
+      "resourceType": "pricings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources",
+          "defaultPath": "properties.privateLinkResources"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*]",
+          "defaultPath": "properties.privateLinkResources[*]"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].groupId",
+          "defaultPath": "properties.privateLinkResources[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].id",
+          "defaultPath": "properties.privateLinkResources[*].id"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].name",
+          "defaultPath": "properties.privateLinkResources[*].name"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].requiredMembers",
+          "defaultPath": "properties.privateLinkResources[*].properties.requiredMembers"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].requiredMembers[*]",
+          "defaultPath": "properties.privateLinkResources[*].properties.requiredMembers[*]"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].requiredZoneNames",
+          "defaultPath": "properties.privateLinkResources[*].properties.requiredZoneNames"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].requiredZoneNames[*]",
+          "defaultPath": "properties.privateLinkResources[*].properties.requiredZoneNames[*]"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData",
+          "defaultPath": "properties.privateLinkResources[*].systemData"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData.createdAt",
+          "defaultPath": "properties.privateLinkResources[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData.createdBy",
+          "defaultPath": "properties.privateLinkResources[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData.createdByType",
+          "defaultPath": "properties.privateLinkResources[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateLinkResources[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateLinkResources[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateLinkResources[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateLinkResources[*].type",
+          "defaultPath": "properties.privateLinkResources[*].type"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        }
+      ],
+      "resourceType": "privateLinks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Security/privateLinks/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "privateLinks/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityConnectors/cloudName",
+          "defaultPath": "properties.cloudName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData",
+          "defaultPath": "properties.environmentData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount",
+          "defaultPath": "properties.environmentData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.accountName",
+          "defaultPath": "properties.environmentData.accountName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData",
+          "defaultPath": "properties.environmentData.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.Member",
+          "defaultPath": "properties.environmentData.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.Member.parentHierarchyId",
+          "defaultPath": "properties.environmentData.organizationalData.parentHierarchyId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.Organization",
+          "defaultPath": "properties.environmentData.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.Organization.excludedAccountIds",
+          "defaultPath": "properties.environmentData.organizationalData.excludedAccountIds"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.Organization.excludedAccountIds[*]",
+          "defaultPath": "properties.environmentData.organizationalData.excludedAccountIds[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.Organization.stacksetName",
+          "defaultPath": "properties.environmentData.organizationalData.stacksetName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.organizationalData.organizationMembershipType",
+          "defaultPath": "properties.environmentData.organizationalData.organizationMembershipType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.regions",
+          "defaultPath": "properties.environmentData.regions"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.regions[*]",
+          "defaultPath": "properties.environmentData.regions[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.AwsAccount.scanInterval",
+          "defaultPath": "properties.environmentData.scanInterval"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.DockerHubOrganization",
+          "defaultPath": "properties.environmentData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.DockerHubOrganization.authentication",
+          "defaultPath": "properties.environmentData.authentication"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.DockerHubOrganization.authentication.AccessToken",
+          "defaultPath": "properties.environmentData.authentication"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.DockerHubOrganization.authentication.authenticationType",
+          "defaultPath": "properties.environmentData.authentication.authenticationType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.DockerHubOrganization.scanInterval",
+          "defaultPath": "properties.environmentData.scanInterval"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.environmentType",
+          "defaultPath": "properties.environmentData.environmentType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject",
+          "defaultPath": "properties.environmentData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData",
+          "defaultPath": "properties.environmentData.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Member",
+          "defaultPath": "properties.environmentData.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Member.managementProjectNumber",
+          "defaultPath": "properties.environmentData.organizationalData.managementProjectNumber"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Member.parentHierarchyId",
+          "defaultPath": "properties.environmentData.organizationalData.parentHierarchyId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Organization",
+          "defaultPath": "properties.environmentData.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Organization.excludedProjectNumbers",
+          "defaultPath": "properties.environmentData.organizationalData.excludedProjectNumbers"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Organization.excludedProjectNumbers[*]",
+          "defaultPath": "properties.environmentData.organizationalData.excludedProjectNumbers[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Organization.organizationName",
+          "defaultPath": "properties.environmentData.organizationalData.organizationName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Organization.serviceAccountEmailAddress",
+          "defaultPath": "properties.environmentData.organizationalData.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.Organization.workloadIdentityProviderId",
+          "defaultPath": "properties.environmentData.organizationalData.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.organizationalData.organizationMembershipType",
+          "defaultPath": "properties.environmentData.organizationalData.organizationMembershipType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.projectDetails",
+          "defaultPath": "properties.environmentData.projectDetails"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.projectDetails.projectId",
+          "defaultPath": "properties.environmentData.projectDetails.projectId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.projectDetails.projectName",
+          "defaultPath": "properties.environmentData.projectDetails.projectName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.projectDetails.projectNumber",
+          "defaultPath": "properties.environmentData.projectDetails.projectNumber"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.projectDetails.workloadIdentityPoolId",
+          "defaultPath": "properties.environmentData.projectDetails.workloadIdentityPoolId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.GcpProject.scanInterval",
+          "defaultPath": "properties.environmentData.scanInterval"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.JFrogArtifactory",
+          "defaultPath": "properties.environmentData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentData.JFrogArtifactory.scanInterval",
+          "defaultPath": "properties.environmentData.scanInterval"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/environmentName",
+          "defaultPath": "properties.environmentName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/hierarchyIdentifier",
+          "defaultPath": "properties.hierarchyIdentifier"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/hierarchyIdentifierTrialEndDate",
+          "defaultPath": "properties.hierarchyIdentifierTrialEndDate"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings",
+          "defaultPath": "properties.offerings"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*]",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorAws",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorAws.nativeCloudConnection",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorAws.nativeCloudConnection.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorGcp",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorGcp.nativeCloudConnection",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorGcp.nativeCloudConnection.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].CspmMonitorGcp.nativeCloudConnection.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.ciem",
+          "defaultPath": "properties.offerings[*].ciem"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.ciem.ciemDiscovery",
+          "defaultPath": "properties.offerings[*].ciem.ciemDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.ciem.ciemDiscovery.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].ciem.ciemDiscovery.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.ciem.ciemOidc",
+          "defaultPath": "properties.offerings[*].ciem.ciemOidc"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.ciem.ciemOidc.azureActiveDirectoryAppName",
+          "defaultPath": "properties.offerings[*].ciem.ciemOidc.azureActiveDirectoryAppName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.ciem.ciemOidc.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].ciem.ciemOidc.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.databasesDspm",
+          "defaultPath": "properties.offerings[*].databasesDspm"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.databasesDspm.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].databasesDspm.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.databasesDspm.enabled",
+          "defaultPath": "properties.offerings[*].databasesDspm.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.dataSensitivityDiscovery",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.dataSensitivityDiscovery.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.dataSensitivityDiscovery.enabled",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.mdcContainersAgentlessDiscoveryK8s",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.mdcContainersAgentlessDiscoveryK8s.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.mdcContainersAgentlessDiscoveryK8s.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.mdcContainersImageAssessment",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.mdcContainersImageAssessment.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.mdcContainersImageAssessment.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners",
+          "defaultPath": "properties.offerings[*].vmScanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].vmScanners.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners.configuration",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners.configuration.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners.configuration.exclusionTags",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.exclusionTags"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners.configuration.scanningMode",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.scanningMode"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmAws.vmScanners.enabled",
+          "defaultPath": "properties.offerings[*].vmScanners.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.ciemDiscovery",
+          "defaultPath": "properties.offerings[*].ciemDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.ciemDiscovery.azureActiveDirectoryAppName",
+          "defaultPath": "properties.offerings[*].ciemDiscovery.azureActiveDirectoryAppName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.ciemDiscovery.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].ciemDiscovery.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.ciemDiscovery.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].ciemDiscovery.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.dataSensitivityDiscovery",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.dataSensitivityDiscovery.enabled",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.dataSensitivityDiscovery.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.dataSensitivityDiscovery.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].dataSensitivityDiscovery.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersAgentlessDiscoveryK8s",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersAgentlessDiscoveryK8s.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersAgentlessDiscoveryK8s.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersAgentlessDiscoveryK8s.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersImageAssessment",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersImageAssessment.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersImageAssessment.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.mdcContainersImageAssessment.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.vmScanners",
+          "defaultPath": "properties.offerings[*].vmScanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.vmScanners.configuration",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.vmScanners.configuration.exclusionTags",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.exclusionTags"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.vmScanners.configuration.scanningMode",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.scanningMode"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmGcp.vmScanners.enabled",
+          "defaultPath": "properties.offerings[*].vmScanners.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmJFrog",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmJFrog.mdcContainersImageAssessment",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderCspmJFrog.mdcContainersImageAssessment.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.autoProvisioning",
+          "defaultPath": "properties.offerings[*].autoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.cloudWatchToKinesis",
+          "defaultPath": "properties.offerings[*].cloudWatchToKinesis"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.cloudWatchToKinesis.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].cloudWatchToKinesis.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.containerVulnerabilityAssessment",
+          "defaultPath": "properties.offerings[*].containerVulnerabilityAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.containerVulnerabilityAssessment.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].containerVulnerabilityAssessment.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.containerVulnerabilityAssessmentTask",
+          "defaultPath": "properties.offerings[*].containerVulnerabilityAssessmentTask"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.containerVulnerabilityAssessmentTask.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].containerVulnerabilityAssessmentTask.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.dataCollectionExternalId",
+          "defaultPath": "properties.offerings[*].dataCollectionExternalId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.enableAuditLogsAutoProvisioning",
+          "defaultPath": "properties.offerings[*].enableAuditLogsAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.enableContainerVulnerabilityAssessment",
+          "defaultPath": "properties.offerings[*].enableContainerVulnerabilityAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.enableDefenderAgentAutoProvisioning",
+          "defaultPath": "properties.offerings[*].enableDefenderAgentAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.enablePolicyAgentAutoProvisioning",
+          "defaultPath": "properties.offerings[*].enablePolicyAgentAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kinesisToS3",
+          "defaultPath": "properties.offerings[*].kinesisToS3"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kinesisToS3.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].kinesisToS3.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubeAuditRetentionTime",
+          "defaultPath": "properties.offerings[*].kubeAuditRetentionTime"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubernetesDataCollection",
+          "defaultPath": "properties.offerings[*].kubernetesDataCollection"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubernetesDataCollection.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].kubernetesDataCollection.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubernetesScubaReader",
+          "defaultPath": "properties.offerings[*].kubernetesScubaReader"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubernetesScubaReader.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].kubernetesScubaReader.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubernetesService",
+          "defaultPath": "properties.offerings[*].kubernetesService"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.kubernetesService.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].kubernetesService.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.mdcContainersAgentlessDiscoveryK8s",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.mdcContainersAgentlessDiscoveryK8s.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.mdcContainersAgentlessDiscoveryK8s.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.mdcContainersImageAssessment",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.mdcContainersImageAssessment.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.mdcContainersImageAssessment.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.scubaExternalId",
+          "defaultPath": "properties.offerings[*].scubaExternalId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.vmScanners",
+          "defaultPath": "properties.offerings[*].vmScanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.vmScanners.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].vmScanners.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.vmScanners.configuration",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.vmScanners.configuration.exclusionTags",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.exclusionTags"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.vmScanners.configuration.scanningMode",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.scanningMode"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersAws.vmScanners.enabled",
+          "defaultPath": "properties.offerings[*].vmScanners.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.auditLogsAutoProvisioningFlag",
+          "defaultPath": "properties.offerings[*].auditLogsAutoProvisioningFlag"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.dataPipelineNativeCloudConnection",
+          "defaultPath": "properties.offerings[*].dataPipelineNativeCloudConnection"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.dataPipelineNativeCloudConnection.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].dataPipelineNativeCloudConnection.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.dataPipelineNativeCloudConnection.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].dataPipelineNativeCloudConnection.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.defenderAgentAutoProvisioningFlag",
+          "defaultPath": "properties.offerings[*].defenderAgentAutoProvisioningFlag"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.enableAuditLogsAutoProvisioning",
+          "defaultPath": "properties.offerings[*].enableAuditLogsAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.enableDefenderAgentAutoProvisioning",
+          "defaultPath": "properties.offerings[*].enableDefenderAgentAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.enablePolicyAgentAutoProvisioning",
+          "defaultPath": "properties.offerings[*].enablePolicyAgentAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersAgentlessDiscoveryK8s",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersAgentlessDiscoveryK8s.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersAgentlessDiscoveryK8s.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersAgentlessDiscoveryK8s.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].mdcContainersAgentlessDiscoveryK8s.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersImageAssessment",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersImageAssessment.enabled",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersImageAssessment.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.mdcContainersImageAssessment.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].mdcContainersImageAssessment.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.nativeCloudConnection",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.nativeCloudConnection.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.nativeCloudConnection.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].nativeCloudConnection.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.policyAgentAutoProvisioningFlag",
+          "defaultPath": "properties.offerings[*].policyAgentAutoProvisioningFlag"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.vmScanners",
+          "defaultPath": "properties.offerings[*].vmScanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.vmScanners.configuration",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.vmScanners.configuration.exclusionTags",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.exclusionTags"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.vmScanners.configuration.scanningMode",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.scanningMode"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForContainersGcp.vmScanners.enabled",
+          "defaultPath": "properties.offerings[*].vmScanners.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.configuration",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.configuration.privateLinkScope",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.privateLinkScope"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.configuration.proxy",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.proxy"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.servicePrincipalSecretMetadata",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.servicePrincipalSecretMetadata.expiryDate",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata.expiryDate"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.servicePrincipalSecretMetadata.parameterNameInStore",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata.parameterNameInStore"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.arcAutoProvisioning.servicePrincipalSecretMetadata.parameterStoreRegion",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata.parameterStoreRegion"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.databasesDspm",
+          "defaultPath": "properties.offerings[*].databasesDspm"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.databasesDspm.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].databasesDspm.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.databasesDspm.enabled",
+          "defaultPath": "properties.offerings[*].databasesDspm.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.rds",
+          "defaultPath": "properties.offerings[*].rds"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.rds.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].rds.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesAws.rds.enabled",
+          "defaultPath": "properties.offerings[*].rds.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning.configuration",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning.configuration.agentOnboardingServiceAccountNumericId",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.agentOnboardingServiceAccountNumericId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning.configuration.clientId",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.clientId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning.configuration.privateLinkScope",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.privateLinkScope"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning.configuration.proxy",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.proxy"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.arcAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.defenderForDatabasesArcAutoProvisioning",
+          "defaultPath": "properties.offerings[*].defenderForDatabasesArcAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.defenderForDatabasesArcAutoProvisioning.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].defenderForDatabasesArcAutoProvisioning.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForDatabasesGcp.defenderForDatabasesArcAutoProvisioning.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].defenderForDatabasesArcAutoProvisioning.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.configuration",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.configuration.privateLinkScope",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.privateLinkScope"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.configuration.proxy",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.proxy"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.servicePrincipalSecretMetadata",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.servicePrincipalSecretMetadata.expiryDate",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata.expiryDate"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.servicePrincipalSecretMetadata.parameterNameInStore",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata.parameterNameInStore"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.arcAutoProvisioning.servicePrincipalSecretMetadata.parameterStoreRegion",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.servicePrincipalSecretMetadata.parameterStoreRegion"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.defenderForServers",
+          "defaultPath": "properties.offerings[*].defenderForServers"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.defenderForServers.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].defenderForServers.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.mdeAutoProvisioning",
+          "defaultPath": "properties.offerings[*].mdeAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.mdeAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].mdeAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.subPlan",
+          "defaultPath": "properties.offerings[*].subPlan"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.subPlan.type",
+          "defaultPath": "properties.offerings[*].subPlan.type"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vaAutoProvisioning",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vaAutoProvisioning.configuration",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vaAutoProvisioning.configuration.type",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning.configuration.type"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vaAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners",
+          "defaultPath": "properties.offerings[*].vmScanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].vmScanners.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners.configuration",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners.configuration.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners.configuration.exclusionTags",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.exclusionTags"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners.configuration.scanningMode",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.scanningMode"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersAws.vmScanners.enabled",
+          "defaultPath": "properties.offerings[*].vmScanners.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning.configuration",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning.configuration.agentOnboardingServiceAccountNumericId",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.agentOnboardingServiceAccountNumericId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning.configuration.clientId",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.clientId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning.configuration.privateLinkScope",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.privateLinkScope"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning.configuration.proxy",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.configuration.proxy"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.arcAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].arcAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.defenderForServers",
+          "defaultPath": "properties.offerings[*].defenderForServers"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.defenderForServers.serviceAccountEmailAddress",
+          "defaultPath": "properties.offerings[*].defenderForServers.serviceAccountEmailAddress"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.defenderForServers.workloadIdentityProviderId",
+          "defaultPath": "properties.offerings[*].defenderForServers.workloadIdentityProviderId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.mdeAutoProvisioning",
+          "defaultPath": "properties.offerings[*].mdeAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.mdeAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].mdeAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.subPlan",
+          "defaultPath": "properties.offerings[*].subPlan"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.subPlan.type",
+          "defaultPath": "properties.offerings[*].subPlan.type"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vaAutoProvisioning",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vaAutoProvisioning.configuration",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vaAutoProvisioning.configuration.type",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning.configuration.type"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vaAutoProvisioning.enabled",
+          "defaultPath": "properties.offerings[*].vaAutoProvisioning.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vmScanners",
+          "defaultPath": "properties.offerings[*].vmScanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vmScanners.configuration",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vmScanners.configuration.exclusionTags",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.exclusionTags"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vmScanners.configuration.scanningMode",
+          "defaultPath": "properties.offerings[*].vmScanners.configuration.scanningMode"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].DefenderForServersGcp.vmScanners.enabled",
+          "defaultPath": "properties.offerings[*].vmScanners.enabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].description",
+          "defaultPath": "properties.offerings[*].description"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].InformationProtectionAws",
+          "defaultPath": "properties.offerings[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].InformationProtectionAws.informationProtection",
+          "defaultPath": "properties.offerings[*].informationProtection"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].InformationProtectionAws.informationProtection.cloudRoleArn",
+          "defaultPath": "properties.offerings[*].informationProtection.cloudRoleArn"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/offerings[*].offeringType",
+          "defaultPath": "properties.offerings[*].offeringType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/organizationalData",
+          "defaultPath": "properties.organizationalData"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/organizationalData.excludedAccountIds",
+          "defaultPath": "properties.organizationalData.excludedAccountIds"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/organizationalData.excludedAccountIds[*]",
+          "defaultPath": "properties.organizationalData.excludedAccountIds[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/organizationalData.organizationMembershipType",
+          "defaultPath": "properties.organizationalData.organizationMembershipType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/organizationalData.parentHierarchyId",
+          "defaultPath": "properties.organizationalData.parentHierarchyId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/organizationalData.stacksetName",
+          "defaultPath": "properties.organizationalData.stacksetName"
+        }
+      ],
+      "resourceType": "securityConnectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration",
+          "defaultPath": "properties.agentlessConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.agentlessAutoDiscovery",
+          "defaultPath": "properties.agentlessConfiguration.agentlessAutoDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.agentlessEnabled",
+          "defaultPath": "properties.agentlessConfiguration.agentlessEnabled"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.inventoryList",
+          "defaultPath": "properties.agentlessConfiguration.inventoryList"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.inventoryList[*]",
+          "defaultPath": "properties.agentlessConfiguration.inventoryList[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.inventoryList[*].inventoryKind",
+          "defaultPath": "properties.agentlessConfiguration.inventoryList[*].inventoryKind"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.inventoryList[*].value",
+          "defaultPath": "properties.agentlessConfiguration.inventoryList[*].value"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.inventoryListType",
+          "defaultPath": "properties.agentlessConfiguration.inventoryListType"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.scanners",
+          "defaultPath": "properties.agentlessConfiguration.scanners"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/agentlessConfiguration.scanners[*]",
+          "defaultPath": "properties.agentlessConfiguration.scanners[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/authorization",
+          "defaultPath": "properties.authorization"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/authorization.code",
+          "defaultPath": "properties.authorization.code"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/autoDiscovery",
+          "defaultPath": "properties.autoDiscovery"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/capabilities",
+          "defaultPath": "properties.capabilities"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/capabilities[*]",
+          "defaultPath": "properties.capabilities[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/capabilities[*].name",
+          "defaultPath": "properties.capabilities[*].name"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/capabilities[*].value",
+          "defaultPath": "properties.capabilities[*].value"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/provisioningStatusMessage",
+          "defaultPath": "properties.provisioningStatusMessage"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/provisioningStatusUpdateTimeUtc",
+          "defaultPath": "properties.provisioningStatusUpdateTimeUtc"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/topLevelInventoryList",
+          "defaultPath": "properties.topLevelInventoryList"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/topLevelInventoryList[*]",
+          "defaultPath": "properties.topLevelInventoryList[*]"
+        }
+      ],
+      "resourceType": "securityConnectors/devops"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation",
+          "defaultPath": "properties.actionableRemediation"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.branchConfiguration",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.branchConfiguration.annotateDefaultBranch",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.annotateDefaultBranch"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.branchConfiguration.branchNames",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.branchNames"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.branchConfiguration.branchNames[*]",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.branchNames[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.categoryConfigurations",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.categoryConfigurations[*]",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.categoryConfigurations[*].category",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*].category"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.categoryConfigurations[*].minimumSeverityLevel",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*].minimumSeverityLevel"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.inheritFromParentState",
+          "defaultPath": "properties.actionableRemediation.inheritFromParentState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/actionableRemediation.state",
+          "defaultPath": "properties.actionableRemediation.state"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/onboardingState",
+          "defaultPath": "properties.onboardingState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/provisioningStatusMessage",
+          "defaultPath": "properties.provisioningStatusMessage"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/provisioningStatusUpdateTimeUtc",
+          "defaultPath": "properties.provisioningStatusUpdateTimeUtc"
+        }
+      ],
+      "resourceType": "securityConnectors/devops/azureDevOpsOrgs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation",
+          "defaultPath": "properties.actionableRemediation"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.branchConfiguration",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.branchConfiguration.annotateDefaultBranch",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.annotateDefaultBranch"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.branchConfiguration.branchNames",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.branchNames"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.branchConfiguration.branchNames[*]",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.branchNames[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.categoryConfigurations",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.categoryConfigurations[*]",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.categoryConfigurations[*].category",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*].category"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.categoryConfigurations[*].minimumSeverityLevel",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*].minimumSeverityLevel"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.inheritFromParentState",
+          "defaultPath": "properties.actionableRemediation.inheritFromParentState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/actionableRemediation.state",
+          "defaultPath": "properties.actionableRemediation.state"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/onboardingState",
+          "defaultPath": "properties.onboardingState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/parentOrgName",
+          "defaultPath": "properties.parentOrgName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/projectId",
+          "defaultPath": "properties.projectId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/provisioningStatusMessage",
+          "defaultPath": "properties.provisioningStatusMessage"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/provisioningStatusUpdateTimeUtc",
+          "defaultPath": "properties.provisioningStatusUpdateTimeUtc"
+        }
+      ],
+      "resourceType": "securityConnectors/devops/azureDevOpsOrgs/projects"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation",
+          "defaultPath": "properties.actionableRemediation"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.branchConfiguration",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.branchConfiguration.annotateDefaultBranch",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.annotateDefaultBranch"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.branchConfiguration.branchNames",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.branchNames"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.branchConfiguration.branchNames[*]",
+          "defaultPath": "properties.actionableRemediation.branchConfiguration.branchNames[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.categoryConfigurations",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.categoryConfigurations[*]",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.categoryConfigurations[*].category",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*].category"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.categoryConfigurations[*].minimumSeverityLevel",
+          "defaultPath": "properties.actionableRemediation.categoryConfigurations[*].minimumSeverityLevel"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.inheritFromParentState",
+          "defaultPath": "properties.actionableRemediation.inheritFromParentState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/actionableRemediation.state",
+          "defaultPath": "properties.actionableRemediation.state"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/onboardingState",
+          "defaultPath": "properties.onboardingState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/parentOrgName",
+          "defaultPath": "properties.parentOrgName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/parentProjectName",
+          "defaultPath": "properties.parentProjectName"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/provisioningStatusMessage",
+          "defaultPath": "properties.provisioningStatusMessage"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/provisioningStatusUpdateTimeUtc",
+          "defaultPath": "properties.provisioningStatusUpdateTimeUtc"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/repoId",
+          "defaultPath": "properties.repoId"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/repoUrl",
+          "defaultPath": "properties.repoUrl"
+        },
+        {
+          "name": "Microsoft.Security/securityConnectors/devops/azureDevOpsOrgs/projects/repos/visibility",
+          "defaultPath": "properties.visibility"
+        }
+      ],
+      "resourceType": "securityConnectors/devops/azureDevOpsOrgs/projects/repos"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityContacts/alertNotifications",
+          "paths": [
+            {
+              "path": "properties.alertNotifications",
+              "apiVersions": [
+                "2017-08-01-alpha",
+                "2017-08-01-beta",
+                "2017-08-02-beta",
+                "2017-08-03-beta",
+                "2017-08-04-beta",
+                "2017-08-01-preview"
+              ]
+            },
+            {
+              "path": "properties.alertNotifications.state",
+              "apiVersions": [
+                "2020-01-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.alertNotifications.state"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/alertNotifications.minimalSeverity",
+          "defaultPath": "properties.alertNotifications.minimalSeverity"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/alertNotifications.state",
+          "defaultPath": "properties.alertNotifications.state"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/alertsToAdmins",
+          "paths": [
+            {
+              "path": "properties.alertsToAdmins",
+              "apiVersions": [
+                "2017-08-01-alpha",
+                "2017-08-01-beta",
+                "2017-08-02-beta",
+                "2017-08-03-beta",
+                "2017-08-04-beta",
+                "2017-08-01-preview"
+              ]
+            },
+            {
+              "path": "properties.notificationsByRole.state",
+              "apiVersions": [
+                "2020-01-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.notificationsByRole.state"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/email",
+          "paths": [
+            {
+              "path": "properties.email",
+              "apiVersions": [
+                "2017-08-01-alpha",
+                "2017-08-01-beta",
+                "2017-08-02-beta",
+                "2017-08-03-beta",
+                "2017-08-04-beta",
+                "2017-08-01-preview"
+              ]
+            },
+            {
+              "path": "properties.emails",
+              "apiVersions": [
+                "2020-01-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.emails"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/emails",
+          "defaultPath": "properties.emails"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsByRole",
+          "defaultPath": "properties.notificationsByRole"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsByRole.roles",
+          "defaultPath": "properties.notificationsByRole.roles"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsByRole.roles[*]",
+          "defaultPath": "properties.notificationsByRole.roles[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsByRole.state",
+          "defaultPath": "properties.notificationsByRole.state"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources",
+          "defaultPath": "properties.notificationsSources"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources[*]",
+          "defaultPath": "properties.notificationsSources[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources[*].Alert",
+          "defaultPath": "properties.notificationsSources[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources[*].Alert.minimalSeverity",
+          "defaultPath": "properties.notificationsSources[*].minimalSeverity"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources[*].AttackPath",
+          "defaultPath": "properties.notificationsSources[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources[*].AttackPath.minimalRiskLevel",
+          "defaultPath": "properties.notificationsSources[*].minimalRiskLevel"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/notificationsSources[*].sourceType",
+          "defaultPath": "properties.notificationsSources[*].sourceType"
+        },
+        {
+          "name": "Microsoft.Security/securityContacts/phone",
+          "defaultPath": "properties.phone"
+        }
+      ],
+      "resourceType": "securityContacts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/securityStandards/assessments",
+          "defaultPath": "properties.assessments"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/assessments[*]",
+          "defaultPath": "properties.assessments[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/assessments[*].assessmentKey",
+          "defaultPath": "properties.assessments[*].assessmentKey"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/cloudProviders",
+          "defaultPath": "properties.cloudProviders"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/cloudProviders[*]",
+          "defaultPath": "properties.cloudProviders[*]"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/metadata.createdBy",
+          "defaultPath": "properties.metadata.createdBy"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/metadata.createdOn",
+          "defaultPath": "properties.metadata.createdOn"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/metadata.lastUpdatedBy",
+          "defaultPath": "properties.metadata.lastUpdatedBy"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/metadata.lastUpdatedOn",
+          "defaultPath": "properties.metadata.lastUpdatedOn"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/policySetDefinitionId",
+          "defaultPath": "properties.policySetDefinitionId"
+        },
+        {
+          "name": "Microsoft.Security/securityStandards/standardType",
+          "defaultPath": "properties.standardType"
+        }
+      ],
+      "resourceType": "securityStandards"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/serverVulnerabilityAssessmentsSettings/AzureServersSetting.selectedProvider",
+          "defaultPath": "properties.selectedProvider"
+        }
+      ],
+      "resourceType": "serverVulnerabilityAssessmentsSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/settings/AlertSyncSettings.enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.Security/settings/DataExportSetting.enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.Security/settings/DataExportSettings.enabled",
+          "defaultPath": "properties.enabled"
+        }
+      ],
+      "resourceType": "settings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/standardAssignments/assignedStandard",
+          "defaultPath": "properties.assignedStandard"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/assignedStandard.id",
+          "defaultPath": "properties.assignedStandard.id"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData",
+          "defaultPath": "properties.attestationData"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.assignedAssessment",
+          "defaultPath": "properties.attestationData.assignedAssessment"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.assignedAssessment.assessmentKey",
+          "defaultPath": "properties.attestationData.assignedAssessment.assessmentKey"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.complianceDate",
+          "defaultPath": "properties.attestationData.complianceDate"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.complianceState",
+          "defaultPath": "properties.attestationData.complianceState"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.evidence",
+          "defaultPath": "properties.attestationData.evidence"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.evidence[*]",
+          "defaultPath": "properties.attestationData.evidence[*]"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.evidence[*].description",
+          "defaultPath": "properties.attestationData.evidence[*].description"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/attestationData.evidence[*].sourceUrl",
+          "defaultPath": "properties.attestationData.evidence[*].sourceUrl"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/effect",
+          "defaultPath": "properties.effect"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/excludedScopes",
+          "defaultPath": "properties.excludedScopes"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/excludedScopes[*]",
+          "defaultPath": "properties.excludedScopes[*]"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/exemptionData",
+          "defaultPath": "properties.exemptionData"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/exemptionData.assignedAssessment",
+          "defaultPath": "properties.exemptionData.assignedAssessment"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/exemptionData.assignedAssessment.assessmentKey",
+          "defaultPath": "properties.exemptionData.assignedAssessment.assessmentKey"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/exemptionData.exemptionCategory",
+          "defaultPath": "properties.exemptionData.exemptionCategory"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/expiresOn",
+          "defaultPath": "properties.expiresOn"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/metadata.createdBy",
+          "defaultPath": "properties.metadata.createdBy"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/metadata.createdOn",
+          "defaultPath": "properties.metadata.createdOn"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/metadata.lastUpdatedBy",
+          "defaultPath": "properties.metadata.lastUpdatedBy"
+        },
+        {
+          "name": "Microsoft.Security/standardAssignments/metadata.lastUpdatedOn",
+          "defaultPath": "properties.metadata.lastUpdatedOn"
+        }
+      ],
+      "resourceType": "standardAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/standards/category",
+          "defaultPath": "properties.category"
+        },
+        {
+          "name": "Microsoft.Security/standards/components",
+          "defaultPath": "properties.components"
+        },
+        {
+          "name": "Microsoft.Security/standards/components[*]",
+          "defaultPath": "properties.components[*]"
+        },
+        {
+          "name": "Microsoft.Security/standards/components[*].key",
+          "defaultPath": "properties.components[*].key"
+        },
+        {
+          "name": "Microsoft.Security/standards/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Security/standards/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Security/standards/standardType",
+          "defaultPath": "properties.standardType"
+        },
+        {
+          "name": "Microsoft.Security/standards/supportedClouds",
+          "defaultPath": "properties.supportedClouds"
+        },
+        {
+          "name": "Microsoft.Security/standards/supportedClouds[*]",
+          "defaultPath": "properties.supportedClouds[*]"
+        }
+      ],
+      "resourceType": "standards"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Security/workspaceSettings/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.Security/workspaceSettings/workspaceId",
+          "defaultPath": "properties.workspaceId"
+        }
+      ],
+      "resourceType": "workspaceSettings"
+    }
+  ]
+}

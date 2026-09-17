@@ -1,0 +1,262 @@
+{
+  "namespace": "Microsoft.DevOpsInfrastructure",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile",
+          "defaultPath": "properties.agentProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.kind",
+          "defaultPath": "properties.agentProfile.kind"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.resourcePredictionsProfile",
+          "defaultPath": "properties.agentProfile.resourcePredictionsProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.resourcePredictionsProfile.Automatic",
+          "defaultPath": "properties.agentProfile.resourcePredictionsProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.resourcePredictionsProfile.Automatic.predictionPreference",
+          "defaultPath": "properties.agentProfile.resourcePredictionsProfile.predictionPreference"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.resourcePredictionsProfile.kind",
+          "defaultPath": "properties.agentProfile.resourcePredictionsProfile.kind"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.Stateful",
+          "defaultPath": "properties.agentProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.Stateful.gracePeriodTimeSpan",
+          "defaultPath": "properties.agentProfile.gracePeriodTimeSpan"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/agentProfile.Stateful.maxAgentLifetime",
+          "defaultPath": "properties.agentProfile.maxAgentLifetime"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/devCenterProjectResourceId",
+          "defaultPath": "properties.devCenterProjectResourceId"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile",
+          "defaultPath": "properties.fabricProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.kind",
+          "defaultPath": "properties.fabricProfile.kind"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss",
+          "defaultPath": "properties.fabricProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images",
+          "defaultPath": "properties.fabricProfile.images"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images[*]",
+          "defaultPath": "properties.fabricProfile.images[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images[*].aliases",
+          "defaultPath": "properties.fabricProfile.images[*].aliases"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images[*].aliases[*]",
+          "defaultPath": "properties.fabricProfile.images[*].aliases[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images[*].buffer",
+          "defaultPath": "properties.fabricProfile.images[*].buffer"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images[*].resourceId",
+          "defaultPath": "properties.fabricProfile.images[*].resourceId"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.images[*].wellKnownImageName",
+          "defaultPath": "properties.fabricProfile.images[*].wellKnownImageName"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.networkProfile",
+          "defaultPath": "properties.fabricProfile.networkProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.networkProfile.subnetId",
+          "defaultPath": "properties.fabricProfile.networkProfile.subnetId"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile",
+          "defaultPath": "properties.fabricProfile.osProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile.logonType",
+          "defaultPath": "properties.fabricProfile.osProfile.logonType"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile.secretsManagementSettings",
+          "defaultPath": "properties.fabricProfile.osProfile.secretsManagementSettings"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile.secretsManagementSettings.certificateStoreLocation",
+          "defaultPath": "properties.fabricProfile.osProfile.secretsManagementSettings.certificateStoreLocation"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile.secretsManagementSettings.keyExportable",
+          "defaultPath": "properties.fabricProfile.osProfile.secretsManagementSettings.keyExportable"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile.secretsManagementSettings.observedCertificates",
+          "defaultPath": "properties.fabricProfile.osProfile.secretsManagementSettings.observedCertificates"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.osProfile.secretsManagementSettings.observedCertificates[*]",
+          "defaultPath": "properties.fabricProfile.osProfile.secretsManagementSettings.observedCertificates[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.sku",
+          "defaultPath": "properties.fabricProfile.sku"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.sku.name",
+          "defaultPath": "properties.fabricProfile.sku.name"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.sku.tier",
+          "defaultPath": "properties.fabricProfile.sku.tier"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile",
+          "defaultPath": "properties.fabricProfile.storageProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.dataDisks",
+          "defaultPath": "properties.fabricProfile.storageProfile.dataDisks"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.dataDisks[*]",
+          "defaultPath": "properties.fabricProfile.storageProfile.dataDisks[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.dataDisks[*].caching",
+          "defaultPath": "properties.fabricProfile.storageProfile.dataDisks[*].caching"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.dataDisks[*].diskSizeGiB",
+          "defaultPath": "properties.fabricProfile.storageProfile.dataDisks[*].diskSizeGiB"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.dataDisks[*].driveLetter",
+          "defaultPath": "properties.fabricProfile.storageProfile.dataDisks[*].driveLetter"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.dataDisks[*].storageAccountType",
+          "defaultPath": "properties.fabricProfile.storageProfile.dataDisks[*].storageAccountType"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/fabricProfile.Vmss.storageProfile.osDiskStorageAccountType",
+          "defaultPath": "properties.fabricProfile.storageProfile.osDiskStorageAccountType"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/maximumConcurrency",
+          "defaultPath": "properties.maximumConcurrency"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile",
+          "defaultPath": "properties.organizationProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps",
+          "defaultPath": "properties.organizationProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.organizations",
+          "defaultPath": "properties.organizationProfile.organizations"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.organizations[*]",
+          "defaultPath": "properties.organizationProfile.organizations[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.organizations[*].parallelism",
+          "defaultPath": "properties.organizationProfile.organizations[*].parallelism"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.organizations[*].projects",
+          "defaultPath": "properties.organizationProfile.organizations[*].projects"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.organizations[*].projects[*]",
+          "defaultPath": "properties.organizationProfile.organizations[*].projects[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.organizations[*].url",
+          "defaultPath": "properties.organizationProfile.organizations[*].url"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.permissionProfile",
+          "defaultPath": "properties.organizationProfile.permissionProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.permissionProfile.groups",
+          "defaultPath": "properties.organizationProfile.permissionProfile.groups"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.permissionProfile.groups[*]",
+          "defaultPath": "properties.organizationProfile.permissionProfile.groups[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.permissionProfile.kind",
+          "defaultPath": "properties.organizationProfile.permissionProfile.kind"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.permissionProfile.users",
+          "defaultPath": "properties.organizationProfile.permissionProfile.users"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.AzureDevOps.permissionProfile.users[*]",
+          "defaultPath": "properties.organizationProfile.permissionProfile.users[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.GitHub",
+          "defaultPath": "properties.organizationProfile"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.GitHub.organizations",
+          "defaultPath": "properties.organizationProfile.organizations"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.GitHub.organizations[*]",
+          "defaultPath": "properties.organizationProfile.organizations[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.GitHub.organizations[*].repositories",
+          "defaultPath": "properties.organizationProfile.organizations[*].repositories"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.GitHub.organizations[*].repositories[*]",
+          "defaultPath": "properties.organizationProfile.organizations[*].repositories[*]"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.GitHub.organizations[*].url",
+          "defaultPath": "properties.organizationProfile.organizations[*].url"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/organizationProfile.kind",
+          "defaultPath": "properties.organizationProfile.kind"
+        },
+        {
+          "name": "Microsoft.DevOpsInfrastructure/pools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "pools"
+    }
+  ]
+}

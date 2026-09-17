@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.ConnectedCache",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cacheNodes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "enterpriseCustomers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EnterpriseMccCustomers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "EnterpriseMccCustomers/EnterpriseMccCacheNodes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ispCustomers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ispCustomers/ispCacheNodes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

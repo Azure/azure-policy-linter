@@ -1,0 +1,472 @@
+{
+  "namespace": "Microsoft.SqlVirtualMachine",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/clusterConfiguration",
+          "defaultPath": "properties.clusterConfiguration"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/clusterManagerType",
+          "defaultPath": "properties.clusterManagerType"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/scaleType",
+          "defaultPath": "properties.scaleType"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/sqlImageOffer",
+          "defaultPath": "properties.sqlImageOffer"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/sqlImageSku",
+          "defaultPath": "properties.sqlImageSku"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile",
+          "defaultPath": "properties.wsfcDomainProfile"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.clusterBootstrapAccount",
+          "defaultPath": "properties.wsfcDomainProfile.clusterBootstrapAccount"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.clusterOperatorAccount",
+          "defaultPath": "properties.wsfcDomainProfile.clusterOperatorAccount"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/wsfcDomainProfile.clusterSubnetType",
+          "defaultPath": "properties.wsfcDomainProfile.clusterSubnetType"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.domainFqdn",
+          "defaultPath": "properties.wsfcDomainProfile.domainFqdn"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.fileShareWitnessPath",
+          "defaultPath": "properties.wsfcDomainProfile.fileShareWitnessPath"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/wsfcDomainProfile.isSqlServiceAccountGmsa",
+          "defaultPath": "properties.wsfcDomainProfile.isSqlServiceAccountGmsa"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.ouPath",
+          "defaultPath": "properties.wsfcDomainProfile.ouPath"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.sqlServiceAccount",
+          "defaultPath": "properties.wsfcDomainProfile.sqlServiceAccount"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.storageAccountPrimaryKey",
+          "defaultPath": "properties.wsfcDomainProfile.storageAccountPrimaryKey"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/wsfcDomainProfile.storageAccountUrl",
+          "defaultPath": "properties.wsfcDomainProfile.storageAccountUrl"
+        }
+      ],
+      "resourceType": "SqlVirtualMachineGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration",
+          "defaultPath": "properties.availabilityGroupConfiguration"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas[*]",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas[*]"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas[*].commit",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas[*].commit"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas[*].failover",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas[*].failover"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas[*].readableSecondary",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas[*].readableSecondary"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas[*].role",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas[*].role"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/availabilityGroupConfiguration.replicas[*].sqlVirtualMachineInstanceId",
+          "defaultPath": "properties.availabilityGroupConfiguration.replicas[*].sqlVirtualMachineInstanceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/availabilityGroupName",
+          "defaultPath": "properties.availabilityGroupName"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/createDefaultAvailabilityGroupIfNotExist",
+          "defaultPath": "properties.createDefaultAvailabilityGroupIfNotExist"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations",
+          "defaultPath": "properties.loadBalancerConfigurations"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*]",
+          "defaultPath": "properties.loadBalancerConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].loadBalancerResourceId",
+          "defaultPath": "properties.loadBalancerConfigurations[*].loadBalancerResourceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].privateIpAddress",
+          "defaultPath": "properties.loadBalancerConfigurations[*].privateIpAddress"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].privateIpAddress.ipAddress",
+          "defaultPath": "properties.loadBalancerConfigurations[*].privateIpAddress.ipAddress"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].privateIpAddress.subnetResourceId",
+          "defaultPath": "properties.loadBalancerConfigurations[*].privateIpAddress.subnetResourceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].probePort",
+          "defaultPath": "properties.loadBalancerConfigurations[*].probePort"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].publicIpAddressResourceId",
+          "defaultPath": "properties.loadBalancerConfigurations[*].publicIpAddressResourceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].sqlVirtualMachineInstances",
+          "defaultPath": "properties.loadBalancerConfigurations[*].sqlVirtualMachineInstances"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/loadBalancerConfigurations[*].sqlVirtualMachineInstances[*]",
+          "defaultPath": "properties.loadBalancerConfigurations[*].sqlVirtualMachineInstances[*]"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/multiSubnetIpConfigurations",
+          "defaultPath": "properties.multiSubnetIpConfigurations"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/multiSubnetIpConfigurations[*]",
+          "defaultPath": "properties.multiSubnetIpConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/multiSubnetIpConfigurations[*].privateIpAddress",
+          "defaultPath": "properties.multiSubnetIpConfigurations[*].privateIpAddress"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/multiSubnetIpConfigurations[*].privateIpAddress.ipAddress",
+          "defaultPath": "properties.multiSubnetIpConfigurations[*].privateIpAddress.ipAddress"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/multiSubnetIpConfigurations[*].privateIpAddress.subnetResourceId",
+          "defaultPath": "properties.multiSubnetIpConfigurations[*].privateIpAddress.subnetResourceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachineGroups/availabilityGroupListeners/multiSubnetIpConfigurations[*].sqlVirtualMachineInstance",
+          "defaultPath": "properties.multiSubnetIpConfigurations[*].sqlVirtualMachineInstance"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/port",
+          "defaultPath": "properties.port"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachineGroups/AvailabilityGroupListeners/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "SqlVirtualMachineGroups/AvailabilityGroupListeners"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/additionalVmPatch",
+          "defaultPath": "properties.additionalVmPatch"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/assessmentSettings",
+          "defaultPath": "properties.assessmentSettings"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/assessmentSettings.enable",
+          "defaultPath": "properties.assessmentSettings.enable"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/autoBackupSettings",
+          "defaultPath": "properties.autoBackupSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/autoBackupSettings.enable",
+          "defaultPath": "properties.autoBackupSettings.enable",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/autoBackupSettings.enableEncryption",
+          "defaultPath": "properties.autoBackupSettings.enableEncryption",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/autoPatchingSettings",
+          "defaultPath": "properties.autoPatchingSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/autoPatchingSettings.enable",
+          "defaultPath": "properties.autoPatchingSettings.enable",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/enableAutomaticUpgrade",
+          "defaultPath": "properties.enableAutomaticUpgrade"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/keyVaultCredentialSettings",
+          "defaultPath": "properties.keyVaultCredentialSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/keyVaultCredentialSettings.enable",
+          "defaultPath": "properties.keyVaultCredentialSettings.enable",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/leastPrivilegeMode",
+          "defaultPath": "properties.leastPrivilegeMode"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings",
+          "defaultPath": "properties.serverConfigurationsManagementSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.additionalFeaturesServerConfigurations",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.additionalFeaturesServerConfigurations",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.additionalFeaturesServerConfigurations.isRServicesEnabled",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.additionalFeaturesServerConfigurations.isRServicesEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.connectivityType",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.connectivityType",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.port",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.port",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.sqlAuthUpdatePassword",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.sqlAuthUpdatePassword"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.sqlAuthUpdateUserName",
+          "defaultPath": "properties.serverConfigurationsManagementSettings.sqlConnectivityUpdateSettings.sqlAuthUpdateUserName"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlImageOffer",
+          "defaultPath": "properties.sqlImageOffer"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlImageSku",
+          "defaultPath": "properties.sqlImageSku",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlManagement",
+          "defaultPath": "properties.sqlManagement",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlServerLicenseType",
+          "defaultPath": "properties.sqlServerLicenseType",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/sqlVirtualMachineGroupResourceId",
+          "defaultPath": "properties.sqlVirtualMachineGroupResourceId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/storageConfigurationSettings",
+          "defaultPath": "properties.storageConfigurationSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/storageConfigurationSettings.sqlTempDbSettings",
+          "defaultPath": "properties.storageConfigurationSettings.sqlTempDbSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/storageConfigurationSettings.sqlTempDbSettings.defaultFilePath",
+          "defaultPath": "properties.storageConfigurationSettings.sqlTempDbSettings.defaultFilePath",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus",
+          "defaultPath": "properties.troubleshootingStatus"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.endTimeUtc",
+          "defaultPath": "properties.troubleshootingStatus.endTimeUtc"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.lastTriggerTimeUtc",
+          "defaultPath": "properties.troubleshootingStatus.lastTriggerTimeUtc"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.rootCause",
+          "defaultPath": "properties.troubleshootingStatus.rootCause"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.startTimeUtc",
+          "defaultPath": "properties.troubleshootingStatus.startTimeUtc"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.troubleshootingScenario",
+          "defaultPath": "properties.troubleshootingStatus.troubleshootingScenario"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.unhealthyReplicaInfo",
+          "defaultPath": "properties.troubleshootingStatus.properties.unhealthyReplicaInfo"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/troubleshootingStatus.unhealthyReplicaInfo.availabilityGroupName",
+          "defaultPath": "properties.troubleshootingStatus.properties.unhealthyReplicaInfo.availabilityGroupName"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/virtualMachineIdentitySettings",
+          "defaultPath": "properties.virtualMachineIdentitySettings"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/virtualMachineIdentitySettings.resourceId",
+          "defaultPath": "properties.virtualMachineIdentitySettings.resourceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/virtualMachineIdentitySettings.type",
+          "defaultPath": "properties.virtualMachineIdentitySettings.type"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/virtualMachineResourceId",
+          "defaultPath": "properties.virtualMachineResourceId"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/wsfcDomainCredentials",
+          "defaultPath": "properties.wsfcDomainCredentials",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/wsfcDomainCredentials.clusterBootstrapAccountPassword",
+          "defaultPath": "properties.wsfcDomainCredentials.clusterBootstrapAccountPassword"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/wsfcDomainCredentials.clusterOperatorAccountPassword",
+          "defaultPath": "properties.wsfcDomainCredentials.clusterOperatorAccountPassword"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/SqlVirtualMachines/wsfcDomainCredentials.sqlServiceAccountPassword",
+          "defaultPath": "properties.wsfcDomainCredentials.sqlServiceAccountPassword"
+        },
+        {
+          "name": "Microsoft.SqlVirtualMachine/sqlVirtualMachines/wsfcStaticIp",
+          "defaultPath": "properties.wsfcStaticIp"
+        }
+      ],
+      "resourceType": "SqlVirtualMachines"
+    }
+  ]
+}

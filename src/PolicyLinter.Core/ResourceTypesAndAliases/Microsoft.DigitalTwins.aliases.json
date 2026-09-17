@@ -1,0 +1,163 @@
+{
+  "namespace": "Microsoft.DigitalTwins",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/lastUpdatedTime",
+          "defaultPath": "properties.lastUpdatedTime"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/sku.name",
+          "defaultPath": "sku.name"
+        }
+      ],
+      "resourceType": "digitalTwinsInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/accessKey1",
+          "defaultPath": "properties.accessKey1"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/accessKey2",
+          "defaultPath": "properties.accessKey2"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/authenticationType",
+          "defaultPath": "properties.authenticationType"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/connectionStringPrimaryKey",
+          "defaultPath": "properties.connectionStringPrimaryKey"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/connectionStringSecondaryKey",
+          "defaultPath": "properties.connectionStringSecondaryKey"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/deadLetterSecret",
+          "defaultPath": "properties.deadLetterSecret"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/deadLetterUri",
+          "defaultPath": "properties.deadLetterUri"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/endpointType",
+          "defaultPath": "properties.endpointType"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/endpointUri",
+          "defaultPath": "properties.endpointUri"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/entityPath",
+          "defaultPath": "properties.entityPath"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/primaryConnectionString",
+          "defaultPath": "properties.primaryConnectionString"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/secondaryConnectionString",
+          "defaultPath": "properties.secondaryConnectionString"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.DigitalTwins/digitalTwinsInstances/endpoints/TopicEndpoint",
+          "defaultPath": "properties.TopicEndpoint"
+        }
+      ],
+      "resourceType": "digitalTwinsInstances/endpoints"
+    }
+  ]
+}

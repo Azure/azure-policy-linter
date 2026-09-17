@@ -1,0 +1,927 @@
+{
+  "namespace": "Microsoft.DevCenter",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/devBoxProvisioningSettings",
+          "defaultPath": "properties.devBoxProvisioningSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devBoxProvisioningSettings.installAzureMonitorAgentEnableStatus",
+          "defaultPath": "properties.devBoxProvisioningSettings.installAzureMonitorAgentEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devCenterUri",
+          "defaultPath": "properties.devCenterUri"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption.customerManagedKeyEncryption",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.delegatedIdentityClientId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.delegatedIdentityClientId"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/networkSettings",
+          "defaultPath": "properties.networkSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/networkSettings.microsoftHostedNetworkEnableStatus",
+          "defaultPath": "properties.networkSettings.microsoftHostedNetworkEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/planId",
+          "defaultPath": "properties.planId"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectCatalogSettings",
+          "defaultPath": "properties.projectCatalogSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectCatalogSettings.catalogItemSyncEnableStatus",
+          "defaultPath": "properties.projectCatalogSettings.catalogItemSyncEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/restrictedResourceTypes",
+          "defaultPath": "properties.restrictedResourceTypes"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/restrictedResourceTypes[*]",
+          "defaultPath": "properties.restrictedResourceTypes[*]"
+        }
+      ],
+      "resourceType": "devcenters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/attachednetworks/domainJoinType",
+          "defaultPath": "properties.domainJoinType"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/attachednetworks/healthCheckStatus",
+          "defaultPath": "properties.healthCheckStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/attachednetworks/networkConnectionId",
+          "defaultPath": "properties.networkConnectionId"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/attachednetworks/networkConnectionLocation",
+          "defaultPath": "properties.networkConnectionLocation"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/attachednetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "devcenters/attachednetworks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/adoGit",
+          "defaultPath": "properties.adoGit"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/adoGit.branch",
+          "defaultPath": "properties.adoGit.branch"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/adoGit.path",
+          "defaultPath": "properties.adoGit.path"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/adoGit.secretIdentifier",
+          "defaultPath": "properties.adoGit.secretIdentifier"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/adoGit.uri",
+          "defaultPath": "properties.adoGit.uri"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/connectionState",
+          "defaultPath": "properties.connectionState"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/gitHub",
+          "defaultPath": "properties.gitHub"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/gitHub.branch",
+          "defaultPath": "properties.gitHub.branch"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/gitHub.path",
+          "defaultPath": "properties.gitHub.path"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/gitHub.secretIdentifier",
+          "defaultPath": "properties.gitHub.secretIdentifier"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/gitHub.uri",
+          "defaultPath": "properties.gitHub.uri"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastConnectionTime",
+          "defaultPath": "properties.lastConnectionTime"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats",
+          "defaultPath": "properties.lastSyncStats"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.added",
+          "defaultPath": "properties.lastSyncStats.added"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.removed",
+          "defaultPath": "properties.lastSyncStats.removed"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.syncedCatalogItemTypes",
+          "defaultPath": "properties.lastSyncStats.syncedCatalogItemTypes"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.syncedCatalogItemTypes[*]",
+          "defaultPath": "properties.lastSyncStats.syncedCatalogItemTypes[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.synchronizationErrors",
+          "defaultPath": "properties.lastSyncStats.synchronizationErrors"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.unchanged",
+          "defaultPath": "properties.lastSyncStats.unchanged"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.updated",
+          "defaultPath": "properties.lastSyncStats.updated"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncStats.validationErrors",
+          "defaultPath": "properties.lastSyncStats.validationErrors"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/lastSyncTime",
+          "defaultPath": "properties.lastSyncTime"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/syncState",
+          "defaultPath": "properties.syncState"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/syncType",
+          "defaultPath": "properties.syncType"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/catalogs/tags",
+          "defaultPath": "properties.tags"
+        }
+      ],
+      "resourceType": "devcenters/catalogs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/activeImageReference",
+          "defaultPath": "properties.activeImageReference"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/activeImageReference.exactVersion",
+          "defaultPath": "properties.activeImageReference.exactVersion"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/activeImageReference.id",
+          "defaultPath": "properties.activeImageReference.id"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/activeImageReference.offer",
+          "defaultPath": "properties.activeImageReference.offer"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/activeImageReference.publisher",
+          "defaultPath": "properties.activeImageReference.publisher"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/activeImageReference.sku",
+          "defaultPath": "properties.activeImageReference.sku"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/hibernateSupport",
+          "defaultPath": "properties.hibernateSupport"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageReference",
+          "defaultPath": "properties.imageReference"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageReference.exactVersion",
+          "defaultPath": "properties.imageReference.exactVersion"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageReference.id",
+          "defaultPath": "properties.imageReference.id"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageReference.offer",
+          "defaultPath": "properties.imageReference.offer"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageReference.publisher",
+          "defaultPath": "properties.imageReference.publisher"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageReference.sku",
+          "defaultPath": "properties.imageReference.sku"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageValidationErrorDetails",
+          "defaultPath": "properties.imageValidationErrorDetails"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageValidationErrorDetails.code",
+          "defaultPath": "properties.imageValidationErrorDetails.code"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageValidationErrorDetails.message",
+          "defaultPath": "properties.imageValidationErrorDetails.message"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/imageValidationStatus",
+          "defaultPath": "properties.imageValidationStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/osStorageType",
+          "defaultPath": "properties.osStorageType"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/sku.capacity",
+          "defaultPath": "properties.sku.capacity"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/sku.family",
+          "defaultPath": "properties.sku.family"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/sku.name",
+          "defaultPath": "properties.sku.name"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/sku.size",
+          "defaultPath": "properties.sku.size"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/sku.tier",
+          "defaultPath": "properties.sku.tier"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/devboxdefinitions/validationStatus",
+          "defaultPath": "properties.validationStatus"
+        }
+      ],
+      "resourceType": "devcenters/devboxdefinitions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/environmentTypes/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/environmentTypes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "devcenters/environmentTypes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/galleries/galleryResourceId",
+          "defaultPath": "properties.galleryResourceId"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/galleries/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "devcenters/galleries"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/resourcePolicies",
+          "defaultPath": "properties.resourcePolicies"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/resourcePolicies[*]",
+          "defaultPath": "properties.resourcePolicies[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/resourcePolicies[*].action",
+          "defaultPath": "properties.resourcePolicies[*].action"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/resourcePolicies[*].filter",
+          "defaultPath": "properties.resourcePolicies[*].filter"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/resourcePolicies[*].resources",
+          "defaultPath": "properties.resourcePolicies[*].resources"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/resourcePolicies[*].resourceType",
+          "defaultPath": "properties.resourcePolicies[*].resourceType"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/scopes",
+          "defaultPath": "properties.scopes"
+        },
+        {
+          "name": "Microsoft.DevCenter/devcenters/projectPolicies/scopes[*]",
+          "defaultPath": "properties.scopes[*]"
+        }
+      ],
+      "resourceType": "devcenters/projectpolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/networkConnections/domainJoinType",
+          "defaultPath": "properties.domainJoinType"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/domainName",
+          "defaultPath": "properties.domainName"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/domainPassword",
+          "defaultPath": "properties.domainPassword"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/domainUsername",
+          "defaultPath": "properties.domainUsername"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/healthCheckStatus",
+          "defaultPath": "properties.healthCheckStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/networkingResourceGroupName",
+          "defaultPath": "properties.networkingResourceGroupName"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/organizationUnit",
+          "defaultPath": "properties.organizationUnit"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/networkConnections/subnetId",
+          "defaultPath": "properties.subnetId"
+        }
+      ],
+      "resourceType": "networkconnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/projects/azureAiServicesSettings",
+          "defaultPath": "properties.azureAiServicesSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/azureAiServicesSettings.azureAiServicesMode",
+          "defaultPath": "properties.azureAiServicesSettings.azureAiServicesMode"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogSettings",
+          "defaultPath": "properties.catalogSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogSettings.catalogItemSyncTypes",
+          "defaultPath": "properties.catalogSettings.catalogItemSyncTypes"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogSettings.catalogItemSyncTypes[*]",
+          "defaultPath": "properties.catalogSettings.catalogItemSyncTypes[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/customizationSettings",
+          "defaultPath": "properties.customizationSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/customizationSettings.identities",
+          "defaultPath": "properties.customizationSettings.identities"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/customizationSettings.identities[*]",
+          "defaultPath": "properties.customizationSettings.identities[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/customizationSettings.identities[*].identityResourceId",
+          "defaultPath": "properties.customizationSettings.identities[*].identityResourceId"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/customizationSettings.identities[*].identityType",
+          "defaultPath": "properties.customizationSettings.identities[*].identityType"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/customizationSettings.userCustomizationsEnableStatus",
+          "defaultPath": "properties.customizationSettings.userCustomizationsEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/devBoxAutoDeleteSettings",
+          "defaultPath": "properties.devBoxAutoDeleteSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/devBoxAutoDeleteSettings.deleteMode",
+          "defaultPath": "properties.devBoxAutoDeleteSettings.deleteMode"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/devBoxAutoDeleteSettings.gracePeriod",
+          "defaultPath": "properties.devBoxAutoDeleteSettings.gracePeriod"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/devBoxAutoDeleteSettings.inactiveThreshold",
+          "defaultPath": "properties.devBoxAutoDeleteSettings.inactiveThreshold"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/devCenterId",
+          "defaultPath": "properties.devCenterId"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/devCenterUri",
+          "defaultPath": "properties.devCenterUri"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/maxDevBoxesPerUser",
+          "defaultPath": "properties.maxDevBoxesPerUser"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/serverlessGpuSessionsSettings",
+          "defaultPath": "properties.serverlessGpuSessionsSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/serverlessGpuSessionsSettings.maxConcurrentSessionsPerProject",
+          "defaultPath": "properties.serverlessGpuSessionsSettings.maxConcurrentSessionsPerProject"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/serverlessGpuSessionsSettings.serverlessGpuSessionsMode",
+          "defaultPath": "properties.serverlessGpuSessionsSettings.serverlessGpuSessionsMode"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/workspaceStorageSettings",
+          "defaultPath": "properties.workspaceStorageSettings"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/workspaceStorageSettings.workspaceStorageMode",
+          "defaultPath": "properties.workspaceStorageSettings.workspaceStorageMode"
+        }
+      ],
+      "resourceType": "projects"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/adoGit",
+          "defaultPath": "properties.adoGit"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/adoGit.branch",
+          "defaultPath": "properties.adoGit.branch"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/adoGit.path",
+          "defaultPath": "properties.adoGit.path"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/adoGit.secretIdentifier",
+          "defaultPath": "properties.adoGit.secretIdentifier"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/adoGit.uri",
+          "defaultPath": "properties.adoGit.uri"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/connectionState",
+          "defaultPath": "properties.connectionState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/gitHub",
+          "defaultPath": "properties.gitHub"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/gitHub.branch",
+          "defaultPath": "properties.gitHub.branch"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/gitHub.path",
+          "defaultPath": "properties.gitHub.path"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/gitHub.secretIdentifier",
+          "defaultPath": "properties.gitHub.secretIdentifier"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/gitHub.uri",
+          "defaultPath": "properties.gitHub.uri"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastConnectionTime",
+          "defaultPath": "properties.lastConnectionTime"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats",
+          "defaultPath": "properties.lastSyncStats"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.added",
+          "defaultPath": "properties.lastSyncStats.added"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.removed",
+          "defaultPath": "properties.lastSyncStats.removed"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.syncedCatalogItemTypes",
+          "defaultPath": "properties.lastSyncStats.syncedCatalogItemTypes"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.syncedCatalogItemTypes[*]",
+          "defaultPath": "properties.lastSyncStats.syncedCatalogItemTypes[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.synchronizationErrors",
+          "defaultPath": "properties.lastSyncStats.synchronizationErrors"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.unchanged",
+          "defaultPath": "properties.lastSyncStats.unchanged"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.updated",
+          "defaultPath": "properties.lastSyncStats.updated"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncStats.validationErrors",
+          "defaultPath": "properties.lastSyncStats.validationErrors"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/lastSyncTime",
+          "defaultPath": "properties.lastSyncTime"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/syncState",
+          "defaultPath": "properties.syncState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/syncType",
+          "defaultPath": "properties.syncType"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/catalogs/tags",
+          "defaultPath": "properties.tags"
+        }
+      ],
+      "resourceType": "projects/catalogs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/creatorRoleAssignment",
+          "defaultPath": "properties.creatorRoleAssignment"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/creatorRoleAssignment.roles",
+          "defaultPath": "properties.creatorRoleAssignment.roles"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/deploymentTargetId",
+          "defaultPath": "properties.deploymentTargetId"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/environmentCount",
+          "defaultPath": "properties.environmentCount"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/environmentTypes/userRoleAssignments",
+          "defaultPath": "properties.userRoleAssignments"
+        }
+      ],
+      "resourceType": "projects/environmentTypes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/projects/pools/activeHoursConfiguration",
+          "defaultPath": "properties.activeHoursConfiguration"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/activeHoursConfiguration.autoStartEnableStatus",
+          "defaultPath": "properties.activeHoursConfiguration.autoStartEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/activeHoursConfiguration.defaultEndTimeHour",
+          "defaultPath": "properties.activeHoursConfiguration.defaultEndTimeHour"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/activeHoursConfiguration.defaultStartTimeHour",
+          "defaultPath": "properties.activeHoursConfiguration.defaultStartTimeHour"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/activeHoursConfiguration.defaultTimeZone",
+          "defaultPath": "properties.activeHoursConfiguration.defaultTimeZone"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/activeHoursConfiguration.keepAwakeEnableStatus",
+          "defaultPath": "properties.activeHoursConfiguration.keepAwakeEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxCount",
+          "defaultPath": "properties.devBoxCount"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition",
+          "defaultPath": "properties.devBoxDefinition"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.activeImageReference",
+          "defaultPath": "properties.devBoxDefinition.activeImageReference"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.activeImageReference.exactVersion",
+          "defaultPath": "properties.devBoxDefinition.activeImageReference.exactVersion"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.activeImageReference.id",
+          "defaultPath": "properties.devBoxDefinition.activeImageReference.id"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.imageReference",
+          "defaultPath": "properties.devBoxDefinition.imageReference"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.imageReference.exactVersion",
+          "defaultPath": "properties.devBoxDefinition.imageReference.exactVersion"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.imageReference.id",
+          "defaultPath": "properties.devBoxDefinition.imageReference.id"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.sku",
+          "defaultPath": "properties.devBoxDefinition.sku"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.sku.capacity",
+          "defaultPath": "properties.devBoxDefinition.sku.capacity"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.sku.family",
+          "defaultPath": "properties.devBoxDefinition.sku.family"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.sku.name",
+          "defaultPath": "properties.devBoxDefinition.sku.name"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.sku.size",
+          "defaultPath": "properties.devBoxDefinition.sku.size"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinition.sku.tier",
+          "defaultPath": "properties.devBoxDefinition.sku.tier"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinitionName",
+          "defaultPath": "properties.devBoxDefinitionName"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxDefinitionType",
+          "defaultPath": "properties.devBoxDefinitionType"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/devBoxTunnelEnableStatus",
+          "defaultPath": "properties.devBoxTunnelEnableStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/healthStatus",
+          "defaultPath": "properties.healthStatus"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/healthStatusDetails",
+          "defaultPath": "properties.healthStatusDetails"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/healthStatusDetails[*]",
+          "defaultPath": "properties.healthStatusDetails[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/healthStatusDetails[*].code",
+          "defaultPath": "properties.healthStatusDetails[*].code"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/healthStatusDetails[*].message",
+          "defaultPath": "properties.healthStatusDetails[*].message"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/licenseType",
+          "defaultPath": "properties.licenseType"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/localAdministrator",
+          "defaultPath": "properties.localAdministrator"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/managedVirtualNetworkRegions",
+          "defaultPath": "properties.managedVirtualNetworkRegions"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/managedVirtualNetworkRegions[*]",
+          "defaultPath": "properties.managedVirtualNetworkRegions[*]"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/networkConnectionName",
+          "defaultPath": "properties.networkConnectionName"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/singleSignOnStatus",
+          "paths": [
+            {
+              "path": "properties.singleSignOnStatus",
+              "apiVersions": [
+                "2023-04-01",
+                "2023-01-01-preview",
+                "2022-11-11-preview",
+                "2022-10-12-preview",
+                "2022-09-01-preview",
+                "2022-08-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.singleSignOnStatus",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/stopOnDisconnect",
+          "defaultPath": "properties.stopOnDisconnect"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/stopOnDisconnect.gracePeriodMinutes",
+          "defaultPath": "properties.stopOnDisconnect.gracePeriodMinutes"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/stopOnDisconnect.status",
+          "defaultPath": "properties.stopOnDisconnect.status"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/stopOnNoConnect",
+          "defaultPath": "properties.stopOnNoConnect"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/stopOnNoConnect.gracePeriodMinutes",
+          "defaultPath": "properties.stopOnNoConnect.gracePeriodMinutes"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/stopOnNoConnect.status",
+          "defaultPath": "properties.stopOnNoConnect.status"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/virtualNetworkType",
+          "defaultPath": "properties.virtualNetworkType"
+        }
+      ],
+      "resourceType": "projects/pools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/frequency",
+          "defaultPath": "properties.frequency"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/time",
+          "defaultPath": "properties.time"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/timeZone",
+          "defaultPath": "properties.timeZone"
+        },
+        {
+          "name": "Microsoft.DevCenter/projects/pools/schedules/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "projects/pools/schedules"
+    }
+  ]
+}

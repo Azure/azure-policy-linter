@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.CustomerLockbox",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "DisableLockbox"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EnableLockbox"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "requests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "TenantOptedIn"
+    }
+  ]
+}

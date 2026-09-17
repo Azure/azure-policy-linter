@@ -1,0 +1,53 @@
+{
+  "namespace": "microsoft.support",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "classifyServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fileWorkspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fileWorkspaces/files"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "lookUpResourceId"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationsstatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "services/problemclassifications"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "supporttickets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "supporttickets/communications"
+    }
+  ]
+}

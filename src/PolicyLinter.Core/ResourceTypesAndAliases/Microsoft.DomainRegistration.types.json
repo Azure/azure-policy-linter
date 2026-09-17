@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.DomainRegistration",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkDomainAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "domains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "domains/domainOwnershipIdentifiers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateSsoRequest"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listDomainRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "topLevelDomains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateDomainRegistrationInformation"
+    }
+  ]
+}

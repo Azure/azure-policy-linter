@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.EnterpriseSupport",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "enterpriseSupports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "supportPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validate"
+    }
+  ]
+}

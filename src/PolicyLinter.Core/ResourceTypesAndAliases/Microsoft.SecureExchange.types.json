@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.SecureExchange",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

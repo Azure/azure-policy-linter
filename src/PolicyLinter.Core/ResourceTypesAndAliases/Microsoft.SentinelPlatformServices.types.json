@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.SentinelPlatformServices",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sentinelPlatformServices"
+    }
+  ]
+}

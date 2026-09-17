@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.SaaSHub",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "canCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "canTransact"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "coterminousDates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listConsolidableResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/tenantOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "saasResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenantLevelCanCreate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenantLevelCanTransact"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenantLevelCoterminousDates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateAddOnEligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateFuturePriceEligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validatePromotions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateRenewalPricingEligibility"
+    }
+  ]
+}

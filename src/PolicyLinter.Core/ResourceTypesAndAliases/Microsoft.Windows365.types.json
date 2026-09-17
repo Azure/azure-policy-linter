@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.Windows365",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "CloudPcDelegatedMsis"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ServiceConnectors"
+    }
+  ]
+}

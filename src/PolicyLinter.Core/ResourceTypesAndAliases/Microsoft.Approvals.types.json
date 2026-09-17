@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.Approvals",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "approvalSettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "approvalWorkflowAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "approvalWorkflowDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "approvalWorkflowDefinitions/approvalWorkflowInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "invokeAndFetchApprovalRequest"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

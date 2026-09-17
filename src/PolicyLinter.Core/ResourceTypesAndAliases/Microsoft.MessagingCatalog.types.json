@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.MessagingCatalog",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "catalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

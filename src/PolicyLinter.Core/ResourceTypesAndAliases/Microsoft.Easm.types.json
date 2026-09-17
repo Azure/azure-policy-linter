@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.Easm",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/labels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/tasks"
+    }
+  ]
+}

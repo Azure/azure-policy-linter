@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.CertificateRegistration",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "certificateOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "certificateOrders/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateCertificateRegistrationInformation"
+    }
+  ]
+}

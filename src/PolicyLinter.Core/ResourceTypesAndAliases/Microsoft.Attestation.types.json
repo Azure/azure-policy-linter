@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Attestation",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "attestationProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "attestationProviders/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "defaultProviders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/defaultProvider"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

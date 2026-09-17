@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.OperationsManagement",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "solutions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "views"
+    }
+  ]
+}

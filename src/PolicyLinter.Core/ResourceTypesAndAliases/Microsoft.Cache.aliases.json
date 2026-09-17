@@ -1,0 +1,1170 @@
+{
+  "namespace": "Microsoft.Cache",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/Redis/accessKeys",
+          "defaultPath": "properties.accessKeys"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/accessKeys.primaryKey",
+          "defaultPath": "properties.accessKeys.primaryKey"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/accessKeys.secondaryKey",
+          "defaultPath": "properties.accessKeys.secondaryKey"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/disableAccessKeyAuthentication",
+          "defaultPath": "properties.disableAccessKeyAuthentication"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/enableNonSslPort",
+          "paths": [
+            {
+              "path": "properties.enableNonSslPort",
+              "apiVersions": [
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enableNonSslPort",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/endIP",
+          "defaultPath": "properties.endIP"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedRedisCacheId",
+          "defaultPath": "properties.linkedRedisCacheId"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedRedisCacheLocation",
+          "defaultPath": "properties.linkedRedisCacheLocation"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedServers",
+          "defaultPath": "properties.linkedServers"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedServers.properties[*].id",
+          "defaultPath": "properties.linkedServers.properties[*].id"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedServers[*]",
+          "defaultPath": "properties.linkedServers[*]"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedServers[*].id",
+          "defaultPath": "properties.linkedServers[*].id"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/minimumTlsVersion",
+          "paths": [
+            {
+              "path": "properties.minimumTlsVersion",
+              "apiVersions": [
+                "2017-10-01",
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.minimumTlsVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/port",
+          "defaultPath": "properties.port"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2019-07-01",
+                "2018-03-01",
+                "2017-10-01",
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/redisConfiguration",
+          "defaultPath": "properties.redisConfiguration",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/redisConfiguration.authnotrequired",
+          "paths": [
+            {
+              "path": "properties.redisConfiguration.authnotrequired",
+              "apiVersions": [
+                "2020-06-01",
+                "2019-07-01",
+                "2018-03-01",
+                "2017-10-01",
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.redisConfiguration.authnotrequired",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/redisConfiguration.maxclients",
+          "defaultPath": "properties.redisConfiguration.maxclients"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/redisVersion",
+          "defaultPath": "properties.redisVersion"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/replicasPerMaster",
+          "paths": [
+            {
+              "path": "properties.replicasPerMaster",
+              "apiVersions": [
+                "2018-03-01",
+                "2017-10-01",
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.replicasPerMaster",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/replicasPerPrimary",
+          "defaultPath": "properties.replicasPerPrimary"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/scheduleEntries[*]",
+          "defaultPath": "properties.scheduleEntries[*]"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/scheduleEntries[*].dayOfWeek",
+          "defaultPath": "properties.scheduleEntries[*].dayOfWeek"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/scheduleEntries[*].maintenanceWindow",
+          "defaultPath": "properties.scheduleEntries[*].maintenanceWindow"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/scheduleEntries[*].startHourUtc",
+          "defaultPath": "properties.scheduleEntries[*].startHourUtc"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/serverRole",
+          "defaultPath": "properties.serverRole"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/shardCount",
+          "paths": [
+            {
+              "path": "properties.shardCount",
+              "apiVersions": [
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.shardCount",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/sku",
+          "defaultPath": "properties.sku",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/sku.capacity",
+          "paths": [
+            {
+              "path": "properties.sku.capacity",
+              "apiVersions": [
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sku.capacity",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/sku.family",
+          "paths": [
+            {
+              "path": "properties.sku.family",
+              "apiVersions": [
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sku.family",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/sku.name",
+          "paths": [
+            {
+              "path": "properties.sku.name",
+              "apiVersions": [
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sku.name",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/sslPort",
+          "defaultPath": "properties.sslPort"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/startIP",
+          "defaultPath": "properties.startIP"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/staticIP",
+          "paths": [
+            {
+              "path": "properties.staticIP",
+              "apiVersions": [
+                "2019-07-01",
+                "2018-03-01",
+                "2017-10-01",
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "String",
+                "attributes": "Modifiable"
+              }
+            }
+          ],
+          "defaultPath": "properties.staticIP"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/subnet",
+          "defaultPath": "properties.subnet"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/subnetId",
+          "paths": [
+            {
+              "path": "properties.subnetId",
+              "apiVersions": [
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.subnetId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/tenantSettings",
+          "defaultPath": "properties.tenantSettings",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/updateChannel",
+          "defaultPath": "properties.updateChannel"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/virtualNetwork",
+          "defaultPath": "properties.virtualNetwork"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/zonalAllocationPolicy",
+          "defaultPath": "properties.zonalAllocationPolicy"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/zones",
+          "paths": [
+            {
+              "path": "zones",
+              "apiVersions": [
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "zones",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/zones[*]",
+          "paths": [
+            {
+              "path": "zones[*]",
+              "apiVersions": [
+                "2017-02-01",
+                "2016-04-01",
+                "2015-08-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "zones[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "Redis"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redis/accessPolicies/permissions",
+          "defaultPath": "properties.permissions"
+        },
+        {
+          "name": "Microsoft.Cache/redis/accessPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/redis/accessPolicies/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "redis/accessPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redis/accessPolicyAssignments/accessPolicyName",
+          "defaultPath": "properties.accessPolicyName"
+        },
+        {
+          "name": "Microsoft.Cache/redis/accessPolicyAssignments/objectId",
+          "defaultPath": "properties.objectId"
+        },
+        {
+          "name": "Microsoft.Cache/redis/accessPolicyAssignments/objectIdAlias",
+          "defaultPath": "properties.objectIdAlias"
+        },
+        {
+          "name": "Microsoft.Cache/redis/accessPolicyAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "redis/accessPolicyAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/Redis/firewallrules/endIP",
+          "paths": [
+            {
+              "path": "properties.endIP",
+              "apiVersions": [
+                "2015-08-01",
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.endIP",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/Redis/firewallrules/startIP",
+          "paths": [
+            {
+              "path": "properties.startIP",
+              "apiVersions": [
+                "2015-08-01",
+                "2015-03-01",
+                "2014-04-01",
+                "2014-04-01-preview",
+                "2014-04-01-alpha"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.startIP",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "Redis/firewallrules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/Redis/linkedServers/geoReplicatedPrimaryHostName",
+          "defaultPath": "properties.geoReplicatedPrimaryHostName"
+        },
+        {
+          "name": "Microsoft.Cache/redis/linkedservers/linkedRedisCacheId",
+          "defaultPath": "properties.linkedRedisCacheId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/linkedservers/linkedRedisCacheLocation",
+          "paths": [
+            {
+              "path": "properties.linkedRedisCacheLocation",
+              "apiVersions": [
+                "2019-07-01",
+                "2018-03-01",
+                "2017-10-01",
+                "2017-02-01"
+              ],
+              "metadata": {
+                "type": "String",
+                "attributes": "Modifiable"
+              }
+            }
+          ],
+          "defaultPath": "properties.linkedRedisCacheLocation"
+        },
+        {
+          "name": "Microsoft.Cache/Redis/linkedServers/primaryHostName",
+          "defaultPath": "properties.primaryHostName"
+        },
+        {
+          "name": "Microsoft.Cache/redis/linkedservers/serverRole",
+          "defaultPath": "properties.serverRole",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "redis/linkedservers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/default.scheduleEntries",
+          "defaultPath": "properties.scheduleEntries",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/default.scheduleEntries[*]",
+          "defaultPath": "properties.scheduleEntries[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/default.scheduleEntries[*].dayOfWeek",
+          "defaultPath": "properties.scheduleEntries[*].dayOfWeek",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/default.scheduleEntries[*].maintenanceWindow",
+          "defaultPath": "properties.scheduleEntries[*].maintenanceWindow",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/default.scheduleEntries[*].startHourUtc",
+          "defaultPath": "properties.scheduleEntries[*].startHourUtc",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/scheduleEntries",
+          "defaultPath": "properties.scheduleEntries",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/scheduleEntries[*]",
+          "defaultPath": "properties.scheduleEntries[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/scheduleEntries[*].dayOfWeek",
+          "defaultPath": "properties.scheduleEntries[*].dayOfWeek",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/scheduleEntries[*].maintenanceWindow",
+          "defaultPath": "properties.scheduleEntries[*].maintenanceWindow",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/patchSchedules/scheduleEntries[*].startHourUtc",
+          "defaultPath": "properties.scheduleEntries[*].startHourUtc",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "redis/patchSchedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redis/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "Redis/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redisEnterprise/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/encryption.customerManagedKeyEncryption",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/highAvailability",
+          "defaultPath": "properties.highAvailability"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration",
+          "defaultPath": "properties.maintenanceConfiguration"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows[*]",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows[*].duration",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows[*].duration"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows[*].schedule",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows[*].schedule"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows[*].schedule.dayOfWeek",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows[*].schedule.dayOfWeek"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows[*].startHourUtc",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows[*].startHourUtc"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/maintenanceConfiguration.maintenanceWindows[*].type",
+          "defaultPath": "properties.maintenanceConfiguration.maintenanceWindows[*].type"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migratedEndpoint",
+          "defaultPath": "properties.migratedEndpoint"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/minimumTlsVersion",
+          "defaultPath": "properties.minimumTlsVersion"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2025-05-01-preview",
+                "2025-04-01",
+                "2024-10-01",
+                "2024-09-01-preview",
+                "2024-06-01-preview",
+                "2024-03-01-preview",
+                "2024-02-01",
+                "2023-11-01",
+                "2023-10-01-preview",
+                "2023-08-01-preview",
+                "2023-07-01",
+                "2023-03-01-preview",
+                "2022-11-01-preview",
+                "2022-01-01",
+                "2021-08-01",
+                "2021-03-01",
+                "2021-02-01-preview",
+                "2020-10-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/redisVersion",
+          "defaultPath": "properties.redisVersion"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/redundancyMode",
+          "defaultPath": "properties.redundancyMode"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/resourceState",
+          "defaultPath": "properties.resourceState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "redisEnterprise"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/accessKeysAuthentication",
+          "defaultPath": "properties.accessKeysAuthentication"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/clientProtocol",
+          "defaultPath": "properties.clientProtocol"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/clusteringPolicy",
+          "defaultPath": "properties.clusteringPolicy"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/deferUpgrade",
+          "defaultPath": "properties.deferUpgrade"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/evictionPolicy",
+          "defaultPath": "properties.evictionPolicy"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/geoReplication",
+          "defaultPath": "properties.geoReplication"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/geoReplication.groupNickname",
+          "defaultPath": "properties.geoReplication.groupNickname"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/geoReplication.linkedDatabases",
+          "defaultPath": "properties.geoReplication.linkedDatabases"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/geoReplication.linkedDatabases[*]",
+          "defaultPath": "properties.geoReplication.linkedDatabases[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/geoReplication.linkedDatabases[*].id",
+          "defaultPath": "properties.geoReplication.linkedDatabases[*].id"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/geoReplication.linkedDatabases[*].state",
+          "defaultPath": "properties.geoReplication.linkedDatabases[*].state"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/modules",
+          "defaultPath": "properties.modules"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/modules[*]",
+          "defaultPath": "properties.modules[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/modules[*].args",
+          "defaultPath": "properties.modules[*].args"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/modules[*].name",
+          "defaultPath": "properties.modules[*].name"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/modules[*].version",
+          "defaultPath": "properties.modules[*].version"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/notifyKeyspaceEvents",
+          "defaultPath": "properties.notifyKeyspaceEvents"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/persistence",
+          "defaultPath": "properties.persistence"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/persistence.aofEnabled",
+          "defaultPath": "properties.persistence.aofEnabled"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/persistence.aofFrequency",
+          "defaultPath": "properties.persistence.aofFrequency"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/persistence.rdbEnabled",
+          "defaultPath": "properties.persistence.rdbEnabled"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/persistence.rdbFrequency",
+          "defaultPath": "properties.persistence.rdbFrequency"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/port",
+          "defaultPath": "properties.port"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/redisVersion",
+          "defaultPath": "properties.redisVersion"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/databases/resourceState",
+          "defaultPath": "properties.resourceState"
+        }
+      ],
+      "resourceType": "redisEnterprise/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/AzureCacheForRedis.forceMigrate",
+          "defaultPath": "properties.forceMigrate"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/AzureCacheForRedis.skipDataMigration",
+          "defaultPath": "properties.skipDataMigration"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/AzureCacheForRedis.sourceResourceId",
+          "defaultPath": "properties.sourceResourceId"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/AzureCacheForRedis.switchDns",
+          "defaultPath": "properties.switchDns"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/sourceType",
+          "defaultPath": "properties.sourceType"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/statusDetails",
+          "defaultPath": "properties.statusDetails"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/migrations/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        }
+      ],
+      "resourceType": "redisEnterprise/migrations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Cache/redisEnterprise/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "RedisEnterprise/privateEndpointConnections"
+    }
+  ]
+}

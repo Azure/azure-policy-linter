@@ -1,0 +1,93 @@
+{
+  "namespace": "Microsoft.DesktopVirtualization",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "appattachpackages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applicationgroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationgroups/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationgroups/desktops"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "applicationgroups/startmenuitems"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectionpolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hostpools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostpools/msixpackages"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "hostpools/privateendpointconnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "hostpools/sessionhostconfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "hostpools/sessionhostmanagements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostpools/sessionhosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostpools/sessionhosts/usersessions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostpools/usersessions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "repositoryFolders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "repositoryFolders/repositoryIntegrations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scalingplans"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "scalingplans/personalSchedules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "scalingplans/pooledSchedules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/privateendpointconnections"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.ProfessionalService",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "eligibilityCheck"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resources"
+    }
+  ]
+}

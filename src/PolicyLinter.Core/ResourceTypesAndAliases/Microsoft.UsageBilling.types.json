@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.UsageBilling",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/dataExports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/inputs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/metricExports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/pav2outputs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/pipelines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/pipelines/outputSelectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/streamOutputs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/validationWorkspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/validationWorkspaces/signOffs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/asyncOperationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

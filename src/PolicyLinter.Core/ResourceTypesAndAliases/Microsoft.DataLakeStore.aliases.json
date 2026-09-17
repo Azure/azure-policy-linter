@@ -1,0 +1,201 @@
+{
+  "namespace": "Microsoft.DataLakeStore",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeStore/accounts/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/defaultGroup",
+          "defaultPath": "properties.defaultGroup"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionConfig",
+          "defaultPath": "properties.encryptionConfig"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionConfig.keyVaultMetaInfo",
+          "defaultPath": "properties.encryptionConfig.keyVaultMetaInfo"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionConfig.keyVaultMetaInfo.encryptionKeyName",
+          "defaultPath": "properties.encryptionConfig.keyVaultMetaInfo.encryptionKeyName"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionConfig.keyVaultMetaInfo.encryptionKeyVersion",
+          "defaultPath": "properties.encryptionConfig.keyVaultMetaInfo.encryptionKeyVersion"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionConfig.keyVaultMetaInfo.keyVaultResourceId",
+          "defaultPath": "properties.encryptionConfig.keyVaultMetaInfo.keyVaultResourceId"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionConfig.type",
+          "defaultPath": "properties.encryptionConfig.type"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionProvisioningState",
+          "defaultPath": "properties.encryptionProvisioningState"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/encryptionState",
+          "paths": [
+            {
+              "path": "properties.encryptionState",
+              "apiVersions": [
+                "2015-10-01-preview",
+                "2016-11-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryptionState"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallAllowAzureIps",
+          "defaultPath": "properties.firewallAllowAzureIps"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules",
+          "defaultPath": "properties.firewallRules"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules[*]",
+          "defaultPath": "properties.firewallRules[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules[*].endIpAddress",
+          "defaultPath": "properties.firewallRules[*].properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules[*].name",
+          "defaultPath": "properties.firewallRules[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules[*].startIpAddress",
+          "defaultPath": "properties.firewallRules[*].properties.startIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallState",
+          "paths": [
+            {
+              "path": "properties.firewallState",
+              "apiVersions": [
+                "2015-10-01-preview",
+                "2016-11-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.firewallState"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/newTier",
+          "defaultPath": "properties.newTier"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/trustedIdProviders",
+          "defaultPath": "properties.trustedIdProviders"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/trustedIdProviders[*]",
+          "defaultPath": "properties.trustedIdProviders[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/trustedIdProviders[*].idProvider",
+          "defaultPath": "properties.trustedIdProviders[*].properties.idProvider"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/trustedIdProviders[*].name",
+          "defaultPath": "properties.trustedIdProviders[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/trustedIdProviderState",
+          "defaultPath": "properties.trustedIdProviderState"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/virtualNetworkRules",
+          "defaultPath": "properties.virtualNetworkRules"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/virtualNetworkRules[*]",
+          "defaultPath": "properties.virtualNetworkRules[*]"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/virtualNetworkRules[*].name",
+          "defaultPath": "properties.virtualNetworkRules[*].name"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/virtualNetworkRules[*].subnetId",
+          "defaultPath": "properties.virtualNetworkRules[*].properties.subnetId"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules/endIpAddress",
+          "paths": [
+            {
+              "path": "properties.endIpAddress",
+              "apiVersions": [
+                "2015-10-01-preview",
+                "2016-11-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.endIpAddress"
+        },
+        {
+          "name": "Microsoft.DataLakeStore/accounts/firewallRules/startIpAddress",
+          "paths": [
+            {
+              "path": "properties.startIpAddress",
+              "apiVersions": [
+                "2015-10-01-preview",
+                "2016-11-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.startIpAddress"
+        }
+      ],
+      "resourceType": "accounts/firewallRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeStore/accounts/trustedIdProviders/idProvider",
+          "defaultPath": "properties.idProvider"
+        }
+      ],
+      "resourceType": "accounts/trustedIdProviders"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataLakeStore/accounts/virtualNetworkRules/subnetId",
+          "defaultPath": "properties.subnetId"
+        }
+      ],
+      "resourceType": "accounts/virtualNetworkRules"
+    }
+  ]
+}

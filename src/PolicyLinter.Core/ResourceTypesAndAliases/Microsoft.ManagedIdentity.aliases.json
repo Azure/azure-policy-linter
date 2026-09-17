@@ -1,0 +1,96 @@
+{
+  "namespace": "Microsoft.ManagedIdentity",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/assignmentRestrictions",
+          "defaultPath": "properties.assignmentRestrictions"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/assignmentRestrictions.providers",
+          "defaultPath": "properties.assignmentRestrictions.providers"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/assignmentRestrictions.providers[*]",
+          "defaultPath": "properties.assignmentRestrictions.providers[*]"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/clientId",
+          "defaultPath": "properties.clientId"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/clientSecretUrl",
+          "defaultPath": "properties.clientSecretUrl"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/isolationScope",
+          "paths": [
+            {
+              "path": "properties.isolationScope",
+              "apiVersions": [
+                "2023-07-31-preview",
+                "2023-01-31",
+                "2022-01-31-preview",
+                "2021-09-30-preview",
+                "2018-11-30",
+                "2015-08-31-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.isolationScope",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "userAssignedIdentities"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/audiences",
+          "defaultPath": "properties.audiences"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/audiences[*]",
+          "defaultPath": "properties.audiences[*]"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/claimsMatchingExpression",
+          "defaultPath": "properties.claimsMatchingExpression"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/claimsMatchingExpression.languageVersion",
+          "defaultPath": "properties.claimsMatchingExpression.languageVersion"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/claimsMatchingExpression.value",
+          "defaultPath": "properties.claimsMatchingExpression.value"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/issuer",
+          "defaultPath": "properties.issuer"
+        },
+        {
+          "name": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/subject",
+          "defaultPath": "properties.subject"
+        }
+      ],
+      "resourceType": "userAssignedIdentities/federatedIdentityCredentials"
+    }
+  ]
+}

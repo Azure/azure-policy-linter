@@ -1,0 +1,58 @@
+{
+  "namespace": "microsoft.aadiam",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/eventHubAuthorizationRuleId",
+          "defaultPath": "properties.eventHubAuthorizationRuleId"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/eventHubName",
+          "defaultPath": "properties.eventHubName"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs",
+          "defaultPath": "properties.logs"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs[*]",
+          "defaultPath": "properties.logs[*]"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs[*].category",
+          "defaultPath": "properties.logs[*].category"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs[*].enabled",
+          "defaultPath": "properties.logs[*].enabled"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs[*].retentionPolicy",
+          "defaultPath": "properties.logs[*].retentionPolicy"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs[*].retentionPolicy.days",
+          "defaultPath": "properties.logs[*].retentionPolicy.days"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/logs[*].retentionPolicy.enabled",
+          "defaultPath": "properties.logs[*].retentionPolicy.enabled"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/serviceBusRuleId",
+          "defaultPath": "properties.serviceBusRuleId"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/storageAccountId",
+          "defaultPath": "properties.storageAccountId"
+        },
+        {
+          "name": "microsoft.aadiam/diagnosticSettings/workspaceId",
+          "defaultPath": "properties.workspaceId"
+        }
+      ],
+      "resourceType": "diagnosticSettings"
+    }
+  ]
+}

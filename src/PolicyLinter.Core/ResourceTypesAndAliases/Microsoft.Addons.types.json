@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.Addons",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "supportProviders"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "namespace": "NGINX.NGINXPLUS",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "nginxDeployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "nginxDeployments/apiKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "nginxDeployments/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "nginxDeployments/configurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "nginxDeployments/wafPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

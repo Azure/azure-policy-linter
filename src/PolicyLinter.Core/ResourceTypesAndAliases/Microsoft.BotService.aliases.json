@@ -1,0 +1,1408 @@
+{
+  "namespace": "Microsoft.BotService",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.BotService/botServices/allSettings",
+          "defaultPath": "properties.allSettings"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/appPasswordHint",
+          "defaultPath": "properties.appPasswordHint"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/cmekEncryptionStatus",
+          "defaultPath": "properties.cmekEncryptionStatus"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/cmekKeyVaultUrl",
+          "defaultPath": "properties.cmekKeyVaultUrl"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/configuredChannels",
+          "defaultPath": "properties.configuredChannels"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/configuredChannels[*]",
+          "defaultPath": "properties.configuredChannels[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/developerAppInsightKey",
+          "defaultPath": "properties.developerAppInsightKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/developerAppInsightsApiKey",
+          "defaultPath": "properties.developerAppInsightsApiKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/developerAppInsightsApplicationId",
+          "defaultPath": "properties.developerAppInsightsApplicationId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/disableLocalAuth",
+          "defaultPath": "properties.disableLocalAuth"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/enabledChannels",
+          "defaultPath": "properties.enabledChannels"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/enabledChannels[*]",
+          "defaultPath": "properties.enabledChannels[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/endpointVersion",
+          "defaultPath": "properties.endpointVersion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/iconUrl",
+          "defaultPath": "properties.iconUrl"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/isCmekEnabled",
+          "defaultPath": "properties.isCmekEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/isDeveloperAppInsightsApiKeySet",
+          "defaultPath": "properties.isDeveloperAppInsightsApiKeySet"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/isIsolated",
+          "defaultPath": "properties.isIsolated"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/isStreamingSupported",
+          "defaultPath": "properties.isStreamingSupported"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/luisAppIds",
+          "defaultPath": "properties.luisAppIds"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/luisAppIds[*]",
+          "defaultPath": "properties.luisAppIds[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/luisKey",
+          "defaultPath": "properties.luisKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/manifestUrl",
+          "defaultPath": "properties.manifestUrl"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/migrationToken",
+          "defaultPath": "properties.migrationToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/msaAppId",
+          "defaultPath": "properties.msaAppId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/msaAppMSIResourceId",
+          "defaultPath": "properties.msaAppMSIResourceId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/msaAppTenantId",
+          "defaultPath": "properties.msaAppTenantId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/msaAppType",
+          "defaultPath": "properties.msaAppType"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].id",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].name",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].networkSecurityPerimeter",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.networkSecurityPerimeter"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].networkSecurityPerimeter.location",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.networkSecurityPerimeter.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].networkSecurityPerimeter.perimeterGuid",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.networkSecurityPerimeter.perimeterGuid"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].addressPrefixes",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].addressPrefixes[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].direction",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.direction"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].emailAddresses",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].emailAddresses[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].fullyQualifiedDomainNames",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.fullyQualifiedDomainNames"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].fullyQualifiedDomainNames[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.fullyQualifiedDomainNames[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].name",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].networkSecurityPerimeters",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.networkSecurityPerimeters"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].networkSecurityPerimeters[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.networkSecurityPerimeters[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].networkSecurityPerimeters[*].id",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.networkSecurityPerimeters[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].networkSecurityPerimeters[*].location",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.networkSecurityPerimeters[*].location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].networkSecurityPerimeters[*].perimeterGuid",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.networkSecurityPerimeters[*].perimeterGuid"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].phoneNumbers",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.phoneNumbers"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].phoneNumbers[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.phoneNumbers[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].subscriptions",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.subscriptions"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].subscriptions[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.subscriptions[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRules[*].subscriptions[*].id",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRules[*].properties.subscriptions[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.accessRulesVersion",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.accessRulesVersion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.diagnosticSettingsVersion",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.diagnosticSettingsVersion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.enabledLogCategories",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.enabledLogCategories"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.enabledLogCategories[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.enabledLogCategories[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].profile.name",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.profile.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].description",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.description"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].issueType",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.issueType"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].name",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].severity",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.severity"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].addressPrefixes",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].addressPrefixes[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].direction",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.direction"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].emailAddresses",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.emailAddresses"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].emailAddresses[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.emailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].fullyQualifiedDomainNames",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.fullyQualifiedDomainNames"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].fullyQualifiedDomainNames[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.fullyQualifiedDomainNames[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].name",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].networkSecurityPerimeters",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.networkSecurityPerimeters"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].networkSecurityPerimeters[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.networkSecurityPerimeters[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].networkSecurityPerimeters[*].id",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.networkSecurityPerimeters[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].networkSecurityPerimeters[*].location",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.networkSecurityPerimeters[*].location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].networkSecurityPerimeters[*].perimeterGuid",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.networkSecurityPerimeters[*].perimeterGuid"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].phoneNumbers",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.phoneNumbers"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].phoneNumbers[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.phoneNumbers[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].subscriptions",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.subscriptions"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].subscriptions[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.subscriptions[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedAccessRules[*].subscriptions[*].id",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedAccessRules[*].properties.subscriptions[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedResourceIds",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedResourceIds"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningIssues[*].suggestedResourceIds[*]",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningIssues[*].properties.suggestedResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].provisioningState",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].resourceAssociation",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.resourceAssociation"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].resourceAssociation.accessMode",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.resourceAssociation.accessMode"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].resourceAssociation.name",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].properties.resourceAssociation.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations[*].type",
+          "defaultPath": "properties.networkSecurityPerimeterConfigurations[*].type"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/openWithHint",
+          "defaultPath": "properties.openWithHint"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-06-02",
+                "2018-07-12",
+                "2017-12-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.BotService/botServices/publishingCredentials",
+          "defaultPath": "properties.publishingCredentials"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/schemaTransformationVersion",
+          "defaultPath": "properties.schemaTransformationVersion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/storageResourceId",
+          "defaultPath": "properties.storageResourceId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "botServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.BotService/botServices/channels/AlexaChannel.alexaSkillId",
+          "defaultPath": "properties.properties.alexaSkillId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/AlexaChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/AlexaChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/AlexaChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/AlexaChannel.serviceEndpointUri",
+          "defaultPath": "properties.properties.serviceEndpointUri"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/AlexaChannel.urlFragment",
+          "defaultPath": "properties.properties.urlFragment"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/channelName",
+          "defaultPath": "properties.channelName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.DirectLineEmbedCode",
+          "defaultPath": "properties.properties.DirectLineEmbedCode"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.extensionKey1",
+          "defaultPath": "properties.properties.extensionKey1"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.extensionKey2",
+          "defaultPath": "properties.properties.extensionKey2"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites",
+          "defaultPath": "properties.properties.sites"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*]",
+          "defaultPath": "properties.properties.sites[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].appId",
+          "defaultPath": "properties.properties.sites[*].appId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].eTag",
+          "defaultPath": "properties.properties.sites[*].eTag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isBlockUserUploadEnabled",
+          "defaultPath": "properties.properties.sites[*].isBlockUserUploadEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isDetailedLoggingEnabled",
+          "defaultPath": "properties.properties.sites[*].isDetailedLoggingEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isEnabled",
+          "defaultPath": "properties.properties.sites[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isEndpointParametersEnabled",
+          "defaultPath": "properties.properties.sites[*].isEndpointParametersEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isNoStorageEnabled",
+          "defaultPath": "properties.properties.sites[*].isNoStorageEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isSecureSiteEnabled",
+          "defaultPath": "properties.properties.sites[*].isSecureSiteEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isTokenEnabled",
+          "defaultPath": "properties.properties.sites[*].isTokenEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isV1Enabled",
+          "defaultPath": "properties.properties.sites[*].isV1Enabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isV3Enabled",
+          "defaultPath": "properties.properties.sites[*].isV3Enabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isWebchatPreviewEnabled",
+          "defaultPath": "properties.properties.sites[*].isWebchatPreviewEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].isWebChatSpeechEnabled",
+          "defaultPath": "properties.properties.sites[*].isWebChatSpeechEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].key",
+          "defaultPath": "properties.properties.sites[*].key"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].key2",
+          "defaultPath": "properties.properties.sites[*].key2"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].siteId",
+          "defaultPath": "properties.properties.sites[*].siteId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].siteName",
+          "defaultPath": "properties.properties.sites[*].siteName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].tenantId",
+          "defaultPath": "properties.properties.sites[*].tenantId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].trustedOrigins",
+          "defaultPath": "properties.properties.sites[*].trustedOrigins"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineChannel.sites[*].trustedOrigins[*]",
+          "defaultPath": "properties.properties.sites[*].trustedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.cognitiveServiceRegion",
+          "defaultPath": "properties.properties.cognitiveServiceRegion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.cognitiveServiceResourceId",
+          "defaultPath": "properties.properties.cognitiveServiceResourceId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.cognitiveServicesSubscriptionId",
+          "defaultPath": "properties.properties.cognitiveServicesSubscriptionId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.cognitiveServiceSubscriptionKey",
+          "defaultPath": "properties.properties.cognitiveServiceSubscriptionKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.customSpeechModelId",
+          "defaultPath": "properties.properties.customSpeechModelId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.customVoiceDeploymentId",
+          "defaultPath": "properties.properties.customVoiceDeploymentId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.isDefaultBotForCogSvcAccount",
+          "defaultPath": "properties.properties.isDefaultBotForCogSvcAccount"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/DirectLineSpeechChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.authMethod",
+          "defaultPath": "properties.properties.authMethod"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.emailAddress",
+          "defaultPath": "properties.properties.emailAddress"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.magicCode",
+          "defaultPath": "properties.properties.magicCode"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.password",
+          "defaultPath": "properties.properties.password"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/EmailChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.appId",
+          "defaultPath": "properties.properties.appId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.appSecret",
+          "defaultPath": "properties.properties.appSecret"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.callbackUrl",
+          "defaultPath": "properties.properties.callbackUrl"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.channelName",
+          "defaultPath": "properties.channelName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.pages",
+          "defaultPath": "properties.properties.pages"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.pages[*]",
+          "defaultPath": "properties.properties.pages[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.pages[*].accessToken",
+          "defaultPath": "properties.properties.pages[*].accessToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.pages[*].id",
+          "defaultPath": "properties.properties.pages[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/FacebookChannel.verifyToken",
+          "defaultPath": "properties.properties.verifyToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/KikChannel.apiKey",
+          "defaultPath": "properties.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/KikChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/KikChannel.isValidated",
+          "defaultPath": "properties.properties.isValidated"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/KikChannel.userName",
+          "defaultPath": "properties.properties.userName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.callbackUrl",
+          "defaultPath": "properties.properties.callbackUrl"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.isValidated",
+          "defaultPath": "properties.properties.isValidated"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.lineRegistrations",
+          "defaultPath": "properties.properties.lineRegistrations"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.lineRegistrations[*]",
+          "defaultPath": "properties.properties.lineRegistrations[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.lineRegistrations[*].channelAccessToken",
+          "defaultPath": "properties.properties.lineRegistrations[*].channelAccessToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.lineRegistrations[*].channelSecret",
+          "defaultPath": "properties.properties.lineRegistrations[*].channelSecret"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/LineChannel.lineRegistrations[*].generatedId",
+          "defaultPath": "properties.properties.lineRegistrations[*].generatedId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.acceptedTerms",
+          "defaultPath": "properties.properties.acceptedTerms"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.callingWebHook",
+          "defaultPath": "properties.properties.callingWebHook"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.callMode",
+          "defaultPath": "properties.properties.callMode"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.deploymentEnvironment",
+          "defaultPath": "properties.properties.deploymentEnvironment"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.enableCalling",
+          "defaultPath": "properties.properties.enableCalling"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.enableMediaCards",
+          "defaultPath": "properties.properties.enableMediaCards"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.enableMessaging",
+          "defaultPath": "properties.properties.enableMessaging"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.enableVideo",
+          "defaultPath": "properties.properties.enableVideo"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.incomingCallRoute",
+          "defaultPath": "properties.properties.incomingCallRoute"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/MsTeamsChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.callingWebHook",
+          "defaultPath": "properties.properties.callingWebHook"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.enableCalling",
+          "defaultPath": "properties.properties.enableCalling"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.enableGroups",
+          "defaultPath": "properties.properties.enableGroups"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.enableMediaCards",
+          "defaultPath": "properties.properties.enableMediaCards"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.enableMessaging",
+          "defaultPath": "properties.properties.enableMessaging"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.enableScreenSharing",
+          "defaultPath": "properties.properties.enableScreenSharing"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.enableVideo",
+          "defaultPath": "properties.properties.enableVideo"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.groupsMode",
+          "defaultPath": "properties.properties.groupsMode"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.incomingCallRoute",
+          "defaultPath": "properties.properties.incomingCallRoute"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SkypeChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.clientId",
+          "defaultPath": "properties.properties.clientId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.clientSecret",
+          "defaultPath": "properties.properties.clientSecret"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.isValidated",
+          "defaultPath": "properties.properties.isValidated"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.landingPageUrl",
+          "defaultPath": "properties.properties.landingPageUrl"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.lastSubmissionId",
+          "defaultPath": "properties.properties.lastSubmissionId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.redirectAction",
+          "defaultPath": "properties.properties.redirectAction"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.registerBeforeOAuthFlow",
+          "defaultPath": "properties.properties.registerBeforeOAuthFlow"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.scopes",
+          "defaultPath": "properties.properties.scopes"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.signingSecret",
+          "defaultPath": "properties.properties.signingSecret"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SlackChannel.verificationToken",
+          "defaultPath": "properties.properties.verificationToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SmsChannel.accountSID",
+          "defaultPath": "properties.properties.accountSID"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SmsChannel.authToken",
+          "defaultPath": "properties.properties.authToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SmsChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SmsChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SmsChannel.isValidated",
+          "defaultPath": "properties.properties.isValidated"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/SmsChannel.phone",
+          "defaultPath": "properties.properties.phone"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelegramChannel.accessToken",
+          "defaultPath": "properties.properties.accessToken"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelegramChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelegramChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelegramChannel.isValidated",
+          "defaultPath": "properties.properties.isValidated"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelegramChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations",
+          "defaultPath": "properties.properties.apiConfigurations"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*]",
+          "defaultPath": "properties.properties.apiConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*].cognitiveServiceRegion",
+          "defaultPath": "properties.properties.apiConfigurations[*].cognitiveServiceRegion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*].cognitiveServiceResourceId",
+          "defaultPath": "properties.properties.apiConfigurations[*].cognitiveServiceResourceId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*].cognitiveServiceSubscriptionKey",
+          "defaultPath": "properties.properties.apiConfigurations[*].cognitiveServiceSubscriptionKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*].defaultLocale",
+          "defaultPath": "properties.properties.apiConfigurations[*].defaultLocale"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*].id",
+          "defaultPath": "properties.properties.apiConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.apiConfigurations[*].providerName",
+          "defaultPath": "properties.properties.apiConfigurations[*].providerName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.cognitiveServiceRegion",
+          "defaultPath": "properties.properties.cognitiveServiceRegion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.cognitiveServiceSubscriptionKey",
+          "defaultPath": "properties.properties.cognitiveServiceSubscriptionKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.defaultLocale",
+          "defaultPath": "properties.properties.defaultLocale"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.isEnabled",
+          "defaultPath": "properties.properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers",
+          "defaultPath": "properties.properties.phoneNumbers"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*]",
+          "defaultPath": "properties.properties.phoneNumbers[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].acsEndpoint",
+          "defaultPath": "properties.properties.phoneNumbers[*].acsEndpoint"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].acsResourceId",
+          "defaultPath": "properties.properties.phoneNumbers[*].acsResourceId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].acsSecret",
+          "defaultPath": "properties.properties.phoneNumbers[*].acsSecret"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].cognitiveServiceRegion",
+          "defaultPath": "properties.properties.phoneNumbers[*].cognitiveServiceRegion"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].cognitiveServiceResourceId",
+          "defaultPath": "properties.properties.phoneNumbers[*].cognitiveServiceResourceId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].cognitiveServiceSubscriptionKey",
+          "defaultPath": "properties.properties.phoneNumbers[*].cognitiveServiceSubscriptionKey"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].defaultLocale",
+          "defaultPath": "properties.properties.phoneNumbers[*].defaultLocale"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].id",
+          "defaultPath": "properties.properties.phoneNumbers[*].id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].offerType",
+          "defaultPath": "properties.properties.phoneNumbers[*].offerType"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.phoneNumbers[*].phoneNumber",
+          "defaultPath": "properties.properties.phoneNumbers[*].phoneNumber"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/TelephonyChannel.premiumSKU",
+          "defaultPath": "properties.properties.premiumSKU"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.location",
+          "defaultPath": "properties.location"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites",
+          "defaultPath": "properties.properties.sites"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*]",
+          "defaultPath": "properties.properties.sites[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].appId",
+          "defaultPath": "properties.properties.sites[*].appId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].enablePreview",
+          "defaultPath": "properties.properties.sites[*].enablePreview"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].eTag",
+          "defaultPath": "properties.properties.sites[*].eTag"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isBlockUserUploadEnabled",
+          "defaultPath": "properties.properties.sites[*].isBlockUserUploadEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isDetailedLoggingEnabled",
+          "defaultPath": "properties.properties.sites[*].isDetailedLoggingEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isEnabled",
+          "defaultPath": "properties.properties.sites[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isEndpointParametersEnabled",
+          "defaultPath": "properties.properties.sites[*].isEndpointParametersEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isNoStorageEnabled",
+          "defaultPath": "properties.properties.sites[*].isNoStorageEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isSecureSiteEnabled",
+          "defaultPath": "properties.properties.sites[*].isSecureSiteEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isTokenEnabled",
+          "defaultPath": "properties.properties.sites[*].isTokenEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isV1Enabled",
+          "defaultPath": "properties.properties.sites[*].isV1Enabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isV3Enabled",
+          "defaultPath": "properties.properties.sites[*].isV3Enabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isWebchatPreviewEnabled",
+          "defaultPath": "properties.properties.sites[*].isWebchatPreviewEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].isWebChatSpeechEnabled",
+          "defaultPath": "properties.properties.sites[*].isWebChatSpeechEnabled"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].key",
+          "defaultPath": "properties.properties.sites[*].key"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].key2",
+          "defaultPath": "properties.properties.sites[*].key2"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].siteId",
+          "defaultPath": "properties.properties.sites[*].siteId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].siteName",
+          "defaultPath": "properties.properties.sites[*].siteName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].tenantId",
+          "defaultPath": "properties.properties.sites[*].tenantId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].trustedOrigins",
+          "defaultPath": "properties.properties.sites[*].trustedOrigins"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.sites[*].trustedOrigins[*]",
+          "defaultPath": "properties.properties.sites[*].trustedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/WebChatChannel.webChatEmbedCode",
+          "defaultPath": "properties.properties.webChatEmbedCode"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/channels/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "botServices/channels"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.BotService/botServices/connections/clientId",
+          "defaultPath": "properties.clientId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/clientSecret",
+          "defaultPath": "properties.clientSecret"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/Connections/id",
+          "defaultPath": "properties.id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/Connections/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/parameters[*]",
+          "defaultPath": "properties.parameters[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/parameters[*].key",
+          "defaultPath": "properties.parameters[*].key"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/parameters[*].value",
+          "defaultPath": "properties.parameters[*].value"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/Connections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/scopes",
+          "defaultPath": "properties.scopes"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/serviceProviderDisplayName",
+          "defaultPath": "properties.serviceProviderDisplayName"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/serviceProviderId",
+          "defaultPath": "properties.serviceProviderId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/settingId",
+          "defaultPath": "properties.settingId"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/connections/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/Connections/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/Connections/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "botServices/connections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations/profile.name",
+          "defaultPath": "properties.profile.name"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/networkSecurityPerimeterConfigurations/resourceAssociation.accessMode",
+          "defaultPath": "properties.resourceAssociation.accessMode"
+        }
+      ],
+      "resourceType": "botServices/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.BotService/botServices/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "botServices/privateEndpointConnections"
+    }
+  ]
+}

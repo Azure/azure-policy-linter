@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.BlockchainTokens",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "TokenServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "TokenServices/BlockchainNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "TokenServices/Groups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "TokenServices/Groups/Accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "TokenServices/TokenTemplates"
+    }
+  ]
+}

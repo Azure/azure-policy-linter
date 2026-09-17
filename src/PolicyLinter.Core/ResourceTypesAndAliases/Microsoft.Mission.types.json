@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.Mission",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "approvals"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "catalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "communities"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "communities/communityEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "communities/dedicatedHubs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "communities/transitHubs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "enclaveConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "serviceCatalogs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualEnclaves"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualEnclaves/enclaveEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualEnclaves/workloads"
+    }
+  ]
+}

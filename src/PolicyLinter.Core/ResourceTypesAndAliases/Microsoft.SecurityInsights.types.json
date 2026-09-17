@@ -1,0 +1,201 @@
+{
+  "namespace": "Microsoft.SecurityInsights",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "aggregations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "alertRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "alertRules/actions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "alertRuleTemplates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "automationRules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "billingStatistics"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "bookmarks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "bookmarks/relations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "cases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "cases/comments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "confidentialWatchlists"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "contentPackages"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "contentProductPackages"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "contentProductTemplates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "contentTemplates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dataConnectorDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dataConnectors"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dataConnectorsCheckRequirements"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "enrichment"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "enrichmentWidgets"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "entities"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "entityQueries"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "entityQueryTemplates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "exportConnections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "fileImports"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "hunts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "huntsessions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "incidents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "incidents/comments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "incidents/relations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "listrepositories"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "metadata"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "MitreCoverageRecords"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "officeConsents"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "onboardingStates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "overview"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "recommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "securityMLAnalyticsSettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "settings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "sourceControls"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "threatIntelligence"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "threatintelligence/indicators"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "triggeredAnalyticsRuleRuns"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "watchlists"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "workspaceManagerAssignments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "workspaceManagerConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "workspaceManagerGroups"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "workspaceManagerMembers"
+    }
+  ]
+}

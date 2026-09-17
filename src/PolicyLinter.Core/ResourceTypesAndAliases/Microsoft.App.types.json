@@ -1,0 +1,249 @@
+{
+  "namespace": "Microsoft.App",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "agents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "agentSessions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "agentSpaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "appGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "artifactApps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "artifacts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "builders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "builders/builds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "builders/patches"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectedEnvironments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectedEnvironments/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "connectedenvironments/daprcomponents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "connectedenvironments/storages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerApps"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "containerapps/authconfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "containerApps/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "containerApps/resiliencyPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "containerapps/sourcecontrols"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "functions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getCustomDomainVerificationId"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availableManagedEnvironmentsWorkloadProfileTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/billingMeters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectedEnvironmentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectedEnvironmentOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectedOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectedOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/containerappOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/containerappOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/containerappsjobOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/containerappsjobOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedCertificateOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedEnvironmentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedEnvironmentOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sourceControlOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sourceControlOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sreAgentOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sreAgentOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/supportedAgentModels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "logicApps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedEnvironments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedEnvironments/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedEnvironments/daprComponents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedEnvironments/daprComponents/resiliencyPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedEnvironments/dotNetComponents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedenvironments/httprouteconfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedEnvironments/javaComponents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedenvironments/maintenanceconfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedEnvironments/managedCertificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedEnvironments/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedenvironments/privateendpointconnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedenvironments/storages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sandboxes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sandboxGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sandboxGroups/vnetConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sessionPools"
+    }
+  ]
+}

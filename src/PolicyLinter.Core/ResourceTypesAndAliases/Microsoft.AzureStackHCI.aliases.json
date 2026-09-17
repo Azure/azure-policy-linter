@@ -1,0 +1,2611 @@
+{
+  "namespace": "Microsoft.AzureStackHCI",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/aadApplicationObjectId",
+          "defaultPath": "properties.aadApplicationObjectId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/aadClientId",
+          "defaultPath": "properties.aadClientId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/aadServicePrincipalObjectId",
+          "defaultPath": "properties.aadServicePrincipalObjectId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/aadTenantId",
+          "defaultPath": "properties.aadTenantId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/billingModel",
+          "defaultPath": "properties.billingModel"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/cloudId",
+          "defaultPath": "properties.cloudId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/cloudManagementEndpoint",
+          "defaultPath": "properties.cloudManagementEndpoint"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/clusterPattern",
+          "defaultPath": "properties.clusterPattern"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/connectivityStatus",
+          "defaultPath": "properties.connectivityStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/desiredProperties",
+          "defaultPath": "properties.desiredProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/desiredProperties.diagnosticLevel",
+          "paths": [
+            {
+              "path": "properties.desiredProperties.diagnosticLevel",
+              "apiVersions": [
+                "2021-01-01-preview",
+                "2020-10-01",
+                "2020-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.desiredProperties.diagnosticLevel",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/desiredProperties.windowsServerSubscription",
+          "paths": [
+            {
+              "path": "properties.desiredProperties.windowsServerSubscription",
+              "apiVersions": [
+                "2021-01-01-preview",
+                "2020-10-01",
+                "2020-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.desiredProperties.windowsServerSubscription",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/isolatedVmAttestationConfiguration",
+          "defaultPath": "properties.isolatedVmAttestationConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/isolatedVmAttestationConfiguration.attestationResourceId",
+          "defaultPath": "properties.isolatedVmAttestationConfiguration.attestationResourceId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/isolatedVmAttestationConfiguration.attestationServiceEndpoint",
+          "defaultPath": "properties.isolatedVmAttestationConfiguration.attestationServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/isolatedVmAttestationConfiguration.relyingPartyServiceEndpoint",
+          "defaultPath": "properties.isolatedVmAttestationConfiguration.relyingPartyServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/lastBillingTimestamp",
+          "defaultPath": "properties.lastBillingTimestamp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/lastSyncTimestamp",
+          "defaultPath": "properties.lastSyncTimestamp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/localAvailabilityZones",
+          "defaultPath": "properties.localAvailabilityZones"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/localAvailabilityZones[*]",
+          "defaultPath": "properties.localAvailabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/localAvailabilityZones[*].localAvailabilityZoneName",
+          "defaultPath": "properties.localAvailabilityZones[*].localAvailabilityZoneName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/localAvailabilityZones[*].nodes",
+          "defaultPath": "properties.localAvailabilityZones[*].nodes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/localAvailabilityZones[*].nodes[*]",
+          "defaultPath": "properties.localAvailabilityZones[*].nodes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties",
+          "defaultPath": "properties.logCollectionProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.fromDate",
+          "defaultPath": "properties.logCollectionProperties.fromDate"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.lastLogGenerated",
+          "defaultPath": "properties.logCollectionProperties.lastLogGenerated"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*]",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].correlationId",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].correlationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].endTimeCollected",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].endTimeCollected"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logCollectionError",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logCollectionError"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logCollectionError.errorCode",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logCollectionError.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logCollectionError.errorMessage",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logCollectionError.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logCollectionJobType",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logCollectionJobType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logCollectionStatus",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logCollectionStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logEndTime",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logEndTime"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logSize",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logSize"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].logStartTime",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].logStartTime"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.logCollectionSessionDetails[*].timeCollected",
+          "defaultPath": "properties.logCollectionProperties.logCollectionSessionDetails[*].timeCollected"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/logCollectionProperties.toDate",
+          "defaultPath": "properties.logCollectionProperties.toDate"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/registrationTimestamp",
+          "defaultPath": "properties.registrationTimestamp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties",
+          "defaultPath": "properties.remoteSupportProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.accessLevel",
+          "defaultPath": "properties.remoteSupportProperties.accessLevel"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.expirationTimeStamp",
+          "defaultPath": "properties.remoteSupportProperties.expirationTimeStamp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*]",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].arcResourceId",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].arcResourceId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].connectionErrorMessage",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].connectionErrorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].connectionStatus",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].connectionStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].createdAt",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].createdAt"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].state",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].state"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].transcriptLocation",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].transcriptLocation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportNodeSettings[*].updatedAt",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportNodeSettings[*].updatedAt"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails[*]",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails[*].accessLevel",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails[*].accessLevel"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails[*].duration",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails[*].duration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails[*].nodeName",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails[*].nodeName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails[*].sessionEndTime",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails[*].sessionEndTime"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportSessionDetails[*].sessionStartTime",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportSessionDetails[*].sessionStartTime"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/remoteSupportProperties.remoteSupportType",
+          "defaultPath": "properties.remoteSupportProperties.remoteSupportType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties",
+          "defaultPath": "properties.reportedProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.clusterId",
+          "defaultPath": "properties.reportedProperties.clusterId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.clusterName",
+          "defaultPath": "properties.reportedProperties.clusterName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.clusterType",
+          "defaultPath": "properties.reportedProperties.clusterType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.clusterVersion",
+          "defaultPath": "properties.reportedProperties.clusterVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.diagnosticLevel",
+          "defaultPath": "properties.reportedProperties.diagnosticLevel"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.hardwareClass",
+          "defaultPath": "properties.reportedProperties.hardwareClass"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.imdsAttestation",
+          "defaultPath": "properties.reportedProperties.imdsAttestation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.lastUpdated",
+          "defaultPath": "properties.reportedProperties.lastUpdated"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.manufacturer",
+          "defaultPath": "properties.reportedProperties.manufacturer"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes",
+          "defaultPath": "properties.reportedProperties.nodes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*]",
+          "defaultPath": "properties.reportedProperties.nodes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].coreCount",
+          "defaultPath": "properties.reportedProperties.nodes[*].coreCount"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].ehcResourceId",
+          "defaultPath": "properties.reportedProperties.nodes[*].ehcResourceId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].id",
+          "defaultPath": "properties.reportedProperties.nodes[*].id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].lastLicensingTimestamp",
+          "defaultPath": "properties.reportedProperties.nodes[*].lastLicensingTimestamp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].manufacturer",
+          "defaultPath": "properties.reportedProperties.nodes[*].manufacturer"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].memoryInGiB",
+          "defaultPath": "properties.reportedProperties.nodes[*].memoryInGiB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].model",
+          "defaultPath": "properties.reportedProperties.nodes[*].model"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].name",
+          "defaultPath": "properties.reportedProperties.nodes[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].nodeType",
+          "defaultPath": "properties.reportedProperties.nodes[*].nodeType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].oemActivation",
+          "defaultPath": "properties.reportedProperties.nodes[*].oemActivation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].osDisplayVersion",
+          "defaultPath": "properties.reportedProperties.nodes[*].osDisplayVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].osName",
+          "defaultPath": "properties.reportedProperties.nodes[*].osName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].osVersion",
+          "defaultPath": "properties.reportedProperties.nodes[*].osVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].serialNumber",
+          "defaultPath": "properties.reportedProperties.nodes[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.nodes[*].windowsServerSubscription",
+          "defaultPath": "properties.reportedProperties.nodes[*].windowsServerSubscription"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.oemActivation",
+          "defaultPath": "properties.reportedProperties.oemActivation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.supportedCapabilities",
+          "defaultPath": "properties.reportedProperties.supportedCapabilities"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/reportedProperties.supportedCapabilities[*]",
+          "defaultPath": "properties.reportedProperties.supportedCapabilities[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/resourceProviderObjectId",
+          "defaultPath": "properties.resourceProviderObjectId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/secretsLocations",
+          "defaultPath": "properties.secretsLocations"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/secretsLocations[*]",
+          "defaultPath": "properties.secretsLocations[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/secretsLocations[*].secretsLocation",
+          "defaultPath": "properties.secretsLocations[*].secretsLocation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/secretsLocations[*].secretsType",
+          "defaultPath": "properties.secretsLocations[*].secretsType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/serviceEndpoint",
+          "defaultPath": "properties.serviceEndpoint"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/softwareAssuranceProperties",
+          "defaultPath": "properties.softwareAssuranceProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/softwareAssuranceProperties.lastUpdated",
+          "defaultPath": "properties.softwareAssuranceProperties.lastUpdated"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/softwareAssuranceProperties.softwareAssuranceIntent",
+          "paths": [
+            {
+              "path": "properties.softwareAssuranceProperties.softwareAssuranceIntent",
+              "apiVersions": [
+                "2022-05-01",
+                "2022-03-01",
+                "2022-01-01",
+                "2021-09-01",
+                "2021-09-01-preview",
+                "2021-01-01-preview",
+                "2020-10-01",
+                "2020-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.softwareAssuranceProperties.softwareAssuranceIntent",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/softwareAssuranceProperties.softwareAssuranceStatus",
+          "defaultPath": "properties.softwareAssuranceProperties.softwareAssuranceStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/trialDaysRemaining",
+          "defaultPath": "properties.trialDaysRemaining"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/aggregateState",
+          "defaultPath": "properties.aggregateState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/arcApplicationClientId",
+          "defaultPath": "properties.arcApplicationClientId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/arcApplicationObjectId",
+          "defaultPath": "properties.arcApplicationObjectId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/arcApplicationTenantId",
+          "defaultPath": "properties.arcApplicationTenantId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/arcInstanceResourceGroup",
+          "defaultPath": "properties.arcInstanceResourceGroup"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/arcServicePrincipalObjectId",
+          "defaultPath": "properties.arcServicePrincipalObjectId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/defaultExtensions",
+          "defaultPath": "properties.defaultExtensions"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/defaultExtensions[*]",
+          "defaultPath": "properties.defaultExtensions[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/defaultExtensions[*].category",
+          "defaultPath": "properties.defaultExtensions[*].category"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/defaultExtensions[*].consentTime",
+          "defaultPath": "properties.defaultExtensions[*].consentTime"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/perNodeDetails",
+          "defaultPath": "properties.perNodeDetails"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/perNodeDetails[*]",
+          "defaultPath": "properties.perNodeDetails[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/perNodeDetails[*].arcInstance",
+          "defaultPath": "properties.perNodeDetails[*].arcInstance"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/perNodeDetails[*].arcNodeServicePrincipalObjectId",
+          "defaultPath": "properties.perNodeDetails[*].arcNodeServicePrincipalObjectId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/perNodeDetails[*].name",
+          "defaultPath": "properties.perNodeDetails[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/perNodeDetails[*].state",
+          "defaultPath": "properties.perNodeDetails[*].state"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "clusters/arcSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/aggregateState",
+          "defaultPath": "properties.aggregateState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters",
+          "defaultPath": "properties.extensionParameters"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters.autoUpgradeMinorVersion",
+          "defaultPath": "properties.extensionParameters.autoUpgradeMinorVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters.enableAutomaticUpgrade",
+          "defaultPath": "properties.extensionParameters.enableAutomaticUpgrade"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters.forceUpdateTag",
+          "defaultPath": "properties.extensionParameters.forceUpdateTag"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters.publisher",
+          "defaultPath": "properties.extensionParameters.publisher"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters.type",
+          "defaultPath": "properties.extensionParameters.type"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/extensionParameters.typeHandlerVersion",
+          "defaultPath": "properties.extensionParameters.typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/managedBy",
+          "defaultPath": "properties.managedBy"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails",
+          "defaultPath": "properties.perNodeExtensionDetails"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*]",
+          "defaultPath": "properties.perNodeExtensionDetails[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].extension",
+          "defaultPath": "properties.perNodeExtensionDetails[*].extension"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.name",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.status",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.status.code",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.status.code"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.status.displayStatus",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.status.displayStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.status.level",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.status.level"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.status.message",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.status.message"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.status.time",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.status.time"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.type",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.type"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].instanceView.typeHandlerVersion",
+          "defaultPath": "properties.perNodeExtensionDetails[*].instanceView.typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].name",
+          "defaultPath": "properties.perNodeExtensionDetails[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].state",
+          "defaultPath": "properties.perNodeExtensionDetails[*].state"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/perNodeExtensionDetails[*].typeHandlerVersion",
+          "defaultPath": "properties.perNodeExtensionDetails[*].typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/arcSettings/extensions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "clusters/arcSettings/extensions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/arcNodeResourceIds",
+          "defaultPath": "properties.arcNodeResourceIds"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/arcNodeResourceIds[*]",
+          "defaultPath": "properties.arcNodeResourceIds[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration",
+          "defaultPath": "properties.deploymentConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.adouPath",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.adouPath"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.assemblyInfo",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.assemblyInfo"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.cluster",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.cluster"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.cluster.azureServiceEndpoint",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.cluster.azureServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.cluster.cloudAccountName",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.cluster.cloudAccountName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.cluster.name",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.cluster.name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.cluster.witnessPath",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.cluster.witnessPath"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.cluster.witnessType",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.cluster.witnessType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.domainFqdn",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.domainFqdn"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.enableStorageAutoIp",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.enableStorageAutoIp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapter",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapter"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapter[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapter[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides.jumboPacket",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides.jumboPacket"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides.networkDirect",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides.networkDirect"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides.networkDirectTechnology",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].adapterPropertyOverrides.networkDirectTechnology"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].name",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].overrideAdapterProperty",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].overrideAdapterProperty"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].overrideQosPolicy",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].overrideQosPolicy"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].overrideVirtualSwitchConfiguration",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].overrideVirtualSwitchConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].qosPolicyOverrides",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].qosPolicyOverrides"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].trafficType",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].trafficType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].trafficType[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].trafficType[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].virtualSwitchConfigurationOverrides",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].virtualSwitchConfigurationOverrides"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].virtualSwitchConfigurationOverrides.enableIov",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].virtualSwitchConfigurationOverrides.enableIov"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].virtualSwitchConfigurationOverrides.loadBalancingAlgorithm",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.intents[*].virtualSwitchConfigurationOverrides.loadBalancingAlgorithm"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageConnectivitySwitchless",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageConnectivitySwitchless"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*].name",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*].networkAdapterName",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*].networkAdapterName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*].vlanId",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.hostNetwork.storageNetworks[*].vlanId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].dnsServers",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].dnsServers"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].dnsServers[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].gateway",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].gateway"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools[*].endingAddress",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools[*].endingAddress"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools[*].startingAddress",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].ipPools[*].startingAddress"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].subnetMask",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].subnetMask"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].useDhcp",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.infrastructureNetwork[*].useDhcp"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.localAvailabilityZones",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.localAvailabilityZones"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.localAvailabilityZones[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.localAvailabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.namingPrefix",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.namingPrefix"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.observability",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.observability"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.observability.episodicDataUpload",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.observability.episodicDataUpload"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.observability.euLocation",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.observability.euLocation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.observability.streamingDataClient",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.observability.streamingDataClient"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.optionalServices",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.optionalServices"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.optionalServices.customLocation",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.optionalServices.customLocation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes[*].ipv4Address",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes[*].ipv4Address"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes[*].name",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.physicalNodes[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.sdnIntegration",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.sdnIntegration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.secrets",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.secrets"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.secrets[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.secrets[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.secretsLocation",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.secretsLocation"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.bitlockerBootVolume",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.bitlockerBootVolume"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.bitlockerDataVolumes",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.bitlockerDataVolumes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.credentialGuardEnforced",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.credentialGuardEnforced"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.driftControlEnforced",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.driftControlEnforced"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.drtmProtection",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.drtmProtection"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.hvciProtection",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.hvciProtection"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.sideChannelMitigationEnforced",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.sideChannelMitigationEnforced"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.smbClusterEncryption",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.smbClusterEncryption"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.smbSigningEnforced",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.smbSigningEnforced"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.wdacEnforced",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.securitySettings.wdacEnforced"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.storage",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.storage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].deploymentData.storage.configurationMode",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].deploymentData.storage.configurationMode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].sbePartnerInfo",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].sbePartnerInfo"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].sbePartnerInfo.credentialList",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].sbePartnerInfo.credentialList"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].sbePartnerInfo.credentialList[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].sbePartnerInfo.credentialList[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].sbePartnerInfo.partnerProperties",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].sbePartnerInfo.partnerProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].sbePartnerInfo.partnerProperties[*]",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].sbePartnerInfo.partnerProperties[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.scaleUnits[*].sbePartnerInfo.sbeDeploymentInfo",
+          "defaultPath": "properties.deploymentConfiguration.scaleUnits[*].sbePartnerInfo.sbeDeploymentInfo"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentConfiguration.version",
+          "defaultPath": "properties.deploymentConfiguration.version"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/deploymentMode",
+          "defaultPath": "properties.deploymentMode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/operationType",
+          "defaultPath": "properties.operationType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties",
+          "defaultPath": "properties.reportedProperties"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus",
+          "defaultPath": "properties.reportedProperties.deploymentStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.status",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*]",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].description",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].description"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].endTimeUtc",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].endTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].exception",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].exception"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].exception[*]",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].exception[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].fullStepIndex",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].fullStepIndex"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].name",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].startTimeUtc",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].startTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].status",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*]",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].description",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].description"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].endTimeUtc",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].endTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].exception",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].exception"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].exception[*]",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].exception[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].fullStepIndex",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].fullStepIndex"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].name",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].startTimeUtc",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].startTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].status",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].steps",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].steps"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.deploymentStatus.steps[*].steps[*].steps[*]",
+          "defaultPath": "properties.reportedProperties.deploymentStatus.steps[*].steps[*].steps[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus",
+          "defaultPath": "properties.reportedProperties.validationStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.status",
+          "defaultPath": "properties.reportedProperties.validationStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*]",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].description",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].description"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].endTimeUtc",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].endTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].exception",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].exception"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].exception[*]",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].exception[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].fullStepIndex",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].fullStepIndex"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].name",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].startTimeUtc",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].startTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].status",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*]",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].description",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].description"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].endTimeUtc",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].endTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].exception",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].exception"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].exception[*]",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].exception[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].fullStepIndex",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].fullStepIndex"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].name",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].startTimeUtc",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].startTimeUtc"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].status",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].steps",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].steps"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/deploymentSettings/reportedProperties.validationStatus.steps[*].steps[*].steps[*]",
+          "defaultPath": "properties.reportedProperties.validationStatus.steps[*].steps[*].steps[*]"
+        }
+      ],
+      "resourceType": "clusters/deploymentSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securedCoreComplianceAssignment",
+          "defaultPath": "properties.securedCoreComplianceAssignment",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securityComplianceStatus",
+          "defaultPath": "properties.securityComplianceStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securityComplianceStatus.dataAtRestEncrypted",
+          "defaultPath": "properties.securityComplianceStatus.dataAtRestEncrypted"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securityComplianceStatus.dataInTransitProtected",
+          "defaultPath": "properties.securityComplianceStatus.dataInTransitProtected"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securityComplianceStatus.lastUpdated",
+          "defaultPath": "properties.securityComplianceStatus.lastUpdated"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securityComplianceStatus.securedCoreCompliance",
+          "defaultPath": "properties.securityComplianceStatus.securedCoreCompliance"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/securityComplianceStatus.wdacCompliance",
+          "defaultPath": "properties.securityComplianceStatus.wdacCompliance"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/smbEncryptionForIntraClusterTrafficComplianceAssignment",
+          "defaultPath": "properties.smbEncryptionForIntraClusterTrafficComplianceAssignment"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/clusters/securitySettings/wdacComplianceAssignment",
+          "defaultPath": "properties.wdacComplianceAssignment"
+        }
+      ],
+      "resourceType": "clusters/securitySettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration",
+          "defaultPath": "properties.deviceConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.deviceMetadata",
+          "defaultPath": "properties.deviceConfiguration.deviceMetadata"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails",
+          "defaultPath": "properties.deviceConfiguration.nicDetails"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*]",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].adapterName",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].adapterName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].componentId",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].componentId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].defaultGateway",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].defaultGateway"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].defaultIsolationId",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].defaultIsolationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].dnsServers",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].dnsServers"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].dnsServers[*]",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].driverVersion",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].driverVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].interfaceDescription",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].interfaceDescription"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].ip4Address",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].ip4Address"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/deviceConfiguration.nicDetails[*].subnetMask",
+          "defaultPath": "properties.deviceConfiguration.nicDetails[*].subnetMask"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/edgeDevices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "edgeDevices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/cloudInitDataSource",
+          "defaultPath": "properties.cloudInitDataSource"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/containerId",
+          "defaultPath": "properties.containerId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/containerName",
+          "defaultPath": "properties.containerName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/hyperVGeneration",
+          "defaultPath": "properties.hyperVGeneration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/identifier",
+          "defaultPath": "properties.identifier"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/identifier.offer",
+          "defaultPath": "properties.identifier.offer"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/identifier.publisher",
+          "defaultPath": "properties.identifier.publisher"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/identifier.sku",
+          "defaultPath": "properties.identifier.sku"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/imagePath",
+          "defaultPath": "properties.imagePath"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/sourceVirtualMachineId",
+          "defaultPath": "properties.sourceVirtualMachineId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.downloadStatus",
+          "defaultPath": "properties.status.downloadStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.downloadStatus.downloadSizeInMB",
+          "defaultPath": "properties.status.downloadStatus.downloadSizeInMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.progressPercentage",
+          "defaultPath": "properties.status.progressPercentage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/version.name",
+          "defaultPath": "properties.version.name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/version.storageProfile",
+          "defaultPath": "properties.version.properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/version.storageProfile.osDiskImage",
+          "defaultPath": "properties.version.properties.storageProfile.osDiskImage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/version.storageProfile.osDiskImage.sizeInMB",
+          "defaultPath": "properties.version.properties.storageProfile.osDiskImage.sizeInMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/vmImageRepositoryCredentials",
+          "defaultPath": "properties.vmImageRepositoryCredentials"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/vmImageRepositoryCredentials.password",
+          "defaultPath": "properties.vmImageRepositoryCredentials.password"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/galleryimages/vmImageRepositoryCredentials.username",
+          "defaultPath": "properties.vmImageRepositoryCredentials.username"
+        }
+      ],
+      "resourceType": "galleryImages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/dhcpOptions",
+          "defaultPath": "properties.dhcpOptions"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/dhcpOptions.dnsServers",
+          "defaultPath": "properties.dhcpOptions.dnsServers"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/dhcpOptions.dnsServers[*]",
+          "defaultPath": "properties.dhcpOptions.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets",
+          "defaultPath": "properties.subnets"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*]",
+          "defaultPath": "properties.subnets[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].addressPrefix",
+          "defaultPath": "properties.subnets[*].properties.addressPrefix"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].addressPrefixes",
+          "defaultPath": "properties.subnets[*].properties.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].addressPrefixes[*]",
+          "defaultPath": "properties.subnets[*].properties.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipAllocationMethod",
+          "defaultPath": "properties.subnets[*].properties.ipAllocationMethod"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipConfigurationReferences",
+          "defaultPath": "properties.subnets[*].properties.ipConfigurationReferences"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipConfigurationReferences[*]",
+          "defaultPath": "properties.subnets[*].properties.ipConfigurationReferences[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipConfigurationReferences[*].ID",
+          "defaultPath": "properties.subnets[*].properties.ipConfigurationReferences[*].ID"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools",
+          "defaultPath": "properties.subnets[*].properties.ipPools"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*]",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].end",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].end"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].info",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].info"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].info.available",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].info.available"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].info.used",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].info.used"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].ipPoolType",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].ipPoolType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].name",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].ipPools[*].start",
+          "defaultPath": "properties.subnets[*].properties.ipPools[*].start"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].name",
+          "defaultPath": "properties.subnets[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].networkSecurityGroup",
+          "defaultPath": "properties.subnets[*].properties.networkSecurityGroup"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].networkSecurityGroup.id",
+          "defaultPath": "properties.subnets[*].properties.networkSecurityGroup.id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable",
+          "defaultPath": "properties.subnets[*].properties.routeTable"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.etag",
+          "defaultPath": "properties.subnets[*].properties.routeTable.etag"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.name",
+          "defaultPath": "properties.subnets[*].properties.routeTable.name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.routes",
+          "defaultPath": "properties.subnets[*].properties.routeTable.properties.routes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.routes[*]",
+          "defaultPath": "properties.subnets[*].properties.routeTable.properties.routes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.routes[*].addressPrefix",
+          "defaultPath": "properties.subnets[*].properties.routeTable.properties.routes[*].properties.addressPrefix"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.routes[*].name",
+          "defaultPath": "properties.subnets[*].properties.routeTable.properties.routes[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.routes[*].nextHopIpAddress",
+          "defaultPath": "properties.subnets[*].properties.routeTable.properties.routes[*].properties.nextHopIpAddress"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].routeTable.type",
+          "defaultPath": "properties.subnets[*].properties.routeTable.type"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/subnets[*].vlan",
+          "defaultPath": "properties.subnets[*].properties.vlan"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/logicalNetworks/vmSwitchName",
+          "defaultPath": "properties.vmSwitchName"
+        }
+      ],
+      "resourceType": "logicalNetworks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/cloudInitDataSource",
+          "defaultPath": "properties.cloudInitDataSource"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/containerId",
+          "defaultPath": "properties.containerId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/containerName",
+          "defaultPath": "properties.containerName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/hyperVGeneration",
+          "defaultPath": "properties.hyperVGeneration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/identifier",
+          "defaultPath": "properties.identifier"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/identifier.offer",
+          "defaultPath": "properties.identifier.offer"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/identifier.publisher",
+          "defaultPath": "properties.identifier.publisher"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/identifier.sku",
+          "defaultPath": "properties.identifier.sku"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.downloadStatus",
+          "defaultPath": "properties.status.downloadStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.downloadStatus.downloadSizeInMB",
+          "defaultPath": "properties.status.downloadStatus.downloadSizeInMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.progressPercentage",
+          "defaultPath": "properties.status.progressPercentage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/version.name",
+          "defaultPath": "properties.version.name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/version.storageProfile",
+          "defaultPath": "properties.version.properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/version.storageProfile.osDiskImage",
+          "defaultPath": "properties.version.properties.storageProfile.osDiskImage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/marketplacegalleryimages/version.storageProfile.osDiskImage.sizeInMB",
+          "defaultPath": "properties.version.properties.storageProfile.osDiskImage.sizeInMB"
+        }
+      ],
+      "resourceType": "marketplaceGalleryImages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/createFromLocal",
+          "defaultPath": "properties.createFromLocal"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/dnsSettings",
+          "defaultPath": "properties.dnsSettings"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/dnsSettings.dnsServers",
+          "defaultPath": "properties.dnsSettings.dnsServers"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/dnsSettings.dnsServers[*]",
+          "defaultPath": "properties.dnsSettings.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations",
+          "defaultPath": "properties.ipConfigurations"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*]",
+          "defaultPath": "properties.ipConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].gateway",
+          "defaultPath": "properties.ipConfigurations[*].properties.gateway"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].name",
+          "defaultPath": "properties.ipConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].prefixLength",
+          "defaultPath": "properties.ipConfigurations[*].properties.prefixLength"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].privateIPAddress",
+          "defaultPath": "properties.ipConfigurations[*].properties.privateIPAddress"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].privateIPAllocationMethod",
+          "defaultPath": "properties.ipConfigurations[*].properties.privateIPAllocationMethod"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].subnet",
+          "defaultPath": "properties.ipConfigurations[*].properties.subnet"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/ipConfigurations[*].subnet.id",
+          "defaultPath": "properties.ipConfigurations[*].properties.subnet.id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/macAddress",
+          "defaultPath": "properties.macAddress"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/networkSecurityGroup",
+          "defaultPath": "properties.networkSecurityGroup"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/networkSecurityGroup.id",
+          "defaultPath": "properties.networkSecurityGroup.id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkinterfaces/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        }
+      ],
+      "resourceType": "networkInterfaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/networkInterfaces",
+          "defaultPath": "properties.networkInterfaces"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/networkInterfaces[*]",
+          "defaultPath": "properties.networkInterfaces[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/networkInterfaces[*].id",
+          "defaultPath": "properties.networkInterfaces[*].id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/subnets",
+          "defaultPath": "properties.subnets"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/subnets[*]",
+          "defaultPath": "properties.subnets[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/subnets[*].id",
+          "defaultPath": "properties.subnets[*].id"
+        }
+      ],
+      "resourceType": "networkSecurityGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/access",
+          "defaultPath": "properties.access"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/destinationAddressPrefixes",
+          "defaultPath": "properties.destinationAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/destinationAddressPrefixes[*]",
+          "defaultPath": "properties.destinationAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/destinationPortRanges",
+          "defaultPath": "properties.destinationPortRanges"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+          "defaultPath": "properties.destinationPortRanges[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/direction",
+          "defaultPath": "properties.direction"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/priority",
+          "defaultPath": "properties.priority"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/protocol",
+          "defaultPath": "properties.protocol"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/sourceAddressPrefixes",
+          "defaultPath": "properties.sourceAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/sourceAddressPrefixes[*]",
+          "defaultPath": "properties.sourceAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/sourcePortRanges",
+          "defaultPath": "properties.sourcePortRanges"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/networkSecurityGroups/securityRules/sourcePortRanges[*]",
+          "defaultPath": "properties.sourcePortRanges[*]"
+        }
+      ],
+      "resourceType": "networkSecurityGroups/securityRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/availableSizeMB",
+          "defaultPath": "properties.availableSizeMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/containerSizeMB",
+          "defaultPath": "properties.containerSizeMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/path",
+          "defaultPath": "properties.path"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.availableSizeMB",
+          "defaultPath": "properties.status.availableSizeMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.containerSizeMB",
+          "defaultPath": "properties.status.containerSizeMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/storagecontainers/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        }
+      ],
+      "resourceType": "storageContainers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/blockSizeBytes",
+          "defaultPath": "properties.blockSizeBytes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/containerId",
+          "defaultPath": "properties.containerId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/createFromLocal",
+          "defaultPath": "properties.createFromLocal"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/diskFileFormat",
+          "defaultPath": "properties.diskFileFormat"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/diskSizeBytes",
+          "defaultPath": "properties.diskSizeBytes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/diskSizeGB",
+          "defaultPath": "properties.diskSizeGB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/downloadUrl",
+          "defaultPath": "properties.downloadUrl"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/dynamic",
+          "defaultPath": "properties.dynamic"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/hyperVGeneration",
+          "defaultPath": "properties.hyperVGeneration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/logicalSectorBytes",
+          "defaultPath": "properties.logicalSectorBytes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/physicalSectorBytes",
+          "defaultPath": "properties.physicalSectorBytes"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.downloadStatus",
+          "defaultPath": "properties.status.downloadStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.downloadStatus.downloadedSizeInMB",
+          "defaultPath": "properties.status.downloadStatus.downloadedSizeInMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.downloadStatus.progressPercentage",
+          "defaultPath": "properties.status.downloadStatus.progressPercentage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.downloadStatus.status",
+          "defaultPath": "properties.status.downloadStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.uploadStatus",
+          "defaultPath": "properties.status.uploadStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.uploadStatus.errorCode",
+          "defaultPath": "properties.status.uploadStatus.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.uploadStatus.errorMessage",
+          "defaultPath": "properties.status.uploadStatus.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.uploadStatus.progressPercentage",
+          "defaultPath": "properties.status.uploadStatus.progressPercentage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.uploadStatus.status",
+          "defaultPath": "properties.status.uploadStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualharddisks/status.uploadStatus.uploadedSizeInMB",
+          "defaultPath": "properties.status.uploadStatus.uploadedSizeInMB"
+        }
+      ],
+      "resourceType": "virtualHardDisks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/createFromLocal",
+          "defaultPath": "properties.createFromLocal"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus",
+          "defaultPath": "properties.guestAgentInstallStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.agentVersion",
+          "defaultPath": "properties.guestAgentInstallStatus.agentVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*]",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].additionalInfo",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].additionalInfo[*]",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].additionalInfo[*].type",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].code",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].code"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*]",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].additionalInfo",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].additionalInfo[*]",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].additionalInfo[*].type",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].code",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].code"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].details",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].details"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].details[*]",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].message",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].message"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].details[*].target",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].details[*].target"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].message",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].message"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.errorDetails[*].target",
+          "defaultPath": "properties.guestAgentInstallStatus.errorDetails[*].target"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.lastStatusChange",
+          "defaultPath": "properties.guestAgentInstallStatus.lastStatusChange"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.status",
+          "defaultPath": "properties.guestAgentInstallStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/guestAgentInstallStatus.vmUuid",
+          "defaultPath": "properties.guestAgentInstallStatus.vmUuid"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile",
+          "defaultPath": "properties.hardwareProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.dynamicMemoryConfig",
+          "defaultPath": "properties.hardwareProfile.dynamicMemoryConfig"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.dynamicMemoryConfig.maximumMemoryMB",
+          "defaultPath": "properties.hardwareProfile.dynamicMemoryConfig.maximumMemoryMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.dynamicMemoryConfig.minimumMemoryMB",
+          "defaultPath": "properties.hardwareProfile.dynamicMemoryConfig.minimumMemoryMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.dynamicMemoryConfig.targetMemoryBuffer",
+          "defaultPath": "properties.hardwareProfile.dynamicMemoryConfig.targetMemoryBuffer"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.memoryMB",
+          "defaultPath": "properties.hardwareProfile.memoryMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.processors",
+          "defaultPath": "properties.hardwareProfile.processors"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.virtualMachineGPUs",
+          "defaultPath": "properties.hardwareProfile.virtualMachineGPUs"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.virtualMachineGPUs[*]",
+          "defaultPath": "properties.hardwareProfile.virtualMachineGPUs[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.virtualMachineGPUs[*].assignmentType",
+          "defaultPath": "properties.hardwareProfile.virtualMachineGPUs[*].assignmentType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.virtualMachineGPUs[*].gpuName",
+          "defaultPath": "properties.hardwareProfile.virtualMachineGPUs[*].gpuName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.virtualMachineGPUs[*].partitionSizeMB",
+          "defaultPath": "properties.hardwareProfile.virtualMachineGPUs[*].partitionSizeMB"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hardwareProfile.vmSize",
+          "defaultPath": "properties.hardwareProfile.vmSize"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hostNodeName",
+          "defaultPath": "properties.hostNodeName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/httpProxyConfig",
+          "defaultPath": "properties.httpProxyConfig"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/httpProxyConfig.httpProxy",
+          "defaultPath": "properties.httpProxyConfig.httpProxy"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/httpProxyConfig.httpsProxy",
+          "defaultPath": "properties.httpProxyConfig.httpsProxy"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/httpProxyConfig.noProxy",
+          "defaultPath": "properties.httpProxyConfig.noProxy"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/httpProxyConfig.noProxy[*]",
+          "defaultPath": "properties.httpProxyConfig.noProxy[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/httpProxyConfig.trustedCa",
+          "defaultPath": "properties.httpProxyConfig.trustedCa"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/hyperVVmId",
+          "defaultPath": "properties.hyperVVmId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView",
+          "defaultPath": "properties.instanceView"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent",
+          "defaultPath": "properties.instanceView.vmAgent"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses",
+          "defaultPath": "properties.instanceView.vmAgent.statuses"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses[*]",
+          "defaultPath": "properties.instanceView.vmAgent.statuses[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses[*].code",
+          "defaultPath": "properties.instanceView.vmAgent.statuses[*].code"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses[*].displayStatus",
+          "defaultPath": "properties.instanceView.vmAgent.statuses[*].displayStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses[*].level",
+          "defaultPath": "properties.instanceView.vmAgent.statuses[*].level"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses[*].message",
+          "defaultPath": "properties.instanceView.vmAgent.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.statuses[*].time",
+          "defaultPath": "properties.instanceView.vmAgent.statuses[*].time"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.vmConfigAgentVersion",
+          "defaultPath": "properties.instanceView.vmAgent.vmConfigAgentVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/instanceView.vmAgent.vmVMConfigAgentVersion",
+          "defaultPath": "properties.instanceView.vmAgent.vmVMConfigAgentVersion"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/networkProfile.networkInterfaces",
+          "defaultPath": "properties.networkProfile.networkInterfaces"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/networkProfile.networkInterfaces[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/networkProfile.networkInterfaces[*].id",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile",
+          "defaultPath": "properties.osProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.adminPassword",
+          "defaultPath": "properties.osProfile.adminPassword"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.adminUsername",
+          "defaultPath": "properties.osProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.computerName",
+          "defaultPath": "properties.osProfile.computerName"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration",
+          "defaultPath": "properties.osProfile.linuxConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.disablePasswordAuthentication",
+          "defaultPath": "properties.osProfile.linuxConfiguration.disablePasswordAuthentication"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.provisionVMAgent",
+          "defaultPath": "properties.osProfile.linuxConfiguration.provisionVMAgent"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.provisionVMConfigAgent",
+          "defaultPath": "properties.osProfile.linuxConfiguration.provisionVMConfigAgent"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.ssh",
+          "defaultPath": "properties.osProfile.linuxConfiguration.ssh"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.ssh.publicKeys",
+          "defaultPath": "properties.osProfile.linuxConfiguration.ssh.publicKeys"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.ssh.publicKeys[*]",
+          "defaultPath": "properties.osProfile.linuxConfiguration.ssh.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.ssh.publicKeys[*].keyData",
+          "defaultPath": "properties.osProfile.linuxConfiguration.ssh.publicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.linuxConfiguration.ssh.publicKeys[*].path",
+          "defaultPath": "properties.osProfile.linuxConfiguration.ssh.publicKeys[*].path"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration",
+          "defaultPath": "properties.osProfile.windowsConfiguration"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.enableAutomaticUpdates",
+          "defaultPath": "properties.osProfile.windowsConfiguration.enableAutomaticUpdates"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.provisionVMAgent",
+          "defaultPath": "properties.osProfile.windowsConfiguration.provisionVMAgent"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.provisionVMConfigAgent",
+          "defaultPath": "properties.osProfile.windowsConfiguration.provisionVMConfigAgent"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.ssh",
+          "defaultPath": "properties.osProfile.windowsConfiguration.ssh"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.ssh.publicKeys",
+          "defaultPath": "properties.osProfile.windowsConfiguration.ssh.publicKeys"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.ssh.publicKeys[*]",
+          "defaultPath": "properties.osProfile.windowsConfiguration.ssh.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.ssh.publicKeys[*].keyData",
+          "defaultPath": "properties.osProfile.windowsConfiguration.ssh.publicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.ssh.publicKeys[*].path",
+          "defaultPath": "properties.osProfile.windowsConfiguration.ssh.publicKeys[*].path"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/osProfile.windowsConfiguration.timeZone",
+          "defaultPath": "properties.osProfile.windowsConfiguration.timeZone"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/placementProfile",
+          "defaultPath": "properties.placementProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/placementProfile.strictPlacementPolicy",
+          "defaultPath": "properties.placementProfile.strictPlacementPolicy"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/placementProfile.zone",
+          "defaultPath": "properties.placementProfile.zone"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/resourceUid",
+          "defaultPath": "properties.resourceUid"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/securityProfile",
+          "defaultPath": "properties.securityProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/securityProfile.enableTPM",
+          "defaultPath": "properties.securityProfile.enableTPM"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/securityProfile.securityType",
+          "defaultPath": "properties.securityProfile.securityType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/securityProfile.uefiSettings",
+          "defaultPath": "properties.securityProfile.uefiSettings"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/securityProfile.uefiSettings.secureBootEnabled",
+          "defaultPath": "properties.securityProfile.uefiSettings.secureBootEnabled"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status.errorCode",
+          "defaultPath": "properties.status.errorCode"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status.powerState",
+          "defaultPath": "properties.status.powerState"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.dataDisks",
+          "defaultPath": "properties.storageProfile.dataDisks"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.dataDisks[*]",
+          "defaultPath": "properties.storageProfile.dataDisks[*]"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.dataDisks[*].id",
+          "defaultPath": "properties.storageProfile.dataDisks[*].id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.imageReference",
+          "defaultPath": "properties.storageProfile.imageReference"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.imageReference.id",
+          "defaultPath": "properties.storageProfile.imageReference.id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.osDisk",
+          "defaultPath": "properties.storageProfile.osDisk"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.osDisk.id",
+          "defaultPath": "properties.storageProfile.osDisk.id"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.osDisk.managedDisk",
+          "defaultPath": "properties.storageProfile.osDisk.managedDisk"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.osDisk.managedDisk.securityProfile",
+          "defaultPath": "properties.storageProfile.osDisk.managedDisk.securityProfile"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.osDisk.osType",
+          "defaultPath": "properties.storageProfile.osDisk.osType"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/storageProfile.vmConfigStoragePathId",
+          "defaultPath": "properties.storageProfile.vmConfigStoragePathId"
+        },
+        {
+          "name": "Microsoft.AzureStackHCI/virtualMachineInstances/vmId",
+          "defaultPath": "properties.vmId"
+        }
+      ],
+      "resourceType": "virtualMachineInstances"
+    }
+  ]
+}

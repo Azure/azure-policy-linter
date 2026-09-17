@@ -1,0 +1,97 @@
+{
+  "namespace": "Microsoft.ServiceFabric",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/applications/services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/applicationTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/applicationTypes/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/clusterVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/environments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/environments/managedClusterVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedClusterOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedClusterOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedClusterVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedUnsupportedVMSizes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/unsupportedVMSizes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedclusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedclusters/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedclusters/applications/services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedclusters/applicationTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedclusters/applicationTypes/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedclusters/nodetypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.EntraIDGovernance",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "guestgovernanceusage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scimapiconsumptions"
+    }
+  ]
+}

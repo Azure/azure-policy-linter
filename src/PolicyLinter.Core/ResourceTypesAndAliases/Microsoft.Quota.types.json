@@ -1,0 +1,81 @@
+{
+  "namespace": "Microsoft.Quota",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "groupQuotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/groupOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/groupQuotaLimits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/groupQuotaOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/groupQuotaRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/locationSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/locationSettingsOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/locationUsages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/quotaAllocationOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/quotaAllocationRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/quotaAllocations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/subscriptionRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/subscriptionRequestsOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "groupQuotas/subscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "operationsStatus"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "quotaRequests"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "quotas"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "usages"
+    }
+  ]
+}

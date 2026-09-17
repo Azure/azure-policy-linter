@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.Peering",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "cdnPeeringPrefixes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkServiceProviderAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "legacyPeerings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "lookingGlass"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "peerAsns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "peeringLocations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "peerings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "peeringServiceCountries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "peeringServiceLocations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "peeringServiceProviders"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "peeringServices"
+    }
+  ]
+}

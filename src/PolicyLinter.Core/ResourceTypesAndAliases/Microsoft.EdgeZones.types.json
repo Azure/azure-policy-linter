@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.EdgeZones",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "extendedZones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

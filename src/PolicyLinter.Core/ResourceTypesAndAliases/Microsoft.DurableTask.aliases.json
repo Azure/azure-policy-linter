@@ -1,0 +1,80 @@
+{
+  "namespace": "Microsoft.DurableTask",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DurableTask/schedulers/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/ipAllowlist",
+          "defaultPath": "properties.ipAllowlist"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/ipAllowlist[*]",
+          "defaultPath": "properties.ipAllowlist[*]"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/sku.capacity",
+          "defaultPath": "properties.sku.capacity"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/sku.name",
+          "defaultPath": "properties.sku.name"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/sku.redundancyState",
+          "defaultPath": "properties.sku.redundancyState"
+        }
+      ],
+      "resourceType": "schedulers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DurableTask/schedulers/retentionPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/retentionPolicies/retentionPolicies",
+          "defaultPath": "properties.retentionPolicies"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/retentionPolicies/retentionPolicies[*]",
+          "defaultPath": "properties.retentionPolicies[*]"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/retentionPolicies/retentionPolicies[*].orchestrationState",
+          "defaultPath": "properties.retentionPolicies[*].orchestrationState"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/retentionPolicies/retentionPolicies[*].retentionPeriodInDays",
+          "defaultPath": "properties.retentionPolicies[*].retentionPeriodInDays"
+        }
+      ],
+      "resourceType": "schedulers/retentionpolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DurableTask/schedulers/taskHubs/dashboardUrl",
+          "defaultPath": "properties.dashboardUrl"
+        },
+        {
+          "name": "Microsoft.DurableTask/schedulers/taskHubs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "schedulers/taskhubs"
+    }
+  ]
+}

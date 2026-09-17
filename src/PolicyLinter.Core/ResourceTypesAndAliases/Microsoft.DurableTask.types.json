@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.DurableTask",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/taskhubs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "schedulers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/detectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/failoverInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/retentionpolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/taskhubs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schedulers/transparentDataEncryptions"
+    }
+  ]
+}

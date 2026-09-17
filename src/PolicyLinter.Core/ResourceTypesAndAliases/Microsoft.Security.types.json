@@ -1,0 +1,385 @@
+{
+  "namespace": "Microsoft.Security",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "advancedThreatProtectionSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "aggregations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "alertsSuppressionRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "allowedConnections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "apiCollections"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applications"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "assessmentMetadata"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "assessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assessments/governanceAssignments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "assignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "autoDismissAlertsRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "AutoProvisioningSettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "complianceResults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Compliances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "connectedContainerRegistries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "customAssessmentAutomations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "customRecommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dataCollectionAgents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataScanners"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "defenderForStorageSettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "deviceSecurityGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "discoveredSecuritySolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "externalSecuritySolutions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "governanceRules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "healthReports"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "InformationProtectionPolicies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "integrations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iotSecuritySolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/analyticsModels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/analyticsModels/aggregatedAlerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/analyticsModels/aggregatedRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/iotAlerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/iotAlertTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/iotRecommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "iotSecuritySolutions/iotRecommendationTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "jitNetworkAccessPolicies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "jitPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/allowedConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/discoveredSecuritySolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/externalSecuritySolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/jitNetworkAccessPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/securitySolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/securitySolutionsReferenceData"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/tasks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/topologies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MdeOnboardings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "policies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "pricings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "pricings/securityOperators"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinks/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinks/privateEndpointConnectionProxies/validate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinks/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinks/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "query"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "regulatoryComplianceStandards"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "regulatoryComplianceStandards/regulatoryComplianceControls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "regulatoryComplianceStandards/regulatoryComplianceControls/regulatoryComplianceAssessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "secureScoreControlDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "secureScoreControls"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "secureScores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "secureScores/secureScoreControls"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "securityConnectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "securityConnectors/devops"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "securityConnectors/devops/azureDevOpsOrgs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "securityConnectors/devops/azureDevOpsOrgs/projects"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "securityConnectors/devops/azureDevOpsOrgs/projects/repos"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "securityContacts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "securityOperators"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "securitySolutions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "securitySolutionsReferenceData"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "securityStandards"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "securityStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "securityStatusesSummaries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sensitivitySettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "serverVulnerabilityAssessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "serverVulnerabilityAssessmentsSettings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "serviceEntitlements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "settings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "sqlVulnerabilityAssessments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "standardAssignments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "standards"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subAssessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tasks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "topologies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "trustedIps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vmScanners"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaceSettings"
+    }
+  ]
+}

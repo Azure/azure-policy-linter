@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.DigitalAssets",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "zkpRollups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "zkpRollups/partitions"
+    }
+  ]
+}

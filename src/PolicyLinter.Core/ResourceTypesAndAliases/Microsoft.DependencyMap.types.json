@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.DependencyMap",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "maps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "maps/discoverySources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

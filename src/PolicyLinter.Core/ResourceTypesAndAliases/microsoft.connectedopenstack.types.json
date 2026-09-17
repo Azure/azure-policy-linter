@@ -1,0 +1,77 @@
+{
+  "namespace": "microsoft.connectedopenstack",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "flavors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "heatStacks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "heatStackTemplates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "images"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "keypairs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkPorts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "openStackIdentities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "securityGroupRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "securityGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "subnets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualMachines"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "volumes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "volumeSnapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "volumeTypes"
+    }
+  ]
+}

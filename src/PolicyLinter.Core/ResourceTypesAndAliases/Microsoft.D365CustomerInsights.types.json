@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.D365CustomerInsights",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "instances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

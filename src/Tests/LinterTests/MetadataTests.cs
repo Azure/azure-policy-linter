@@ -5,13 +5,18 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.Immutable;
+    using System.IO;
     using System.Linq;
+    using System.Threading.Tasks;
     using FluentAssertions;
     using global::Azure.Deployments.ResourceMetadata.Contracts;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Json;
+    using Newtonsoft.Json;
     using Xunit;
 
     public class MetadataTests
@@ -23,6 +28,128 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             this.mockAliasResolver = new MockAliasResolver(MockResourceMetadata.Aliases);
             this.mockMetadataProvider = new MockMetadataProvider(MockResourceMetadata.ResourceTypeMetadata);
+        }
+
+        /// <summary>
+        /// Gets each embedded snapshot as a separate test case.
+        /// </summary>
+        public static object[][] SnapshotResourceNames => typeof(TypeMetadata).Assembly
+            .GetManifestResourceNames()
+            .Where(predicate: name => name.StartsWith(value: "ResourceTypesAndAliases.", comparisonType: StringComparison.Ordinal))
+            .Select(selector: name => new object[] { name })
+            .ToArray();
+
+        [Theory]
+        [MemberData(nameof(MetadataTests.SnapshotResourceNames))]
+        void Metadata_SnapshotDeserializes(string resourceName)
+        {
+            using var stream = typeof(TypeMetadata).Assembly.GetManifestResourceStream(name: resourceName);
+            using var streamReader = new StreamReader(stream: stream);
+            using var reader = new JsonTextReader(reader: streamReader);
+            var provider = JsonExtensions.JsonObjectTypeSerializer.Deserialize<ProviderTypesAndAliases>(reader: reader);
+
+            provider.Should().NotBeNull();
+            provider.Namespace.Should().NotBeNullOrWhiteSpace();
+            resourceName.Should().BeOneOf(validValues: new[]
+            {
+                $"ResourceTypesAndAliases.{provider.Namespace}.types.json",
+                $"ResourceTypesAndAliases.{provider.Namespace}.aliases.json",
+            });
+            provider.ResourceTypes.Should().NotBeNull();
+            foreach (var type in provider.ResourceTypes)
+            {
+                type.ResourceType.Should().NotBeNullOrWhiteSpace();
+                type.Aliases.Should().NotBeNull();
+            }
+            reader.Read().Should().BeFalse(because: "the entire snapshot must be a single JSON document");
+        }
+
+        [Fact]
+        void AliasPathMetadata_EqualityUsesTypeAndAttributes()
+        {
+            var metadata = new AliasPathMetadata { Type = AliasPathTokenType.String, Attributes = AliasPathAttributes.Modifiable };
+            var same = new AliasPathMetadata { Type = AliasPathTokenType.String, Attributes = AliasPathAttributes.Modifiable };
+
+            metadata.Equals(obj: same).Should().BeTrue();
+            metadata.GetHashCode().Should().Be(same.GetHashCode());
+            metadata.Equals(obj: new AliasPathMetadata { Type = AliasPathTokenType.Boolean, Attributes = AliasPathAttributes.Modifiable }).Should().BeFalse();
+            metadata.Equals(obj: new AliasPathMetadata { Type = AliasPathTokenType.String, Attributes = AliasPathAttributes.None }).Should().BeFalse();
+            metadata.Equals(obj: null).Should().BeFalse();
+            metadata.Equals(obj: "not metadata").Should().BeFalse();
+        }
+
+        [Theory]
+        [InlineData("Microsoft.Compute/virtualMachines", ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation)]
+        [InlineData("MICROSOFT.COMPUTE/VIRTUALMACHINES", ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation)]
+        [InlineData("Microsoft.Management/serviceGroups", ResourceTypeCapabilities.SupportsTags)]
+        [InlineData("Microsoft.Resources/deployments", ResourceTypeCapabilities.SupportsTags)]
+        [InlineData("Anyscale.Platform/cloudResources", ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation)]
+        [InlineData("Anyscale.Platform/agreements", ResourceTypeCapabilities.None)]
+        [InlineData("Microsoft.Advisor/advisorScore", ResourceTypeCapabilities.None)]
+        void TypeMetadata_GetResourceTypeCapabilities(string resourceType, ResourceTypeCapabilities expected)
+        {
+            ITypeMetadata metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
+
+            metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities).Should().BeTrue();
+            capabilities.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData(" ")]
+        [InlineData("Microsoft.Compute")]
+        [InlineData("/virtualMachines")]
+        [InlineData("Microsoft.Compute/")]
+        [InlineData("Microsoft.Compute/not-a-real-type")]
+        [InlineData("Unknown.Provider/widgets")]
+        [InlineData("Microsoft.ApiManagement/gateways/configConnections")]
+        void TypeMetadata_UnknownCapabilities(string resourceType)
+        {
+            var metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
+
+            metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out var capabilities).Should().BeFalse();
+            capabilities.Should().Be(ResourceTypeCapabilities.None);
+        }
+
+        [Theory]
+        [InlineData("name")]
+        [InlineData("tags['key']")]
+        [InlineData("Microsoft.Compute/imagePublisher")]
+        [InlineData("Unknown.Provider/widgets/name")]
+        [InlineData("Anyscale.Platform/cloudResources/missing")]
+        [InlineData("Microsoft.Compute/virtualMachines/missing")]
+        void AliasResolver_UnknownAlias(string alias)
+        {
+            var resolver = new AliasResolver();
+
+            resolver.TryResolveAlias(alias: alias, resolvedAlias: out var result).Should().BeFalse();
+            result.Should().BeNull();
+        }
+
+        [Fact]
+        void Metadata_ConcurrentLookups()
+        {
+            var metadata = new TypeMetadata(metadataProvider: this.mockMetadataProvider, aliasResolver: this.mockAliasResolver);
+            var resolver = new AliasResolver();
+            var capabilities = new ResourceTypeCapabilities[32];
+            var aliases = new AliasDetails[32];
+
+            Parallel.For(fromInclusive: 0, toExclusive: capabilities.Length, body: index =>
+            {
+                var resourceType = index % 2 == 0 ? "Microsoft.ApiManagement/service" : "microsoft.apimanagement/SERVICE";
+                metadata.TryGetResourceTypeCapabilities(resourceType: resourceType, result: out capabilities[index]).Should().BeTrue();
+                resolver.TryResolveAlias(
+                    alias: "Microsoft.ApiManagement/service/apis/operations/tags/displayName",
+                    resolvedAlias: out aliases[index]).Should().BeTrue();
+            });
+
+            Assert.All(collection: capabilities, action: value => Assert.Equal(
+                expected: ResourceTypeCapabilities.SupportsTags | ResourceTypeCapabilities.SupportsLocation,
+                actual: value));
+            Assert.All(collection: aliases, action: value => Assert.Same(expected: aliases[0], actual: value));
+            aliases[0].DefaultPath.Should().Be("properties.displayName");
+            aliases[0].Paths.Should().BeEmpty();
         }
 
         [Fact]

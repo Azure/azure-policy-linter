@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.Chaos",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "experiments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/targetTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/workspaceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateAccesses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resilienceProfiles"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "targets"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "targets/capabilities"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    }
+  ]
+}

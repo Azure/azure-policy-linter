@@ -1,0 +1,125 @@
+{
+  "namespace": "Microsoft.ServiceBus",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNamespaceAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/namespaceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/disasterrecoveryconfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/disasterrecoveryconfigs/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/eventgridfilters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/ipFilterRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/messagingPlan"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/migrationConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/networkrulesets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/queues"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/queues/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/topics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/topics/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/topics/subscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/topics/subscriptions/rules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/virtualNetworkRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "premiumMessagingRegions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sku"
+    }
+  ]
+}

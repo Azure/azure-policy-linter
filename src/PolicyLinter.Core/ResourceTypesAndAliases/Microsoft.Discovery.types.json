@@ -1,0 +1,97 @@
+{
+  "namespace": "Microsoft.Discovery",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "agents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bookshelves"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "bookshelves/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "bookshelves/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "datacontainers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "datacontainers/dataassets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "models"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storagecontainers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storagecontainers/storageassets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "supercomputers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "supercomputers/nodepools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "tools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workflows"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/chatmodeldeployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/privateLinkResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/projects"
+    }
+  ]
+}

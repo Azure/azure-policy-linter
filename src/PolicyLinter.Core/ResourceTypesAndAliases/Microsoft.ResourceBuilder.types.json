@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.ResourceBuilder",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "dataCatalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/dataConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/datasets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/pipelines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/pipelines/jobs"
+    }
+  ]
+}
