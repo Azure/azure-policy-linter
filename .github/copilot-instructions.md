@@ -17,6 +17,7 @@ For rule work, use the skills under `.github/skills/`:
 - `implement-linter-rule` - interactive: implement a rule from a spec.
 - `review-linter-rule` - interactive: review a proposed rule against the design conventions.
 - `sanity-check-linter` - run the CLI against a temporary policy to confirm a change behaves as expected.
+- `triage-linter-results` - assess linter findings in policy context before recommending policy changes.
 
 ## Working in this repo
 

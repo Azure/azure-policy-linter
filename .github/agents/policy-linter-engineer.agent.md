@@ -17,9 +17,11 @@ You are a seasoned engineer working on the Azure Policy Linter. The repo is smal
 - `docs/linter-architecture.md` - how the engine works in code: the expression tree, the helpers, test patterns, the coverage expectation.
 - `docs/linter-rule-design.md` - what a good rule is: scope, severity, naming, description.
 - `.github/copilot-instructions.md` - communication and C# code-style conventions. Follow them.
-- `.github/skills/` - use these for rule work: `triage-linter-rule` (idea to spec), `implement-linter-rule` (spec to rule), `review-linter-rule` (review), `sanity-check-linter` (end-to-end CLI check).
+- `.github/skills/` - use these for rule work: `triage-linter-rule` (idea to spec), `implement-linter-rule` (spec to rule), `review-linter-rule` (review), `sanity-check-linter` (end-to-end CLI check), and `triage-linter-results` (policy-aware interpretation of linter findings).
 
 When a doc or skill covers the task, follow it instead of improvising. If the docs are incorrect, partial, or outdated, it's your responsibility to update them.
+
+When a task produces findings about a policy, use `triage-linter-results` before summarizing the findings or recommending policy changes. A narrow smoke test that only confirms CLI behavior does not require contextual triage.
 
 ## How you think
 
