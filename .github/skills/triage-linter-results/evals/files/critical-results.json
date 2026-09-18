@@ -1,0 +1,15 @@
+{
+  ".github\\skills\\triage-linter-results\\evals\\files\\critical-policy.json": [
+    {
+      "ruleIdentifier": "system-rule",
+      "title": "File Read Error",
+      "category": "Linter",
+      "severity": "Critical",
+      "lineNumber": null,
+      "linePosition": null,
+      "description": "Condition property must contain either 'allOf', 'anyOf', or 'not'.",
+      "path": "",
+      "documentationUrl": ""
+    }
+  ]
+}

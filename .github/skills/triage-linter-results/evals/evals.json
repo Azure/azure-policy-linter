@@ -1,0 +1,68 @@
+{
+  "skill_name": "triage-linter-results",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Triage the Policy Linter results in `.github\\skills\\triage-linter-results\\evals\\files\\mechanical-results.json` against `.github\\skills\\triage-linter-results\\evals\\files\\mechanical-policy.json`. Produce the structured result for downstream PR-comment automation.",
+      "expected_output": "A schema-valid result that deduplicates the repeated finding, aggregates the compatible mechanical findings, and proposes one direct semantics-preserving rewrite.",
+      "files": [
+        "evals/files/mechanical-policy.json",
+        "evals/files/mechanical-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "The duplicate simplify finding is represented once with sourceIndexes [0, 1].",
+        "The compatible simplify and wildcard-free-like findings are aggregated into one direct_edit item.",
+        "The recommendation replaces the three publisher comparisons with one in condition containing Canonical and RedHat without changing unrelated policy logic.",
+        "Every occurrence has the original linterPath and a resolved RFC 6901 policyPointer."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Triage `.github\\skills\\triage-linter-results\\evals\\files\\alias-context-results.json` for `.github\\skills\\triage-linter-results\\evals\\files\\alias-context-policy.json`. I need deterministic JSON that can later drive PR review comments.",
+      "expected_output": "A schema-valid contextual assessment that distinguishes an enforcement-negative alias risk from an explicit exists decision and gives bounded remediation choices.",
+      "files": [
+        "evals/files/alias-context-policy.json",
+        "evals/files/alias-context-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "The optional and old-API findings for disableLocalAuth are aggregated because they share one consequence and remediation decision.",
+        "The disableLocalAuth item is not noise and uses choice_required with two or three concrete alternatives.",
+        "The publicNetworkAccess exists:false finding is classified as noise with action none because the policy already makes the missing-property outcome explicit.",
+        "The context reports defaultEffect Modify and enforcementPossible true."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review the linter findings in `.github\\skills\\triage-linter-results\\evals\\files\\intent-results.json` in the context of `.github\\skills\\triage-linter-results\\evals\\files\\intent-policy.json`. Return only the automation-ready structured triage.",
+      "expected_output": "A schema-valid result that treats related multi-platform targeting as non-actionable noise while preserving the assignment-safety choice behind the enforcement default.",
+      "files": [
+        "evals/files/intent-policy.json",
+        "evals/files/intent-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "The multi-resource-type finding is noise with action none because the display name and condition explicitly target Azure and Arc machines.",
+        "The risky DeployIfNotExists default is not noise merely because it matches the policy name.",
+        "The effect-default item uses choice_required and presents the safer AuditIfNotExists default alongside retaining DeployIfNotExists when immediate deployment is the intended assignment contract.",
+        "The two findings remain separate because they do not share a consequence or recommendation."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Triage `.github\\skills\\triage-linter-results\\evals\\files\\critical-results.json` against `.github\\skills\\triage-linter-results\\evals\\files\\critical-policy.json` for an automated PR review pipeline.",
+      "expected_output": "A blocked schema-valid result that reports the Critical engine failure and performs no normal finding triage.",
+      "files": [
+        "evals/files/critical-policy.json",
+        "evals/files/critical-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "status is blocked, items is empty, and errors contains system_failure.",
+        "The response does not claim that the policy has no other issues or generate a policy fix.",
+        "The system failure message preserves enough information to explain that linting was incomplete."
+      ]
+    }
+  ]
+}

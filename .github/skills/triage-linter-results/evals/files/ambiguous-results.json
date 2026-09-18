@@ -1,0 +1,28 @@
+{
+  "policies\\first.json": [
+    {
+      "ruleIdentifier": "hard-coded-policy-enforcement-effect",
+      "title": "Hard-Coded Policy Enforcement Effect",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 12,
+      "linePosition": 9,
+      "description": "The policy has a hard-coded enforcement effect 'deny'.",
+      "path": "properties.policyRule.then.effect",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/hard-coded-policy-enforcement-effect.md"
+    }
+  ],
+  "policies\\second.json": [
+    {
+      "ruleIdentifier": "optional-field-alias",
+      "title": "Optional Field Alias",
+      "category": "ResourceFields",
+      "severity": "Informational",
+      "lineNumber": 8,
+      "linePosition": 9,
+      "description": "A referenced field alias maps to an optional property.",
+      "path": "properties.policyRule.if.field",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/optional-field-alias.md"
+    }
+  ]
+}

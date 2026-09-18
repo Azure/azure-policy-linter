@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Triage Linter Results - Evaluation</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111f;
+      --panel: rgba(15, 30, 50, 0.78);
+      --line: rgba(148, 180, 214, 0.2);
+      --text: #f4f8fc;
+      --muted: #a8b7c8;
+      --blue: #67b7ff;
+      --cyan: #6ee7e0;
+      --green: #8ce99a;
+      --amber: #ffd166;
+      --red: #ff8d8d;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(50, 130, 220, 0.22), transparent 32%),
+        radial-gradient(circle at 86% 82%, rgba(33, 205, 177, 0.16), transparent 34%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", system-ui, sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    .deck { height: 100vh; position: relative; }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      align-content: center;
+      gap: clamp(18px, 3vh, 32px);
+      padding: clamp(52px, 8vw, 118px);
+      opacity: 0;
+      transform: translateX(5%) scale(.985);
+      pointer-events: none;
+      transition: opacity .35s ease, transform .45s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--cyan);
+      font-size: clamp(12px, 1.15vw, 17px);
+      font-weight: 750;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      max-width: 1050px;
+      font-size: clamp(46px, 7.4vw, 108px);
+      line-height: .96;
+      letter-spacing: -.055em;
+    }
+    h2 {
+      max-width: 1060px;
+      font-size: clamp(34px, 5vw, 72px);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+    h3 { font-size: clamp(18px, 1.8vw, 27px); }
+    .lead {
+      max-width: 920px;
+      color: var(--muted);
+      font-size: clamp(20px, 2vw, 30px);
+      line-height: 1.45;
+    }
+
+    .accent {
+      background: linear-gradient(110deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(12px, 1.5vw, 22px);
+      width: min(1180px, 100%);
+    }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      min-height: 150px;
+      padding: clamp(20px, 2.2vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(28,50,76,.88), var(--panel));
+      box-shadow: 0 18px 55px rgba(0,0,0,.22);
+      backdrop-filter: blur(16px);
+    }
+    .card p, .card li {
+      color: var(--muted);
+      font-size: clamp(15px, 1.28vw, 20px);
+      line-height: 1.45;
+    }
+    .card strong { color: var(--text); }
+
+    .metric {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-size: clamp(34px, 4.4vw, 68px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+    .metric.good { color: var(--green); }
+    .metric.warn { color: var(--amber); }
+
+    ul {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding-left: 1.2em;
+    }
+    li::marker { color: var(--cyan); }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: stretch;
+      gap: 16px;
+      width: min(1200px, 100%);
+    }
+    .flow .card { display: grid; align-content: center; }
+    .arrow { align-self: center; color: var(--blue); font-size: 38px; }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 230px 1fr 74px;
+      align-items: center;
+      gap: 16px;
+      margin: 12px 0;
+      color: var(--muted);
+      font-size: clamp(14px, 1.15vw, 18px);
+    }
+    .track {
+      height: 16px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: rgba(255,255,255,.08);
+    }
+    .fill {
+      height: 100%;
+      width: var(--value);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+    }
+
+    .note {
+      max-width: 1100px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--amber);
+      color: var(--muted);
+      background: rgba(255, 209, 102, .06);
+      font-size: clamp(14px, 1.15vw, 18px);
+      line-height: 1.5;
+    }
+
+    .chrome {
+      position: fixed;
+      inset: auto 28px 22px 28px;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+    .progress {
+      height: 4px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: rgba(255,255,255,.12);
+    }
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 10%;
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      transition: width .3s ease;
+    }
+    .counter {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      font-size: 13px;
+      letter-spacing: .12em;
+    }
+    .controls { justify-self: end; display: flex; gap: 8px; }
+    button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(18, 36, 58, .82);
+      color: var(--text);
+      font-size: 20px;
+      cursor: pointer;
+    }
+    button:hover { border-color: var(--blue); background: rgba(40, 77, 112, .9); }
+
+    .tag {
+      display: inline-block;
+      margin: 4px 6px 0 0;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .slide { padding: 54px 28px 88px; overflow-y: auto; align-content: start; }
+      .grid, .grid.two, .grid.four, .flow { grid-template-columns: 1fr; }
+      .arrow { display: none; }
+      .bar { grid-template-columns: 120px 1fr 50px; }
+    }
+
+    @media print {
+      html, body { overflow: visible; background: white; color: #101828; }
+      .deck { height: auto; }
+      .slide {
+        position: relative;
+        min-height: 100vh;
+        opacity: 1;
+        transform: none;
+        page-break-after: always;
+        color: #101828;
+      }
+      .card { background: #f6f8fb; box-shadow: none; }
+      .card p, .card li, .lead, .note { color: #475467; }
+      .chrome { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide active">
+      <p class="eyebrow">Azure Policy Linter</p>
+      <h1>Turn findings into <span class="accent">decisions</span>.</h1>
+      <p class="lead">A skill that filters contextual noise, aggregates related linter output, and proposes safe next actions in automation-ready JSON.</p>
+      <div>
+        <span class="tag">Policy-aware</span>
+        <span class="tag">Deterministic schema</span>
+        <span class="tag">PR-comment ready</span>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">The problem</p>
+      <h2>Linter output is factual. <span class="accent">Actionability is contextual.</span></h2>
+      <div class="grid">
+        <article class="card"><h3>Intent matters</h3><p>A multi-resource policy, enforcement default, or missing-property check may be deliberate.</p></article>
+        <article class="card"><h3>Findings overlap</h3><p>Optional aliases, old API versions, and repeated paths often describe one underlying decision.</p></article>
+        <article class="card"><h3>Automation needs structure</h3><p>PR pipelines need stable IDs, pointers, source indexes, and bounded actions rather than prose.</p></article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">What the skill does</p>
+      <h2>One policy. One result set. One structured triage.</h2>
+      <div class="flow">
+        <article class="card"><h3>Policy + results</h3><p>JSON or console output, matched without guessing.</p></article>
+        <div class="arrow">-&gt;</div>
+        <article class="card"><h3>Contextual reasoning</h3><p>Resolve paths, inspect effects and guards, deduplicate, then aggregate.</p></article>
+        <div class="arrow">-&gt;</div>
+        <article class="card"><h3>Strict JSON</h3><p>Confirmed, conditional, unverifiable, or noise - with a safe action and probable fix.</p></article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Action model</p>
+      <h2>Separate safe edits from policy decisions.</h2>
+      <div class="grid four">
+        <article class="card"><h3>direct_edit</h3><p>The policy alone determines a semantics-preserving change.</p></article>
+        <article class="card"><h3>choice_required</h3><p>The author must choose among bounded behavioral or assignment-contract options.</p></article>
+        <article class="card"><h3>investigate</h3><p>Provider behavior, API usage, stale input, or another external fact is required.</p></article>
+        <article class="card"><h3>none</h3><p>The concern is disproven, already handled, or irrelevant to the policy's role.</p></article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Production evidence</p>
+      <h2>Studied the full built-in corpus.</h2>
+      <div class="grid four">
+        <article class="card"><span class="metric">2,252</span><p>Production built-in policies</p></article>
+        <article class="card"><span class="metric">3,688</span><p>Total linter findings</p></article>
+        <article class="card"><span class="metric">95.1%</span><p>Findings from six common rules</p></article>
+        <article class="card"><span class="metric">1</span><p>Critical engine-level finding</p></article>
+      </div>
+      <p class="note">The corpus exposed recurring aggregation and noise patterns around aliases, API versions, related resource types, defaults, and duplicates.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Experiment design</p>
+      <h2>175 runs designed to expose variance.</h2>
+      <div class="grid">
+        <article class="card"><span class="metric">9</span><p>Scenarios, including stale paths, console loss, property bags, intent, and a 39-finding policy.</p></article>
+        <article class="card"><span class="metric">135</span><p>Original runs: full skill, schema only, and baseline - five repetitions each.</p></article>
+        <article class="card"><span class="metric">40</span><p>Post-refinement full-skill runs across the affected cases.</p></article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Performance</p>
+      <h2>Refinement improved automation readiness.</h2>
+      <div class="card" style="width:min(1040px,100%)">
+        <div class="bar"><span>Contract - original</span><div class="track"><div class="fill" style="--value:50%"></div></div><strong>50.0%</strong></div>
+        <div class="bar"><span>Contract - refined</span><div class="track"><div class="fill" style="--value:82.5%"></div></div><strong>82.5%</strong></div>
+        <div class="bar"><span>Reviewed semantics</span><div class="track"><div class="fill" style="--value:97.5%"></div></div><strong>97.5%</strong></div>
+        <div class="bar"><span>Schema validity</span><div class="track"><div class="fill" style="--value:100%"></div></div><strong>100%</strong></div>
+      </div>
+      <p class="note">Reviewed semantic performance is 39/40 on eight mechanically gradable refined cases. It is a sensitivity result, not a replacement for the frozen primary rubric.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">What improved</p>
+      <h2>The skill now handles the hard edges explicitly.</h2>
+      <div class="grid two">
+        <article class="card"><ul>
+          <li>Critical findings block incomplete triage.</li>
+          <li>Property-bag paths resolve against the supplied root.</li>
+          <li>Console metadata loss produces partial results.</li>
+        </ul></article>
+        <article class="card"><ul>
+          <li>Stale paths become low-confidence investigations.</li>
+          <li>Assignment-interface changes require author choice.</li>
+          <li>Evidence and target pointers have tighter membership rules.</li>
+        </ul></article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Remaining risk</p>
+      <h2>Correctness is strong. Exact repetition is not.</h2>
+      <div class="grid two">
+        <article class="card"><span class="metric good">39/40</span><p>Reviewed semantic passes after rubric corrections.</p></article>
+        <article class="card"><span class="metric warn">17/80</span><p>Exact structural pair agreement in the refined affected cases.</p></article>
+      </div>
+      <p class="lead">Aggregation boundaries, confidence, evidence pointers, and alternatives can vary. Consumers should trust the schema and stable IDs, not require byte-for-byte identical analyses.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">ADO integration</p>
+      <h2>A mirrored file is not an automatically loaded skill.</h2>
+      <div class="grid two">
+        <article class="card"><h3>Why it is not discovered</h3><p>The ADO PRAssistant loads explicit prompts and supplied PR context. Mirroring preserves repository content, but it does not register that content with the assistant's skill loader or inject linter JSON.</p></article>
+        <article class="card"><h3>How to integrate it</h3><p>Teach the PRAssistant pipeline to load the mirrored skill and schema, then pass the selected policy and linter JSON into that prompt before creating review comments.</p></article>
+      </div>
+      <p class="note">The likely integration point is the Policy repository's PRBuiltInPolicy_Linter pipeline, not the repository mirror itself.</p>
+    </section>
+  </main>
+
+  <footer class="chrome">
+    <div class="progress"><span id="progress"></span></div>
+    <div class="counter"><span id="current">01</span> / <span id="total">10</span></div>
+    <div class="controls">
+      <button id="prev" aria-label="Previous slide">&larr;</button>
+      <button id="next" aria-label="Next slide">&rarr;</button>
+    </div>
+  </footer>
+
+  <script>
+    const slides = [...document.querySelectorAll(".slide")];
+    const current = document.getElementById("current");
+    const total = document.getElementById("total");
+    const progress = document.getElementById("progress");
+    let index = 0;
+
+    total.textContent = String(slides.length).padStart(2, "0");
+
+    function show(next) {
+      index = Math.max(0, Math.min(slides.length - 1, next));
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+      current.textContent = String(index + 1).padStart(2, "0");
+      progress.style.width = `${((index + 1) / slides.length) * 100}%`;
+      history.replaceState(null, "", `#${index + 1}`);
+    }
+
+    document.getElementById("prev").addEventListener("click", () => show(index - 1));
+    document.getElementById("next").addEventListener("click", () => show(index + 1));
+    addEventListener("keydown", event => {
+      if (["ArrowRight", "PageDown", " "].includes(event.key)) show(index + 1);
+      if (["ArrowLeft", "PageUp"].includes(event.key)) show(index - 1);
+      if (event.key === "Home") show(0);
+      if (event.key === "End") show(slides.length - 1);
+    });
+    addEventListener("wheel", event => {
+      if (Math.abs(event.deltaY) > 40) show(index + Math.sign(event.deltaY));
+    }, { passive: true });
+
+    const requested = Number(location.hash.slice(1));
+    show(Number.isInteger(requested) && requested > 0 ? requested - 1 : 0);
+  </script>
+</body>
+</html>

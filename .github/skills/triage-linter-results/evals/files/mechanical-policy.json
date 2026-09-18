@@ -1,0 +1,36 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Audit selected virtual machine image publishers",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          },
+          {
+            "anyOf": [
+              {
+                "field": "Microsoft.Compute/imagePublisher",
+                "like": "Canonical"
+              },
+              {
+                "field": "Microsoft.Compute/imagePublisher",
+                "equals": "Canonical"
+              },
+              {
+                "field": "Microsoft.Compute/imagePublisher",
+                "equals": "RedHat"
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  }
+}

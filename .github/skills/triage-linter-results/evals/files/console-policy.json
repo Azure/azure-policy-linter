@@ -1,0 +1,24 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Audit Canonical virtual machines",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          },
+          {
+            "field": "Microsoft.Compute/imagePublisher",
+            "like": "Canonical"
+          }
+        ]
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  }
+}

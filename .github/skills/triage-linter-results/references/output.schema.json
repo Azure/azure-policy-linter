@@ -1,0 +1,502 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Azure/azure-policy-linter/schemas/triaged-linter-results-v1.json",
+  "title": "Triaged Policy Linter Results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "source",
+    "context",
+    "errors",
+    "items"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "status": {
+      "enum": [
+        "complete",
+        "partial",
+        "blocked"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "resultKey"
+      ],
+      "properties": {
+        "format": {
+          "enum": [
+            "json",
+            "console"
+          ]
+        },
+        "resultKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policyShape",
+        "policyType",
+        "defaultEffect",
+        "allowedEffects",
+        "enforcementPossible"
+      ],
+      "properties": {
+        "policyShape": {
+          "enum": [
+            "resource",
+            "property_bag"
+          ]
+        },
+        "policyType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "defaultEffect": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "allowedEffects": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "enforcementPossible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/error"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  },
+  "$defs": {
+    "error": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "enum": [
+            "invalid_policy",
+            "invalid_results",
+            "ambiguous_result",
+            "no_matching_result",
+            "unparseable_console",
+            "system_failure"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleIdentifier",
+        "title",
+        "category",
+        "documentationUrl"
+      ],
+      "properties": {
+        "ruleIdentifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "documentationUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "occurrence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ruleIdentifier",
+        "severity",
+        "linterPath",
+        "policyPointer",
+        "lineNumber",
+        "linePosition",
+        "message",
+        "sourceIndexes"
+      ],
+      "properties": {
+        "ruleIdentifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "Critical",
+            "Error",
+            "Warning",
+            "Informational",
+            "Unknown",
+            null
+          ]
+        },
+        "linterPath": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "policyPointer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(/([^~/]|~0|~1)*)*$"
+        },
+        "lineNumber": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "linePosition": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "message": {
+          "type": "string"
+        },
+        "sourceIndexes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "targetPointers",
+        "alternatives"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "targetPointers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternatives": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "anchorPointer",
+        "rules",
+        "occurrences",
+        "relevance",
+        "confidence",
+        "action",
+        "assessment",
+        "evidencePointers",
+        "recommendation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+(?:\\+[a-z0-9-]+)*#(?:document|/.*?)(?:#[1-9][0-9]*)?$"
+        },
+        "anchorPointer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^(/([^~/]|~0|~1)*)*$"
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "occurrences": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/occurrence"
+          }
+        },
+        "relevance": {
+          "enum": [
+            "confirmed",
+            "conditional",
+            "noise",
+            "unverifiable"
+          ]
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "action": {
+          "enum": [
+            "direct_edit",
+            "choice_required",
+            "investigate",
+            "none"
+          ]
+        },
+        "assessment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidencePointers": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommendation": {
+          "$ref": "#/$defs/recommendation"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "choice_required"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "recommendation": {
+                "properties": {
+                  "alternatives": {
+                    "minItems": 2,
+                    "maxItems": 3
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "recommendation": {
+                "properties": {
+                  "alternatives": {
+                    "maxItems": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "direct_edit"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidencePointers": {
+                "minItems": 1
+              },
+              "recommendation": {
+                "properties": {
+                  "targetPointers": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relevance": {
+                "enum": [
+                  "confirmed",
+                  "noise"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidencePointers": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relevance": {
+                "const": "noise"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "action": {
+                "const": "none"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "confidence": {
+                "const": "low"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "action": {
+                "not": {
+                  "const": "direct_edit"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "blocked"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "errors": {
+            "minItems": 1
+          },
+          "items": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "complete"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "errors": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ],
+  "x-determinism": {
+    "id": "Join the item's sorted unique rule identifiers with '+', then append '#' and anchorPointer; use 'document' when anchorPointer is null.",
+    "deduplication": "Collapse exact ruleIdentifier, severity, pointer, and message matches into one occurrence with sorted sourceIndexes.",
+    "ruleOrder": "ruleIdentifier ascending.",
+    "occurrenceOrder": "policyPointer with null last, lineNumber with null last, linePosition with null last, ruleIdentifier, message; ascending within each non-null field.",
+    "itemOrder": "Action direct_edit, choice_required, investigate, none; relevance confirmed, conditional, unverifiable, noise; highest occurrence severity Critical, Error, Warning, Informational, Unknown, null; then id.",
+    "pointerOrder": "Sort evidencePointers and targetPointers lexically. Sort context.allowedEffects case-insensitively.",
+    "errorOrder": "Sort by code, then message."
+  }
+}

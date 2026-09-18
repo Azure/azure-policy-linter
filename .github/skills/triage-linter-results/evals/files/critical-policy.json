@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Block write actions",
+    "policyRule": {
+      "if": {
+        "source": "action",
+        "like": "*/write"
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  }
+}
