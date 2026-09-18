@@ -1,0 +1,48 @@
+{
+  ".github\\skills\\triage-linter-results\\evals\\files\\intent-policy.json": [
+    {
+      "ruleIdentifier": "policy-rule-references-multiple-resource-types",
+      "title": "Policy Rule References Multiple Resource Types",
+      "category": "BestPractices",
+      "severity": "Informational",
+      "lineNumber": 21,
+      "linePosition": 9,
+      "description": "The policy rule references multiple resource types: 'Microsoft.Compute/virtualMachines', 'Microsoft.HybridCompute/machines'. Confirm that the policy intentionally targets all of them.",
+      "path": "properties.policyRule.if.allOf[0]",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/policy-rule-references-multiple-resource-types.md"
+    },
+    {
+      "ruleIdentifier": "risky-effect-parameter-default-value",
+      "title": "Risky Effect Parameter Default Value",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 29,
+      "linePosition": 9,
+      "description": "Parameter 'effect' defaults to 'DeployIfNotExists', an enforcement effect. Assignments that do not override the default will enforce it. Set the default to 'AuditIfNotExists'.",
+      "path": "properties.policyRule.then.effect",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/risky-effect-parameter-default-value.md"
+    },
+    {
+      "ruleIdentifier": "request-context-identity-is-enforcement-only",
+      "title": "Request Context Identity Is Enforcement Only",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 28,
+      "linePosition": 23,
+      "description": "The policy accesses requestContext().identity. This information is available during request-time enforcement but not periodic compliance evaluation.",
+      "path": "properties.policyRule.if.allOf[1].value",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/request-context-identity-is-enforcement-only.md"
+    },
+    {
+      "ruleIdentifier": "unguarded-request-context-identity-access",
+      "title": "Unguarded Request Context Identity Access",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 28,
+      "linePosition": 23,
+      "description": "The expression directly accesses requestContext().identity.idtyp. Use tryGet to avoid an evaluation failure when the claim is absent.",
+      "path": "properties.policyRule.if.allOf[1].value",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/unguarded-request-context-identity-access.md"
+    }
+  ]
+}

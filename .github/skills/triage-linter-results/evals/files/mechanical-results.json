@@ -1,0 +1,37 @@
+{
+  ".github\\skills\\triage-linter-results\\evals\\files\\mechanical-policy.json": [
+    {
+      "ruleIdentifier": "simplify-multiple-equals-to-in",
+      "title": "Simplify Multiple Equals to In",
+      "category": "BestPractices",
+      "severity": "Informational",
+      "lineNumber": 18,
+      "linePosition": 13,
+      "description": "The 'anyOf' condition contains multiple 'equals' comparisons for field alias 'Microsoft.Compute/imagePublisher'. Use a single 'in' condition.",
+      "path": "properties.policyRule.if.allOf[1].anyOf",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/simplify-multiple-equals-to-in.md"
+    },
+    {
+      "ruleIdentifier": "simplify-multiple-equals-to-in",
+      "title": "Simplify Multiple Equals to In",
+      "category": "BestPractices",
+      "severity": "Informational",
+      "lineNumber": 18,
+      "linePosition": 13,
+      "description": "The 'anyOf' condition contains multiple 'equals' comparisons for field alias 'Microsoft.Compute/imagePublisher'. Use a single 'in' condition.",
+      "path": "properties.policyRule.if.allOf[1].anyOf",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/simplify-multiple-equals-to-in.md"
+    },
+    {
+      "ruleIdentifier": "like-notlike-without-wildcards",
+      "title": "Like or NotLike Without Wildcards",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 21,
+      "linePosition": 17,
+      "description": "The condition uses the 'like' operator with value 'Canonical' which contains no wildcard (*). Use 'equals' for exact matching.",
+      "path": "properties.policyRule.if.allOf[1].anyOf[0].like",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/like-notlike-without-wildcards.md"
+    }
+  ]
+}

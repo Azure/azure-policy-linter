@@ -1,0 +1,7 @@
+Results for: policies\console-policy.json
+
+Like or NotLike Without Wildcards
+Identifier: like-notlike-without-wildcards
+Line: 15, Position: 13, Path: properties.policyRule.if.allOf[1].like
+Documentation: https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/like-notlike-without-wildcards.md
+The condition uses the 'like' operator with value 'Canonical' which contains no wildcard (*). Use 'equals' for exact matching.

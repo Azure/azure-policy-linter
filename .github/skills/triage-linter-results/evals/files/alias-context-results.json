@@ -1,0 +1,37 @@
+{
+  ".github\\skills\\triage-linter-results\\evals\\files\\alias-context-policy.json": [
+    {
+      "ruleIdentifier": "optional-field-alias",
+      "title": "Optional Field Alias",
+      "category": "ResourceFields",
+      "severity": "Informational",
+      "lineNumber": 26,
+      "linePosition": 13,
+      "description": "The field alias 'Contoso.Accounts/accounts/disableLocalAuth' maps to an optional property. Explicitly decide how the policy should behave when the property is absent.",
+      "path": "properties.policyRule.if.allOf[1].field",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/optional-field-alias.md"
+    },
+    {
+      "ruleIdentifier": "field-alias-unavailable-in-old-api-versions",
+      "title": "Field Alias Unavailable in Old API Versions",
+      "category": "ResourceFields",
+      "severity": "Warning",
+      "lineNumber": 26,
+      "linePosition": 13,
+      "description": "The field alias 'Contoso.Accounts/accounts/disableLocalAuth' is unavailable in older API versions. Requests using those versions may not expose the property.",
+      "path": "properties.policyRule.if.allOf[1].field",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/field-alias-unavailable-in-old-api-versions.md"
+    },
+    {
+      "ruleIdentifier": "optional-field-alias",
+      "title": "Optional Field Alias",
+      "category": "ResourceFields",
+      "severity": "Informational",
+      "lineNumber": 30,
+      "linePosition": 13,
+      "description": "The field alias 'Contoso.Accounts/accounts/publicNetworkAccess' maps to an optional property. Explicitly decide how the policy should behave when the property is absent.",
+      "path": "properties.policyRule.if.allOf[2].field",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/optional-field-alias.md"
+    }
+  ]
+}

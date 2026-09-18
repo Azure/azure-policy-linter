@@ -1,0 +1,20 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Audit virtual machines",
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          }
+        ]
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  }
+}

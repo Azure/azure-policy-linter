@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Audit storage accounts",
+    "policyRule": {
+      "if": {
+        "field": "type",
+        "equals": "Microsoft.Storage/storageAccounts"
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  }
+}

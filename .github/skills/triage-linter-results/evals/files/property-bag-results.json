@@ -1,0 +1,26 @@
+{
+  "property-bag-policy.json": [
+    {
+      "ruleIdentifier": "system-rule",
+      "title": "Linter Input Is Policy Definition Property Bag",
+      "category": "Linter",
+      "severity": "Informational",
+      "lineNumber": null,
+      "linePosition": null,
+      "description": "The input was interpreted as a policy definition property bag.",
+      "path": "",
+      "documentationUrl": ""
+    },
+    {
+      "ruleIdentifier": "hard-coded-policy-enforcement-effect",
+      "title": "Hard-Coded Policy Enforcement Effect",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 20,
+      "linePosition": 7,
+      "description": "The policy has a hard-coded enforcement effect 'deny'. Parameterize the effect to support safer assignment and rollout choices.",
+      "path": "properties.policyRule.then.effect",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/hard-coded-policy-enforcement-effect.md"
+    }
+  ]
+}

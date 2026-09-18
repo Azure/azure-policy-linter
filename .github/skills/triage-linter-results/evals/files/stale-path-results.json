@@ -1,0 +1,15 @@
+{
+  "stale-path-policy.json": [
+    {
+      "ruleIdentifier": "like-notlike-without-wildcards",
+      "title": "Like or NotLike Without Wildcards",
+      "category": "BestPractices",
+      "severity": "Warning",
+      "lineNumber": 41,
+      "linePosition": 17,
+      "description": "The condition uses the 'like' operator with value 'Canonical' which contains no wildcard (*). Use 'equals' for exact matching.",
+      "path": "properties.policyRule.if.allOf[4].like",
+      "documentationUrl": "https://github.com/Azure/azure-policy-linter/blob/main/docs/Rules/like-notlike-without-wildcards.md"
+    }
+  ]
+}

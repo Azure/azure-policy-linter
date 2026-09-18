@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "policyType": "BuiltIn",
+    "mode": "Indexed",
+    "displayName": "Configure monitoring agent on Azure and Arc machines",
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "defaultValue": "DeployIfNotExists"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "in": [
+              "Microsoft.Compute/virtualMachines",
+              "Microsoft.HybridCompute/machines"
+            ]
+          },
+          {
+            "value": "[requestContext().identity.idtyp]",
+            "equals": "user"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]",
+        "details": {
+          "type": "Microsoft.Insights/diagnosticSettings"
+        }
+      }
+    }
+  }
+}

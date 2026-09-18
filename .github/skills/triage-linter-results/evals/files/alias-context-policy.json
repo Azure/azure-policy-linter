@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "policyType": "Custom",
+    "mode": "All",
+    "displayName": "Configure account access settings",
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "allowedValues": [
+          "Audit",
+          "Modify",
+          "Disabled"
+        ],
+        "defaultValue": "Modify"
+      }
+    },
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Contoso.Accounts/accounts"
+          },
+          {
+            "field": "Contoso.Accounts/accounts/disableLocalAuth",
+            "notEquals": true
+          },
+          {
+            "field": "Contoso.Accounts/accounts/publicNetworkAccess",
+            "exists": false
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  }
+}
