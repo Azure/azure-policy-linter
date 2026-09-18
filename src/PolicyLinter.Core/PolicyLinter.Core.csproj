@@ -24,6 +24,10 @@
     <EmbeddedResource Include="ResourceTypesAndAliases.json" LogicalName="ResourceTypesAndAliases.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="Microsoft.Azure.Policy.PolicyLinter.Tests" />
+  </ItemGroup>
+
   <PropertyGroup>
     <Nullable>enable</Nullable>
   </PropertyGroup>
