@@ -320,7 +320,7 @@
         <article class="card"><span class="metric">6</span><p>Rules produced most of the output</p></article>
         <article class="card"><span class="metric">7</span><p>Exact duplicate findings</p></article>
       </div>
-      <p class="note">I ran the linter on all 2,252 policies to learn the common patterns. I did not run the skill on all 2,252 policies. The skill tests used focused examples and one real policy with 39 findings.</p>
+      <p class="note">I ran the linter on all 2,252 policies to learn the common patterns. I then tested the skill in depth on a smaller set of real policies.</p>
     </section>
 
     <section class="slide">
@@ -387,13 +387,47 @@
     </section>
 
     <section class="slide">
-      <p class="eyebrow">What still needs work</p>
-      <h2>The AI can organize the same warnings differently.</h2>
-      <div class="grid two">
-        <article class="card"><span class="metric good">39/40</span><p>Runs gave good advice after the grading corrections.</p></article>
-        <article class="card"><span class="metric warn">1 miss</span><p>One run combined two different identity warnings that should have stayed separate.</p></article>
+      <p class="eyebrow">Broader real-policy test</p>
+      <h2>I then tested 24 production policies three times each.</h2>
+      <div class="grid four">
+        <article class="card"><span class="metric">24</span><p>Different built-in policies</p></article>
+        <article class="card"><span class="metric">279</span><p>Linter findings in each pass</p></article>
+        <article class="card"><span class="metric">144</span><p>Total AI answers compared</p></article>
+        <article class="card"><span class="metric">39</span><p>Findings in the largest policies</p></article>
       </div>
-      <p class="lead">The answer remains readable by software, but repeated runs may group warnings or explain the evidence differently. A future pipeline should not expect identical wording every time.</p>
+      <p class="note">Half used the detailed format. Half used a much smaller format meant for another AI to read. Every answer accounted for every original finding.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Detailed format versus small format</p>
+      <h2>The large schema did not consistently improve the advice.</h2>
+      <div class="grid">
+        <article class="card"><span class="metric good">11</span><p>Policies where the detailed answer was better</p></article>
+        <article class="card"><span class="metric">8</span><p>Policies where the smaller answer was better</p></article>
+        <article class="card"><span class="metric">5</span><p>Policies where they were effectively tied</p></article>
+      </div>
+      <p class="note">Both formats found the obvious safe edits. Both also occasionally missed a deeper policy problem or called a behavior-changing choice an automatic edit.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">What changed after the broader test</p>
+      <h2>I kept the useful checks and removed most of the format.</h2>
+      <div class="grid two">
+        <article class="card"><h3>Kept</h3><p>Which findings were covered, whether the policy can enforce, the next-step type, and exact locations for proposed edits.</p></article>
+        <article class="card"><h3>Removed</h3><p>Repeated copies of each finding, generated IDs, confidence labels, long evidence lists, and forced lists of alternatives.</p></article>
+      </div>
+      <p class="lead">The skill now also compares the policy condition with its Modify or deployment actions before deciding a warning is harmless.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">What still varies</p>
+      <h2>Repeated runs can still organize the same warnings differently.</h2>
+      <div class="grid two">
+        <article class="card"><span class="metric warn">3/24</span><p>Detailed-format policies used exactly the same groups in all three runs.</p></article>
+        <article class="card"><span class="metric warn">2/24</span><p>Small-format policies used exactly the same groups in all three runs.</p></article>
+      </div>
+      <p class="lead">After the changes, I reran the ten policies that had exposed the clearest problems. All 30 answers kept every finding, and the seven most important failure types were handled correctly in all three repeats.</p>
+      <p class="note">The AI still varied on how cautious to be about some optional nested fields. A later AI should use the source finding numbers and decisions, not expect identical wording or grouping every time.</p>
     </section>
 
   </main>
