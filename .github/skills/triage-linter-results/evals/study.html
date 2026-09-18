@@ -269,123 +269,147 @@
   <main class="deck">
     <section class="slide active">
       <p class="eyebrow">Azure Policy Linter</p>
-      <h1>Turn findings into <span class="accent">decisions</span>.</h1>
-      <p class="lead">A skill that filters contextual noise, aggregates related linter output, and proposes safe next actions in automation-ready JSON.</p>
+      <h1>Make linter results <span class="accent">useful</span>.</h1>
+      <p class="lead">This skill reads a policy and its linter results, removes warnings that do not matter, combines repeated warnings, and suggests what to do next.</p>
       <div>
-        <span class="tag">Policy-aware</span>
-        <span class="tag">Deterministic schema</span>
-        <span class="tag">PR-comment ready</span>
+        <span class="tag">Understands the policy</span>
+        <span class="tag">Easy-to-read results</span>
+        <span class="tag">Ready for PR comments</span>
       </div>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">The problem</p>
-      <h2>Linter output is factual. <span class="accent">Actionability is contextual.</span></h2>
+      <p class="eyebrow">Why this is needed</p>
+      <h2>Not every warning needs a policy change.</h2>
       <div class="grid">
-        <article class="card"><h3>Intent matters</h3><p>A multi-resource policy, enforcement default, or missing-property check may be deliberate.</p></article>
-        <article class="card"><h3>Findings overlap</h3><p>Optional aliases, old API versions, and repeated paths often describe one underlying decision.</p></article>
-        <article class="card"><h3>Automation needs structure</h3><p>PR pipelines need stable IDs, pointers, source indexes, and bounded actions rather than prose.</p></article>
+        <article class="card"><h3>The linter lacks context</h3><p>It sees the policy text, but it does not know why the policy was written or how it is assigned.</p></article>
+        <article class="card"><h3>Warnings can repeat</h3><p>Several warnings may describe the same problem and should become one clear comment.</p></article>
+        <article class="card"><h3>Some fixes are choices</h3><p>A change may alter what the policy does. The skill should ask for a decision instead of pretending there is one safe fix.</p></article>
       </div>
     </section>
 
     <section class="slide">
       <p class="eyebrow">What the skill does</p>
-      <h2>One policy. One result set. One structured triage.</h2>
+      <h2>It turns a long warning list into a short action list.</h2>
       <div class="flow">
-        <article class="card"><h3>Policy + results</h3><p>JSON or console output, matched without guessing.</p></article>
+        <article class="card"><h3>1. Read</h3><p>Read one policy and the matching linter results.</p></article>
         <div class="arrow">-&gt;</div>
-        <article class="card"><h3>Contextual reasoning</h3><p>Resolve paths, inspect effects and guards, deduplicate, then aggregate.</p></article>
+        <article class="card"><h3>2. Understand</h3><p>Check the policy's purpose, effect, conditions, and existing safeguards.</p></article>
         <div class="arrow">-&gt;</div>
-        <article class="card"><h3>Strict JSON</h3><p>Confirmed, conditional, unverifiable, or noise - with a safe action and probable fix.</p></article>
+        <article class="card"><h3>3. Simplify</h3><p>Remove noise, combine related warnings, and give the safest next step.</p></article>
       </div>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">Action model</p>
-      <h2>Separate safe edits from policy decisions.</h2>
+      <p class="eyebrow">Possible answers</p>
+      <h2>Every result gets one clear next step.</h2>
       <div class="grid four">
-        <article class="card"><h3>direct_edit</h3><p>The policy alone determines a semantics-preserving change.</p></article>
-        <article class="card"><h3>choice_required</h3><p>The author must choose among bounded behavioral or assignment-contract options.</p></article>
-        <article class="card"><h3>investigate</h3><p>Provider behavior, API usage, stale input, or another external fact is required.</p></article>
-        <article class="card"><h3>none</h3><p>The concern is disproven, already handled, or irrelevant to the policy's role.</p></article>
+        <article class="card"><h3>Make this edit</h3><p>There is a clear change that keeps the policy's behavior the same.</p></article>
+        <article class="card"><h3>Choose an option</h3><p>The author must decide how the policy should behave.</p></article>
+        <article class="card"><h3>Check first</h3><p>More information is needed before changing the policy.</p></article>
+        <article class="card"><h3>No change</h3><p>The warning does not apply or the policy already handles it correctly.</p></article>
       </div>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">Production evidence</p>
-      <h2>Studied the full built-in corpus.</h2>
+      <p class="eyebrow">Real policy study</p>
+      <h2>I first looked at every production built-in policy.</h2>
       <div class="grid four">
         <article class="card"><span class="metric">2,252</span><p>Production built-in policies</p></article>
-        <article class="card"><span class="metric">3,688</span><p>Total linter findings</p></article>
-        <article class="card"><span class="metric">95.1%</span><p>Findings from six common rules</p></article>
-        <article class="card"><span class="metric">1</span><p>Critical engine-level finding</p></article>
+        <article class="card"><span class="metric">3,688</span><p>Warnings and other findings</p></article>
+        <article class="card"><span class="metric">6</span><p>Rules produced most of the output</p></article>
+        <article class="card"><span class="metric">7</span><p>Exact duplicate findings</p></article>
       </div>
-      <p class="note">The corpus exposed recurring aggregation and noise patterns around aliases, API versions, related resource types, defaults, and duplicates.</p>
+      <p class="note">This showed which warnings happen often, which ones repeat, and which ones need policy-specific judgment.</p>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">Experiment design</p>
-      <h2>175 runs designed to expose variance.</h2>
+      <p class="eyebrow">The test examples</p>
+      <h2>I tested nine different situations.</h2>
       <div class="grid">
-        <article class="card"><span class="metric">9</span><p>Scenarios, including stale paths, console loss, property bags, intent, and a 39-finding policy.</p></article>
-        <article class="card"><span class="metric">135</span><p>Original runs: full skill, schema only, and baseline - five repetitions each.</p></article>
-        <article class="card"><span class="metric">40</span><p>Post-refinement full-skill runs across the affected cases.</p></article>
+        <article class="card"><h3>Simple fixes</h3><p>Repeated warnings and two warnings solved by the same small edit.</p></article>
+        <article class="card"><h3>Policy intent</h3><p>Warnings that may be correct because the policy deliberately covers several resource types or deploys by default.</p></article>
+        <article class="card"><h3>Alias warnings</h3><p>Fields that may be missing or unavailable in older API versions.</p></article>
+        <article class="card"><h3>Broken or incomplete input</h3><p>A critical linter failure, old results that no longer match the policy, and console output missing details.</p></article>
+        <article class="card"><h3>Finding the right result</h3><p>A policy with results for several files, where guessing would be unsafe.</p></article>
+        <article class="card"><h3>Lots of warnings</h3><p>A real policy with 39 findings to check whether the skill combines them sensibly.</p></article>
       </div>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">Performance</p>
-      <h2>Refinement improved automation readiness.</h2>
+      <p class="eyebrow">How the testing worked</p>
+      <h2>Each situation was run several times.</h2>
+      <div class="grid">
+        <article class="card"><span class="metric">5x</span><p>Each test was repeated because an AI can give a different answer to the same request.</p></article>
+        <article class="card"><h3>Full instructions</h3><p>The AI received the skill and the required output format.</p></article>
+        <article class="card"><h3>Comparison runs</h3><p>The AI received only the output format, or no special help at all.</p></article>
+      </div>
+      <p class="note">There were 135 first-round runs. After improving the instructions, I ran 40 more tests on the situations that had problems.</p>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">What the scores mean</p>
+      <h2>Three simple questions were checked.</h2>
+      <div class="grid">
+        <article class="card"><h3>Can software read it?</h3><p>Did the answer use the exact JSON format needed by a future PR-comment tool?</p></article>
+        <article class="card"><h3>Did it follow every rule?</h3><p>Did it keep every warning, use the correct policy locations, and handle errors safely?</p></article>
+        <article class="card"><h3>Was the advice good?</h3><p>Did it correctly decide between an edit, a choice, more research, or no change?</p></article>
+      </div>
+    </section>
+
+    <section class="slide">
+      <p class="eyebrow">Results</p>
+      <h2>The improved skill usually gives the right answer.</h2>
       <div class="card" style="width:min(1040px,100%)">
-        <div class="bar"><span>Contract - original</span><div class="track"><div class="fill" style="--value:50%"></div></div><strong>50.0%</strong></div>
-        <div class="bar"><span>Contract - refined</span><div class="track"><div class="fill" style="--value:82.5%"></div></div><strong>82.5%</strong></div>
-        <div class="bar"><span>Reviewed semantics</span><div class="track"><div class="fill" style="--value:97.5%"></div></div><strong>97.5%</strong></div>
-        <div class="bar"><span>Schema validity</span><div class="track"><div class="fill" style="--value:100%"></div></div><strong>100%</strong></div>
+        <div class="bar"><span>Readable JSON</span><div class="track"><div class="fill" style="--value:100%"></div></div><strong>100%</strong></div>
+        <div class="bar"><span>Followed every rule - before</span><div class="track"><div class="fill" style="--value:50%"></div></div><strong>50.0%</strong></div>
+        <div class="bar"><span>Followed every rule - after</span><div class="track"><div class="fill" style="--value:82.5%"></div></div><strong>82.5%</strong></div>
+        <div class="bar"><span>Good final advice</span><div class="track"><div class="fill" style="--value:97.5%"></div></div><strong>39/40</strong></div>
       </div>
-      <p class="note">Reviewed semantic performance is 39/40 on eight mechanically gradable refined cases. It is a sensitivity result, not a replacement for the frozen primary rubric.</p>
+      <p class="note">The 39/40 score uses the corrected grading rules. Two original expected answers were wrong, so both the original and corrected scores are documented.</p>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">What improved</p>
-      <h2>The skill now handles the hard edges explicitly.</h2>
+      <p class="eyebrow">What I fixed</p>
+      <h2>The first test round found clear instruction gaps.</h2>
       <div class="grid two">
         <article class="card"><ul>
-          <li>Critical findings block incomplete triage.</li>
-          <li>Property-bag paths resolve against the supplied root.</li>
-          <li>Console metadata loss produces partial results.</li>
+          <li>Stop when the linter itself failed.</li>
+          <li>Do not guess when results may be for another file.</li>
+          <li>Say when old results no longer match the policy.</li>
         </ul></article>
         <article class="card"><ul>
-          <li>Stale paths become low-confidence investigations.</li>
-          <li>Assignment-interface changes require author choice.</li>
-          <li>Evidence and target pointers have tighter membership rules.</li>
+          <li>Do not call behavior-changing edits automatic fixes.</li>
+          <li>Handle policies supplied without their outer Azure resource wrapper.</li>
+          <li>Point to the exact policy sections that support the answer.</li>
         </ul></article>
       </div>
     </section>
 
     <section class="slide">
-      <p class="eyebrow">Remaining risk</p>
-      <h2>Correctness is strong. Exact repetition is not.</h2>
+      <p class="eyebrow">What still needs work</p>
+      <h2>The AI can organize the same warnings differently.</h2>
       <div class="grid two">
-        <article class="card"><span class="metric good">39/40</span><p>Reviewed semantic passes after rubric corrections.</p></article>
-        <article class="card"><span class="metric warn">17/80</span><p>Exact structural pair agreement in the refined affected cases.</p></article>
+        <article class="card"><span class="metric good">39/40</span><p>Runs gave good advice after the grading corrections.</p></article>
+        <article class="card"><span class="metric warn">1 miss</span><p>One run combined two different identity warnings that should have stayed separate.</p></article>
       </div>
-      <p class="lead">Aggregation boundaries, confidence, evidence pointers, and alternatives can vary. Consumers should trust the schema and stable IDs, not require byte-for-byte identical analyses.</p>
+      <p class="lead">The answer remains readable by software, but repeated runs may group warnings or explain the evidence differently. A future pipeline should not expect identical wording every time.</p>
     </section>
 
     <section class="slide">
       <p class="eyebrow">ADO integration</p>
-      <h2>A mirrored file is not an automatically loaded skill.</h2>
+      <h2>Copying the file to ADO does not make PRAssistant use it.</h2>
       <div class="grid two">
-        <article class="card"><h3>Why it is not discovered</h3><p>The ADO PRAssistant loads explicit prompts and supplied PR context. Mirroring preserves repository content, but it does not register that content with the assistant's skill loader or inject linter JSON.</p></article>
-        <article class="card"><h3>How to integrate it</h3><p>Teach the PRAssistant pipeline to load the mirrored skill and schema, then pass the selected policy and linter JSON into that prompt before creating review comments.</p></article>
+        <article class="card"><h3>What mirroring does</h3><p>It copies the skill file into another repository. It does not tell PRAssistant to read that file.</p></article>
+        <article class="card"><h3>What must change</h3><p>The PRAssistant pipeline must load the skill, give it the changed policy and linter results, and use its answer to create comments.</p></article>
       </div>
-      <p class="note">The likely integration point is the Policy repository's PRBuiltInPolicy_Linter pipeline, not the repository mirror itself.</p>
+      <p class="note">The likely place to add this is the Policy repository's PRBuiltInPolicy_Linter pipeline.</p>
     </section>
   </main>
 
   <footer class="chrome">
     <div class="progress"><span id="progress"></span></div>
-    <div class="counter"><span id="current">01</span> / <span id="total">10</span></div>
+    <div class="counter"><span id="current">01</span> / <span id="total">12</span></div>
     <div class="controls">
       <button id="prev" aria-label="Previous slide">&larr;</button>
       <button id="next" aria-label="Next slide">&rarr;</button>
