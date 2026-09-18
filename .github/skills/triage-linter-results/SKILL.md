@@ -7,7 +7,7 @@ description: 'Assess Policy Linter findings against an Azure Policy definition, 
 
 Assess one policy definition and its Policy Linter results. Return only JSON conforming to `references/output.schema.json`.
 
-Read the severity and actionability guidance in `docs/linter-rule-design.md` and only the `docs/Rules/` files for rule identifiers in the selected results.
+When the Azure Policy Linter repository is available, read `docs/linter-rule-design.md` and only the `docs/Rules/` files for rule identifiers in the selected results. In another repository, use each selected result's `documentationUrl` when accessible. If rule documentation is unavailable, rely on the finding text and policy evidence, lower confidence where necessary, and do not invent rule-specific behavior.
 
 ## Flow
 
