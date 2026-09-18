@@ -75,11 +75,23 @@
           ]
         },
         "allowedEffects": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "type": "string"
-          }
+          "description": "Sorted effects for a literal or constrained parameter, 'any' for an unconstrained parameter, or null when the contract cannot be resolved.",
+          "oneOf": [
+            {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "const": "any"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "enforcementPossible": {
           "type": [
@@ -249,7 +261,8 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^(/([^~/]|~0|~1)*)*$"
           }
         },
         "alternatives": {
@@ -334,7 +347,8 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^(/([^~/]|~0|~1)*)*$"
           }
         },
         "recommendation": {
@@ -367,6 +381,49 @@
               "recommendation": {
                 "properties": {
                   "alternatives": {
+                    "maxItems": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "choice_required"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "recommendation": {
+                "properties": {
+                  "targetPointers": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "enum": [
+                  "investigate",
+                  "none"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "recommendation": {
+                "properties": {
+                  "targetPointers": {
                     "maxItems": 0
                   }
                 }
@@ -449,6 +506,25 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "properties": {
+              "relevance": {
+                "const": "unverifiable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "confidence": {
+                "const": "low"
+              },
+              "action": {
+                "const": "investigate"
+              }
+            }
+          }
         }
       ]
     }
@@ -488,6 +564,32 @@
           }
         }
       }
+    },
+    {
+      "if": {
+        "properties": {
+          "items": {
+            "contains": {
+              "type": "object",
+              "required": [
+                "relevance"
+              ],
+              "properties": {
+                "relevance": {
+                  "const": "unverifiable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "partial"
+          }
+        }
+      }
     }
   ],
   "x-determinism": {
@@ -496,7 +598,7 @@
     "ruleOrder": "ruleIdentifier ascending.",
     "occurrenceOrder": "policyPointer with null last, lineNumber with null last, linePosition with null last, ruleIdentifier, message; ascending within each non-null field.",
     "itemOrder": "Action direct_edit, choice_required, investigate, none; relevance confirmed, conditional, unverifiable, noise; highest occurrence severity Critical, Error, Warning, Informational, Unknown, null; then id.",
-    "pointerOrder": "Sort evidencePointers and targetPointers lexically. Sort context.allowedEffects case-insensitively.",
+    "pointerOrder": "Sort evidencePointers and targetPointers lexically. When context.allowedEffects is an array, sort it case-insensitively.",
     "errorOrder": "Sort by code, then message."
   }
 }

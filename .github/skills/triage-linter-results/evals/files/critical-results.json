@@ -2,12 +2,12 @@
   ".github\\skills\\triage-linter-results\\evals\\files\\critical-policy.json": [
     {
       "ruleIdentifier": "system-rule",
-      "title": "File Read Error",
+      "title": "Linter Execution Error",
       "category": "Linter",
       "severity": "Critical",
       "lineNumber": null,
       "linePosition": null,
-      "description": "Condition property must contain either 'allOf', 'anyOf', or 'not'.",
+      "description": "Failed to lint file 'critical-policy.json': ArgumentException: Condition property must contain either 'allOf', 'anyOf', or 'not'. (Parameter 'conditionProperty')",
       "path": "",
       "documentationUrl": ""
     }

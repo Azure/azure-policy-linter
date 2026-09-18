@@ -26,6 +26,8 @@ The linter was run against all 2,252 production built-in policies in the sister 
 
 The corpus established recurring patterns for multiple resource types, optional aliases, old API versions, read-only aliases, assignment defaults, and duplicate emissions.
 
+The linter was run across all 2,252 policies, but the skill was not. The skill evaluation used curated examples plus one real high-volume built-in policy. A broader built-in study is still needed to measure aggregation quality across many different policies.
+
 ## Evaluation design
 
 Nine scenarios tested mechanical fixes, contextual aliases, policy intent, Critical failures, property-bag input, ambiguous result selection, stale paths, console metadata loss, and a real 39-finding policy.

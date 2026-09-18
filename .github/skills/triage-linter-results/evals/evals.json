@@ -63,6 +63,86 @@
         "The response does not claim that the policy has no other issues or generate a policy fix.",
         "The system failure message preserves enough information to explain that linting was incomplete."
       ]
+    },
+    {
+      "id": 5,
+      "prompt": "Triage the property-bag policy in `.github\\skills\\triage-linter-results\\evals\\files\\property-bag-policy.json` against `.github\\skills\\triage-linter-results\\evals\\files\\property-bag-results.json`. Return only the structured result.",
+      "expected_output": "A schema-valid result that recognizes the property-bag shape, translates the synthetic properties prefix, and treats assignment-time effect control as an author choice.",
+      "files": [
+        "evals/files/property-bag-policy.json",
+        "evals/files/property-bag-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "context.policyShape is property_bag.",
+        "The informational property-bag system finding is used as context and is not emitted as a policy issue.",
+        "The linter path properties.policyRule.then.effect resolves to policy pointer /policyRule/then/effect.",
+        "Adding assignment-time effect control is choice_required rather than a direct edit."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "The policy in `.github\\skills\\triage-linter-results\\evals\\files\\ambiguous-policy.json` was supplied without a source path. Triage `.github\\skills\\triage-linter-results\\evals\\files\\ambiguous-results.json` without guessing which result set belongs to it.",
+      "expected_output": "A blocked schema-valid result that reports ambiguous_result and emits no triaged items.",
+      "files": [
+        "evals/files/ambiguous-policy.json",
+        "evals/files/ambiguous-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "status is blocked and errors contains ambiguous_result.",
+        "source.resultKey is null.",
+        "No result set is selected by policy resemblance, policy name, or finding content.",
+        "items is empty."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Triage `.github\\skills\\triage-linter-results\\evals\\files\\stale-path-results.json` against `.github\\skills\\triage-linter-results\\evals\\files\\stale-path-policy.json`. Return only the structured result.",
+      "expected_output": "A partial schema-valid result that treats the unresolved path as an unverifiable investigation rather than proposing a policy edit.",
+      "files": [
+        "evals/files/stale-path-policy.json",
+        "evals/files/stale-path-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "status is partial.",
+        "The unresolved finding has relevance unverifiable, confidence low, and action investigate.",
+        "The occurrence preserves the linter path and has a null policy pointer.",
+        "The recommendation asks for current linter results and has no edit target."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Triage the console output in `.github\\skills\\triage-linter-results\\evals\\files\\console-results.txt` against `.github\\skills\\triage-linter-results\\evals\\files\\console-policy.json`. Return only the structured result.",
+      "expected_output": "A partial schema-valid result that preserves metadata unavailable from console output and recommends the safe mechanical edit.",
+      "files": [
+        "evals/files/console-policy.json",
+        "evals/files/console-results.txt"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "source.format is console and status is partial.",
+        "The occurrence severity and rule category are null rather than inferred.",
+        "The console section path is preserved as source.resultKey.",
+        "The wildcard-free like condition receives a direct equals edit."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Triage the high-volume policy in `.github\\skills\\triage-linter-results\\evals\\files\\high-volume-policy.json` against `.github\\skills\\triage-linter-results\\evals\\files\\high-volume-results.json`. Return only the structured result.",
+      "expected_output": "A schema-valid result that accounts for all 39 source findings, combines only findings with one shared decision, and keeps mechanical edits, alias investigation, and the assignment-default choice separate.",
+      "files": [
+        "evals/files/high-volume-policy.json",
+        "evals/files/high-volume-results.json"
+      ],
+      "expectations": [
+        "The output is one JSON document conforming to references/output.schema.json with no surrounding prose.",
+        "Every source index from 0 through 38 is represented exactly once after exact deduplication.",
+        "Repeated alias findings are combined only when one assessment and recommendation covers every occurrence.",
+        "Structural simplifications remain separate from alias questions and the effect-default decision.",
+        "The DeployIfNotExists default is choice_required rather than an automatic edit."
+      ]
     }
   ]
 }

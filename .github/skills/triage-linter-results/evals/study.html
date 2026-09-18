@@ -320,7 +320,7 @@
         <article class="card"><span class="metric">6</span><p>Rules produced most of the output</p></article>
         <article class="card"><span class="metric">7</span><p>Exact duplicate findings</p></article>
       </div>
-      <p class="note">This showed which warnings happen often, which ones repeat, and which ones need policy-specific judgment.</p>
+      <p class="note">I ran the linter on all 2,252 policies to learn the common patterns. I did not run the skill on all 2,252 policies. The skill tests used focused examples and one real policy with 39 findings.</p>
     </section>
 
     <section class="slide">
@@ -352,7 +352,7 @@
       <h2>Three simple questions were checked.</h2>
       <div class="grid">
         <article class="card"><h3>Can software read it?</h3><p>Did the answer use the exact JSON format needed by a future PR-comment tool?</p></article>
-        <article class="card"><h3>Did it follow every rule?</h3><p>Did it keep every warning, use the correct policy locations, and handle errors safely?</p></article>
+        <article class="card"><h3>Did it pass every check?</h3><p>Did it account for every warning, combine only related warnings, use the right policy locations, and handle errors safely?</p></article>
         <article class="card"><h3>Was the advice good?</h3><p>Did it correctly decide between an edit, a choice, more research, or no change?</p></article>
       </div>
     </section>
@@ -362,11 +362,11 @@
       <h2>The improved skill usually gives the right answer.</h2>
       <div class="card" style="width:min(1040px,100%)">
         <div class="bar"><span>Readable JSON</span><div class="track"><div class="fill" style="--value:100%"></div></div><strong>100%</strong></div>
-        <div class="bar"><span>Followed every rule - before</span><div class="track"><div class="fill" style="--value:50%"></div></div><strong>50.0%</strong></div>
-        <div class="bar"><span>Followed every rule - after</span><div class="track"><div class="fill" style="--value:82.5%"></div></div><strong>82.5%</strong></div>
+        <div class="bar"><span>Passed every check - before</span><div class="track"><div class="fill" style="--value:50%"></div></div><strong>50.0%</strong></div>
+        <div class="bar"><span>Passed every check - after</span><div class="track"><div class="fill" style="--value:82.5%"></div></div><strong>82.5%</strong></div>
         <div class="bar"><span>Good final advice</span><div class="track"><div class="fill" style="--value:97.5%"></div></div><strong>39/40</strong></div>
       </div>
-      <p class="note">The 39/40 score uses the corrected grading rules. Two original expected answers were wrong, so both the original and corrected scores are documented.</p>
+      <p class="note">Combining related warnings is expected and does not lower this score. A run fails when it loses a warning or combines warnings that need different decisions. The 39/40 score uses corrected grading rules because two original expected answers were wrong.</p>
     </section>
 
     <section class="slide">
@@ -396,20 +396,11 @@
       <p class="lead">The answer remains readable by software, but repeated runs may group warnings or explain the evidence differently. A future pipeline should not expect identical wording every time.</p>
     </section>
 
-    <section class="slide">
-      <p class="eyebrow">ADO integration</p>
-      <h2>Copying the file to ADO does not make PRAssistant use it.</h2>
-      <div class="grid two">
-        <article class="card"><h3>What mirroring does</h3><p>It copies the skill file into another repository. It does not tell PRAssistant to read that file.</p></article>
-        <article class="card"><h3>What must change</h3><p>The PRAssistant pipeline must load the skill, give it the changed policy and linter results, and use its answer to create comments.</p></article>
-      </div>
-      <p class="note">The likely place to add this is the Policy repository's PRBuiltInPolicy_Linter pipeline.</p>
-    </section>
   </main>
 
   <footer class="chrome">
     <div class="progress"><span id="progress"></span></div>
-    <div class="counter"><span id="current">01</span> / <span id="total">12</span></div>
+    <div class="counter"><span id="current">01</span> / <span id="total">11</span></div>
     <div class="controls">
       <button id="prev" aria-label="Previous slide">&larr;</button>
       <button id="next" aria-label="Next slide">&rarr;</button>
@@ -427,7 +418,11 @@
 
     function show(next) {
       index = Math.max(0, Math.min(slides.length - 1, next));
-      slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+      slides.forEach((slide, i) => {
+        const active = i === index;
+        slide.classList.toggle("active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+      });
       current.textContent = String(index + 1).padStart(2, "0");
       progress.style.width = `${((index + 1) / slides.length) * 100}%`;
       history.replaceState(null, "", `#${index + 1}`);
