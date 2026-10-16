@@ -1,0 +1,109 @@
+{
+  "namespace": "Microsoft.IoTSecurity",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "alertTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "defenderSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "licenseSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/alertSuppressionRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/alerts/learn"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/alerts/pcaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/alerts/violations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/devices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/recommendations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deviceGroups/vulnerabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/endpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/inventoryNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/remoteConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sensors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sites/inventoryNetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sites/sensors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/sites/sensors/backups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "onPremiseSensors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recommendationTypes"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "sensors"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "sites"
+    }
+  ]
+}

@@ -1,0 +1,1383 @@
+{
+  "namespace": "Microsoft.SecurityInsights",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.displayNamesExcludeFilter",
+          "defaultPath": "properties.displayNamesExcludeFilter"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.displayNamesExcludeFilter[*]",
+          "defaultPath": "properties.displayNamesExcludeFilter[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.displayNamesFilter",
+          "defaultPath": "properties.displayNamesFilter"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.displayNamesFilter[*]",
+          "defaultPath": "properties.displayNamesFilter[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.productFilter",
+          "defaultPath": "properties.productFilter"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.severitiesFilter",
+          "defaultPath": "properties.severitiesFilter"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/MicrosoftSecurityIncidentCreation.severitiesFilter[*]",
+          "defaultPath": "properties.severitiesFilter[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.alertRuleTemplateName",
+          "defaultPath": "properties.alertRuleTemplateName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.eventGroupingSettings",
+          "defaultPath": "properties.eventGroupingSettings"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.eventGroupingSettings.aggregationKind",
+          "defaultPath": "properties.eventGroupingSettings.aggregationKind"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration",
+          "defaultPath": "properties.incidentConfiguration"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.createIncident",
+          "defaultPath": "properties.incidentConfiguration.createIncident"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration.enabled",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration.enabled"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration.entitiesMatchingMethod",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration.entitiesMatchingMethod"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration.groupByEntities",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration.groupByEntities"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration.groupByEntities[*]",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration.groupByEntities[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration.lookbackDuration",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration.lookbackDuration"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.incidentConfiguration.groupingConfiguration.reopenClosedIncident",
+          "defaultPath": "properties.incidentConfiguration.groupingConfiguration.reopenClosedIncident"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.lastModifiedUtc",
+          "defaultPath": "properties.lastModifiedUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.query",
+          "defaultPath": "properties.query"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.queryFrequency",
+          "defaultPath": "properties.queryFrequency"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.queryPeriod",
+          "defaultPath": "properties.queryPeriod"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.severity",
+          "defaultPath": "properties.severity"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.suppressionDuration",
+          "defaultPath": "properties.suppressionDuration"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.suppressionEnabled",
+          "defaultPath": "properties.suppressionEnabled"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.tactics",
+          "defaultPath": "properties.tactics"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.tactics[*]",
+          "defaultPath": "properties.tactics[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.triggerOperator",
+          "defaultPath": "properties.triggerOperator"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/Scheduled.triggerThreshold",
+          "defaultPath": "properties.triggerThreshold"
+        }
+      ],
+      "resourceType": "alertRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/actions/logicAppResourceId",
+          "defaultPath": "properties.logicAppResourceId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/alertRules/actions/workflowId",
+          "defaultPath": "properties.workflowId"
+        }
+      ],
+      "resourceType": "alertRules/actions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions",
+          "defaultPath": "properties.actions"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*]",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].actionType",
+          "defaultPath": "properties.actions[*].actionType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration",
+          "defaultPath": "properties.actions[*].actionConfiguration"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.classification",
+          "defaultPath": "properties.actions[*].actionConfiguration.classification"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.classificationComment",
+          "defaultPath": "properties.actions[*].actionConfiguration.classificationComment"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.classificationReason",
+          "defaultPath": "properties.actions[*].actionConfiguration.classificationReason"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.labels",
+          "defaultPath": "properties.actions[*].actionConfiguration.labels"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.labels[*]",
+          "defaultPath": "properties.actions[*].actionConfiguration.labels[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.labels[*].labelName",
+          "defaultPath": "properties.actions[*].actionConfiguration.labels[*].labelName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.labels[*].labelType",
+          "defaultPath": "properties.actions[*].actionConfiguration.labels[*].labelType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.owner",
+          "defaultPath": "properties.actions[*].actionConfiguration.owner"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.owner.assignedTo",
+          "defaultPath": "properties.actions[*].actionConfiguration.owner.assignedTo"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.owner.email",
+          "defaultPath": "properties.actions[*].actionConfiguration.owner.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.owner.objectId",
+          "defaultPath": "properties.actions[*].actionConfiguration.owner.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.owner.userPrincipalName",
+          "defaultPath": "properties.actions[*].actionConfiguration.owner.userPrincipalName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.severity",
+          "defaultPath": "properties.actions[*].actionConfiguration.severity"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].ModifyProperties.actionConfiguration.status",
+          "defaultPath": "properties.actions[*].actionConfiguration.status"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].order",
+          "defaultPath": "properties.actions[*].order"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].RunPlaybook.actionConfiguration.logicAppResourceId",
+          "defaultPath": "properties.actions[*].actionConfiguration.logicAppResourceId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/actions[*].RunPlaybook.actionConfiguration.tenantId",
+          "defaultPath": "properties.actions[*].actionConfiguration.tenantId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/createdBy.email",
+          "defaultPath": "properties.createdBy.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/createdBy.name",
+          "defaultPath": "properties.createdBy.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/createdBy.objectId",
+          "defaultPath": "properties.createdBy.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/createdBy.userPrincipalName",
+          "defaultPath": "properties.createdBy.userPrincipalName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/createdTimeUtc",
+          "defaultPath": "properties.createdTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/lastModifiedBy",
+          "defaultPath": "properties.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/lastModifiedBy.email",
+          "defaultPath": "properties.lastModifiedBy.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/lastModifiedBy.name",
+          "defaultPath": "properties.lastModifiedBy.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/lastModifiedBy.objectId",
+          "defaultPath": "properties.lastModifiedBy.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/lastModifiedBy.userPrincipalName",
+          "defaultPath": "properties.lastModifiedBy.userPrincipalName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/lastModifiedTimeUtc",
+          "defaultPath": "properties.lastModifiedTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/order",
+          "defaultPath": "properties.order"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic",
+          "defaultPath": "properties.triggeringLogic"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions",
+          "defaultPath": "properties.triggeringLogic.conditions"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*]",
+          "defaultPath": "properties.triggeringLogic.conditions[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*].conditionType",
+          "defaultPath": "properties.triggeringLogic.conditions[*].conditionType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*].Property.conditionProperties",
+          "defaultPath": "properties.triggeringLogic.conditions[*].conditionProperties"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*].Property.conditionProperties.operator",
+          "defaultPath": "properties.triggeringLogic.conditions[*].conditionProperties.operator"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*].Property.conditionProperties.propertyName",
+          "defaultPath": "properties.triggeringLogic.conditions[*].conditionProperties.propertyName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*].Property.conditionProperties.propertyValues",
+          "defaultPath": "properties.triggeringLogic.conditions[*].conditionProperties.propertyValues"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.conditions[*].Property.conditionProperties.propertyValues[*]",
+          "defaultPath": "properties.triggeringLogic.conditions[*].conditionProperties.propertyValues[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.expirationTimeUtc",
+          "defaultPath": "properties.triggeringLogic.expirationTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.isEnabled",
+          "defaultPath": "properties.triggeringLogic.isEnabled"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.triggersOn",
+          "defaultPath": "properties.triggeringLogic.triggersOn"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/automationRules/triggeringLogic.triggersWhen",
+          "defaultPath": "properties.triggeringLogic.triggersWhen"
+        }
+      ],
+      "resourceType": "automationRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/createdBy.email",
+          "defaultPath": "properties.createdBy.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/createdBy.name",
+          "defaultPath": "properties.createdBy.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/createdBy.objectId",
+          "defaultPath": "properties.createdBy.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/eventTime",
+          "defaultPath": "properties.eventTime"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/incidentInfo",
+          "defaultPath": "properties.incidentInfo"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/incidentInfo.incidentId",
+          "defaultPath": "properties.incidentInfo.incidentId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/incidentInfo.relationName",
+          "defaultPath": "properties.incidentInfo.relationName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/incidentInfo.severity",
+          "defaultPath": "properties.incidentInfo.severity"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/incidentInfo.title",
+          "defaultPath": "properties.incidentInfo.title"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/labels[*]",
+          "defaultPath": "properties.labels[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/notes",
+          "defaultPath": "properties.notes"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/query",
+          "defaultPath": "properties.query"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/queryEndTime",
+          "defaultPath": "properties.queryEndTime"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/queryResult",
+          "defaultPath": "properties.queryResult"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/queryStartTime",
+          "defaultPath": "properties.queryStartTime"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/updated",
+          "defaultPath": "properties.updated"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/updatedBy.email",
+          "defaultPath": "properties.updatedBy.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/updatedBy.name",
+          "defaultPath": "properties.updatedBy.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/updatedBy.objectId",
+          "defaultPath": "properties.updatedBy.objectId"
+        }
+      ],
+      "resourceType": "bookmarks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/bookmarkId",
+          "defaultPath": "properties.bookmarkId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/caseIdentifier",
+          "defaultPath": "properties.caseIdentifier"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/caseSeverity",
+          "defaultPath": "properties.caseSeverity"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/caseTitle",
+          "defaultPath": "properties.caseTitle"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/relatedResourceId",
+          "defaultPath": "properties.relatedResourceId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/relatedResourceKind",
+          "defaultPath": "properties.relatedResourceKind"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/relatedResourceName",
+          "defaultPath": "properties.relatedResourceName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/relatedResourceType",
+          "defaultPath": "properties.relatedResourceType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/bookmarks/relations/relationName",
+          "defaultPath": "properties.relationName"
+        }
+      ],
+      "resourceType": "bookmarks/relations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/cases/caseNumber",
+          "defaultPath": "properties.caseNumber"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/closedReasonText",
+          "defaultPath": "properties.closedReasonText"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/closeReason",
+          "defaultPath": "properties.closeReason"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/createdTimeUtc",
+          "defaultPath": "properties.createdTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/endTimeUtc",
+          "defaultPath": "properties.endTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/labels[*]",
+          "defaultPath": "properties.labels[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/lastComment",
+          "defaultPath": "properties.lastComment"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/lastUpdatedTimeUtc",
+          "defaultPath": "properties.lastUpdatedTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/metrics",
+          "defaultPath": "properties.metrics"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/owner",
+          "defaultPath": "properties.owner"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/owner.email",
+          "defaultPath": "properties.owner.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/owner.name",
+          "defaultPath": "properties.owner.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/owner.objectId",
+          "defaultPath": "properties.owner.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relatedAlertIds",
+          "defaultPath": "properties.relatedAlertIds"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relatedAlertIds[*]",
+          "defaultPath": "properties.relatedAlertIds[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relatedAlertProductNames",
+          "defaultPath": "properties.relatedAlertProductNames"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relatedAlertProductNames[*]",
+          "defaultPath": "properties.relatedAlertProductNames[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relations.bookmarkId",
+          "defaultPath": "properties.bookmarkId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relations.bookmarkName",
+          "defaultPath": "properties.bookmarkName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relations.caseIdentifier",
+          "defaultPath": "properties.caseIdentifier"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/relations.relationName",
+          "defaultPath": "properties.relationName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/severity",
+          "defaultPath": "properties.severity"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/startTimeUtc",
+          "defaultPath": "properties.startTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/tactics",
+          "defaultPath": "properties.tactics"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/tactics[*]",
+          "defaultPath": "properties.tactics[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/title",
+          "defaultPath": "properties.title"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/totalComments",
+          "defaultPath": "properties.totalComments"
+        }
+      ],
+      "resourceType": "cases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/cases/comments/createdTimeUtc",
+          "defaultPath": "properties.createdTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/comments/message",
+          "defaultPath": "properties.message"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/comments/userInfo",
+          "defaultPath": "properties.userInfo"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/comments/userInfo.email",
+          "defaultPath": "properties.userInfo.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/comments/userInfo.name",
+          "defaultPath": "properties.userInfo.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/cases/comments/userInfo.objectId",
+          "defaultPath": "properties.userInfo.objectId"
+        }
+      ],
+      "resourceType": "cases/comments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/AmazonWebServicesCloudTrail.awsRoleArn",
+          "defaultPath": "properties.awsRoleArn"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/AmazonWebServicesCloudTrail.dataTypes.logs",
+          "defaultPath": "properties.dataTypes.logs"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/AmazonWebServicesCloudTrail.dataTypes.logs.state",
+          "defaultPath": "properties.dataTypes.logs.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/AzureSecurityCenter.subscriptionId",
+          "defaultPath": "properties.subscriptionId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Dynamics365.dataTypes.dynamics365CdsActivities",
+          "defaultPath": "properties.dataTypes.dynamics365CdsActivities"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Dynamics365.dataTypes.dynamics365CdsActivities.state",
+          "defaultPath": "properties.dataTypes.dynamics365CdsActivities.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftCloudAppSecurity.dataTypes.discoveryLogs",
+          "defaultPath": "properties.dataTypes.discoveryLogs"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftCloudAppSecurity.dataTypes.discoveryLogs.state",
+          "defaultPath": "properties.dataTypes.discoveryLogs.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderAdvancedThreatProtection.dataTypes.alerts",
+          "defaultPath": "properties.dataTypes.alerts"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftDefenderAdvancedThreatProtection.dataTypes.alerts.state",
+          "defaultPath": "properties.dataTypes.alerts.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatIntelligence.dataTypes.bingSafetyPhishingURL",
+          "defaultPath": "properties.dataTypes.bingSafetyPhishingURL"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatIntelligence.dataTypes.bingSafetyPhishingURL.lookbackPeriod",
+          "defaultPath": "properties.dataTypes.bingSafetyPhishingURL.lookbackPeriod"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatIntelligence.dataTypes.bingSafetyPhishingURL.state",
+          "defaultPath": "properties.dataTypes.bingSafetyPhishingURL.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatIntelligence.dataTypes.microsoftEmergingThreatFeed",
+          "defaultPath": "properties.dataTypes.microsoftEmergingThreatFeed"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatIntelligence.dataTypes.microsoftEmergingThreatFeed.lookbackPeriod",
+          "defaultPath": "properties.dataTypes.microsoftEmergingThreatFeed.lookbackPeriod"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatIntelligence.dataTypes.microsoftEmergingThreatFeed.state",
+          "defaultPath": "properties.dataTypes.microsoftEmergingThreatFeed.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatProtection.dataTypes.incidents",
+          "defaultPath": "properties.dataTypes.incidents"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/MicrosoftThreatProtection.dataTypes.incidents.state",
+          "defaultPath": "properties.dataTypes.incidents.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Office365.dataTypes.exchange",
+          "defaultPath": "properties.dataTypes.exchange"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Office365.dataTypes.exchange.state",
+          "defaultPath": "properties.dataTypes.exchange.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Office365.dataTypes.sharePoint",
+          "defaultPath": "properties.dataTypes.sharePoint"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Office365.dataTypes.sharePoint.state",
+          "defaultPath": "properties.dataTypes.sharePoint.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Office365.dataTypes.teams",
+          "defaultPath": "properties.dataTypes.teams"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/Office365.dataTypes.teams.state",
+          "defaultPath": "properties.dataTypes.teams.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/OfficeATP.dataTypes.alerts",
+          "defaultPath": "properties.dataTypes.alerts"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/OfficeATP.dataTypes.alerts.state",
+          "defaultPath": "properties.dataTypes.alerts.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence.dataTypes",
+          "defaultPath": "properties.dataTypes"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence.dataTypes.indicators",
+          "defaultPath": "properties.dataTypes.indicators"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence.dataTypes.indicators.state",
+          "defaultPath": "properties.dataTypes.indicators.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence.tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligence.tipLookbackPeriod",
+          "defaultPath": "properties.tipLookbackPeriod"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.collectionId",
+          "defaultPath": "properties.collectionId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.dataTypes",
+          "defaultPath": "properties.dataTypes"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.dataTypes.taxiiClient",
+          "defaultPath": "properties.dataTypes.taxiiClient"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.dataTypes.taxiiClient.state",
+          "defaultPath": "properties.dataTypes.taxiiClient.state"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.password",
+          "defaultPath": "properties.password"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.pollingFrequency",
+          "defaultPath": "properties.pollingFrequency"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.taxiiLookbackPeriod",
+          "defaultPath": "properties.taxiiLookbackPeriod"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.taxiiServer",
+          "defaultPath": "properties.taxiiServer"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.userName",
+          "defaultPath": "properties.userName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/dataConnectors/ThreatIntelligenceTaxii.workspaceId",
+          "defaultPath": "properties.workspaceId"
+        }
+      ],
+      "resourceType": "dataConnectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData",
+          "defaultPath": "properties.additionalData"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.alertProductNames",
+          "defaultPath": "properties.additionalData.alertProductNames"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.alertProductNames[*]",
+          "defaultPath": "properties.additionalData.alertProductNames[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.alertsCount",
+          "defaultPath": "properties.additionalData.alertsCount"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.bookmarksCount",
+          "defaultPath": "properties.additionalData.bookmarksCount"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.commentsCount",
+          "defaultPath": "properties.additionalData.commentsCount"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.tactics",
+          "defaultPath": "properties.additionalData.tactics"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/additionalData.tactics[*]",
+          "defaultPath": "properties.additionalData.tactics[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/classification",
+          "defaultPath": "properties.classification"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/classificationComment",
+          "defaultPath": "properties.classificationComment"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/classificationReason",
+          "defaultPath": "properties.classificationReason"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/createdTimeUtc",
+          "defaultPath": "properties.createdTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/firstActivityTimeUtc",
+          "defaultPath": "properties.firstActivityTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/incidentNumber",
+          "defaultPath": "properties.incidentNumber"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/incidentUrl",
+          "defaultPath": "properties.incidentUrl"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/labels[*]",
+          "defaultPath": "properties.labels[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/labels[*].labelName",
+          "defaultPath": "properties.labels[*].labelName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/labels[*].labelType",
+          "defaultPath": "properties.labels[*].labelType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/lastActivityTimeUtc",
+          "defaultPath": "properties.lastActivityTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/lastModifiedTimeUtc",
+          "defaultPath": "properties.lastModifiedTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/owner",
+          "defaultPath": "properties.owner"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/owner.assignedTo",
+          "defaultPath": "properties.owner.assignedTo"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/owner.email",
+          "defaultPath": "properties.owner.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/owner.objectId",
+          "defaultPath": "properties.owner.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/owner.userPrincipalName",
+          "defaultPath": "properties.owner.userPrincipalName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/providerIncidentId",
+          "defaultPath": "properties.providerIncidentId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/providerName",
+          "defaultPath": "properties.providerName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/relatedAnalyticRuleIds",
+          "defaultPath": "properties.relatedAnalyticRuleIds"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/relatedAnalyticRuleIds[*]",
+          "defaultPath": "properties.relatedAnalyticRuleIds[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/severity",
+          "defaultPath": "properties.severity"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/title",
+          "defaultPath": "properties.title"
+        }
+      ],
+      "resourceType": "incidents"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/author",
+          "defaultPath": "properties.author"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/author.email",
+          "defaultPath": "properties.author.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/author.name",
+          "defaultPath": "properties.author.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/author.objectId",
+          "defaultPath": "properties.author.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/author.userPrincipalName",
+          "defaultPath": "properties.author.userPrincipalName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/createdTimeUtc",
+          "defaultPath": "properties.createdTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/lastModifiedTimeUtc",
+          "defaultPath": "properties.lastModifiedTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/comments/message",
+          "defaultPath": "properties.message"
+        }
+      ],
+      "resourceType": "incidents/comments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/incidents/relations/relatedResourceId",
+          "defaultPath": "properties.relatedResourceId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/relations/relatedResourceKind",
+          "defaultPath": "properties.relatedResourceKind"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/relations/relatedResourceName",
+          "defaultPath": "properties.relatedResourceName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/incidents/relations/relatedResourceType",
+          "defaultPath": "properties.relatedResourceType"
+        }
+      ],
+      "resourceType": "incidents/relations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/settings/EntityAnalytics.isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/settings/Ueba.dataSources",
+          "defaultPath": "properties.dataSources"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/settings/Ueba.dataSources[*]",
+          "defaultPath": "properties.dataSources[*]"
+        }
+      ],
+      "resourceType": "settings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.additionalData",
+          "defaultPath": "properties.additionalData"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.confidence",
+          "defaultPath": "properties.confidence"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.createdByRef",
+          "defaultPath": "properties.createdByRef"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.defanged",
+          "defaultPath": "properties.defanged"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.extensions",
+          "defaultPath": "properties.extensions"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalId",
+          "defaultPath": "properties.externalId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalLastUpdatedTimeUtc",
+          "defaultPath": "properties.externalLastUpdatedTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences",
+          "defaultPath": "properties.externalReferences"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences[*]",
+          "defaultPath": "properties.externalReferences[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences[*].description",
+          "defaultPath": "properties.externalReferences[*].description"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences[*].externalId",
+          "defaultPath": "properties.externalReferences[*].externalId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences[*].hashes",
+          "defaultPath": "properties.externalReferences[*].hashes"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences[*].sourceName",
+          "defaultPath": "properties.externalReferences[*].sourceName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.externalReferences[*].url",
+          "defaultPath": "properties.externalReferences[*].url"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.granularMarkings",
+          "defaultPath": "properties.granularMarkings"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.granularMarkings[*]",
+          "defaultPath": "properties.granularMarkings[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.granularMarkings[*].language",
+          "defaultPath": "properties.granularMarkings[*].language"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.granularMarkings[*].markingRef",
+          "defaultPath": "properties.granularMarkings[*].markingRef"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.granularMarkings[*].selectors",
+          "defaultPath": "properties.granularMarkings[*].selectors"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.granularMarkings[*].selectors[*]",
+          "defaultPath": "properties.granularMarkings[*].selectors[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.indicatorTypes",
+          "defaultPath": "properties.indicatorTypes"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.indicatorTypes[*]",
+          "defaultPath": "properties.indicatorTypes[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.killChainPhases",
+          "defaultPath": "properties.killChainPhases"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.killChainPhases[*]",
+          "defaultPath": "properties.killChainPhases[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.killChainPhases[*].killChainName",
+          "defaultPath": "properties.killChainPhases[*].killChainName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.killChainPhases[*].phaseName",
+          "defaultPath": "properties.killChainPhases[*].phaseName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.labels[*]",
+          "defaultPath": "properties.labels[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.language",
+          "defaultPath": "properties.language"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.lastUpdatedTimeUtc",
+          "defaultPath": "properties.lastUpdatedTimeUtc"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.modified",
+          "defaultPath": "properties.modified"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.objectMarkingRefs",
+          "defaultPath": "properties.objectMarkingRefs"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.objectMarkingRefs[*]",
+          "defaultPath": "properties.objectMarkingRefs[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern",
+          "defaultPath": "properties.parsedPattern"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern[*]",
+          "defaultPath": "properties.parsedPattern[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern[*].patternTypeKey",
+          "defaultPath": "properties.parsedPattern[*].patternTypeKey"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern[*].patternTypeValues",
+          "defaultPath": "properties.parsedPattern[*].patternTypeValues"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern[*].patternTypeValues[*]",
+          "defaultPath": "properties.parsedPattern[*].patternTypeValues[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern[*].patternTypeValues[*].value",
+          "defaultPath": "properties.parsedPattern[*].patternTypeValues[*].value"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.parsedPattern[*].patternTypeValues[*].valueType",
+          "defaultPath": "properties.parsedPattern[*].patternTypeValues[*].valueType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.pattern",
+          "defaultPath": "properties.pattern"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.patternType",
+          "defaultPath": "properties.patternType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.patternVersion",
+          "defaultPath": "properties.patternVersion"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.revoked",
+          "defaultPath": "properties.revoked"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.threatIntelligenceTags",
+          "defaultPath": "properties.threatIntelligenceTags"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.threatIntelligenceTags[*]",
+          "defaultPath": "properties.threatIntelligenceTags[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.threatTypes",
+          "defaultPath": "properties.threatTypes"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.threatTypes[*]",
+          "defaultPath": "properties.threatTypes[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.validFrom",
+          "defaultPath": "properties.validFrom"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/threatIntelligence/indicators/indicator.validUntil",
+          "defaultPath": "properties.validUntil"
+        }
+      ],
+      "resourceType": "threatintelligence/indicators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/contentType",
+          "defaultPath": "properties.contentType"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/createdBy.email",
+          "defaultPath": "properties.createdBy.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/createdBy.name",
+          "defaultPath": "properties.createdBy.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/createdBy.objectId",
+          "defaultPath": "properties.createdBy.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/defaultDuration",
+          "defaultPath": "properties.defaultDuration"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/isDeleted",
+          "defaultPath": "properties.isDeleted"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/itemsSearchKey",
+          "defaultPath": "properties.itemsSearchKey"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/labels",
+          "defaultPath": "properties.labels"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/labels[*]",
+          "defaultPath": "properties.labels[*]"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/numberOfLinesToSkip",
+          "defaultPath": "properties.numberOfLinesToSkip"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/provider",
+          "defaultPath": "properties.provider"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/rawContent",
+          "defaultPath": "properties.rawContent"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/updated",
+          "defaultPath": "properties.updated"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/updatedBy",
+          "defaultPath": "properties.updatedBy"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/updatedBy.email",
+          "defaultPath": "properties.updatedBy.email"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/updatedBy.name",
+          "defaultPath": "properties.updatedBy.name"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/updatedBy.objectId",
+          "defaultPath": "properties.updatedBy.objectId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/uploadStatus",
+          "defaultPath": "properties.uploadStatus"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/watchlistAlias",
+          "defaultPath": "properties.watchlistAlias"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/watchlistId",
+          "defaultPath": "properties.watchlistId"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/watchlistItemsCount",
+          "defaultPath": "properties.watchlistItemsCount"
+        },
+        {
+          "name": "Microsoft.SecurityInsights/watchlists/watchlistType",
+          "defaultPath": "properties.watchlistType"
+        }
+      ],
+      "resourceType": "watchlists"
+    }
+  ]
+}

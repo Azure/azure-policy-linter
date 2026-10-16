@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.ErrorInsights",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "errorClusters"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "errors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

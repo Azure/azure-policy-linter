@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.BillingBenefits",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applicableConditionalCredits"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applicableContributors"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applicableCredits"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applicableDiscounts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applicableMaccs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "calculateMigrationCost"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "catalogGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "conditionalCredits"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "credits"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "credits/sources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "credits/transactions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "discounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "freeServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "incentiveSchedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "incentiveSchedules/milestones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listSellerResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "maccs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "maccs/contributors"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "notifications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "products/listApplicableSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrderAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "savingsPlanOrderAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "savingsPlanOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "savingsPlanOrders/return"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "savingsPlanOrders/savingsPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "savingsPlans"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "spendPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "spendPlans/terms"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validate"
+    }
+  ]
+}

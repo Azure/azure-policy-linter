@@ -39,12 +39,16 @@ Things to know about parsing: it's eager (every child is built when its parent i
 
 A rule's `Evaluate` is called with the typed expression node it targets, plus a `LinterContext` (`src/PolicyLinter.Core/Rules/Contracts/LinterContext.cs`):
 
-- `ResourceTypeMetadata` (`ITypeMetadata`) - `TryGetAliasPropertyMetadata(alias, out ResourcePropertyMetadata[])`. The real implementation walks an offline metadata snapshot via `TypeMetadata` (`src/PolicyLinter.Core/Metadata/TypeMetadata.cs`).
+- `ResourceTypeMetadata` (`ITypeMetadata`) - alias property metadata through `TryGetAliasPropertyMetadata`, and resource type capabilities through `TryGetResourceTypeCapabilities`. Implemented by `TypeMetadata` (`src/PolicyLinter.Core/Metadata/TypeMetadata.cs`).
 - `Parameters` - the policy's parameters as an immutable dictionary, populated during parsing.
 - `ExternalEvaluationEnforcementSettings` - the parsed external-evaluation block if the policy has one.
 - `FilePath` - caller-supplied. Optional; if non-null the engine validates it's absolute. Rules that consume it must handle null.
 
 Resolved field references in `Reference.ResourcePropertyMetadata` are pre-populated at parse time, so a rule asking "what resource type and properties does this alias map to" doesn't have to call the metadata service itself.
+
+### Resource types and aliases
+
+The linter embeds a snapshot of available resource types and their aliases from the public cloud in `src/PolicyLinter.Core/ResourceTypesAndAliases/`. [Refresh instructions](../tools/ResourceTypesAndAliases/README.md).
 
 ## The rule contract
 

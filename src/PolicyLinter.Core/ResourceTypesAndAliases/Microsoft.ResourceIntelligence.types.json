@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.ResourceIntelligence",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateQuery"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

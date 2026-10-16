@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.Search",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkServiceNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "offerings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceHealthMetadata"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "searchServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "searchServices/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "searchServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "searchServices/sharedPrivateLinkResources"
+    }
+  ]
+}

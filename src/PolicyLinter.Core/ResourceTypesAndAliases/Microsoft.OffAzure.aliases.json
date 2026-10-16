@@ -1,0 +1,512 @@
+{
+  "namespace": "Microsoft.OffAzure",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/agentDetails",
+          "defaultPath": "properties.agentDetails"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/agentDetails.id",
+          "defaultPath": "properties.agentDetails.id"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/agentDetails.keyVaultId",
+          "defaultPath": "properties.agentDetails.keyVaultId"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/agentDetails.keyVaultUri",
+          "defaultPath": "properties.agentDetails.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/agentDetails.lastHeartBeatUtc",
+          "defaultPath": "properties.agentDetails.lastHeartBeatUtc"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/agentDetails.version",
+          "defaultPath": "properties.agentDetails.version"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/applianceName",
+          "defaultPath": "properties.applianceName"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/discoverySolutionId",
+          "defaultPath": "properties.discoverySolutionId"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/serviceEndpoint",
+          "defaultPath": "properties.serviceEndpoint"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails",
+          "defaultPath": "properties.servicePrincipalIdentityDetails"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails.aadAuthority",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.aadAuthority"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails.applicationId",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.applicationId"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails.audience",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.audience"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails.objectId",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.objectId"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails.rawCertData",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.rawCertData"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/servicePrincipalIdentityDetails.tenantId",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.tenantId"
+        }
+      ],
+      "resourceType": "HyperVSites"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors",
+          "defaultPath": "properties.errors"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*]",
+          "defaultPath": "properties.errors[*]"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].code",
+          "defaultPath": "properties.errors[*].code"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].id",
+          "defaultPath": "properties.errors[*].id"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].message",
+          "defaultPath": "properties.errors[*].message"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].messageParameters",
+          "defaultPath": "properties.errors[*].messageParameters"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].possibleCauses",
+          "defaultPath": "properties.errors[*].possibleCauses"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].recommendedAction",
+          "defaultPath": "properties.errors[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].severity",
+          "defaultPath": "properties.errors[*].severity"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].source",
+          "defaultPath": "properties.errors[*].source"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/errors[*].summaryMessage",
+          "defaultPath": "properties.errors[*].summaryMessage"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/functionalLevel",
+          "defaultPath": "properties.functionalLevel"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/hostFqdnList",
+          "defaultPath": "properties.hostFqdnList"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/hostFqdnList[*]",
+          "defaultPath": "properties.hostFqdnList[*]"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/runAsAccountId",
+          "defaultPath": "properties.runAsAccountId"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/clusters/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        }
+      ],
+      "resourceType": "HyperVSites/clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors",
+          "defaultPath": "properties.errors"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*]",
+          "defaultPath": "properties.errors[*]"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].code",
+          "defaultPath": "properties.errors[*].code"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].id",
+          "defaultPath": "properties.errors[*].id"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].message",
+          "defaultPath": "properties.errors[*].message"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].messageParameters",
+          "defaultPath": "properties.errors[*].messageParameters"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].possibleCauses",
+          "defaultPath": "properties.errors[*].possibleCauses"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].recommendedAction",
+          "defaultPath": "properties.errors[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].severity",
+          "defaultPath": "properties.errors[*].severity"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].source",
+          "defaultPath": "properties.errors[*].source"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/errors[*].summaryMessage",
+          "defaultPath": "properties.errors[*].summaryMessage"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/runAsAccountId",
+          "defaultPath": "properties.runAsAccountId"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        },
+        {
+          "name": "Microsoft.OffAzure/HyperVSites/hosts/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "HyperVSites/hosts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/MasterSites/allowMultipleSites",
+          "defaultPath": "properties.allowMultipleSites"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/customerStorageAccountArmId",
+          "defaultPath": "properties.customerStorageAccountArmId"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].eTag",
+          "defaultPath": "properties.privateEndpointConnections[*].eTag"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/sites",
+          "defaultPath": "properties.sites"
+        },
+        {
+          "name": "Microsoft.OffAzure/MasterSites/sites[*]",
+          "defaultPath": "properties.sites[*]"
+        }
+      ],
+      "resourceType": "MasterSites"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.OffAzure/masterSites/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "MasterSites/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/agentDetails",
+          "defaultPath": "properties.agentDetails"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/agentDetails.id",
+          "defaultPath": "properties.agentDetails.id"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/agentDetails.keyVaultId",
+          "defaultPath": "properties.agentDetails.keyVaultId"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/agentDetails.keyVaultUri",
+          "defaultPath": "properties.agentDetails.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/agentDetails.lastHeartBeatUtc",
+          "defaultPath": "properties.agentDetails.lastHeartBeatUtc"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/agentDetails.version",
+          "defaultPath": "properties.agentDetails.version"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/applianceName",
+          "defaultPath": "properties.applianceName"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/discoverySolutionId",
+          "defaultPath": "properties.discoverySolutionId"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/serviceEndpoint",
+          "defaultPath": "properties.serviceEndpoint"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails",
+          "defaultPath": "properties.servicePrincipalIdentityDetails"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails.aadAuthority",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.aadAuthority"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails.applicationId",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.applicationId"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails.audience",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.audience"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails.objectId",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.objectId"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails.rawCertData",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.rawCertData"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/servicePrincipalIdentityDetails.tenantId",
+          "defaultPath": "properties.servicePrincipalIdentityDetails.tenantId"
+        }
+      ],
+      "resourceType": "VMwareSites"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/createdTimestamp",
+          "defaultPath": "properties.createdTimestamp"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors",
+          "defaultPath": "properties.errors"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*]",
+          "defaultPath": "properties.errors[*]"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].code",
+          "defaultPath": "properties.errors[*].code"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].id",
+          "defaultPath": "properties.errors[*].id"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].message",
+          "defaultPath": "properties.errors[*].message"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].messageParameters",
+          "defaultPath": "properties.errors[*].messageParameters"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].possibleCauses",
+          "defaultPath": "properties.errors[*].possibleCauses"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].recommendedAction",
+          "defaultPath": "properties.errors[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].severity",
+          "defaultPath": "properties.errors[*].severity"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].source",
+          "defaultPath": "properties.errors[*].source"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/errors[*].summaryMessage",
+          "defaultPath": "properties.errors[*].summaryMessage"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/instanceUuid",
+          "defaultPath": "properties.instanceUuid"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/perfStatisticsLevel",
+          "defaultPath": "properties.perfStatisticsLevel"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/port",
+          "defaultPath": "properties.port"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/runAsAccountId",
+          "defaultPath": "properties.runAsAccountId"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/updatedTimestamp",
+          "defaultPath": "properties.updatedTimestamp"
+        },
+        {
+          "name": "Microsoft.OffAzure/VMwareSites/vCenters/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "VMwareSites/vcenters"
+    }
+  ]
+}

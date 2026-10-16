@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.GCPConnector",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bigQueryDatasets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudFunctions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "computeInstances"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "containerClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locationss"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sqlAdminInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageBuckets"
+    }
+  ]
+}

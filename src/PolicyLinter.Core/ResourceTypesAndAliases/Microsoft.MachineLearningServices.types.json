@@ -1,0 +1,313 @@
+{
+  "namespace": "Microsoft.MachineLearningServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "capacityReservationGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "inferenceModels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availableQuota"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/availableQuota/default"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/computeOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/instancetypeseries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/mfeOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/mfeOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/quotaAndUsage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/quotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/registryOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updatequotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualClusterOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vmsizes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/workspaceOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/codes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/codes/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/components"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/components/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/data"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/data/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/datareferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/datareferences/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/environments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/environments/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/models"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/models/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualclusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/batchEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/batchEndpoints/deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/capabilityhosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/codes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/codes/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/components"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/components/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/computes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/connections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/connections/deployments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/connections/raiBlocklists"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/connections/raiBlocklists/raiBlocklistItems"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/connections/raiPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/data"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/data/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/datasets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/datastores"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/endpoints"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/endpoints/deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/environments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/environments/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/featuresets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/featuresets/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/featurestoreEntities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/featurestoreEntities/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/inferencePools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/inferencePools/endpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/inferencePools/groups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/labelingJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/linkedServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/managednetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/marketplaceSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/models"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/models/versions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/onlineEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/onlineEndpoints/deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/onlineEndpoints/deployments/skus"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/outboundRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/schedules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces/serverlessEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/services"
+    }
+  ]
+}

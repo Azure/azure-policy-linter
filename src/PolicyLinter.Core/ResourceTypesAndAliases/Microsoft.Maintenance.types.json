@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.Maintenance",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "applyUpdates"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "configurationAssignments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "maintenanceConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "maintenanceConfigurations/eventGridFilters"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "maintenancePlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publicMaintenanceConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "scheduledevents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scheduledevents/acknowledge"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "updates"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.DirectoryStore",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "directoryStoreInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "OperationStatuses"
+    }
+  ]
+}

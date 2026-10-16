@@ -1,0 +1,218 @@
+{
+  "namespace": "Microsoft.Consumption",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Consumption/budgets/amount",
+          "defaultPath": "properties.amount"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/category",
+          "defaultPath": "properties.category"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/currentSpend",
+          "defaultPath": "properties.currentSpend"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/currentSpend.amount",
+          "defaultPath": "properties.currentSpend.amount"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/currentSpend.unit",
+          "defaultPath": "properties.currentSpend.unit"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter",
+          "defaultPath": "properties.filter"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and",
+          "defaultPath": "properties.filter.and"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*]",
+          "defaultPath": "properties.filter.and[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].dimensions",
+          "defaultPath": "properties.filter.and[*].dimensions"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].dimensions.name",
+          "defaultPath": "properties.filter.and[*].dimensions.name"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].dimensions.operator",
+          "defaultPath": "properties.filter.and[*].dimensions.operator"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].dimensions.values",
+          "defaultPath": "properties.filter.and[*].dimensions.values"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].dimensions.values[*]",
+          "defaultPath": "properties.filter.and[*].dimensions.values[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].tags",
+          "defaultPath": "properties.filter.and[*].tags"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].tags.name",
+          "defaultPath": "properties.filter.and[*].tags.name"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].tags.operator",
+          "defaultPath": "properties.filter.and[*].tags.operator"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].tags.values",
+          "defaultPath": "properties.filter.and[*].tags.values"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.and[*].tags.values[*]",
+          "defaultPath": "properties.filter.and[*].tags.values[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.dimensions",
+          "defaultPath": "properties.filter.dimensions"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.dimensions.name",
+          "defaultPath": "properties.filter.dimensions.name"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.dimensions.operator",
+          "defaultPath": "properties.filter.dimensions.operator"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.dimensions.values",
+          "defaultPath": "properties.filter.dimensions.values"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.dimensions.values[*]",
+          "defaultPath": "properties.filter.dimensions.values[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not",
+          "defaultPath": "properties.filter.not"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.dimensions",
+          "defaultPath": "properties.filter.not.dimensions"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.dimensions.name",
+          "defaultPath": "properties.filter.not.dimensions.name"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.dimensions.operator",
+          "defaultPath": "properties.filter.not.dimensions.operator"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.dimensions.values",
+          "defaultPath": "properties.filter.not.dimensions.values"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.dimensions.values[*]",
+          "defaultPath": "properties.filter.not.dimensions.values[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.tags",
+          "defaultPath": "properties.filter.not.tags"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.tags.name",
+          "defaultPath": "properties.filter.not.tags.name"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.tags.operator",
+          "defaultPath": "properties.filter.not.tags.operator"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.tags.values",
+          "defaultPath": "properties.filter.not.tags.values"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.not.tags.values[*]",
+          "defaultPath": "properties.filter.not.tags.values[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.tags",
+          "defaultPath": "properties.filter.tags"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.tags.name",
+          "defaultPath": "properties.filter.tags.name"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.tags.operator",
+          "defaultPath": "properties.filter.tags.operator"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.tags.values",
+          "defaultPath": "properties.filter.tags.values"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filter.tags.values[*]",
+          "defaultPath": "properties.filter.tags.values[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters",
+          "defaultPath": "properties.filters"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.meters",
+          "defaultPath": "properties.filters.meters"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.meters[*]",
+          "defaultPath": "properties.filters.meters[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.resourceGroups",
+          "defaultPath": "properties.filters.resourceGroups"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.resourceGroups[*]",
+          "defaultPath": "properties.filters.resourceGroups[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.resources",
+          "defaultPath": "properties.filters.resources"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.resources[*]",
+          "defaultPath": "properties.filters.resources[*]"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/filters.tags",
+          "defaultPath": "properties.filters.tags"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/notifications",
+          "defaultPath": "properties.notifications"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/timeGrain",
+          "defaultPath": "properties.timeGrain"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/timePeriod",
+          "defaultPath": "properties.timePeriod"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/timePeriod.endDate",
+          "defaultPath": "properties.timePeriod.endDate"
+        },
+        {
+          "name": "Microsoft.Consumption/budgets/timePeriod.startDate",
+          "defaultPath": "properties.timePeriod.startDate"
+        }
+      ],
+      "resourceType": "Budgets"
+    }
+  ]
+}

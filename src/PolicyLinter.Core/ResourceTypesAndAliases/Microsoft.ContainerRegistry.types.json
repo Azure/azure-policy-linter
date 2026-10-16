@@ -1,0 +1,209 @@
+{
+  "namespace": "Microsoft.ContainerRegistry",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/authorize"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registries/agentPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/agentPools/listQueueStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/agentPoolsOperationResults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "registries/buildTasks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "registries/buildTasks/steps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/cacheRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/connectedRegistries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/connectedRegistries/deactivate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/connectedRegistries/resync"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/credentialSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/exportPipelines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/generateCredentials"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/importImage"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/importPipelines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/listBuildSourceUploadUrl"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/listCredentials"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/listPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/listUsages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/packages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/packages/archives"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/pipelineRuns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/privateEndpointConnectionProxies/validate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/regenerateCredential"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registries/replications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/runs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/runs/cancel"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/runs/listLogSasUrl"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/scheduleRun"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/scopeMaps"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/taskRuns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/taskRuns/listDetails"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registries/tasks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/tasks/listDetails"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/tokens"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/updatePolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "registries/webhooks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/webhooks/getCallbackConfig"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/webhooks/listEvents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registries/webhooks/ping"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "swagger"
+    }
+  ]
+}

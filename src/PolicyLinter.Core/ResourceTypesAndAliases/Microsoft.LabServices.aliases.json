@@ -1,0 +1,1007 @@
+{
+  "namespace": "Microsoft.LabServices",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labaccounts/enabledRegionSelection",
+          "defaultPath": "properties.enabledRegionSelection"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult",
+          "defaultPath": "properties.latestOperationResult"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult.errorCode",
+          "defaultPath": "properties.latestOperationResult.errorCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult.errorMessage",
+          "defaultPath": "properties.latestOperationResult.errorMessage"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult.httpMethod",
+          "defaultPath": "properties.latestOperationResult.httpMethod"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult.operationUrl",
+          "defaultPath": "properties.latestOperationResult.operationUrl"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult.requestUri",
+          "defaultPath": "properties.latestOperationResult.requestUri"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/latestOperationResult.status",
+          "defaultPath": "properties.latestOperationResult.status"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration",
+          "defaultPath": "properties.sizeConfiguration"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*]",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*]"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].maxPrice",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].maxPrice"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].minMemory",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].minMemory"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].minNumberOfCores",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].minNumberOfCores"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].name",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].name"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].vmSizes",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].vmSizes"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].vmSizes[*]",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].vmSizes[*]"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].vmSizes[*].computeSize",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].vmSizes[*].computeSize"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].vmSizes[*].memory",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].vmSizes[*].memory"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].vmSizes[*].numberOfCores",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].vmSizes[*].numberOfCores"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/sizeConfiguration.environmentSizes[*].vmSizes[*].price",
+          "defaultPath": "properties.sizeConfiguration.environmentSizes[*].vmSizes[*].price"
+        },
+        {
+          "name": "Microsoft.LabServices/labaccounts/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labaccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/author",
+          "defaultPath": "properties.author"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/icon",
+          "defaultPath": "properties.icon"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/imageReference",
+          "defaultPath": "properties.imageReference"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/imageReference.offer",
+          "defaultPath": "properties.imageReference.offer"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/imageReference.osType",
+          "defaultPath": "properties.imageReference.osType"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/imageReference.publisher",
+          "defaultPath": "properties.imageReference.publisher"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/imageReference.sku",
+          "defaultPath": "properties.imageReference.sku"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/imageReference.version",
+          "defaultPath": "properties.imageReference.version"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/isOverride",
+          "defaultPath": "properties.isOverride"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/isPlanAuthorized",
+          "defaultPath": "properties.isPlanAuthorized"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult",
+          "defaultPath": "properties.latestOperationResult"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult.errorCode",
+          "defaultPath": "properties.latestOperationResult.errorCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult.errorMessage",
+          "defaultPath": "properties.latestOperationResult.errorMessage"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult.httpMethod",
+          "defaultPath": "properties.latestOperationResult.httpMethod"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult.operationUrl",
+          "defaultPath": "properties.latestOperationResult.operationUrl"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult.requestUri",
+          "defaultPath": "properties.latestOperationResult.requestUri"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/latestOperationResult.status",
+          "defaultPath": "properties.latestOperationResult.status"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/planId",
+          "defaultPath": "properties.planId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/galleryImages/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labAccounts/galleryImages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/createdByObjectId",
+          "defaultPath": "properties.createdByObjectId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/createdByUserPrincipalName",
+          "defaultPath": "properties.createdByUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/invitationCode",
+          "defaultPath": "properties.invitationCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult",
+          "defaultPath": "properties.latestOperationResult"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult.errorCode",
+          "defaultPath": "properties.latestOperationResult.errorCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult.errorMessage",
+          "defaultPath": "properties.latestOperationResult.errorMessage"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult.httpMethod",
+          "defaultPath": "properties.latestOperationResult.httpMethod"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult.operationUrl",
+          "defaultPath": "properties.latestOperationResult.operationUrl"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult.requestUri",
+          "defaultPath": "properties.latestOperationResult.requestUri"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/latestOperationResult.status",
+          "defaultPath": "properties.latestOperationResult.status"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/maxUsersInLab",
+          "defaultPath": "properties.maxUsersInLab"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/usageQuota",
+          "defaultPath": "properties.usageQuota"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/userAccessMode",
+          "defaultPath": "properties.userAccessMode"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/userQuota",
+          "defaultPath": "properties.userQuota"
+        }
+      ],
+      "resourceType": "labAccounts/labs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/configurationState",
+          "defaultPath": "properties.configurationState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.claimedByUserName",
+          "defaultPath": "properties.claimedByUserName"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.claimedByUserObjectId",
+          "defaultPath": "properties.claimedByUserObjectId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.claimedByUserPrincipalId",
+          "defaultPath": "properties.claimedByUserPrincipalId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.isClaimed",
+          "defaultPath": "properties.isClaimed"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.lastKnownPowerState",
+          "defaultPath": "properties.lastKnownPowerState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.networkInterface",
+          "defaultPath": "properties.networkInterface"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.networkInterface.privateIpAddress",
+          "defaultPath": "properties.networkInterface.privateIpAddress"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.networkInterface.rdpAuthority",
+          "defaultPath": "properties.networkInterface.rdpAuthority"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.networkInterface.sshAuthority",
+          "defaultPath": "properties.networkInterface.sshAuthority"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.networkInterface.username",
+          "defaultPath": "properties.networkInterface.username"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.passwordLastReset",
+          "defaultPath": "properties.passwordLastReset"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.resourceSets",
+          "defaultPath": "properties.resourceSets"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.resourceSets.resourceSettingId",
+          "defaultPath": "properties.resourceSets.resourceSettingId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.resourceSets.vmResourceId",
+          "defaultPath": "properties.resourceSets.vmResourceId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/environments.totalUsage",
+          "defaultPath": "properties.totalUsage"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/lastChanged",
+          "defaultPath": "properties.lastChanged"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/lastPublished",
+          "defaultPath": "properties.lastPublished"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult",
+          "defaultPath": "properties.latestOperationResult"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult.errorCode",
+          "defaultPath": "properties.latestOperationResult.errorCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult.errorMessage",
+          "defaultPath": "properties.latestOperationResult.errorMessage"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult.httpMethod",
+          "defaultPath": "properties.latestOperationResult.httpMethod"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult.operationUrl",
+          "defaultPath": "properties.latestOperationResult.operationUrl"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult.requestUri",
+          "defaultPath": "properties.latestOperationResult.requestUri"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/latestOperationResult.status",
+          "defaultPath": "properties.latestOperationResult.status"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/publishingState",
+          "defaultPath": "properties.publishingState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings",
+          "defaultPath": "properties.resourceSettings"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.cores",
+          "defaultPath": "properties.resourceSettings.cores"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.galleryImageResourceId",
+          "defaultPath": "properties.resourceSettings.galleryImageResourceId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.id",
+          "defaultPath": "properties.resourceSettings.id"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.imageName",
+          "defaultPath": "properties.resourceSettings.imageName"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm",
+          "defaultPath": "properties.resourceSettings.referenceVm"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.password",
+          "defaultPath": "properties.resourceSettings.referenceVm.password"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.userName",
+          "defaultPath": "properties.resourceSettings.referenceVm.userName"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.vmResourceId",
+          "defaultPath": "properties.resourceSettings.referenceVm.vmResourceId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.vmStateDetails",
+          "defaultPath": "properties.resourceSettings.referenceVm.vmStateDetails"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.vmStateDetails.lastKnownPowerState",
+          "defaultPath": "properties.resourceSettings.referenceVm.vmStateDetails.lastKnownPowerState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.vmStateDetails.powerState",
+          "defaultPath": "properties.resourceSettings.referenceVm.vmStateDetails.powerState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.vmStateDetails.rdpAuthority",
+          "defaultPath": "properties.resourceSettings.referenceVm.vmStateDetails.rdpAuthority"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.referenceVm.vmStateDetails.sshAuthority",
+          "defaultPath": "properties.resourceSettings.referenceVm.vmStateDetails.sshAuthority"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/resourceSettings.size",
+          "defaultPath": "properties.resourceSettings.size"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/title",
+          "defaultPath": "properties.title"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/environmentSettings/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labAccounts/labs/environmentSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/email",
+          "defaultPath": "properties.email"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/familyName",
+          "defaultPath": "properties.familyName"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/givenName",
+          "defaultPath": "properties.givenName"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult",
+          "defaultPath": "properties.latestOperationResult"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult.errorCode",
+          "defaultPath": "properties.latestOperationResult.errorCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult.errorMessage",
+          "defaultPath": "properties.latestOperationResult.errorMessage"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult.httpMethod",
+          "defaultPath": "properties.latestOperationResult.httpMethod"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult.operationUrl",
+          "defaultPath": "properties.latestOperationResult.operationUrl"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult.requestUri",
+          "defaultPath": "properties.latestOperationResult.requestUri"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/latestOperationResult.status",
+          "defaultPath": "properties.latestOperationResult.status"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/totalUsage",
+          "defaultPath": "properties.totalUsage"
+        },
+        {
+          "name": "Microsoft.LabServices/labAccounts/labs/users/uniqueIdentifier",
+          "defaultPath": "properties.uniqueIdentifier"
+        }
+      ],
+      "resourceType": "labAccounts/labs/users"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labPlans/allowedRegions",
+          "defaultPath": "properties.allowedRegions"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/allowedRegions[*]",
+          "defaultPath": "properties.allowedRegions[*]"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile",
+          "defaultPath": "properties.defaultAutoShutdownProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile.disconnectDelay",
+          "defaultPath": "properties.defaultAutoShutdownProfile.disconnectDelay"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile.idleDelay",
+          "defaultPath": "properties.defaultAutoShutdownProfile.idleDelay"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile.noConnectDelay",
+          "defaultPath": "properties.defaultAutoShutdownProfile.noConnectDelay"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile.shutdownOnDisconnect",
+          "defaultPath": "properties.defaultAutoShutdownProfile.shutdownOnDisconnect"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile.shutdownOnIdle",
+          "defaultPath": "properties.defaultAutoShutdownProfile.shutdownOnIdle"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultAutoShutdownProfile.shutdownWhenNotConnected",
+          "defaultPath": "properties.defaultAutoShutdownProfile.shutdownWhenNotConnected"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultConnectionProfile",
+          "defaultPath": "properties.defaultConnectionProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultConnectionProfile.clientRdpAccess",
+          "defaultPath": "properties.defaultConnectionProfile.clientRdpAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultConnectionProfile.clientSshAccess",
+          "defaultPath": "properties.defaultConnectionProfile.clientSshAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultConnectionProfile.webRdpAccess",
+          "defaultPath": "properties.defaultConnectionProfile.webRdpAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultConnectionProfile.webSshAccess",
+          "defaultPath": "properties.defaultConnectionProfile.webSshAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultNetworkProfile",
+          "defaultPath": "properties.defaultNetworkProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/defaultNetworkProfile.subnetId",
+          "defaultPath": "properties.defaultNetworkProfile.subnetId"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/linkedLmsInstance",
+          "defaultPath": "properties.linkedLmsInstance"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/sharedGalleryId",
+          "defaultPath": "properties.sharedGalleryId"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/supportInfo",
+          "defaultPath": "properties.supportInfo"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/supportInfo.email",
+          "defaultPath": "properties.supportInfo.email"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/supportInfo.instructions",
+          "defaultPath": "properties.supportInfo.instructions"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/supportInfo.phone",
+          "defaultPath": "properties.supportInfo.phone"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/supportInfo.url",
+          "defaultPath": "properties.supportInfo.url"
+        }
+      ],
+      "resourceType": "labplans"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labPlans/images/author",
+          "defaultPath": "properties.author"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/availableRegions",
+          "defaultPath": "properties.availableRegions"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/availableRegions[*]",
+          "defaultPath": "properties.availableRegions[*]"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/enabledState",
+          "defaultPath": "properties.enabledState"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/iconUrl",
+          "defaultPath": "properties.iconUrl"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/offer",
+          "defaultPath": "properties.offer"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/osState",
+          "defaultPath": "properties.osState"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/plan",
+          "defaultPath": "properties.plan"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/publisher",
+          "defaultPath": "properties.publisher"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/sharedGalleryId",
+          "defaultPath": "properties.sharedGalleryId"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/termsStatus",
+          "defaultPath": "properties.termsStatus"
+        },
+        {
+          "name": "Microsoft.LabServices/labPlans/images/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "labPlans/images"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile",
+          "defaultPath": "properties.autoShutdownProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile.disconnectDelay",
+          "defaultPath": "properties.autoShutdownProfile.disconnectDelay"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile.idleDelay",
+          "defaultPath": "properties.autoShutdownProfile.idleDelay"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile.noConnectDelay",
+          "defaultPath": "properties.autoShutdownProfile.noConnectDelay"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile.shutdownOnDisconnect",
+          "defaultPath": "properties.autoShutdownProfile.shutdownOnDisconnect"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile.shutdownOnIdle",
+          "defaultPath": "properties.autoShutdownProfile.shutdownOnIdle"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/autoShutdownProfile.shutdownWhenNotConnected",
+          "defaultPath": "properties.autoShutdownProfile.shutdownWhenNotConnected"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/connectionProfile",
+          "defaultPath": "properties.connectionProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/connectionProfile.clientRdpAccess",
+          "defaultPath": "properties.connectionProfile.clientRdpAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/connectionProfile.clientSshAccess",
+          "defaultPath": "properties.connectionProfile.clientSshAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/connectionProfile.webRdpAccess",
+          "defaultPath": "properties.connectionProfile.webRdpAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/connectionProfile.webSshAccess",
+          "defaultPath": "properties.connectionProfile.webSshAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/labPlanId",
+          "defaultPath": "properties.labPlanId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/networkProfile.loadBalancerId",
+          "defaultPath": "properties.networkProfile.loadBalancerId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/networkProfile.publicIpId",
+          "defaultPath": "properties.networkProfile.publicIpId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/networkProfile.subnetId",
+          "defaultPath": "properties.networkProfile.subnetId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/rosterProfile",
+          "defaultPath": "properties.rosterProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/rosterProfile.activeDirectoryGroupId",
+          "defaultPath": "properties.rosterProfile.activeDirectoryGroupId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/rosterProfile.lmsInstance",
+          "defaultPath": "properties.rosterProfile.lmsInstance"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/rosterProfile.ltiClientId",
+          "defaultPath": "properties.rosterProfile.ltiClientId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/rosterProfile.ltiContextId",
+          "defaultPath": "properties.rosterProfile.ltiContextId"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/rosterProfile.ltiRosterEndpoint",
+          "defaultPath": "properties.rosterProfile.ltiRosterEndpoint"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/securityProfile",
+          "defaultPath": "properties.securityProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/securityProfile.openAccess",
+          "defaultPath": "properties.securityProfile.openAccess"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/securityProfile.registrationCode",
+          "defaultPath": "properties.securityProfile.registrationCode"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/title",
+          "defaultPath": "properties.title"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile",
+          "defaultPath": "properties.virtualMachineProfile"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.additionalCapabilities",
+          "defaultPath": "properties.virtualMachineProfile.additionalCapabilities"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.additionalCapabilities.installGpuDrivers",
+          "defaultPath": "properties.virtualMachineProfile.additionalCapabilities.installGpuDrivers"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.adminUser",
+          "defaultPath": "properties.virtualMachineProfile.adminUser"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.adminUser.password",
+          "defaultPath": "properties.virtualMachineProfile.adminUser.password"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.adminUser.username",
+          "defaultPath": "properties.virtualMachineProfile.adminUser.username"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.createOption",
+          "defaultPath": "properties.virtualMachineProfile.createOption"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference",
+          "defaultPath": "properties.virtualMachineProfile.imageReference"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference.exactVersion",
+          "defaultPath": "properties.virtualMachineProfile.imageReference.exactVersion"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference.id",
+          "defaultPath": "properties.virtualMachineProfile.imageReference.id"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference.offer",
+          "defaultPath": "properties.virtualMachineProfile.imageReference.offer"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference.publisher",
+          "defaultPath": "properties.virtualMachineProfile.imageReference.publisher"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference.sku",
+          "defaultPath": "properties.virtualMachineProfile.imageReference.sku"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.imageReference.version",
+          "defaultPath": "properties.virtualMachineProfile.imageReference.version"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.nonAdminUser",
+          "defaultPath": "properties.virtualMachineProfile.nonAdminUser"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.nonAdminUser.password",
+          "defaultPath": "properties.virtualMachineProfile.nonAdminUser.password"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.nonAdminUser.username",
+          "defaultPath": "properties.virtualMachineProfile.nonAdminUser.username"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.osType",
+          "defaultPath": "properties.virtualMachineProfile.osType"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.sku",
+          "defaultPath": "properties.virtualMachineProfile.sku"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.sku.capacity",
+          "defaultPath": "properties.virtualMachineProfile.sku.capacity"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.sku.family",
+          "defaultPath": "properties.virtualMachineProfile.sku.family"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.sku.name",
+          "defaultPath": "properties.virtualMachineProfile.sku.name"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.sku.size",
+          "defaultPath": "properties.virtualMachineProfile.sku.size"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.sku.tier",
+          "defaultPath": "properties.virtualMachineProfile.sku.tier"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.usageQuota",
+          "defaultPath": "properties.virtualMachineProfile.usageQuota"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/virtualMachineProfile.useSharedPassword",
+          "defaultPath": "properties.virtualMachineProfile.useSharedPassword"
+        }
+      ],
+      "resourceType": "labs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labs/schedules/notes",
+          "defaultPath": "properties.notes"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/recurrencePattern",
+          "defaultPath": "properties.recurrencePattern"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/recurrencePattern.expirationDate",
+          "defaultPath": "properties.recurrencePattern.expirationDate"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/recurrencePattern.frequency",
+          "defaultPath": "properties.recurrencePattern.frequency"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/recurrencePattern.interval",
+          "defaultPath": "properties.recurrencePattern.interval"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/recurrencePattern.weekDays",
+          "defaultPath": "properties.recurrencePattern.weekDays"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/recurrencePattern.weekDays[*]",
+          "defaultPath": "properties.recurrencePattern.weekDays[*]"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/startAt",
+          "defaultPath": "properties.startAt"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/stopAt",
+          "defaultPath": "properties.stopAt"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/schedules/timeZoneId",
+          "defaultPath": "properties.timeZoneId"
+        }
+      ],
+      "resourceType": "labs/schedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.LabServices/labs/users/additionalUsageQuota",
+          "defaultPath": "properties.additionalUsageQuota"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/email",
+          "defaultPath": "properties.email"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/invitationSent",
+          "defaultPath": "properties.invitationSent"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/invitationState",
+          "defaultPath": "properties.invitationState"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/registrationState",
+          "defaultPath": "properties.registrationState"
+        },
+        {
+          "name": "Microsoft.LabServices/labs/users/totalUsage",
+          "defaultPath": "properties.totalUsage"
+        }
+      ],
+      "resourceType": "labs/users"
+    }
+  ]
+}

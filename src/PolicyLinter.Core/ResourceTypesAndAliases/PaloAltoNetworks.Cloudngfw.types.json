@@ -1,0 +1,101 @@
+{
+  "namespace": "PaloAltoNetworks.Cloudngfw",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "createProductSerialNumber"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "firewalls"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "firewalls/customCaptureConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "firewalls/metrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "firewalls/statuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "globalRulestacks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "globalRulestacks/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "globalRulestacks/fqdnlists"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "globalRulestacks/postRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "globalRulestacks/prefixlists"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "globalRulestacks/preRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listCloudManagerTenants"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listProductSerialNumberStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listSupportInfo"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "localRulestacks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "localRulestacks/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "localRulestacks/fqdnlists"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "localRulestacks/localRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "localRulestacks/prefixlists"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

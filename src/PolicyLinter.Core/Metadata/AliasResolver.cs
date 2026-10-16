@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Metadata
                 return false;
             }
 
-            return Aliases.GetAliases().TryGetValue(alias, out resolvedAlias);
+            return ResourceTypesAndAliases.TryResolveAlias(aliasName: alias, result: out resolvedAlias);
         }
     }
 }

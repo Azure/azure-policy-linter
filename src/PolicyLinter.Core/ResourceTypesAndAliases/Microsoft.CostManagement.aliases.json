@@ -1,0 +1,813 @@
+{
+  "namespace": "Microsoft.CostManagement",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CostManagement/alerts/closeTime",
+          "defaultPath": "properties.closeTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/costEntityId",
+          "defaultPath": "properties.costEntityId"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/definition",
+          "defaultPath": "properties.definition"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/definition.category",
+          "defaultPath": "properties.definition.category"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/definition.criteria",
+          "defaultPath": "properties.definition.criteria"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/definition.type",
+          "defaultPath": "properties.definition.type"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details",
+          "defaultPath": "properties.details"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.amount",
+          "defaultPath": "properties.details.amount"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.companyName",
+          "defaultPath": "properties.details.companyName"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.contactEmails",
+          "defaultPath": "properties.details.contactEmails"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.contactEmails[*]",
+          "defaultPath": "properties.details.contactEmails[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.contactGroups",
+          "defaultPath": "properties.details.contactGroups"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.contactGroups[*]",
+          "defaultPath": "properties.details.contactGroups[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.contactRoles",
+          "defaultPath": "properties.details.contactRoles"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.contactRoles[*]",
+          "defaultPath": "properties.details.contactRoles[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.currentSpend",
+          "defaultPath": "properties.details.currentSpend"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.departmentName",
+          "defaultPath": "properties.details.departmentName"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.enrollmentEndDate",
+          "defaultPath": "properties.details.enrollmentEndDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.enrollmentNumber",
+          "defaultPath": "properties.details.enrollmentNumber"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.enrollmentStartDate",
+          "defaultPath": "properties.details.enrollmentStartDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.invoicingThreshold",
+          "defaultPath": "properties.details.invoicingThreshold"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.meterFilter",
+          "defaultPath": "properties.details.meterFilter"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.meterFilter[*]",
+          "defaultPath": "properties.details.meterFilter[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.operator",
+          "defaultPath": "properties.details.operator"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.overridingAlert",
+          "defaultPath": "properties.details.overridingAlert"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.periodStartDate",
+          "defaultPath": "properties.details.periodStartDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.resourceFilter",
+          "defaultPath": "properties.details.resourceFilter"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.resourceFilter[*]",
+          "defaultPath": "properties.details.resourceFilter[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.resourceGroupFilter",
+          "defaultPath": "properties.details.resourceGroupFilter"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.resourceGroupFilter[*]",
+          "defaultPath": "properties.details.resourceGroupFilter[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.threshold",
+          "defaultPath": "properties.details.threshold"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.timeGrainType",
+          "defaultPath": "properties.details.timeGrainType"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.triggeredBy",
+          "defaultPath": "properties.details.triggeredBy"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/details.unit",
+          "defaultPath": "properties.details.unit"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/modificationTime",
+          "defaultPath": "properties.modificationTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/statusModificationTime",
+          "defaultPath": "properties.statusModificationTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/alerts/statusModificationUserName",
+          "defaultPath": "properties.statusModificationUserName"
+        }
+      ],
+      "resourceType": "Alerts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CostManagement/exports/compressionMode",
+          "defaultPath": "properties.compressionMode"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/dataOverwriteBehavior",
+          "defaultPath": "properties.dataOverwriteBehavior"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition",
+          "defaultPath": "properties.definition"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset",
+          "defaultPath": "properties.definition.dataset"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.aggregation",
+          "defaultPath": "properties.definition.dataset.aggregation"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.configuration",
+          "defaultPath": "properties.definition.dataset.configuration"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.configuration.columns",
+          "defaultPath": "properties.definition.dataset.configuration.columns"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.configuration.columns[*]",
+          "defaultPath": "properties.definition.dataset.configuration.columns[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataSet.configuration.dataVersion",
+          "defaultPath": "properties.definition.dataSet.configuration.dataVersion"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataSet.configuration.filters",
+          "defaultPath": "properties.definition.dataSet.configuration.filters"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataSet.configuration.filters[*]",
+          "defaultPath": "properties.definition.dataSet.configuration.filters[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter",
+          "defaultPath": "properties.definition.dataset.filter"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.and",
+          "defaultPath": "properties.definition.dataset.filter.and"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.and[*]",
+          "defaultPath": "properties.definition.dataset.filter.and[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.dimension",
+          "defaultPath": "properties.definition.dataset.filter.dimension"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataSet.filter.dimensions",
+          "defaultPath": "properties.definition.dataSet.filter.dimensions"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.not",
+          "defaultPath": "properties.definition.dataset.filter.not"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.or",
+          "defaultPath": "properties.definition.dataset.filter.or"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.or[*]",
+          "defaultPath": "properties.definition.dataset.filter.or[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.filter.tag",
+          "defaultPath": "properties.definition.dataset.filter.tag"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataSet.filter.tags",
+          "defaultPath": "properties.definition.dataSet.filter.tags"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.granularity",
+          "defaultPath": "properties.definition.dataset.granularity"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.grouping",
+          "defaultPath": "properties.definition.dataset.grouping"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.grouping[*]",
+          "defaultPath": "properties.definition.dataset.grouping[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.grouping[*].name",
+          "defaultPath": "properties.definition.dataset.grouping[*].name"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.grouping[*].type",
+          "defaultPath": "properties.definition.dataset.grouping[*].type"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.sorting",
+          "defaultPath": "properties.definition.dataset.sorting"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.sorting[*]",
+          "defaultPath": "properties.definition.dataset.sorting[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.sorting[*].name",
+          "defaultPath": "properties.definition.dataset.sorting[*].name"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.dataset.sorting[*].querySortingDirection",
+          "defaultPath": "properties.definition.dataset.sorting[*].querySortingDirection"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.timeframe",
+          "defaultPath": "properties.definition.timeframe"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.timePeriod",
+          "defaultPath": "properties.definition.timePeriod"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.timePeriod.from",
+          "defaultPath": "properties.definition.timePeriod.from"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.timePeriod.to",
+          "defaultPath": "properties.definition.timePeriod.to"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/definition.type",
+          "defaultPath": "properties.definition.type"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo",
+          "defaultPath": "properties.deliveryInfo"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination",
+          "defaultPath": "properties.deliveryInfo.destination"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.container",
+          "defaultPath": "properties.deliveryInfo.destination.container"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.microsoftFabricSettings",
+          "defaultPath": "properties.deliveryInfo.destination.microsoftFabricSettings"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.microsoftFabricSettings.lakehouse",
+          "defaultPath": "properties.deliveryInfo.destination.microsoftFabricSettings.lakehouse"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.microsoftFabricSettings.tableName",
+          "defaultPath": "properties.deliveryInfo.destination.microsoftFabricSettings.tableName"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.microsoftFabricSettings.workspace",
+          "defaultPath": "properties.deliveryInfo.destination.microsoftFabricSettings.workspace"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.resourceId",
+          "defaultPath": "properties.deliveryInfo.destination.resourceId"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.rootFolderPath",
+          "defaultPath": "properties.deliveryInfo.destination.rootFolderPath"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.sasToken",
+          "defaultPath": "properties.deliveryInfo.destination.sasToken"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.storageAccount",
+          "defaultPath": "properties.deliveryInfo.destination.storageAccount"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/deliveryInfo.destination.type",
+          "defaultPath": "properties.deliveryInfo.destination.type"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/exportDescription",
+          "defaultPath": "properties.exportDescription"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/format",
+          "defaultPath": "properties.format"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/nextRunTimeEstimate",
+          "defaultPath": "properties.nextRunTimeEstimate"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/partitionData",
+          "defaultPath": "properties.partitionData"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory",
+          "defaultPath": "properties.runHistory"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value",
+          "defaultPath": "properties.runHistory.value"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*]",
+          "defaultPath": "properties.runHistory.value[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].endDate",
+          "defaultPath": "properties.runHistory.value[*].properties.endDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].error",
+          "defaultPath": "properties.runHistory.value[*].properties.error"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].eTag",
+          "defaultPath": "properties.runHistory.value[*].eTag"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].executionType",
+          "defaultPath": "properties.runHistory.value[*].properties.executionType"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].fileName",
+          "defaultPath": "properties.runHistory.value[*].properties.fileName"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].id",
+          "defaultPath": "properties.runHistory.value[*].id"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].manifestFile",
+          "defaultPath": "properties.runHistory.value[*].properties.manifestFile"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].name",
+          "defaultPath": "properties.runHistory.value[*].name"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].processingEndTime",
+          "defaultPath": "properties.runHistory.value[*].properties.processingEndTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].processingStartTime",
+          "defaultPath": "properties.runHistory.value[*].properties.processingStartTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].runSettings",
+          "defaultPath": "properties.runHistory.value[*].properties.runSettings"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].startDate",
+          "defaultPath": "properties.runHistory.value[*].properties.startDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].status",
+          "defaultPath": "properties.runHistory.value[*].properties.status"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].submittedBy",
+          "defaultPath": "properties.runHistory.value[*].properties.submittedBy"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].submittedTime",
+          "defaultPath": "properties.runHistory.value[*].properties.submittedTime"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/runHistory.value[*].type",
+          "defaultPath": "properties.runHistory.value[*].type"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/schedule",
+          "defaultPath": "properties.schedule"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/schedule.recurrence",
+          "defaultPath": "properties.schedule.recurrence"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/schedule.recurrencePeriod",
+          "defaultPath": "properties.schedule.recurrencePeriod"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/schedule.recurrencePeriod.from",
+          "defaultPath": "properties.schedule.recurrencePeriod.from"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/schedule.recurrencePeriod.to",
+          "defaultPath": "properties.schedule.recurrencePeriod.to"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/schedule.status",
+          "defaultPath": "properties.schedule.status"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/systemSuspensionContext",
+          "defaultPath": "properties.systemSuspensionContext"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/systemSuspensionContext.suspensionCode",
+          "defaultPath": "properties.systemSuspensionContext.suspensionCode"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/systemSuspensionContext.suspensionReason",
+          "defaultPath": "properties.systemSuspensionContext.suspensionReason"
+        },
+        {
+          "name": "Microsoft.CostManagement/exports/systemSuspensionContext.suspensionTime",
+          "defaultPath": "properties.systemSuspensionContext.suspensionTime"
+        }
+      ],
+      "resourceType": "Exports"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/fileDestination",
+          "defaultPath": "properties.fileDestination"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/fileDestination.fileFormats",
+          "defaultPath": "properties.fileDestination.fileFormats"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/fileDestination.fileFormats[*]",
+          "defaultPath": "properties.fileDestination.fileFormats[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification",
+          "defaultPath": "properties.notification"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification.language",
+          "defaultPath": "properties.notification.language"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification.message",
+          "defaultPath": "properties.notification.message"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification.regionalFormat",
+          "defaultPath": "properties.notification.regionalFormat"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification.subject",
+          "defaultPath": "properties.notification.subject"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification.to",
+          "defaultPath": "properties.notification.to"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notification.to[*]",
+          "defaultPath": "properties.notification.to[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/notificationEmail",
+          "defaultPath": "properties.notificationEmail"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule",
+          "defaultPath": "properties.schedule"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.dayOfMonth",
+          "defaultPath": "properties.schedule.dayOfMonth"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.daysOfWeek",
+          "defaultPath": "properties.schedule.daysOfWeek"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.daysOfWeek[*]",
+          "defaultPath": "properties.schedule.daysOfWeek[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.endDate",
+          "defaultPath": "properties.schedule.endDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.frequency",
+          "defaultPath": "properties.schedule.frequency"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.hourOfDay",
+          "defaultPath": "properties.schedule.hourOfDay"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.startDate",
+          "defaultPath": "properties.schedule.startDate"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.weeksOfMonth",
+          "defaultPath": "properties.schedule.weeksOfMonth"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/schedule.weeksOfMonth[*]",
+          "defaultPath": "properties.schedule.weeksOfMonth[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/scope",
+          "defaultPath": "properties.scope"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.CostManagement/scheduledActions/viewId",
+          "defaultPath": "properties.viewId"
+        }
+      ],
+      "resourceType": "ScheduledActions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CostManagement/views/accumulated",
+          "defaultPath": "properties.accumulated"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/chart",
+          "defaultPath": "properties.chart"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/currency",
+          "defaultPath": "properties.currency"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/dateRange",
+          "defaultPath": "properties.dateRange"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/kpis",
+          "defaultPath": "properties.kpis"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/kpis[*]",
+          "defaultPath": "properties.kpis[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/kpis[*].enabled",
+          "defaultPath": "properties.kpis[*].enabled"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/kpis[*].id",
+          "defaultPath": "properties.kpis[*].id"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/kpis[*].type",
+          "defaultPath": "properties.kpis[*].type"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/metric",
+          "defaultPath": "properties.metric"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/modifiedOn",
+          "defaultPath": "properties.modifiedOn"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/pivots",
+          "defaultPath": "properties.pivots"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/pivots[*]",
+          "defaultPath": "properties.pivots[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/pivots[*].name",
+          "defaultPath": "properties.pivots[*].name"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/pivots[*].type",
+          "defaultPath": "properties.pivots[*].type"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query",
+          "defaultPath": "properties.query"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset",
+          "defaultPath": "properties.query.dataset"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.aggregation",
+          "defaultPath": "properties.query.dataset.aggregation"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.configuration",
+          "defaultPath": "properties.query.dataset.configuration"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.configuration.columns",
+          "defaultPath": "properties.query.dataset.configuration.columns"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.configuration.columns[*]",
+          "defaultPath": "properties.query.dataset.configuration.columns[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter",
+          "defaultPath": "properties.query.dataset.filter"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.and",
+          "defaultPath": "properties.query.dataset.filter.and"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.and[*]",
+          "defaultPath": "properties.query.dataset.filter.and[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.dimension",
+          "defaultPath": "properties.query.dataset.filter.dimension"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataSet.filter.dimensions",
+          "defaultPath": "properties.query.dataSet.filter.dimensions"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.not",
+          "defaultPath": "properties.query.dataset.filter.not"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.or",
+          "defaultPath": "properties.query.dataset.filter.or"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.or[*]",
+          "defaultPath": "properties.query.dataset.filter.or[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.filter.tag",
+          "defaultPath": "properties.query.dataset.filter.tag"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataSet.filter.tagKey",
+          "defaultPath": "properties.query.dataSet.filter.tagKey"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataSet.filter.tags",
+          "defaultPath": "properties.query.dataSet.filter.tags"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataSet.filter.tagValue",
+          "defaultPath": "properties.query.dataSet.filter.tagValue"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.granularity",
+          "defaultPath": "properties.query.dataset.granularity"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.grouping",
+          "defaultPath": "properties.query.dataset.grouping"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.grouping[*]",
+          "defaultPath": "properties.query.dataset.grouping[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.grouping[*].name",
+          "defaultPath": "properties.query.dataset.grouping[*].name"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.grouping[*].type",
+          "defaultPath": "properties.query.dataset.grouping[*].type"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.sorting",
+          "defaultPath": "properties.query.dataset.sorting"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.sorting[*]",
+          "defaultPath": "properties.query.dataset.sorting[*]"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.sorting[*].direction",
+          "defaultPath": "properties.query.dataset.sorting[*].direction"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.dataset.sorting[*].name",
+          "defaultPath": "properties.query.dataset.sorting[*].name"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.includeMonetaryCommitment",
+          "defaultPath": "properties.query.includeMonetaryCommitment"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.timeframe",
+          "defaultPath": "properties.query.timeframe"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.timePeriod",
+          "defaultPath": "properties.query.timePeriod"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.timePeriod.from",
+          "defaultPath": "properties.query.timePeriod.from"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.timePeriod.to",
+          "defaultPath": "properties.query.timePeriod.to"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/query.type",
+          "defaultPath": "properties.query.type"
+        },
+        {
+          "name": "Microsoft.CostManagement/views/scope",
+          "defaultPath": "properties.scope"
+        }
+      ],
+      "resourceType": "Views"
+    }
+  ]
+}

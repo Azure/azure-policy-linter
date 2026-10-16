@@ -1,0 +1,1555 @@
+{
+  "namespace": "Microsoft.HybridContainerService",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values",
+          "defaultPath": "properties.values"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*]",
+          "defaultPath": "properties.values[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*].capabilities",
+          "defaultPath": "properties.values[*].capabilities"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*].capabilities.supportPlan",
+          "defaultPath": "properties.values[*].capabilities.supportPlan"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*].capabilities.supportPlan[*]",
+          "defaultPath": "properties.values[*].capabilities.supportPlan[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*].isPreview",
+          "defaultPath": "properties.values[*].isPreview"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*].patchVersions",
+          "defaultPath": "properties.values[*].patchVersions"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/kubernetesVersions/values[*].version",
+          "defaultPath": "properties.values[*].version"
+        }
+      ],
+      "resourceType": "kubernetesVersions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles",
+          "defaultPath": "properties.agentPoolProfiles"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*]",
+          "defaultPath": "properties.agentPoolProfiles[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].availabilityZones",
+          "defaultPath": "properties.agentPoolProfiles[*].availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].availabilityZones[*]",
+          "defaultPath": "properties.agentPoolProfiles[*].availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].count",
+          "defaultPath": "properties.agentPoolProfiles[*].count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].enableAutoScaling",
+          "defaultPath": "properties.agentPoolProfiles[*].enableAutoScaling"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].gpuCountPerNode",
+          "defaultPath": "properties.agentPoolProfiles[*].gpuCountPerNode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].kubernetesVersion",
+          "defaultPath": "properties.agentPoolProfiles[*].kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].maxCount",
+          "defaultPath": "properties.agentPoolProfiles[*].maxCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].maxPods",
+          "defaultPath": "properties.agentPoolProfiles[*].maxPods"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].minCount",
+          "defaultPath": "properties.agentPoolProfiles[*].minCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].name",
+          "defaultPath": "properties.agentPoolProfiles[*].name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].nodeImageVersion",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].nodeLabels",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeLabels"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].nodeTaints",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeTaints"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].nodeTaints[*]",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeTaints[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].osSKU",
+          "defaultPath": "properties.agentPoolProfiles[*].osSKU"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].osType",
+          "defaultPath": "properties.agentPoolProfiles[*].osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPoolProfiles[*].vmSize",
+          "defaultPath": "properties.agentPoolProfiles[*].vmSize"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/autoScalerProfile",
+          "defaultPath": "properties.autoScalerProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/autoScalerProfile.expander",
+          "defaultPath": "properties.autoScalerProfile.expander"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/cloudProviderProfile",
+          "defaultPath": "properties.cloudProviderProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/cloudProviderProfile.infraNetworkProfile",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/cloudProviderProfile.infraNetworkProfile.vnetSubnetIds",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/clusterVMAccessProfile",
+          "defaultPath": "properties.clusterVMAccessProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/clusterVMAccessProfile.authorizedIPRanges",
+          "defaultPath": "properties.clusterVMAccessProfile.authorizedIPRanges"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane",
+          "defaultPath": "properties.controlPlane"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.availabilityZones",
+          "defaultPath": "properties.controlPlane.availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.availabilityZones[*]",
+          "defaultPath": "properties.controlPlane.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.controlPlaneEndpoint",
+          "defaultPath": "properties.controlPlane.controlPlaneEndpoint"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.controlPlaneEndpoint.hostIP",
+          "defaultPath": "properties.controlPlane.controlPlaneEndpoint.hostIP"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.controlPlaneEndpoint.port",
+          "defaultPath": "properties.controlPlane.controlPlaneEndpoint.port"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.count",
+          "defaultPath": "properties.controlPlane.count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.linuxProfile",
+          "defaultPath": "properties.controlPlane.linuxProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.linuxProfile.ssh",
+          "defaultPath": "properties.controlPlane.linuxProfile.ssh"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.linuxProfile.ssh.publicKeys",
+          "defaultPath": "properties.controlPlane.linuxProfile.ssh.publicKeys"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.linuxProfile.ssh.publicKeys[*]",
+          "defaultPath": "properties.controlPlane.linuxProfile.ssh.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.name",
+          "defaultPath": "properties.controlPlane.name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.nodeImageVersion",
+          "defaultPath": "properties.controlPlane.nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.osSKU",
+          "defaultPath": "properties.controlPlane.osSKU"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.osType",
+          "defaultPath": "properties.controlPlane.osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/controlPlane.vmSize",
+          "defaultPath": "properties.controlPlane.vmSize"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/licenseProfile",
+          "defaultPath": "properties.licenseProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/licenseProfile.azureHybridBenefit",
+          "defaultPath": "properties.licenseProfile.azureHybridBenefit"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/linuxProfile",
+          "defaultPath": "properties.linuxProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/linuxProfile.ssh",
+          "defaultPath": "properties.linuxProfile.ssh"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/linuxProfile.ssh.publicKeys",
+          "defaultPath": "properties.linuxProfile.ssh.publicKeys"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/linuxProfile.ssh.publicKeys[*]",
+          "defaultPath": "properties.linuxProfile.ssh.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/linuxProfile.ssh.publicKeys[*].keyData",
+          "defaultPath": "properties.linuxProfile.ssh.publicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/networkProfile.loadBalancerProfile",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/networkProfile.loadBalancerProfile.count",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/networkProfile.networkPolicy",
+          "defaultPath": "properties.networkProfile.networkPolicy"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/networkProfile.podCidr",
+          "defaultPath": "properties.networkProfile.podCidr"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.controlPlaneStatus",
+          "defaultPath": "properties.status.controlPlaneStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.controlPlaneStatus[*]",
+          "defaultPath": "properties.status.controlPlaneStatus[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.controlPlaneStatus[*].errorMessage",
+          "defaultPath": "properties.status.controlPlaneStatus[*].errorMessage"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.controlPlaneStatus[*].name",
+          "defaultPath": "properties.status.controlPlaneStatus[*].name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.controlPlaneStatus[*].phase",
+          "defaultPath": "properties.status.controlPlaneStatus[*].phase"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.controlPlaneStatus[*].ready",
+          "defaultPath": "properties.status.controlPlaneStatus[*].ready"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.currentState",
+          "defaultPath": "properties.status.currentState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.operationStatus",
+          "defaultPath": "properties.status.operationStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.operationStatus.error",
+          "defaultPath": "properties.status.operationStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.operationStatus.error.code",
+          "defaultPath": "properties.status.operationStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.operationStatus.error.message",
+          "defaultPath": "properties.status.operationStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.operationStatus.operationId",
+          "defaultPath": "properties.status.operationStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/status.operationStatus.status",
+          "defaultPath": "properties.status.operationStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/storageProfile.nfsCsiDriver",
+          "defaultPath": "properties.storageProfile.nfsCsiDriver"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/storageProfile.nfsCsiDriver.enabled",
+          "defaultPath": "properties.storageProfile.nfsCsiDriver.enabled"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/storageProfile.smbCsiDriver",
+          "defaultPath": "properties.storageProfile.smbCsiDriver"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/storageProfile.smbCsiDriver.enabled",
+          "defaultPath": "properties.storageProfile.smbCsiDriver.enabled"
+        }
+      ],
+      "resourceType": "provisionedClusterInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/availabilityZones",
+          "defaultPath": "properties.availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/availabilityZones[*]",
+          "defaultPath": "properties.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/count",
+          "defaultPath": "properties.count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/enableAutoScaling",
+          "defaultPath": "properties.enableAutoScaling"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/gpuCountPerNode",
+          "defaultPath": "properties.gpuCountPerNode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/maxCount",
+          "defaultPath": "properties.maxCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/maxPods",
+          "defaultPath": "properties.maxPods"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/minCount",
+          "defaultPath": "properties.minCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/nodeImageVersion",
+          "defaultPath": "properties.nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/nodeLabels",
+          "defaultPath": "properties.nodeLabels"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/nodeTaints",
+          "defaultPath": "properties.nodeTaints"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/nodeTaints[*]",
+          "defaultPath": "properties.nodeTaints[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/osSKU",
+          "defaultPath": "properties.osSKU"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.currentState",
+          "defaultPath": "properties.status.currentState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.operationStatus",
+          "defaultPath": "properties.status.operationStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.operationStatus.error",
+          "defaultPath": "properties.status.operationStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.operationStatus.error.code",
+          "defaultPath": "properties.status.operationStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.operationStatus.error.message",
+          "defaultPath": "properties.status.operationStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.operationStatus.operationId",
+          "defaultPath": "properties.status.operationStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.operationStatus.status",
+          "defaultPath": "properties.status.operationStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.readyReplicas",
+          "defaultPath": "properties.status.readyReplicas"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.readyReplicas[*]",
+          "defaultPath": "properties.status.readyReplicas[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.readyReplicas[*].count",
+          "defaultPath": "properties.status.readyReplicas[*].count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.readyReplicas[*].gpuCountPerNode",
+          "defaultPath": "properties.status.readyReplicas[*].gpuCountPerNode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.readyReplicas[*].kubernetesVersion",
+          "defaultPath": "properties.status.readyReplicas[*].kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/status.readyReplicas[*].vmSize",
+          "defaultPath": "properties.status.readyReplicas[*].vmSize"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/agentPools/vmSize",
+          "defaultPath": "properties.vmSize"
+        }
+      ],
+      "resourceType": "provisionedClusterInstances/agentPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/hybridIdentityMetadata/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/hybridIdentityMetadata/publicKey",
+          "defaultPath": "properties.publicKey"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusterInstances/hybridIdentityMetadata/resourceUid",
+          "defaultPath": "properties.resourceUid"
+        }
+      ],
+      "resourceType": "provisionedClusterInstances/hybridIdentityMetadata"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile",
+          "defaultPath": "properties.aadProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.adminGroupObjectIDs",
+          "defaultPath": "properties.aadProfile.adminGroupObjectIDs"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.adminGroupObjectIDs[*]",
+          "defaultPath": "properties.aadProfile.adminGroupObjectIDs[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.clientAppID",
+          "defaultPath": "properties.aadProfile.clientAppID"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.enableAzureRbac",
+          "defaultPath": "properties.aadProfile.enableAzureRbac"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.managed",
+          "defaultPath": "properties.aadProfile.managed"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.serverAppID",
+          "defaultPath": "properties.aadProfile.serverAppID"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/aadProfile.tenantID",
+          "defaultPath": "properties.aadProfile.tenantID"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/addonProfiles",
+          "defaultPath": "properties.addonProfiles"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles",
+          "defaultPath": "properties.agentPoolProfiles"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*]",
+          "defaultPath": "properties.agentPoolProfiles[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].availabilityZones",
+          "defaultPath": "properties.agentPoolProfiles[*].availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].availabilityZones[*]",
+          "defaultPath": "properties.agentPoolProfiles[*].availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile.infraNetworkProfile",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile.infraNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile.infraNetworkProfile.vnetSubnetIds",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile.infraNetworkProfile.vnetSubnetIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile.infraStorageProfile",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile.infraStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile.infraStorageProfile.storageSpaceIds",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile.infraStorageProfile.storageSpaceIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]",
+          "defaultPath": "properties.agentPoolProfiles[*].cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].count",
+          "defaultPath": "properties.agentPoolProfiles[*].count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].maxCount",
+          "defaultPath": "properties.agentPoolProfiles[*].maxCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].maxPods",
+          "defaultPath": "properties.agentPoolProfiles[*].maxPods"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].minCount",
+          "defaultPath": "properties.agentPoolProfiles[*].minCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].mode",
+          "defaultPath": "properties.agentPoolProfiles[*].mode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].name",
+          "defaultPath": "properties.agentPoolProfiles[*].name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].nodeImageVersion",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].nodeLabels",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeLabels"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].nodeTaints",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeTaints"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].nodeTaints[*]",
+          "defaultPath": "properties.agentPoolProfiles[*].nodeTaints[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].osType",
+          "defaultPath": "properties.agentPoolProfiles[*].osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPoolProfiles[*].vmSize",
+          "defaultPath": "properties.agentPoolProfiles[*].vmSize"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile",
+          "defaultPath": "properties.cloudProviderProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile.infraNetworkProfile",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile.infraNetworkProfile.vnetSubnetIds",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile.infraStorageProfile",
+          "defaultPath": "properties.cloudProviderProfile.infraStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile.infraStorageProfile.storageSpaceIds",
+          "defaultPath": "properties.cloudProviderProfile.infraStorageProfile.storageSpaceIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]",
+          "defaultPath": "properties.cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane",
+          "defaultPath": "properties.controlPlane"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.availabilityZones",
+          "defaultPath": "properties.controlPlane.availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.availabilityZones[*]",
+          "defaultPath": "properties.controlPlane.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile.infraNetworkProfile",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile.infraNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile.infraStorageProfile",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile.infraStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile.infraStorageProfile.storageSpaceIds",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile.infraStorageProfile.storageSpaceIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]",
+          "defaultPath": "properties.controlPlane.cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.controlPlaneEndpoint",
+          "defaultPath": "properties.controlPlane.controlPlaneEndpoint"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.controlPlaneEndpoint.hostIP",
+          "defaultPath": "properties.controlPlane.controlPlaneEndpoint.hostIP"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.controlPlaneEndpoint.port",
+          "defaultPath": "properties.controlPlane.controlPlaneEndpoint.port"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.count",
+          "defaultPath": "properties.controlPlane.count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.linuxProfile",
+          "defaultPath": "properties.controlPlane.linuxProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.linuxProfile.adminUsername",
+          "defaultPath": "properties.controlPlane.linuxProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.linuxProfile.ssh",
+          "defaultPath": "properties.controlPlane.linuxProfile.ssh"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.linuxProfile.ssh.publicKeys",
+          "defaultPath": "properties.controlPlane.linuxProfile.ssh.publicKeys"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.linuxProfile.ssh.publicKeys[*]",
+          "defaultPath": "properties.controlPlane.linuxProfile.ssh.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.maxCount",
+          "defaultPath": "properties.controlPlane.maxCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.maxPods",
+          "defaultPath": "properties.controlPlane.maxPods"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.minCount",
+          "defaultPath": "properties.controlPlane.minCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.mode",
+          "defaultPath": "properties.controlPlane.mode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.name",
+          "defaultPath": "properties.controlPlane.name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.nodeImageVersion",
+          "defaultPath": "properties.controlPlane.nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.nodeLabels",
+          "defaultPath": "properties.controlPlane.nodeLabels"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.nodeTaints",
+          "defaultPath": "properties.controlPlane.nodeTaints"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.nodeTaints[*]",
+          "defaultPath": "properties.controlPlane.nodeTaints[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.osType",
+          "defaultPath": "properties.controlPlane.osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/controlPlane.vmSize",
+          "defaultPath": "properties.controlPlane.vmSize"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/enableRbac",
+          "defaultPath": "properties.enableRbac"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/features",
+          "defaultPath": "properties.features"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/features.arcAgentProfile",
+          "defaultPath": "properties.features.arcAgentProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/features.arcAgentProfile.agentAutoUpgrade",
+          "defaultPath": "properties.features.arcAgentProfile.agentAutoUpgrade"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/features.arcAgentProfile.agentVersion",
+          "defaultPath": "properties.features.arcAgentProfile.agentVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig",
+          "defaultPath": "properties.httpProxyConfig"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig.httpProxy",
+          "defaultPath": "properties.httpProxyConfig.httpProxy"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig.httpsProxy",
+          "defaultPath": "properties.httpProxyConfig.httpsProxy"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig.noProxy",
+          "defaultPath": "properties.httpProxyConfig.noProxy"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig.noProxy[*]",
+          "defaultPath": "properties.httpProxyConfig.noProxy[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig.trustedCa",
+          "defaultPath": "properties.httpProxyConfig.trustedCa"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/httpProxyConfig.username",
+          "defaultPath": "properties.httpProxyConfig.username"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/linuxProfile",
+          "defaultPath": "properties.linuxProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/linuxProfile.adminUsername",
+          "defaultPath": "properties.linuxProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/linuxProfile.ssh",
+          "defaultPath": "properties.linuxProfile.ssh"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/linuxProfile.ssh.publicKeys",
+          "defaultPath": "properties.linuxProfile.ssh.publicKeys"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/linuxProfile.ssh.publicKeys[*]",
+          "defaultPath": "properties.linuxProfile.ssh.publicKeys[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/linuxProfile.ssh.publicKeys[*].keyData",
+          "defaultPath": "properties.linuxProfile.ssh.publicKeys[*].keyData"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.dnsServiceIP",
+          "defaultPath": "properties.networkProfile.dnsServiceIP"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.availabilityZones",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.availabilityZones[*]",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.cloudProviderProfile",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.cloudProviderProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.cloudProviderProfile.infraNetworkProfile",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.cloudProviderProfile.infraNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.cloudProviderProfile.infraStorageProfile",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.cloudProviderProfile.infraStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.count",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.linuxProfile",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.linuxProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.linuxProfile.adminUsername",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.linuxProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.linuxProfile.ssh",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.linuxProfile.ssh"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.maxCount",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.maxCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.maxPods",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.maxPods"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.minCount",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.minCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.mode",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.mode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.name",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.nodeImageVersion",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.nodeLabels",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.nodeLabels"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.nodeTaints",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.nodeTaints"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.nodeTaints[*]",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.nodeTaints[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.osType",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerProfile.vmSize",
+          "defaultPath": "properties.networkProfile.loadBalancerProfile.vmSize"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.loadBalancerSku",
+          "defaultPath": "properties.networkProfile.loadBalancerSku"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.networkPolicy",
+          "defaultPath": "properties.networkProfile.networkPolicy"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.podCidr",
+          "defaultPath": "properties.networkProfile.podCidr"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.podCidrs",
+          "defaultPath": "properties.networkProfile.podCidrs"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.podCidrs[*]",
+          "defaultPath": "properties.networkProfile.podCidrs[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.serviceCidr",
+          "defaultPath": "properties.networkProfile.serviceCidr"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.serviceCidrs",
+          "defaultPath": "properties.networkProfile.serviceCidrs"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/networkProfile.serviceCidrs[*]",
+          "defaultPath": "properties.networkProfile.serviceCidrs[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/nodeResourceGroup",
+          "defaultPath": "properties.nodeResourceGroup"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.addonStatus",
+          "defaultPath": "properties.status.addonStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus",
+          "defaultPath": "properties.status.featuresStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.agentVersion",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.agentVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.coreCount",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.coreCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.deploymentState",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.deploymentState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.errorMessage",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.errorMessage"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.lastConnectivityTime",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.lastConnectivityTime"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.managedIdentityCertificateExpirationTime",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.managedIdentityCertificateExpirationTime"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.featuresStatus.arcAgentStatus.onboardingPublicKey",
+          "defaultPath": "properties.status.featuresStatus.arcAgentStatus.onboardingPublicKey"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus.error",
+          "defaultPath": "properties.status.provisioningStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus.error.code",
+          "defaultPath": "properties.status.provisioningStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus.error.message",
+          "defaultPath": "properties.status.provisioningStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus.phase",
+          "defaultPath": "properties.status.provisioningStatus.phase"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/windowsProfile",
+          "defaultPath": "properties.windowsProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/windowsProfile.adminUsername",
+          "defaultPath": "properties.windowsProfile.adminUsername"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/windowsProfile.enableCsiProxy",
+          "defaultPath": "properties.windowsProfile.enableCsiProxy"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/windowsProfile.licenseType",
+          "defaultPath": "properties.windowsProfile.licenseType"
+        }
+      ],
+      "resourceType": "provisionedClusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/availabilityZones",
+          "defaultPath": "properties.availabilityZones"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/availabilityZones[*]",
+          "defaultPath": "properties.availabilityZones[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile",
+          "defaultPath": "properties.cloudProviderProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile.infraNetworkProfile",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile.infraNetworkProfile.vnetSubnetIds",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]",
+          "defaultPath": "properties.cloudProviderProfile.infraNetworkProfile.vnetSubnetIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile.infraStorageProfile",
+          "defaultPath": "properties.cloudProviderProfile.infraStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile.infraStorageProfile.storageSpaceIds",
+          "defaultPath": "properties.cloudProviderProfile.infraStorageProfile.storageSpaceIds"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]",
+          "defaultPath": "properties.cloudProviderProfile.infraStorageProfile.storageSpaceIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/count",
+          "defaultPath": "properties.count"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/maxCount",
+          "defaultPath": "properties.maxCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/maxPods",
+          "defaultPath": "properties.maxPods"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/minCount",
+          "defaultPath": "properties.minCount"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/nodeImageVersion",
+          "defaultPath": "properties.nodeImageVersion"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/nodeLabels",
+          "defaultPath": "properties.nodeLabels"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/nodeTaints",
+          "defaultPath": "properties.nodeTaints"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/nodeTaints[*]",
+          "defaultPath": "properties.nodeTaints[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.errorMessage",
+          "defaultPath": "properties.status.errorMessage"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus.error",
+          "defaultPath": "properties.status.provisioningStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus.error.code",
+          "defaultPath": "properties.status.provisioningStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus.error.message",
+          "defaultPath": "properties.status.provisioningStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus.phase",
+          "defaultPath": "properties.status.provisioningStatus.phase"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.readyReplicas",
+          "defaultPath": "properties.status.readyReplicas"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/status.replicas",
+          "defaultPath": "properties.status.replicas"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/agentPools/vmSize",
+          "defaultPath": "properties.vmSize"
+        }
+      ],
+      "resourceType": "provisionedClusters/agentPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/identity",
+          "defaultPath": "properties.identity"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/identity.principalId",
+          "defaultPath": "properties.identity.principalId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/identity.tenantId",
+          "defaultPath": "properties.identity.tenantId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/identity.type",
+          "defaultPath": "properties.identity.type"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/publicKey",
+          "defaultPath": "properties.publicKey"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/provisionedClusters/hybridIdentityMetadata/resourceUid",
+          "defaultPath": "properties.resourceUid"
+        }
+      ],
+      "resourceType": "provisionedClusters/hybridIdentityMetadata"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/skus/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values",
+          "defaultPath": "properties.values"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*]",
+          "defaultPath": "properties.values[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].capabilities",
+          "defaultPath": "properties.values[*].capabilities"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].capabilities[*]",
+          "defaultPath": "properties.values[*].capabilities[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].capabilities[*].name",
+          "defaultPath": "properties.values[*].capabilities[*].name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].capabilities[*].value",
+          "defaultPath": "properties.values[*].capabilities[*].value"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].name",
+          "defaultPath": "properties.values[*].name"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].resourceType",
+          "defaultPath": "properties.values[*].resourceType"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].size",
+          "defaultPath": "properties.values[*].size"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/skus/values[*].tier",
+          "defaultPath": "properties.values[*].tier"
+        }
+      ],
+      "resourceType": "skus"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/hciStorageProfile",
+          "defaultPath": "properties.hciStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/hciStorageProfile.mocGroup",
+          "defaultPath": "properties.hciStorageProfile.mocGroup"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/hciStorageProfile.mocLocation",
+          "defaultPath": "properties.hciStorageProfile.mocLocation"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/hciStorageProfile.mocStorageContainer",
+          "defaultPath": "properties.hciStorageProfile.mocStorageContainer"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus.error",
+          "defaultPath": "properties.status.provisioningStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus.error.code",
+          "defaultPath": "properties.status.provisioningStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus.error.message",
+          "defaultPath": "properties.status.provisioningStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus.phase",
+          "defaultPath": "properties.status.provisioningStatus.phase"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/vmwareStorageProfile",
+          "defaultPath": "properties.vmwareStorageProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/vmwareStorageProfile.datacenter",
+          "defaultPath": "properties.vmwareStorageProfile.datacenter"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/vmwareStorageProfile.datastore",
+          "defaultPath": "properties.vmwareStorageProfile.datastore"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/vmwareStorageProfile.folder",
+          "defaultPath": "properties.vmwareStorageProfile.folder"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/storageSpaces/vmwareStorageProfile.resourcePool",
+          "defaultPath": "properties.vmwareStorageProfile.resourcePool"
+        }
+      ],
+      "resourceType": "storageSpaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/dhcpServers",
+          "defaultPath": "properties.dhcpServers"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/dhcpServers[*]",
+          "defaultPath": "properties.dhcpServers[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/dnsServers",
+          "defaultPath": "properties.dnsServers"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/dnsServers[*]",
+          "defaultPath": "properties.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/gateway",
+          "defaultPath": "properties.gateway"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile",
+          "defaultPath": "properties.infraVnetProfile"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.hci",
+          "defaultPath": "properties.infraVnetProfile.hci"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.hci.mocGroup",
+          "defaultPath": "properties.infraVnetProfile.hci.mocGroup"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.hci.mocLocation",
+          "defaultPath": "properties.infraVnetProfile.hci.mocLocation"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.hci.mocVnetName",
+          "defaultPath": "properties.infraVnetProfile.hci.mocVnetName"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.kubevirt",
+          "defaultPath": "properties.infraVnetProfile.kubevirt"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.kubevirt.vnetName",
+          "defaultPath": "properties.infraVnetProfile.kubevirt.vnetName"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.networkCloud",
+          "defaultPath": "properties.infraVnetProfile.networkCloud"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.networkCloud.networkId",
+          "defaultPath": "properties.infraVnetProfile.networkCloud.networkId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.vmware",
+          "defaultPath": "properties.infraVnetProfile.vmware"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/infraVnetProfile.vmware.segmentName",
+          "defaultPath": "properties.infraVnetProfile.vmware.segmentName"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/ipAddressPrefix",
+          "defaultPath": "properties.ipAddressPrefix"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus",
+          "defaultPath": "properties.status.operationStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus.error",
+          "defaultPath": "properties.status.operationStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus.error.code",
+          "defaultPath": "properties.status.operationStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus.error.message",
+          "defaultPath": "properties.status.operationStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus.operationId",
+          "defaultPath": "properties.status.operationStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus.phase",
+          "defaultPath": "properties.status.operationStatus.phase"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.operationStatus.status",
+          "defaultPath": "properties.status.operationStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus",
+          "defaultPath": "properties.status.provisioningStatus"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus.error",
+          "defaultPath": "properties.status.provisioningStatus.error"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus.error.code",
+          "defaultPath": "properties.status.provisioningStatus.error.code"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus.error.message",
+          "defaultPath": "properties.status.provisioningStatus.error.message"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus.operationId",
+          "defaultPath": "properties.status.provisioningStatus.operationId"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus.phase",
+          "defaultPath": "properties.status.provisioningStatus.phase"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/status.provisioningStatus.status",
+          "defaultPath": "properties.status.provisioningStatus.status"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vipPool",
+          "defaultPath": "properties.vipPool"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vipPool[*]",
+          "defaultPath": "properties.vipPool[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vipPool[*].endIP",
+          "defaultPath": "properties.vipPool[*].endIP"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vipPool[*].startIP",
+          "defaultPath": "properties.vipPool[*].startIP"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vlanID",
+          "defaultPath": "properties.vlanID"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vmipPool",
+          "defaultPath": "properties.vmipPool"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vmipPool[*]",
+          "defaultPath": "properties.vmipPool[*]"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vmipPool[*].endIP",
+          "defaultPath": "properties.vmipPool[*].endIP"
+        },
+        {
+          "name": "Microsoft.HybridContainerService/virtualNetworks/vmipPool[*].startIP",
+          "defaultPath": "properties.vmipPool[*].startIP"
+        }
+      ],
+      "resourceType": "virtualNetworks"
+    }
+  ]
+}

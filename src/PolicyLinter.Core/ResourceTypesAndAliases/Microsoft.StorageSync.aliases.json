@@ -1,0 +1,306 @@
+{
+  "namespace": "Microsoft.StorageSync",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/incomingTrafficPolicy",
+          "paths": [
+            {
+              "path": "properties.incomingTrafficPolicy",
+              "apiVersions": [
+                "2019-10-01",
+                "2019-06-01",
+                "2019-03-01",
+                "2019-02-01",
+                "2018-10-01",
+                "2018-07-01",
+                "2018-04-02",
+                "2017-06-05-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.incomingTrafficPolicy",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/storageSyncServiceStatus",
+          "defaultPath": "properties.storageSyncServiceStatus"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/storageSyncServiceUid",
+          "defaultPath": "properties.storageSyncServiceUid"
+        }
+      ],
+      "resourceType": "storageSyncServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "storageSyncServices/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/agentVersion",
+          "defaultPath": "properties.agentVersion"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/clusterName",
+          "defaultPath": "properties.clusterName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/lastHeartBeat",
+          "defaultPath": "properties.lastHeartBeat"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/lastWorkflowId",
+          "defaultPath": "properties.lastWorkflowId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/serverCertificate",
+          "defaultPath": "properties.serverCertificate"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/serverId",
+          "defaultPath": "properties.serverId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/serverManagementtErrorCode",
+          "defaultPath": "properties.serverManagementtErrorCode"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/serverOSVersion",
+          "defaultPath": "properties.serverOSVersion"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/serverRole",
+          "defaultPath": "properties.serverRole"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/registeredServers/storageSyncServiceUid",
+          "defaultPath": "properties.storageSyncServiceUid"
+        }
+      ],
+      "resourceType": "storageSyncServices/registeredServers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/syncGroupStatus",
+          "defaultPath": "properties.syncGroupStatus"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/uniqueId",
+          "defaultPath": "properties.uniqueId"
+        }
+      ],
+      "resourceType": "storageSyncServices/syncGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/azureFileShareName",
+          "defaultPath": "properties.azureFileShareName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/backupEnabled",
+          "defaultPath": "properties.backupEnabled"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/lastWorkflowId",
+          "defaultPath": "properties.lastWorkflowId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/partnershipId",
+          "defaultPath": "properties.partnershipId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/storageAccount",
+          "defaultPath": "properties.storageAccount"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/storageAccountKey",
+          "defaultPath": "properties.storageAccountKey"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/storageAccountResourceId",
+          "defaultPath": "properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/storageAccountShareName",
+          "defaultPath": "properties.storageAccountShareName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/cloudEndpoints/storageAccountTenantId",
+          "defaultPath": "properties.storageAccountTenantId"
+        }
+      ],
+      "resourceType": "storageSyncServices/syncGroups/cloudEndpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/byteProgress",
+          "defaultPath": "properties.byteProgress"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/byteTotal",
+          "defaultPath": "properties.byteTotal"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/cloudTiering",
+          "defaultPath": "properties.cloudTiering"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/currentProgressType",
+          "defaultPath": "properties.currentProgressType"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/initialDownloadPolicy",
+          "defaultPath": "properties.initialDownloadPolicy"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/itemDownloadErrorCount",
+          "defaultPath": "properties.itemDownloadErrorCount"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/itemProgressCount",
+          "defaultPath": "properties.itemProgressCount"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/itemTotalCount",
+          "defaultPath": "properties.itemTotalCount"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/itemUploadErrorCount",
+          "defaultPath": "properties.itemUploadErrorCount"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/lastSyncSuccess",
+          "defaultPath": "properties.lastSyncSuccess"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/lastWorkflowId",
+          "defaultPath": "properties.lastWorkflowId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/localCacheMode",
+          "defaultPath": "properties.localCacheMode"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/offlineDataTransfer",
+          "defaultPath": "properties.offlineDataTransfer"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/offlineDataTransferShareName",
+          "defaultPath": "properties.offlineDataTransferShareName"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/serverLocalPath",
+          "defaultPath": "properties.serverLocalPath"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/serverResourceId",
+          "defaultPath": "properties.serverResourceId"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/syncErrorContext",
+          "defaultPath": "properties.syncErrorContext"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/syncErrorDirection",
+          "defaultPath": "properties.syncErrorDirection"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/syncErrorState",
+          "defaultPath": "properties.syncErrorState"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/syncErrorStateTimestamp",
+          "defaultPath": "properties.syncErrorStateTimestamp"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/tierFilesOlderThanDays",
+          "defaultPath": "properties.tierFilesOlderThanDays"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/totalProgress",
+          "defaultPath": "properties.totalProgress"
+        },
+        {
+          "name": "Microsoft.StorageSync/storageSyncServices/syncGroups/serverEndpoints/volumeFreeSpacePercent",
+          "defaultPath": "properties.volumeFreeSpacePercent"
+        }
+      ],
+      "resourceType": "storageSyncServices/syncGroups/serverEndpoints"
+    }
+  ]
+}

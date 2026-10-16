@@ -1,0 +1,49 @@
+{
+  "namespace": "Microsoft.Management",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getEntities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managementGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managementGroups/settings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults/asyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resources"
+    },
+    {
+      "capabilities": "SupportsTags",
+      "resourceType": "serviceGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "startTenantBackfill"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenantBackfillStatus"
+    }
+  ]
+}

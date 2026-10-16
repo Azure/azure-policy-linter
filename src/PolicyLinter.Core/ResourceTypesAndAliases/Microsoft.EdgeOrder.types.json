@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.EdgeOrder",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "addresses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bootstrapConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listProductFamilies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciCatalog"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciCatalog/platforms"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciCatalog/projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciCatalog/vendors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciFlightCatalog"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciFlightCatalog/platforms"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciFlightCatalog/projects"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/hciFlightCatalog/vendors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/orders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateInputs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "orderItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "orders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "productFamiliesMetadata"
+    }
+  ]
+}

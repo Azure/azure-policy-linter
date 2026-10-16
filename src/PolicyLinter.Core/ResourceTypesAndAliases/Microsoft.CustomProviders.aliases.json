@@ -1,0 +1,75 @@
+{
+  "namespace": "Microsoft.CustomProviders",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CustomProviders/associations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CustomProviders/associations/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        }
+      ],
+      "resourceType": "associations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/actions",
+          "defaultPath": "properties.actions"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/actions[*]",
+          "defaultPath": "properties.actions[*]"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/actions[*].endpoint",
+          "defaultPath": "properties.actions[*].endpoint"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/actions[*].name",
+          "defaultPath": "properties.actions[*].name"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/actions[*].routingType",
+          "defaultPath": "properties.actions[*].routingType"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/resourceTypes",
+          "defaultPath": "properties.resourceTypes"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/resourceTypes[*]",
+          "defaultPath": "properties.resourceTypes[*]"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/resourceTypes[*].routingType",
+          "defaultPath": "properties.resourceTypes[*].routingType"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/validations",
+          "defaultPath": "properties.validations"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/validations[*]",
+          "defaultPath": "properties.validations[*]"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/validations[*].specification",
+          "defaultPath": "properties.validations[*].specification"
+        },
+        {
+          "name": "Microsoft.CustomProviders/resourceProviders/validations[*].validationType",
+          "defaultPath": "properties.validations[*].validationType"
+        }
+      ],
+      "resourceType": "resourceProviders"
+    }
+  ]
+}

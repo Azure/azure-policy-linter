@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.PlatformValidation",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudvalidations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudvalidations/validationexecutionplans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudvalidations/validationexecutionplans/executionplanruns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

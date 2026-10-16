@@ -1,0 +1,325 @@
+{
+  "namespace": "Microsoft.AzureStackHCI",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/arcSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/arcSettings/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/capacitySettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/deploymentSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/networkProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/publishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/publishers/offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/publishers/offers/skus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/securitySettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/storageArrayAssociations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/updates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/updates/updateRuns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/updateSummaries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/volumes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/volumes/jobs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "devicePools"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "edgeDeviceMetaData"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "edgeDevices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "edgeMachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/deploymentSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/disks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/disks/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/disks/privilegedJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/edgeMachineMetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/gpus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/gpus/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/networkAdapters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/networkAdapters/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/proxyConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/proxyConfigurations/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/securitySettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/updates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "edgeMachines/volumes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "edgeNodePools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "galleryImages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "initiatorGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "loadBalancers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/osImages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/platformUpdates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validatedSolutionRecipes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateOwnershipVouchers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "logicalNetworks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "marketplaceGalleryImages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "natGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "natGateways/inboundRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkInterfaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkSecurityGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSecurityGroups/securityRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publicIPAddresses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "snapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageArrays"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/consistencyGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/replicationPeerings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/replicationPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/replicationUnits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/replicationUnits/replicationSessions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/storagePools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/volumeGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/volumeGroups/volumeMappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageArrays/volumeGroups/volumes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageContainers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageFabrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageFabrics/fabricAliases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageFabrics/fabricZones"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualHardDisks"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "virtualMachineInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualmachines"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualmachines/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualmachines/hybrididentitymetadata"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualnetworks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualnetworks/subnets"
+    }
+  ]
+}

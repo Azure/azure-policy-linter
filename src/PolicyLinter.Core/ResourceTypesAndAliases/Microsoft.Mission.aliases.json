@@ -1,0 +1,1358 @@
+{
+  "namespace": "Microsoft.Mission",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/approvals/approvedByEntraIds",
+          "defaultPath": "properties.approvedByEntraIds"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvedByEntraIds[*]",
+          "defaultPath": "properties.approvedByEntraIds[*]"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers",
+          "defaultPath": "properties.approvers"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers[*]",
+          "defaultPath": "properties.approvers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers[*].actionPerformed",
+          "defaultPath": "properties.approvers[*].actionPerformed"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers[*].approverEntraId",
+          "defaultPath": "properties.approvers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers[*].lastUpdatedAt",
+          "defaultPath": "properties.approvers[*].lastUpdatedAt"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers[*].mandatoryApprovalGroupMembershipIds",
+          "defaultPath": "properties.approvers[*].mandatoryApprovalGroupMembershipIds"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approvers[*].mandatoryApprovalGroupMembershipIds[*]",
+          "defaultPath": "properties.approvers[*].mandatoryApprovalGroupMembershipIds[*]"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/approversApprovedCount",
+          "defaultPath": "properties.approversApprovedCount"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/grandparentResourceId",
+          "defaultPath": "properties.grandparentResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/mandatoryApprovers",
+          "defaultPath": "properties.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/mandatoryApprovers[*]",
+          "defaultPath": "properties.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/mandatoryApproversApprovedCount",
+          "defaultPath": "properties.mandatoryApproversApprovedCount"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/minimumApproversRequired",
+          "defaultPath": "properties.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/parent1",
+          "defaultPath": "properties.parent1"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/parent2",
+          "defaultPath": "properties.parent2"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/parentResourceId",
+          "defaultPath": "properties.parentResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/requestMetadata",
+          "defaultPath": "properties.requestMetadata"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/requestMetadata.approvalCallbackPayload",
+          "defaultPath": "properties.requestMetadata.approvalCallbackPayload"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/requestMetadata.approvalCallbackRoute",
+          "defaultPath": "properties.requestMetadata.approvalCallbackRoute"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/requestMetadata.approvalStatus",
+          "defaultPath": "properties.requestMetadata.approvalStatus"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/requestMetadata.resourceAction",
+          "defaultPath": "properties.requestMetadata.resourceAction"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/stateChangedAt",
+          "defaultPath": "properties.stateChangedAt"
+        },
+        {
+          "name": "Microsoft.Mission/approvals/ticketId",
+          "defaultPath": "properties.ticketId"
+        }
+      ],
+      "resourceType": "approvals"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/communities/addressSpace",
+          "defaultPath": "properties.addressSpace"
+        },
+        {
+          "name": "Microsoft.Mission/communities/addressSpaces",
+          "defaultPath": "properties.addressSpaces"
+        },
+        {
+          "name": "Microsoft.Mission/communities/addressSpaces[*]",
+          "defaultPath": "properties.addressSpaces[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings",
+          "defaultPath": "properties.approvalSettings"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityEndpointUpdate",
+          "defaultPath": "properties.approvalSettings.communityEndpointUpdate"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityEndpointUpdate.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.communityEndpointUpdate.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityEndpointUpdate.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.communityEndpointUpdate.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityEndpointUpdate.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.communityEndpointUpdate.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityEndpointUpdate.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.communityEndpointUpdate.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityEndpointUpdate.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.communityEndpointUpdate.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityMaintenanceMode",
+          "defaultPath": "properties.approvalSettings.communityMaintenanceMode"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityMaintenanceMode.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.communityMaintenanceMode.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityMaintenanceMode.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.communityMaintenanceMode.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityMaintenanceMode.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.communityMaintenanceMode.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityMaintenanceMode.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.communityMaintenanceMode.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.communityMaintenanceMode.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.communityMaintenanceMode.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionCreation",
+          "defaultPath": "properties.approvalSettings.connectionCreation"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionCreation.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.connectionCreation.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionCreation.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.connectionCreation.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionCreation.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.connectionCreation.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionCreation.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.connectionCreation.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionCreation.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.connectionCreation.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionDeletion",
+          "defaultPath": "properties.approvalSettings.connectionDeletion"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionUpdate",
+          "defaultPath": "properties.approvalSettings.connectionUpdate"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionUpdate.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionUpdate.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionUpdate.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionUpdate.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.connectionUpdate.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveCreation",
+          "defaultPath": "properties.approvalSettings.enclaveCreation"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveCreation.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.enclaveCreation.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveCreation.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.enclaveCreation.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveCreation.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.enclaveCreation.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveCreation.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.enclaveCreation.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveCreation.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.enclaveCreation.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveDeletion",
+          "defaultPath": "properties.approvalSettings.enclaveDeletion"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveEndpointUpdate",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveEndpointUpdate.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveEndpointUpdate.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveEndpointUpdate.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveMaintenanceMode",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveMaintenanceMode.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveMaintenanceMode.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.enclaveMaintenanceMode.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.endpointCreation",
+          "defaultPath": "properties.approvalSettings.endpointCreation"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.endpointDeletion",
+          "defaultPath": "properties.approvalSettings.endpointDeletion"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.endpointUpdate",
+          "defaultPath": "properties.approvalSettings.endpointUpdate"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.maintenanceMode",
+          "defaultPath": "properties.approvalSettings.maintenanceMode"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.notificationOnApprovalAction",
+          "defaultPath": "properties.approvalSettings.notificationOnApprovalAction"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.notificationOnApprovalCreation",
+          "defaultPath": "properties.approvalSettings.notificationOnApprovalCreation"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.notificationOnApprovalDeletion",
+          "defaultPath": "properties.approvalSettings.notificationOnApprovalDeletion"
+        },
+        {
+          "name": "Microsoft.Mission/communities/approvalSettings.serviceCatalogDeployment",
+          "defaultPath": "properties.approvalSettings.serviceCatalogDeployment"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments",
+          "defaultPath": "properties.communityRoleAssignments"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*]",
+          "defaultPath": "properties.communityRoleAssignments[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].condition",
+          "defaultPath": "properties.communityRoleAssignments[*].condition"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].id",
+          "defaultPath": "properties.communityRoleAssignments[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].principals",
+          "defaultPath": "properties.communityRoleAssignments[*].principals"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].principals[*]",
+          "defaultPath": "properties.communityRoleAssignments[*].principals[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].principals[*].id",
+          "defaultPath": "properties.communityRoleAssignments[*].principals[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].principals[*].type",
+          "defaultPath": "properties.communityRoleAssignments[*].principals[*].type"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityRoleAssignments[*].roleDefinitionId",
+          "defaultPath": "properties.communityRoleAssignments[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList",
+          "defaultPath": "properties.dedicatedHubList"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*]",
+          "defaultPath": "properties.dedicatedHubList[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].designation",
+          "defaultPath": "properties.dedicatedHubList[*].properties.designation"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].firewallPolicyResourceId",
+          "defaultPath": "properties.dedicatedHubList[*].properties.firewallPolicyResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].firewallResourceId",
+          "defaultPath": "properties.dedicatedHubList[*].properties.firewallResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].id",
+          "defaultPath": "properties.dedicatedHubList[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].location",
+          "defaultPath": "properties.dedicatedHubList[*].location"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].name",
+          "defaultPath": "properties.dedicatedHubList[*].name"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].provisioningState",
+          "defaultPath": "properties.dedicatedHubList[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].tags",
+          "defaultPath": "properties.dedicatedHubList[*].tags"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].type",
+          "defaultPath": "properties.dedicatedHubList[*].type"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubList[*].vHubResourceId",
+          "defaultPath": "properties.dedicatedHubList[*].properties.vHubResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dnsServers",
+          "defaultPath": "properties.dnsServers"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dnsServers[*]",
+          "defaultPath": "properties.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/firewallSku",
+          "defaultPath": "properties.firewallSku"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList",
+          "defaultPath": "properties.governedServiceList"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*]",
+          "defaultPath": "properties.governedServiceList[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].auditOnly",
+          "defaultPath": "properties.governedServiceList[*].auditOnly"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].enforcement",
+          "defaultPath": "properties.governedServiceList[*].enforcement"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].id",
+          "defaultPath": "properties.governedServiceList[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].initiatives",
+          "defaultPath": "properties.governedServiceList[*].initiatives"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].initiatives[*]",
+          "defaultPath": "properties.governedServiceList[*].initiatives[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].name",
+          "defaultPath": "properties.governedServiceList[*].name"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].option",
+          "defaultPath": "properties.governedServiceList[*].option"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].policyAction",
+          "defaultPath": "properties.governedServiceList[*].policyAction"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].serviceId",
+          "defaultPath": "properties.governedServiceList[*].serviceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/governedServiceList[*].serviceName",
+          "defaultPath": "properties.governedServiceList[*].serviceName"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration",
+          "defaultPath": "properties.maintenanceModeConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration.justification",
+          "defaultPath": "properties.maintenanceModeConfiguration.justification"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration.mode",
+          "defaultPath": "properties.maintenanceModeConfiguration.mode"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration.principals",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration.principals[*]",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration.principals[*].id",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/communities/maintenanceModeConfiguration.principals[*].type",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals[*].type"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedOnBehalfOfConfiguration",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedOnBehalfOfConfiguration.moboBrokerResources",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedOnBehalfOfConfiguration.moboBrokerResources[*]",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedOnBehalfOfConfiguration.moboBrokerResources[*].id",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedResourceGroupConfiguration",
+          "defaultPath": "properties.managedResourceGroupConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedResourceGroupConfiguration.location",
+          "defaultPath": "properties.managedResourceGroupConfiguration.location"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedResourceGroupConfiguration.name",
+          "defaultPath": "properties.managedResourceGroupConfiguration.name"
+        },
+        {
+          "name": "Microsoft.Mission/communities/managedResourceGroupName",
+          "defaultPath": "properties.managedResourceGroupName"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings",
+          "defaultPath": "properties.monitoringSettings"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.diagnosticDestinations",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.diagnosticDestinations[*]",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.diagnosticDestinations[*].customWorkspaceResourceId",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*].customWorkspaceResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.diagnosticDestinations[*].destinationType",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*].destinationType"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.diagnosticDestinations[*].diagnosticSettingsName",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*].diagnosticSettingsName"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.flowLogDestination",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.flowLogDestination.customWorkspaceResourceId",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination.customWorkspaceResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.flowLogDestination.destinationType",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination.destinationType"
+        },
+        {
+          "name": "Microsoft.Mission/communities/monitoringSettings.flowLogDestination.diagnosticSettingsName",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination.diagnosticSettingsName"
+        },
+        {
+          "name": "Microsoft.Mission/communities/policyOverride",
+          "defaultPath": "properties.policyOverride"
+        },
+        {
+          "name": "Microsoft.Mission/communities/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/communities/resourceCollection",
+          "defaultPath": "properties.resourceCollection"
+        },
+        {
+          "name": "Microsoft.Mission/communities/resourceCollection[*]",
+          "defaultPath": "properties.resourceCollection[*]"
+        }
+      ],
+      "resourceType": "communities"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/approvalRequired",
+          "defaultPath": "properties.approvalRequired"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/resourceCollection",
+          "defaultPath": "properties.resourceCollection"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/resourceCollection[*]",
+          "defaultPath": "properties.resourceCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection",
+          "defaultPath": "properties.ruleCollection"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*]",
+          "defaultPath": "properties.ruleCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].destination",
+          "defaultPath": "properties.ruleCollection[*].destination"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].destinationType",
+          "defaultPath": "properties.ruleCollection[*].destinationType"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].endpointRuleName",
+          "defaultPath": "properties.ruleCollection[*].endpointRuleName"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].name",
+          "defaultPath": "properties.ruleCollection[*].name"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].port",
+          "defaultPath": "properties.ruleCollection[*].port"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].ports",
+          "defaultPath": "properties.ruleCollection[*].ports"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].protocols",
+          "defaultPath": "properties.ruleCollection[*].protocols"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].protocols[*]",
+          "defaultPath": "properties.ruleCollection[*].protocols[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/ruleCollection[*].transitHubResourceId",
+          "defaultPath": "properties.ruleCollection[*].transitHubResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/communityEndpoints/updateMode",
+          "defaultPath": "properties.updateMode"
+        }
+      ],
+      "resourceType": "communities/communityEndpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubs/designation",
+          "defaultPath": "properties.designation"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubs/firewallPolicyResourceId",
+          "defaultPath": "properties.firewallPolicyResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubs/firewallResourceId",
+          "defaultPath": "properties.firewallResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/communities/dedicatedHubs/vHubResourceId",
+          "defaultPath": "properties.vHubResourceId"
+        }
+      ],
+      "resourceType": "communities/dedicatedHubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/resourceCollection",
+          "defaultPath": "properties.resourceCollection"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/resourceCollection[*]",
+          "defaultPath": "properties.resourceCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/securityProvider",
+          "defaultPath": "properties.securityProvider"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/transitOption",
+          "defaultPath": "properties.transitOption"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/transitOption.params",
+          "defaultPath": "properties.transitOption.params"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/transitOption.params.remoteVirtualNetworkId",
+          "defaultPath": "properties.transitOption.params.remoteVirtualNetworkId"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/transitOption.params.scaleUnits",
+          "defaultPath": "properties.transitOption.params.scaleUnits"
+        },
+        {
+          "name": "Microsoft.Mission/communities/transitHubs/transitOption.type",
+          "defaultPath": "properties.transitOption.type"
+        }
+      ],
+      "resourceType": "communities/transitHubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/enclaveConnections/communityResourceId",
+          "defaultPath": "properties.communityResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/destinationEndpointId",
+          "defaultPath": "properties.destinationEndpointId"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/ipGroup",
+          "defaultPath": "properties.ipGroup"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/resourceCollection",
+          "defaultPath": "properties.resourceCollection"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/resourceCollection[*]",
+          "defaultPath": "properties.resourceCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/sourceCidr",
+          "defaultPath": "properties.sourceCidr"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/sourceResourceId",
+          "defaultPath": "properties.sourceResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Mission/enclaveConnections/updateMode",
+          "defaultPath": "properties.updateMode"
+        }
+      ],
+      "resourceType": "enclaveConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings",
+          "defaultPath": "properties.approvalSettings"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionCreation",
+          "defaultPath": "properties.approvalSettings.connectionCreation"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionCreation.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.connectionCreation.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionCreation.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.connectionCreation.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionCreation.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.connectionCreation.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionCreation.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.connectionCreation.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionCreation.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.connectionCreation.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionUpdate",
+          "defaultPath": "properties.approvalSettings.connectionUpdate"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionUpdate.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionUpdate.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionUpdate.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionUpdate.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.connectionUpdate.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.connectionUpdate.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveEndpointUpdate",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveEndpointUpdate.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveEndpointUpdate.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveEndpointUpdate.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.enclaveEndpointUpdate.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveMaintenanceMode",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveMaintenanceMode.approvalPolicy",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.approvalPolicy"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveMaintenanceMode.mandatoryApprovers",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.mandatoryApprovers"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*]",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*].approverEntraId",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.mandatoryApprovers[*].approverEntraId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/approvalSettings.enclaveMaintenanceMode.minimumApproversRequired",
+          "defaultPath": "properties.approvalSettings.enclaveMaintenanceMode.minimumApproversRequired"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/bastionEnabled",
+          "defaultPath": "properties.bastionEnabled"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/communityResourceId",
+          "defaultPath": "properties.communityResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/dedicatedHubResourceId",
+          "defaultPath": "properties.dedicatedHubResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveAddressSpaces",
+          "defaultPath": "properties.enclaveAddressSpaces"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveAddressSpaces.enclaveAddressSpace",
+          "defaultPath": "properties.enclaveAddressSpaces.enclaveAddressSpace"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveAddressSpaces.managedAddressSpace",
+          "defaultPath": "properties.enclaveAddressSpaces.managedAddressSpace"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveDefaultSettings",
+          "defaultPath": "properties.enclaveDefaultSettings"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveDefaultSettings.diagnosticDestination",
+          "defaultPath": "properties.enclaveDefaultSettings.diagnosticDestination"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveDefaultSettings.keyVaultResourceId",
+          "defaultPath": "properties.enclaveDefaultSettings.keyVaultResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveDefaultSettings.logAnalyticsResourceIdCollection",
+          "defaultPath": "properties.enclaveDefaultSettings.logAnalyticsResourceIdCollection"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveDefaultSettings.logAnalyticsResourceIdCollection[*]",
+          "defaultPath": "properties.enclaveDefaultSettings.logAnalyticsResourceIdCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveDefaultSettings.storageAccountResourceId",
+          "defaultPath": "properties.enclaveDefaultSettings.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments",
+          "defaultPath": "properties.enclaveRoleAssignments"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*]",
+          "defaultPath": "properties.enclaveRoleAssignments[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].condition",
+          "defaultPath": "properties.enclaveRoleAssignments[*].condition"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].id",
+          "defaultPath": "properties.enclaveRoleAssignments[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].principals",
+          "defaultPath": "properties.enclaveRoleAssignments[*].principals"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].principals[*]",
+          "defaultPath": "properties.enclaveRoleAssignments[*].principals[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].principals[*].id",
+          "defaultPath": "properties.enclaveRoleAssignments[*].principals[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].principals[*].type",
+          "defaultPath": "properties.enclaveRoleAssignments[*].principals[*].type"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveRoleAssignments[*].roleDefinitionId",
+          "defaultPath": "properties.enclaveRoleAssignments[*].roleDefinitionId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork",
+          "defaultPath": "properties.enclaveVirtualNetwork"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.allowSubnetCommunication",
+          "defaultPath": "properties.enclaveVirtualNetwork.allowSubnetCommunication"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.connectToAzureServices",
+          "defaultPath": "properties.enclaveVirtualNetwork.connectToAzureServices"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.customCidrRange",
+          "defaultPath": "properties.enclaveVirtualNetwork.customCidrRange"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.name",
+          "defaultPath": "properties.enclaveVirtualNetwork.name"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.networkName",
+          "defaultPath": "properties.enclaveVirtualNetwork.networkName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.networkSize",
+          "defaultPath": "properties.enclaveVirtualNetwork.networkSize"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*]",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].addressPrefix",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].addressPrefix"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].id",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].name",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].networkPrefixSize",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].networkPrefixSize"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].networkSecurityGroupId",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].networkSecurityGroupId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].networkSecurityGroupResourceId",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].networkSecurityGroupResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].subnetDelegation",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].subnetDelegation"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].subnetName",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].subnetName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveVirtualNetwork.subnetConfigurations[*].subnetResourceId",
+          "defaultPath": "properties.enclaveVirtualNetwork.subnetConfigurations[*].subnetResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList",
+          "defaultPath": "properties.governedServiceList"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*]",
+          "defaultPath": "properties.governedServiceList[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].enforcement",
+          "defaultPath": "properties.governedServiceList[*].enforcement"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].initiatives",
+          "defaultPath": "properties.governedServiceList[*].initiatives"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].initiatives[*]",
+          "defaultPath": "properties.governedServiceList[*].initiatives[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].option",
+          "defaultPath": "properties.governedServiceList[*].option"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].policyAction",
+          "defaultPath": "properties.governedServiceList[*].policyAction"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].serviceId",
+          "defaultPath": "properties.governedServiceList[*].serviceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/governedServiceList[*].serviceName",
+          "defaultPath": "properties.governedServiceList[*].serviceName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration",
+          "defaultPath": "properties.maintenanceModeConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration.justification",
+          "defaultPath": "properties.maintenanceModeConfiguration.justification"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration.mode",
+          "defaultPath": "properties.maintenanceModeConfiguration.mode"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration.principals",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration.principals[*]",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration.principals[*].id",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/maintenanceModeConfiguration.principals[*].type",
+          "defaultPath": "properties.maintenanceModeConfiguration.principals[*].type"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedOnBehalfOfConfiguration",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedOnBehalfOfConfiguration.moboBrokerResources",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedOnBehalfOfConfiguration.moboBrokerResources[*]",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedOnBehalfOfConfiguration.moboBrokerResources[*].id",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedResourceGroupConfiguration",
+          "defaultPath": "properties.managedResourceGroupConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedResourceGroupConfiguration.location",
+          "defaultPath": "properties.managedResourceGroupConfiguration.location"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedResourceGroupConfiguration.name",
+          "defaultPath": "properties.managedResourceGroupConfiguration.name"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/managedResourceGroupName",
+          "defaultPath": "properties.managedResourceGroupName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings",
+          "defaultPath": "properties.monitoringSettings"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.diagnosticDestinations",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.diagnosticDestinations[*]",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.diagnosticDestinations[*].customWorkspaceResourceId",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*].customWorkspaceResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.diagnosticDestinations[*].destinationType",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*].destinationType"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.diagnosticDestinations[*].diagnosticSettingsName",
+          "defaultPath": "properties.monitoringSettings.diagnosticDestinations[*].diagnosticSettingsName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.flowLogDestination",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.flowLogDestination.customWorkspaceResourceId",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination.customWorkspaceResourceId"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.flowLogDestination.destinationType",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination.destinationType"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/monitoringSettings.flowLogDestination.diagnosticSettingsName",
+          "defaultPath": "properties.monitoringSettings.flowLogDestination.diagnosticSettingsName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/rbacInheritance",
+          "defaultPath": "properties.rbacInheritance"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/resourceCollection",
+          "defaultPath": "properties.resourceCollection"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/resourceCollection[*]",
+          "defaultPath": "properties.resourceCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadResourceVisibility",
+          "defaultPath": "properties.workloadResourceVisibility"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments",
+          "defaultPath": "properties.workloadRoleAssignments"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*]",
+          "defaultPath": "properties.workloadRoleAssignments[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].condition",
+          "defaultPath": "properties.workloadRoleAssignments[*].condition"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].id",
+          "defaultPath": "properties.workloadRoleAssignments[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].principals",
+          "defaultPath": "properties.workloadRoleAssignments[*].principals"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].principals[*]",
+          "defaultPath": "properties.workloadRoleAssignments[*].principals[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].principals[*].id",
+          "defaultPath": "properties.workloadRoleAssignments[*].principals[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].principals[*].type",
+          "defaultPath": "properties.workloadRoleAssignments[*].principals[*].type"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloadRoleAssignments[*].roleDefinitionId",
+          "defaultPath": "properties.workloadRoleAssignments[*].roleDefinitionId"
+        }
+      ],
+      "resourceType": "virtualEnclaves"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/approvalRequired",
+          "defaultPath": "properties.approvalRequired"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/resourceCollection",
+          "defaultPath": "properties.resourceCollection"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/resourceCollection[*]",
+          "defaultPath": "properties.resourceCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection",
+          "defaultPath": "properties.ruleCollection"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*]",
+          "defaultPath": "properties.ruleCollection[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].destination",
+          "defaultPath": "properties.ruleCollection[*].destination"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].endpointRuleName",
+          "defaultPath": "properties.ruleCollection[*].endpointRuleName"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].name",
+          "defaultPath": "properties.ruleCollection[*].name"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].port",
+          "defaultPath": "properties.ruleCollection[*].port"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].ports",
+          "defaultPath": "properties.ruleCollection[*].ports"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].protocols",
+          "defaultPath": "properties.ruleCollection[*].protocols"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/ruleCollection[*].protocols[*]",
+          "defaultPath": "properties.ruleCollection[*].protocols[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints/updateMode",
+          "defaultPath": "properties.updateMode"
+        }
+      ],
+      "resourceType": "virtualEnclaves/enclaveEndpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/managedOnBehalfOfConfiguration",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/managedOnBehalfOfConfiguration.moboBrokerResources",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/managedOnBehalfOfConfiguration.moboBrokerResources[*]",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*]"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/managedOnBehalfOfConfiguration.moboBrokerResources[*].id",
+          "defaultPath": "properties.managedOnBehalfOfConfiguration.moboBrokerResources[*].id"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/resourceGroupCollection",
+          "defaultPath": "properties.resourceGroupCollection"
+        },
+        {
+          "name": "Microsoft.Mission/virtualEnclaves/workloads/resourceGroupCollection[*]",
+          "defaultPath": "properties.resourceGroupCollection[*]"
+        }
+      ],
+      "resourceType": "virtualEnclaves/workloads"
+    }
+  ]
+}

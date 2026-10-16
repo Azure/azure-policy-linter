@@ -1,0 +1,13 @@
+{
+  "namespace": "Microsoft.InferenceService",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "inferenceAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.NetworkFunction",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "azureTrafficCollectors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "azureTrafficCollectors/collectorPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "copilot"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/nfvOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/nfvOperations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "meshVpns"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "meshVpns/connectionPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "meshVpns/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "meshVpns/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vpnBranches"
+    }
+  ]
+}

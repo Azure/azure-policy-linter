@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.DataLakeStore",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/firewallRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/trustedIdProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/virtualNetworkRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

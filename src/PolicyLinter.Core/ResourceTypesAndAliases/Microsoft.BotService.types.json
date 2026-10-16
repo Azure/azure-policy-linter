@@ -1,0 +1,73 @@
+{
+  "namespace": "Microsoft.BotService",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "botServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "botServices/channels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "botServices/connections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "botServices/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "botServices/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "botServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "botServices/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "hostSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "languages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listAuthServiceProviders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listQnAMakerEndpointKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "templates"
+    }
+  ]
+}

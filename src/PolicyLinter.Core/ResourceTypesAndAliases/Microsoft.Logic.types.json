@@ -1,0 +1,109 @@
+{
+  "namespace": "Microsoft.Logic",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automationProjects"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automationProjects/applications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "businessProcesses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hostingEnvironments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "integrationAccounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/agreements"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/assemblies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/batchConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/maps"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/partners"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/rosettaNetProcessConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/schemas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "integrationAccounts/sessions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "integrationServiceEnvironments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "integrationServiceEnvironments/managedApis"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "isolatedEnvironments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/generateCopilotResponse"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateWorkflowExport"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/workflowExport"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/workflows"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "templates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workflows"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workflows/accessKeys"
+    }
+  ]
+}

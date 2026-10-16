@@ -1,0 +1,89 @@
+{
+  "namespace": "Microsoft.Batch",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "batchAccounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "batchAccounts/applications"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "batchAccounts/applications/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/certificateOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/detectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/networkSecurityPerimeterConfigurationOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/poolOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/pools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/privateEndpointConnectionProxyResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "batchAccounts/privateEndpointConnectionResults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "batchAccounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/accountOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/cloudServiceSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/quotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachineSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

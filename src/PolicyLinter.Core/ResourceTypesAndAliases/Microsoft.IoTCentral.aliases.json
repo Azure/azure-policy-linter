@@ -1,0 +1,196 @@
+{
+  "namespace": "Microsoft.IoTCentral",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.IoTCentral/IoTApps/applicationId",
+          "defaultPath": "properties.applicationId"
+        },
+        {
+          "name": "Microsoft.IoTCentral/IoTApps/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets",
+          "defaultPath": "properties.networkRuleSets"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.applyToDevices",
+          "defaultPath": "properties.networkRuleSets.applyToDevices"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.applyToIoTCentral",
+          "defaultPath": "properties.networkRuleSets.applyToIoTCentral"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.defaultAction",
+          "defaultPath": "properties.networkRuleSets.defaultAction"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.ipRules",
+          "defaultPath": "properties.networkRuleSets.ipRules"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.ipRules[*]",
+          "defaultPath": "properties.networkRuleSets.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.ipRules[*].action",
+          "defaultPath": "properties.networkRuleSets.ipRules[*].action"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.ipRules[*].filterName",
+          "defaultPath": "properties.networkRuleSets.ipRules[*].filterName"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/networkRuleSets.ipRules[*].ipMask",
+          "defaultPath": "properties.networkRuleSets.ipRules[*].ipMask"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-06-01",
+                "2018-09-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.IoTCentral/IoTApps/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.IoTCentral/IoTApps/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.IoTCentral/IoTApps/subdomain",
+          "defaultPath": "properties.subdomain"
+        },
+        {
+          "name": "Microsoft.IoTCentral/IoTApps/template",
+          "defaultPath": "properties.template"
+        }
+      ],
+      "resourceType": "IoTApps"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.IoTCentral/iotApps/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "IoTApps/privateEndpointConnections"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "namespace": "Microsoft.Datadog",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "activateSaaS"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "agreements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitoredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "monitors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/getDefaultKey"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/listApiKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/listHosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/listLinkedResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/listMonitoredResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/manageSreAgentConnectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/monitoredSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/refreshSetPasswordLink"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/setDefaultKey"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/singleSignOnConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/tagRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptionStatuses"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.HybridNetwork",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configurationGroupValues"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "devices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vendors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vendors/networkFunctions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/vendors/networkFunctions/roleInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkfunctions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkFunctions/components"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkFunctionVendors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "proxyPublishers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "proxyPublishers/configurationGroupSchemas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "proxyPublishers/networkFunctionDefinitionGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "proxyPublishers/networkFunctionDefinitionGroups/networkFunctionDefinitionVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "proxyPublishers/networkServiceDesignGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "proxyPublishers/networkServiceDesignGroups/networkServiceDesignVersions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/artifactStores"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/artifactStores/artifactManifests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publishers/artifactstores/artifacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "publishers/artifactstores/artifactversions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/configurationGroupSchemas"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/networkFunctionDefinitionGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/networkFunctionDefinitionGroups/networkFunctionDefinitionVersions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/networkFunctionDefinitionGroups/previewSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/networkServiceDesignGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "publishers/networkServiceDesignGroups/networkServiceDesignVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "siteNetworkServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vendors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vendors/vendorSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vendors/vendorSkus/previewSubscriptions"
+    }
+  ]
+}

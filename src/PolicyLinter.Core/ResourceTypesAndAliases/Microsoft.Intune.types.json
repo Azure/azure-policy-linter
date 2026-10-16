@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.Intune",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "diagnosticSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "diagnosticSettingsCategories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

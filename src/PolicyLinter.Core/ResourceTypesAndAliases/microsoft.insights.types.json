@@ -1,0 +1,369 @@
+{
+  "namespace": "microsoft.insights",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "actiongroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "actiongroups/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "actiongroups/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "activityLogAlerts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "autoscalesettings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "components"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/aggregate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/analyticsItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/annotations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/api"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/apiKeys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/currentBillingFeatures"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/defaultWorkItemConfig"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/events"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/exportConfiguration"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/extendQueries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/favorites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/featureCapabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/generateDiagnosticServiceReadOnlyToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/generateDiagnosticServiceReadWriteToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/getAvailableBillingFeatures"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/linkedstorageaccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/metadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/metricDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/metrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/move"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/myAnalyticsItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/myFavorites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/pricingPlans"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/proactiveDetectionConfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/purge"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/query"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/quotaStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/syntheticmonitorlocations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/webtests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "components/workItemConfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "createnotifications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dataCollectionEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataCollectionEndpoints/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataCollectionEndpoints/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dataCollectionEndpoints/scopedPrivateLinkProxies"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dataCollectionRuleAssociations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dataCollectionRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedWorkbooks"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "diagnosticSettings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "diagnosticSettingsCategories"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "eventCategories"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "eventtypes"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "extendedDiagnosticSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateDiagnosticServiceReadOnlyToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "generateDiagnosticServiceReadWriteToken"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "generateLiveToken"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listMigrationdate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/fetchDataCollectionRuleConfigurationMetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "logDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "logprofiles"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "logs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "metricalerts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "metricbaselines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "metricbatch"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "metricDefinitions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "metricNamespaces"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "metrics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migratealertrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "migrateToNewPricingModel"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitoredObjects"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "notificationgroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "notificationstatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "platformLogsConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopeOperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkScopes/scopedResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "rollbackToLegacyPricingModel"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "scheduledqueryrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scheduledqueryrules/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "scheduledqueryrules/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "tenantactiongroups"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "topology"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "transactions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "vmInsightsOnboardingStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "webtests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "webtests/getTestResultFile"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workbooks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workbooktemplates"
+    }
+  ]
+}

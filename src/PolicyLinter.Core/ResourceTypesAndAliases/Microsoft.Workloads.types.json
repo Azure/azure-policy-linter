@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.Workloads",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "configurationChecksTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "configurationValidationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectors/acssBackups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectors/amsInsights"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectors/sapVirtualInstanceMonitors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "epicVirtualInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "epicVirtualInstances/databaseInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "epicVirtualInstances/hyperspaceWebInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "epicVirtualInstances/presentationInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "epicVirtualInstances/sharedInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "epicVirtualInstances/wssInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "insights"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/sapVirtualInstanceMetadata"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "monitors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/alerts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/alertTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/db2JobConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/providerInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "monitors/sapLandscapeMonitor"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "oracleVirtualInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "oracleVirtualInstances/databaseInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "phpWorkloads"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "phpWorkloads/wordpressInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sapVirtualInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sapVirtualInstances/applicationInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sapVirtualInstances/centralInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sapVirtualInstances/databaseInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualInstances/components"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualInstances/instanceMonitors"
+    }
+  ]
+}

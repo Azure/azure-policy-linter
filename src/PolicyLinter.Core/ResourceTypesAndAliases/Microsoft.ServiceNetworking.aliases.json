@@ -1,0 +1,201 @@
+{
+  "namespace": "Microsoft.ServiceNetworking",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations",
+          "defaultPath": "properties.associations"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations[*]",
+          "defaultPath": "properties.associations[*]"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations[*].id",
+          "defaultPath": "properties.associations[*].id"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/configurationEndpoints",
+          "defaultPath": "properties.configurationEndpoints"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/configurationEndpoints[*]",
+          "defaultPath": "properties.configurationEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends",
+          "defaultPath": "properties.frontends"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends[*]",
+          "defaultPath": "properties.frontends[*]"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends[*].id",
+          "defaultPath": "properties.frontends[*].id"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies",
+          "defaultPath": "properties.securityPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies[*]",
+          "defaultPath": "properties.securityPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies[*].id",
+          "defaultPath": "properties.securityPolicies[*].id"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicyConfigurations",
+          "defaultPath": "properties.securityPolicyConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicyConfigurations.ipAccessRulesSecurityPolicy",
+          "defaultPath": "properties.securityPolicyConfigurations.ipAccessRulesSecurityPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicyConfigurations.ipAccessRulesSecurityPolicy.id",
+          "defaultPath": "properties.securityPolicyConfigurations.ipAccessRulesSecurityPolicy.id"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicyConfigurations.wafSecurityPolicy",
+          "defaultPath": "properties.securityPolicyConfigurations.wafSecurityPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicyConfigurations.wafSecurityPolicy.id",
+          "defaultPath": "properties.securityPolicyConfigurations.wafSecurityPolicy.id"
+        }
+      ],
+      "resourceType": "trafficControllers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations/associationType",
+          "defaultPath": "properties.associationType"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations/subnet",
+          "defaultPath": "properties.subnet"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/associations/subnet.id",
+          "defaultPath": "properties.subnet.id"
+        }
+      ],
+      "resourceType": "trafficControllers/associations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/ipAddressVersion",
+          "defaultPath": "properties.ipAddressVersion"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/publicIPAddress",
+          "defaultPath": "properties.publicIPAddress"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/publicIPAddress.id",
+          "defaultPath": "properties.publicIPAddress.id"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/securityPolicyConfigurations",
+          "defaultPath": "properties.securityPolicyConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/securityPolicyConfigurations.ipAccessRulesSecurityPolicy",
+          "defaultPath": "properties.securityPolicyConfigurations.ipAccessRulesSecurityPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/securityPolicyConfigurations.ipAccessRulesSecurityPolicy.id",
+          "defaultPath": "properties.securityPolicyConfigurations.ipAccessRulesSecurityPolicy.id"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/securityPolicyConfigurations.wafSecurityPolicy",
+          "defaultPath": "properties.securityPolicyConfigurations.wafSecurityPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/frontends/securityPolicyConfigurations.wafSecurityPolicy.id",
+          "defaultPath": "properties.securityPolicyConfigurations.wafSecurityPolicy.id"
+        }
+      ],
+      "resourceType": "trafficControllers/frontends"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy",
+          "defaultPath": "properties.ipAccessRulesPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules[*]",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules[*]"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules[*].action",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules[*].action"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules[*].name",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules[*].priority",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules[*].priority"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules[*].sourceAddressPrefixes",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules[*].sourceAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/ipAccessRulesPolicy.rules[*].sourceAddressPrefixes[*]",
+          "defaultPath": "properties.ipAccessRulesPolicy.rules[*].sourceAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/policyType",
+          "defaultPath": "properties.policyType"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/wafPolicy",
+          "defaultPath": "properties.wafPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceNetworking/trafficControllers/securityPolicies/wafPolicy.id",
+          "defaultPath": "properties.wafPolicy.id"
+        }
+      ],
+      "resourceType": "trafficControllers/securityPolicies"
+    }
+  ]
+}

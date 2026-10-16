@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.AzureSphere",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "catalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs/certificates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs/images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs/products"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs/products/devicegroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs/products/devicegroups/deployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs/products/devicegroups/devices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

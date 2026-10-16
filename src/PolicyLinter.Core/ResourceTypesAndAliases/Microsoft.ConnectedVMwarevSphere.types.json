@@ -1,0 +1,89 @@
+{
+  "namespace": "Microsoft.ConnectedVMwarevSphere",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "datastores"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hosts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/updateCenterOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/upgradeExtensionsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resourcepools"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VCenters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "VCenters/inventoryitems"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "virtualmachineinstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualmachines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "VirtualMachines/AssessPatches"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualmachines/extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualmachines/guestagents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualmachines/hybrididentitymetadata"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "VirtualMachines/InstallPatches"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "virtualmachines/upgradeextensions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualmachinetemplates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "virtualnetworks"
+    }
+  ]
+}

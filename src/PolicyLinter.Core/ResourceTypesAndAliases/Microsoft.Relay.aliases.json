@@ -1,0 +1,305 @@
+{
+  "namespace": "Microsoft.Relay",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/metricId",
+          "defaultPath": "properties.metricId"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].location",
+          "defaultPath": "properties.privateEndpointConnections[*].location"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/serviceBusEndpoint",
+          "defaultPath": "properties.serviceBusEndpoint"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        }
+      ],
+      "resourceType": "namespaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/AuthorizationRules/rights",
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/AuthorizationRules/rights[*]",
+          "defaultPath": "properties.rights[*]"
+        }
+      ],
+      "resourceType": "namespaces/authorizationrules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/listenerCount",
+          "defaultPath": "properties.listenerCount"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/requiresClientAuthorization",
+          "defaultPath": "properties.requiresClientAuthorization"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/userMetadata",
+          "defaultPath": "properties.userMetadata"
+        }
+      ],
+      "resourceType": "namespaces/hybridconnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/rights",
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/HybridConnections/authorizationRules/rights[*]",
+          "defaultPath": "properties.rights[*]"
+        }
+      ],
+      "resourceType": "namespaces/hybridconnections/authorizationrules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/networkRuleSets/defaultAction",
+          "defaultPath": "properties.defaultAction"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/networkRuleSets/ipRules",
+          "defaultPath": "properties.ipRules"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/networkRuleSets/ipRules[*]",
+          "defaultPath": "properties.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/networkRuleSets/ipRules[*].action",
+          "defaultPath": "properties.ipRules[*].action"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/networkRuleSets/ipRules[*].ipMask",
+          "defaultPath": "properties.ipRules[*].ipMask"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/networkRuleSets/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2018-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "namespaces/networkrulesets"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/isDynamic",
+          "defaultPath": "properties.isDynamic"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/listenerCount",
+          "defaultPath": "properties.listenerCount"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/relayType",
+          "defaultPath": "properties.relayType"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/requiresClientAuthorization",
+          "defaultPath": "properties.requiresClientAuthorization"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/requiresTransportSecurity",
+          "defaultPath": "properties.requiresTransportSecurity"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/userMetadata",
+          "defaultPath": "properties.userMetadata"
+        }
+      ],
+      "resourceType": "namespaces/wcfrelays"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/authorizationRules/rights",
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.Relay/namespaces/WcfRelays/authorizationRules/rights[*]",
+          "defaultPath": "properties.rights[*]"
+        }
+      ],
+      "resourceType": "namespaces/wcfrelays/authorizationrules"
+    }
+  ]
+}

@@ -1,0 +1,1455 @@
+{
+  "namespace": "Microsoft.NetApp",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories",
+          "defaultPath": "properties.activeDirectories"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*]",
+          "defaultPath": "properties.activeDirectories[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].activeDirectoryId",
+          "defaultPath": "properties.activeDirectories[*].activeDirectoryId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].administrators",
+          "defaultPath": "properties.activeDirectories[*].administrators"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].administrators[*]",
+          "defaultPath": "properties.activeDirectories[*].administrators[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].adName",
+          "defaultPath": "properties.activeDirectories[*].adName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].aesEncryption",
+          "defaultPath": "properties.activeDirectories[*].aesEncryption"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].allowLocalNfsUsersWithLdap",
+          "defaultPath": "properties.activeDirectories[*].allowLocalNfsUsersWithLdap"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].backupOperators",
+          "defaultPath": "properties.activeDirectories[*].backupOperators"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].backupOperators[*]",
+          "defaultPath": "properties.activeDirectories[*].backupOperators[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].dNS",
+          "defaultPath": "properties.activeDirectories[*].dNS"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].domain",
+          "defaultPath": "properties.activeDirectories[*].domain"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].encryptDCConnections",
+          "defaultPath": "properties.activeDirectories[*].encryptDCConnections"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].kdcIP",
+          "defaultPath": "properties.activeDirectories[*].kdcIP"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].ldapOverTLS",
+          "defaultPath": "properties.activeDirectories[*].ldapOverTLS"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].ldapSearchScope",
+          "defaultPath": "properties.activeDirectories[*].ldapSearchScope"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].ldapSearchScope.groupDN",
+          "defaultPath": "properties.activeDirectories[*].ldapSearchScope.groupDN"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].ldapSearchScope.groupMembershipFilter",
+          "defaultPath": "properties.activeDirectories[*].ldapSearchScope.groupMembershipFilter"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].ldapSearchScope.userDN",
+          "defaultPath": "properties.activeDirectories[*].ldapSearchScope.userDN"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].ldapSigning",
+          "defaultPath": "properties.activeDirectories[*].ldapSigning"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].organizationalUnit",
+          "defaultPath": "properties.activeDirectories[*].organizationalUnit"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].password",
+          "defaultPath": "properties.activeDirectories[*].password"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].preferredServersForLdapClient",
+          "defaultPath": "properties.activeDirectories[*].preferredServersForLdapClient"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].securityOperators",
+          "defaultPath": "properties.activeDirectories[*].securityOperators"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].securityOperators[*]",
+          "defaultPath": "properties.activeDirectories[*].securityOperators[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].serverRootCACertificate",
+          "defaultPath": "properties.activeDirectories[*].serverRootCACertificate"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].site",
+          "defaultPath": "properties.activeDirectories[*].site"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].sMBServerName",
+          "defaultPath": "properties.activeDirectories[*].sMBServerName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].status",
+          "defaultPath": "properties.activeDirectories[*].status"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].statusDetails",
+          "defaultPath": "properties.activeDirectories[*].statusDetails"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/activeDirectories[*].username",
+          "defaultPath": "properties.activeDirectories[*].username"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/disableShowmount",
+          "defaultPath": "properties.disableShowmount"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.identity",
+          "defaultPath": "properties.encryption.identity"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.identity.principalId",
+          "defaultPath": "properties.encryption.identity.principalId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.identity.userAssignedIdentity",
+          "defaultPath": "properties.encryption.identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keySource",
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keyVaultProperties.keyVaultId",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVaultId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keyVaultProperties.keyVaultResourceId",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVaultResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/encryption.keyVaultProperties.status",
+          "defaultPath": "properties.encryption.keyVaultProperties.status"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "netAppAccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/backupPolicyId",
+          "defaultPath": "properties.backupPolicyId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/dailyBackupsToKeep",
+          "defaultPath": "properties.dailyBackupsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/monthlyBackupsToKeep",
+          "defaultPath": "properties.monthlyBackupsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/volumeBackups",
+          "defaultPath": "properties.volumeBackups"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/volumeBackups[*]",
+          "defaultPath": "properties.volumeBackups[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/volumeBackups[*].backupsCount",
+          "defaultPath": "properties.volumeBackups[*].backupsCount"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/volumeBackups[*].policyEnabled",
+          "defaultPath": "properties.volumeBackups[*].policyEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/volumeBackups[*].volumeName",
+          "defaultPath": "properties.volumeBackups[*].volumeName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/volumesAssigned",
+          "defaultPath": "properties.volumesAssigned"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/weeklyBackupsToKeep",
+          "defaultPath": "properties.weeklyBackupsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/backupPolicies/yearlyBackupsToKeep",
+          "defaultPath": "properties.yearlyBackupsToKeep"
+        }
+      ],
+      "resourceType": "netAppAccounts/backupPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/coolAccess",
+          "defaultPath": "properties.coolAccess"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/encryptionType",
+          "defaultPath": "properties.encryptionType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/poolId",
+          "defaultPath": "properties.poolId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/qosType",
+          "defaultPath": "properties.qosType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/serviceLevel",
+          "defaultPath": "properties.serviceLevel"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/size",
+          "defaultPath": "properties.size"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/totalThroughputMibps",
+          "defaultPath": "properties.totalThroughputMibps"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/utilizedThroughputMibps",
+          "defaultPath": "properties.utilizedThroughputMibps"
+        }
+      ],
+      "resourceType": "netAppAccounts/capacityPools"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/actualThroughputMibps",
+          "defaultPath": "properties.actualThroughputMibps"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/avsDataStore",
+          "defaultPath": "properties.avsDataStore"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backupId",
+          "defaultPath": "properties.backupId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/baremetalTenantId",
+          "defaultPath": "properties.baremetalTenantId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/capacityPoolResourceId",
+          "defaultPath": "properties.capacityPoolResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/cloneProgress",
+          "defaultPath": "properties.cloneProgress"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/coolAccess",
+          "defaultPath": "properties.coolAccess"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/coolAccessRetrievalPolicy",
+          "defaultPath": "properties.coolAccessRetrievalPolicy"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/coolnessPeriod",
+          "defaultPath": "properties.coolnessPeriod"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/creationToken",
+          "defaultPath": "properties.creationToken"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection",
+          "defaultPath": "properties.dataProtection"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.backup",
+          "defaultPath": "properties.dataProtection.backup"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.backup.backupEnabled",
+          "defaultPath": "properties.dataProtection.backup.backupEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.backup.backupPolicyId",
+          "defaultPath": "properties.dataProtection.backup.backupPolicyId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.backup.backupVaultId",
+          "defaultPath": "properties.dataProtection.backup.backupVaultId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.backup.policyEnforced",
+          "defaultPath": "properties.dataProtection.backup.policyEnforced"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.backup.vaultId",
+          "defaultPath": "properties.dataProtection.backup.vaultId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.replication",
+          "defaultPath": "properties.dataProtection.replication"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.replication.endpointType",
+          "defaultPath": "properties.dataProtection.replication.endpointType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.replication.remoteVolumeRegion",
+          "defaultPath": "properties.dataProtection.replication.remoteVolumeRegion"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.replication.remoteVolumeResourceId",
+          "defaultPath": "properties.dataProtection.replication.remoteVolumeResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.replication.replicationId",
+          "defaultPath": "properties.dataProtection.replication.replicationId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.replication.replicationSchedule",
+          "defaultPath": "properties.dataProtection.replication.replicationSchedule"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.snapshot",
+          "defaultPath": "properties.dataProtection.snapshot"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.snapshot.snapshotPolicyId",
+          "defaultPath": "properties.dataProtection.snapshot.snapshotPolicyId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.volumeRelocation",
+          "defaultPath": "properties.dataProtection.volumeRelocation"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.volumeRelocation.readyToBeFinalized",
+          "defaultPath": "properties.dataProtection.volumeRelocation.readyToBeFinalized"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataProtection.volumeRelocation.relocationRequested",
+          "defaultPath": "properties.dataProtection.volumeRelocation.relocationRequested"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataStoreResourceId",
+          "defaultPath": "properties.dataStoreResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/dataStoreResourceId[*]",
+          "defaultPath": "properties.dataStoreResourceId[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/defaultGroupQuotaInKiBs",
+          "defaultPath": "properties.defaultGroupQuotaInKiBs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/defaultUserQuotaInKiBs",
+          "defaultPath": "properties.defaultUserQuotaInKiBs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/deleteBaseSnapshot",
+          "defaultPath": "properties.deleteBaseSnapshot"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/enableSubvolumes",
+          "defaultPath": "properties.enableSubvolumes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/encrypted",
+          "defaultPath": "properties.encrypted"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/encryptionKeySource",
+          "defaultPath": "properties.encryptionKeySource"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy",
+          "defaultPath": "properties.exportPolicy"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules",
+          "defaultPath": "properties.exportPolicy.rules"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*]",
+          "defaultPath": "properties.exportPolicy.rules[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].allowedClients",
+          "defaultPath": "properties.exportPolicy.rules[*].allowedClients"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].chownMode",
+          "defaultPath": "properties.exportPolicy.rules[*].chownMode"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].cifs",
+          "defaultPath": "properties.exportPolicy.rules[*].cifs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].hasRootAccess",
+          "defaultPath": "properties.exportPolicy.rules[*].hasRootAccess"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].kerberos5iReadOnly",
+          "defaultPath": "properties.exportPolicy.rules[*].kerberos5iReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].kerberos5iReadWrite",
+          "defaultPath": "properties.exportPolicy.rules[*].kerberos5iReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].kerberos5pReadOnly",
+          "defaultPath": "properties.exportPolicy.rules[*].kerberos5pReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].kerberos5pReadWrite",
+          "defaultPath": "properties.exportPolicy.rules[*].kerberos5pReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].kerberos5ReadOnly",
+          "defaultPath": "properties.exportPolicy.rules[*].kerberos5ReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].kerberos5ReadWrite",
+          "defaultPath": "properties.exportPolicy.rules[*].kerberos5ReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].nfsv3",
+          "defaultPath": "properties.exportPolicy.rules[*].nfsv3"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].nfsv4",
+          "defaultPath": "properties.exportPolicy.rules[*].nfsv4"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].nfsv41",
+          "defaultPath": "properties.exportPolicy.rules[*].nfsv41"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].ruleIndex",
+          "defaultPath": "properties.exportPolicy.rules[*].ruleIndex"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].unixReadOnly",
+          "defaultPath": "properties.exportPolicy.rules[*].unixReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/exportPolicy.rules[*].unixReadWrite",
+          "defaultPath": "properties.exportPolicy.rules[*].unixReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/fileAccessLogs",
+          "defaultPath": "properties.fileAccessLogs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/fileSystemId",
+          "defaultPath": "properties.fileSystemId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/isDefaultQuotaEnabled",
+          "defaultPath": "properties.isDefaultQuotaEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/isLargeVolume",
+          "defaultPath": "properties.isLargeVolume"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/isRestoring",
+          "defaultPath": "properties.isRestoring"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/kerberosEnabled",
+          "defaultPath": "properties.kerberosEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/keyVaultPrivateEndpointResourceId",
+          "defaultPath": "properties.keyVaultPrivateEndpointResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/ldapEnabled",
+          "defaultPath": "properties.ldapEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/maximumNumberOfFiles",
+          "defaultPath": "properties.maximumNumberOfFiles"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets",
+          "defaultPath": "properties.mountTargets"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*]",
+          "defaultPath": "properties.mountTargets[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].endIp",
+          "defaultPath": "properties.mountTargets[*].endIp"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].fileSystemId",
+          "defaultPath": "properties.mountTargets[*].fileSystemId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].gateway",
+          "defaultPath": "properties.mountTargets[*].gateway"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].id",
+          "defaultPath": "properties.mountTargets[*].id"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].ipAddress",
+          "defaultPath": "properties.mountTargets[*].ipAddress"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].location",
+          "defaultPath": "properties.mountTargets[*].location"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].mountTargetId",
+          "defaultPath": "properties.mountTargets[*].mountTargetId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].name",
+          "defaultPath": "properties.mountTargets[*].name"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].netmask",
+          "defaultPath": "properties.mountTargets[*].netmask"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].provisioningState",
+          "defaultPath": "properties.mountTargets[*].provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].smbServerFqdn",
+          "defaultPath": "properties.mountTargets[*].smbServerFqdn"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].startIp",
+          "defaultPath": "properties.mountTargets[*].startIp"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].subnet",
+          "defaultPath": "properties.mountTargets[*].subnet"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].tags",
+          "defaultPath": "properties.mountTargets[*].tags"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/mountTargets[*].type",
+          "defaultPath": "properties.mountTargets[*].type"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/networkFeatures",
+          "defaultPath": "properties.networkFeatures"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/networkSiblingSetId",
+          "defaultPath": "properties.networkSiblingSetId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/originatingResourceId",
+          "defaultPath": "properties.originatingResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/placementRules",
+          "defaultPath": "properties.placementRules"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/placementRules[*]",
+          "defaultPath": "properties.placementRules[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/placementRules[*].key",
+          "defaultPath": "properties.placementRules[*].key"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/placementRules[*].value",
+          "defaultPath": "properties.placementRules[*].value"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/protocolTypes",
+          "defaultPath": "properties.protocolTypes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/protocolTypes[*]",
+          "defaultPath": "properties.protocolTypes[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/provisionedAvailabilityZone",
+          "defaultPath": "properties.provisionedAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/proximityPlacementGroup",
+          "defaultPath": "properties.proximityPlacementGroup"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/securityStyle",
+          "defaultPath": "properties.securityStyle"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/serviceLevel",
+          "defaultPath": "properties.serviceLevel"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/smbAccessBasedEnumeration",
+          "defaultPath": "properties.smbAccessBasedEnumeration"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/smbContinuouslyAvailable",
+          "defaultPath": "properties.smbContinuouslyAvailable"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/smbEncryption",
+          "paths": [
+            {
+              "path": "properties.smbEncryption",
+              "apiVersions": [
+                "2020-08-01",
+                "2020-07-01",
+                "2020-06-01",
+                "2020-05-01",
+                "2020-03-01",
+                "2020-02-01",
+                "2019-11-01",
+                "2019-10-01",
+                "2019-08-01",
+                "2019-07-01",
+                "2019-06-01",
+                "2019-05-01",
+                "2017-08-15"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.smbEncryption",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/smbNonBrowsable",
+          "defaultPath": "properties.smbNonBrowsable"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshotDirectoryVisible",
+          "defaultPath": "properties.snapshotDirectoryVisible"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshotId",
+          "defaultPath": "properties.snapshotId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/storageToNetworkProximity",
+          "defaultPath": "properties.storageToNetworkProximity"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/t2Network",
+          "defaultPath": "properties.t2Network"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/throughputMibps",
+          "defaultPath": "properties.throughputMibps"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/unixPermissions",
+          "defaultPath": "properties.unixPermissions"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/usageThreshold",
+          "defaultPath": "properties.usageThreshold"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/usedBytes",
+          "defaultPath": "properties.usedBytes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeGroupName",
+          "defaultPath": "properties.volumeGroupName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeSpecName",
+          "defaultPath": "properties.volumeSpecName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeType",
+          "defaultPath": "properties.volumeType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "netAppAccounts/capacityPools/volumes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/backupId",
+          "defaultPath": "properties.backupId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/backupType",
+          "defaultPath": "properties.backupType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/failureReason",
+          "defaultPath": "properties.failureReason"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/label",
+          "defaultPath": "properties.label"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/size",
+          "defaultPath": "properties.size"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/useExistingSnapshot",
+          "defaultPath": "properties.useExistingSnapshot"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/volumeName",
+          "defaultPath": "properties.volumeName"
+        }
+      ],
+      "resourceType": "netAppAccounts/capacityPools/volumes/backups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/creationDate",
+          "defaultPath": "properties.creationDate"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/fileSystemId",
+          "defaultPath": "properties.fileSystemId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/snapshotId",
+          "defaultPath": "properties.snapshotId"
+        }
+      ],
+      "resourceType": "netAppAccounts/capacityPools/volumes/snapshots"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/parentPath",
+          "defaultPath": "properties.parentPath"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/path",
+          "defaultPath": "properties.path"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/size",
+          "defaultPath": "properties.size"
+        }
+      ],
+      "resourceType": "netAppAccounts/capacityPools/volumes/subvolumes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/quotaSizeInKiBs",
+          "defaultPath": "properties.quotaSizeInKiBs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/quotaTarget",
+          "defaultPath": "properties.quotaTarget"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/quotaType",
+          "defaultPath": "properties.quotaType"
+        }
+      ],
+      "resourceType": "netAppAccounts/capacityPools/volumes/volumeQuotaRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/dailySchedule",
+          "defaultPath": "properties.dailySchedule"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/dailySchedule.hour",
+          "defaultPath": "properties.dailySchedule.hour"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/dailySchedule.minute",
+          "defaultPath": "properties.dailySchedule.minute"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/dailySchedule.snapshotsToKeep",
+          "defaultPath": "properties.dailySchedule.snapshotsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/dailySchedule.usedBytes",
+          "defaultPath": "properties.dailySchedule.usedBytes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/hourlySchedule",
+          "defaultPath": "properties.hourlySchedule"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/hourlySchedule.minute",
+          "defaultPath": "properties.hourlySchedule.minute"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/hourlySchedule.snapshotsToKeep",
+          "defaultPath": "properties.hourlySchedule.snapshotsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/hourlySchedule.usedBytes",
+          "defaultPath": "properties.hourlySchedule.usedBytes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/monthlySchedule",
+          "defaultPath": "properties.monthlySchedule"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/monthlySchedule.daysOfMonth",
+          "defaultPath": "properties.monthlySchedule.daysOfMonth"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/monthlySchedule.hour",
+          "defaultPath": "properties.monthlySchedule.hour"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/monthlySchedule.minute",
+          "defaultPath": "properties.monthlySchedule.minute"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/monthlySchedule.snapshotsToKeep",
+          "defaultPath": "properties.monthlySchedule.snapshotsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/monthlySchedule.usedBytes",
+          "defaultPath": "properties.monthlySchedule.usedBytes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/weeklySchedule",
+          "defaultPath": "properties.weeklySchedule"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/weeklySchedule.day",
+          "defaultPath": "properties.weeklySchedule.day"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/weeklySchedule.hour",
+          "defaultPath": "properties.weeklySchedule.hour"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/weeklySchedule.minute",
+          "defaultPath": "properties.weeklySchedule.minute"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/weeklySchedule.snapshotsToKeep",
+          "defaultPath": "properties.weeklySchedule.snapshotsToKeep"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/weeklySchedule.usedBytes",
+          "defaultPath": "properties.weeklySchedule.usedBytes"
+        }
+      ],
+      "resourceType": "netAppAccounts/snapshotPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData",
+          "defaultPath": "properties.groupMetaData"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.applicationIdentifier",
+          "defaultPath": "properties.groupMetaData.applicationIdentifier"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.applicationType",
+          "defaultPath": "properties.groupMetaData.applicationType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.deploymentSpecId",
+          "defaultPath": "properties.groupMetaData.deploymentSpecId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.globalPlacementRules",
+          "defaultPath": "properties.groupMetaData.globalPlacementRules"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.globalPlacementRules[*]",
+          "defaultPath": "properties.groupMetaData.globalPlacementRules[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.globalPlacementRules[*].key",
+          "defaultPath": "properties.groupMetaData.globalPlacementRules[*].key"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.globalPlacementRules[*].value",
+          "defaultPath": "properties.groupMetaData.globalPlacementRules[*].value"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.groupDescription",
+          "defaultPath": "properties.groupMetaData.groupDescription"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/groupMetaData.volumesCount",
+          "defaultPath": "properties.groupMetaData.volumesCount"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes",
+          "defaultPath": "properties.volumes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*]",
+          "defaultPath": "properties.volumes[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].actualThroughputMibps",
+          "defaultPath": "properties.volumes[*].properties.actualThroughputMibps"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].avsDataStore",
+          "defaultPath": "properties.volumes[*].properties.avsDataStore"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].backupId",
+          "defaultPath": "properties.volumes[*].properties.backupId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].baremetalTenantId",
+          "defaultPath": "properties.volumes[*].properties.baremetalTenantId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].capacityPoolResourceId",
+          "defaultPath": "properties.volumes[*].properties.capacityPoolResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].cloneProgress",
+          "defaultPath": "properties.volumes[*].properties.cloneProgress"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].coolAccess",
+          "defaultPath": "properties.volumes[*].properties.coolAccess"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].coolAccessRetrievalPolicy",
+          "defaultPath": "properties.volumes[*].properties.coolAccessRetrievalPolicy"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].coolnessPeriod",
+          "defaultPath": "properties.volumes[*].properties.coolnessPeriod"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].creationToken",
+          "defaultPath": "properties.volumes[*].properties.creationToken"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection",
+          "defaultPath": "properties.volumes[*].properties.dataProtection"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.backup",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.backup"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.backup.backupEnabled",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.backup.backupEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.backup.backupPolicyId",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.backup.backupPolicyId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.backup.backupVaultId",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.backup.backupVaultId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.backup.policyEnforced",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.backup.policyEnforced"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.backup.vaultId",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.backup.vaultId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.replication",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.replication"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.replication.endpointType",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.replication.endpointType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.replication.remoteVolumeRegion",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.replication.remoteVolumeRegion"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.replication.remoteVolumeResourceId",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.replication.remoteVolumeResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.replication.replicationId",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.replication.replicationId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.replication.replicationSchedule",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.replication.replicationSchedule"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.snapshot",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.snapshot"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.snapshot.snapshotPolicyId",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.snapshot.snapshotPolicyId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.volumeRelocation",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.volumeRelocation"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.volumeRelocation.readyToBeFinalized",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.volumeRelocation.readyToBeFinalized"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataProtection.volumeRelocation.relocationRequested",
+          "defaultPath": "properties.volumes[*].properties.dataProtection.volumeRelocation.relocationRequested"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataStoreResourceId",
+          "defaultPath": "properties.volumes[*].properties.dataStoreResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].dataStoreResourceId[*]",
+          "defaultPath": "properties.volumes[*].properties.dataStoreResourceId[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].defaultGroupQuotaInKiBs",
+          "defaultPath": "properties.volumes[*].properties.defaultGroupQuotaInKiBs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].defaultUserQuotaInKiBs",
+          "defaultPath": "properties.volumes[*].properties.defaultUserQuotaInKiBs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].deleteBaseSnapshot",
+          "defaultPath": "properties.volumes[*].properties.deleteBaseSnapshot"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].enableSubvolumes",
+          "defaultPath": "properties.volumes[*].properties.enableSubvolumes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].encrypted",
+          "defaultPath": "properties.volumes[*].properties.encrypted"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].encryptionKeySource",
+          "defaultPath": "properties.volumes[*].properties.encryptionKeySource"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*]",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].allowedClients",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].allowedClients"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].chownMode",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].chownMode"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].cifs",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].cifs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].hasRootAccess",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].hasRootAccess"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].kerberos5iReadOnly",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].kerberos5iReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].kerberos5iReadWrite",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].kerberos5iReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].kerberos5pReadOnly",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].kerberos5pReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].kerberos5pReadWrite",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].kerberos5pReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].kerberos5ReadOnly",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].kerberos5ReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].kerberos5ReadWrite",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].kerberos5ReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].nfsv3",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].nfsv3"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].nfsv41",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].nfsv41"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].ruleIndex",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].ruleIndex"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].unixReadOnly",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].unixReadOnly"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].exportPolicy.rules[*].unixReadWrite",
+          "defaultPath": "properties.volumes[*].properties.exportPolicy.rules[*].unixReadWrite"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].fileAccessLogs",
+          "defaultPath": "properties.volumes[*].properties.fileAccessLogs"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].fileSystemId",
+          "defaultPath": "properties.volumes[*].properties.fileSystemId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].id",
+          "defaultPath": "properties.volumes[*].id"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].isDefaultQuotaEnabled",
+          "defaultPath": "properties.volumes[*].properties.isDefaultQuotaEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].isLargeVolume",
+          "defaultPath": "properties.volumes[*].properties.isLargeVolume"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].isRestoring",
+          "defaultPath": "properties.volumes[*].properties.isRestoring"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].kerberosEnabled",
+          "defaultPath": "properties.volumes[*].properties.kerberosEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].keyVaultPrivateEndpointResourceId",
+          "defaultPath": "properties.volumes[*].properties.keyVaultPrivateEndpointResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].ldapEnabled",
+          "defaultPath": "properties.volumes[*].properties.ldapEnabled"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].maximumNumberOfFiles",
+          "defaultPath": "properties.volumes[*].properties.maximumNumberOfFiles"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].mountTargets",
+          "defaultPath": "properties.volumes[*].properties.mountTargets"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].mountTargets[*]",
+          "defaultPath": "properties.volumes[*].properties.mountTargets[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].mountTargets[*].fileSystemId",
+          "defaultPath": "properties.volumes[*].properties.mountTargets[*].fileSystemId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].mountTargets[*].ipAddress",
+          "defaultPath": "properties.volumes[*].properties.mountTargets[*].ipAddress"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].mountTargets[*].mountTargetId",
+          "defaultPath": "properties.volumes[*].properties.mountTargets[*].mountTargetId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].mountTargets[*].smbServerFqdn",
+          "defaultPath": "properties.volumes[*].properties.mountTargets[*].smbServerFqdn"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].name",
+          "defaultPath": "properties.volumes[*].name"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].networkFeatures",
+          "defaultPath": "properties.volumes[*].properties.networkFeatures"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].networkSiblingSetId",
+          "defaultPath": "properties.volumes[*].properties.networkSiblingSetId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].originatingResourceId",
+          "defaultPath": "properties.volumes[*].properties.originatingResourceId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].placementRules",
+          "defaultPath": "properties.volumes[*].properties.placementRules"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].placementRules[*]",
+          "defaultPath": "properties.volumes[*].properties.placementRules[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].placementRules[*].key",
+          "defaultPath": "properties.volumes[*].properties.placementRules[*].key"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].placementRules[*].value",
+          "defaultPath": "properties.volumes[*].properties.placementRules[*].value"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].protocolTypes",
+          "defaultPath": "properties.volumes[*].properties.protocolTypes"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].protocolTypes[*]",
+          "defaultPath": "properties.volumes[*].properties.protocolTypes[*]"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].provisionedAvailabilityZone",
+          "defaultPath": "properties.volumes[*].properties.provisionedAvailabilityZone"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].provisioningState",
+          "defaultPath": "properties.volumes[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].proximityPlacementGroup",
+          "defaultPath": "properties.volumes[*].properties.proximityPlacementGroup"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].securityStyle",
+          "defaultPath": "properties.volumes[*].properties.securityStyle"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].serviceLevel",
+          "defaultPath": "properties.volumes[*].properties.serviceLevel"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].smbAccessBasedEnumeration",
+          "defaultPath": "properties.volumes[*].properties.smbAccessBasedEnumeration"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].smbContinuouslyAvailable",
+          "defaultPath": "properties.volumes[*].properties.smbContinuouslyAvailable"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].smbEncryption",
+          "defaultPath": "properties.volumes[*].properties.smbEncryption"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].smbNonBrowsable",
+          "defaultPath": "properties.volumes[*].properties.smbNonBrowsable"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].snapshotDirectoryVisible",
+          "defaultPath": "properties.volumes[*].properties.snapshotDirectoryVisible"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].snapshotId",
+          "defaultPath": "properties.volumes[*].properties.snapshotId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].storageToNetworkProximity",
+          "defaultPath": "properties.volumes[*].properties.storageToNetworkProximity"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].subnetId",
+          "defaultPath": "properties.volumes[*].properties.subnetId"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].t2Network",
+          "defaultPath": "properties.volumes[*].properties.t2Network"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].tags",
+          "defaultPath": "properties.volumes[*].tags"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].throughputMibps",
+          "defaultPath": "properties.volumes[*].properties.throughputMibps"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].type",
+          "defaultPath": "properties.volumes[*].type"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].unixPermissions",
+          "defaultPath": "properties.volumes[*].properties.unixPermissions"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].usageThreshold",
+          "defaultPath": "properties.volumes[*].properties.usageThreshold"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].volumeGroupName",
+          "defaultPath": "properties.volumes[*].properties.volumeGroupName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].volumeSpecName",
+          "defaultPath": "properties.volumes[*].properties.volumeSpecName"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].volumeType",
+          "defaultPath": "properties.volumes[*].properties.volumeType"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].zones",
+          "defaultPath": "properties.volumes[*].zones"
+        },
+        {
+          "name": "Microsoft.NetApp/netAppAccounts/volumeGroups/volumes[*].zones[*]",
+          "defaultPath": "properties.volumes[*].zones[*]"
+        }
+      ],
+      "resourceType": "netAppAccounts/volumeGroups"
+    }
+  ]
+}

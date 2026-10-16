@@ -1,0 +1,417 @@
+{
+  "namespace": "Microsoft.ApiManagement",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "aigateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkFeedbackRequired"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkServiceNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "gateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "gateways/configConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getDomainOwnershipIdentifier"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reportFeedback"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "service"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/diagnostics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/issues"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/issues/attachments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/issues/comments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/operations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/operations/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/operations/tags"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/releases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/resolvers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/resolvers/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/schemas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/tagDescriptions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/tags"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apis/tools"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/apiVersionSets"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/authorizationProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/authorizationProviders/authorizations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/authorizationServers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/backends"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/caches"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/clientApplications"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/contentTypes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/diagnostics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/documentations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "service/eventGridFilters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/gateways"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/gateways/certificateAuthorities"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/gateways/hostnameConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/groups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/identityProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/loggers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/namedValues"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/notifications"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/openidConnectProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/policyFragments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/policyRestrictions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/portalConfigs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/portalRevisions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/portalsettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/products"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/products/apiLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/products/groupLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/products/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/products/tags"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/properties"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/schemas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/subscriptions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/tags"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/tags/apiLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/tags/operationLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/tags/productLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/templates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/tenant"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/users"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis/diagnostics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis/operations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis/operations/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis/releases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apis/schemas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/apiVersionSets"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/backends"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/diagnostics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/groups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/loggers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/namedValues"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/policyFragments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/products"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/products/apiLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/products/groupLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/products/policies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/schemas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/subscriptions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/tags"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/tags/apiLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/tags/operationLinks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "service/workspaces/tags/productLinks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateServiceName"
+    }
+  ]
+}

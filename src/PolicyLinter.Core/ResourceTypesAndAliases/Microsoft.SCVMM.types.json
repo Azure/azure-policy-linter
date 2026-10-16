@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.SCVMM",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "AvailabilitySets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Clouds"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "VirtualMachineInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VirtualMachines"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VirtualMachines/Extensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "VirtualMachines/GuestAgents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "VirtualMachines/HybridIdentityMetadata"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VirtualMachineTemplates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VirtualNetworks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VMMServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "VMMServers/InventoryItems"
+    }
+  ]
+}

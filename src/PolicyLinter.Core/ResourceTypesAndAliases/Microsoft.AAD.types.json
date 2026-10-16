@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.AAD",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "DomainServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "DomainServices/oucontainer"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "domainServices/unsuspend"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ResilienceHostsOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ResilienceServicesOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ResilienceServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ResilienceServices/Hosts"
+    }
+  ]
+}

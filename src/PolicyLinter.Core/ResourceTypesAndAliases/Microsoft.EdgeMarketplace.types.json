@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.EdgeMarketplace",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "offers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "publishers"
+    }
+  ]
+}

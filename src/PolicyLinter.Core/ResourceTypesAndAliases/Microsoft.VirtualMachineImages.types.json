@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.VirtualMachineImages",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "imageTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "imageTemplates/runOutputs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "imageTemplates/triggers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

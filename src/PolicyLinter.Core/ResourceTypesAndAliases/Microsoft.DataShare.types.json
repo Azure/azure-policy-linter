@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.DataShare",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/shares"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/shares/datasets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/shares/invitations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/shares/providersharesubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/shares/synchronizationSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/sharesubscriptions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/sharesubscriptions/consumerSourceDataSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/sharesubscriptions/datasetmappings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/sharesubscriptions/triggers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listinvitations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/activateEmail"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/consumerInvitations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/registerEmail"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/rejectInvitation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

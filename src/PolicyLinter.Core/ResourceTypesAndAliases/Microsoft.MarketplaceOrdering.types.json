@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.MarketplaceOrdering",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "agreements"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "offertypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

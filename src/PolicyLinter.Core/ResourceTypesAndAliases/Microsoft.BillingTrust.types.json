@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.BillingTrust",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "assessments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "assessments/rules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

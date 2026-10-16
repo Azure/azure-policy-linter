@@ -1,0 +1,42 @@
+{
+  "namespace": "Microsoft.Fabric",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Fabric/capacities/administration",
+          "defaultPath": "properties.administration"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/administration.members",
+          "defaultPath": "properties.administration.members"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/administration.members[*]",
+          "defaultPath": "properties.administration.members[*]"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Fabric/capacities/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "capacities"
+    }
+  ]
+}

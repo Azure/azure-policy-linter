@@ -1,0 +1,1752 @@
+{
+  "namespace": "Microsoft.EventHub",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/clusters/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/metricId",
+          "defaultPath": "properties.metricId"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/platformCapabilities",
+          "defaultPath": "properties.platformCapabilities"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/platformCapabilities.confidentialCompute",
+          "defaultPath": "properties.platformCapabilities.confidentialCompute"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/platformCapabilities.confidentialCompute.mode",
+          "defaultPath": "properties.platformCapabilities.confidentialCompute.mode"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/supportsScaling",
+          "defaultPath": "properties.supportsScaling"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/updated",
+          "defaultPath": "properties.updated"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/upgradePreferences",
+          "defaultPath": "properties.upgradePreferences"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/upgradePreferences.startDayOfWeek",
+          "defaultPath": "properties.upgradePreferences.startDayOfWeek"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/upgradePreferences.startHourOfDay",
+          "defaultPath": "properties.upgradePreferences.startHourOfDay"
+        },
+        {
+          "name": "Microsoft.EventHub/clusters/zoneRedundant",
+          "defaultPath": "properties.zoneRedundant"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/alternateName",
+          "defaultPath": "properties.alternateName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription",
+          "paths": [
+            {
+              "path": "properties.archiveDescription",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.destination",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.destination",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.destination"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.destination.archiveNameFormat",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.destination.properties.archiveNameFormat",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.destination.properties.archiveNameFormat"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.destination.blobContainer",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.destination.properties.blobContainer",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.destination.properties.blobContainer"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.destination.name",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.destination.name",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.destination.name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.destination.storageAccountResourceId",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.destination.properties.storageAccountResourceId",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.destination.properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.enabled",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.enabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.enabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.encoding",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.encoding",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.encoding"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.intervalInSeconds",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.intervalInSeconds",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.intervalInSeconds"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/archiveDescription.sizeLimitInBytes",
+          "paths": [
+            {
+              "path": "properties.archiveDescription.sizeLimitInBytes",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.archiveDescription.sizeLimitInBytes"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription",
+          "paths": [
+            {
+              "path": "properties.captureDescription",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.destination",
+          "paths": [
+            {
+              "path": "properties.captureDescription.destination",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.destination"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.destination.archiveNameFormat",
+          "paths": [
+            {
+              "path": "properties.captureDescription.destination.properties.archiveNameFormat",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.destination.properties.archiveNameFormat"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.destination.blobContainer",
+          "paths": [
+            {
+              "path": "properties.captureDescription.destination.properties.blobContainer",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.destination.properties.blobContainer"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.destination.name",
+          "paths": [
+            {
+              "path": "properties.captureDescription.destination.name",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.destination.name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.destination.storageAccountResourceId",
+          "paths": [
+            {
+              "path": "properties.captureDescription.destination.properties.storageAccountResourceId",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.destination.properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.enabled",
+          "paths": [
+            {
+              "path": "properties.captureDescription.enabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.enabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.encoding",
+          "paths": [
+            {
+              "path": "properties.captureDescription.encoding",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.encoding"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.intervalInSeconds",
+          "paths": [
+            {
+              "path": "properties.captureDescription.intervalInSeconds",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.intervalInSeconds"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/captureDescription.sizeLimitInBytes",
+          "paths": [
+            {
+              "path": "properties.captureDescription.sizeLimitInBytes",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.captureDescription.sizeLimitInBytes"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/clusterArmId",
+          "defaultPath": "properties.clusterArmId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/createdAt",
+          "paths": [
+            {
+              "path": "properties.createdAt",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/critical",
+          "paths": [
+            {
+              "path": "properties.critical",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.critical"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2021-01-01-preview",
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/enabled",
+          "paths": [
+            {
+              "path": "properties.enabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keySource",
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties[*]",
+          "defaultPath": "properties.encryption.keyVaultProperties[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties[*].identity",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].identity"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties[*].identity.userAssignedIdentity",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties[*].keyName",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].keyName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties[*].keyVaultUri",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].keyVaultUri"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.keyVaultProperties[*].keyVersion",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].keyVersion"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/encryption.requireInfrastructureEncryption",
+          "defaultPath": "properties.encryption.requireInfrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventHubEnabled",
+          "paths": [
+            {
+              "path": "properties.eventHubEnabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.eventHubEnabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication",
+          "defaultPath": "properties.geoDataReplication"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.locations",
+          "defaultPath": "properties.geoDataReplication.locations"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.locations[*]",
+          "defaultPath": "properties.geoDataReplication.locations[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.locations[*].clusterArmId",
+          "defaultPath": "properties.geoDataReplication.locations[*].clusterArmId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.locations[*].locationName",
+          "defaultPath": "properties.geoDataReplication.locations[*].locationName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.locations[*].replicaState",
+          "defaultPath": "properties.geoDataReplication.locations[*].replicaState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.locations[*].roleType",
+          "defaultPath": "properties.geoDataReplication.locations[*].roleType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/geoDataReplication.maxReplicationLagDurationInSeconds",
+          "defaultPath": "properties.geoDataReplication.maxReplicationLagDurationInSeconds"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/identity",
+          "defaultPath": "properties.identity"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/identity.principalId",
+          "defaultPath": "properties.identity.principalId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/identity.tenantId",
+          "defaultPath": "properties.identity.tenantId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/identity.type",
+          "defaultPath": "properties.identity.type"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/ipAddressType",
+          "defaultPath": "properties.ipAddressType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/isAutoInflateEnabled",
+          "paths": [
+            {
+              "path": "properties.isAutoInflateEnabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.isAutoInflateEnabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/kafkaEnabled",
+          "paths": [
+            {
+              "path": "properties.kafkaEnabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.kafkaEnabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/maximumThroughputUnits",
+          "paths": [
+            {
+              "path": "properties.maximumThroughputUnits",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.maximumThroughputUnits"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messageRetentionInDays",
+          "paths": [
+            {
+              "path": "properties.messageRetentionInDays",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messageRetentionInDays"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messagingSku",
+          "paths": [
+            {
+              "path": "properties.messagingSku",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messagingSku"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messagingSkuPlan",
+          "paths": [
+            {
+              "path": "properties.messagingSkuPlan",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messagingSkuPlan"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messagingSkuPlan.isAutoInflateEnabled",
+          "paths": [
+            {
+              "path": "properties.messagingSkuPlan.isAutoInflateEnabled",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messagingSkuPlan.isAutoInflateEnabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messagingSkuPlan.maximumThroughputUnits",
+          "paths": [
+            {
+              "path": "properties.messagingSkuPlan.maximumThroughputUnits",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messagingSkuPlan.maximumThroughputUnits"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messagingSkuPlan.selectedEventHubUnit",
+          "paths": [
+            {
+              "path": "properties.messagingSkuPlan.selectedEventHubUnit",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messagingSkuPlan.selectedEventHubUnit"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/messagingSkuPlan.sku",
+          "paths": [
+            {
+              "path": "properties.messagingSkuPlan.sku",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.messagingSkuPlan.sku"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/metricId",
+          "paths": [
+            {
+              "path": "properties.metricId",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.metricId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/minimumTlsVersion",
+          "paths": [
+            {
+              "path": "properties.minimumTlsVersion",
+              "apiVersions": [
+                "2021-11-01",
+                "2021-06-01-preview",
+                "2021-01-01-preview",
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.minimumTlsVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/namespaceType",
+          "paths": [
+            {
+              "path": "properties.namespaceType",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.namespaceType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/partitionCount",
+          "paths": [
+            {
+              "path": "properties.partitionCount",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/partitionIds",
+          "paths": [
+            {
+              "path": "properties.partitionIds",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.partitionIds"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/partitionIds[*]",
+          "paths": [
+            {
+              "path": "properties.partitionIds[*]",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.partitionIds[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/path",
+          "paths": [
+            {
+              "path": "properties.path",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.path"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/platformCapabilities",
+          "defaultPath": "properties.platformCapabilities"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/platformCapabilities.confidentialCompute",
+          "defaultPath": "properties.platformCapabilities.confidentialCompute"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/platformCapabilities.confidentialCompute.mode",
+          "defaultPath": "properties.platformCapabilities.confidentialCompute.mode"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].location",
+          "defaultPath": "properties.privateEndpointConnections[*].location"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/provisioningState",
+          "paths": [
+            {
+              "path": "properties.provisioningState",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-11-01",
+                "2021-06-01-preview",
+                "2021-01-01-preview",
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/serviceBusEndpoint",
+          "paths": [
+            {
+              "path": "properties.serviceBusEndpoint",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.serviceBusEndpoint"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/serviceBusEndpoint.externalDocs",
+          "defaultPath": "properties.serviceBusEndpoint.externalDocs"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/sku.capacity",
+          "paths": [
+            {
+              "path": "sku.capacity",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/sku.name",
+          "paths": [
+            {
+              "path": "sku.name",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/sku.tier",
+          "paths": [
+            {
+              "path": "sku.tier",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/status",
+          "paths": [
+            {
+              "path": "properties.status",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/updatedAt",
+          "paths": [
+            {
+              "path": "properties.updatedAt",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/zoneRedundant",
+          "paths": [
+            {
+              "path": "properties.zoneRedundant",
+              "apiVersions": [
+                "2018-01-01-preview",
+                "2017-04-01",
+                "2015-08-01",
+                "2014-09-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.zoneRedundant"
+        }
+      ],
+      "resourceType": "namespaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/authorizationrules/rights",
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/authorizationrules/rights[*]",
+          "defaultPath": "properties.rights[*]"
+        }
+      ],
+      "resourceType": "namespaces/authorizationrules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/disasterrecoveryconfigs/alternateName",
+          "defaultPath": "properties.alternateName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/disasterrecoveryconfigs/partnerNamespace",
+          "defaultPath": "properties.partnerNamespace"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/disasterrecoveryconfigs/pendingReplicationOperationsCount",
+          "defaultPath": "properties.pendingReplicationOperationsCount"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/disasterrecoveryconfigs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/disasterrecoveryconfigs/role",
+          "defaultPath": "properties.role"
+        }
+      ],
+      "resourceType": "namespaces/disasterrecoveryconfigs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription",
+          "defaultPath": "properties.captureDescription"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination",
+          "defaultPath": "properties.captureDescription.destination"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.archiveNameFormat",
+          "defaultPath": "properties.captureDescription.destination.properties.archiveNameFormat"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.blobContainer",
+          "defaultPath": "properties.captureDescription.destination.properties.blobContainer"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.dataLakeAccountName",
+          "defaultPath": "properties.captureDescription.destination.properties.dataLakeAccountName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.dataLakeFolderPath",
+          "defaultPath": "properties.captureDescription.destination.properties.dataLakeFolderPath"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.dataLakeSubscriptionId",
+          "defaultPath": "properties.captureDescription.destination.properties.dataLakeSubscriptionId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.identity",
+          "defaultPath": "properties.captureDescription.destination.identity"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.identity.type",
+          "defaultPath": "properties.captureDescription.destination.identity.type"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.identity.userAssignedIdentity",
+          "defaultPath": "properties.captureDescription.destination.identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.name",
+          "defaultPath": "properties.captureDescription.destination.name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.destination.storageAccountResourceId",
+          "defaultPath": "properties.captureDescription.destination.properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.enabled",
+          "defaultPath": "properties.captureDescription.enabled"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.encoding",
+          "defaultPath": "properties.captureDescription.encoding"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.intervalInSeconds",
+          "defaultPath": "properties.captureDescription.intervalInSeconds"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.sizeLimitInBytes",
+          "defaultPath": "properties.captureDescription.sizeLimitInBytes"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/captureDescription.skipEmptyArchives",
+          "defaultPath": "properties.captureDescription.skipEmptyArchives"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/identifier",
+          "defaultPath": "properties.identifier"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/messageRetentionInDays",
+          "defaultPath": "properties.messageRetentionInDays"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/messageTimestampDescription",
+          "defaultPath": "properties.messageTimestampDescription"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/messageTimestampDescription.timestampType",
+          "defaultPath": "properties.messageTimestampDescription.timestampType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/partitionCount",
+          "defaultPath": "properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/partitionIds",
+          "defaultPath": "properties.partitionIds"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/partitionIds[*]",
+          "defaultPath": "properties.partitionIds[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/retentionDescription",
+          "defaultPath": "properties.retentionDescription"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/retentionDescription.cleanupPolicy",
+          "defaultPath": "properties.retentionDescription.cleanupPolicy"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/retentionDescription.minCompactionLagTimeInMinutes",
+          "defaultPath": "properties.retentionDescription.minCompactionLagTimeInMinutes"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/retentionDescription.retentionTimeInHours",
+          "defaultPath": "properties.retentionDescription.retentionTimeInHours"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/retentionDescription.tombstoneRetentionTimeInHours",
+          "defaultPath": "properties.retentionDescription.tombstoneRetentionTimeInHours"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/userMetadata",
+          "defaultPath": "properties.userMetadata"
+        }
+      ],
+      "resourceType": "namespaces/eventhubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/authorizationrules/rights",
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/authorizationrules/rights[*]",
+          "defaultPath": "properties.rights[*]"
+        }
+      ],
+      "resourceType": "namespaces/eventhubs/authorizationrules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/consumergroups/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/consumergroups/eventHubPath",
+          "defaultPath": "properties.eventHubPath"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/consumergroups/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/eventhubs/consumergroups/userMetadata",
+          "defaultPath": "properties.userMetadata"
+        }
+      ],
+      "resourceType": "namespaces/eventhubs/consumergroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/ipFilterRules/action",
+          "defaultPath": "properties.action"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/ipFilterRules/filterName",
+          "defaultPath": "properties.filterName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/ipFilterRules/ipMask",
+          "defaultPath": "properties.ipMask"
+        }
+      ],
+      "resourceType": "namespaces/ipFilterRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.defaultAction",
+          "defaultPath": "properties.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.ipRules",
+          "defaultPath": "properties.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.ipRules[*]",
+          "defaultPath": "properties.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.ipRules[*].action",
+          "defaultPath": "properties.ipRules[*].action",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.ipRules[*].ipMask",
+          "defaultPath": "properties.ipRules[*].ipMask",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkrulesets/default.trustedServiceAccessEnabled",
+          "paths": [
+            {
+              "path": "properties.trustedServiceAccessEnabled",
+              "apiVersions": [
+                "2017-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.trustedServiceAccessEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.virtualNetworkRules",
+          "defaultPath": "properties.virtualNetworkRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.virtualNetworkRules[*]",
+          "defaultPath": "properties.virtualNetworkRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint",
+          "defaultPath": "properties.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.virtualNetworkRules[*].subnet",
+          "defaultPath": "properties.virtualNetworkRules[*].subnet",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/default.virtualNetworkRules[*].subnet.id",
+          "defaultPath": "properties.virtualNetworkRules[*].subnet.id",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/defaultAction",
+          "defaultPath": "properties.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/ipRules",
+          "defaultPath": "properties.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/ipRules[*]",
+          "defaultPath": "properties.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/ipRules[*].action",
+          "defaultPath": "properties.ipRules[*].action",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/ipRules[*].ipMask",
+          "defaultPath": "properties.ipRules[*].ipMask",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-01-01-preview",
+                "2018-01-01-preview",
+                "2017-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/trustedServiceAccessEnabled",
+          "paths": [
+            {
+              "path": "properties.trustedServiceAccessEnabled",
+              "apiVersions": [
+                "2017-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.trustedServiceAccessEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/virtualNetworkRules",
+          "defaultPath": "properties.virtualNetworkRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/virtualNetworkRules[*]",
+          "defaultPath": "properties.virtualNetworkRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint",
+          "defaultPath": "properties.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/virtualNetworkRules[*].subnet",
+          "defaultPath": "properties.virtualNetworkRules[*].subnet",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkRuleSets/virtualNetworkRules[*].subnet.id",
+          "defaultPath": "properties.virtualNetworkRules[*].subnet.id",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "namespaces/networkrulesets"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/applicableFeatures",
+          "defaultPath": "properties.applicableFeatures"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/applicableFeatures[*]",
+          "defaultPath": "properties.applicableFeatures[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/isBackingResource",
+          "defaultPath": "properties.isBackingResource"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/networkSecurityPerimeter",
+          "defaultPath": "properties.networkSecurityPerimeter"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.location",
+          "defaultPath": "properties.networkSecurityPerimeter.location"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.perimeterGuid",
+          "defaultPath": "properties.networkSecurityPerimeter.perimeterGuid"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/parentAssociationName",
+          "defaultPath": "properties.parentAssociationName"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile",
+          "defaultPath": "properties.profile"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules",
+          "defaultPath": "properties.profile.accessRules"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*]",
+          "defaultPath": "properties.profile.accessRules[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].addressPrefixes",
+          "defaultPath": "properties.profile.accessRules[*].properties.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].addressPrefixes[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].direction",
+          "defaultPath": "properties.profile.accessRules[*].properties.direction"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].fullyQualifiedDomainNames",
+          "defaultPath": "properties.profile.accessRules[*].properties.fullyQualifiedDomainNames"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].fullyQualifiedDomainNames[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.fullyQualifiedDomainNames[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].id",
+          "defaultPath": "properties.profile.accessRules[*].id"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].name",
+          "defaultPath": "properties.profile.accessRules[*].name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].networkSecurityPerimeters",
+          "defaultPath": "properties.profile.accessRules[*].properties.networkSecurityPerimeters"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].networkSecurityPerimeters[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.networkSecurityPerimeters[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].subscriptions",
+          "defaultPath": "properties.profile.accessRules[*].properties.subscriptions"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].subscriptions[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.subscriptions[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRules[*].type",
+          "defaultPath": "properties.profile.accessRules[*].type"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.accessRulesVersion",
+          "defaultPath": "properties.profile.accessRulesVersion"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/profile.name",
+          "defaultPath": "properties.profile.name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/provisioningIssues",
+          "defaultPath": "properties.provisioningIssues"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/provisioningIssues[*]",
+          "defaultPath": "properties.provisioningIssues[*]"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/provisioningIssues[*].description",
+          "defaultPath": "properties.provisioningIssues[*].properties.description"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/provisioningIssues[*].issueType",
+          "defaultPath": "properties.provisioningIssues[*].properties.issueType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/provisioningIssues[*].name",
+          "defaultPath": "properties.provisioningIssues[*].name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/resourceAssociation",
+          "defaultPath": "properties.resourceAssociation"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/resourceAssociation.accessMode",
+          "defaultPath": "properties.resourceAssociation.accessMode"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/resourceAssociation.name",
+          "defaultPath": "properties.resourceAssociation.name"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/networkSecurityPerimeterConfigurations/sourceResourceId",
+          "defaultPath": "properties.sourceResourceId"
+        }
+      ],
+      "resourceType": "namespaces/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/schemagroups/createdAtUtc",
+          "defaultPath": "properties.createdAtUtc"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/schemagroups/eTag",
+          "defaultPath": "properties.eTag"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/schemagroups/groupProperties",
+          "defaultPath": "properties.groupProperties"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/schemagroups/schemaCompatibility",
+          "defaultPath": "properties.schemaCompatibility"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/schemagroups/schemaType",
+          "defaultPath": "properties.schemaType"
+        },
+        {
+          "name": "Microsoft.EventHub/namespaces/schemagroups/updatedAtUtc",
+          "defaultPath": "properties.updatedAtUtc"
+        }
+      ],
+      "resourceType": "namespaces/schemagroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EventHub/namespaces/virtualNetworkRules/virtualNetworkSubnetId",
+          "defaultPath": "properties.virtualNetworkSubnetId"
+        }
+      ],
+      "resourceType": "namespaces/virtualNetworkRules"
+    }
+  ]
+}

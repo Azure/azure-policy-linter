@@ -1,0 +1,145 @@
+{
+  "namespace": "Oracle.Database",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "autonomousDatabases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "autonomousDatabases/autonomousDatabaseBackups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudExadataInfrastructures"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudExadataInfrastructures/dbServers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudVmClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudVmClusters/dbNodes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "cloudVmClusters/virtualNetworkAddresses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dbSystems"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "exadbVmClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "exadbVmClusters/dbNodes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "exascaleDbStorageVaults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "goldenGateConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "goldenGateConnections/assignedDeployments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "goldenGateDeployments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "goldenGateDeployments/assignedConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/autonomousDatabaseCharacterSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/autonomousDatabaseNationalCharacterSets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/autonomousDbVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/databaseEditions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/databaseSystemShapes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/dbSystemDbVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/dbSystemShapes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/dnsPrivateViews"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/dnsPrivateZones"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/flexComponents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/giVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/giVersions/giMinorVersions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/systemVersions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedIdentityResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkAnchors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "oracleSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resourceAnchors"
+    }
+  ]
+}

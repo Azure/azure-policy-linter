@@ -1,0 +1,1239 @@
+{
+  "namespace": "Microsoft.Automation",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2020-01-13-preview",
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.identity",
+          "paths": [
+            {
+              "path": "properties.encryption.identity",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.identity",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.identity.userAssignedIdentity",
+          "paths": [
+            {
+              "path": "properties.encryption.identity.userAssignedIdentity",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.identity.userAssignedIdentity",
+          "defaultMetadata": {
+            "type": "NotSpecified",
+            "attributes": "None"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.keySource",
+          "paths": [
+            {
+              "path": "properties.encryption.keySource",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.keySource",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.keyVaultProperties",
+          "paths": [
+            {
+              "path": "properties.encryption.keyVaultProperties",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.keyVaultProperties",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.keyVaultProperties.keyName",
+          "paths": [
+            {
+              "path": "properties.encryption.keyVaultProperties.keyName",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.keyVaultProperties.keyName",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.keyVaultProperties.keyvaultUri",
+          "paths": [
+            {
+              "path": "properties.encryption.keyVaultProperties.keyvaultUri",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.keyVaultProperties.keyvaultUri",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/encryption.keyVaultProperties.keyVersion",
+          "paths": [
+            {
+              "path": "properties.encryption.keyVaultProperties.keyVersion",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2019-06-01",
+                "2015-10-31"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sku.capacity",
+          "defaultPath": "properties.sku.capacity"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sku.family",
+          "defaultPath": "properties.sku.family"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sku.name",
+          "defaultPath": "properties.sku.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.autoSync",
+          "defaultPath": "properties.autoSync"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.branch",
+          "defaultPath": "properties.branch"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.publishRunbook",
+          "defaultPath": "properties.publishRunbook"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.repoUrl",
+          "defaultPath": "properties.repoUrl"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls.sourceType",
+          "defaultPath": "properties.sourceType"
+        }
+      ],
+      "resourceType": "automationAccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/certificates/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/certificates/expiryTime",
+          "defaultPath": "properties.expiryTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/certificates/isExportable",
+          "defaultPath": "properties.isExportable"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/certificates/thumbprint",
+          "defaultPath": "properties.thumbprint"
+        }
+      ],
+      "resourceType": "automationAccounts/certificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/compilationjobs/configuration",
+          "defaultPath": "properties.configuration"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/compilationjobs/configuration.name",
+          "defaultPath": "properties.configuration.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/compilationjobs/parameters",
+          "defaultPath": "properties.parameters"
+        }
+      ],
+      "resourceType": "automationAccounts/compilationjobs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/logVerbose",
+          "defaultPath": "properties.logVerbose"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source.hash",
+          "defaultPath": "properties.source.hash"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source.hash.algorithm",
+          "defaultPath": "properties.source.hash.algorithm"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source.hash.value",
+          "defaultPath": "properties.source.hash.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source.type",
+          "defaultPath": "properties.source.type"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source.value",
+          "defaultPath": "properties.source.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/configurations/source.version",
+          "defaultPath": "properties.source.version"
+        }
+      ],
+      "resourceType": "automationAccounts/configurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/connections/connectionType",
+          "defaultPath": "properties.connectionType"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/connections/connectionType.name",
+          "defaultPath": "properties.connectionType.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/connections/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/connections/fieldDefinitionValues",
+          "defaultPath": "properties.fieldDefinitionValues"
+        }
+      ],
+      "resourceType": "automationAccounts/connections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/connectionTypes/fieldDefinitions",
+          "defaultPath": "properties.fieldDefinitions"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/connectionTypes/isGlobal",
+          "defaultPath": "properties.isGlobal"
+        }
+      ],
+      "resourceType": "automationAccounts/connectionTypes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/credentials/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/credentials/userName",
+          "defaultPath": "properties.userName"
+        }
+      ],
+      "resourceType": "automationAccounts/credentials"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/credential",
+          "defaultPath": "properties.credential"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/credential.name",
+          "defaultPath": "properties.credential.name"
+        }
+      ],
+      "resourceType": "automationAccounts/hybridRunbookWorkerGroups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers/vmResourceId",
+          "defaultPath": "properties.vmResourceId"
+        }
+      ],
+      "resourceType": "automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobs/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobs/runbook",
+          "defaultPath": "properties.runbook"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobs/runbook.name",
+          "defaultPath": "properties.runbook.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobs/runOn",
+          "defaultPath": "properties.runOn"
+        }
+      ],
+      "resourceType": "automationAccounts/jobs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobSchedules/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobSchedules/runbook",
+          "defaultPath": "properties.runbook"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobSchedules/runbook.name",
+          "defaultPath": "properties.runbook.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobSchedules/runOn",
+          "defaultPath": "properties.runOn"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobSchedules/schedule",
+          "defaultPath": "properties.schedule"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/jobSchedules/schedule.name",
+          "defaultPath": "properties.schedule.name"
+        }
+      ],
+      "resourceType": "automationAccounts/jobSchedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/modules/contentLink",
+          "defaultPath": "properties.contentLink"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/modules/contentLink.contentHash",
+          "defaultPath": "properties.contentLink.contentHash"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/modules/contentLink.contentHash.algorithm",
+          "defaultPath": "properties.contentLink.contentHash.algorithm"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/modules/contentLink.contentHash.value",
+          "defaultPath": "properties.contentLink.contentHash.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/modules/contentLink.uri",
+          "defaultPath": "properties.contentLink.uri"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/modules/contentLink.version",
+          "defaultPath": "properties.contentLink.version"
+        }
+      ],
+      "resourceType": "automationAccounts/modules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/nodeConfigurations/configuration",
+          "defaultPath": "properties.configuration"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/nodeConfigurations/configuration.name",
+          "defaultPath": "properties.configuration.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/nodeConfigurations/incrementNodeConfigurationBuild",
+          "defaultPath": "properties.incrementNodeConfigurationBuild"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/nodeConfigurations/source",
+          "defaultPath": "properties.source"
+        }
+      ],
+      "resourceType": "automationAccounts/nodeConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/nodes/nodeConfiguration",
+          "defaultPath": "properties.nodeConfiguration"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/nodes/nodeConfiguration.name",
+          "defaultPath": "properties.nodeConfiguration.name"
+        }
+      ],
+      "resourceType": "automationAccounts/nodes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        }
+      ],
+      "resourceType": "automationAccounts/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/python2Packages/contentLink",
+          "defaultPath": "properties.contentLink"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python2Packages/contentLink.contentHash",
+          "defaultPath": "properties.contentLink.contentHash"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python2Packages/contentLink.contentHash.algorithm",
+          "defaultPath": "properties.contentLink.contentHash.algorithm"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python2Packages/contentLink.contentHash.value",
+          "defaultPath": "properties.contentLink.contentHash.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python2Packages/contentLink.uri",
+          "defaultPath": "properties.contentLink.uri"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python2Packages/contentLink.version",
+          "defaultPath": "properties.contentLink.version"
+        }
+      ],
+      "resourceType": "automationAccounts/python2Packages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/python3Packages/contentLink",
+          "defaultPath": "properties.contentLink"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python3Packages/contentLink.contentHash",
+          "defaultPath": "properties.contentLink.contentHash"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python3Packages/contentLink.contentHash.algorithm",
+          "defaultPath": "properties.contentLink.contentHash.algorithm"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python3Packages/contentLink.contentHash.value",
+          "defaultPath": "properties.contentLink.contentHash.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python3Packages/contentLink.uri",
+          "defaultPath": "properties.contentLink.uri"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/python3Packages/contentLink.version",
+          "defaultPath": "properties.contentLink.version"
+        }
+      ],
+      "resourceType": "automationAccounts/python3Packages"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft",
+          "defaultPath": "properties.draft"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.creationTime",
+          "defaultPath": "properties.draft.creationTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.draftContentLink",
+          "defaultPath": "properties.draft.draftContentLink"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.draftContentLink.contentHash",
+          "defaultPath": "properties.draft.draftContentLink.contentHash"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.draftContentLink.contentHash.algorithm",
+          "defaultPath": "properties.draft.draftContentLink.contentHash.algorithm"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.draftContentLink.contentHash.value",
+          "defaultPath": "properties.draft.draftContentLink.contentHash.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.draftContentLink.uri",
+          "defaultPath": "properties.draft.draftContentLink.uri"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.draftContentLink.version",
+          "defaultPath": "properties.draft.draftContentLink.version"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.inEdit",
+          "defaultPath": "properties.draft.inEdit"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.lastModifiedTime",
+          "defaultPath": "properties.draft.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.outputTypes",
+          "defaultPath": "properties.draft.outputTypes"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.outputTypes[*]",
+          "defaultPath": "properties.draft.outputTypes[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/draft.parameters",
+          "defaultPath": "properties.draft.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/logActivityTrace",
+          "defaultPath": "properties.logActivityTrace"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/logProgress",
+          "defaultPath": "properties.logProgress"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/logVerbose",
+          "defaultPath": "properties.logVerbose"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/publishContentLink",
+          "defaultPath": "properties.publishContentLink"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/publishContentLink.contentHash",
+          "defaultPath": "properties.publishContentLink.contentHash"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/publishContentLink.contentHash.algorithm",
+          "defaultPath": "properties.publishContentLink.contentHash.algorithm"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/publishContentLink.contentHash.value",
+          "defaultPath": "properties.publishContentLink.contentHash.value"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/publishContentLink.uri",
+          "defaultPath": "properties.publishContentLink.uri"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/publishContentLink.version",
+          "defaultPath": "properties.publishContentLink.version"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/runbookType",
+          "defaultPath": "properties.runbookType"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/runbooks/runtimeEnvironment",
+          "defaultPath": "properties.runtimeEnvironment"
+        }
+      ],
+      "resourceType": "automationAccounts/runbooks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule",
+          "defaultPath": "properties.advancedSchedule"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.monthDays",
+          "defaultPath": "properties.advancedSchedule.monthDays"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.monthDays[*]",
+          "defaultPath": "properties.advancedSchedule.monthDays[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.monthlyOccurrences",
+          "defaultPath": "properties.advancedSchedule.monthlyOccurrences"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.monthlyOccurrences[*]",
+          "defaultPath": "properties.advancedSchedule.monthlyOccurrences[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.monthlyOccurrences[*].day",
+          "defaultPath": "properties.advancedSchedule.monthlyOccurrences[*].day"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.monthlyOccurrences[*].occurrence",
+          "defaultPath": "properties.advancedSchedule.monthlyOccurrences[*].occurrence"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.weekDays",
+          "defaultPath": "properties.advancedSchedule.weekDays"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/advancedSchedule.weekDays[*]",
+          "defaultPath": "properties.advancedSchedule.weekDays[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/expiryTime",
+          "defaultPath": "properties.expiryTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/frequency",
+          "defaultPath": "properties.frequency"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/interval",
+          "defaultPath": "properties.interval"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/startTime",
+          "defaultPath": "properties.startTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/schedules/timeZone",
+          "defaultPath": "properties.timeZone"
+        }
+      ],
+      "resourceType": "automationAccounts/schedules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/error.code",
+          "defaultPath": "properties.error.code"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/error.message",
+          "defaultPath": "properties.error.message"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/lastModifiedBy",
+          "defaultPath": "properties.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo",
+          "defaultPath": "properties.scheduleInfo"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.monthDays",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.monthDays"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.monthDays[*]",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.monthDays[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.monthlyOccurrences",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.monthlyOccurrences"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.monthlyOccurrences[*]",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.monthlyOccurrences[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.monthlyOccurrences[*].day",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.monthlyOccurrences[*].day"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.monthlyOccurrences[*].occurrence",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.monthlyOccurrences[*].occurrence"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.weekDays",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.weekDays"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.advancedSchedule.weekDays[*]",
+          "defaultPath": "properties.scheduleInfo.advancedSchedule.weekDays[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.creationTime",
+          "defaultPath": "properties.scheduleInfo.creationTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.description",
+          "defaultPath": "properties.scheduleInfo.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.expiryTime",
+          "defaultPath": "properties.scheduleInfo.expiryTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.expiryTimeOffsetMinutes",
+          "defaultPath": "properties.scheduleInfo.expiryTimeOffsetMinutes"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.frequency",
+          "defaultPath": "properties.scheduleInfo.frequency"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.interval",
+          "defaultPath": "properties.scheduleInfo.interval"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.isEnabled",
+          "defaultPath": "properties.scheduleInfo.isEnabled"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.lastModifiedTime",
+          "defaultPath": "properties.scheduleInfo.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.nextRun",
+          "defaultPath": "properties.scheduleInfo.nextRun"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.nextRunOffsetMinutes",
+          "defaultPath": "properties.scheduleInfo.nextRunOffsetMinutes"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.startTime",
+          "defaultPath": "properties.scheduleInfo.startTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.startTimeOffsetMinutes",
+          "defaultPath": "properties.scheduleInfo.startTimeOffsetMinutes"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/scheduleInfo.timeZone",
+          "defaultPath": "properties.scheduleInfo.timeZone"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks",
+          "defaultPath": "properties.tasks"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks.postTask",
+          "defaultPath": "properties.tasks.postTask"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks.postTask.parameters",
+          "defaultPath": "properties.tasks.postTask.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks.postTask.source",
+          "defaultPath": "properties.tasks.postTask.source"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks.preTask",
+          "defaultPath": "properties.tasks.preTask"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks.preTask.parameters",
+          "defaultPath": "properties.tasks.preTask.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/tasks.preTask.source",
+          "defaultPath": "properties.tasks.preTask.source"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration",
+          "defaultPath": "properties.updateConfiguration"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.azureVirtualMachines",
+          "defaultPath": "properties.updateConfiguration.azureVirtualMachines"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.azureVirtualMachines[*]",
+          "defaultPath": "properties.updateConfiguration.azureVirtualMachines[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.duration",
+          "defaultPath": "properties.updateConfiguration.duration"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux",
+          "defaultPath": "properties.updateConfiguration.linux"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux.excludedPackageNameMasks",
+          "defaultPath": "properties.updateConfiguration.linux.excludedPackageNameMasks"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux.excludedPackageNameMasks[*]",
+          "defaultPath": "properties.updateConfiguration.linux.excludedPackageNameMasks[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux.includedPackageClassifications",
+          "defaultPath": "properties.updateConfiguration.linux.includedPackageClassifications"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux.includedPackageNameMasks",
+          "defaultPath": "properties.updateConfiguration.linux.includedPackageNameMasks"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux.includedPackageNameMasks[*]",
+          "defaultPath": "properties.updateConfiguration.linux.includedPackageNameMasks[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.linux.rebootSetting",
+          "defaultPath": "properties.updateConfiguration.linux.rebootSetting"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.nonAzureComputerNames",
+          "defaultPath": "properties.updateConfiguration.nonAzureComputerNames"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.nonAzureComputerNames[*]",
+          "defaultPath": "properties.updateConfiguration.nonAzureComputerNames[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.operatingSystem",
+          "defaultPath": "properties.updateConfiguration.operatingSystem"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets",
+          "defaultPath": "properties.updateConfiguration.targets"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*]",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].locations",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].locations"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].locations[*]",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].locations[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].scope",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].scope"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].scope[*]",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].scope[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].tagSettings",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].tagSettings"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].tagSettings.filterOperator",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].tagSettings.filterOperator"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.azureQueries[*].tagSettings.tags",
+          "defaultPath": "properties.updateConfiguration.targets.azureQueries[*].tagSettings.tags"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.nonAzureQueries",
+          "defaultPath": "properties.updateConfiguration.targets.nonAzureQueries"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.nonAzureQueries[*]",
+          "defaultPath": "properties.updateConfiguration.targets.nonAzureQueries[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.nonAzureQueries[*].functionAlias",
+          "defaultPath": "properties.updateConfiguration.targets.nonAzureQueries[*].functionAlias"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.targets.nonAzureQueries[*].workspaceId",
+          "defaultPath": "properties.updateConfiguration.targets.nonAzureQueries[*].workspaceId"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows",
+          "defaultPath": "properties.updateConfiguration.windows"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows.excludedKbNumbers",
+          "defaultPath": "properties.updateConfiguration.windows.excludedKbNumbers"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows.excludedKbNumbers[*]",
+          "defaultPath": "properties.updateConfiguration.windows.excludedKbNumbers[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows.includedKbNumbers",
+          "defaultPath": "properties.updateConfiguration.windows.includedKbNumbers"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows.includedKbNumbers[*]",
+          "defaultPath": "properties.updateConfiguration.windows.includedKbNumbers[*]"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows.includedUpdateClassifications",
+          "defaultPath": "properties.updateConfiguration.windows.includedUpdateClassifications"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/softwareUpdateConfigurations/updateConfiguration.windows.rebootSetting",
+          "defaultPath": "properties.updateConfiguration.windows.rebootSetting"
+        }
+      ],
+      "resourceType": "automationAccounts/softwareUpdateConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/autoSync",
+          "defaultPath": "properties.autoSync"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/branch",
+          "defaultPath": "properties.branch"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/folderPath",
+          "defaultPath": "properties.folderPath"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/publishRunbook",
+          "defaultPath": "properties.publishRunbook"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/repoUrl",
+          "defaultPath": "properties.repoUrl"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/sourceControls/sourceType",
+          "defaultPath": "properties.sourceType"
+        }
+      ],
+      "resourceType": "automationAccounts/sourceControls"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/variables/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/variables/isEncrypted",
+          "paths": [
+            {
+              "path": "properties.isEncrypted",
+              "apiVersions": [
+                "2015-01-01-preview",
+                "2015-10-31",
+                "2017-05-15-preview",
+                "2018-01-15",
+                "2018-06-30"
+              ]
+            }
+          ],
+          "defaultPath": "properties.isEncrypted"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/variables/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "automationAccounts/variables"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/executionFrequencyInSeconds",
+          "defaultPath": "properties.executionFrequencyInSeconds"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/lastModifiedBy",
+          "defaultPath": "properties.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/scriptName",
+          "defaultPath": "properties.scriptName"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/scriptParameters",
+          "defaultPath": "properties.scriptParameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/scriptRunOn",
+          "defaultPath": "properties.scriptRunOn"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/watchers/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "automationAccounts/watchers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/creationTime",
+          "paths": [
+            {
+              "path": "properties.creationTime",
+              "apiVersions": [
+                "2015-01-01-preview",
+                "2015-10-31",
+                "2017-05-15-preview",
+                "2018-01-15",
+                "2018-06-30"
+              ]
+            }
+          ],
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/expiryTime",
+          "paths": [
+            {
+              "path": "properties.expiryTime",
+              "apiVersions": [
+                "2015-01-01-preview",
+                "2015-10-31",
+                "2017-05-15-preview",
+                "2018-01-15",
+                "2018-06-30"
+              ]
+            }
+          ],
+          "defaultPath": "properties.expiryTime"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/runbook",
+          "defaultPath": "properties.runbook"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/runbook.name",
+          "defaultPath": "properties.runbook.name"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/runOn",
+          "defaultPath": "properties.runOn"
+        },
+        {
+          "name": "Microsoft.Automation/automationAccounts/webhooks/uri",
+          "defaultPath": "properties.uri"
+        }
+      ],
+      "resourceType": "automationAccounts/webhooks"
+    }
+  ]
+}

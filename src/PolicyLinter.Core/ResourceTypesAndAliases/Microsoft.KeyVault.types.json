@@ -1,0 +1,105 @@
+{
+  "namespace": "Microsoft.KeyVault",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkMhsmNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedManagedHSMs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedVaults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "hsmPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedManagedHSMs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedVaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/managedHsmOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedHSMs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedHSMs/keys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedHSMs/keys/versions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "managedHSMs/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vaults/accessPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vaults/eventGridFilters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vaults/keys"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vaults/keys/versions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vaults/secrets"
+    }
+  ]
+}

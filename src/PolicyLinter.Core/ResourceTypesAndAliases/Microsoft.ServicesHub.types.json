@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.ServicesHub",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Connectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "connectors/connectorSpaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getRecommendationsContent"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "supportOfferingEntitlement"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces"
+    }
+  ]
+}

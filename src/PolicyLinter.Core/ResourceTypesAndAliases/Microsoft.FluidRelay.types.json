@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.FluidRelay",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "fluidRelayServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fluidRelayServers/fluidRelayContainers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fluidRelayServers/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fluidRelayServers/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

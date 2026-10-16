@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Scom",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/managedGateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "managedInstances/monitoredResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "namespace": "Microsoft.Chaos",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Chaos/experiments/customerDataStorage",
+          "defaultPath": "properties.customerDataStorage"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/customerDataStorage.blobContainerName",
+          "defaultPath": "properties.customerDataStorage.blobContainerName"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/customerDataStorage.storageAccountResourceId",
+          "defaultPath": "properties.customerDataStorage.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors",
+          "defaultPath": "properties.selectors"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*]",
+          "defaultPath": "properties.selectors[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].filter",
+          "defaultPath": "properties.selectors[*].filter"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].filter.Simple",
+          "defaultPath": "properties.selectors[*].filter"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].filter.Simple.parameters",
+          "defaultPath": "properties.selectors[*].filter.parameters"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].filter.type",
+          "defaultPath": "properties.selectors[*].filter.type"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].id",
+          "defaultPath": "properties.selectors[*].id"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].List",
+          "defaultPath": "properties.selectors[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].List.targets",
+          "defaultPath": "properties.selectors[*].targets"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].List.targets[*]",
+          "defaultPath": "properties.selectors[*].targets[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].List.targets[*].id",
+          "defaultPath": "properties.selectors[*].targets[*].id"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].List.targets[*].type",
+          "defaultPath": "properties.selectors[*].targets[*].type"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].Query",
+          "defaultPath": "properties.selectors[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].Query.queryString",
+          "defaultPath": "properties.selectors[*].queryString"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].Query.subscriptionIds",
+          "defaultPath": "properties.selectors[*].subscriptionIds"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].Query.subscriptionIds[*]",
+          "defaultPath": "properties.selectors[*].subscriptionIds[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].targets",
+          "defaultPath": "properties.selectors[*].targets"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].targets[*]",
+          "defaultPath": "properties.selectors[*].targets[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].targets[*].id",
+          "defaultPath": "properties.selectors[*].targets[*].id"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].targets[*].type",
+          "defaultPath": "properties.selectors[*].targets[*].type"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/selectors[*].type",
+          "defaultPath": "properties.selectors[*].type"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/startOnCreation",
+          "defaultPath": "properties.startOnCreation"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps",
+          "defaultPath": "properties.steps"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*]",
+          "defaultPath": "properties.steps[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches",
+          "defaultPath": "properties.steps[*].branches"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*]",
+          "defaultPath": "properties.steps[*].branches[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions",
+          "defaultPath": "properties.steps[*].branches[*].actions"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions[*]",
+          "defaultPath": "properties.steps[*].branches[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions[*].continuous",
+          "defaultPath": "properties.steps[*].branches[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions[*].delay",
+          "defaultPath": "properties.steps[*].branches[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions[*].discrete",
+          "defaultPath": "properties.steps[*].branches[*].actions[*]"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions[*].name",
+          "defaultPath": "properties.steps[*].branches[*].actions[*].name"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].actions[*].type",
+          "defaultPath": "properties.steps[*].branches[*].actions[*].type"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].branches[*].name",
+          "defaultPath": "properties.steps[*].branches[*].name"
+        },
+        {
+          "name": "Microsoft.Chaos/experiments/steps[*].name",
+          "defaultPath": "properties.steps[*].name"
+        }
+      ],
+      "resourceType": "experiments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Chaos/targets/capabilities/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Chaos/targets/capabilities/parametersSchema",
+          "defaultPath": "properties.parametersSchema"
+        },
+        {
+          "name": "Microsoft.Chaos/targets/capabilities/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Chaos/targets/capabilities/publisher",
+          "defaultPath": "properties.publisher"
+        },
+        {
+          "name": "Microsoft.Chaos/targets/capabilities/targetType",
+          "defaultPath": "properties.targetType"
+        },
+        {
+          "name": "Microsoft.Chaos/targets/capabilities/urn",
+          "defaultPath": "properties.urn"
+        }
+      ],
+      "resourceType": "targets/capabilities"
+    }
+  ]
+}

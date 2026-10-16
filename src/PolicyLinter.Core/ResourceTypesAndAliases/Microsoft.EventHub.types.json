@@ -1,0 +1,129 @@
+{
+  "namespace": "Microsoft.EventHub",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "availableClusterRegions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNamespaceAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "clusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "clusters/upgradePreferences"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/clusterOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/namespaceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatus"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/applicationGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/disasterrecoveryconfigs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/disasterrecoveryconfigs/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/eventhubs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/eventhubs/authorizationrules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/eventhubs/consumergroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/eventhubs/fabricShortcuts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/hoboConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/ipFilterRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/networkrulesets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/networkSecurityPerimeterAssociationProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/schemagroups"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/virtualNetworkRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sku"
+    }
+  ]
+}

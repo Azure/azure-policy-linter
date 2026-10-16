@@ -1,0 +1,177 @@
+{
+  "namespace": "Microsoft.RecoveryServices",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "backupProtectedItems"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/allocatedStamp"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/allocateStamp"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupAadProperties"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupCrossRegionRestore"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupCrrJob"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupCrrJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupCrrOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupCrrOperationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupPreValidateProtection"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/backupValidateFeatures"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedVaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "replicationEligibilityResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vaults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupconfig"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "vaults/backupCrossTenantVaultMappings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupEncryptionConfigs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupFabrics/backupProtectionIntent"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupFabrics/protectionContainers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupFabrics/protectionContainers/protectedItems"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupResourceGuardProxies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/backupstorageconfig"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/extendedInformation"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Vaults/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationAlertSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationProtectionContainers/replicationMigrationItems"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationRecoveryServicesProviders"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationFabrics/replicationvCenters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationProtectionIntents"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationRecoveryPlans"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "vaults/replicationVaultSettings"
+    }
+  ]
+}

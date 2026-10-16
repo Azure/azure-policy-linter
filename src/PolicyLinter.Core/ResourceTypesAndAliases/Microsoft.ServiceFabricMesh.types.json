@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.ServiceFabricMesh",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "gateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/applicationOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/containerGroupOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/gatewayOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/networkOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/secretOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/volumeOperations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "secrets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "volumes"
+    }
+  ]
+}

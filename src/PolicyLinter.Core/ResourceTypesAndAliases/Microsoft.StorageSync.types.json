@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.StorageSync",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/workflows"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageSyncServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageSyncServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageSyncServices/registeredServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageSyncServices/syncGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageSyncServices/syncGroups/cloudEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageSyncServices/syncGroups/serverEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageSyncServices/workflows"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.PartnerManagedConsumerRecurrence",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkEligibility"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "recurrences"
+    }
+  ]
+}

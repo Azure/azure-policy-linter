@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.DataProtection",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "backupInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "BackupVaults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "backupVaults/backupInstances"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "backupVaults/backupPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "backupVaults/backupResourceGuardProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkFeatureSupport"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/crossRegionRestore"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedVaults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/fetchCrossRegionRestoreJob"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/fetchCrossRegionRestoreJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/fetchSecondaryRecoveryPoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/validateCrossRegionRestore"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ResourceGuards"
+    }
+  ]
+}

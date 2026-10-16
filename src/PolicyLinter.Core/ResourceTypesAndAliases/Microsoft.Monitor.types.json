@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.Monitor",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/exportRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/issues"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "investigations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/locationOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "observabilityAgents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "pipelineGroups"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "settings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "slis"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "sliSignalPreview"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "traceAssociations"
+    }
+  ]
+}

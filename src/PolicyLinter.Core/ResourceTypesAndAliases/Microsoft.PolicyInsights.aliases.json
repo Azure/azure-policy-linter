@@ -1,0 +1,151 @@
+{
+  "namespace": "Microsoft.PolicyInsights",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.PolicyInsights/attestations/assessmentDate",
+          "defaultPath": "properties.assessmentDate"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/comments",
+          "defaultPath": "properties.comments"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/complianceState",
+          "defaultPath": "properties.complianceState"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/evidence",
+          "defaultPath": "properties.evidence"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/evidence[*]",
+          "defaultPath": "properties.evidence[*]"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/evidence[*].description",
+          "defaultPath": "properties.evidence[*].description"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/evidence[*].sourceUri",
+          "defaultPath": "properties.evidence[*].sourceUri"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/expiresOn",
+          "defaultPath": "properties.expiresOn"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/lastComplianceStateChangeAt",
+          "defaultPath": "properties.lastComplianceStateChangeAt"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/owner",
+          "defaultPath": "properties.owner"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/policyAssignmentId",
+          "defaultPath": "properties.policyAssignmentId"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/policyDefinitionReferenceId",
+          "defaultPath": "properties.policyDefinitionReferenceId"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/attestations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "attestations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.PolicyInsights/remediations/correlationId",
+          "defaultPath": "properties.correlationId"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/createdOn",
+          "defaultPath": "properties.createdOn"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/deploymentStatus",
+          "defaultPath": "properties.deploymentStatus"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/deploymentStatus.failedDeployments",
+          "defaultPath": "properties.deploymentStatus.failedDeployments"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/deploymentStatus.successfulDeployments",
+          "defaultPath": "properties.deploymentStatus.successfulDeployments"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/deploymentStatus.totalDeployments",
+          "defaultPath": "properties.deploymentStatus.totalDeployments"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/failureThreshold",
+          "defaultPath": "properties.failureThreshold"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/failureThreshold.percentage",
+          "defaultPath": "properties.failureThreshold.percentage"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/filters",
+          "defaultPath": "properties.filters"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/filters.locations",
+          "defaultPath": "properties.filters.locations"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/filters.locations[*]",
+          "defaultPath": "properties.filters.locations[*]"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/filters.resourceIds",
+          "defaultPath": "properties.filters.resourceIds"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/filters.resourceIds[*]",
+          "defaultPath": "properties.filters.resourceIds[*]"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/lastUpdatedOn",
+          "defaultPath": "properties.lastUpdatedOn"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/parallelDeployments",
+          "defaultPath": "properties.parallelDeployments"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/policyAssignmentId",
+          "defaultPath": "properties.policyAssignmentId"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/policyDefinitionReferenceId",
+          "defaultPath": "properties.policyDefinitionReferenceId"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/resourceCount",
+          "defaultPath": "properties.resourceCount"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/resourceDiscoveryMode",
+          "defaultPath": "properties.resourceDiscoveryMode"
+        },
+        {
+          "name": "Microsoft.PolicyInsights/remediations/statusMessage",
+          "defaultPath": "properties.statusMessage"
+        }
+      ],
+      "resourceType": "remediations"
+    }
+  ]
+}

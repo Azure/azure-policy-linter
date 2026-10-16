@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.DevOpsInfrastructure",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "images"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "images/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/Skus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/Usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "pools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "pools/resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "skus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "usages"
+    }
+  ]
+}
