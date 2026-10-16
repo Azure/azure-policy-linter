@@ -144,7 +144,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
         }
 
-
         /// <summary>
         /// Attempts to retrieve the operator name and associated value from the specified <see
         /// cref="ConditionObject"/>.

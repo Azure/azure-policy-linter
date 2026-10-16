@@ -113,7 +113,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 (this.Kind == ReferenceKind.ResourceField ||
                 (this.Kind == ReferenceKind.CurrentArrayMember && this.ReferencedCountExpressionScope?.Type == CountScopeType.Field));
 
-
         /// <summary>
         /// Create a reference to a field which represents a field reference that is part of a field accessor expression.
         /// </summary>

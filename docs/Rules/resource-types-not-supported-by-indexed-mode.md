@@ -6,7 +6,9 @@
 
 ## Description
 
-The policy targets resource types that `Indexed` mode skips: types without both tags and location support, resource groups, or subscriptions.
+The policy uses `Indexed` mode but targets resource types that require `All` mode. Azure Policy skips these resources before evaluating the policy's conditions, so the policy has no effect on them.
+
+Note that subscriptions and resource groups require `All` mode, even when they support tags and location.
 
 ## Suggestions
 
