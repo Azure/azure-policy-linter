@@ -1,0 +1,217 @@
+{
+  "namespace": "Microsoft.DeviceUpdate",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/encryption.keyVaultKeyUri",
+          "defaultPath": "properties.encryption.keyVaultKeyUri"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/encryption.userAssignedIdentity",
+          "defaultPath": "properties.encryption.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/locations",
+          "defaultPath": "properties.locations"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/locations[*]",
+          "defaultPath": "properties.locations[*]"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/locations[*].name",
+          "defaultPath": "properties.locations[*].name"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/locations[*].role",
+          "defaultPath": "properties.locations[*].role"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/sku",
+          "defaultPath": "properties.sku"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/accountName",
+          "defaultPath": "properties.accountName"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/diagnosticStorageProperties",
+          "defaultPath": "properties.diagnosticStorageProperties"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/diagnosticStorageProperties.authenticationType",
+          "defaultPath": "properties.diagnosticStorageProperties.authenticationType"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/diagnosticStorageProperties.connectionString",
+          "defaultPath": "properties.diagnosticStorageProperties.connectionString"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/diagnosticStorageProperties.resourceId",
+          "defaultPath": "properties.diagnosticStorageProperties.resourceId"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/enableDiagnostics",
+          "defaultPath": "properties.enableDiagnostics"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/iotHubs",
+          "defaultPath": "properties.iotHubs"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/iotHubs[*]",
+          "defaultPath": "properties.iotHubs[*]"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/iotHubs[*].eventHubConnectionString",
+          "defaultPath": "properties.iotHubs[*].eventHubConnectionString"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/iotHubs[*].ioTHubConnectionString",
+          "defaultPath": "properties.iotHubs[*].ioTHubConnectionString"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/iotHubs[*].resourceId",
+          "defaultPath": "properties.iotHubs[*].resourceId"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/instances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/instances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnectionProxies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/privateEndpointConnectionProxies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DeviceUpdate/accounts/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/privateEndpointConnections"
+    }
+  ]
+}

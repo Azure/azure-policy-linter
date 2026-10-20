@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.Dashboard",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dashboards"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "dashboards/dashboardDefinitions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "grafana"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "grafana/grafanaDefinitions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "grafana/integrationFabrics"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "grafana/managedPrivateEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "grafana/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "grafana/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

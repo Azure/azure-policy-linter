@@ -1,0 +1,826 @@
+{
+  "namespace": "Microsoft.Kusto",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/acceptedAudiences",
+          "defaultPath": "properties.acceptedAudiences"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/acceptedAudiences[*]",
+          "defaultPath": "properties.acceptedAudiences[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/acceptedAudiences[*].value",
+          "defaultPath": "properties.acceptedAudiences[*].value"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/allowedFqdnList",
+          "defaultPath": "properties.allowedFqdnList"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/allowedFqdnList[*]",
+          "defaultPath": "properties.allowedFqdnList[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/allowedIpRangeList",
+          "defaultPath": "properties.allowedIpRangeList"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/allowedIpRangeList[*]",
+          "defaultPath": "properties.allowedIpRangeList[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/dataIngestionUri",
+          "defaultPath": "properties.dataIngestionUri"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/enableAutoStop",
+          "defaultPath": "properties.enableAutoStop"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/enableDiskEncryption",
+          "defaultPath": "properties.enableDiskEncryption"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/enableDoubleEncryption",
+          "defaultPath": "properties.enableDoubleEncryption"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/enablePurge",
+          "defaultPath": "properties.enablePurge"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/enableStreamingIngest",
+          "defaultPath": "properties.enableStreamingIngest"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/engineType",
+          "defaultPath": "properties.engineType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/keyVaultProperties",
+          "defaultPath": "properties.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/keyVaultProperties.keyName",
+          "defaultPath": "properties.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/keyVaultProperties.keyVersion",
+          "defaultPath": "properties.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/keyVaultProperties.userIdentity",
+          "defaultPath": "properties.keyVaultProperties.userIdentity"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/languageExtensions",
+          "defaultPath": "properties.languageExtensions"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/languageExtensions.value",
+          "defaultPath": "properties.languageExtensions.value"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/languageExtensions.value[*]",
+          "defaultPath": "properties.languageExtensions.value[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/languageExtensions.value[*].languageExtensionName",
+          "defaultPath": "properties.languageExtensions.value[*].languageExtensionName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/optimizedAutoscale",
+          "defaultPath": "properties.optimizedAutoscale"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/optimizedAutoscale.isEnabled",
+          "defaultPath": "properties.optimizedAutoscale.isEnabled"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/optimizedAutoscale.maximum",
+          "defaultPath": "properties.optimizedAutoscale.maximum"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/optimizedAutoscale.minimum",
+          "defaultPath": "properties.optimizedAutoscale.minimum"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/optimizedAutoscale.version",
+          "defaultPath": "properties.optimizedAutoscale.version"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].groupId",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/publicIPType",
+          "defaultPath": "properties.publicIPType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-01-01",
+                "2020-09-18",
+                "2020-06-14",
+                "2020-02-15",
+                "2019-11-09",
+                "2019-09-07",
+                "2019-05-15",
+                "2019-01-21",
+                "2018-09-07-preview",
+                "2017-09-07-privatepreview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/restrictOutboundNetworkAccess",
+          "defaultPath": "properties.restrictOutboundNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/stateReason",
+          "defaultPath": "properties.stateReason"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/trustedExternalTenants",
+          "defaultPath": "properties.trustedExternalTenants"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/trustedExternalTenants[*]",
+          "defaultPath": "properties.trustedExternalTenants[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/trustedExternalTenants[*].value",
+          "defaultPath": "properties.trustedExternalTenants[*].value"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/uri",
+          "defaultPath": "properties.uri"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/virtualClusterGraduationProperties",
+          "defaultPath": "properties.virtualClusterGraduationProperties"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/virtualNetworkConfiguration",
+          "defaultPath": "properties.virtualNetworkConfiguration"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/virtualNetworkConfiguration.dataManagementPublicIpId",
+          "paths": [
+            {
+              "path": "properties.virtualNetworkConfiguration.dataManagementPublicIpId",
+              "apiVersions": [
+                "2020-09-18",
+                "2020-06-14",
+                "2020-02-15",
+                "2019-11-09",
+                "2019-09-07",
+                "2019-05-15"
+              ],
+              "metadata": {
+                "type": "String",
+                "attributes": "Modifiable"
+              }
+            }
+          ],
+          "defaultPath": "properties.virtualNetworkConfiguration.dataManagementPublicIpId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/virtualNetworkConfiguration.enginePublicIpId",
+          "paths": [
+            {
+              "path": "properties.virtualNetworkConfiguration.enginePublicIpId",
+              "apiVersions": [
+                "2020-09-18",
+                "2020-06-14",
+                "2020-02-15",
+                "2019-11-09",
+                "2019-09-07",
+                "2019-05-15"
+              ],
+              "metadata": {
+                "type": "String",
+                "attributes": "Modifiable"
+              }
+            }
+          ],
+          "defaultPath": "properties.virtualNetworkConfiguration.enginePublicIpId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/virtualNetworkConfiguration.subnetId",
+          "paths": [
+            {
+              "path": "properties.virtualNetworkConfiguration.subnetId",
+              "apiVersions": [
+                "2020-09-18",
+                "2020-06-14",
+                "2020-02-15",
+                "2019-11-09",
+                "2019-09-07",
+                "2019-05-15"
+              ],
+              "metadata": {
+                "type": "String",
+                "attributes": "Modifiable"
+              }
+            }
+          ],
+          "defaultPath": "properties.virtualNetworkConfiguration.subnetId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/attacheddatabaseconfigurations/attachedDatabaseNames",
+          "defaultPath": "properties.attachedDatabaseNames"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attacheddatabaseconfigurations/attachedDatabaseNames[*]",
+          "defaultPath": "properties.attachedDatabaseNames[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attacheddatabaseconfigurations/clusterResourceId",
+          "defaultPath": "properties.clusterResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attacheddatabaseconfigurations/databaseName",
+          "defaultPath": "properties.databaseName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attacheddatabaseconfigurations/defaultPrincipalsModificationKind",
+          "defaultPath": "properties.defaultPrincipalsModificationKind"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attacheddatabaseconfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties",
+          "defaultPath": "properties.tableLevelSharingProperties"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToExclude",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToExclude"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToExclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToInclude",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToInclude"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.externalTablesToInclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.externalTablesToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToExclude",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToExclude"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToExclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToInclude",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToInclude"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.materializedViewsToInclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.materializedViewsToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToExclude",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToExclude"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToExclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToInclude",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToInclude"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/attachedDatabaseConfigurations/tableLevelSharingProperties.tablesToInclude[*]",
+          "defaultPath": "properties.tableLevelSharingProperties.tablesToInclude[*]"
+        }
+      ],
+      "resourceType": "clusters/attacheddatabaseconfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/databases/hotCachePeriod",
+          "defaultPath": "properties.hotCachePeriod"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/hotCachePeriodInDays",
+          "defaultPath": "properties.hotCachePeriodInDays"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.attachedDatabaseConfigurationName",
+          "defaultPath": "properties.attachedDatabaseConfigurationName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.hotCachePeriod",
+          "defaultPath": "properties.hotCachePeriod"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.leaderClusterResourceId",
+          "defaultPath": "properties.leaderClusterResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.principalsModificationKind",
+          "defaultPath": "properties.principalsModificationKind"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.softDeletePeriod",
+          "defaultPath": "properties.softDeletePeriod"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.statistics",
+          "defaultPath": "properties.statistics"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadOnlyFollowing.statistics.size",
+          "defaultPath": "properties.statistics.size"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadWrite.hotCachePeriod",
+          "defaultPath": "properties.hotCachePeriod"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadWrite.isFollowed",
+          "defaultPath": "properties.isFollowed"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadWrite.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadWrite.softDeletePeriod",
+          "defaultPath": "properties.softDeletePeriod"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadWrite.statistics",
+          "defaultPath": "properties.statistics"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/ReadWrite.statistics.size",
+          "defaultPath": "properties.statistics.size"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/softDeletePeriod",
+          "defaultPath": "properties.softDeletePeriod"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/softDeletePeriodInDays",
+          "defaultPath": "properties.softDeletePeriodInDays"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/statistics",
+          "defaultPath": "properties.statistics"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/statistics.size",
+          "defaultPath": "properties.statistics.size"
+        }
+      ],
+      "resourceType": "clusters/databases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.blobStorageEventType",
+          "defaultPath": "properties.blobStorageEventType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.databaseRouting",
+          "defaultPath": "properties.databaseRouting"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.eventGridResourceId",
+          "defaultPath": "properties.eventGridResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.eventHubResourceId",
+          "defaultPath": "properties.eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.ignoreFirstRecord",
+          "defaultPath": "properties.ignoreFirstRecord"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.managedIdentityObjectId",
+          "defaultPath": "properties.managedIdentityObjectId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.managedIdentityResourceId",
+          "defaultPath": "properties.managedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.storageAccountResourceId",
+          "defaultPath": "properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventGrid.tableName",
+          "defaultPath": "properties.tableName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.compression",
+          "defaultPath": "properties.compression"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.databaseRouting",
+          "defaultPath": "properties.databaseRouting"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.eventHubResourceId",
+          "defaultPath": "properties.eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.eventSystemProperties",
+          "defaultPath": "properties.eventSystemProperties"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.eventSystemProperties[*]",
+          "defaultPath": "properties.eventSystemProperties[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.managedIdentityObjectId",
+          "defaultPath": "properties.managedIdentityObjectId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.managedIdentityResourceId",
+          "defaultPath": "properties.managedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/EventHub.tableName",
+          "defaultPath": "properties.tableName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.databaseRouting",
+          "defaultPath": "properties.databaseRouting"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.eventSystemProperties",
+          "defaultPath": "properties.eventSystemProperties"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.eventSystemProperties[*]",
+          "defaultPath": "properties.eventSystemProperties[*]"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.iotHubResourceId",
+          "defaultPath": "properties.iotHubResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.sharedAccessPolicyName",
+          "defaultPath": "properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/dataConnections/IotHub.tableName",
+          "defaultPath": "properties.tableName"
+        }
+      ],
+      "resourceType": "clusters/databases/dataconnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/databases/eventhubconnections/consumerGroup",
+          "defaultPath": "properties.consumerGroup"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/eventhubconnections/dataFormat",
+          "defaultPath": "properties.dataFormat"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/eventhubconnections/eventHubResourceId",
+          "defaultPath": "properties.eventHubResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/eventhubconnections/mappingRuleName",
+          "defaultPath": "properties.mappingRuleName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/eventhubconnections/tableName",
+          "defaultPath": "properties.tableName"
+        }
+      ],
+      "resourceType": "clusters/databases/eventhubconnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/aadObjectId",
+          "defaultPath": "properties.aadObjectId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/principalName",
+          "defaultPath": "properties.principalName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/role",
+          "defaultPath": "properties.role"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/databases/principalAssignments/tenantName",
+          "defaultPath": "properties.tenantName"
+        }
+      ],
+      "resourceType": "clusters/databases/principalassignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/managedPrivateEndpoints/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/managedPrivateEndpoints/privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/managedPrivateEndpoints/privateLinkResourceRegion",
+          "defaultPath": "properties.privateLinkResourceRegion"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/managedPrivateEndpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/managedPrivateEndpoints/requestMessage",
+          "defaultPath": "properties.requestMessage"
+        }
+      ],
+      "resourceType": "clusters/managedPrivateEndpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/aadObjectId",
+          "defaultPath": "properties.aadObjectId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/principalId",
+          "defaultPath": "properties.principalId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/principalName",
+          "defaultPath": "properties.principalName"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/principalType",
+          "defaultPath": "properties.principalType"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/role",
+          "defaultPath": "properties.role"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/tenantId",
+          "defaultPath": "properties.tenantId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/principalAssignments/tenantName",
+          "defaultPath": "properties.tenantName"
+        }
+      ],
+      "resourceType": "clusters/principalassignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Kusto/clusters/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "Clusters/PrivateEndpointConnections"
+    }
+  ]
+}

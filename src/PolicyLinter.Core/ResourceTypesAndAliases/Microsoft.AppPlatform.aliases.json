@@ -1,0 +1,2492 @@
+{
+  "namespace": "Microsoft.AppPlatform",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.activeDeploymentName",
+          "defaultPath": "properties.activeDeploymentName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.bindingParameters",
+          "defaultPath": "properties.bindingParameters"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.generatedProperties",
+          "defaultPath": "properties.generatedProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.key",
+          "defaultPath": "properties.key"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.resourceId",
+          "defaultPath": "properties.resourceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.resourceType",
+          "defaultPath": "properties.resourceType"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.bindings.updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.active",
+          "defaultPath": "properties.active"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.appName",
+          "defaultPath": "properties.appName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings",
+          "defaultPath": "properties.deploymentSettings"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings.cpu",
+          "defaultPath": "properties.deploymentSettings.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings.environmentVariables",
+          "defaultPath": "properties.deploymentSettings.environmentVariables"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings.instanceCount",
+          "defaultPath": "properties.deploymentSettings.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings.jvmOptions",
+          "defaultPath": "properties.deploymentSettings.jvmOptions"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings.memoryInGB",
+          "defaultPath": "properties.deploymentSettings.memoryInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.deploymentSettings.runtimeVersion",
+          "defaultPath": "properties.deploymentSettings.runtimeVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.instances[*].discoveryStatus",
+          "defaultPath": "properties.instances[*].discoveryStatus"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.instances[*].reason",
+          "defaultPath": "properties.instances[*].reason"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.source.artifactSelector",
+          "defaultPath": "properties.source.artifactSelector"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.source.relativePath",
+          "defaultPath": "properties.source.relativePath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.source.type",
+          "defaultPath": "properties.source.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.source.version",
+          "defaultPath": "properties.source.version"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.deployments.status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.persistentDisk",
+          "defaultPath": "properties.persistentDisk"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.persistentDisk.mountPath",
+          "defaultPath": "properties.persistentDisk.mountPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.persistentDisk.sizeInGB",
+          "defaultPath": "properties.persistentDisk.sizeInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.persistentDisk.usedInGB",
+          "defaultPath": "properties.persistentDisk.usedInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.public",
+          "defaultPath": "properties.public"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.temporaryDisk",
+          "defaultPath": "properties.temporaryDisk"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.temporaryDisk.mountPath",
+          "defaultPath": "properties.temporaryDisk.mountPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.temporaryDisk.sizeInGB",
+          "defaultPath": "properties.temporaryDisk.sizeInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps.url",
+          "defaultPath": "properties.url"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties",
+          "defaultPath": "properties.configServerProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer",
+          "defaultPath": "properties.configServerProperties.configServer"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.hostKey",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.hostKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.hostKeyAlgorithm",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.hostKeyAlgorithm"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.label",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.label"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.password",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.privateKey",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.privateKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*]",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].hostKey",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].hostKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].hostKeyAlgorithm",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].hostKeyAlgorithm"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].label",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].label"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].name",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].password",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].pattern",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].pattern"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].pattern[*]",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].pattern[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].privateKey",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].privateKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].searchPaths",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].searchPaths"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].searchPaths[*]",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].searchPaths[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].strictHostKeyChecking",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].strictHostKeyChecking"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].uri",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].uri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.repositories[*].username",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.repositories[*].username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.searchPaths",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.searchPaths"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.searchPaths[*]",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.searchPaths[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.strictHostKeyChecking",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.strictHostKeyChecking"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.uri",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.uri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.configServer.gitProperty.username",
+          "defaultPath": "properties.configServerProperties.configServer.gitProperty.username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.error",
+          "defaultPath": "properties.configServerProperties.error"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.error.code",
+          "defaultPath": "properties.configServerProperties.error.code"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.error.message",
+          "defaultPath": "properties.configServerProperties.error.message"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServerProperties.state",
+          "defaultPath": "properties.configServerProperties.state"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/infraResourceGroup",
+          "defaultPath": "properties.infraResourceGroup"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/maintenanceScheduleConfiguration",
+          "defaultPath": "properties.maintenanceScheduleConfiguration"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/maintenanceScheduleConfiguration.frequency",
+          "defaultPath": "properties.maintenanceScheduleConfiguration.frequency"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/maintenanceScheduleConfiguration.Weekly",
+          "defaultPath": "properties.maintenanceScheduleConfiguration"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/maintenanceScheduleConfiguration.Weekly.day",
+          "defaultPath": "properties.maintenanceScheduleConfiguration.day"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/maintenanceScheduleConfiguration.Weekly.duration",
+          "defaultPath": "properties.maintenanceScheduleConfiguration.duration"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/maintenanceScheduleConfiguration.Weekly.hour",
+          "defaultPath": "properties.maintenanceScheduleConfiguration.hour"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/managedEnvironmentId",
+          "defaultPath": "properties.managedEnvironmentId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/marketplaceResource",
+          "defaultPath": "properties.marketplaceResource"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/marketplaceResource.plan",
+          "defaultPath": "properties.marketplaceResource.plan"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/marketplaceResource.product",
+          "defaultPath": "properties.marketplaceResource.product"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/marketplaceResource.publisher",
+          "defaultPath": "properties.marketplaceResource.publisher"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.appNetworkResourceGroup",
+          "defaultPath": "properties.networkProfile.appNetworkResourceGroup"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.appSubnetId",
+          "defaultPath": "properties.networkProfile.appSubnetId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.ingressConfig",
+          "defaultPath": "properties.networkProfile.ingressConfig"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.ingressConfig.readTimeoutInSeconds",
+          "defaultPath": "properties.networkProfile.ingressConfig.readTimeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.outboundIPs",
+          "defaultPath": "properties.networkProfile.outboundIPs"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.outboundIPs.publicIPs",
+          "defaultPath": "properties.networkProfile.outboundIPs.publicIPs"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.outboundIPs.publicIPs[*]",
+          "defaultPath": "properties.networkProfile.outboundIPs.publicIPs[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.outboundType",
+          "defaultPath": "properties.networkProfile.outboundType"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics",
+          "defaultPath": "properties.networkProfile.requiredTraffics"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*]",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].direction",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].direction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].fqdns",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].fqdns"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].fqdns[*]",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].fqdns[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].ips",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].ips"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].ips[*]",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].ips[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].port",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].port"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.requiredTraffics[*].protocol",
+          "defaultPath": "properties.networkProfile.requiredTraffics[*].protocol"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.serviceCidr",
+          "defaultPath": "properties.networkProfile.serviceCidr"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.serviceRuntimeNetworkResourceGroup",
+          "defaultPath": "properties.networkProfile.serviceRuntimeNetworkResourceGroup"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/networkProfile.serviceRuntimeSubnetId",
+          "defaultPath": "properties.networkProfile.serviceRuntimeSubnetId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/powerState",
+          "defaultPath": "properties.powerState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/serviceId",
+          "defaultPath": "properties.serviceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace",
+          "defaultPath": "properties.trace"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace.appInsightInstrumentationKey",
+          "defaultPath": "properties.trace.appInsightInstrumentationKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace.enabled",
+          "defaultPath": "properties.trace.enabled"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace.error",
+          "defaultPath": "properties.trace.error"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace.error.code",
+          "defaultPath": "properties.trace.error.code"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace.error.message",
+          "defaultPath": "properties.trace.error.message"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/trace.state",
+          "defaultPath": "properties.trace.state"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/vnetAddons",
+          "defaultPath": "properties.vnetAddons"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/vnetAddons.dataPlanePublicEndpoint",
+          "defaultPath": "properties.vnetAddons.dataPlanePublicEndpoint"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/vnetAddons.logStreamPublicEndpoint",
+          "defaultPath": "properties.vnetAddons.logStreamPublicEndpoint"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/vnetAddons.privateDnsZoneId",
+          "defaultPath": "properties.vnetAddons.privateDnsZoneId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/vnetAddons.privateStorageAccess",
+          "defaultPath": "properties.vnetAddons.privateStorageAccess"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/zoneRedundant",
+          "defaultPath": "properties.zoneRedundant"
+        }
+      ],
+      "resourceType": "Spring"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/apiTryOutEnabledState",
+          "defaultPath": "properties.apiTryOutEnabledState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/gatewayIds",
+          "defaultPath": "properties.gatewayIds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/gatewayIds[*]",
+          "defaultPath": "properties.gatewayIds[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/httpsOnly",
+          "defaultPath": "properties.httpsOnly"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/public",
+          "defaultPath": "properties.public"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/resourceRequests",
+          "defaultPath": "properties.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/resourceRequests.cpu",
+          "defaultPath": "properties.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/resourceRequests.memory",
+          "defaultPath": "properties.resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/sourceUrls",
+          "defaultPath": "properties.sourceUrls"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/sourceUrls[*]",
+          "defaultPath": "properties.sourceUrls[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/ssoProperties",
+          "defaultPath": "properties.ssoProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/ssoProperties.clientId",
+          "defaultPath": "properties.ssoProperties.clientId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/ssoProperties.clientSecret",
+          "defaultPath": "properties.ssoProperties.clientSecret"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/ssoProperties.issuerUri",
+          "defaultPath": "properties.ssoProperties.issuerUri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/ssoProperties.scope",
+          "defaultPath": "properties.ssoProperties.scope"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/ssoProperties.scope[*]",
+          "defaultPath": "properties.ssoProperties.scope[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apiPortals/url",
+          "defaultPath": "properties.url"
+        }
+      ],
+      "resourceType": "Spring/apiPortals"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components",
+          "defaultPath": "properties.components"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*]",
+          "defaultPath": "properties.components[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].instances",
+          "defaultPath": "properties.components[*].instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].instances[*]",
+          "defaultPath": "properties.components[*].instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].instances[*].name",
+          "defaultPath": "properties.components[*].instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].instances[*].status",
+          "defaultPath": "properties.components[*].instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].name",
+          "defaultPath": "properties.components[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].resourceRequests",
+          "defaultPath": "properties.components[*].resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].resourceRequests.cpu",
+          "defaultPath": "properties.components[*].resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].resourceRequests.instanceCount",
+          "defaultPath": "properties.components[*].resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/components[*].resourceRequests.memory",
+          "defaultPath": "properties.components[*].resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationAccelerators/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "Spring/applicationAccelerators"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components",
+          "defaultPath": "properties.components"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*]",
+          "defaultPath": "properties.components[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].instances",
+          "defaultPath": "properties.components[*].instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].instances[*]",
+          "defaultPath": "properties.components[*].instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].instances[*].name",
+          "defaultPath": "properties.components[*].instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].instances[*].status",
+          "defaultPath": "properties.components[*].instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].resourceRequests",
+          "defaultPath": "properties.components[*].resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].resourceRequests.cpu",
+          "defaultPath": "properties.components[*].resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].resourceRequests.instanceCount",
+          "defaultPath": "properties.components[*].resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/components[*].resourceRequests.memory",
+          "defaultPath": "properties.components[*].resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/applicationLiveViews/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "Spring/applicationLiveViews"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/activeDeploymentName",
+          "defaultPath": "properties.activeDeploymentName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/addonConfigs",
+          "defaultPath": "properties.addonConfigs"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks",
+          "defaultPath": "properties.customPersistentDisks"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*]",
+          "defaultPath": "properties.customPersistentDisks[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.AzureFileVolume",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.AzureFileVolume.shareName",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.shareName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.enableSubPath",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.enableSubPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.mountOptions",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.mountOptions"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.mountOptions[*]",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.mountOptions[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.mountPath",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.mountPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.readOnly",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.readOnly"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].customPersistentDiskProperties.type",
+          "defaultPath": "properties.customPersistentDisks[*].customPersistentDiskProperties.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/customPersistentDisks[*].storageId",
+          "defaultPath": "properties.customPersistentDisks[*].storageId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/enableEndToEndTLS",
+          "defaultPath": "properties.enableEndToEndTLS"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/httpsOnly",
+          "defaultPath": "properties.httpsOnly"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings",
+          "defaultPath": "properties.ingressSettings"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.backendProtocol",
+          "defaultPath": "properties.ingressSettings.backendProtocol"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.clientAuth",
+          "defaultPath": "properties.ingressSettings.clientAuth"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.clientAuth.certificates",
+          "defaultPath": "properties.ingressSettings.clientAuth.certificates"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.clientAuth.certificates[*]",
+          "defaultPath": "properties.ingressSettings.clientAuth.certificates[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.readTimeoutInSeconds",
+          "defaultPath": "properties.ingressSettings.readTimeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.sendTimeoutInSeconds",
+          "defaultPath": "properties.ingressSettings.sendTimeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.sessionAffinity",
+          "defaultPath": "properties.ingressSettings.sessionAffinity"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/ingressSettings.sessionCookieMaxAge",
+          "defaultPath": "properties.ingressSettings.sessionCookieMaxAge"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/loadedCertificates",
+          "defaultPath": "properties.loadedCertificates"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/loadedCertificates[*]",
+          "defaultPath": "properties.loadedCertificates[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/loadedCertificates[*].loadTrustStore",
+          "defaultPath": "properties.loadedCertificates[*].loadTrustStore"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/loadedCertificates[*].resourceId",
+          "defaultPath": "properties.loadedCertificates[*].resourceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/persistentDisk",
+          "defaultPath": "properties.persistentDisk"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/persistentDisk.mountPath",
+          "defaultPath": "properties.persistentDisk.mountPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/persistentDisk.sizeInGB",
+          "defaultPath": "properties.persistentDisk.sizeInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/persistentDisk.usedInGB",
+          "defaultPath": "properties.persistentDisk.usedInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/public",
+          "defaultPath": "properties.public"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/secrets",
+          "defaultPath": "properties.secrets"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/secrets[*]",
+          "defaultPath": "properties.secrets[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/secrets[*].name",
+          "defaultPath": "properties.secrets[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/secrets[*].value",
+          "defaultPath": "properties.secrets[*].value"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/temporaryDisk",
+          "defaultPath": "properties.temporaryDisk"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/temporaryDisk.mountPath",
+          "defaultPath": "properties.temporaryDisk.mountPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/temporaryDisk.sizeInGB",
+          "defaultPath": "properties.temporaryDisk.sizeInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/testEndpointAuthState",
+          "defaultPath": "properties.testEndpointAuthState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/url",
+          "defaultPath": "properties.url"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/vnetAddons",
+          "defaultPath": "properties.vnetAddons"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/vnetAddons.publicEndpoint",
+          "defaultPath": "properties.vnetAddons.publicEndpoint"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/vnetAddons.publicEndpointUrl",
+          "defaultPath": "properties.vnetAddons.publicEndpointUrl"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/workloadProfileName",
+          "defaultPath": "properties.workloadProfileName"
+        }
+      ],
+      "resourceType": "Spring/apps"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/bindingParameters",
+          "defaultPath": "properties.bindingParameters"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/generatedProperties",
+          "defaultPath": "properties.generatedProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/key",
+          "defaultPath": "properties.key"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/resourceId",
+          "defaultPath": "properties.resourceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/resourceName",
+          "defaultPath": "properties.resourceName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/resourceType",
+          "defaultPath": "properties.resourceType"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/bindings/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        }
+      ],
+      "resourceType": "Spring/apps/bindings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/active",
+          "defaultPath": "properties.active"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/appName",
+          "defaultPath": "properties.appName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings",
+          "defaultPath": "properties.deploymentSettings"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.addonConfigs",
+          "defaultPath": "properties.deploymentSettings.addonConfigs"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.apms",
+          "defaultPath": "properties.deploymentSettings.apms"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.apms[*]",
+          "defaultPath": "properties.deploymentSettings.apms[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.apms[*].resourceId",
+          "defaultPath": "properties.deploymentSettings.apms[*].resourceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.containerProbeSettings",
+          "defaultPath": "properties.deploymentSettings.containerProbeSettings"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.containerProbeSettings.disableProbe",
+          "defaultPath": "properties.deploymentSettings.containerProbeSettings.disableProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.cpu",
+          "defaultPath": "properties.deploymentSettings.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.environmentVariables",
+          "defaultPath": "properties.deploymentSettings.environmentVariables"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.instanceCount",
+          "defaultPath": "properties.deploymentSettings.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.jvmOptions",
+          "defaultPath": "properties.deploymentSettings.jvmOptions"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe",
+          "defaultPath": "properties.deploymentSettings.livenessProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.disableProbe",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.disableProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.failureThreshold",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.initialDelaySeconds",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.periodSeconds",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.ExecAction",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.ExecAction.command",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction.command"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.ExecAction.command[*]",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction.command[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.HTTPGetAction",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.HTTPGetAction.path",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction.path"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.HTTPGetAction.scheme",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction.scheme"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.probeAction.type",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.probeAction.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.successThreshold",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.livenessProbe.timeoutSeconds",
+          "defaultPath": "properties.deploymentSettings.livenessProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.memoryInGB",
+          "defaultPath": "properties.deploymentSettings.memoryInGB"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.netCoreMainEntryPath",
+          "defaultPath": "properties.deploymentSettings.netCoreMainEntryPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe",
+          "defaultPath": "properties.deploymentSettings.readinessProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.disableProbe",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.disableProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.failureThreshold",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.initialDelaySeconds",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.periodSeconds",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.ExecAction",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.ExecAction.command",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction.command"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.ExecAction.command[*]",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction.command[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.HTTPGetAction",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.HTTPGetAction.path",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction.path"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.HTTPGetAction.scheme",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction.scheme"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.probeAction.type",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.probeAction.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.successThreshold",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.readinessProbe.timeoutSeconds",
+          "defaultPath": "properties.deploymentSettings.readinessProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.resourceRequests",
+          "defaultPath": "properties.deploymentSettings.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.resourceRequests.cpu",
+          "defaultPath": "properties.deploymentSettings.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.resourceRequests.memory",
+          "defaultPath": "properties.deploymentSettings.resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.runtimeVersion",
+          "defaultPath": "properties.deploymentSettings.runtimeVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale",
+          "defaultPath": "properties.deploymentSettings.scale"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.maxReplicas",
+          "defaultPath": "properties.deploymentSettings.scale.maxReplicas"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.minReplicas",
+          "defaultPath": "properties.deploymentSettings.scale.minReplicas"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules",
+          "defaultPath": "properties.deploymentSettings.scale.rules"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*]",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue.auth",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue.auth"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue.auth[*]",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue.auth[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue.auth[*].secretRef",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue.auth[*].secretRef"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue.auth[*].triggerParameter",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue.auth[*].triggerParameter"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue.queueLength",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue.queueLength"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].azureQueue.queueName",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].azureQueue.queueName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom.auth",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom.auth"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom.auth[*]",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom.auth[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom.auth[*].secretRef",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom.auth[*].secretRef"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom.auth[*].triggerParameter",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom.auth[*].triggerParameter"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom.metadata",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom.metadata"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].custom.type",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].custom.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].http",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].http"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].http.auth",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].http.auth"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].http.auth[*]",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].http.auth[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].http.auth[*].secretRef",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].http.auth[*].secretRef"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].http.auth[*].triggerParameter",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].http.auth[*].triggerParameter"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].http.metadata",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].http.metadata"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].name",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].tcp",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].tcp"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].tcp.auth",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].tcp.auth"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].tcp.auth[*]",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].tcp.auth[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].tcp.auth[*].secretRef",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].tcp.auth[*].secretRef"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].tcp.auth[*].triggerParameter",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].tcp.auth[*].triggerParameter"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.scale.rules[*].tcp.metadata",
+          "defaultPath": "properties.deploymentSettings.scale.rules[*].tcp.metadata"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe",
+          "defaultPath": "properties.deploymentSettings.startupProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.disableProbe",
+          "defaultPath": "properties.deploymentSettings.startupProbe.disableProbe"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.failureThreshold",
+          "defaultPath": "properties.deploymentSettings.startupProbe.failureThreshold"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.initialDelaySeconds",
+          "defaultPath": "properties.deploymentSettings.startupProbe.initialDelaySeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.periodSeconds",
+          "defaultPath": "properties.deploymentSettings.startupProbe.periodSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.ExecAction",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.ExecAction.command",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction.command"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.ExecAction.command[*]",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction.command[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.HTTPGetAction",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.HTTPGetAction.path",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction.path"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.HTTPGetAction.scheme",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction.scheme"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.probeAction.type",
+          "defaultPath": "properties.deploymentSettings.startupProbe.probeAction.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.successThreshold",
+          "defaultPath": "properties.deploymentSettings.startupProbe.successThreshold"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.startupProbe.timeoutSeconds",
+          "defaultPath": "properties.deploymentSettings.startupProbe.timeoutSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/deploymentSettings.terminationGracePeriodSeconds",
+          "defaultPath": "properties.deploymentSettings.terminationGracePeriodSeconds"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*].discoveryStatus",
+          "defaultPath": "properties.instances[*].discoveryStatus"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*].reason",
+          "defaultPath": "properties.instances[*].reason"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*].startTime",
+          "defaultPath": "properties.instances[*].startTime"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/instances[*].zone",
+          "defaultPath": "properties.instances[*].zone"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.artifactSelector",
+          "defaultPath": "properties.source.artifactSelector"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.BuildResult",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.BuildResult.buildResultId",
+          "defaultPath": "properties.source.buildResultId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer",
+          "defaultPath": "properties.source.customContainer"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.args",
+          "defaultPath": "properties.source.customContainer.args"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.args[*]",
+          "defaultPath": "properties.source.customContainer.args[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.command",
+          "defaultPath": "properties.source.customContainer.command"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.command[*]",
+          "defaultPath": "properties.source.customContainer.command[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.containerImage",
+          "defaultPath": "properties.source.customContainer.containerImage"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.imageRegistryCredential",
+          "defaultPath": "properties.source.customContainer.imageRegistryCredential"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.imageRegistryCredential.password",
+          "defaultPath": "properties.source.customContainer.imageRegistryCredential.password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.imageRegistryCredential.username",
+          "defaultPath": "properties.source.customContainer.imageRegistryCredential.username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.languageFramework",
+          "defaultPath": "properties.source.customContainer.languageFramework"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Container.customContainer.server",
+          "defaultPath": "properties.source.customContainer.server"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer",
+          "defaultPath": "properties.source.customContainer"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.args",
+          "defaultPath": "properties.source.customContainer.args"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.args[*]",
+          "defaultPath": "properties.source.customContainer.args[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.command",
+          "defaultPath": "properties.source.customContainer.command"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.command[*]",
+          "defaultPath": "properties.source.customContainer.command[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.containerImage",
+          "defaultPath": "properties.source.customContainer.containerImage"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.imageRegistryCredential",
+          "defaultPath": "properties.source.customContainer.imageRegistryCredential"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.imageRegistryCredential.password",
+          "defaultPath": "properties.source.customContainer.imageRegistryCredential.password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.imageRegistryCredential.username",
+          "defaultPath": "properties.source.customContainer.imageRegistryCredential.username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.customContainer.server",
+          "defaultPath": "properties.source.customContainer.server"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Jar",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Jar.jvmOptions",
+          "defaultPath": "properties.source.jvmOptions"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Jar.runtimeVersion",
+          "defaultPath": "properties.source.runtimeVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.NetCoreZip",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.NetCoreZip.netCoreMainEntryPath",
+          "defaultPath": "properties.source.netCoreMainEntryPath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.NetCoreZip.runtimeVersion",
+          "defaultPath": "properties.source.runtimeVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.relativePath",
+          "defaultPath": "properties.source.relativePath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Source.artifactSelector",
+          "defaultPath": "properties.source.artifactSelector"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.Source.runtimeVersion",
+          "defaultPath": "properties.source.runtimeVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.type",
+          "defaultPath": "properties.source.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.UploadedUserSourceInfo",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.UploadedUserSourceInfo.relativePath",
+          "defaultPath": "properties.source.relativePath"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.version",
+          "defaultPath": "properties.source.version"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.War",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.War.jvmOptions",
+          "defaultPath": "properties.source.jvmOptions"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.War.runtimeVersion",
+          "defaultPath": "properties.source.runtimeVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/source.War.serverVersion",
+          "defaultPath": "properties.source.serverVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/deployments/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "Spring/apps/deployments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/domains/appName",
+          "defaultPath": "properties.appName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/domains/certName",
+          "defaultPath": "properties.certName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/domains/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/apps/domains/thumbprint",
+          "defaultPath": "properties.thumbprint"
+        }
+      ],
+      "resourceType": "Spring/apps/domains"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/activateDate",
+          "defaultPath": "properties.activateDate"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/certVersion",
+          "defaultPath": "properties.certVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/ContentCertificate.content",
+          "defaultPath": "properties.content"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/dnsNames",
+          "defaultPath": "properties.dnsNames"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/dnsNames[*]",
+          "defaultPath": "properties.dnsNames[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/expirationDate",
+          "defaultPath": "properties.expirationDate"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/issuedDate",
+          "defaultPath": "properties.issuedDate"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/issuer",
+          "defaultPath": "properties.issuer"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/KeyVaultCertificate.autoSync",
+          "defaultPath": "properties.autoSync"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/KeyVaultCertificate.certVersion",
+          "defaultPath": "properties.certVersion"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/KeyVaultCertificate.excludePrivateKey",
+          "defaultPath": "properties.excludePrivateKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/KeyVaultCertificate.keyVaultCertName",
+          "defaultPath": "properties.keyVaultCertName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/KeyVaultCertificate.vaultUri",
+          "defaultPath": "properties.vaultUri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/keyVaultCertName",
+          "defaultPath": "properties.keyVaultCertName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/subjectName",
+          "defaultPath": "properties.subjectName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/thumbprint",
+          "defaultPath": "properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/type",
+          "defaultPath": "properties.type"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/certificates/vaultUri",
+          "defaultPath": "properties.vaultUri"
+        }
+      ],
+      "resourceType": "Spring/certificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer",
+          "defaultPath": "properties.configServer"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty",
+          "defaultPath": "properties.configServer.gitProperty"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.hostKey",
+          "defaultPath": "properties.configServer.gitProperty.hostKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.hostKeyAlgorithm",
+          "defaultPath": "properties.configServer.gitProperty.hostKeyAlgorithm"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.label",
+          "defaultPath": "properties.configServer.gitProperty.label"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.password",
+          "defaultPath": "properties.configServer.gitProperty.password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.privateKey",
+          "defaultPath": "properties.configServer.gitProperty.privateKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories",
+          "defaultPath": "properties.configServer.gitProperty.repositories"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*]",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].hostKey",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].hostKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].hostKeyAlgorithm",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].hostKeyAlgorithm"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].label",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].label"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].name",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].password",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].pattern",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].pattern"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].pattern[*]",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].pattern[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].privateKey",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].privateKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].searchPaths",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].searchPaths"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].searchPaths[*]",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].searchPaths[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].strictHostKeyChecking",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].strictHostKeyChecking"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].uri",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].uri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.repositories[*].username",
+          "defaultPath": "properties.configServer.gitProperty.repositories[*].username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.searchPaths",
+          "defaultPath": "properties.configServer.gitProperty.searchPaths"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.searchPaths[*]",
+          "defaultPath": "properties.configServer.gitProperty.searchPaths[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.strictHostKeyChecking",
+          "defaultPath": "properties.configServer.gitProperty.strictHostKeyChecking"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.uri",
+          "defaultPath": "properties.configServer.gitProperty.uri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/configServer.gitProperty.username",
+          "defaultPath": "properties.configServer.gitProperty.username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/enabledState",
+          "defaultPath": "properties.enabledState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/error.code",
+          "defaultPath": "properties.error.code"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/error.message",
+          "defaultPath": "properties.error.message"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/resourceRequests",
+          "defaultPath": "properties.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/resourceRequests.cpu",
+          "defaultPath": "properties.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/resourceRequests.instanceCount",
+          "defaultPath": "properties.resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configServers/resourceRequests.memory",
+          "defaultPath": "properties.resourceRequests.memory"
+        }
+      ],
+      "resourceType": "Spring/configServers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/generation",
+          "defaultPath": "properties.generation"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/resourceRequests",
+          "defaultPath": "properties.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/resourceRequests.cpu",
+          "defaultPath": "properties.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/resourceRequests.instanceCount",
+          "defaultPath": "properties.resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/resourceRequests.memory",
+          "defaultPath": "properties.resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings",
+          "defaultPath": "properties.settings"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty",
+          "defaultPath": "properties.settings.gitProperty"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories",
+          "defaultPath": "properties.settings.gitProperty.repositories"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*]",
+          "defaultPath": "properties.settings.gitProperty.repositories[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].caCertResourceId",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].caCertResourceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].gitImplementation",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].gitImplementation"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].hostKey",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].hostKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].hostKeyAlgorithm",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].hostKeyAlgorithm"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].label",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].label"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].name",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].password",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].password"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].patterns",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].patterns"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].patterns[*]",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].patterns[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].privateKey",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].privateKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].searchPaths",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].searchPaths"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].searchPaths[*]",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].searchPaths[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].strictHostKeyChecking",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].strictHostKeyChecking"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].uri",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].uri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.gitProperty.repositories[*].username",
+          "defaultPath": "properties.settings.gitProperty.repositories[*].username"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/configurationServices/settings.refreshIntervalInSeconds",
+          "defaultPath": "properties.settings.refreshIntervalInSeconds"
+        }
+      ],
+      "resourceType": "Spring/configurationServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components",
+          "defaultPath": "properties.components"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*]",
+          "defaultPath": "properties.components[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].instances",
+          "defaultPath": "properties.components[*].instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].instances[*]",
+          "defaultPath": "properties.components[*].instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].instances[*].name",
+          "defaultPath": "properties.components[*].instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].instances[*].status",
+          "defaultPath": "properties.components[*].instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].name",
+          "defaultPath": "properties.components[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].resourceRequests",
+          "defaultPath": "properties.components[*].resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].resourceRequests.cpu",
+          "defaultPath": "properties.components[*].resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].resourceRequests.instanceCount",
+          "defaultPath": "properties.components[*].resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/components[*].resourceRequests.memory",
+          "defaultPath": "properties.components[*].resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features",
+          "defaultPath": "properties.features"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features.applicationAccelerator",
+          "defaultPath": "properties.features.applicationAccelerator"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features.applicationAccelerator.route",
+          "defaultPath": "properties.features.applicationAccelerator.route"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features.applicationAccelerator.state",
+          "defaultPath": "properties.features.applicationAccelerator.state"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features.applicationLiveView",
+          "defaultPath": "properties.features.applicationLiveView"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features.applicationLiveView.route",
+          "defaultPath": "properties.features.applicationLiveView.route"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/features.applicationLiveView.state",
+          "defaultPath": "properties.features.applicationLiveView.state"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/public",
+          "defaultPath": "properties.public"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/resourceRequests",
+          "defaultPath": "properties.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/resourceRequests.cpu",
+          "defaultPath": "properties.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/resourceRequests.instanceCount",
+          "defaultPath": "properties.resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/resourceRequests.memory",
+          "defaultPath": "properties.resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/ssoProperties",
+          "defaultPath": "properties.ssoProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/ssoProperties.clientId",
+          "defaultPath": "properties.ssoProperties.clientId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/ssoProperties.clientSecret",
+          "defaultPath": "properties.ssoProperties.clientSecret"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/ssoProperties.metadataUrl",
+          "defaultPath": "properties.ssoProperties.metadataUrl"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/ssoProperties.scopes",
+          "defaultPath": "properties.ssoProperties.scopes"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/ssoProperties.scopes[*]",
+          "defaultPath": "properties.ssoProperties.scopes[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/DevToolPortals/url",
+          "defaultPath": "properties.url"
+        }
+      ],
+      "resourceType": "Spring/devToolPortals"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/addonConfigs",
+          "defaultPath": "properties.addonConfigs"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apiMetadataProperties",
+          "defaultPath": "properties.apiMetadataProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apiMetadataProperties.description",
+          "defaultPath": "properties.apiMetadataProperties.description"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apiMetadataProperties.documentation",
+          "defaultPath": "properties.apiMetadataProperties.documentation"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apiMetadataProperties.serverUrl",
+          "defaultPath": "properties.apiMetadataProperties.serverUrl"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apiMetadataProperties.title",
+          "defaultPath": "properties.apiMetadataProperties.title"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apiMetadataProperties.version",
+          "defaultPath": "properties.apiMetadataProperties.version"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apms",
+          "defaultPath": "properties.apms"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apms[*]",
+          "defaultPath": "properties.apms[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apms[*].resourceId",
+          "defaultPath": "properties.apms[*].resourceId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apmTypes",
+          "defaultPath": "properties.apmTypes"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/apmTypes[*]",
+          "defaultPath": "properties.apmTypes[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/clientAuth",
+          "defaultPath": "properties.clientAuth"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/clientAuth.certificates",
+          "defaultPath": "properties.clientAuth.certificates"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/clientAuth.certificates[*]",
+          "defaultPath": "properties.clientAuth.certificates[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/clientAuth.certificateVerification",
+          "defaultPath": "properties.clientAuth.certificateVerification"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties",
+          "defaultPath": "properties.corsProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowCredentials",
+          "defaultPath": "properties.corsProperties.allowCredentials"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedHeaders",
+          "defaultPath": "properties.corsProperties.allowedHeaders"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedHeaders[*]",
+          "defaultPath": "properties.corsProperties.allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedMethods",
+          "defaultPath": "properties.corsProperties.allowedMethods"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedMethods[*]",
+          "defaultPath": "properties.corsProperties.allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedOriginPatterns",
+          "defaultPath": "properties.corsProperties.allowedOriginPatterns"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedOriginPatterns[*]",
+          "defaultPath": "properties.corsProperties.allowedOriginPatterns[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedOrigins",
+          "defaultPath": "properties.corsProperties.allowedOrigins"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.allowedOrigins[*]",
+          "defaultPath": "properties.corsProperties.allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.exposedHeaders",
+          "defaultPath": "properties.corsProperties.exposedHeaders"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.exposedHeaders[*]",
+          "defaultPath": "properties.corsProperties.exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/corsProperties.maxAge",
+          "defaultPath": "properties.corsProperties.maxAge"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/environmentVariables",
+          "defaultPath": "properties.environmentVariables"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/environmentVariables.secrets",
+          "defaultPath": "properties.environmentVariables.secrets"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/httpsOnly",
+          "defaultPath": "properties.httpsOnly"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/instances",
+          "defaultPath": "properties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/instances[*]",
+          "defaultPath": "properties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/instances[*].name",
+          "defaultPath": "properties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/instances[*].status",
+          "defaultPath": "properties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties",
+          "defaultPath": "properties.operatorProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.instances",
+          "defaultPath": "properties.operatorProperties.instances"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.instances[*]",
+          "defaultPath": "properties.operatorProperties.instances[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.instances[*].name",
+          "defaultPath": "properties.operatorProperties.instances[*].name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.instances[*].status",
+          "defaultPath": "properties.operatorProperties.instances[*].status"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.resourceRequests",
+          "defaultPath": "properties.operatorProperties.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.resourceRequests.cpu",
+          "defaultPath": "properties.operatorProperties.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.resourceRequests.instanceCount",
+          "defaultPath": "properties.operatorProperties.resourceRequests.instanceCount"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/operatorProperties.resourceRequests.memory",
+          "defaultPath": "properties.operatorProperties.resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/public",
+          "defaultPath": "properties.public"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/resourceRequests",
+          "defaultPath": "properties.resourceRequests"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/resourceRequests.cpu",
+          "defaultPath": "properties.resourceRequests.cpu"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/resourceRequests.memory",
+          "defaultPath": "properties.resourceRequests.memory"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties",
+          "defaultPath": "properties.responseCacheProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.LocalCachePerInstance",
+          "defaultPath": "properties.responseCacheProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.LocalCachePerInstance.size",
+          "defaultPath": "properties.responseCacheProperties.size"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.LocalCachePerInstance.timeToLive",
+          "defaultPath": "properties.responseCacheProperties.timeToLive"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.LocalCachePerRoute",
+          "defaultPath": "properties.responseCacheProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.LocalCachePerRoute.size",
+          "defaultPath": "properties.responseCacheProperties.size"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.LocalCachePerRoute.timeToLive",
+          "defaultPath": "properties.responseCacheProperties.timeToLive"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/responseCacheProperties.responseCacheType",
+          "defaultPath": "properties.responseCacheProperties.responseCacheType"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/ssoProperties",
+          "defaultPath": "properties.ssoProperties"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/ssoProperties.clientId",
+          "defaultPath": "properties.ssoProperties.clientId"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/ssoProperties.clientSecret",
+          "defaultPath": "properties.ssoProperties.clientSecret"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/ssoProperties.issuerUri",
+          "defaultPath": "properties.ssoProperties.issuerUri"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/ssoProperties.scope",
+          "defaultPath": "properties.ssoProperties.scope"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/ssoProperties.scope[*]",
+          "defaultPath": "properties.ssoProperties.scope[*]"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/gateways/url",
+          "defaultPath": "properties.url"
+        }
+      ],
+      "resourceType": "Spring/gateways"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/appInsightsAgentVersions",
+          "defaultPath": "properties.appInsightsAgentVersions"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/appInsightsAgentVersions.java",
+          "defaultPath": "properties.appInsightsAgentVersions.java"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/appInsightsInstrumentationKey",
+          "defaultPath": "properties.appInsightsInstrumentationKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/appInsightsSamplingRate",
+          "defaultPath": "properties.appInsightsSamplingRate"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/error.code",
+          "defaultPath": "properties.error.code"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/error.message",
+          "defaultPath": "properties.error.message"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/monitoringSettings/traceEnabled",
+          "defaultPath": "properties.traceEnabled"
+        }
+      ],
+      "resourceType": "Spring/monitoringSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AppPlatform/Spring/storages/StorageAccount.accountKey",
+          "defaultPath": "properties.accountKey"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/storages/StorageAccount.accountName",
+          "defaultPath": "properties.accountName"
+        },
+        {
+          "name": "Microsoft.AppPlatform/Spring/storages/storageType",
+          "defaultPath": "properties.storageType"
+        }
+      ],
+      "resourceType": "Spring/storages"
+    }
+  ]
+}

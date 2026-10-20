@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.LoadTestService",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "loadTestMappings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "loadTestProfileMappings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "loadtests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "loadtests/Limits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "loadtests/outboundNetworkDependenciesEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/playwrightQuotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/Quotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "playwrightWorkspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "PlaywrightWorkspaces/quotas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "registeredSubscriptions"
+    }
+  ]
+}

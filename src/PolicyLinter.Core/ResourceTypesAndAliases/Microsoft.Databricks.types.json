@@ -1,0 +1,41 @@
+{
+  "namespace": "Microsoft.Databricks",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accessConnectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getNetworkPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationstatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/dbWorkspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "workspaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "workspaces/virtualNetworkPeerings"
+    }
+  ]
+}

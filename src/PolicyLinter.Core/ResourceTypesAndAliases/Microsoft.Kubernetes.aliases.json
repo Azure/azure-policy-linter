@@ -1,0 +1,118 @@
+{
+  "namespace": "Microsoft.Kubernetes",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/aadProfile",
+          "defaultPath": "properties.aadProfile"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/aadProfile.clientAppId",
+          "defaultPath": "properties.aadProfile.clientAppId"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/aadProfile.serverAppId",
+          "defaultPath": "properties.aadProfile.serverAppId"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/aadProfile.tenantId",
+          "defaultPath": "properties.aadProfile.tenantId"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/agentPublicKeyCertificate",
+          "defaultPath": "properties.agentPublicKeyCertificate"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/agentVersion",
+          "defaultPath": "properties.agentVersion"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/connectivityStatus",
+          "defaultPath": "properties.connectivityStatus"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/distribution",
+          "defaultPath": "properties.distribution"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/infrastructure",
+          "defaultPath": "properties.infrastructure"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/kubernetesVersion",
+          "defaultPath": "properties.kubernetesVersion"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/lastConnectivityTime",
+          "defaultPath": "properties.lastConnectivityTime"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/managedIdentityCertificateExpirationTime",
+          "defaultPath": "properties.managedIdentityCertificateExpirationTime"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/offering",
+          "defaultPath": "properties.offering"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/privateLinkScopeResourceId",
+          "paths": [
+            {
+              "path": "properties.privateLinkScopeResourceId",
+              "apiVersions": [
+                "2021-10-01",
+                "2021-03-01",
+                "2020-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.privateLinkScopeResourceId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/privateLinkState",
+          "paths": [
+            {
+              "path": "properties.privateLinkState",
+              "apiVersions": [
+                "2021-10-01",
+                "2021-03-01",
+                "2020-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.privateLinkState",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/totalCoreCount",
+          "defaultPath": "properties.totalCoreCount"
+        },
+        {
+          "name": "Microsoft.Kubernetes/connectedClusters/totalNodeCount",
+          "defaultPath": "properties.totalNodeCount"
+        }
+      ],
+      "resourceType": "connectedClusters"
+    }
+  ]
+}

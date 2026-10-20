@@ -1,0 +1,69 @@
+{
+  "namespace": "Microsoft.BareMetal",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bareMetalConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "bareMetalInventoryBase"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "consoleConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "crayServers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/updateRoutesOnVirtualNetwork"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/utilization"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedConsoleConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "monitoringServers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkInterfaceAttachments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "peeringSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "sdnApplianceInventory"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "utilization"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "vmWs"
+    }
+  ]
+}

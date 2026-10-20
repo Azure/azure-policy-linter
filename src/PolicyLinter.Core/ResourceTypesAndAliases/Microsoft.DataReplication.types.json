@@ -1,0 +1,53 @@
+{
+  "namespace": "Microsoft.DataReplication",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "replicationFabrics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "replicationFabrics/fabricAgents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "replicationVaults"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "replicationVaults/alertSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "replicationVaults/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "replicationVaults/protectedItems"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "replicationVaults/replicationExtensions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "replicationVaults/replicationPolicies"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "namespace": "Microsoft.ComputeBulkActions",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/launchBulkInstancesOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesCancelOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesGetOperationErrors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/virtualMachinesGetOperationStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

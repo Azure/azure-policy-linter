@@ -1,0 +1,125 @@
+{
+  "namespace": "Microsoft.DeviceRegistry",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "assetEndpointProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "assets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "billingContainers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "devices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "discoveredAssetEndpointProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "discoveredAssets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/asyncOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/assetEndpointProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/assets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/credentials"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/credentials/policies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/devices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/discoveredAssetEndpointProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/discoveredAssets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/discoveredDevices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/groups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/jobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/jobs/runs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/registryDevices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/registryDevices/attributes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/registryDevices/authenticationProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "namespaces/registryDevices/capabilities"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "schemaRegistries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schemaRegistries/schemas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "schemaRegistries/schemas/schemaVersions"
+    }
+  ]
+}

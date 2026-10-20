@@ -1,0 +1,45 @@
+{
+  "namespace": "Microsoft.DevHub",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iacProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/adooauth"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/generatePreviewArtifacts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/githuboauth"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "templates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "templates/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "templates/versions/generate"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workflows"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "namespace": "Microsoft.FileShares",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "fileShares"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fileShares/fileShareSnapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getLimits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getProvisioningRecommendation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getUsageData"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/partitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/partitions/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/partitions/operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

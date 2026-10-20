@@ -1,0 +1,197 @@
+{
+  "namespace": "Microsoft.ApplicationMigration",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "codeScanMappings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "codeScanSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "codeScanSites/codeScanReports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "codeScanSites/codeScanReports/codeScanIssues"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "connectionHubs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "connectionHubs/githubConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "connectionHubs/githubConnections/githubIssues"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "containerSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "containerSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "containerSites/containerClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "containerSites/containerNodes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "containerSites/containerWorkloads"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "discoveryHubs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "discoveryHubs/applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "discoveryHubs/applications/members"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "mongoSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "mongoSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "mongoSites/mongoCollections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "mongoSites/mongoDatabases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "mongoSites/mongoInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxDistributedFirewallPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxDistributedFirewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxGatewayFirewallPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxGatewayFirewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxLoadBalancers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxManagers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxNatRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxNsGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxSegments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxTier0Gateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "networkSites/nsxTier1Gateways"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "oracleSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "oracleSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "oracleSites/oracleDatabases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "oracleSites/oracleInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "PGSQLSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "PGSQLSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "PGSQLSites/PGSQLDatabases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "PGSQLSites/PGSQLInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "StorageSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "StorageSites/agents"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "StorageSites/FileShares"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "StorageSites/Nas"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "namespace": "Microsoft.OffAzure",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Appliances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "HyperVSites"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "HyperVSites/clusters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "HyperVSites/hosts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ImportSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "MasterSites"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "MasterSites/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "MasterSites/SqlSites"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ServerSites"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "VMwareSites"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "VMwareSites/vcenters"
+    }
+  ]
+}

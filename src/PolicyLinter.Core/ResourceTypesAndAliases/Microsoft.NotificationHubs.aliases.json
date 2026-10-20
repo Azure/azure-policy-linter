@@ -1,0 +1,846 @@
+{
+  "namespace": "Microsoft.NotificationHubs",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/critical",
+          "defaultPath": "properties.critical"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/dataCenter",
+          "defaultPath": "properties.dataCenter"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/metricId",
+          "defaultPath": "properties.metricId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/namespaceType",
+          "defaultPath": "properties.namespaceType"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls",
+          "defaultPath": "properties.networkAcls"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.ipRules",
+          "defaultPath": "properties.networkAcls.ipRules"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.ipRules[*]",
+          "defaultPath": "properties.networkAcls.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.ipRules[*].ipMask",
+          "defaultPath": "properties.networkAcls.ipRules[*].ipMask"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.ipRules[*].rights",
+          "defaultPath": "properties.networkAcls.ipRules[*].rights"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.ipRules[*].rights[*]",
+          "defaultPath": "properties.networkAcls.ipRules[*].rights[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.publicNetworkRule",
+          "defaultPath": "properties.networkAcls.publicNetworkRule"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.publicNetworkRule.rights",
+          "defaultPath": "properties.networkAcls.publicNetworkRule.rights"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/networkAcls.publicNetworkRule.rights[*]",
+          "defaultPath": "properties.networkAcls.publicNetworkRule.rights[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials",
+          "defaultPath": "properties.pnsCredentials"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.admCredential",
+          "defaultPath": "properties.pnsCredentials.admCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.admCredential.authTokenUrl",
+          "defaultPath": "properties.pnsCredentials.admCredential.properties.authTokenUrl"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.admCredential.clientId",
+          "defaultPath": "properties.pnsCredentials.admCredential.properties.clientId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.admCredential.clientSecret",
+          "defaultPath": "properties.pnsCredentials.admCredential.properties.clientSecret"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential",
+          "defaultPath": "properties.pnsCredentials.apnsCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.apnsCertificate",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.apnsCertificate"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.appId",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.appId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.appName",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.appName"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.certificateKey",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.certificateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.endpoint",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.keyId",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.keyId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.thumbprint",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.apnsCredential.token",
+          "defaultPath": "properties.pnsCredentials.apnsCredential.properties.token"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.baiduCredential",
+          "defaultPath": "properties.pnsCredentials.baiduCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.baiduCredential.baiduApiKey",
+          "defaultPath": "properties.pnsCredentials.baiduCredential.properties.baiduApiKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.baiduCredential.baiduEndPoint",
+          "defaultPath": "properties.pnsCredentials.baiduCredential.properties.baiduEndPoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.baiduCredential.baiduSecretKey",
+          "defaultPath": "properties.pnsCredentials.baiduCredential.properties.baiduSecretKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.browserCredential",
+          "defaultPath": "properties.pnsCredentials.browserCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.browserCredential.subject",
+          "defaultPath": "properties.pnsCredentials.browserCredential.properties.subject"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.browserCredential.vapidPrivateKey",
+          "defaultPath": "properties.pnsCredentials.browserCredential.properties.vapidPrivateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.browserCredential.vapidPublicKey",
+          "defaultPath": "properties.pnsCredentials.browserCredential.properties.vapidPublicKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.fcmV1Credential",
+          "defaultPath": "properties.pnsCredentials.fcmV1Credential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.fcmV1Credential.clientEmail",
+          "defaultPath": "properties.pnsCredentials.fcmV1Credential.properties.clientEmail"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.fcmV1Credential.privateKey",
+          "defaultPath": "properties.pnsCredentials.fcmV1Credential.properties.privateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.fcmV1Credential.projectId",
+          "defaultPath": "properties.pnsCredentials.fcmV1Credential.properties.projectId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.gcmCredential",
+          "defaultPath": "properties.pnsCredentials.gcmCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.gcmCredential.gcmEndpoint",
+          "defaultPath": "properties.pnsCredentials.gcmCredential.properties.gcmEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.gcmCredential.googleApiKey",
+          "defaultPath": "properties.pnsCredentials.gcmCredential.properties.googleApiKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.mpnsCredential",
+          "defaultPath": "properties.pnsCredentials.mpnsCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.mpnsCredential.certificateKey",
+          "defaultPath": "properties.pnsCredentials.mpnsCredential.properties.certificateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.mpnsCredential.mpnsCertificate",
+          "defaultPath": "properties.pnsCredentials.mpnsCredential.properties.mpnsCertificate"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.mpnsCredential.thumbprint",
+          "defaultPath": "properties.pnsCredentials.mpnsCredential.properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.wnsCredential",
+          "defaultPath": "properties.pnsCredentials.wnsCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.wnsCredential.certificateKey",
+          "defaultPath": "properties.pnsCredentials.wnsCredential.properties.certificateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.wnsCredential.packageSid",
+          "defaultPath": "properties.pnsCredentials.wnsCredential.properties.packageSid"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.wnsCredential.secretKey",
+          "defaultPath": "properties.pnsCredentials.wnsCredential.properties.secretKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.wnsCredential.windowsLiveEndpoint",
+          "defaultPath": "properties.pnsCredentials.wnsCredential.properties.windowsLiveEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.wnsCredential.wnsCertificate",
+          "defaultPath": "properties.pnsCredentials.wnsCredential.properties.wnsCertificate"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.xiaomiCredential",
+          "defaultPath": "properties.pnsCredentials.xiaomiCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.xiaomiCredential.appSecret",
+          "defaultPath": "properties.pnsCredentials.xiaomiCredential.properties.appSecret"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/pnsCredentials.xiaomiCredential.endpoint",
+          "defaultPath": "properties.pnsCredentials.xiaomiCredential.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/region",
+          "defaultPath": "properties.region"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/region.externalDocs",
+          "defaultPath": "properties.region.externalDocs"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/replicationRegion",
+          "defaultPath": "properties.replicationRegion"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/scaleUnit",
+          "defaultPath": "properties.scaleUnit"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/serviceBusEndpoint",
+          "defaultPath": "properties.serviceBusEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/serviceBusEndpoint.externalDocs",
+          "defaultPath": "properties.serviceBusEndpoint.externalDocs"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/status.externalDocs",
+          "defaultPath": "properties.status.externalDocs"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/subscriptionId",
+          "defaultPath": "properties.subscriptionId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/updatedAt",
+          "defaultPath": "properties.updatedAt"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/zoneRedundancy",
+          "defaultPath": "properties.zoneRedundancy"
+        }
+      ],
+      "resourceType": "namespaces"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/claimType",
+          "defaultPath": "properties.claimType"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/claimValue",
+          "defaultPath": "properties.claimValue"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/keyName",
+          "defaultPath": "properties.keyName"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/modifiedTime",
+          "defaultPath": "properties.modifiedTime"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/primaryKey",
+          "defaultPath": "properties.primaryKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/rights",
+          "paths": [
+            {
+              "path": "properties.rights",
+              "apiVersions": [
+                "2014-09-01",
+                "2016-03-01",
+                "2017-04-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/rights[*]",
+          "paths": [
+            {
+              "path": "properties.rights[*]",
+              "apiVersions": [
+                "2014-09-01",
+                "2016-03-01",
+                "2017-04-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.rights[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/secondaryKey",
+          "defaultPath": "properties.secondaryKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/Namespaces/AuthorizationRules/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "Namespaces/AuthorizationRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/admCredential",
+          "defaultPath": "properties.admCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/admCredential.authTokenUrl",
+          "defaultPath": "properties.admCredential.properties.authTokenUrl"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/admCredential.clientId",
+          "defaultPath": "properties.admCredential.properties.clientId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/admCredential.clientSecret",
+          "defaultPath": "properties.admCredential.properties.clientSecret"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential",
+          "defaultPath": "properties.apnsCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.apnsCertificate",
+          "defaultPath": "properties.apnsCredential.properties.apnsCertificate"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.appId",
+          "defaultPath": "properties.apnsCredential.properties.appId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.appName",
+          "defaultPath": "properties.apnsCredential.properties.appName"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.certificateKey",
+          "defaultPath": "properties.apnsCredential.properties.certificateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.endpoint",
+          "defaultPath": "properties.apnsCredential.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.keyId",
+          "defaultPath": "properties.apnsCredential.properties.keyId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.thumbprint",
+          "defaultPath": "properties.apnsCredential.properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/apnsCredential.token",
+          "defaultPath": "properties.apnsCredential.properties.token"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules",
+          "defaultPath": "properties.authorizationRules"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*]",
+          "defaultPath": "properties.authorizationRules[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].claimType",
+          "defaultPath": "properties.authorizationRules[*].claimType"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].claimValue",
+          "defaultPath": "properties.authorizationRules[*].claimValue"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].createdTime",
+          "defaultPath": "properties.authorizationRules[*].createdTime"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].keyName",
+          "defaultPath": "properties.authorizationRules[*].keyName"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].modifiedTime",
+          "defaultPath": "properties.authorizationRules[*].modifiedTime"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].primaryKey",
+          "defaultPath": "properties.authorizationRules[*].primaryKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].revision",
+          "defaultPath": "properties.authorizationRules[*].revision"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].rights",
+          "defaultPath": "properties.authorizationRules[*].rights"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].rights[*]",
+          "defaultPath": "properties.authorizationRules[*].rights[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules[*].secondaryKey",
+          "defaultPath": "properties.authorizationRules[*].secondaryKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/baiduCredential",
+          "defaultPath": "properties.baiduCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/baiduCredential.baiduApiKey",
+          "defaultPath": "properties.baiduCredential.properties.baiduApiKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/baiduCredential.baiduEndPoint",
+          "defaultPath": "properties.baiduCredential.properties.baiduEndPoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/baiduCredential.baiduSecretKey",
+          "defaultPath": "properties.baiduCredential.properties.baiduSecretKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/browserCredential",
+          "defaultPath": "properties.browserCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/browserCredential.subject",
+          "defaultPath": "properties.browserCredential.properties.subject"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/browserCredential.vapidPrivateKey",
+          "defaultPath": "properties.browserCredential.properties.vapidPrivateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/browserCredential.vapidPublicKey",
+          "defaultPath": "properties.browserCredential.properties.vapidPublicKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/dailyMaxActiveDevices",
+          "defaultPath": "properties.dailyMaxActiveDevices"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/fcmV1Credential",
+          "defaultPath": "properties.fcmV1Credential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/fcmV1Credential.clientEmail",
+          "defaultPath": "properties.fcmV1Credential.properties.clientEmail"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/fcmV1Credential.privateKey",
+          "defaultPath": "properties.fcmV1Credential.properties.privateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/fcmV1Credential.projectId",
+          "defaultPath": "properties.fcmV1Credential.properties.projectId"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/gcmCredential",
+          "defaultPath": "properties.gcmCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/gcmCredential.gcmEndpoint",
+          "defaultPath": "properties.gcmCredential.properties.gcmEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/gcmCredential.googleApiKey",
+          "defaultPath": "properties.gcmCredential.properties.googleApiKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/mpnsCredential",
+          "defaultPath": "properties.mpnsCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/mpnsCredential.certificateKey",
+          "defaultPath": "properties.mpnsCredential.properties.certificateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/mpnsCredential.mpnsCertificate",
+          "defaultPath": "properties.mpnsCredential.properties.mpnsCertificate"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/mpnsCredential.thumbprint",
+          "defaultPath": "properties.mpnsCredential.properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/name",
+          "defaultPath": "properties.name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/registrationTtl",
+          "defaultPath": "properties.registrationTtl"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/wnsCredential",
+          "defaultPath": "properties.wnsCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/wnsCredential.certificateKey",
+          "defaultPath": "properties.wnsCredential.properties.certificateKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/wnsCredential.packageSid",
+          "defaultPath": "properties.wnsCredential.properties.packageSid"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/wnsCredential.secretKey",
+          "defaultPath": "properties.wnsCredential.properties.secretKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/wnsCredential.windowsLiveEndpoint",
+          "defaultPath": "properties.wnsCredential.properties.windowsLiveEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/wnsCredential.wnsCertificate",
+          "defaultPath": "properties.wnsCredential.properties.wnsCertificate"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/xiaomiCredential",
+          "defaultPath": "properties.xiaomiCredential"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/xiaomiCredential.appSecret",
+          "defaultPath": "properties.xiaomiCredential.properties.appSecret"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/xiaomiCredential.endpoint",
+          "defaultPath": "properties.xiaomiCredential.properties.endpoint"
+        }
+      ],
+      "resourceType": "namespaces/notificationHubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/claimType",
+          "defaultPath": "properties.claimType"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/claimValue",
+          "defaultPath": "properties.claimValue"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/createdTime",
+          "defaultPath": "properties.createdTime"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/keyName",
+          "defaultPath": "properties.keyName"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/modifiedTime",
+          "defaultPath": "properties.modifiedTime"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/primaryKey",
+          "defaultPath": "properties.primaryKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/rights",
+          "paths": [
+            {
+              "path": "properties.rights",
+              "apiVersions": [
+                "2014-09-01",
+                "2016-03-01",
+                "2017-04-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.rights"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/rights[*]",
+          "paths": [
+            {
+              "path": "properties.rights[*]",
+              "apiVersions": [
+                "2014-09-01",
+                "2016-03-01",
+                "2017-04-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.rights[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/secondaryKey",
+          "defaultPath": "properties.secondaryKey"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "namespaces/notificationHubs/authorizationRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.NotificationHubs/namespaces/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "namespaces/privateEndpointConnections"
+    }
+  ]
+}

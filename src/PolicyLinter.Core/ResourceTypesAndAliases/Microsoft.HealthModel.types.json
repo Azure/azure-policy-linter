@@ -1,0 +1,21 @@
+{
+  "namespace": "Microsoft.HealthModel",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "healthmodels"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/snapshots"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "healthmodels/versions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

@@ -1,0 +1,561 @@
+{
+  "namespace": "Microsoft.AWSConnector",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accessAnalyzerAnalyzers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "acmCertificateSummaries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "apiGatewayRestApis"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "apiGatewayStages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applicationAutoScalingScalableTargets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "appSyncGraphQLApis"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "autoScalingAutoScalingGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockAgentAliases"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockAgents"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockApplicationInferenceProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockBlueprints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockDataAutomationProjects"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockDataSources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockFlowAliases"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockGuardrails"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockKnowledgeBases"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bedrockPrompts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudFormationStacks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudFormationStackSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudFrontDistributions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudTrailTrails"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cloudWatchAlarms"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "codeBuildProjects"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "codeBuildSourceCredentialsInfos"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configServiceConfigurationRecorders"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configServiceConfigurationRecorderStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "configServiceDeliveryChannels"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "databaseMigrationServiceReplicationInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "daxClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dynamoDBContinuousBackupsDescriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "dynamoDBTables"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2AccountAttributes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2Addresses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2FlowLogs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2Images"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ec2Instances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2InstanceStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2Ipams"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2KeyPairs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2NetworkAcls"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2NetworkInterfaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2RouteTables"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2SecurityGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2Snapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2Subnets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2Volumes"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2VPCEndpoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2VPCPeeringConnections"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ec2VPCs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ecrImageDetails"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ecrRepositories"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ecsClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ecsServices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ecsTaskDefinitions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "efsFileSystems"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "efsMountTargets"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "eksClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "eksNodegroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticBeanstalkApplications"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticBeanstalkConfigurationTemplates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticBeanstalkEnvironments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticLoadBalancingV2Listeners"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticLoadBalancingV2LoadBalancers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticLoadBalancingV2TargetGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticLoadBalancingV2TargetHealthDescriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "elasticsearchDomains"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "emrClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "functionConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "guardDutyDetectors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamAccessKeyLastUseds"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamAccessKeyMetaData"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamInstanceProfiles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamManagedPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamMFADevices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamPasswordPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamPolicyVersions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamRoles"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamServerCertificates"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamUserPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "iamVirtualMFADevices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "kmsAliases"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "kmsKeys"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lambdaEventInvokeConfigs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lambdaFunctionCodeLocations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lambdaFunctionConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lambdaFunctions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lambdaPermissions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "licenseManagerLicenses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lightsailBuckets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "lightsailInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "logsLogGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "logsLogStreams"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "logsMetricFilters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "logsSubscriptionFilters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "macie2JobSummaries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "macieAllowLists"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkFirewallFirewallPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkFirewallFirewalls"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "networkFirewallRuleGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "openSearchDomainStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "openSearchServiceDomains"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "organizationsAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "organizationsOrganizations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "rdsDBClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "rdsDBInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "rdsDBSnapshotAttributesResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "rdsDBSnapshots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "rdsEventSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "rdsExportTasks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "redshiftClusterParameterGroups"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "redshiftClusters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "route53DomainsDomainSummaries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "route53HostedZones"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "route53ResourceRecordSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "s3AccessControlPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "s3AccessPoints"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "s3BucketPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "s3Buckets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "s3ControlMultiRegionAccessPointPolicyDocuments"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sageMakerApps"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sageMakerDevices"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sageMakerImages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sageMakerNotebookInstanceSummaries"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "secretsManagerResourcePolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "secretsManagerSecrets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "snsSubscriptions"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "snsTopics"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sqsQueues"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ssmInstanceInformations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ssmParameters"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "ssmResourceComplianceSummaryItems"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "wafv2IPSets"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "wafv2LoggingConfigurations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "wafv2WebACLAssociations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "wafWebACLSummaries"
+    }
+  ]
+}

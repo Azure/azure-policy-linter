@@ -1,0 +1,57 @@
+{
+  "namespace": "Microsoft.ProviderHub",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "availableAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "providerMonitorSettings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/authorizedApplications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/checkinmanifest"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/customRollouts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/defaultRollouts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/manifests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/newRegionFrontloadRelease"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/resourceActions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "providerRegistrations/resourceTypeRegistrations"
+    }
+  ]
+}

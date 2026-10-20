@@ -1,0 +1,1933 @@
+{
+  "namespace": "Microsoft.DataReplication",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.applianceName",
+          "defaultPath": "properties.customProperties.applianceName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.applianceName[*]",
+          "defaultPath": "properties.customProperties.applianceName[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.azStackHciSiteId",
+          "defaultPath": "properties.customProperties.azStackHciSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.cluster",
+          "defaultPath": "properties.customProperties.cluster"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.cluster.clusterName",
+          "defaultPath": "properties.customProperties.cluster.clusterName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.cluster.resourceName",
+          "defaultPath": "properties.customProperties.cluster.resourceName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.cluster.storageAccountName",
+          "defaultPath": "properties.customProperties.cluster.storageAccountName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.cluster.storageContainers",
+          "defaultPath": "properties.customProperties.cluster.storageContainers"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.cluster.storageContainers[*]",
+          "defaultPath": "properties.customProperties.cluster.storageContainers[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.fabricContainerId",
+          "defaultPath": "properties.customProperties.fabricContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.fabricResourceId",
+          "defaultPath": "properties.customProperties.fabricResourceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.migrationHubUri",
+          "defaultPath": "properties.customProperties.migrationHubUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.AzStackHCI.migrationSolutionId",
+          "defaultPath": "properties.customProperties.migrationSolutionId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.HyperVMigrate",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.HyperVMigrate.fabricContainerId",
+          "defaultPath": "properties.customProperties.fabricContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.HyperVMigrate.fabricResourceId",
+          "defaultPath": "properties.customProperties.fabricResourceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.HyperVMigrate.hyperVSiteId",
+          "defaultPath": "properties.customProperties.hyperVSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.HyperVMigrate.migrationHubUri",
+          "defaultPath": "properties.customProperties.migrationHubUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.HyperVMigrate.migrationSolutionId",
+          "defaultPath": "properties.customProperties.migrationSolutionId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.instanceType",
+          "defaultPath": "properties.customProperties.instanceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.VMwareMigrate",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.VMwareMigrate.migrationSolutionId",
+          "defaultPath": "properties.customProperties.migrationSolutionId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/customProperties.VMwareMigrate.vmwareSiteId",
+          "defaultPath": "properties.customProperties.vmwareSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/health",
+          "defaultPath": "properties.health"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors",
+          "defaultPath": "properties.healthErrors"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*]",
+          "defaultPath": "properties.healthErrors[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].affectedResourceCorrelationIds",
+          "defaultPath": "properties.healthErrors[*].affectedResourceCorrelationIds"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].affectedResourceCorrelationIds[*]",
+          "defaultPath": "properties.healthErrors[*].affectedResourceCorrelationIds[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].affectedResourceType",
+          "defaultPath": "properties.healthErrors[*].affectedResourceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].category",
+          "defaultPath": "properties.healthErrors[*].category"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].causes",
+          "defaultPath": "properties.healthErrors[*].causes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors",
+          "defaultPath": "properties.healthErrors[*].childErrors"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*]",
+          "defaultPath": "properties.healthErrors[*].childErrors[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].category",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].category"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].causes",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].causes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].code",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].code"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].creationTime",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].creationTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].healthCategory",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].healthCategory"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].isCustomerResolvable",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].isCustomerResolvable"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].message",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].message"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].recommendation",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].recommendation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].severity",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].severity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].source",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].source"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].childErrors[*].summary",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].summary"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].code",
+          "defaultPath": "properties.healthErrors[*].code"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].creationTime",
+          "defaultPath": "properties.healthErrors[*].creationTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].healthCategory",
+          "defaultPath": "properties.healthErrors[*].healthCategory"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].isCustomerResolvable",
+          "defaultPath": "properties.healthErrors[*].isCustomerResolvable"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].message",
+          "defaultPath": "properties.healthErrors[*].message"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].recommendation",
+          "defaultPath": "properties.healthErrors[*].recommendation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].severity",
+          "defaultPath": "properties.healthErrors[*].severity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].source",
+          "defaultPath": "properties.healthErrors[*].source"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/healthErrors[*].summary",
+          "defaultPath": "properties.healthErrors[*].summary"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/serviceEndpoint",
+          "defaultPath": "properties.serviceEndpoint"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/serviceResourceId",
+          "defaultPath": "properties.serviceResourceId"
+        }
+      ],
+      "resourceType": "replicationFabrics"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/authenticationIdentity",
+          "defaultPath": "properties.authenticationIdentity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/authenticationIdentity.aadAuthority",
+          "defaultPath": "properties.authenticationIdentity.aadAuthority"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/authenticationIdentity.applicationId",
+          "defaultPath": "properties.authenticationIdentity.applicationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/authenticationIdentity.audience",
+          "defaultPath": "properties.authenticationIdentity.audience"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/authenticationIdentity.objectId",
+          "defaultPath": "properties.authenticationIdentity.objectId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/authenticationIdentity.tenantId",
+          "defaultPath": "properties.authenticationIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/correlationId",
+          "defaultPath": "properties.correlationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.instanceType",
+          "defaultPath": "properties.customProperties.instanceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.biosId",
+          "defaultPath": "properties.customProperties.biosId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.marsAuthenticationIdentity",
+          "defaultPath": "properties.customProperties.marsAuthenticationIdentity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.marsAuthenticationIdentity.aadAuthority",
+          "defaultPath": "properties.customProperties.marsAuthenticationIdentity.aadAuthority"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.marsAuthenticationIdentity.applicationId",
+          "defaultPath": "properties.customProperties.marsAuthenticationIdentity.applicationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.marsAuthenticationIdentity.audience",
+          "defaultPath": "properties.customProperties.marsAuthenticationIdentity.audience"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.marsAuthenticationIdentity.objectId",
+          "defaultPath": "properties.customProperties.marsAuthenticationIdentity.objectId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/customProperties.VMware.marsAuthenticationIdentity.tenantId",
+          "defaultPath": "properties.customProperties.marsAuthenticationIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors",
+          "defaultPath": "properties.healthErrors"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*]",
+          "defaultPath": "properties.healthErrors[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].affectedResourceCorrelationIds",
+          "defaultPath": "properties.healthErrors[*].affectedResourceCorrelationIds"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].affectedResourceCorrelationIds[*]",
+          "defaultPath": "properties.healthErrors[*].affectedResourceCorrelationIds[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].affectedResourceType",
+          "defaultPath": "properties.healthErrors[*].affectedResourceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].category",
+          "defaultPath": "properties.healthErrors[*].category"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].causes",
+          "defaultPath": "properties.healthErrors[*].causes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors",
+          "defaultPath": "properties.healthErrors[*].childErrors"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*]",
+          "defaultPath": "properties.healthErrors[*].childErrors[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].category",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].category"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].causes",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].causes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].code",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].code"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].creationTime",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].creationTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].healthCategory",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].healthCategory"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].isCustomerResolvable",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].isCustomerResolvable"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].message",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].message"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].recommendation",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].recommendation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].severity",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].severity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].source",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].source"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].childErrors[*].summary",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].summary"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].code",
+          "defaultPath": "properties.healthErrors[*].code"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].creationTime",
+          "defaultPath": "properties.healthErrors[*].creationTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].healthCategory",
+          "defaultPath": "properties.healthErrors[*].healthCategory"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].isCustomerResolvable",
+          "defaultPath": "properties.healthErrors[*].isCustomerResolvable"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].message",
+          "defaultPath": "properties.healthErrors[*].message"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].recommendation",
+          "defaultPath": "properties.healthErrors[*].recommendation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].severity",
+          "defaultPath": "properties.healthErrors[*].severity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].source",
+          "defaultPath": "properties.healthErrors[*].source"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/healthErrors[*].summary",
+          "defaultPath": "properties.healthErrors[*].summary"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/isResponsive",
+          "defaultPath": "properties.isResponsive"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/lastHeartbeat",
+          "defaultPath": "properties.lastHeartbeat"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/machineId",
+          "defaultPath": "properties.machineId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/machineName",
+          "defaultPath": "properties.machineName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/resourceAccessIdentity",
+          "defaultPath": "properties.resourceAccessIdentity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/resourceAccessIdentity.aadAuthority",
+          "defaultPath": "properties.resourceAccessIdentity.aadAuthority"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/resourceAccessIdentity.applicationId",
+          "defaultPath": "properties.resourceAccessIdentity.applicationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/resourceAccessIdentity.audience",
+          "defaultPath": "properties.resourceAccessIdentity.audience"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/resourceAccessIdentity.objectId",
+          "defaultPath": "properties.resourceAccessIdentity.objectId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/resourceAccessIdentity.tenantId",
+          "defaultPath": "properties.resourceAccessIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationFabrics/fabricAgents/versionNumber",
+          "defaultPath": "properties.versionNumber"
+        }
+      ],
+      "resourceType": "replicationFabrics/fabricAgents"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointState",
+          "defaultPath": "properties.privateEndpointState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/serviceResourceId",
+          "defaultPath": "properties.serviceResourceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/vaultType",
+          "defaultPath": "properties.vaultType"
+        }
+      ],
+      "resourceType": "replicationVaults"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/alertSettings/customEmailAddresses",
+          "defaultPath": "properties.customEmailAddresses"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/alertSettings/customEmailAddresses[*]",
+          "defaultPath": "properties.customEmailAddresses[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/alertSettings/locale",
+          "defaultPath": "properties.locale"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/alertSettings/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/alertSettings/sendToOwners",
+          "defaultPath": "properties.sendToOwners"
+        }
+      ],
+      "resourceType": "replicationVaults/alertSettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "replicationVaults/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/allowedJobs",
+          "defaultPath": "properties.allowedJobs"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/allowedJobs[*]",
+          "defaultPath": "properties.allowedJobs[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/correlationId",
+          "defaultPath": "properties.correlationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob",
+          "defaultPath": "properties.currentJob"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.displayName",
+          "defaultPath": "properties.currentJob.displayName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.endTime",
+          "defaultPath": "properties.currentJob.endTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.id",
+          "defaultPath": "properties.currentJob.id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.name",
+          "defaultPath": "properties.currentJob.name"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.scenarioName",
+          "defaultPath": "properties.currentJob.scenarioName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.startTime",
+          "defaultPath": "properties.currentJob.startTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/currentJob.state",
+          "defaultPath": "properties.currentJob.state"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.activeLocation",
+          "defaultPath": "properties.customProperties.activeLocation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.convertToGen2",
+          "defaultPath": "properties.customProperties.convertToGen2"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.customLocationRegion",
+          "defaultPath": "properties.customProperties.customLocationRegion"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude",
+          "defaultPath": "properties.customProperties.disksToInclude"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*]",
+          "defaultPath": "properties.customProperties.disksToInclude[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskBlockSize",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskBlockSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskController",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskController"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskFileFormat",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskFileFormat"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskId",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskIdentifier",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskIdentifier"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskLogicalSectorSize",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskLogicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskPhysicalSectorSize",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskPhysicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].diskSizeGB",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].isDynamic",
+          "defaultPath": "properties.customProperties.disksToInclude[*].isDynamic"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].isOsDisk",
+          "defaultPath": "properties.customProperties.disksToInclude[*].isOsDisk"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.disksToInclude[*].storageContainerId",
+          "defaultPath": "properties.customProperties.disksToInclude[*].storageContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.dynamicMemoryConfig",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.dynamicMemoryConfig.maximumMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig.maximumMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.dynamicMemoryConfig.minimumMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig.minimumMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.dynamicMemoryConfig.targetMemoryBufferPercentage",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig.targetMemoryBufferPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.fabricDiscoveryMachineId",
+          "defaultPath": "properties.customProperties.fabricDiscoveryMachineId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.failoverRecoveryPointId",
+          "defaultPath": "properties.customProperties.failoverRecoveryPointId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.firmwareType",
+          "defaultPath": "properties.customProperties.firmwareType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.hyperVGeneration",
+          "defaultPath": "properties.customProperties.hyperVGeneration"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.initialReplicationProgressPercentage",
+          "defaultPath": "properties.customProperties.initialReplicationProgressPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.isDynamicRam",
+          "defaultPath": "properties.customProperties.isDynamicRam"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.lastRecoveryPointId",
+          "defaultPath": "properties.customProperties.lastRecoveryPointId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.lastRecoveryPointReceived",
+          "defaultPath": "properties.customProperties.lastRecoveryPointReceived"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.lastReplicationUpdateTime",
+          "defaultPath": "properties.customProperties.lastReplicationUpdateTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.migrateAsArcVM",
+          "defaultPath": "properties.customProperties.migrateAsArcVM"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude",
+          "defaultPath": "properties.customProperties.nicsToInclude"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*]",
+          "defaultPath": "properties.customProperties.nicsToInclude[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].isMacMigrationEnabled",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].isMacMigrationEnabled"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].isStaticIpMigrationEnabled",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].isStaticIpMigrationEnabled"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].networkName",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].networkName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].nicId",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].nicId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].selectionTypeForFailover",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].selectionTypeForFailover"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].targetNetworkId",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].targetNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.nicsToInclude[*].testNetworkId",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].testNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.osName",
+          "defaultPath": "properties.customProperties.osName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.osType",
+          "defaultPath": "properties.customProperties.osType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks",
+          "defaultPath": "properties.customProperties.protectedDisks"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*]",
+          "defaultPath": "properties.customProperties.protectedDisks[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].capacityInBytes",
+          "defaultPath": "properties.customProperties.protectedDisks[*].capacityInBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].diskBlockSize",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskBlockSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].diskLogicalSectorSize",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskLogicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].diskPhysicalSectorSize",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskPhysicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].diskType",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].isDynamic",
+          "defaultPath": "properties.customProperties.protectedDisks[*].isDynamic"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].isOsDisk",
+          "defaultPath": "properties.customProperties.protectedDisks[*].isOsDisk"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].migrateDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].migrateDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].seedDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].seedDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].sourceDiskId",
+          "defaultPath": "properties.customProperties.protectedDisks[*].sourceDiskId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].sourceDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].sourceDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].storageContainerId",
+          "defaultPath": "properties.customProperties.protectedDisks[*].storageContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].storageContainerLocalPath",
+          "defaultPath": "properties.customProperties.protectedDisks[*].storageContainerLocalPath"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedDisks[*].testMigrateDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].testMigrateDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics",
+          "defaultPath": "properties.customProperties.protectedNics"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*]",
+          "defaultPath": "properties.customProperties.protectedNics[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*].macAddress",
+          "defaultPath": "properties.customProperties.protectedNics[*].macAddress"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*].networkName",
+          "defaultPath": "properties.customProperties.protectedNics[*].networkName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*].nicId",
+          "defaultPath": "properties.customProperties.protectedNics[*].nicId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*].selectionTypeForFailover",
+          "defaultPath": "properties.customProperties.protectedNics[*].selectionTypeForFailover"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*].targetNetworkId",
+          "defaultPath": "properties.customProperties.protectedNics[*].targetNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.protectedNics[*].testNetworkId",
+          "defaultPath": "properties.customProperties.protectedNics[*].testNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.resyncProgressPercentage",
+          "defaultPath": "properties.customProperties.resyncProgressPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.runAsAccountId",
+          "defaultPath": "properties.customProperties.runAsAccountId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.securityOption",
+          "defaultPath": "properties.customProperties.securityOption"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.sourceApplianceName",
+          "defaultPath": "properties.customProperties.sourceApplianceName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.sourceCpuCores",
+          "defaultPath": "properties.customProperties.sourceCpuCores"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.sourceDraName",
+          "defaultPath": "properties.customProperties.sourceDraName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.sourceFabricAgentName",
+          "defaultPath": "properties.customProperties.sourceFabricAgentName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.sourceMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.sourceMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.sourceVmName",
+          "defaultPath": "properties.customProperties.sourceVmName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.storageContainerId",
+          "defaultPath": "properties.customProperties.storageContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetApplianceName",
+          "defaultPath": "properties.customProperties.targetApplianceName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetArcClusterCustomLocationId",
+          "defaultPath": "properties.customProperties.targetArcClusterCustomLocationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetAzStackHciClusterName",
+          "defaultPath": "properties.customProperties.targetAzStackHciClusterName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetCpuCores",
+          "defaultPath": "properties.customProperties.targetCpuCores"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetDraName",
+          "defaultPath": "properties.customProperties.targetDraName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetFabricAgentName",
+          "defaultPath": "properties.customProperties.targetFabricAgentName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetHciClusterId",
+          "defaultPath": "properties.customProperties.targetHciClusterId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetLocation",
+          "defaultPath": "properties.customProperties.targetLocation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.targetMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetNetworkId",
+          "defaultPath": "properties.customProperties.targetNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetResourceGroupId",
+          "defaultPath": "properties.customProperties.targetResourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetVmBiosId",
+          "defaultPath": "properties.customProperties.targetVmBiosId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.targetVmName",
+          "defaultPath": "properties.customProperties.targetVmName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.HyperVToAzStackHCI.testNetworkId",
+          "defaultPath": "properties.customProperties.testNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.instanceType",
+          "defaultPath": "properties.customProperties.instanceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.activeLocation",
+          "defaultPath": "properties.customProperties.activeLocation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.convertToGen2",
+          "defaultPath": "properties.customProperties.convertToGen2"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.customLocationRegion",
+          "defaultPath": "properties.customProperties.customLocationRegion"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude",
+          "defaultPath": "properties.customProperties.disksToInclude"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*]",
+          "defaultPath": "properties.customProperties.disksToInclude[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskBlockSize",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskBlockSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskController",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskController"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskFileFormat",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskFileFormat"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskId",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskIdentifier",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskIdentifier"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskLogicalSectorSize",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskLogicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskPhysicalSectorSize",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskPhysicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].diskSizeGB",
+          "defaultPath": "properties.customProperties.disksToInclude[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].isDynamic",
+          "defaultPath": "properties.customProperties.disksToInclude[*].isDynamic"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].isOsDisk",
+          "defaultPath": "properties.customProperties.disksToInclude[*].isOsDisk"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.disksToInclude[*].storageContainerId",
+          "defaultPath": "properties.customProperties.disksToInclude[*].storageContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.dynamicMemoryConfig",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.dynamicMemoryConfig.maximumMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig.maximumMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.dynamicMemoryConfig.minimumMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig.minimumMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.dynamicMemoryConfig.targetMemoryBufferPercentage",
+          "defaultPath": "properties.customProperties.dynamicMemoryConfig.targetMemoryBufferPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.fabricDiscoveryMachineId",
+          "defaultPath": "properties.customProperties.fabricDiscoveryMachineId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.failoverRecoveryPointId",
+          "defaultPath": "properties.customProperties.failoverRecoveryPointId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.firmwareType",
+          "defaultPath": "properties.customProperties.firmwareType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.hyperVGeneration",
+          "defaultPath": "properties.customProperties.hyperVGeneration"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.initialReplicationProgressPercentage",
+          "defaultPath": "properties.customProperties.initialReplicationProgressPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.isDynamicRam",
+          "defaultPath": "properties.customProperties.isDynamicRam"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.lastRecoveryPointId",
+          "defaultPath": "properties.customProperties.lastRecoveryPointId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.lastRecoveryPointReceived",
+          "defaultPath": "properties.customProperties.lastRecoveryPointReceived"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.lastReplicationUpdateTime",
+          "defaultPath": "properties.customProperties.lastReplicationUpdateTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.migrateAsArcVM",
+          "defaultPath": "properties.customProperties.migrateAsArcVM"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.migrationProgressPercentage",
+          "defaultPath": "properties.customProperties.migrationProgressPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude",
+          "defaultPath": "properties.customProperties.nicsToInclude"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*]",
+          "defaultPath": "properties.customProperties.nicsToInclude[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].isMacMigrationEnabled",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].isMacMigrationEnabled"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].isStaticIpMigrationEnabled",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].isStaticIpMigrationEnabled"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].label",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].label"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].networkName",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].networkName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].nicId",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].nicId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].selectionTypeForFailover",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].selectionTypeForFailover"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].targetNetworkId",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].targetNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.nicsToInclude[*].testNetworkId",
+          "defaultPath": "properties.customProperties.nicsToInclude[*].testNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.osName",
+          "defaultPath": "properties.customProperties.osName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.osType",
+          "defaultPath": "properties.customProperties.osType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.performAutoResync",
+          "defaultPath": "properties.customProperties.performAutoResync"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks",
+          "defaultPath": "properties.customProperties.protectedDisks"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*]",
+          "defaultPath": "properties.customProperties.protectedDisks[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].capacityInBytes",
+          "defaultPath": "properties.customProperties.protectedDisks[*].capacityInBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].diskBlockSize",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskBlockSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].diskLogicalSectorSize",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskLogicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].diskPhysicalSectorSize",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskPhysicalSectorSize"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].diskType",
+          "defaultPath": "properties.customProperties.protectedDisks[*].diskType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].isDynamic",
+          "defaultPath": "properties.customProperties.protectedDisks[*].isDynamic"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].isOsDisk",
+          "defaultPath": "properties.customProperties.protectedDisks[*].isOsDisk"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].migrateDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].migrateDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].seedDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].seedDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].sourceDiskId",
+          "defaultPath": "properties.customProperties.protectedDisks[*].sourceDiskId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].sourceDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].sourceDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].storageContainerId",
+          "defaultPath": "properties.customProperties.protectedDisks[*].storageContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].storageContainerLocalPath",
+          "defaultPath": "properties.customProperties.protectedDisks[*].storageContainerLocalPath"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedDisks[*].testMigrateDiskName",
+          "defaultPath": "properties.customProperties.protectedDisks[*].testMigrateDiskName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics",
+          "defaultPath": "properties.customProperties.protectedNics"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*]",
+          "defaultPath": "properties.customProperties.protectedNics[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].isPrimaryNic",
+          "defaultPath": "properties.customProperties.protectedNics[*].isPrimaryNic"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].label",
+          "defaultPath": "properties.customProperties.protectedNics[*].label"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].macAddress",
+          "defaultPath": "properties.customProperties.protectedNics[*].macAddress"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].networkName",
+          "defaultPath": "properties.customProperties.protectedNics[*].networkName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].nicId",
+          "defaultPath": "properties.customProperties.protectedNics[*].nicId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].selectionTypeForFailover",
+          "defaultPath": "properties.customProperties.protectedNics[*].selectionTypeForFailover"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].targetNetworkId",
+          "defaultPath": "properties.customProperties.protectedNics[*].targetNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.protectedNics[*].testNetworkId",
+          "defaultPath": "properties.customProperties.protectedNics[*].testNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.resumeProgressPercentage",
+          "defaultPath": "properties.customProperties.resumeProgressPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.resumeRetryCount",
+          "defaultPath": "properties.customProperties.resumeRetryCount"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.resyncProgressPercentage",
+          "defaultPath": "properties.customProperties.resyncProgressPercentage"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.resyncRequired",
+          "defaultPath": "properties.customProperties.resyncRequired"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.resyncRetryCount",
+          "defaultPath": "properties.customProperties.resyncRetryCount"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.resyncState",
+          "defaultPath": "properties.customProperties.resyncState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.runAsAccountId",
+          "defaultPath": "properties.customProperties.runAsAccountId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.securityOption",
+          "defaultPath": "properties.customProperties.securityOption"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.sourceApplianceName",
+          "defaultPath": "properties.customProperties.sourceApplianceName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.sourceCpuCores",
+          "defaultPath": "properties.customProperties.sourceCpuCores"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.sourceDraName",
+          "defaultPath": "properties.customProperties.sourceDraName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.sourceFabricAgentName",
+          "defaultPath": "properties.customProperties.sourceFabricAgentName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.sourceMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.sourceMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.sourceVmName",
+          "defaultPath": "properties.customProperties.sourceVmName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.storageContainerId",
+          "defaultPath": "properties.customProperties.storageContainerId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetApplianceName",
+          "defaultPath": "properties.customProperties.targetApplianceName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetArcClusterCustomLocationId",
+          "defaultPath": "properties.customProperties.targetArcClusterCustomLocationId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetAzStackHciClusterName",
+          "defaultPath": "properties.customProperties.targetAzStackHciClusterName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetCpuCores",
+          "defaultPath": "properties.customProperties.targetCpuCores"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetDraName",
+          "defaultPath": "properties.customProperties.targetDraName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetFabricAgentName",
+          "defaultPath": "properties.customProperties.targetFabricAgentName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetHciClusterId",
+          "defaultPath": "properties.customProperties.targetHciClusterId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetLocation",
+          "defaultPath": "properties.customProperties.targetLocation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetMemoryInMegaBytes",
+          "defaultPath": "properties.customProperties.targetMemoryInMegaBytes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetNetworkId",
+          "defaultPath": "properties.customProperties.targetNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetResourceGroupId",
+          "defaultPath": "properties.customProperties.targetResourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetVmBiosId",
+          "defaultPath": "properties.customProperties.targetVmBiosId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.targetVmName",
+          "defaultPath": "properties.customProperties.targetVmName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/customProperties.VMwareToAzStackHCI.testNetworkId",
+          "defaultPath": "properties.customProperties.testNetworkId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/draId",
+          "defaultPath": "properties.draId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/fabricAgentId",
+          "defaultPath": "properties.fabricAgentId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/fabricId",
+          "defaultPath": "properties.fabricId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/fabricObjectId",
+          "defaultPath": "properties.fabricObjectId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/fabricObjectName",
+          "defaultPath": "properties.fabricObjectName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors",
+          "defaultPath": "properties.healthErrors"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*]",
+          "defaultPath": "properties.healthErrors[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].affectedResourceCorrelationIds",
+          "defaultPath": "properties.healthErrors[*].affectedResourceCorrelationIds"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].affectedResourceCorrelationIds[*]",
+          "defaultPath": "properties.healthErrors[*].affectedResourceCorrelationIds[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].affectedResourceType",
+          "defaultPath": "properties.healthErrors[*].affectedResourceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].category",
+          "defaultPath": "properties.healthErrors[*].category"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].causes",
+          "defaultPath": "properties.healthErrors[*].causes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors",
+          "defaultPath": "properties.healthErrors[*].childErrors"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*]",
+          "defaultPath": "properties.healthErrors[*].childErrors[*]"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].category",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].category"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].causes",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].causes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].code",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].code"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].creationTime",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].creationTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].healthCategory",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].healthCategory"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].isCustomerResolvable",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].isCustomerResolvable"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].message",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].message"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].recommendation",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].recommendation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].severity",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].severity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].source",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].source"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].childErrors[*].summary",
+          "defaultPath": "properties.healthErrors[*].childErrors[*].summary"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].code",
+          "defaultPath": "properties.healthErrors[*].code"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].creationTime",
+          "defaultPath": "properties.healthErrors[*].creationTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].healthCategory",
+          "defaultPath": "properties.healthErrors[*].healthCategory"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].isCustomerResolvable",
+          "defaultPath": "properties.healthErrors[*].isCustomerResolvable"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].message",
+          "defaultPath": "properties.healthErrors[*].message"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].recommendation",
+          "defaultPath": "properties.healthErrors[*].recommendation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].severity",
+          "defaultPath": "properties.healthErrors[*].severity"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].source",
+          "defaultPath": "properties.healthErrors[*].source"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/healthErrors[*].summary",
+          "defaultPath": "properties.healthErrors[*].summary"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob",
+          "defaultPath": "properties.lastFailedEnableProtectionJob"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.displayName",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.displayName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.endTime",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.endTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.id",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.name",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.name"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.scenarioName",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.scenarioName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.startTime",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.startTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedEnableProtectionJob.state",
+          "defaultPath": "properties.lastFailedEnableProtectionJob.state"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.displayName",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.displayName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.endTime",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.endTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.id",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.name",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.name"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.scenarioName",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.scenarioName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.startTime",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.startTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastFailedPlannedFailoverJob.state",
+          "defaultPath": "properties.lastFailedPlannedFailoverJob.state"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastSuccessfulPlannedFailoverTime",
+          "defaultPath": "properties.lastSuccessfulPlannedFailoverTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastSuccessfulTestFailoverTime",
+          "defaultPath": "properties.lastSuccessfulTestFailoverTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastSuccessfulUnplannedFailoverTime",
+          "defaultPath": "properties.lastSuccessfulUnplannedFailoverTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob",
+          "defaultPath": "properties.lastTestFailoverJob"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.displayName",
+          "defaultPath": "properties.lastTestFailoverJob.displayName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.endTime",
+          "defaultPath": "properties.lastTestFailoverJob.endTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.id",
+          "defaultPath": "properties.lastTestFailoverJob.id"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.name",
+          "defaultPath": "properties.lastTestFailoverJob.name"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.scenarioName",
+          "defaultPath": "properties.lastTestFailoverJob.scenarioName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.startTime",
+          "defaultPath": "properties.lastTestFailoverJob.startTime"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/lastTestFailoverJob.state",
+          "defaultPath": "properties.lastTestFailoverJob.state"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/policyName",
+          "defaultPath": "properties.policyName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/protectionState",
+          "defaultPath": "properties.protectionState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/protectionStateDescription",
+          "defaultPath": "properties.protectionStateDescription"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/replicationExtensionName",
+          "defaultPath": "properties.replicationExtensionName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/replicationHealth",
+          "defaultPath": "properties.replicationHealth"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/resynchronizationState",
+          "defaultPath": "properties.resynchronizationState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/resyncRequired",
+          "defaultPath": "properties.resyncRequired"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/sourceFabricProviderId",
+          "defaultPath": "properties.sourceFabricProviderId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/targetDraId",
+          "defaultPath": "properties.targetDraId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/targetFabricAgentId",
+          "defaultPath": "properties.targetFabricAgentId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/targetFabricId",
+          "defaultPath": "properties.targetFabricId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/targetFabricProviderId",
+          "defaultPath": "properties.targetFabricProviderId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/testFailoverState",
+          "defaultPath": "properties.testFailoverState"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/protectedItems/testFailoverStateDescription",
+          "defaultPath": "properties.testFailoverStateDescription"
+        }
+      ],
+      "resourceType": "replicationVaults/protectedItems"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.asrServiceUri",
+          "defaultPath": "properties.customProperties.asrServiceUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.azStackHciFabricArmId",
+          "defaultPath": "properties.customProperties.azStackHciFabricArmId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.azStackHciSiteId",
+          "defaultPath": "properties.customProperties.azStackHciSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.gatewayServiceUri",
+          "defaultPath": "properties.customProperties.gatewayServiceUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.hyperVFabricArmId",
+          "defaultPath": "properties.customProperties.hyperVFabricArmId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.hyperVSiteId",
+          "defaultPath": "properties.customProperties.hyperVSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.rcmServiceUri",
+          "defaultPath": "properties.customProperties.rcmServiceUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.resourceGroup",
+          "defaultPath": "properties.customProperties.resourceGroup"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.resourceLocation",
+          "defaultPath": "properties.customProperties.resourceLocation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.sourceGatewayServiceId",
+          "defaultPath": "properties.customProperties.sourceGatewayServiceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.sourceStorageContainerName",
+          "defaultPath": "properties.customProperties.sourceStorageContainerName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.storageAccountId",
+          "defaultPath": "properties.customProperties.storageAccountId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.storageAccountSasSecretName",
+          "defaultPath": "properties.customProperties.storageAccountSasSecretName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.subscriptionId",
+          "defaultPath": "properties.customProperties.subscriptionId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.targetGatewayServiceId",
+          "defaultPath": "properties.customProperties.targetGatewayServiceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.HyperVToAzStackHCI.targetStorageContainerName",
+          "defaultPath": "properties.customProperties.targetStorageContainerName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.instanceType",
+          "defaultPath": "properties.customProperties.instanceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.asrServiceUri",
+          "defaultPath": "properties.customProperties.asrServiceUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.azStackHciFabricArmId",
+          "defaultPath": "properties.customProperties.azStackHciFabricArmId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.azStackHciSiteId",
+          "defaultPath": "properties.customProperties.azStackHciSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.gatewayServiceUri",
+          "defaultPath": "properties.customProperties.gatewayServiceUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.rcmServiceUri",
+          "defaultPath": "properties.customProperties.rcmServiceUri"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.resourceGroup",
+          "defaultPath": "properties.customProperties.resourceGroup"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.resourceLocation",
+          "defaultPath": "properties.customProperties.resourceLocation"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.sourceGatewayServiceId",
+          "defaultPath": "properties.customProperties.sourceGatewayServiceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.sourceStorageContainerName",
+          "defaultPath": "properties.customProperties.sourceStorageContainerName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.storageAccountId",
+          "defaultPath": "properties.customProperties.storageAccountId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.storageAccountSasSecretName",
+          "defaultPath": "properties.customProperties.storageAccountSasSecretName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.subscriptionId",
+          "defaultPath": "properties.customProperties.subscriptionId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.targetGatewayServiceId",
+          "defaultPath": "properties.customProperties.targetGatewayServiceId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.targetStorageContainerName",
+          "defaultPath": "properties.customProperties.targetStorageContainerName"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.vmwareFabricArmId",
+          "defaultPath": "properties.customProperties.vmwareFabricArmId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/customProperties.VMwareToAzStackHCI.vmwareSiteId",
+          "defaultPath": "properties.customProperties.vmwareSiteId"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationExtensions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "replicationVaults/replicationExtensions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.HyperVToAzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.HyperVToAzStackHCI.appConsistentFrequencyInMinutes",
+          "defaultPath": "properties.customProperties.appConsistentFrequencyInMinutes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.HyperVToAzStackHCI.crashConsistentFrequencyInMinutes",
+          "defaultPath": "properties.customProperties.crashConsistentFrequencyInMinutes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.HyperVToAzStackHCI.recoveryPointHistoryInMinutes",
+          "defaultPath": "properties.customProperties.recoveryPointHistoryInMinutes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.instanceType",
+          "defaultPath": "properties.customProperties.instanceType"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.VMwareToAzStackHCI",
+          "defaultPath": "properties.customProperties"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.VMwareToAzStackHCI.appConsistentFrequencyInMinutes",
+          "defaultPath": "properties.customProperties.appConsistentFrequencyInMinutes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.VMwareToAzStackHCI.crashConsistentFrequencyInMinutes",
+          "defaultPath": "properties.customProperties.crashConsistentFrequencyInMinutes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/customProperties.VMwareToAzStackHCI.recoveryPointHistoryInMinutes",
+          "defaultPath": "properties.customProperties.recoveryPointHistoryInMinutes"
+        },
+        {
+          "name": "Microsoft.DataReplication/replicationVaults/replicationPolicies/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "replicationVaults/replicationPolicies"
+    }
+  ]
+}

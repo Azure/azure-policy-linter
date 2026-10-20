@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.OpenEnergyPlatform",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "energyServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "energyServices/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "energyServices/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "energyServices/privateLinkResources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    }
+  ]
+}

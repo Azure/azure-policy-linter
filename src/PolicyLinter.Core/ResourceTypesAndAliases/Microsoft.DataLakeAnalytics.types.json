@@ -1,0 +1,65 @@
+{
+  "namespace": "Microsoft.DataLakeAnalytics",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "accounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/computePolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/dataLakeStoreAccounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "accounts/firewallRules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/storageAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/storageAccounts/containers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/storageAccounts/containers/listSasTokens"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/transferAnalyticsUnits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "accounts/transferEcoAnalyticsUnits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/capability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

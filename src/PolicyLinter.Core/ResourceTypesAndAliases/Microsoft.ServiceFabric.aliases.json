@@ -1,0 +1,2170 @@
+{
+  "namespace": "Microsoft.ServiceFabric",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/clusters/addOnFeatures",
+          "defaultPath": "properties.addOnFeatures"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/addOnFeatures[*]",
+          "defaultPath": "properties.addOnFeatures[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypeVersionsCleanupPolicy",
+          "defaultPath": "properties.applicationTypeVersionsCleanupPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypeVersionsCleanupPolicy.maxUnusedVersionsToKeep",
+          "defaultPath": "properties.applicationTypeVersionsCleanupPolicy.maxUnusedVersionsToKeep"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/availableClusterVersions",
+          "defaultPath": "properties.availableClusterVersions"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/availableClusterVersions[*]",
+          "defaultPath": "properties.availableClusterVersions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/availableClusterVersions[*].codeVersion",
+          "defaultPath": "properties.availableClusterVersions[*].codeVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/availableClusterVersions[*].environment",
+          "defaultPath": "properties.availableClusterVersions[*].environment"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/availableClusterVersions[*].supportExpiryUtc",
+          "defaultPath": "properties.availableClusterVersions[*].supportExpiryUtc"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/azureActiveDirectory",
+          "defaultPath": "properties.azureActiveDirectory"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/azureActiveDirectory.clientApplication",
+          "defaultPath": "properties.azureActiveDirectory.clientApplication"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/azureActiveDirectory.clusterApplication",
+          "defaultPath": "properties.azureActiveDirectory.clusterApplication"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/azureActiveDirectory.tenantId",
+          "paths": [
+            {
+              "path": "properties.azureActiveDirectory.tenantId",
+              "apiVersions": [
+                "2016-03-01",
+                "2016-09-01",
+                "2016-09-01-privatepreview",
+                "2017-07-01-preview",
+                "2017-07-01-privatepreview",
+                "2018-02-01",
+                "2018-02-01-privatepreview",
+                "2018-03-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.azureActiveDirectory.tenantId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificate",
+          "defaultPath": "properties.certificate"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificate.thumbprint",
+          "paths": [
+            {
+              "path": "properties.certificate.thumbprint",
+              "apiVersions": [
+                "2016-03-01",
+                "2016-09-01",
+                "2016-09-01-privatepreview",
+                "2017-07-01-preview",
+                "2017-07-01-privatepreview",
+                "2018-02-01",
+                "2018-02-01-privatepreview",
+                "2018-03-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.certificate.thumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificate.thumbprintSecondary",
+          "defaultPath": "properties.certificate.thumbprintSecondary"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificate.x509StoreName",
+          "paths": [
+            {
+              "path": "properties.certificate.x509StoreName",
+              "apiVersions": [
+                "2016-03-01",
+                "2016-09-01",
+                "2016-09-01-privatepreview",
+                "2017-07-01-preview",
+                "2017-07-01-privatepreview",
+                "2018-02-01",
+                "2018-02-01-privatepreview",
+                "2018-03-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.certificate.x509StoreName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificateCommonNames",
+          "defaultPath": "properties.certificateCommonNames"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificateCommonNames.commonNames",
+          "defaultPath": "properties.certificateCommonNames.commonNames"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificateCommonNames.commonNames[*]",
+          "defaultPath": "properties.certificateCommonNames.commonNames[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificateCommonNames.commonNames[*].certificateCommonName",
+          "defaultPath": "properties.certificateCommonNames.commonNames[*].certificateCommonName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificateCommonNames.commonNames[*].certificateIssuerThumbprint",
+          "defaultPath": "properties.certificateCommonNames.commonNames[*].certificateIssuerThumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/certificateCommonNames.x509StoreName",
+          "defaultPath": "properties.certificateCommonNames.x509StoreName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateCommonNames",
+          "defaultPath": "properties.clientCertificateCommonNames"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateCommonNames[*]",
+          "defaultPath": "properties.clientCertificateCommonNames[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateCommonNames[*].certificateCommonName",
+          "defaultPath": "properties.clientCertificateCommonNames[*].certificateCommonName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateCommonNames[*].certificateIssuerThumbprint",
+          "defaultPath": "properties.clientCertificateCommonNames[*].certificateIssuerThumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateCommonNames[*].isAdmin",
+          "defaultPath": "properties.clientCertificateCommonNames[*].isAdmin"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateThumbprints",
+          "defaultPath": "properties.clientCertificateThumbprints"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateThumbprints[*]",
+          "defaultPath": "properties.clientCertificateThumbprints[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateThumbprints[*].certificateThumbprint",
+          "defaultPath": "properties.clientCertificateThumbprints[*].certificateThumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clientCertificateThumbprints[*].isAdmin",
+          "defaultPath": "properties.clientCertificateThumbprints[*].isAdmin"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clusterCodeVersion",
+          "defaultPath": "properties.clusterCodeVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clusterEndpoint",
+          "defaultPath": "properties.clusterEndpoint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/clusterState",
+          "defaultPath": "properties.clusterState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig.blobEndpoint",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig.blobEndpoint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig.protectedAccountKeyName",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig.protectedAccountKeyName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig.protectedAccountKeyName2",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig.protectedAccountKeyName2"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig.queueEndpoint",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig.queueEndpoint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig.storageAccountName",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig.storageAccountName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/diagnosticsStorageAccountConfig.tableEndpoint",
+          "defaultPath": "properties.diagnosticsStorageAccountConfig.tableEndpoint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/eventStoreServiceEnabled",
+          "defaultPath": "properties.eventStoreServiceEnabled"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings",
+          "defaultPath": "properties.fabricSettings"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings[*]",
+          "defaultPath": "properties.fabricSettings[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings[*].name",
+          "paths": [
+            {
+              "path": "properties.fabricSettings[*].name",
+              "apiVersions": [
+                "2016-03-01",
+                "2016-09-01",
+                "2016-09-01-privatepreview",
+                "2017-07-01-preview",
+                "2017-07-01-privatepreview",
+                "2018-02-01",
+                "2018-02-01-privatepreview",
+                "2018-03-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.fabricSettings[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings[*].parameters",
+          "defaultPath": "properties.fabricSettings[*].parameters"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings[*].parameters[*]",
+          "defaultPath": "properties.fabricSettings[*].parameters[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings[*].parameters[*].name",
+          "paths": [
+            {
+              "path": "properties.fabricSettings[*].parameters[*].name",
+              "apiVersions": [
+                "2016-03-01",
+                "2016-09-01",
+                "2016-09-01-privatepreview",
+                "2017-07-01-preview",
+                "2017-07-01-privatepreview",
+                "2018-02-01",
+                "2018-02-01-privatepreview",
+                "2018-03-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.fabricSettings[*].parameters[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/fabricSettings[*].parameters[*].value",
+          "paths": [
+            {
+              "path": "properties.fabricSettings[*].parameters[*].value",
+              "apiVersions": [
+                "2016-03-01",
+                "2016-09-01",
+                "2016-09-01-privatepreview",
+                "2017-07-01-preview",
+                "2017-07-01-privatepreview",
+                "2018-02-01",
+                "2018-02-01-privatepreview",
+                "2018-03-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.fabricSettings[*].parameters[*].value"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/infrastructureServiceManager",
+          "defaultPath": "properties.infrastructureServiceManager"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/managementEndpoint",
+          "defaultPath": "properties.managementEndpoint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes",
+          "defaultPath": "properties.nodeTypes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*]",
+          "defaultPath": "properties.nodeTypes[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].applicationPorts",
+          "defaultPath": "properties.nodeTypes[*].applicationPorts"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].applicationPorts.endPort",
+          "defaultPath": "properties.nodeTypes[*].applicationPorts.endPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].applicationPorts.startPort",
+          "defaultPath": "properties.nodeTypes[*].applicationPorts.startPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].capacities",
+          "defaultPath": "properties.nodeTypes[*].capacities"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].clientConnectionEndpointPort",
+          "defaultPath": "properties.nodeTypes[*].clientConnectionEndpointPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].durabilityLevel",
+          "defaultPath": "properties.nodeTypes[*].durabilityLevel"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].ephemeralPorts",
+          "defaultPath": "properties.nodeTypes[*].ephemeralPorts"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].ephemeralPorts.endPort",
+          "defaultPath": "properties.nodeTypes[*].ephemeralPorts.endPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].ephemeralPorts.startPort",
+          "defaultPath": "properties.nodeTypes[*].ephemeralPorts.startPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].httpGatewayEndpointPort",
+          "defaultPath": "properties.nodeTypes[*].httpGatewayEndpointPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].isPrimary",
+          "defaultPath": "properties.nodeTypes[*].isPrimary"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].isStateless",
+          "defaultPath": "properties.nodeTypes[*].isStateless"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].multipleAvailabilityZones",
+          "defaultPath": "properties.nodeTypes[*].multipleAvailabilityZones"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].name",
+          "defaultPath": "properties.nodeTypes[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].placementProperties",
+          "defaultPath": "properties.nodeTypes[*].placementProperties"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].reverseProxyEndpointPort",
+          "defaultPath": "properties.nodeTypes[*].reverseProxyEndpointPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/nodeTypes[*].vmInstanceCount",
+          "defaultPath": "properties.nodeTypes[*].vmInstanceCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications",
+          "defaultPath": "properties.notifications"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*]",
+          "defaultPath": "properties.notifications[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].isEnabled",
+          "defaultPath": "properties.notifications[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationCategory",
+          "defaultPath": "properties.notifications[*].notificationCategory"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationLevel",
+          "defaultPath": "properties.notifications[*].notificationLevel"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationTargets",
+          "defaultPath": "properties.notifications[*].notificationTargets"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationTargets[*]",
+          "defaultPath": "properties.notifications[*].notificationTargets[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationTargets[*].notificationChannel",
+          "defaultPath": "properties.notifications[*].notificationTargets[*].notificationChannel"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationTargets[*].receivers",
+          "defaultPath": "properties.notifications[*].notificationTargets[*].receivers"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/notifications[*].notificationTargets[*].receivers[*]",
+          "defaultPath": "properties.notifications[*].notificationTargets[*].receivers[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reliabilityLevel",
+          "defaultPath": "properties.reliabilityLevel"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificate",
+          "defaultPath": "properties.reverseProxyCertificate"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificate.thumbprint",
+          "defaultPath": "properties.reverseProxyCertificate.thumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificate.thumbprintSecondary",
+          "defaultPath": "properties.reverseProxyCertificate.thumbprintSecondary"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificate.x509StoreName",
+          "defaultPath": "properties.reverseProxyCertificate.x509StoreName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificateCommonNames",
+          "defaultPath": "properties.reverseProxyCertificateCommonNames"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificateCommonNames.commonNames",
+          "defaultPath": "properties.reverseProxyCertificateCommonNames.commonNames"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificateCommonNames.commonNames[*]",
+          "defaultPath": "properties.reverseProxyCertificateCommonNames.commonNames[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificateCommonNames.commonNames[*].certificateCommonName",
+          "defaultPath": "properties.reverseProxyCertificateCommonNames.commonNames[*].certificateCommonName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificateCommonNames.commonNames[*].certificateIssuerThumbprint",
+          "defaultPath": "properties.reverseProxyCertificateCommonNames.commonNames[*].certificateIssuerThumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/reverseProxyCertificateCommonNames.x509StoreName",
+          "defaultPath": "properties.reverseProxyCertificateCommonNames.x509StoreName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/sfZonalUpgradeMode",
+          "defaultPath": "properties.sfZonalUpgradeMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription",
+          "defaultPath": "properties.upgradeDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.deltaHealthPolicy",
+          "defaultPath": "properties.upgradeDescription.deltaHealthPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.deltaHealthPolicy.applicationDeltaHealthPolicies",
+          "defaultPath": "properties.upgradeDescription.deltaHealthPolicy.applicationDeltaHealthPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.deltaHealthPolicy.maxPercentDeltaUnhealthyApplications",
+          "defaultPath": "properties.upgradeDescription.deltaHealthPolicy.maxPercentDeltaUnhealthyApplications"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.deltaHealthPolicy.maxPercentDeltaUnhealthyNodes",
+          "defaultPath": "properties.upgradeDescription.deltaHealthPolicy.maxPercentDeltaUnhealthyNodes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.deltaHealthPolicy.maxPercentUpgradeDomainDeltaUnhealthyNodes",
+          "defaultPath": "properties.upgradeDescription.deltaHealthPolicy.maxPercentUpgradeDomainDeltaUnhealthyNodes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.forceRestart",
+          "defaultPath": "properties.upgradeDescription.forceRestart"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthCheckRetryTimeout",
+          "defaultPath": "properties.upgradeDescription.healthCheckRetryTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthCheckStableDuration",
+          "defaultPath": "properties.upgradeDescription.healthCheckStableDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthCheckWaitDuration",
+          "defaultPath": "properties.upgradeDescription.healthCheckWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthPolicy",
+          "defaultPath": "properties.upgradeDescription.healthPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthPolicy.applicationHealthPolicies",
+          "defaultPath": "properties.upgradeDescription.healthPolicy.applicationHealthPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthPolicy.maxPercentUnhealthyApplications",
+          "defaultPath": "properties.upgradeDescription.healthPolicy.maxPercentUnhealthyApplications"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.healthPolicy.maxPercentUnhealthyNodes",
+          "defaultPath": "properties.upgradeDescription.healthPolicy.maxPercentUnhealthyNodes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.overrideUserUpgradePolicy",
+          "defaultPath": "properties.upgradeDescription.overrideUserUpgradePolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.upgradeDomainTimeout",
+          "defaultPath": "properties.upgradeDescription.upgradeDomainTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.upgradeReplicaSetCheckTimeout",
+          "defaultPath": "properties.upgradeDescription.upgradeReplicaSetCheckTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeDescription.upgradeTimeout",
+          "defaultPath": "properties.upgradeDescription.upgradeTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeMode",
+          "defaultPath": "properties.upgradeMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradePauseEndTimestampUtc",
+          "defaultPath": "properties.upgradePauseEndTimestampUtc"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradePauseStartTimestampUtc",
+          "defaultPath": "properties.upgradePauseStartTimestampUtc"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/upgradeWave",
+          "defaultPath": "properties.upgradeWave"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/vmImage",
+          "defaultPath": "properties.vmImage"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/vmssZonalUpgradeMode",
+          "defaultPath": "properties.vmssZonalUpgradeMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/waveUpgradePaused",
+          "defaultPath": "properties.waveUpgradePaused"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/managedIdentities",
+          "defaultPath": "properties.managedIdentities"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/managedIdentities[*]",
+          "defaultPath": "properties.managedIdentities[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/managedIdentities[*].name",
+          "defaultPath": "properties.managedIdentities[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/managedIdentities[*].principalId",
+          "defaultPath": "properties.managedIdentities[*].principalId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/maximumNodes",
+          "defaultPath": "properties.maximumNodes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics",
+          "defaultPath": "properties.metrics"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics.MaximumCapacity",
+          "defaultPath": "properties.metrics.MaximumCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics.Name",
+          "defaultPath": "properties.metrics.Name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics.ReservationCapacity",
+          "defaultPath": "properties.metrics.ReservationCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics.TotalApplicationCapacity",
+          "defaultPath": "properties.metrics.TotalApplicationCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics[*]",
+          "defaultPath": "properties.metrics[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics[*].MaximumCapacity",
+          "defaultPath": "properties.metrics[*].MaximumCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics[*].Name",
+          "defaultPath": "properties.metrics[*].Name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics[*].ReservationCapacity",
+          "defaultPath": "properties.metrics[*].ReservationCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/metrics[*].TotalApplicationCapacity",
+          "defaultPath": "properties.metrics[*].TotalApplicationCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/minimumNodes",
+          "defaultPath": "properties.minimumNodes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/parameters.Key",
+          "defaultPath": "properties.parameters.Key"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/removeApplicationCapacity",
+          "defaultPath": "properties.removeApplicationCapacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/typeName",
+          "defaultPath": "properties.typeName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/typeVersion",
+          "defaultPath": "properties.typeVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy",
+          "defaultPath": "properties.upgradePolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.ConsiderWarningAsError",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.ConsiderWarningAsError"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy.MaxPercentUnhealthyPartitionsPerService",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy.maxPercentUnhealthyPartitionsPerService"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy.MaxPercentUnhealthyReplicasPerPartition",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy.maxPercentUnhealthyReplicasPerPartition"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy.maxPercentUnhealthyServices",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.DefaultServiceTypeHealthPolicy.maxPercentUnhealthyServices"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.MaxPercentUnhealthyDeployedApplications",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.MaxPercentUnhealthyDeployedApplications"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.Key",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.Key"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.MaxPercentUnhealthyPartitionsPerService",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.MaxPercentUnhealthyPartitionsPerService"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.MaxPercentUnhealthyReplicasPerPartition",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.MaxPercentUnhealthyReplicasPerPartition"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.MaxPercentUnhealthyServices",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.ServiceTypeHealthPolicyMap.MaxPercentUnhealthyServices"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.forceRestart",
+          "defaultPath": "properties.upgradePolicy.forceRestart"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.recreateApplication",
+          "defaultPath": "properties.upgradePolicy.recreateApplication"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.failureAction",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.failureAction"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckRetryTimeout",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckRetryTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckStableDuration",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckStableDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckWaitDuration",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeDomainTimeout",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeDomainTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeTimeout",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.upgradeMode",
+          "defaultPath": "properties.upgradePolicy.upgradeMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/upgradePolicy.upgradeReplicaSetCheckTimeout",
+          "defaultPath": "properties.upgradePolicy.upgradeReplicaSetCheckTimeout"
+        }
+      ],
+      "resourceType": "clusters/applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/correlationScheme",
+          "defaultPath": "properties.correlationScheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/correlationScheme.Scheme",
+          "defaultPath": "properties.correlationScheme.Scheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/correlationScheme.ServiceName",
+          "defaultPath": "properties.correlationScheme.ServiceName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/correlationScheme[*]",
+          "defaultPath": "properties.correlationScheme[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/correlationScheme[*].Scheme",
+          "defaultPath": "properties.correlationScheme[*].Scheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/correlationScheme[*].ServiceName",
+          "defaultPath": "properties.correlationScheme[*].ServiceName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/defaultMoveCost",
+          "defaultPath": "properties.defaultMoveCost"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription",
+          "defaultPath": "properties.partitionDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.Named",
+          "defaultPath": "properties.partitionDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.Named.Count",
+          "defaultPath": "properties.partitionDescription.Count"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.Named.Names",
+          "defaultPath": "properties.partitionDescription.Names"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.Named.Names[*]",
+          "defaultPath": "properties.partitionDescription.Names[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.PartitionScheme",
+          "defaultPath": "properties.partitionDescription.PartitionScheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.UniformInt64Range",
+          "defaultPath": "properties.partitionDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.UniformInt64Range.Count",
+          "defaultPath": "properties.partitionDescription.Count"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.UniformInt64Range.HighKey",
+          "defaultPath": "properties.partitionDescription.HighKey"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/partitionDescription.UniformInt64Range.LowKey",
+          "defaultPath": "properties.partitionDescription.LowKey"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/placementConstraints",
+          "defaultPath": "properties.placementConstraints"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceDnsName",
+          "defaultPath": "properties.serviceDnsName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceKind",
+          "defaultPath": "properties.serviceKind"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics",
+          "defaultPath": "properties.serviceLoadMetrics"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics.DefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics.DefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics.Name",
+          "defaultPath": "properties.serviceLoadMetrics.Name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics.PrimaryDefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics.PrimaryDefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics.SecondaryDefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics.SecondaryDefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics.Weight",
+          "defaultPath": "properties.serviceLoadMetrics.Weight"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics[*]",
+          "defaultPath": "properties.serviceLoadMetrics[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics[*].DefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics[*].DefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics[*].Name",
+          "defaultPath": "properties.serviceLoadMetrics[*].Name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics[*].PrimaryDefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics[*].PrimaryDefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics[*].SecondaryDefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics[*].SecondaryDefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceLoadMetrics[*].Weight",
+          "defaultPath": "properties.serviceLoadMetrics[*].Weight"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/servicePackageActivationMode",
+          "defaultPath": "properties.servicePackageActivationMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/servicePlacementPolicies",
+          "defaultPath": "properties.servicePlacementPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/servicePlacementPolicies.Type",
+          "defaultPath": "properties.servicePlacementPolicies.Type"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/servicePlacementPolicies[*]",
+          "defaultPath": "properties.servicePlacementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/servicePlacementPolicies[*].Type",
+          "defaultPath": "properties.servicePlacementPolicies[*].Type"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/serviceTypeName",
+          "defaultPath": "properties.serviceTypeName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateful.hasPersistedState",
+          "defaultPath": "properties.hasPersistedState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateful.minReplicaSetSize",
+          "defaultPath": "properties.minReplicaSetSize"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateful.quorumLossWaitDuration",
+          "defaultPath": "properties.quorumLossWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateful.replicaRestartWaitDuration",
+          "defaultPath": "properties.replicaRestartWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateful.standByReplicaKeepDuration",
+          "defaultPath": "properties.standByReplicaKeepDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateful.targetReplicaSetSize",
+          "defaultPath": "properties.targetReplicaSetSize"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateless.instanceCloseDelayDuration",
+          "defaultPath": "properties.instanceCloseDelayDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applications/services/Stateless.instanceCount",
+          "defaultPath": "properties.instanceCount"
+        }
+      ],
+      "resourceType": "clusters/applications/services"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "clusters/applicationTypes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypes/versions/appPackageUrl",
+          "defaultPath": "properties.appPackageUrl"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypes/versions/defaultParameterList",
+          "defaultPath": "properties.defaultParameterList"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypes/versions/defaultParameterList.Key",
+          "defaultPath": "properties.defaultParameterList.Key"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/clusters/applicationTypes/versions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "clusters/applicationTypes/versions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/addonFeatures",
+          "defaultPath": "properties.addonFeatures"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/addonFeatures[*]",
+          "defaultPath": "properties.addonFeatures[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/adminPassword",
+          "defaultPath": "properties.adminPassword"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/adminUserName",
+          "defaultPath": "properties.adminUserName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/allowRdpAccess",
+          "defaultPath": "properties.allowRdpAccess"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/applicationTypeVersionsCleanupPolicy",
+          "defaultPath": "properties.applicationTypeVersionsCleanupPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/applicationTypeVersionsCleanupPolicy.maxUnusedVersionsToKeep",
+          "defaultPath": "properties.applicationTypeVersionsCleanupPolicy.maxUnusedVersionsToKeep"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets",
+          "defaultPath": "properties.auxiliarySubnets"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets[*]",
+          "defaultPath": "properties.auxiliarySubnets[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets[*].enableIpv6",
+          "defaultPath": "properties.auxiliarySubnets[*].enableIpv6"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets[*].name",
+          "defaultPath": "properties.auxiliarySubnets[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets[*].networkSecurityGroupId",
+          "defaultPath": "properties.auxiliarySubnets[*].networkSecurityGroupId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets[*].privateEndpointNetworkPolicies",
+          "defaultPath": "properties.auxiliarySubnets[*].privateEndpointNetworkPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/auxiliarySubnets[*].privateLinkServiceNetworkPolicies",
+          "defaultPath": "properties.auxiliarySubnets[*].privateLinkServiceNetworkPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/azureActiveDirectory",
+          "defaultPath": "properties.azureActiveDirectory"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/azureActiveDirectory.clientApplication",
+          "defaultPath": "properties.azureActiveDirectory.clientApplication"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/azureActiveDirectory.clusterApplication",
+          "defaultPath": "properties.azureActiveDirectory.clusterApplication"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/azureActiveDirectory.tenantId",
+          "defaultPath": "properties.azureActiveDirectory.tenantId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clientConnectionPort",
+          "defaultPath": "properties.clientConnectionPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clients",
+          "defaultPath": "properties.clients"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clients[*]",
+          "defaultPath": "properties.clients[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clients[*].commonName",
+          "defaultPath": "properties.clients[*].commonName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clients[*].isAdmin",
+          "defaultPath": "properties.clients[*].isAdmin"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clients[*].issuerThumbprint",
+          "defaultPath": "properties.clients[*].issuerThumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clients[*].thumbprint",
+          "defaultPath": "properties.clients[*].thumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterCertificateThumbprint",
+          "defaultPath": "properties.clusterCertificateThumbprint"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterCertificateThumbprints",
+          "defaultPath": "properties.clusterCertificateThumbprints"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterCertificateThumbprints[*]",
+          "defaultPath": "properties.clusterCertificateThumbprints[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterCodeVersion",
+          "defaultPath": "properties.clusterCodeVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterState",
+          "defaultPath": "properties.clusterState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterUpgradeCadence",
+          "defaultPath": "properties.clusterUpgradeCadence"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/clusterUpgradeMode",
+          "defaultPath": "properties.clusterUpgradeMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/dnsName",
+          "defaultPath": "properties.dnsName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/enableAutoOSUpgrade",
+          "defaultPath": "properties.enableAutoOSUpgrade"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/enableIpv6",
+          "defaultPath": "properties.enableIpv6"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/enableServicePublicIP",
+          "defaultPath": "properties.enableServicePublicIP"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings",
+          "defaultPath": "properties.fabricSettings"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings[*]",
+          "defaultPath": "properties.fabricSettings[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings[*].name",
+          "defaultPath": "properties.fabricSettings[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings[*].parameters",
+          "defaultPath": "properties.fabricSettings[*].parameters"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings[*].parameters[*]",
+          "defaultPath": "properties.fabricSettings[*].parameters[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings[*].parameters[*].name",
+          "defaultPath": "properties.fabricSettings[*].parameters[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fabricSettings[*].parameters[*].value",
+          "defaultPath": "properties.fabricSettings[*].parameters[*].value"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/fqdn",
+          "defaultPath": "properties.fqdn"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/httpGatewayConnectionPort",
+          "defaultPath": "properties.httpGatewayConnectionPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/ipTags",
+          "defaultPath": "properties.ipTags"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/ipTags[*]",
+          "defaultPath": "properties.ipTags[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/ipTags[*].ipTagType",
+          "defaultPath": "properties.ipTags[*].ipTagType"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/ipTags[*].tag",
+          "defaultPath": "properties.ipTags[*].tag"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/ipv4Address",
+          "defaultPath": "properties.ipv4Address"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/ipv6Address",
+          "defaultPath": "properties.ipv6Address"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules",
+          "defaultPath": "properties.loadBalancingRules"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*]",
+          "defaultPath": "properties.loadBalancingRules[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].backendPort",
+          "defaultPath": "properties.loadBalancingRules[*].backendPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].frontendPort",
+          "defaultPath": "properties.loadBalancingRules[*].frontendPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].loadDistribution",
+          "defaultPath": "properties.loadBalancingRules[*].loadDistribution"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].probePort",
+          "defaultPath": "properties.loadBalancingRules[*].probePort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].probeProtocol",
+          "defaultPath": "properties.loadBalancingRules[*].probeProtocol"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].probeRequestPath",
+          "defaultPath": "properties.loadBalancingRules[*].probeRequestPath"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/loadBalancingRules[*].protocol",
+          "defaultPath": "properties.loadBalancingRules[*].protocol"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules",
+          "defaultPath": "properties.networkSecurityRules"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*]",
+          "defaultPath": "properties.networkSecurityRules[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].access",
+          "defaultPath": "properties.networkSecurityRules[*].access"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].description",
+          "defaultPath": "properties.networkSecurityRules[*].description"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].destinationAddressPrefix",
+          "defaultPath": "properties.networkSecurityRules[*].destinationAddressPrefix"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].destinationAddressPrefixes",
+          "defaultPath": "properties.networkSecurityRules[*].destinationAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].destinationAddressPrefixes[*]",
+          "defaultPath": "properties.networkSecurityRules[*].destinationAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].destinationPortRange",
+          "defaultPath": "properties.networkSecurityRules[*].destinationPortRange"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].destinationPortRanges",
+          "defaultPath": "properties.networkSecurityRules[*].destinationPortRanges"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].destinationPortRanges[*]",
+          "defaultPath": "properties.networkSecurityRules[*].destinationPortRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].direction",
+          "defaultPath": "properties.networkSecurityRules[*].direction"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].name",
+          "defaultPath": "properties.networkSecurityRules[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].priority",
+          "defaultPath": "properties.networkSecurityRules[*].priority"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].protocol",
+          "defaultPath": "properties.networkSecurityRules[*].protocol"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].sourceAddressPrefix",
+          "defaultPath": "properties.networkSecurityRules[*].sourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].sourceAddressPrefixes",
+          "defaultPath": "properties.networkSecurityRules[*].sourceAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].sourceAddressPrefixes[*]",
+          "defaultPath": "properties.networkSecurityRules[*].sourceAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].sourcePortRange",
+          "defaultPath": "properties.networkSecurityRules[*].sourcePortRange"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].sourcePortRanges",
+          "defaultPath": "properties.networkSecurityRules[*].sourcePortRanges"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/networkSecurityRules[*].sourcePortRanges[*]",
+          "defaultPath": "properties.networkSecurityRules[*].sourcePortRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/serviceEndpoints",
+          "defaultPath": "properties.serviceEndpoints"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/serviceEndpoints[*]",
+          "defaultPath": "properties.serviceEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/serviceEndpoints[*].locations",
+          "defaultPath": "properties.serviceEndpoints[*].locations"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/serviceEndpoints[*].locations[*]",
+          "defaultPath": "properties.serviceEndpoints[*].locations[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/serviceEndpoints[*].service",
+          "defaultPath": "properties.serviceEndpoints[*].service"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/zonalResiliency",
+          "defaultPath": "properties.zonalResiliency"
+        }
+      ],
+      "resourceType": "managedclusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/managedIdentities",
+          "defaultPath": "properties.managedIdentities"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/managedIdentities[*]",
+          "defaultPath": "properties.managedIdentities[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/managedIdentities[*].name",
+          "defaultPath": "properties.managedIdentities[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/managedIdentities[*].principalId",
+          "defaultPath": "properties.managedIdentities[*].principalId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy",
+          "defaultPath": "properties.upgradePolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.considerWarningAsError",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.considerWarningAsError"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy.maxPercentUnhealthyPartitionsPerService",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy.maxPercentUnhealthyPartitionsPerService"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy.maxPercentUnhealthyReplicasPerPartition",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy.maxPercentUnhealthyReplicasPerPartition"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy.maxPercentUnhealthyServices",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.defaultServiceTypeHealthPolicy.maxPercentUnhealthyServices"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.maxPercentUnhealthyDeployedApplications",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.maxPercentUnhealthyDeployedApplications"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.applicationHealthPolicy.serviceTypeHealthPolicyMap",
+          "defaultPath": "properties.upgradePolicy.applicationHealthPolicy.serviceTypeHealthPolicyMap"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.forceRestart",
+          "defaultPath": "properties.upgradePolicy.forceRestart"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.instanceCloseDelayDuration",
+          "defaultPath": "properties.upgradePolicy.instanceCloseDelayDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.recreateApplication",
+          "defaultPath": "properties.upgradePolicy.recreateApplication"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.failureAction",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.failureAction"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckRetryTimeout",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckRetryTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckStableDuration",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckStableDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckWaitDuration",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.healthCheckWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeDomainTimeout",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeDomainTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeTimeout",
+          "defaultPath": "properties.upgradePolicy.rollingUpgradeMonitoringPolicy.upgradeTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.upgradeMode",
+          "defaultPath": "properties.upgradePolicy.upgradeMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/upgradePolicy.upgradeReplicaSetCheckTimeout",
+          "defaultPath": "properties.upgradePolicy.upgradeReplicaSetCheckTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "managedclusters/applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/correlationScheme",
+          "defaultPath": "properties.correlationScheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/correlationScheme[*]",
+          "defaultPath": "properties.correlationScheme[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/correlationScheme[*].scheme",
+          "defaultPath": "properties.correlationScheme[*].scheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/correlationScheme[*].serviceName",
+          "defaultPath": "properties.correlationScheme[*].serviceName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/defaultMoveCost",
+          "defaultPath": "properties.defaultMoveCost"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription",
+          "defaultPath": "properties.partitionDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.Named",
+          "defaultPath": "properties.partitionDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.Named.names",
+          "defaultPath": "properties.partitionDescription.names"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.Named.names[*]",
+          "defaultPath": "properties.partitionDescription.names[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.partitionScheme",
+          "defaultPath": "properties.partitionDescription.partitionScheme"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.UniformInt64Range",
+          "defaultPath": "properties.partitionDescription"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.UniformInt64Range.count",
+          "defaultPath": "properties.partitionDescription.count"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.UniformInt64Range.highKey",
+          "defaultPath": "properties.partitionDescription.highKey"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/partitionDescription.UniformInt64Range.lowKey",
+          "defaultPath": "properties.partitionDescription.lowKey"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/placementConstraints",
+          "defaultPath": "properties.placementConstraints"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies",
+          "defaultPath": "properties.scalingPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*]",
+          "defaultPath": "properties.scalingPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.AddRemoveIncrementalNamedPartition",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.AddRemoveIncrementalNamedPartition.maxPartitionCount",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.maxPartitionCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.AddRemoveIncrementalNamedPartition.minPartitionCount",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.minPartitionCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.AddRemoveIncrementalNamedPartition.scaleIncrement",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.scaleIncrement"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.kind",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.kind"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.ScalePartitionInstanceCount",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.ScalePartitionInstanceCount.maxInstanceCount",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.maxInstanceCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.ScalePartitionInstanceCount.minInstanceCount",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.minInstanceCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingMechanism.ScalePartitionInstanceCount.scaleIncrement",
+          "defaultPath": "properties.scalingPolicies[*].scalingMechanism.scaleIncrement"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AveragePartitionLoadTrigger",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AveragePartitionLoadTrigger.lowerLoadThreshold",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.lowerLoadThreshold"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AveragePartitionLoadTrigger.metricName",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.metricName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AveragePartitionLoadTrigger.scaleInterval",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.scaleInterval"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AveragePartitionLoadTrigger.upperLoadThreshold",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.upperLoadThreshold"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AverageServiceLoadTrigger",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AverageServiceLoadTrigger.lowerLoadThreshold",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.lowerLoadThreshold"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AverageServiceLoadTrigger.metricName",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.metricName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AverageServiceLoadTrigger.scaleInterval",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.scaleInterval"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AverageServiceLoadTrigger.upperLoadThreshold",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.upperLoadThreshold"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.AverageServiceLoadTrigger.useOnlyPrimaryLoad",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.useOnlyPrimaryLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/scalingPolicies[*].scalingTrigger.kind",
+          "defaultPath": "properties.scalingPolicies[*].scalingTrigger.kind"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceKind",
+          "defaultPath": "properties.serviceKind"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics",
+          "defaultPath": "properties.serviceLoadMetrics"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics[*]",
+          "defaultPath": "properties.serviceLoadMetrics[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics[*].defaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics[*].defaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics[*].name",
+          "defaultPath": "properties.serviceLoadMetrics[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics[*].primaryDefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics[*].primaryDefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics[*].secondaryDefaultLoad",
+          "defaultPath": "properties.serviceLoadMetrics[*].secondaryDefaultLoad"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceLoadMetrics[*].weight",
+          "defaultPath": "properties.serviceLoadMetrics[*].weight"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePackageActivationMode",
+          "defaultPath": "properties.servicePackageActivationMode"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies",
+          "defaultPath": "properties.servicePlacementPolicies"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*]",
+          "defaultPath": "properties.servicePlacementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].InvalidDomain",
+          "defaultPath": "properties.servicePlacementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].InvalidDomain.domainName",
+          "defaultPath": "properties.servicePlacementPolicies[*].domainName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].PreferredPrimaryDomain",
+          "defaultPath": "properties.servicePlacementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].PreferredPrimaryDomain.domainName",
+          "defaultPath": "properties.servicePlacementPolicies[*].domainName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].RequiredDomain",
+          "defaultPath": "properties.servicePlacementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].RequiredDomain.domainName",
+          "defaultPath": "properties.servicePlacementPolicies[*].domainName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].RequiredDomainDistribution",
+          "defaultPath": "properties.servicePlacementPolicies[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].RequiredDomainDistribution.domainName",
+          "defaultPath": "properties.servicePlacementPolicies[*].domainName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/servicePlacementPolicies[*].type",
+          "defaultPath": "properties.servicePlacementPolicies[*].type"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/serviceTypeName",
+          "defaultPath": "properties.serviceTypeName"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.hasPersistedState",
+          "defaultPath": "properties.hasPersistedState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.minReplicaSetSize",
+          "defaultPath": "properties.minReplicaSetSize"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.quorumLossWaitDuration",
+          "defaultPath": "properties.quorumLossWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.replicaRestartWaitDuration",
+          "defaultPath": "properties.replicaRestartWaitDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.servicePlacementTimeLimit",
+          "defaultPath": "properties.servicePlacementTimeLimit"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.standByReplicaKeepDuration",
+          "defaultPath": "properties.standByReplicaKeepDuration"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateful.targetReplicaSetSize",
+          "defaultPath": "properties.targetReplicaSetSize"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateless.instanceCount",
+          "defaultPath": "properties.instanceCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateless.minInstanceCount",
+          "defaultPath": "properties.minInstanceCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applications/services/Stateless.minInstancePercentage",
+          "defaultPath": "properties.minInstancePercentage"
+        }
+      ],
+      "resourceType": "managedclusters/applications/services"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applicationTypes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "managedclusters/applicationTypes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applicationTypes/versions/appPackageUrl",
+          "defaultPath": "properties.appPackageUrl"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedclusters/applicationTypes/versions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "managedclusters/applicationTypes/versions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/additionalDataDisks",
+          "defaultPath": "properties.additionalDataDisks"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/additionalDataDisks[*]",
+          "defaultPath": "properties.additionalDataDisks[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/additionalDataDisks[*].diskLetter",
+          "defaultPath": "properties.additionalDataDisks[*].diskLetter"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/additionalDataDisks[*].diskSizeGB",
+          "defaultPath": "properties.additionalDataDisks[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/additionalDataDisks[*].diskType",
+          "defaultPath": "properties.additionalDataDisks[*].diskType"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/additionalDataDisks[*].lun",
+          "defaultPath": "properties.additionalDataDisks[*].lun"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/applicationPorts",
+          "defaultPath": "properties.applicationPorts"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/applicationPorts.endPort",
+          "defaultPath": "properties.applicationPorts.endPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/applicationPorts.startPort",
+          "defaultPath": "properties.applicationPorts.startPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/capacities",
+          "defaultPath": "properties.capacities"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/dataDiskLetter",
+          "defaultPath": "properties.dataDiskLetter"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/dataDiskSizeGB",
+          "defaultPath": "properties.dataDiskSizeGB"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/dataDiskType",
+          "defaultPath": "properties.dataDiskType"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/enableAcceleratedNetworking",
+          "defaultPath": "properties.enableAcceleratedNetworking"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/enableEncryptionAtHost",
+          "defaultPath": "properties.enableEncryptionAtHost"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/enableOverProvisioning",
+          "defaultPath": "properties.enableOverProvisioning"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/ephemeralPorts",
+          "defaultPath": "properties.ephemeralPorts"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/ephemeralPorts.endPort",
+          "defaultPath": "properties.ephemeralPorts.endPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/ephemeralPorts.startPort",
+          "defaultPath": "properties.ephemeralPorts.startPort"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/evictionPolicy",
+          "defaultPath": "properties.evictionPolicy"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/frontendConfigurations",
+          "defaultPath": "properties.frontendConfigurations"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/frontendConfigurations[*]",
+          "defaultPath": "properties.frontendConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/frontendConfigurations[*].applicationGatewayBackendAddressPoolId",
+          "defaultPath": "properties.frontendConfigurations[*].applicationGatewayBackendAddressPoolId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/frontendConfigurations[*].ipAddressType",
+          "defaultPath": "properties.frontendConfigurations[*].ipAddressType"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/frontendConfigurations[*].loadBalancerBackendAddressPoolId",
+          "defaultPath": "properties.frontendConfigurations[*].loadBalancerBackendAddressPoolId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/frontendConfigurations[*].loadBalancerInboundNatPoolId",
+          "defaultPath": "properties.frontendConfigurations[*].loadBalancerInboundNatPoolId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/hostGroupId",
+          "defaultPath": "properties.hostGroupId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/isPrimary",
+          "defaultPath": "properties.isPrimary"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/isSpotVM",
+          "defaultPath": "properties.isSpotVM"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/isStateless",
+          "defaultPath": "properties.isStateless"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/multiplePlacementGroups",
+          "defaultPath": "properties.multiplePlacementGroups"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules",
+          "defaultPath": "properties.networkSecurityRules"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*]",
+          "defaultPath": "properties.networkSecurityRules[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].access",
+          "defaultPath": "properties.networkSecurityRules[*].access"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].description",
+          "defaultPath": "properties.networkSecurityRules[*].description"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].destinationAddressPrefix",
+          "defaultPath": "properties.networkSecurityRules[*].destinationAddressPrefix"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].destinationAddressPrefixes",
+          "defaultPath": "properties.networkSecurityRules[*].destinationAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].destinationAddressPrefixes[*]",
+          "defaultPath": "properties.networkSecurityRules[*].destinationAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].destinationPortRange",
+          "defaultPath": "properties.networkSecurityRules[*].destinationPortRange"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].destinationPortRanges",
+          "defaultPath": "properties.networkSecurityRules[*].destinationPortRanges"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].destinationPortRanges[*]",
+          "defaultPath": "properties.networkSecurityRules[*].destinationPortRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].direction",
+          "defaultPath": "properties.networkSecurityRules[*].direction"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].name",
+          "defaultPath": "properties.networkSecurityRules[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].priority",
+          "defaultPath": "properties.networkSecurityRules[*].priority"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].protocol",
+          "defaultPath": "properties.networkSecurityRules[*].protocol"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].sourceAddressPrefix",
+          "defaultPath": "properties.networkSecurityRules[*].sourceAddressPrefix"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].sourceAddressPrefixes",
+          "defaultPath": "properties.networkSecurityRules[*].sourceAddressPrefixes"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].sourceAddressPrefixes[*]",
+          "defaultPath": "properties.networkSecurityRules[*].sourceAddressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].sourcePortRange",
+          "defaultPath": "properties.networkSecurityRules[*].sourcePortRange"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].sourcePortRanges",
+          "defaultPath": "properties.networkSecurityRules[*].sourcePortRanges"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/networkSecurityRules[*].sourcePortRanges[*]",
+          "defaultPath": "properties.networkSecurityRules[*].sourcePortRanges[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/placementProperties",
+          "defaultPath": "properties.placementProperties"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/spotRestoreTimeout",
+          "defaultPath": "properties.spotRestoreTimeout"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/useDefaultPublicLoadBalancer",
+          "defaultPath": "properties.useDefaultPublicLoadBalancer"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/useEphemeralOSDisk",
+          "defaultPath": "properties.useEphemeralOSDisk"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/useTempDataDisk",
+          "defaultPath": "properties.useTempDataDisk"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions",
+          "defaultPath": "properties.vmExtensions"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*]",
+          "defaultPath": "properties.vmExtensions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].autoUpgradeMinorVersion",
+          "defaultPath": "properties.vmExtensions[*].properties.autoUpgradeMinorVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].enableAutomaticUpgrade",
+          "defaultPath": "properties.vmExtensions[*].properties.enableAutomaticUpgrade"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].forceUpdateTag",
+          "defaultPath": "properties.vmExtensions[*].properties.forceUpdateTag"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].name",
+          "defaultPath": "properties.vmExtensions[*].name"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].provisionAfterExtensions",
+          "defaultPath": "properties.vmExtensions[*].properties.provisionAfterExtensions"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].provisionAfterExtensions[*]",
+          "defaultPath": "properties.vmExtensions[*].properties.provisionAfterExtensions[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].provisioningState",
+          "defaultPath": "properties.vmExtensions[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].publisher",
+          "defaultPath": "properties.vmExtensions[*].properties.publisher"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].type",
+          "defaultPath": "properties.vmExtensions[*].properties.type"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmExtensions[*].typeHandlerVersion",
+          "defaultPath": "properties.vmExtensions[*].properties.typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmImageOffer",
+          "defaultPath": "properties.vmImageOffer"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmImagePublisher",
+          "defaultPath": "properties.vmImagePublisher"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmImageResourceId",
+          "defaultPath": "properties.vmImageResourceId"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmImageSku",
+          "defaultPath": "properties.vmImageSku"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmImageVersion",
+          "defaultPath": "properties.vmImageVersion"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmInstanceCount",
+          "defaultPath": "properties.vmInstanceCount"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmManagedIdentity",
+          "defaultPath": "properties.vmManagedIdentity"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmManagedIdentity.userAssignedIdentities",
+          "defaultPath": "properties.vmManagedIdentity.userAssignedIdentities"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmManagedIdentity.userAssignedIdentities[*]",
+          "defaultPath": "properties.vmManagedIdentity.userAssignedIdentities[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets",
+          "defaultPath": "properties.vmSecrets"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*]",
+          "defaultPath": "properties.vmSecrets[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*].sourceVault",
+          "defaultPath": "properties.vmSecrets[*].sourceVault"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*].sourceVault.id",
+          "defaultPath": "properties.vmSecrets[*].sourceVault.id"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*].vaultCertificates",
+          "defaultPath": "properties.vmSecrets[*].vaultCertificates"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*].vaultCertificates[*]",
+          "defaultPath": "properties.vmSecrets[*].vaultCertificates[*]"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*].vaultCertificates[*].certificateStore",
+          "defaultPath": "properties.vmSecrets[*].vaultCertificates[*].certificateStore"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSecrets[*].vaultCertificates[*].certificateUrl",
+          "defaultPath": "properties.vmSecrets[*].vaultCertificates[*].certificateUrl"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/vmSize",
+          "defaultPath": "properties.vmSize"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/zones",
+          "defaultPath": "properties.zones"
+        },
+        {
+          "name": "Microsoft.ServiceFabric/managedClusters/nodeTypes/zones[*]",
+          "defaultPath": "properties.zones[*]"
+        }
+      ],
+      "resourceType": "managedclusters/nodetypes"
+    }
+  ]
+}

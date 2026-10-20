@@ -1,0 +1,169 @@
+{
+  "namespace": "Microsoft.CostManagement",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Alerts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "BenefitRecommendations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "BenefitUtilizationSummaries"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "BenefitUtilizationSummariesOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "BillingAccounts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Budgets"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "CalculateCost"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "calculatePrice"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "CheckNameAvailability"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "costAllocationRules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "CostDetailsOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Departments"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Dimensions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "EnrollmentAccounts"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Exports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "fetchMarketplacePrices"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "fetchMicrosoftPrices"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "fetchPrices"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Forecast"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "GenerateBenefitUtilizationSummariesReport"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "GenerateCostDetailsReport"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "GenerateDetailedCostReport"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "GenerateReservationDetailsReport"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Insights"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "MarkupRules"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "OperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "OperationStatus"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Pricesheets"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "PricesheetsOperationResults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "PricesheetsOperationStatus"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Publish"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Query"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Reportconfigs"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Reports"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ReservationDetailsOperationResults"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "ScheduledActions"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "SendMessage"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Settings"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "StartConversation"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "Views"
+    }
+  ]
+}

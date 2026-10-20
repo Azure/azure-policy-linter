@@ -1,0 +1,9 @@
+{
+  "namespace": "Microsoft.PartnerEnrollment",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "maicppPrograms"
+    }
+  ]
+}

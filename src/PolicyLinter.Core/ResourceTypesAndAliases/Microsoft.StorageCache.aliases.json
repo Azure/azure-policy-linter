@@ -1,0 +1,471 @@
+{
+  "namespace": "Microsoft.StorageCache",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageCache/caches/cacheSizeGB",
+          "defaultPath": "properties.cacheSizeGB"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings",
+          "defaultPath": "properties.directoryServicesSettings"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.cacheNetBiosName",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.cacheNetBiosName"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.credentials",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.credentials"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.credentials.password",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.credentials.password"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.credentials.username",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.credentials.username"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.domainJoined",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.domainJoined"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.domainName",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.domainName"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.domainNetBiosName",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.domainNetBiosName"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.primaryDnsIpAddress",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.primaryDnsIpAddress"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.activeDirectory.secondaryDnsIpAddress",
+          "defaultPath": "properties.directoryServicesSettings.activeDirectory.secondaryDnsIpAddress"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.autoDownloadCertificate",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.autoDownloadCertificate"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.caCertificateURI",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.caCertificateURI"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.credentials",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.credentials"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.credentials.bindDn",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.credentials.bindDn"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.credentials.bindPassword",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.credentials.bindPassword"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.encryptLdapConnection",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.encryptLdapConnection"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.extendedGroups",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.extendedGroups"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.groupFileURI",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.groupFileURI"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.ldapBaseDN",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.ldapBaseDN"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.ldapServer",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.ldapServer"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.requireValidCertificate",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.requireValidCertificate"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.userFileURI",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.userFileURI"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.usernameDownloaded",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.usernameDownloaded"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/directoryServicesSettings.usernameDownload.usernameSource",
+          "defaultPath": "properties.directoryServicesSettings.usernameDownload.usernameSource"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/encryptionSettings",
+          "defaultPath": "properties.encryptionSettings"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/encryptionSettings.keyEncryptionKey",
+          "defaultPath": "properties.encryptionSettings.keyEncryptionKey"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/encryptionSettings.keyEncryptionKey.keyUrl",
+          "defaultPath": "properties.encryptionSettings.keyEncryptionKey.keyUrl"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/encryptionSettings.keyEncryptionKey.sourceVault",
+          "defaultPath": "properties.encryptionSettings.keyEncryptionKey.sourceVault"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/encryptionSettings.keyEncryptionKey.sourceVault.id",
+          "defaultPath": "properties.encryptionSettings.keyEncryptionKey.sourceVault.id"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/encryptionSettings.rotationToLatestKeyVersionEnabled",
+          "defaultPath": "properties.encryptionSettings.rotationToLatestKeyVersionEnabled"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health",
+          "defaultPath": "properties.health"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health.conditions",
+          "defaultPath": "properties.health.conditions"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health.conditions[*]",
+          "defaultPath": "properties.health.conditions[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health.conditions[*].message",
+          "defaultPath": "properties.health.conditions[*].message"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health.conditions[*].timestamp",
+          "defaultPath": "properties.health.conditions[*].timestamp"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health.state",
+          "defaultPath": "properties.health.state"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/health.statusDescription",
+          "defaultPath": "properties.health.statusDescription"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/mountAddresses",
+          "defaultPath": "properties.mountAddresses"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/mountAddresses[*]",
+          "defaultPath": "properties.mountAddresses[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings",
+          "defaultPath": "properties.networkSettings"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.dnsSearchDomain",
+          "defaultPath": "properties.networkSettings.dnsSearchDomain"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.dnsServers",
+          "defaultPath": "properties.networkSettings.dnsServers"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.dnsServers[*]",
+          "defaultPath": "properties.networkSettings.dnsServers[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.mtu",
+          "defaultPath": "properties.networkSettings.mtu"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.ntpServer",
+          "defaultPath": "properties.networkSettings.ntpServer"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.utilityAddresses",
+          "defaultPath": "properties.networkSettings.utilityAddresses"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/networkSettings.utilityAddresses[*]",
+          "defaultPath": "properties.networkSettings.utilityAddresses[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs",
+          "defaultPath": "properties.primingJobs"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*]",
+          "defaultPath": "properties.primingJobs[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingJobDetails",
+          "defaultPath": "properties.primingJobs[*].primingJobDetails"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingJobId",
+          "defaultPath": "properties.primingJobs[*].primingJobId"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingJobName",
+          "defaultPath": "properties.primingJobs[*].primingJobName"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingJobPercentComplete",
+          "defaultPath": "properties.primingJobs[*].primingJobPercentComplete"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingJobState",
+          "defaultPath": "properties.primingJobs[*].primingJobState"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingJobStatus",
+          "defaultPath": "properties.primingJobs[*].primingJobStatus"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/primingJobs[*].primingManifestUrl",
+          "defaultPath": "properties.primingJobs[*].primingManifestUrl"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings",
+          "defaultPath": "properties.securitySettings"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies",
+          "defaultPath": "properties.securitySettings.accessPolicies"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*]",
+          "defaultPath": "properties.securitySettings.accessPolicies[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*]",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].access",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].access"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].anonymousGID",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].anonymousGID"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].anonymousUID",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].anonymousUID"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].filter",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].filter"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].rootSquash",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].rootSquash"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].scope",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].scope"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].submountAccess",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].submountAccess"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].accessRules[*].suid",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].accessRules[*].suid"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.accessPolicies[*].name",
+          "defaultPath": "properties.securitySettings.accessPolicies[*].name"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/securitySettings.rootSquash",
+          "defaultPath": "properties.securitySettings.rootSquash"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/spaceAllocation",
+          "defaultPath": "properties.spaceAllocation"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/spaceAllocation[*]",
+          "defaultPath": "properties.spaceAllocation[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/spaceAllocation[*].allocationPercentage",
+          "defaultPath": "properties.spaceAllocation[*].allocationPercentage"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/spaceAllocation[*].name",
+          "defaultPath": "properties.spaceAllocation[*].name"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/subnet",
+          "defaultPath": "properties.subnet"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeSettings",
+          "defaultPath": "properties.upgradeSettings"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeSettings.scheduledTime",
+          "defaultPath": "properties.upgradeSettings.scheduledTime"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeSettings.upgradeScheduleEnabled",
+          "defaultPath": "properties.upgradeSettings.upgradeScheduleEnabled"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeStatus",
+          "defaultPath": "properties.upgradeStatus"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeStatus.currentFirmwareVersion",
+          "defaultPath": "properties.upgradeStatus.currentFirmwareVersion"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeStatus.firmwareUpdateDeadline",
+          "defaultPath": "properties.upgradeStatus.firmwareUpdateDeadline"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeStatus.firmwareUpdateStatus",
+          "defaultPath": "properties.upgradeStatus.firmwareUpdateStatus"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeStatus.lastFirmwareUpdate",
+          "defaultPath": "properties.upgradeStatus.lastFirmwareUpdate"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/upgradeStatus.pendingFirmwareVersion",
+          "defaultPath": "properties.upgradeStatus.pendingFirmwareVersion"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/zones",
+          "defaultPath": "properties.zones"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/zones[*]",
+          "defaultPath": "properties.zones[*]"
+        }
+      ],
+      "resourceType": "caches"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/allocationPercentage",
+          "defaultPath": "properties.allocationPercentage"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/blobNfs",
+          "defaultPath": "properties.blobNfs"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/blobNfs.target",
+          "defaultPath": "properties.blobNfs.target"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/blobNfs.usageModel",
+          "defaultPath": "properties.blobNfs.usageModel"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/clfs",
+          "defaultPath": "properties.clfs"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/clfs.target",
+          "defaultPath": "properties.clfs.target"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/junctions",
+          "defaultPath": "properties.junctions"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/junctions[*]",
+          "defaultPath": "properties.junctions[*]"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/junctions[*].namespacePath",
+          "defaultPath": "properties.junctions[*].namespacePath"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/junctions[*].nfsAccessPolicy",
+          "defaultPath": "properties.junctions[*].nfsAccessPolicy"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/junctions[*].nfsExport",
+          "defaultPath": "properties.junctions[*].nfsExport"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/junctions[*].targetPath",
+          "defaultPath": "properties.junctions[*].targetPath"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/nfs3",
+          "defaultPath": "properties.nfs3"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/nfs3.target",
+          "defaultPath": "properties.nfs3.target"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/nfs3.usageModel",
+          "defaultPath": "properties.nfs3.usageModel"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/targetType",
+          "defaultPath": "properties.targetType"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/unknown",
+          "defaultPath": "properties.unknown"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/unknown.attributes",
+          "defaultPath": "properties.unknown.attributes"
+        },
+        {
+          "name": "Microsoft.StorageCache/caches/storageTargets/unknown.unknownMap",
+          "defaultPath": "properties.unknown.unknownMap"
+        }
+      ],
+      "resourceType": "caches/storageTargets"
+    }
+  ]
+}

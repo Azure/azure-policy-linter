@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.IoTOperations",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "instances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/akriConnectorTemplates"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/akriConnectorTemplates/connectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/akriDiscoveryHandlers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/akriServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/brokers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/brokers/authentications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/brokers/authorizations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/brokers/listeners"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/dataflowEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/dataflowProfiles"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/dataflowProfiles/dataflowGraphs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/dataflowProfiles/dataflows"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/diagnostics"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "instances/registryEndpoints"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

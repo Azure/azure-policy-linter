@@ -1,0 +1,180 @@
+{
+  "namespace": "Microsoft.Datadog",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties",
+          "defaultPath": "properties.datadogOrganizationProperties"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.apiKey",
+          "defaultPath": "properties.datadogOrganizationProperties.apiKey"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.applicationKey",
+          "defaultPath": "properties.datadogOrganizationProperties.applicationKey"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.enterpriseAppId",
+          "defaultPath": "properties.datadogOrganizationProperties.enterpriseAppId"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.id",
+          "defaultPath": "properties.datadogOrganizationProperties.id"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.linkingAuthCode",
+          "defaultPath": "properties.datadogOrganizationProperties.linkingAuthCode"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.linkingClientId",
+          "defaultPath": "properties.datadogOrganizationProperties.linkingClientId"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.name",
+          "defaultPath": "properties.datadogOrganizationProperties.name"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/datadogOrganizationProperties.redirectUri",
+          "defaultPath": "properties.datadogOrganizationProperties.redirectUri"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/liftrResourceCategory",
+          "defaultPath": "properties.liftrResourceCategory"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/liftrResourcePreference",
+          "defaultPath": "properties.liftrResourcePreference"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/marketplaceSubscriptionStatus",
+          "defaultPath": "properties.marketplaceSubscriptionStatus"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/monitoringStatus",
+          "defaultPath": "properties.monitoringStatus"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/userInfo",
+          "defaultPath": "properties.userInfo"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/userInfo.emailAddress",
+          "defaultPath": "properties.userInfo.emailAddress"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/userInfo.name",
+          "defaultPath": "properties.userInfo.name"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/userInfo.phoneNumber",
+          "defaultPath": "properties.userInfo.phoneNumber"
+        }
+      ],
+      "resourceType": "monitors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Datadog/monitors/singleSignOnConfigurations/enterpriseAppId",
+          "defaultPath": "properties.enterpriseAppId"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/singleSignOnConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/singleSignOnConfigurations/singleSignOnState",
+          "defaultPath": "properties.singleSignOnState"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/singleSignOnConfigurations/singleSignOnUrl",
+          "defaultPath": "properties.singleSignOnUrl"
+        }
+      ],
+      "resourceType": "monitors/singleSignOnConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules",
+          "defaultPath": "properties.logRules"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.filteringTags",
+          "defaultPath": "properties.logRules.filteringTags"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.filteringTags[*]",
+          "defaultPath": "properties.logRules.filteringTags[*]"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.filteringTags[*].action",
+          "defaultPath": "properties.logRules.filteringTags[*].action"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.filteringTags[*].name",
+          "defaultPath": "properties.logRules.filteringTags[*].name"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.filteringTags[*].value",
+          "defaultPath": "properties.logRules.filteringTags[*].value"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.sendAadLogs",
+          "defaultPath": "properties.logRules.sendAadLogs"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.sendResourceLogs",
+          "defaultPath": "properties.logRules.sendResourceLogs"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/logRules.sendSubscriptionLogs",
+          "defaultPath": "properties.logRules.sendSubscriptionLogs"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/metricRules",
+          "defaultPath": "properties.metricRules"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/metricRules.filteringTags",
+          "defaultPath": "properties.metricRules.filteringTags"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/metricRules.filteringTags[*]",
+          "defaultPath": "properties.metricRules.filteringTags[*]"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/metricRules.filteringTags[*].action",
+          "defaultPath": "properties.metricRules.filteringTags[*].action"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/metricRules.filteringTags[*].name",
+          "defaultPath": "properties.metricRules.filteringTags[*].name"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/metricRules.filteringTags[*].value",
+          "defaultPath": "properties.metricRules.filteringTags[*].value"
+        },
+        {
+          "name": "Microsoft.Datadog/monitors/tagRules/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "monitors/tagRules"
+    }
+  ]
+}

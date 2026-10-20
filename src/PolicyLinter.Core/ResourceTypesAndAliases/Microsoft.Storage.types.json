@@ -1,0 +1,193 @@
+{
+  "namespace": "Microsoft.Storage",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "contextCaches"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "contextCaches/contextCacheContainers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ActionsRPOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/asyncoperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/ContextCacheRPOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/DataManagementRPOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deletedAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/internalContextCaches"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/internalContextCaches/internalContextCacheContainers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/advancedPlatformMetrics"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageAccounts/blobAccessPointConfigurations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/blobServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/blobServices/containers/immutabilityPolicies"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageAccounts/connectors"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageAccounts/dataShares"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/encryptionScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/fileServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/fileServices/shares"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/inventoryPolicies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/listAccountSas"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/listServiceSas"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/localusers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/managementPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/objectReplicationPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/queueServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/queueServices/queues"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/reports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/services"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/services/metricDefinitions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/storageTaskAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/storageTaskAssignments/reports"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/tableServices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "storageAccounts/tableServices/tables"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "storageAccounts/testBlobAccessPointConfigurationProposedConnection"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "storageTasks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "usages"
+    }
+  ]
+}

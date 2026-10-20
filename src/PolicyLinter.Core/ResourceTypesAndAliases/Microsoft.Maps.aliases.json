@@ -1,0 +1,318 @@
+{
+  "namespace": "Microsoft.Maps",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Maps/accounts/cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/cors.corsRules[*].allowedOrigins",
+          "paths": [
+            {
+              "path": "properties.cors.corsRules[*].allowedOrigins",
+              "apiVersions": [
+                "2021-07-01-preview",
+                "2021-02-01",
+                "2020-02-01-preview",
+                "2018-05-01",
+                "2017-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Maps/accounts/cors.corsRules[*].allowedOrigins[*]",
+          "paths": [
+            {
+              "path": "properties.cors.corsRules[*].allowedOrigins[*]",
+              "apiVersions": [
+                "2021-07-01-preview",
+                "2021-02-01",
+                "2020-02-01-preview",
+                "2018-05-01",
+                "2017-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Maps/accounts/disableLocalAuth",
+          "defaultPath": "properties.disableLocalAuth"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.delegatedIdentityClientId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.delegatedIdentityClientId"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.federatedClientId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.federatedClientId"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.identityType"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyIdentity.userAssignedIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl",
+          "defaultPath": "properties.encryption.customerManagedKeyEncryption.keyEncryptionKeyUrl"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/encryption.infrastructureEncryption",
+          "defaultPath": "properties.encryption.infrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/linkedResources",
+          "defaultPath": "properties.linkedResources"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/linkedResources[*]",
+          "defaultPath": "properties.linkedResources[*]"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/linkedResources[*].id",
+          "defaultPath": "properties.linkedResources[*].id"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/linkedResources[*].uniqueName",
+          "defaultPath": "properties.linkedResources[*].uniqueName"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/locations",
+          "paths": [
+            {
+              "path": "properties.locations",
+              "apiVersions": [
+                "2023-12-01-preview",
+                "2023-08-01-preview",
+                "2023-06-01",
+                "2021-12-01-preview",
+                "2021-07-01-preview",
+                "2021-02-01",
+                "2020-02-01-preview",
+                "2018-05-01",
+                "2017-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.locations",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Maps/accounts/locations[*]",
+          "paths": [
+            {
+              "path": "properties.locations[*]",
+              "apiVersions": [
+                "2023-12-01-preview",
+                "2023-08-01-preview",
+                "2023-06-01",
+                "2021-12-01-preview",
+                "2021-07-01-preview",
+                "2021-02-01",
+                "2020-02-01-preview",
+                "2018-05-01",
+                "2017-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.locations[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Maps/accounts/locations[*].locationName",
+          "defaultPath": "properties.locations[*].locationName"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2024-07-01-preview",
+                "2023-08-01-preview",
+                "2023-06-01",
+                "2021-12-01-preview",
+                "2021-07-01-preview",
+                "2021-02-01",
+                "2020-02-01-preview",
+                "2018-05-01",
+                "2017-01-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Maps/accounts/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Maps/accounts/uniqueId",
+          "defaultPath": "properties.uniqueId"
+        }
+      ],
+      "resourceType": "accounts"
+    }
+  ]
+}

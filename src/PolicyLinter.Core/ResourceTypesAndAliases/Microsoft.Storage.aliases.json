@@ -1,0 +1,4767 @@
+{
+  "namespace": "Microsoft.Storage",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/accessTier",
+          "paths": [
+            {
+              "path": "properties.accessTier",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-Preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.accessTier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/accountType",
+          "paths": [
+            {
+              "path": "properties.accountType",
+              "apiVersions": [
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            },
+            {
+              "path": "sku.name",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-Preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "properties.accountType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowBlobPublicAccess",
+          "paths": [
+            {
+              "path": "properties.allowBlobPublicAccess",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.allowBlobPublicAccess",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowCrossTenantReplication",
+          "paths": [
+            {
+              "path": "properties.allowCrossTenantReplication",
+              "apiVersions": [
+                "2021-02-01",
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.allowCrossTenantReplication",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowedCopyScope",
+          "paths": [
+            {
+              "path": "properties.allowedCopyScope",
+              "apiVersions": [
+                "2021-06-01",
+                "2021-04-01",
+                "2021-02-01",
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.allowedCopyScope",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccess",
+          "paths": [
+            {
+              "path": "properties.allowSharedKeyAccess",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.allowSharedKeyAccess",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices",
+          "defaultPath": "properties.allowSharedKeyAccessForServices"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.blob",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.blob.enabled",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.blob.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.file",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.file.enabled",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.file.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.queue",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.queue"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.queue.enabled",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.queue.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.table",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.table"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/allowSharedKeyAccessForServices.table.enabled",
+          "defaultPath": "properties.allowSharedKeyAccessForServices.table.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesAadIntegration",
+          "defaultPath": "properties.azureFilesAadIntegration"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.accountType",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.accountType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.azureStorageSid",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.azureStorageSid"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.domainGuid",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.domainGuid"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.domainName",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.domainName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.domainSid",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.domainSid"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.forestName",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.forestName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.netBiosDomainName",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.netBiosDomainName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.activeDirectoryProperties.samAccountName",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.activeDirectoryProperties.samAccountName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.defaultSharePermission",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.defaultSharePermission"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.directoryServiceOptions",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.directoryServiceOptions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.smbOAuthSettings",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.smbOAuthSettings"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/azureFilesIdentityBasedAuthentication.smbOAuthSettings.isSmbOAuthEnabled",
+          "defaultPath": "properties.azureFilesIdentityBasedAuthentication.smbOAuthSettings.isSmbOAuthEnabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/customDomain",
+          "defaultPath": "properties.customDomain"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/customDomain.name",
+          "defaultPath": "properties.customDomain.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/customDomain.useSubDomainName",
+          "defaultPath": "properties.customDomain.useSubDomainName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataCollaborationPolicyProperties",
+          "defaultPath": "properties.dataCollaborationPolicyProperties"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataCollaborationPolicyProperties.allowCrossTenantDataSharing",
+          "defaultPath": "properties.dataCollaborationPolicyProperties.allowCrossTenantDataSharing"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataCollaborationPolicyProperties.allowStorageConnectors",
+          "defaultPath": "properties.dataCollaborationPolicyProperties.allowStorageConnectors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataCollaborationPolicyProperties.allowStorageDataShares",
+          "defaultPath": "properties.dataCollaborationPolicyProperties.allowStorageDataShares"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/defaultToOAuthAuthentication",
+          "paths": [
+            {
+              "path": "properties.defaultToOAuthAuthentication",
+              "apiVersions": [
+                "2021-04-01",
+                "2021-02-01",
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.defaultToOAuthAuthentication",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dnsEndpointType",
+          "defaultPath": "properties.dnsEndpointType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dualStackEndpointPreference",
+          "defaultPath": "properties.dualStackEndpointPreference"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dualStackEndpointPreference.publishIpv6Endpoint",
+          "defaultPath": "properties.dualStackEndpointPreference.publishIpv6Endpoint"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/enableBlobEncryption",
+          "paths": [
+            {
+              "path": "properties.encryption.services.blob.enabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-Preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services.blob.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/enableExtendedGroups",
+          "defaultPath": "properties.enableExtendedGroups"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/enableFileEncryption",
+          "paths": [
+            {
+              "path": "properties.encryption.services.file.enabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-Preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services.file.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption",
+          "paths": [
+            {
+              "path": "properties.encryption",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.identity",
+          "defaultPath": "properties.encryption.identity"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.identity.federatedIdentityClientId",
+          "defaultPath": "properties.encryption.identity.federatedIdentityClientId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.identity.userAssignedIdentity",
+          "defaultPath": "properties.encryption.identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keySource",
+          "paths": [
+            {
+              "path": "properties.encryption.keySource",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties",
+          "defaultPath": "properties.encryption.keyvaultproperties"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties.currentVersionedKeyExpirationTimestamp",
+          "defaultPath": "properties.encryption.keyvaultproperties.currentVersionedKeyExpirationTimestamp"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties.currentVersionedKeyIdentifier",
+          "defaultPath": "properties.encryption.keyvaultproperties.currentVersionedKeyIdentifier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties.keyname",
+          "paths": [
+            {
+              "path": "properties.encryption.keyvaultproperties.keyname",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.keyvaultproperties.keyname"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties.keyvaulturi",
+          "paths": [
+            {
+              "path": "properties.encryption.keyvaultproperties.keyvaulturi",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.keyvaultproperties.keyvaulturi"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties.keyversion",
+          "paths": [
+            {
+              "path": "properties.encryption.keyvaultproperties.keyversion",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.keyvaultproperties.keyversion"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.keyvaultproperties.lastKeyRotationTimestamp",
+          "defaultPath": "properties.encryption.keyvaultproperties.lastKeyRotationTimestamp"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.requireInfrastructureEncryption",
+          "defaultPath": "properties.encryption.requireInfrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services",
+          "paths": [
+            {
+              "path": "properties.encryption.services",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.blob",
+          "paths": [
+            {
+              "path": "properties.encryption.services.blob",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.blob.enabled",
+          "paths": [
+            {
+              "path": "properties.encryption.services.blob.enabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services.blob.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.blob.keyType",
+          "defaultPath": "properties.encryption.services.blob.keyType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.blob.lastEnabledTime",
+          "defaultPath": "properties.encryption.services.blob.lastEnabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.file",
+          "paths": [
+            {
+              "path": "properties.encryption.services.file",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.file.enabled",
+          "paths": [
+            {
+              "path": "properties.encryption.services.file.enabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.encryption.services.file.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.file.keyType",
+          "defaultPath": "properties.encryption.services.file.keyType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.file.lastEnabledTime",
+          "defaultPath": "properties.encryption.services.file.lastEnabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.queue",
+          "defaultPath": "properties.encryption.services.queue"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.queue.enabled",
+          "defaultPath": "properties.encryption.services.queue.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.queue.keyType",
+          "defaultPath": "properties.encryption.services.queue.keyType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.queue.lastEnabledTime",
+          "defaultPath": "properties.encryption.services.queue.lastEnabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.table",
+          "defaultPath": "properties.encryption.services.table"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.table.enabled",
+          "defaultPath": "properties.encryption.services.table.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.table.keyType",
+          "defaultPath": "properties.encryption.services.table.keyType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryption.services.table.lastEnabledTime",
+          "defaultPath": "properties.encryption.services.table.lastEnabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/geoPriorityReplicationStatus",
+          "defaultPath": "properties.geoPriorityReplicationStatus"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/geoPriorityReplicationStatus.isBlobEnabled",
+          "defaultPath": "properties.geoPriorityReplicationStatus.isBlobEnabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/immutableStorageWithVersioning",
+          "defaultPath": "properties.immutableStorageWithVersioning"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/immutableStorageWithVersioning.enabled",
+          "defaultPath": "properties.immutableStorageWithVersioning.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/immutableStorageWithVersioning.immutabilityPolicy",
+          "defaultPath": "properties.immutableStorageWithVersioning.immutabilityPolicy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/immutableStorageWithVersioning.immutabilityPolicy.allowProtectedAppendWrites",
+          "defaultPath": "properties.immutableStorageWithVersioning.immutabilityPolicy.allowProtectedAppendWrites"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/immutableStorageWithVersioning.immutabilityPolicy.immutabilityPeriodSinceCreationInDays",
+          "defaultPath": "properties.immutableStorageWithVersioning.immutabilityPolicy.immutabilityPeriodSinceCreationInDays"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/immutableStorageWithVersioning.immutabilityPolicy.state",
+          "defaultPath": "properties.immutableStorageWithVersioning.immutabilityPolicy.state"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/isHnsEnabled",
+          "defaultPath": "properties.isHnsEnabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/isLocalUserEnabled",
+          "defaultPath": "properties.isLocalUserEnabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/isNfsV3Enabled",
+          "defaultPath": "properties.isNfsV3Enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/isSftpEnabled",
+          "defaultPath": "properties.isSftpEnabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/keyCreationTime",
+          "defaultPath": "properties.keyCreationTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/keyCreationTime.key1",
+          "defaultPath": "properties.keyCreationTime.key1"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/keyCreationTime.key2",
+          "defaultPath": "properties.keyCreationTime.key2"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/keyPolicy",
+          "defaultPath": "properties.keyPolicy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/keyPolicy.keyExpirationPeriodInDays",
+          "paths": [
+            {
+              "path": "properties.keyPolicy.keyExpirationPeriodInDays",
+              "apiVersions": [
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.keyPolicy.keyExpirationPeriodInDays",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/largeFileSharesState",
+          "defaultPath": "properties.largeFileSharesState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/minimumTlsVersion",
+          "paths": [
+            {
+              "path": "properties.minimumTlsVersion",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.minimumTlsVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls",
+          "paths": [
+            {
+              "path": "properties.networkAcls",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.networkAcls"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.bypass",
+          "paths": [
+            {
+              "path": "properties.networkAcls.bypass",
+              "apiVersions": [
+                "2018-11-09",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.bypass",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkAcls.defaultAction",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipRules",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*]",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*].action",
+              "apiVersions": [
+                "2018-11-09",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*].action",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*].value",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*].value",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipv6Rules",
+          "defaultPath": "properties.networkAcls.ipv6Rules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipv6Rules[*]",
+          "defaultPath": "properties.networkAcls.ipv6Rules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipv6Rules[*].action",
+          "defaultPath": "properties.networkAcls.ipv6Rules[*].action"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.ipv6Rules[*].value",
+          "defaultPath": "properties.networkAcls.ipv6Rules[*].value"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.resourceAccessRules",
+          "defaultPath": "properties.networkAcls.resourceAccessRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.resourceAccessRules[*]",
+          "defaultPath": "properties.networkAcls.resourceAccessRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.resourceAccessRules[*].resourceId",
+          "defaultPath": "properties.networkAcls.resourceAccessRules[*].resourceId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.resourceAccessRules[*].tenantId",
+          "defaultPath": "properties.networkAcls.resourceAccessRules[*].tenantId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*]",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules[*].action",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*].action",
+              "apiVersions": [
+                "2018-11-09",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].action",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules[*].id",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*].id",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].id",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkAcls.virtualNetworkRules[*].state",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*].state",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].state"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints",
+          "paths": [
+            {
+              "path": "properties.primaryEndpoints",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.blob",
+          "paths": [
+            {
+              "path": "properties.primaryEndpoints.blob",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryEndpoints.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.dfs",
+          "defaultPath": "properties.primaryEndpoints.dfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.file",
+          "paths": [
+            {
+              "path": "properties.primaryEndpoints.file",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryEndpoints.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.internetEndpoints",
+          "defaultPath": "properties.primaryEndpoints.internetEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.internetEndpoints.blob",
+          "defaultPath": "properties.primaryEndpoints.internetEndpoints.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.internetEndpoints.dfs",
+          "defaultPath": "properties.primaryEndpoints.internetEndpoints.dfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.internetEndpoints.file",
+          "defaultPath": "properties.primaryEndpoints.internetEndpoints.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.internetEndpoints.web",
+          "defaultPath": "properties.primaryEndpoints.internetEndpoints.web"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.blob",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.dfs",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.dfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.file",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.internetEndpoints",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.internetEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.internetEndpoints.blob",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.internetEndpoints.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.internetEndpoints.dfs",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.internetEndpoints.dfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.internetEndpoints.file",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.internetEndpoints.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.internetEndpoints.web",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.internetEndpoints.web"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints.blob",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints.dfs",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints.dfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints.file",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints.queue",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints.queue"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints.table",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints.table"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.microsoftEndpoints.web",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.microsoftEndpoints.web"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.queue",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.queue"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.table",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.table"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.ipv6Endpoints.web",
+          "defaultPath": "properties.primaryEndpoints.ipv6Endpoints.web"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints.blob",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints.blob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints.dfs",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints.dfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints.file",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints.file"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints.queue",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints.queue"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints.table",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints.table"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.microsoftEndpoints.web",
+          "defaultPath": "properties.primaryEndpoints.microsoftEndpoints.web"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.queue",
+          "paths": [
+            {
+              "path": "properties.primaryEndpoints.queue",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryEndpoints.queue"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.table",
+          "paths": [
+            {
+              "path": "properties.primaryEndpoints.table",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryEndpoints.table"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryEndpoints.web",
+          "paths": [
+            {
+              "path": "properties.primaryEndpoints.web",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryEndpoints.web"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/primaryLocation",
+          "paths": [
+            {
+              "path": "properties.primaryLocation",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.primaryLocation"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/provisioningState",
+          "paths": [
+            {
+              "path": "properties.provisioningState",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-04-01",
+                "2021-02-01",
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/routingPreference",
+          "defaultPath": "properties.routingPreference"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/routingPreference.publishInternetEndpoints",
+          "defaultPath": "properties.routingPreference.publishInternetEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/routingPreference.publishMicrosoftEndpoints",
+          "defaultPath": "properties.routingPreference.publishMicrosoftEndpoints"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/routingPreference.routingChoice",
+          "defaultPath": "properties.routingPreference.routingChoice"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sasPolicy",
+          "paths": [
+            {
+              "path": "properties.sasPolicy",
+              "apiVersions": [
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sasPolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sasPolicy.expirationAction",
+          "defaultPath": "properties.sasPolicy.expirationAction"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sasPolicy.sasExpirationPeriod",
+          "defaultPath": "properties.sasPolicy.sasExpirationPeriod"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.capabilities",
+          "defaultPath": "sku.capabilities"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.capabilities[*]",
+          "defaultPath": "sku.capabilities[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.capabilities[*].name",
+          "defaultPath": "sku.capabilities[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.capabilities[*].value",
+          "defaultPath": "sku.capabilities[*].value"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.kind",
+          "defaultPath": "sku.kind"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.locations",
+          "defaultPath": "sku.locations"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.locations[*]",
+          "defaultPath": "sku.locations[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.name",
+          "paths": [
+            {
+              "path": "properties.accountType",
+              "apiVersions": [
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            },
+            {
+              "path": "sku.name",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-Preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01"
+              ]
+            }
+          ],
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.resourceType",
+          "defaultPath": "sku.resourceType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.restrictions",
+          "defaultPath": "sku.restrictions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.restrictions[*]",
+          "defaultPath": "sku.restrictions[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.restrictions[*].reasonCode",
+          "defaultPath": "sku.restrictions[*].reasonCode"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.restrictions[*].type",
+          "defaultPath": "sku.restrictions[*].type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.restrictions[*].values",
+          "defaultPath": "sku.restrictions[*].values"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.restrictions[*].values[*]",
+          "defaultPath": "sku.restrictions[*].values[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/sku.tier",
+          "paths": [
+            {
+              "path": "sku.tier",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/statusOfPrimary",
+          "paths": [
+            {
+              "path": "properties.statusOfPrimary",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-11-09",
+                "2018-07-01",
+                "2018-03-01-preview",
+                "2018-02-01",
+                "2017-10-01",
+                "2017-06-01",
+                "2016-12-01",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ]
+            }
+          ],
+          "defaultPath": "properties.statusOfPrimary"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+          "paths": [
+            {
+              "path": "properties.supportsHttpsTrafficOnly",
+              "apiVersions": [
+                "2018-11-09",
+                "2018-03-01-Preview",
+                "2016-05-01",
+                "2016-01-01",
+                "2015-06-15",
+                "2015-05-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.supportsHttpsTrafficOnly",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "storageAccounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/metricsEmitted",
+          "defaultPath": "properties.metricsEmitted"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/metricsEmitted[*]",
+          "defaultPath": "properties.metricsEmitted[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/ruleConfig",
+          "defaultPath": "properties.ruleConfig"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/ruleConfig.filterType",
+          "defaultPath": "properties.ruleConfig.filterType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/ruleConfig.filterValues",
+          "defaultPath": "properties.ruleConfig.filterValues"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/ruleConfig.filterValues[*]",
+          "defaultPath": "properties.ruleConfig.filterValues[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/advancedPlatformMetrics/ruleType",
+          "defaultPath": "properties.ruleType"
+        }
+      ],
+      "resourceType": "storageAccounts/advancedPlatformMetrics"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/automaticSnapshotPolicyEnabled",
+          "paths": [
+            {
+              "path": "properties.automaticSnapshotPolicyEnabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.automaticSnapshotPolicyEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/changeFeed",
+          "paths": [
+            {
+              "path": "properties.changeFeed",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.changeFeed",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/changeFeed.enabled",
+          "paths": [
+            {
+              "path": "properties.changeFeed.enabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.changeFeed.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/changeFeed.retentionInDays",
+          "defaultPath": "properties.changeFeed.retentionInDays"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy",
+          "paths": [
+            {
+              "path": "properties.containerDeleteRetentionPolicy",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.containerDeleteRetentionPolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.allowPermanentDelete",
+          "defaultPath": "properties.containerDeleteRetentionPolicy.allowPermanentDelete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.days",
+          "paths": [
+            {
+              "path": "properties.containerDeleteRetentionPolicy.days",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.containerDeleteRetentionPolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containerDeleteRetentionPolicy.enabled",
+          "paths": [
+            {
+              "path": "properties.containerDeleteRetentionPolicy.enabled",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.containerDeleteRetentionPolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors",
+          "defaultPath": "properties.cors",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules",
+          "defaultPath": "properties.cors.corsRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.automaticSnapshotPolicyEnabled",
+          "paths": [
+            {
+              "path": "properties.automaticSnapshotPolicyEnabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.automaticSnapshotPolicyEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.changeFeed",
+          "paths": [
+            {
+              "path": "properties.changeFeed",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.changeFeed",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.changeFeed.enabled",
+          "paths": [
+            {
+              "path": "properties.changeFeed.enabled",
+              "apiVersions": [
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.changeFeed.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.containerDeleteRetentionPolicy",
+          "paths": [
+            {
+              "path": "properties.containerDeleteRetentionPolicy",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.containerDeleteRetentionPolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.containerDeleteRetentionPolicy.days",
+          "paths": [
+            {
+              "path": "properties.containerDeleteRetentionPolicy.days",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.containerDeleteRetentionPolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.containerDeleteRetentionPolicy.enabled",
+          "paths": [
+            {
+              "path": "properties.containerDeleteRetentionPolicy.enabled",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.containerDeleteRetentionPolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors",
+          "defaultPath": "properties.cors",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules",
+          "defaultPath": "properties.cors.corsRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.defaultServiceVersion",
+          "defaultPath": "properties.defaultServiceVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.deleteRetentionPolicy",
+          "defaultPath": "properties.deleteRetentionPolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.deleteRetentionPolicy.days",
+          "defaultPath": "properties.deleteRetentionPolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.deleteRetentionPolicy.enabled",
+          "defaultPath": "properties.deleteRetentionPolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.isVersioningEnabled",
+          "paths": [
+            {
+              "path": "properties.isVersioningEnabled",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.isVersioningEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.restorePolicy",
+          "paths": [
+            {
+              "path": "properties.restorePolicy",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restorePolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.restorePolicy.days",
+          "paths": [
+            {
+              "path": "properties.restorePolicy.days",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restorePolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.restorePolicy.enabled",
+          "paths": [
+            {
+              "path": "properties.restorePolicy.enabled",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restorePolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.restorePolicy.lastEnabledTime",
+          "defaultPath": "properties.restorePolicy.lastEnabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/default.sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/defaultServiceVersion",
+          "defaultPath": "properties.defaultServiceVersion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy",
+          "defaultPath": "properties.deleteRetentionPolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.allowPermanentDelete",
+          "paths": [
+            {
+              "path": "properties.deleteRetentionPolicy.allowPermanentDelete",
+              "apiVersions": [
+                "2021-08-01",
+                "2021-06-01",
+                "2021-04-01",
+                "2021-02-01",
+                "2021-01-01",
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.deleteRetentionPolicy.allowPermanentDelete",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.days",
+          "defaultPath": "properties.deleteRetentionPolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.enabled",
+          "defaultPath": "properties.deleteRetentionPolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/isVersioningEnabled",
+          "paths": [
+            {
+              "path": "properties.isVersioningEnabled",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.isVersioningEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/lastAccessTimeTrackingPolicy",
+          "paths": [
+            {
+              "path": "properties.lastAccessTimeTrackingPolicy",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.lastAccessTimeTrackingPolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/lastAccessTimeTrackingPolicy.blobType",
+          "paths": [
+            {
+              "path": "properties.lastAccessTimeTrackingPolicy.blobType",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.lastAccessTimeTrackingPolicy.blobType",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/lastAccessTimeTrackingPolicy.blobType[*]",
+          "paths": [
+            {
+              "path": "properties.lastAccessTimeTrackingPolicy.blobType[*]",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.lastAccessTimeTrackingPolicy.blobType[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/lastAccessTimeTrackingPolicy.enable",
+          "paths": [
+            {
+              "path": "properties.lastAccessTimeTrackingPolicy.enable",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.lastAccessTimeTrackingPolicy.enable",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/lastAccessTimeTrackingPolicy.name",
+          "paths": [
+            {
+              "path": "properties.lastAccessTimeTrackingPolicy.name",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.lastAccessTimeTrackingPolicy.name",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/lastAccessTimeTrackingPolicy.trackingGranularityInDays",
+          "paths": [
+            {
+              "path": "properties.lastAccessTimeTrackingPolicy.trackingGranularityInDays",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.lastAccessTimeTrackingPolicy.trackingGranularityInDays",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/restorePolicy",
+          "paths": [
+            {
+              "path": "properties.restorePolicy",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restorePolicy",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/restorePolicy.days",
+          "paths": [
+            {
+              "path": "properties.restorePolicy.days",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restorePolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/restorePolicy.enabled",
+          "paths": [
+            {
+              "path": "properties.restorePolicy.enabled",
+              "apiVersions": [
+                "2019-04-01",
+                "2018-11-01",
+                "2018-07-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restorePolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/restorePolicy.lastEnabledTime",
+          "defaultPath": "properties.restorePolicy.lastEnabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/restorePolicy.minRestoreTime",
+          "defaultPath": "properties.restorePolicy.minRestoreTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/staticWebsite",
+          "defaultPath": "properties.staticWebsite"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/staticWebsite.defaultIndexDocumentPath",
+          "defaultPath": "properties.staticWebsite.defaultIndexDocumentPath"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/staticWebsite.enabled",
+          "defaultPath": "properties.staticWebsite.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/staticWebsite.errorDocument404Path",
+          "defaultPath": "properties.staticWebsite.errorDocument404Path"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/staticWebsite.indexDocument",
+          "defaultPath": "properties.staticWebsite.indexDocument"
+        }
+      ],
+      "resourceType": "storageAccounts/blobServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/allowProtectedAppendWrites",
+          "defaultPath": "properties.allowProtectedAppendWrites"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/allowProtectedAppendWritesAll",
+          "defaultPath": "properties.allowProtectedAppendWritesAll"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/default.allowProtectedAppendWrites",
+          "defaultPath": "properties.allowProtectedAppendWrites"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/default.immutabilityPeriodSinceCreationInDays",
+          "defaultPath": "properties.immutabilityPeriodSinceCreationInDays"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/default.state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/immutabilityPeriodSinceCreationInDays",
+          "defaultPath": "properties.immutabilityPeriodSinceCreationInDays"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "storageAccounts/blobServices/containers/immutabilityPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/dataSourceType",
+          "defaultPath": "properties.dataSourceType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare.authProperties",
+          "defaultPath": "properties.source.authProperties"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare.authProperties.ManagedIdentity",
+          "defaultPath": "properties.source.authProperties"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare.authProperties.type",
+          "defaultPath": "properties.source.authProperties.type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare.connection",
+          "defaultPath": "properties.source.connection"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare.connection.DataShare",
+          "defaultPath": "properties.source.connection"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.DataShare.connection.type",
+          "defaultPath": "properties.source.connection.type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/source.type",
+          "defaultPath": "properties.source.type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/testConnection",
+          "defaultPath": "properties.testConnection"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/connectors/uniqueId",
+          "defaultPath": "properties.uniqueId"
+        }
+      ],
+      "resourceType": "storageAccounts/connectors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/accessPolicies",
+          "defaultPath": "properties.accessPolicies"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/accessPolicies[*]",
+          "defaultPath": "properties.accessPolicies[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/accessPolicies[*].permission",
+          "defaultPath": "properties.accessPolicies[*].permission"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/accessPolicies[*].principalId",
+          "defaultPath": "properties.accessPolicies[*].principalId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/accessPolicies[*].tenantId",
+          "defaultPath": "properties.accessPolicies[*].tenantId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/assets",
+          "defaultPath": "properties.assets"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/assets[*]",
+          "defaultPath": "properties.assets[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/assets[*].assetPath",
+          "defaultPath": "properties.assets[*].assetPath"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/assets[*].displayName",
+          "defaultPath": "properties.assets[*].displayName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/dataShareIdentifier",
+          "defaultPath": "properties.dataShareIdentifier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/dataShareUri",
+          "defaultPath": "properties.dataShareUri"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/dataShares/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "storageAccounts/dataShares"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/creationTime",
+          "defaultPath": "properties.creationTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/keyVaultProperties",
+          "defaultPath": "properties.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/keyVaultProperties.currentVersionedKeyIdentifier",
+          "defaultPath": "properties.keyVaultProperties.currentVersionedKeyIdentifier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/keyVaultProperties.keyUri",
+          "defaultPath": "properties.keyVaultProperties.keyUri"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/keyVaultProperties.lastKeyRotationTimestamp",
+          "defaultPath": "properties.keyVaultProperties.lastKeyRotationTimestamp"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/requireInfrastructureEncryption",
+          "defaultPath": "properties.requireInfrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/encryptionScopes/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "storageAccounts/encryptionScopes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.shareDeleteRetentionPolicy",
+          "defaultPath": "properties.shareDeleteRetentionPolicy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.shareDeleteRetentionPolicy.days",
+          "paths": [
+            {
+              "path": "properties.shareDeleteRetentionPolicy.days",
+              "apiVersions": [
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.shareDeleteRetentionPolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.shareDeleteRetentionPolicy.enabled",
+          "paths": [
+            {
+              "path": "properties.shareDeleteRetentionPolicy.enabled",
+              "apiVersions": [
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.shareDeleteRetentionPolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/default.sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings",
+          "defaultPath": "properties.protocolSettings"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.nfs",
+          "defaultPath": "properties.protocolSettings.nfs"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.nfs.encryptionInTransit",
+          "defaultPath": "properties.protocolSettings.nfs.encryptionInTransit"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.nfs.encryptionInTransit.required",
+          "defaultPath": "properties.protocolSettings.nfs.encryptionInTransit.required"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb",
+          "defaultPath": "properties.protocolSettings.smb"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.authenticationMethods",
+          "paths": [
+            {
+              "path": "properties.protocolSettings.smb.authenticationMethods",
+              "apiVersions": [
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.protocolSettings.smb.authenticationMethods",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.channelEncryption",
+          "paths": [
+            {
+              "path": "properties.protocolSettings.smb.channelEncryption",
+              "apiVersions": [
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.protocolSettings.smb.channelEncryption",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.encryptionInTransit",
+          "defaultPath": "properties.protocolSettings.smb.encryptionInTransit"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.encryptionInTransit.required",
+          "defaultPath": "properties.protocolSettings.smb.encryptionInTransit.required"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.kerberosTicketEncryption",
+          "paths": [
+            {
+              "path": "properties.protocolSettings.smb.kerberosTicketEncryption",
+              "apiVersions": [
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.protocolSettings.smb.kerberosTicketEncryption",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.multichannel",
+          "defaultPath": "properties.protocolSettings.smb.multichannel"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.multichannel.enabled",
+          "defaultPath": "properties.protocolSettings.smb.multichannel.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.versions",
+          "paths": [
+            {
+              "path": "properties.protocolSettings.smb.versions",
+              "apiVersions": [
+                "2020-08-01-preview",
+                "2019-06-01",
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.protocolSettings.smb.versions",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy",
+          "defaultPath": "properties.shareDeleteRetentionPolicy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.allowPermanentDelete",
+          "defaultPath": "properties.shareDeleteRetentionPolicy.allowPermanentDelete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.days",
+          "paths": [
+            {
+              "path": "properties.shareDeleteRetentionPolicy.days",
+              "apiVersions": [
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.shareDeleteRetentionPolicy.days",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shareDeleteRetentionPolicy.enabled",
+          "paths": [
+            {
+              "path": "properties.shareDeleteRetentionPolicy.enabled",
+              "apiVersions": [
+                "2019-04-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.shareDeleteRetentionPolicy.enabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "storageAccounts/fileServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/accessTier",
+          "defaultPath": "properties.accessTier"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/accessTierChangeTime",
+          "defaultPath": "properties.accessTierChangeTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/accessTierStatus",
+          "defaultPath": "properties.accessTierStatus"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/deleted",
+          "defaultPath": "properties.deleted"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/deletedTime",
+          "defaultPath": "properties.deletedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/enabledProtocols",
+          "defaultPath": "properties.enabledProtocols"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/fileSharePaidBursting",
+          "defaultPath": "properties.fileSharePaidBursting"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/fileSharePaidBursting.paidBurstingEnabled",
+          "defaultPath": "properties.fileSharePaidBursting.paidBurstingEnabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/fileSharePaidBursting.paidBurstingMaxBandwidthMibps",
+          "defaultPath": "properties.fileSharePaidBursting.paidBurstingMaxBandwidthMibps"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/fileSharePaidBursting.paidBurstingMaxIops",
+          "defaultPath": "properties.fileSharePaidBursting.paidBurstingMaxIops"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/includedBurstIops",
+          "defaultPath": "properties.includedBurstIops"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/leaseDuration",
+          "defaultPath": "properties.leaseDuration"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/leaseState",
+          "defaultPath": "properties.leaseState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/leaseStatus",
+          "defaultPath": "properties.leaseStatus"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/maxBurstCreditsForIops",
+          "defaultPath": "properties.maxBurstCreditsForIops"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/nextAllowedProvisionedBandwidthDowngradeTime",
+          "defaultPath": "properties.nextAllowedProvisionedBandwidthDowngradeTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/nextAllowedProvisionedIopsDowngradeTime",
+          "defaultPath": "properties.nextAllowedProvisionedIopsDowngradeTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/nextAllowedQuotaDowngradeTime",
+          "defaultPath": "properties.nextAllowedQuotaDowngradeTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/provisionedBandwidthMibps",
+          "defaultPath": "properties.provisionedBandwidthMibps"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/provisionedIops",
+          "defaultPath": "properties.provisionedIops"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/remainingRetentionDays",
+          "defaultPath": "properties.remainingRetentionDays"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/rootSquash",
+          "defaultPath": "properties.rootSquash"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/shareQuota",
+          "defaultPath": "properties.shareQuota"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/shareUsageBytes",
+          "defaultPath": "properties.shareUsageBytes"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers",
+          "defaultPath": "properties.signedIdentifiers"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers[*]",
+          "defaultPath": "properties.signedIdentifiers[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers[*].accessPolicy",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers[*].accessPolicy.expiryTime",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy.expiryTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers[*].accessPolicy.permission",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy.permission"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers[*].accessPolicy.startTime",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy.startTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/signedIdentifiers[*].id",
+          "defaultPath": "properties.signedIdentifiers[*].id"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/snapshotTime",
+          "defaultPath": "properties.snapshotTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/fileServices/shares/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "storageAccounts/fileServices/shares"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy",
+          "defaultPath": "properties.policy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.destination",
+          "defaultPath": "properties.policy.destination"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.enabled",
+          "defaultPath": "properties.policy.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules",
+          "defaultPath": "properties.policy.rules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*]",
+          "defaultPath": "properties.policy.rules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition",
+          "defaultPath": "properties.policy.rules[*].definition"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters",
+          "defaultPath": "properties.policy.rules[*].definition.filters"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.blobTypes",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobTypes"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.blobTypes[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobTypes[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.creationTime",
+          "defaultPath": "properties.policy.rules[*].definition.filters.creationTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.creationTime.lastNDays",
+          "defaultPath": "properties.policy.rules[*].definition.filters.creationTime.lastNDays"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.excludePrefix",
+          "defaultPath": "properties.policy.rules[*].definition.filters.excludePrefix"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.excludePrefix[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.excludePrefix[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.includeBlobVersions",
+          "defaultPath": "properties.policy.rules[*].definition.filters.includeBlobVersions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.includeDeleted",
+          "defaultPath": "properties.policy.rules[*].definition.filters.includeDeleted"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.includeSnapshots",
+          "defaultPath": "properties.policy.rules[*].definition.filters.includeSnapshots"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.prefixMatch",
+          "defaultPath": "properties.policy.rules[*].definition.filters.prefixMatch"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.filters.prefixMatch[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.prefixMatch[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.format",
+          "defaultPath": "properties.policy.rules[*].definition.format"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.objectType",
+          "defaultPath": "properties.policy.rules[*].definition.objectType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.schedule",
+          "defaultPath": "properties.policy.rules[*].definition.schedule"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.schemaFields",
+          "defaultPath": "properties.policy.rules[*].definition.schemaFields"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].definition.schemaFields[*]",
+          "defaultPath": "properties.policy.rules[*].definition.schemaFields[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].destination",
+          "defaultPath": "properties.policy.rules[*].destination"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].enabled",
+          "defaultPath": "properties.policy.rules[*].enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.rules[*].name",
+          "defaultPath": "properties.policy.rules[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/inventoryPolicies/policy.type",
+          "defaultPath": "properties.policy.type"
+        }
+      ],
+      "resourceType": "storageAccounts/inventoryPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/allowAclAuthorization",
+          "defaultPath": "properties.allowAclAuthorization"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/extendedGroups",
+          "defaultPath": "properties.extendedGroups"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/extendedGroups[*]",
+          "defaultPath": "properties.extendedGroups[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/hasSharedKey",
+          "defaultPath": "properties.hasSharedKey"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/hasSshKey",
+          "defaultPath": "properties.hasSshKey"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/hasSshPassword",
+          "defaultPath": "properties.hasSshPassword"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/homeDirectory",
+          "defaultPath": "properties.homeDirectory"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/isNFSv3Enabled",
+          "defaultPath": "properties.isNFSv3Enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/permissionScopes",
+          "defaultPath": "properties.permissionScopes"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/permissionScopes[*]",
+          "defaultPath": "properties.permissionScopes[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/permissionScopes[*].permissions",
+          "defaultPath": "properties.permissionScopes[*].permissions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/permissionScopes[*].resourceName",
+          "defaultPath": "properties.permissionScopes[*].resourceName"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/permissionScopes[*].service",
+          "defaultPath": "properties.permissionScopes[*].service"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/sid",
+          "defaultPath": "properties.sid"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/sshAuthorizedKeys",
+          "defaultPath": "properties.sshAuthorizedKeys"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/sshAuthorizedKeys[*]",
+          "defaultPath": "properties.sshAuthorizedKeys[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/sshAuthorizedKeys[*].description",
+          "defaultPath": "properties.sshAuthorizedKeys[*].description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/sshAuthorizedKeys[*].key",
+          "defaultPath": "properties.sshAuthorizedKeys[*].key"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/localUsers/userId",
+          "defaultPath": "properties.userId"
+        }
+      ],
+      "resourceType": "storageAccounts/localusers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy",
+          "defaultPath": "properties.policy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules",
+          "defaultPath": "properties.policy.rules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*]",
+          "defaultPath": "properties.policy.rules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition",
+          "defaultPath": "properties.policy.rules[*].definition"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions",
+          "defaultPath": "properties.policy.rules[*].definition.actions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob.delete",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob.delete.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob.tierToArchive",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob.tierToCool",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.snapshot",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.snapshot.delete",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.delete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.actions.snapshot.delete.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.delete.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters",
+          "defaultPath": "properties.policy.rules[*].definition.filters"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobIndexMatch",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobIndexMatch[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobIndexMatch[*].name",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobIndexMatch[*].op",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*].op"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobIndexMatch[*].value",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*].value"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobTypes",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobTypes"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.blobTypes[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobTypes[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.prefixMatch",
+          "defaultPath": "properties.policy.rules[*].definition.filters.prefixMatch"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].definition.filters.prefixMatch[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.prefixMatch[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].enabled",
+          "defaultPath": "properties.policy.rules[*].enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].name",
+          "defaultPath": "properties.policy.rules[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/default.policy.rules[*].type",
+          "defaultPath": "properties.policy.rules[*].type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/lastModifiedTime",
+          "defaultPath": "properties.lastModifiedTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy",
+          "defaultPath": "properties.policy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules",
+          "defaultPath": "properties.policy.rules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*]",
+          "defaultPath": "properties.policy.rules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition",
+          "defaultPath": "properties.policy.rules[*].definition"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions",
+          "defaultPath": "properties.policy.rules[*].definition.actions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.delete",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.delete.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.delete.daysAfterLastAccessTimeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete.daysAfterLastAccessTimeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.delete.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.delete.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.delete.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.enableAutoTierToHotFromCool",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.enableAutoTierToHotFromCool"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToArchive",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterLastAccessTimeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterLastAccessTimeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToArchive.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCold",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCold"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterLastAccessTimeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterLastAccessTimeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCold.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCool",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterLastAccessTimeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterLastAccessTimeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToCool.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToHot",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToHot"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterLastAccessTimeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterLastAccessTimeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterModificationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.baseBlob.tierToHot.daysAfterModificationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.delete",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.delete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.delete.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.delete.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.delete.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.delete.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToArchive",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToArchive"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToArchive.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToArchive.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToArchive.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToArchive.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToCold",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToCold"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToCold.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToCold.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToCold.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToCold.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToCool",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToCool"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToCool.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToCool.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToCool.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToCool.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToHot",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToHot"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToHot.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToHot.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.snapshot.tierToHot.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.snapshot.tierToHot.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.delete",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.delete"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.delete.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.delete.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.delete.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.delete.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToArchive",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToArchive"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToArchive.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToArchive.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToArchive.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToArchive.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToCold",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToCold"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToCold.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToCold.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToCold.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToCold.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToCool",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToCool"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToCool.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToCool.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToCool.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToCool.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToHot",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToHot"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToHot.daysAfterCreationGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToHot.daysAfterCreationGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.actions.version.tierToHot.daysAfterLastTierChangeGreaterThan",
+          "defaultPath": "properties.policy.rules[*].definition.actions.version.tierToHot.daysAfterLastTierChangeGreaterThan"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters",
+          "defaultPath": "properties.policy.rules[*].definition.filters"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobIndexMatch",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobIndexMatch[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobIndexMatch[*].name",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobIndexMatch[*].op",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*].op"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobIndexMatch[*].value",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobIndexMatch[*].value"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobTypes",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobTypes"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.blobTypes[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.blobTypes[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.prefixMatch",
+          "defaultPath": "properties.policy.rules[*].definition.filters.prefixMatch"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].definition.filters.prefixMatch[*]",
+          "defaultPath": "properties.policy.rules[*].definition.filters.prefixMatch[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].enabled",
+          "defaultPath": "properties.policy.rules[*].enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].name",
+          "defaultPath": "properties.policy.rules[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/managementPolicies/policy.rules[*].type",
+          "defaultPath": "properties.policy.rules[*].type"
+        }
+      ],
+      "resourceType": "storageAccounts/managementPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/networkSecurityPerimeter",
+          "defaultPath": "properties.networkSecurityPerimeter"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.location",
+          "defaultPath": "properties.networkSecurityPerimeter.location"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.perimeterGuid",
+          "defaultPath": "properties.networkSecurityPerimeter.perimeterGuid"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile",
+          "defaultPath": "properties.profile"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules",
+          "defaultPath": "properties.profile.accessRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*]",
+          "defaultPath": "properties.profile.accessRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].addressPrefixes",
+          "defaultPath": "properties.profile.accessRules[*].properties.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].addressPrefixes[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].direction",
+          "defaultPath": "properties.profile.accessRules[*].properties.direction"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].fullyQualifiedDomainNames",
+          "defaultPath": "properties.profile.accessRules[*].properties.fullyQualifiedDomainNames"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].fullyQualifiedDomainNames[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.fullyQualifiedDomainNames[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].name",
+          "defaultPath": "properties.profile.accessRules[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].networkSecurityPerimeters",
+          "defaultPath": "properties.profile.accessRules[*].properties.networkSecurityPerimeters"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].networkSecurityPerimeters[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.networkSecurityPerimeters[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].subscriptions",
+          "defaultPath": "properties.profile.accessRules[*].properties.subscriptions"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRules[*].subscriptions[*]",
+          "defaultPath": "properties.profile.accessRules[*].properties.subscriptions[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.accessRulesVersion",
+          "defaultPath": "properties.profile.accessRulesVersion"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.diagnosticSettingsVersion",
+          "defaultPath": "properties.profile.diagnosticSettingsVersion"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.enabledLogCategories",
+          "defaultPath": "properties.profile.enabledLogCategories"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.enabledLogCategories[*]",
+          "defaultPath": "properties.profile.enabledLogCategories[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/profile.name",
+          "defaultPath": "properties.profile.name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningIssues",
+          "defaultPath": "properties.provisioningIssues"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningIssues[*]",
+          "defaultPath": "properties.provisioningIssues[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningIssues[*].description",
+          "defaultPath": "properties.provisioningIssues[*].properties.description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningIssues[*].issueType",
+          "defaultPath": "properties.provisioningIssues[*].properties.issueType"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningIssues[*].name",
+          "defaultPath": "properties.provisioningIssues[*].name"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningIssues[*].severity",
+          "defaultPath": "properties.provisioningIssues[*].properties.severity"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/resourceAssociation",
+          "defaultPath": "properties.resourceAssociation"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/resourceAssociation.accessMode",
+          "defaultPath": "properties.resourceAssociation.accessMode"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/resourceAssociation.name",
+          "defaultPath": "properties.resourceAssociation.name"
+        }
+      ],
+      "resourceType": "storageAccounts/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/destinationAccount",
+          "defaultPath": "properties.destinationAccount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/enabledTime",
+          "defaultPath": "properties.enabledTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/metrics",
+          "defaultPath": "properties.metrics"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/metrics.enabled",
+          "defaultPath": "properties.metrics.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/policyId",
+          "defaultPath": "properties.policyId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/priorityReplication",
+          "defaultPath": "properties.priorityReplication"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/priorityReplication.enabled",
+          "defaultPath": "properties.priorityReplication.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules",
+          "defaultPath": "properties.rules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*]",
+          "defaultPath": "properties.rules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].destinationContainer",
+          "defaultPath": "properties.rules[*].destinationContainer"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].filters",
+          "defaultPath": "properties.rules[*].filters"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].filters.minCreationTime",
+          "defaultPath": "properties.rules[*].filters.minCreationTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].filters.prefixMatch",
+          "defaultPath": "properties.rules[*].filters.prefixMatch"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].filters.prefixMatch[*]",
+          "defaultPath": "properties.rules[*].filters.prefixMatch[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].ruleId",
+          "defaultPath": "properties.rules[*].ruleId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/rules[*].sourceContainer",
+          "defaultPath": "properties.rules[*].sourceContainer"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/sourceAccount",
+          "defaultPath": "properties.sourceAccount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/tagsReplication",
+          "defaultPath": "properties.tagsReplication"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/tagsReplication.enabled",
+          "defaultPath": "properties.tagsReplication.enabled"
+        }
+      ],
+      "resourceType": "storageAccounts/objectReplicationPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "storageAccounts/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/default.cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds"
+        }
+      ],
+      "resourceType": "storageAccounts/queueServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/queues/approximateMessageCount",
+          "defaultPath": "properties.approximateMessageCount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/queueServices/queues/metadata",
+          "defaultPath": "properties.metadata"
+        }
+      ],
+      "resourceType": "storageAccounts/queueServices/queues"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/enabled",
+          "defaultPath": "properties.enabled"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext",
+          "defaultPath": "properties.executionContext"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.target",
+          "defaultPath": "properties.executionContext.target"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.target.excludePrefix",
+          "defaultPath": "properties.executionContext.target.excludePrefix"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.target.excludePrefix[*]",
+          "defaultPath": "properties.executionContext.target.excludePrefix[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.target.prefix",
+          "defaultPath": "properties.executionContext.target.prefix"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.target.prefix[*]",
+          "defaultPath": "properties.executionContext.target.prefix[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger",
+          "defaultPath": "properties.executionContext.trigger"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.parameters",
+          "defaultPath": "properties.executionContext.trigger.parameters"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.parameters.endBy",
+          "defaultPath": "properties.executionContext.trigger.parameters.endBy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.parameters.interval",
+          "defaultPath": "properties.executionContext.trigger.parameters.interval"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.parameters.intervalUnit",
+          "defaultPath": "properties.executionContext.trigger.parameters.intervalUnit"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.parameters.startFrom",
+          "defaultPath": "properties.executionContext.trigger.parameters.startFrom"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.parameters.startOn",
+          "defaultPath": "properties.executionContext.trigger.parameters.startOn"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/executionContext.trigger.type",
+          "defaultPath": "properties.executionContext.trigger.type"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/report",
+          "defaultPath": "properties.report"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/report.prefix",
+          "defaultPath": "properties.report.prefix"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus",
+          "defaultPath": "properties.runStatus"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.finishTime",
+          "defaultPath": "properties.runStatus.finishTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.objectFailedCount",
+          "defaultPath": "properties.runStatus.objectFailedCount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.objectsOperatedOnCount",
+          "defaultPath": "properties.runStatus.objectsOperatedOnCount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.objectsSucceededCount",
+          "defaultPath": "properties.runStatus.objectsSucceededCount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.objectsTargetedCount",
+          "defaultPath": "properties.runStatus.objectsTargetedCount"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.runResult",
+          "defaultPath": "properties.runStatus.runResult"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.runStatusEnum",
+          "defaultPath": "properties.runStatus.runStatusEnum"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.runStatusError",
+          "defaultPath": "properties.runStatus.runStatusError"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.startTime",
+          "defaultPath": "properties.runStatus.startTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.storageAccountId",
+          "defaultPath": "properties.runStatus.storageAccountId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.summaryReportPath",
+          "defaultPath": "properties.runStatus.summaryReportPath"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.taskAssignmentId",
+          "defaultPath": "properties.runStatus.taskAssignmentId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.taskId",
+          "defaultPath": "properties.runStatus.taskId"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/runStatus.taskVersion",
+          "defaultPath": "properties.runStatus.taskVersion"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/taskId",
+          "defaultPath": "properties.taskId"
+        }
+      ],
+      "resourceType": "storageAccounts/storageTaskAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules",
+          "defaultPath": "properties.cors.corsRules"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*]",
+          "defaultPath": "properties.cors.corsRules[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].allowedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].allowedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].allowedMethods",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].allowedMethods[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedMethods[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].allowedOrigins",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].allowedOrigins[*]",
+          "defaultPath": "properties.cors.corsRules[*].allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].exposedHeaders",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].exposedHeaders[*]",
+          "defaultPath": "properties.cors.corsRules[*].exposedHeaders[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/default.cors.corsRules[*].maxAgeInSeconds",
+          "defaultPath": "properties.cors.corsRules[*].maxAgeInSeconds"
+        }
+      ],
+      "resourceType": "storageAccounts/tableServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers",
+          "defaultPath": "properties.signedIdentifiers"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers[*]",
+          "defaultPath": "properties.signedIdentifiers[*]"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers[*].accessPolicy",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers[*].accessPolicy.expiryTime",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy.expiryTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers[*].accessPolicy.permission",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy.permission"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers[*].accessPolicy.startTime",
+          "defaultPath": "properties.signedIdentifiers[*].accessPolicy.startTime"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/signedIdentifiers[*].id",
+          "defaultPath": "properties.signedIdentifiers[*].id"
+        },
+        {
+          "name": "Microsoft.Storage/storageAccounts/tableServices/tables/tableName",
+          "defaultPath": "properties.tableName"
+        }
+      ],
+      "resourceType": "storageAccounts/tableServices/tables"
+    }
+  ]
+}

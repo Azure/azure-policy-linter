@@ -1,0 +1,2020 @@
+{
+  "namespace": "Oracle.Database",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/autonomousDatabases/actualUsedDataStorageSizeInTbs",
+          "defaultPath": "properties.actualUsedDataStorageSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/adminPassword",
+          "defaultPath": "properties.adminPassword"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/allocatedStorageSizeInTbs",
+          "defaultPath": "properties.allocatedStorageSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/apexDetails",
+          "defaultPath": "properties.apexDetails"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/apexDetails.apexVersion",
+          "defaultPath": "properties.apexDetails.apexVersion"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/apexDetails.ordsVersion",
+          "defaultPath": "properties.apexDetails.ordsVersion"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseId",
+          "defaultPath": "properties.autonomousDatabaseId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousMaintenanceScheduleType",
+          "defaultPath": "properties.autonomousMaintenanceScheduleType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/availableUpgradeVersions",
+          "defaultPath": "properties.availableUpgradeVersions"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/availableUpgradeVersions[*]",
+          "defaultPath": "properties.availableUpgradeVersions[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/backupRetentionPeriodInDays",
+          "defaultPath": "properties.backupRetentionPeriodInDays"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/characterSet",
+          "defaultPath": "properties.characterSet"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.cloneType",
+          "defaultPath": "properties.cloneType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.isReconnectCloneEnabled",
+          "defaultPath": "properties.isReconnectCloneEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.isRefreshableClone",
+          "defaultPath": "properties.isRefreshableClone"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.refreshableModel",
+          "defaultPath": "properties.refreshableModel"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.refreshableStatus",
+          "defaultPath": "properties.refreshableStatus"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.sourceId",
+          "defaultPath": "properties.sourceId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/Clone.timeUntilReconnectCloneEnabled",
+          "defaultPath": "properties.timeUntilReconnectCloneEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CloneFromBackupTimestamp.cloneType",
+          "defaultPath": "properties.cloneType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CloneFromBackupTimestamp.source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CloneFromBackupTimestamp.sourceId",
+          "defaultPath": "properties.sourceId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CloneFromBackupTimestamp.timestamp",
+          "defaultPath": "properties.timestamp"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CloneFromBackupTimestamp.useLatestAvailableBackupTimeStamp",
+          "defaultPath": "properties.useLatestAvailableBackupTimeStamp"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/computeCount",
+          "defaultPath": "properties.computeCount"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/computeModel",
+          "defaultPath": "properties.computeModel"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings",
+          "defaultPath": "properties.connectionStrings"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.allConnectionStrings",
+          "defaultPath": "properties.connectionStrings.allConnectionStrings"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.allConnectionStrings.high",
+          "defaultPath": "properties.connectionStrings.allConnectionStrings.high"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.allConnectionStrings.low",
+          "defaultPath": "properties.connectionStrings.allConnectionStrings.low"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.allConnectionStrings.medium",
+          "defaultPath": "properties.connectionStrings.allConnectionStrings.medium"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.dedicated",
+          "defaultPath": "properties.connectionStrings.dedicated"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.high",
+          "defaultPath": "properties.connectionStrings.high"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.low",
+          "defaultPath": "properties.connectionStrings.low"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.medium",
+          "defaultPath": "properties.connectionStrings.medium"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles",
+          "defaultPath": "properties.connectionStrings.profiles"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*]",
+          "defaultPath": "properties.connectionStrings.profiles[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].consumerGroup",
+          "defaultPath": "properties.connectionStrings.profiles[*].consumerGroup"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].displayName",
+          "defaultPath": "properties.connectionStrings.profiles[*].displayName"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].hostFormat",
+          "defaultPath": "properties.connectionStrings.profiles[*].hostFormat"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].isRegional",
+          "defaultPath": "properties.connectionStrings.profiles[*].isRegional"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].protocol",
+          "defaultPath": "properties.connectionStrings.profiles[*].protocol"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].sessionMode",
+          "defaultPath": "properties.connectionStrings.profiles[*].sessionMode"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].syntaxFormat",
+          "defaultPath": "properties.connectionStrings.profiles[*].syntaxFormat"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].tlsAuthentication",
+          "defaultPath": "properties.connectionStrings.profiles[*].tlsAuthentication"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionStrings.profiles[*].value",
+          "defaultPath": "properties.connectionStrings.profiles[*].value"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls",
+          "defaultPath": "properties.connectionUrls"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.apexUrl",
+          "defaultPath": "properties.connectionUrls.apexUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.databaseTransformsUrl",
+          "defaultPath": "properties.connectionUrls.databaseTransformsUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.graphStudioUrl",
+          "defaultPath": "properties.connectionUrls.graphStudioUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.machineLearningNotebookUrl",
+          "defaultPath": "properties.connectionUrls.machineLearningNotebookUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.mongoDbUrl",
+          "defaultPath": "properties.connectionUrls.mongoDbUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.ordsUrl",
+          "defaultPath": "properties.connectionUrls.ordsUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/connectionUrls.sqlDevWebUrl",
+          "defaultPath": "properties.connectionUrls.sqlDevWebUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/cpuCoreCount",
+          "defaultPath": "properties.cpuCoreCount"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CrossRegionDisasterRecovery.isReplicateAutomaticBackups",
+          "defaultPath": "properties.isReplicateAutomaticBackups"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CrossRegionDisasterRecovery.remoteDisasterRecoveryType",
+          "defaultPath": "properties.remoteDisasterRecoveryType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CrossRegionDisasterRecovery.source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CrossRegionDisasterRecovery.sourceId",
+          "defaultPath": "properties.sourceId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CrossRegionDisasterRecovery.sourceLocation",
+          "defaultPath": "properties.sourceLocation"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/CrossRegionDisasterRecovery.sourceOcid",
+          "defaultPath": "properties.sourceOcid"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/customerContacts",
+          "defaultPath": "properties.customerContacts"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/customerContacts[*]",
+          "defaultPath": "properties.customerContacts[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/customerContacts[*].email",
+          "defaultPath": "properties.customerContacts[*].email"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/databaseEdition",
+          "defaultPath": "properties.databaseEdition"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/dataBaseType",
+          "defaultPath": "properties.dataBaseType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/dataSafeStatus",
+          "defaultPath": "properties.dataSafeStatus"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/dataStorageSizeInGbs",
+          "defaultPath": "properties.dataStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/dataStorageSizeInTbs",
+          "defaultPath": "properties.dataStorageSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/dbVersion",
+          "defaultPath": "properties.dbVersion"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/dbWorkload",
+          "defaultPath": "properties.dbWorkload"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/failedDataRecoveryInSeconds",
+          "defaultPath": "properties.failedDataRecoveryInSeconds"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/inMemoryAreaInGbs",
+          "defaultPath": "properties.inMemoryAreaInGbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isAutoScalingEnabled",
+          "defaultPath": "properties.isAutoScalingEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isAutoScalingForStorageEnabled",
+          "defaultPath": "properties.isAutoScalingForStorageEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isLocalDataGuardEnabled",
+          "defaultPath": "properties.isLocalDataGuardEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isMtlsConnectionRequired",
+          "defaultPath": "properties.isMtlsConnectionRequired"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isPreview",
+          "defaultPath": "properties.isPreview"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isPreviewVersionWithServiceTermsAccepted",
+          "defaultPath": "properties.isPreviewVersionWithServiceTermsAccepted"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/isRemoteDataGuardEnabled",
+          "defaultPath": "properties.isRemoteDataGuardEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/licenseModel",
+          "defaultPath": "properties.licenseModel"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localAdgAutoFailoverMaxDataLossLimit",
+          "defaultPath": "properties.localAdgAutoFailoverMaxDataLossLimit"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localDisasterRecoveryType",
+          "defaultPath": "properties.localDisasterRecoveryType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localStandbyDb",
+          "defaultPath": "properties.localStandbyDb"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localStandbyDb.lagTimeInSeconds",
+          "defaultPath": "properties.localStandbyDb.lagTimeInSeconds"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localStandbyDb.lifecycleDetails",
+          "defaultPath": "properties.localStandbyDb.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localStandbyDb.lifecycleState",
+          "defaultPath": "properties.localStandbyDb.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localStandbyDb.timeDataGuardRoleChanged",
+          "defaultPath": "properties.localStandbyDb.timeDataGuardRoleChanged"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/localStandbyDb.timeDisasterRecoveryRoleChanged",
+          "defaultPath": "properties.localStandbyDb.timeDisasterRecoveryRoleChanged"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/longTermBackupSchedule",
+          "defaultPath": "properties.longTermBackupSchedule"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/longTermBackupSchedule.isDisabled",
+          "defaultPath": "properties.longTermBackupSchedule.isDisabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/longTermBackupSchedule.repeatCadence",
+          "defaultPath": "properties.longTermBackupSchedule.repeatCadence"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/longTermBackupSchedule.retentionPeriodInDays",
+          "defaultPath": "properties.longTermBackupSchedule.retentionPeriodInDays"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/longTermBackupSchedule.timeOfBackup",
+          "defaultPath": "properties.longTermBackupSchedule.timeOfBackup"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/memoryPerOracleComputeUnitInGbs",
+          "defaultPath": "properties.memoryPerOracleComputeUnitInGbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/ncharacterSet",
+          "defaultPath": "properties.ncharacterSet"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/nextLongTermBackupTimeStamp",
+          "defaultPath": "properties.nextLongTermBackupTimeStamp"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/ociUrl",
+          "defaultPath": "properties.ociUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/openMode",
+          "defaultPath": "properties.openMode"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/operationsInsightsStatus",
+          "defaultPath": "properties.operationsInsightsStatus"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/peerDbId",
+          "defaultPath": "properties.peerDbId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/peerDbIds",
+          "defaultPath": "properties.peerDbIds"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/peerDbIds[*]",
+          "defaultPath": "properties.peerDbIds[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/permissionLevel",
+          "defaultPath": "properties.permissionLevel"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/privateEndpointIp",
+          "defaultPath": "properties.privateEndpointIp"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/privateEndpointLabel",
+          "defaultPath": "properties.privateEndpointLabel"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/provisionableCpus",
+          "defaultPath": "properties.provisionableCpus"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/provisionableCpus[*]",
+          "defaultPath": "properties.provisionableCpus[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/remoteDisasterRecoveryConfiguration",
+          "defaultPath": "properties.remoteDisasterRecoveryConfiguration"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/remoteDisasterRecoveryConfiguration.disasterRecoveryType",
+          "defaultPath": "properties.remoteDisasterRecoveryConfiguration.disasterRecoveryType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/remoteDisasterRecoveryConfiguration.isReplicateAutomaticBackups",
+          "defaultPath": "properties.remoteDisasterRecoveryConfiguration.isReplicateAutomaticBackups"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/remoteDisasterRecoveryConfiguration.isSnapshotStandby",
+          "defaultPath": "properties.remoteDisasterRecoveryConfiguration.isSnapshotStandby"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/remoteDisasterRecoveryConfiguration.timeSnapshotStandbyEnabledTill",
+          "defaultPath": "properties.remoteDisasterRecoveryConfiguration.timeSnapshotStandbyEnabledTill"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/role",
+          "defaultPath": "properties.role"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperations",
+          "defaultPath": "properties.scheduledOperations"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperations.dayOfWeek",
+          "defaultPath": "properties.scheduledOperations.dayOfWeek"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperations.dayOfWeek.name",
+          "defaultPath": "properties.scheduledOperations.dayOfWeek.name"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperations.scheduledStartTime",
+          "defaultPath": "properties.scheduledOperations.scheduledStartTime"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperations.scheduledStopTime",
+          "defaultPath": "properties.scheduledOperations.scheduledStopTime"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperationsList",
+          "defaultPath": "properties.scheduledOperationsList"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperationsList[*]",
+          "defaultPath": "properties.scheduledOperationsList[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperationsList[*].dayOfWeek",
+          "defaultPath": "properties.scheduledOperationsList[*].dayOfWeek"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperationsList[*].dayOfWeek.name",
+          "defaultPath": "properties.scheduledOperationsList[*].dayOfWeek.name"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperationsList[*].scheduledStartTime",
+          "defaultPath": "properties.scheduledOperationsList[*].scheduledStartTime"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/scheduledOperationsList[*].scheduledStopTime",
+          "defaultPath": "properties.scheduledOperationsList[*].scheduledStopTime"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/serviceConsoleUrl",
+          "defaultPath": "properties.serviceConsoleUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/sqlWebDeveloperUrl",
+          "defaultPath": "properties.sqlWebDeveloperUrl"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/supportedRegionsToCloneTo",
+          "defaultPath": "properties.supportedRegionsToCloneTo"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/supportedRegionsToCloneTo[*]",
+          "defaultPath": "properties.supportedRegionsToCloneTo[*]"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeCreated",
+          "defaultPath": "properties.timeCreated"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeDataGuardRoleChanged",
+          "defaultPath": "properties.timeDataGuardRoleChanged"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeDeletionOfFreeAutonomousDatabase",
+          "defaultPath": "properties.timeDeletionOfFreeAutonomousDatabase"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeDisasterRecoveryRoleChanged",
+          "defaultPath": "properties.timeDisasterRecoveryRoleChanged"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeLocalDataGuardEnabled",
+          "defaultPath": "properties.timeLocalDataGuardEnabled"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeMaintenanceBegin",
+          "defaultPath": "properties.timeMaintenanceBegin"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeMaintenanceEnd",
+          "defaultPath": "properties.timeMaintenanceEnd"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeOfLastFailover",
+          "defaultPath": "properties.timeOfLastFailover"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeOfLastRefresh",
+          "defaultPath": "properties.timeOfLastRefresh"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeOfLastRefreshPoint",
+          "defaultPath": "properties.timeOfLastRefreshPoint"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeOfLastSwitchover",
+          "defaultPath": "properties.timeOfLastSwitchover"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/timeReclamationOfFreeAutonomousDatabase",
+          "defaultPath": "properties.timeReclamationOfFreeAutonomousDatabase"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/usedDataStorageSizeInGbs",
+          "defaultPath": "properties.usedDataStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/usedDataStorageSizeInTbs",
+          "defaultPath": "properties.usedDataStorageSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/vnetId",
+          "defaultPath": "properties.vnetId"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/whitelistedIps",
+          "defaultPath": "properties.whitelistedIps"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/whitelistedIps[*]",
+          "defaultPath": "properties.whitelistedIps[*]"
+        }
+      ],
+      "resourceType": "autonomousDatabases"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/autonomousDatabaseOcid",
+          "defaultPath": "properties.autonomousDatabaseOcid"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/backupType",
+          "defaultPath": "properties.backupType"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/databaseSizeInTbs",
+          "defaultPath": "properties.databaseSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/dbVersion",
+          "defaultPath": "properties.dbVersion"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/isAutomatic",
+          "defaultPath": "properties.isAutomatic"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/isRestorable",
+          "defaultPath": "properties.isRestorable"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/retentionPeriodInDays",
+          "defaultPath": "properties.retentionPeriodInDays"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/sizeInTbs",
+          "defaultPath": "properties.sizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/timeAvailableTil",
+          "defaultPath": "properties.timeAvailableTil"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/timeEnded",
+          "defaultPath": "properties.timeEnded"
+        },
+        {
+          "name": "Oracle.Database/autonomousDatabases/autonomousDatabaseBackups/timeStarted",
+          "defaultPath": "properties.timeStarted"
+        }
+      ],
+      "resourceType": "autonomousDatabases/autonomousDatabaseBackups"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/activatedStorageCount",
+          "defaultPath": "properties.activatedStorageCount"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/additionalStorageCount",
+          "defaultPath": "properties.additionalStorageCount"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/availableStorageSizeInGbs",
+          "defaultPath": "properties.availableStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/computeCount",
+          "defaultPath": "properties.computeCount"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/computeModel",
+          "defaultPath": "properties.computeModel"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/cpuCount",
+          "defaultPath": "properties.cpuCount"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/customerContacts",
+          "defaultPath": "properties.customerContacts"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/customerContacts[*]",
+          "defaultPath": "properties.customerContacts[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/customerContacts[*].email",
+          "defaultPath": "properties.customerContacts[*].email"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/databaseServerType",
+          "defaultPath": "properties.databaseServerType"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/dataStorageSizeInTbs",
+          "defaultPath": "properties.dataStorageSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/dbNodeStorageSizeInGbs",
+          "defaultPath": "properties.dbNodeStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/dbServerVersion",
+          "defaultPath": "properties.dbServerVersion"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/definedFileSystemConfiguration",
+          "defaultPath": "properties.definedFileSystemConfiguration"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/definedFileSystemConfiguration[*]",
+          "defaultPath": "properties.definedFileSystemConfiguration[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/definedFileSystemConfiguration[*].isBackupPartition",
+          "defaultPath": "properties.definedFileSystemConfiguration[*].isBackupPartition"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/definedFileSystemConfiguration[*].isResizable",
+          "defaultPath": "properties.definedFileSystemConfiguration[*].isResizable"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/definedFileSystemConfiguration[*].minSizeGb",
+          "defaultPath": "properties.definedFileSystemConfiguration[*].minSizeGb"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/definedFileSystemConfiguration[*].mountPoint",
+          "defaultPath": "properties.definedFileSystemConfiguration[*].mountPoint"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/estimatedPatchingTime",
+          "defaultPath": "properties.estimatedPatchingTime"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/estimatedPatchingTime.estimatedDbServerPatchingTime",
+          "defaultPath": "properties.estimatedPatchingTime.estimatedDbServerPatchingTime"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/estimatedPatchingTime.estimatedNetworkSwitchesPatchingTime",
+          "defaultPath": "properties.estimatedPatchingTime.estimatedNetworkSwitchesPatchingTime"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/estimatedPatchingTime.estimatedStorageServerPatchingTime",
+          "defaultPath": "properties.estimatedPatchingTime.estimatedStorageServerPatchingTime"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/estimatedPatchingTime.totalEstimatedPatchingTime",
+          "defaultPath": "properties.estimatedPatchingTime.totalEstimatedPatchingTime"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/exascaleConfig",
+          "defaultPath": "properties.exascaleConfig"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/exascaleConfig.availableStorageInGbs",
+          "defaultPath": "properties.exascaleConfig.availableStorageInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/exascaleConfig.totalStorageInGbs",
+          "defaultPath": "properties.exascaleConfig.totalStorageInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/lastMaintenanceRunId",
+          "defaultPath": "properties.lastMaintenanceRunId"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow",
+          "defaultPath": "properties.maintenanceWindow"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.customActionTimeoutInMins",
+          "defaultPath": "properties.maintenanceWindow.customActionTimeoutInMins"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.daysOfWeek",
+          "defaultPath": "properties.maintenanceWindow.daysOfWeek"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.daysOfWeek[*]",
+          "defaultPath": "properties.maintenanceWindow.daysOfWeek[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.daysOfWeek[*].name",
+          "defaultPath": "properties.maintenanceWindow.daysOfWeek[*].name"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.hoursOfDay",
+          "defaultPath": "properties.maintenanceWindow.hoursOfDay"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.hoursOfDay[*]",
+          "defaultPath": "properties.maintenanceWindow.hoursOfDay[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.isCustomActionTimeoutEnabled",
+          "defaultPath": "properties.maintenanceWindow.isCustomActionTimeoutEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.isMonthlyPatchingEnabled",
+          "defaultPath": "properties.maintenanceWindow.isMonthlyPatchingEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.leadTimeInWeeks",
+          "defaultPath": "properties.maintenanceWindow.leadTimeInWeeks"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.months",
+          "defaultPath": "properties.maintenanceWindow.months"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.months[*]",
+          "defaultPath": "properties.maintenanceWindow.months[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.months[*].name",
+          "defaultPath": "properties.maintenanceWindow.months[*].name"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.patchingMode",
+          "defaultPath": "properties.maintenanceWindow.patchingMode"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.preference",
+          "defaultPath": "properties.maintenanceWindow.preference"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.weeksOfMonth",
+          "defaultPath": "properties.maintenanceWindow.weeksOfMonth"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maintenanceWindow.weeksOfMonth[*]",
+          "defaultPath": "properties.maintenanceWindow.weeksOfMonth[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maxCpuCount",
+          "defaultPath": "properties.maxCpuCount"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maxDataStorageInTbs",
+          "defaultPath": "properties.maxDataStorageInTbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maxDbNodeStorageSizeInGbs",
+          "defaultPath": "properties.maxDbNodeStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/maxMemoryInGbs",
+          "defaultPath": "properties.maxMemoryInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/memorySizeInGbs",
+          "defaultPath": "properties.memorySizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/monthlyDbServerVersion",
+          "defaultPath": "properties.monthlyDbServerVersion"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/monthlyStorageServerVersion",
+          "defaultPath": "properties.monthlyStorageServerVersion"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/nextMaintenanceRunId",
+          "defaultPath": "properties.nextMaintenanceRunId"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/ociUrl",
+          "defaultPath": "properties.ociUrl"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/shape",
+          "defaultPath": "properties.shape"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/storageCount",
+          "defaultPath": "properties.storageCount"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/storageServerType",
+          "defaultPath": "properties.storageServerType"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/storageServerVersion",
+          "defaultPath": "properties.storageServerVersion"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/timeCreated",
+          "defaultPath": "properties.timeCreated"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/totalStorageSizeInGbs",
+          "defaultPath": "properties.totalStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Oracle.Database/cloudExadataInfrastructures/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "cloudExadataInfrastructures"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/cloudVmClusters/backupSubnetCidr",
+          "defaultPath": "properties.backupSubnetCidr"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/cloudExadataInfrastructureId",
+          "defaultPath": "properties.cloudExadataInfrastructureId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/clusterName",
+          "defaultPath": "properties.clusterName"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/compartmentId",
+          "defaultPath": "properties.compartmentId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/computeModel",
+          "defaultPath": "properties.computeModel"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/computeNodes",
+          "defaultPath": "properties.computeNodes"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/computeNodes[*]",
+          "defaultPath": "properties.computeNodes[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/cpuCoreCount",
+          "defaultPath": "properties.cpuCoreCount"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dataCollectionOptions",
+          "defaultPath": "properties.dataCollectionOptions"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dataCollectionOptions.isDiagnosticsEventsEnabled",
+          "defaultPath": "properties.dataCollectionOptions.isDiagnosticsEventsEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dataCollectionOptions.isHealthMonitoringEnabled",
+          "defaultPath": "properties.dataCollectionOptions.isHealthMonitoringEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dataCollectionOptions.isIncidentLogsEnabled",
+          "defaultPath": "properties.dataCollectionOptions.isIncidentLogsEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dataStoragePercentage",
+          "defaultPath": "properties.dataStoragePercentage"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dataStorageSizeInTbs",
+          "defaultPath": "properties.dataStorageSizeInTbs"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dbNodeStorageSizeInGbs",
+          "defaultPath": "properties.dbNodeStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dbServers",
+          "defaultPath": "properties.dbServers"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/dbServers[*]",
+          "defaultPath": "properties.dbServers[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/diskRedundancy",
+          "defaultPath": "properties.diskRedundancy"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/domain",
+          "defaultPath": "properties.domain"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/exascaleDbStorageVaultId",
+          "defaultPath": "properties.exascaleDbStorageVaultId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/fileSystemConfigurationDetails",
+          "defaultPath": "properties.fileSystemConfigurationDetails"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/fileSystemConfigurationDetails[*]",
+          "defaultPath": "properties.fileSystemConfigurationDetails[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/fileSystemConfigurationDetails[*].fileSystemSizeGb",
+          "defaultPath": "properties.fileSystemConfigurationDetails[*].fileSystemSizeGb"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/fileSystemConfigurationDetails[*].mountPoint",
+          "defaultPath": "properties.fileSystemConfigurationDetails[*].mountPoint"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/giVersion",
+          "defaultPath": "properties.giVersion"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/hostname",
+          "defaultPath": "properties.hostname"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache",
+          "defaultPath": "properties.iormConfigCache"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.dbPlans",
+          "defaultPath": "properties.iormConfigCache.dbPlans"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.dbPlans[*]",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.dbPlans[*].dbName",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*].dbName"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.dbPlans[*].flashCacheLimit",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*].flashCacheLimit"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.dbPlans[*].share",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*].share"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.lifecycleDetails",
+          "defaultPath": "properties.iormConfigCache.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.lifecycleState",
+          "defaultPath": "properties.iormConfigCache.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/iormConfigCache.objective",
+          "defaultPath": "properties.iormConfigCache.objective"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/isLocalBackupEnabled",
+          "defaultPath": "properties.isLocalBackupEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/isSparseDiskgroupEnabled",
+          "defaultPath": "properties.isSparseDiskgroupEnabled"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/lastUpdateHistoryEntryId",
+          "defaultPath": "properties.lastUpdateHistoryEntryId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/licenseModel",
+          "defaultPath": "properties.licenseModel"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/listenerPort",
+          "defaultPath": "properties.listenerPort"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/memorySizeInGbs",
+          "defaultPath": "properties.memorySizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nodeCount",
+          "defaultPath": "properties.nodeCount"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgCidrs",
+          "defaultPath": "properties.nsgCidrs"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgCidrs[*]",
+          "defaultPath": "properties.nsgCidrs[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgCidrs[*].destinationPortRange",
+          "defaultPath": "properties.nsgCidrs[*].destinationPortRange"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgCidrs[*].destinationPortRange.max",
+          "defaultPath": "properties.nsgCidrs[*].destinationPortRange.max"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgCidrs[*].destinationPortRange.min",
+          "defaultPath": "properties.nsgCidrs[*].destinationPortRange.min"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgCidrs[*].source",
+          "defaultPath": "properties.nsgCidrs[*].source"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/nsgUrl",
+          "defaultPath": "properties.nsgUrl"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/ociUrl",
+          "defaultPath": "properties.ociUrl"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/ocpuCount",
+          "defaultPath": "properties.ocpuCount"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/scanDnsName",
+          "defaultPath": "properties.scanDnsName"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/scanDnsRecordId",
+          "defaultPath": "properties.scanDnsRecordId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/scanIpIds",
+          "defaultPath": "properties.scanIpIds"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/scanIpIds[*]",
+          "defaultPath": "properties.scanIpIds[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/scanListenerPortTcp",
+          "defaultPath": "properties.scanListenerPortTcp"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/scanListenerPortTcpSsl",
+          "defaultPath": "properties.scanListenerPortTcpSsl"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/shape",
+          "defaultPath": "properties.shape"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/sshPublicKeys",
+          "defaultPath": "properties.sshPublicKeys"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/sshPublicKeys[*]",
+          "defaultPath": "properties.sshPublicKeys[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/storageManagementType",
+          "defaultPath": "properties.storageManagementType"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/storageSizeInGbs",
+          "defaultPath": "properties.storageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/subnetOcid",
+          "defaultPath": "properties.subnetOcid"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/systemVersion",
+          "defaultPath": "properties.systemVersion"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/timeCreated",
+          "defaultPath": "properties.timeCreated"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/timeZone",
+          "defaultPath": "properties.timeZone"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/vipIds",
+          "defaultPath": "properties.vipIds"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/vipIds[*]",
+          "defaultPath": "properties.vipIds[*]"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/vnetId",
+          "defaultPath": "properties.vnetId"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/zoneId",
+          "defaultPath": "properties.zoneId"
+        }
+      ],
+      "resourceType": "cloudVmClusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/domain",
+          "defaultPath": "properties.domain"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/ipAddress",
+          "defaultPath": "properties.ipAddress"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/timeAssigned",
+          "defaultPath": "properties.timeAssigned"
+        },
+        {
+          "name": "Oracle.Database/cloudVmClusters/virtualNetworkAddresses/vmOcid",
+          "defaultPath": "properties.vmOcid"
+        }
+      ],
+      "resourceType": "cloudVmClusters/virtualNetworkAddresses"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/dbSystems/adminPassword",
+          "defaultPath": "properties.adminPassword"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/clusterName",
+          "defaultPath": "properties.clusterName"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/computeCount",
+          "defaultPath": "properties.computeCount"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/computeModel",
+          "defaultPath": "properties.computeModel"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/cpuCoreCount",
+          "defaultPath": "properties.cpuCoreCount"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/databaseEdition",
+          "defaultPath": "properties.databaseEdition"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/dataStorageSizeInGbs",
+          "defaultPath": "properties.dataStorageSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/dbSystemOptions",
+          "defaultPath": "properties.dbSystemOptions"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/dbSystemOptions.storageManagement",
+          "defaultPath": "properties.dbSystemOptions.storageManagement"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/dbVersion",
+          "defaultPath": "properties.dbVersion"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/diskRedundancy",
+          "defaultPath": "properties.diskRedundancy"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/domain",
+          "defaultPath": "properties.domain"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/gridImageOcid",
+          "defaultPath": "properties.gridImageOcid"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/hostname",
+          "defaultPath": "properties.hostname"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/initialDataStorageSizeInGb",
+          "defaultPath": "properties.initialDataStorageSizeInGb"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/licenseModel",
+          "defaultPath": "properties.licenseModel"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/listenerPort",
+          "defaultPath": "properties.listenerPort"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/memorySizeInGbs",
+          "defaultPath": "properties.memorySizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/networkAnchorId",
+          "defaultPath": "properties.networkAnchorId"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/nodeCount",
+          "defaultPath": "properties.nodeCount"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/None.adminPassword",
+          "defaultPath": "properties.adminPassword"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/None.databaseEdition",
+          "defaultPath": "properties.databaseEdition"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/None.dbVersion",
+          "defaultPath": "properties.dbVersion"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/None.pdbName",
+          "defaultPath": "properties.pdbName"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/ociUrl",
+          "defaultPath": "properties.ociUrl"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/pdbName",
+          "defaultPath": "properties.pdbName"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/resourceAnchorId",
+          "defaultPath": "properties.resourceAnchorId"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/scanDnsName",
+          "defaultPath": "properties.scanDnsName"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/scanIps",
+          "defaultPath": "properties.scanIps"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/scanIps[*]",
+          "defaultPath": "properties.scanIps[*]"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/shape",
+          "defaultPath": "properties.shape"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/sshPublicKeys",
+          "defaultPath": "properties.sshPublicKeys"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/sshPublicKeys[*]",
+          "defaultPath": "properties.sshPublicKeys[*]"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/storageVolumePerformanceMode",
+          "defaultPath": "properties.storageVolumePerformanceMode"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/timeZone",
+          "defaultPath": "properties.timeZone"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/version",
+          "defaultPath": "properties.version"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Oracle.Database/dbSystems/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "dbSystems"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/exadbVmClusters/backupSubnetCidr",
+          "defaultPath": "properties.backupSubnetCidr"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/backupSubnetOcid",
+          "defaultPath": "properties.backupSubnetOcid"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/clusterName",
+          "defaultPath": "properties.clusterName"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/dataCollectionOptions",
+          "defaultPath": "properties.dataCollectionOptions"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/dataCollectionOptions.isDiagnosticsEventsEnabled",
+          "defaultPath": "properties.dataCollectionOptions.isDiagnosticsEventsEnabled"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/dataCollectionOptions.isHealthMonitoringEnabled",
+          "defaultPath": "properties.dataCollectionOptions.isHealthMonitoringEnabled"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/dataCollectionOptions.isIncidentLogsEnabled",
+          "defaultPath": "properties.dataCollectionOptions.isIncidentLogsEnabled"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/domain",
+          "defaultPath": "properties.domain"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/enabledEcpuCount",
+          "defaultPath": "properties.enabledEcpuCount"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/exascaleDbStorageVaultId",
+          "defaultPath": "properties.exascaleDbStorageVaultId"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/giVersion",
+          "defaultPath": "properties.giVersion"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/gridImageOcid",
+          "defaultPath": "properties.gridImageOcid"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/gridImageType",
+          "defaultPath": "properties.gridImageType"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/hostname",
+          "defaultPath": "properties.hostname"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache",
+          "defaultPath": "properties.iormConfigCache"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.dbPlans",
+          "defaultPath": "properties.iormConfigCache.dbPlans"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.dbPlans[*]",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*]"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.dbPlans[*].dbName",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*].dbName"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.dbPlans[*].flashCacheLimit",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*].flashCacheLimit"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.dbPlans[*].share",
+          "defaultPath": "properties.iormConfigCache.dbPlans[*].share"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.lifecycleDetails",
+          "defaultPath": "properties.iormConfigCache.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.lifecycleState",
+          "defaultPath": "properties.iormConfigCache.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/iormConfigCache.objective",
+          "defaultPath": "properties.iormConfigCache.objective"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/licenseModel",
+          "defaultPath": "properties.licenseModel"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/listenerPort",
+          "defaultPath": "properties.listenerPort"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/memorySizeInGbs",
+          "defaultPath": "properties.memorySizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nodeCount",
+          "defaultPath": "properties.nodeCount"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgCidrs",
+          "defaultPath": "properties.nsgCidrs"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgCidrs[*]",
+          "defaultPath": "properties.nsgCidrs[*]"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgCidrs[*].destinationPortRange",
+          "defaultPath": "properties.nsgCidrs[*].destinationPortRange"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgCidrs[*].destinationPortRange.max",
+          "defaultPath": "properties.nsgCidrs[*].destinationPortRange.max"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgCidrs[*].destinationPortRange.min",
+          "defaultPath": "properties.nsgCidrs[*].destinationPortRange.min"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgCidrs[*].source",
+          "defaultPath": "properties.nsgCidrs[*].source"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/nsgUrl",
+          "defaultPath": "properties.nsgUrl"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/ociUrl",
+          "defaultPath": "properties.ociUrl"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/privateZoneOcid",
+          "defaultPath": "properties.privateZoneOcid"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/scanDnsName",
+          "defaultPath": "properties.scanDnsName"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/scanDnsRecordId",
+          "defaultPath": "properties.scanDnsRecordId"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/scanIpIds",
+          "defaultPath": "properties.scanIpIds"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/scanIpIds[*]",
+          "defaultPath": "properties.scanIpIds[*]"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/scanListenerPortTcp",
+          "defaultPath": "properties.scanListenerPortTcp"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/scanListenerPortTcpSsl",
+          "defaultPath": "properties.scanListenerPortTcpSsl"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/shape",
+          "defaultPath": "properties.shape"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/shapeAttribute",
+          "defaultPath": "properties.shapeAttribute"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/snapshotFileSystemStorage",
+          "defaultPath": "properties.snapshotFileSystemStorage"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/snapshotFileSystemStorage.totalSizeInGbs",
+          "defaultPath": "properties.snapshotFileSystemStorage.totalSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/sshPublicKeys",
+          "defaultPath": "properties.sshPublicKeys"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/sshPublicKeys[*]",
+          "defaultPath": "properties.sshPublicKeys[*]"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/subnetOcid",
+          "defaultPath": "properties.subnetOcid"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/systemVersion",
+          "defaultPath": "properties.systemVersion"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/timeZone",
+          "defaultPath": "properties.timeZone"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/totalEcpuCount",
+          "defaultPath": "properties.totalEcpuCount"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/totalFileSystemStorage",
+          "defaultPath": "properties.totalFileSystemStorage"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/totalFileSystemStorage.totalSizeInGbs",
+          "defaultPath": "properties.totalFileSystemStorage.totalSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/vipIds",
+          "defaultPath": "properties.vipIds"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/vipIds[*]",
+          "defaultPath": "properties.vipIds[*]"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/vmFileSystemStorage",
+          "defaultPath": "properties.vmFileSystemStorage"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/vmFileSystemStorage.totalSizeInGbs",
+          "defaultPath": "properties.vmFileSystemStorage.totalSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/vnetId",
+          "defaultPath": "properties.vnetId"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/zoneOcid",
+          "defaultPath": "properties.zoneOcid"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Oracle.Database/exadbVmClusters/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "exadbVmClusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/additionalFlashCacheInPercent",
+          "defaultPath": "properties.additionalFlashCacheInPercent"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/attachedShapeAttributes",
+          "defaultPath": "properties.attachedShapeAttributes"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/attachedShapeAttributes[*]",
+          "defaultPath": "properties.attachedShapeAttributes[*]"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/exadataInfrastructureId",
+          "defaultPath": "properties.exadataInfrastructureId"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/highCapacityDatabaseStorage",
+          "defaultPath": "properties.highCapacityDatabaseStorage"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/highCapacityDatabaseStorage.availableSizeInGbs",
+          "defaultPath": "properties.highCapacityDatabaseStorage.availableSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/highCapacityDatabaseStorage.totalSizeInGbs",
+          "defaultPath": "properties.highCapacityDatabaseStorage.totalSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/highCapacityDatabaseStorageInput",
+          "defaultPath": "properties.highCapacityDatabaseStorageInput"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/highCapacityDatabaseStorageInput.totalSizeInGbs",
+          "defaultPath": "properties.highCapacityDatabaseStorageInput.totalSizeInGbs"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/lifecycleDetails",
+          "defaultPath": "properties.lifecycleDetails"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/lifecycleState",
+          "defaultPath": "properties.lifecycleState"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/ocid",
+          "defaultPath": "properties.ocid"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/ociUrl",
+          "defaultPath": "properties.ociUrl"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/timeZone",
+          "defaultPath": "properties.timeZone"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/vmClusterCount",
+          "defaultPath": "properties.vmClusterCount"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Oracle.Database/exascaleDbStorageVaults/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "exascaleDbStorageVaults"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/networkAnchors/cidrBlock",
+          "defaultPath": "properties.cidrBlock"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingEndpointIpAddress",
+          "defaultPath": "properties.dnsForwardingEndpointIpAddress"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingEndpointNsgRulesUrl",
+          "defaultPath": "properties.dnsForwardingEndpointNsgRulesUrl"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingRules",
+          "defaultPath": "properties.dnsForwardingRules"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingRules[*]",
+          "defaultPath": "properties.dnsForwardingRules[*]"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingRules[*].domainNames",
+          "defaultPath": "properties.dnsForwardingRules[*].domainNames"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingRules[*].forwardingIpAddress",
+          "defaultPath": "properties.dnsForwardingRules[*].forwardingIpAddress"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsForwardingRulesUrl",
+          "defaultPath": "properties.dnsForwardingRulesUrl"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsListeningEndpointAllowedCidrs",
+          "defaultPath": "properties.dnsListeningEndpointAllowedCidrs"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsListeningEndpointIpAddress",
+          "defaultPath": "properties.dnsListeningEndpointIpAddress"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/dnsListeningEndpointNsgRulesUrl",
+          "defaultPath": "properties.dnsListeningEndpointNsgRulesUrl"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/isOracleDnsForwardingEndpointEnabled",
+          "defaultPath": "properties.isOracleDnsForwardingEndpointEnabled"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/isOracleDnsListeningEndpointEnabled",
+          "defaultPath": "properties.isOracleDnsListeningEndpointEnabled"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/isOracleToAzureDnsZoneSyncEnabled",
+          "defaultPath": "properties.isOracleToAzureDnsZoneSyncEnabled"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/ociBackupCidrBlock",
+          "defaultPath": "properties.ociBackupCidrBlock"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/ociSubnetId",
+          "defaultPath": "properties.ociSubnetId"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/ociVcnDnsLabel",
+          "defaultPath": "properties.ociVcnDnsLabel"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/ociVcnId",
+          "defaultPath": "properties.ociVcnId"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/resourceAnchorId",
+          "defaultPath": "properties.resourceAnchorId"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/subnetId",
+          "defaultPath": "properties.subnetId"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/vnetId",
+          "defaultPath": "properties.vnetId"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/zones",
+          "defaultPath": "zones"
+        },
+        {
+          "name": "Oracle.Database/networkAnchors/zones[*]",
+          "defaultPath": "zones[*]"
+        }
+      ],
+      "resourceType": "networkAnchors"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/oracleSubscriptions/addSubscriptionOperationState",
+          "defaultPath": "properties.addSubscriptionOperationState"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/azureSubscriptionIds",
+          "defaultPath": "properties.azureSubscriptionIds"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/azureSubscriptionIds[*]",
+          "defaultPath": "properties.azureSubscriptionIds[*]"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/cloudAccountId",
+          "defaultPath": "properties.cloudAccountId"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/cloudAccountState",
+          "defaultPath": "properties.cloudAccountState"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/intent",
+          "defaultPath": "properties.intent"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/lastOperationStatusDetail",
+          "defaultPath": "properties.lastOperationStatusDetail"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/productCode",
+          "defaultPath": "properties.productCode"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/saasSubscriptionId",
+          "defaultPath": "properties.saasSubscriptionId"
+        },
+        {
+          "name": "Oracle.Database/oracleSubscriptions/termUnit",
+          "defaultPath": "properties.termUnit"
+        }
+      ],
+      "resourceType": "oracleSubscriptions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Oracle.Database/resourceAnchors/linkedCompartmentId",
+          "defaultPath": "properties.linkedCompartmentId"
+        },
+        {
+          "name": "Oracle.Database/resourceAnchors/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "resourceAnchors"
+    }
+  ]
+}

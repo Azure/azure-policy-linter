@@ -1,0 +1,117 @@
+{
+  "namespace": "Microsoft.Cache",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/asyncOperations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/migratedAcrDnsRecords"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Redis"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "redis/accessPolicies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "redis/accessPolicyAssignments"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Redis/EventGridFilters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Redis/firewallrules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "redis/linkedservers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "redis/patchSchedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Redis/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Redis/privateEndpointConnectionProxies/validate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Redis/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Redis/privateLinkResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "redisEnterprise"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "redisEnterprise/databases"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "redisEnterprise/migrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RedisEnterprise/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RedisEnterprise/privateEndpointConnectionProxies/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RedisEnterprise/privateEndpointConnectionProxies/validate"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RedisEnterprise/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RedisEnterprise/privateEndpointConnections/operationresults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RedisEnterprise/privateLinkResources"
+    }
+  ]
+}

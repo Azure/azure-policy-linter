@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.PowerBI",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "privateLinkServicesForPowerBI"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "privateLinkServicesForPowerBI/operationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "tenants"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "tenants/workspaces"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "workspaceCollections"
+    }
+  ]
+}

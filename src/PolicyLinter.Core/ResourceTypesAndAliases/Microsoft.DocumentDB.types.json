@@ -1,0 +1,325 @@
+{
+  "namespace": "Microsoft.DocumentDB",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "cassandraClusters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "cassandraClusters/dataCenters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "databaseAccountNames"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "databaseAccounts"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/collections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/collections/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/containers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/containers/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/graphs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/graphs/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/databases/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/keyspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/keyspaces/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/keyspaces/tables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/keyspaces/tables/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/tables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/apis/tables/settings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/cassandraKeyspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/cassandraKeyspaces/tables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/cassandraKeyspaces/tables/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/cassandraKeyspaces/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/cassandraKeyspaces/views"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/cassandraKeyspaces/views/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/copyJobs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/dataTransferJobs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "databaseAccounts/encryptionScopes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/graphs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/gremlinDatabases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/gremlinDatabases/graphs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/gremlinDatabases/graphs/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/gremlinDatabases/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/mongodbDatabases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/mongodbDatabases/collections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/mongodbDatabases/collections/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/mongodbDatabases/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/mongodbRoleDefinitions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/mongodbUserDefinitions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/notebookWorkspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/services"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/clientEncryptionKeys"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/containers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/containers/storedProcedures"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/containers/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/containers/triggers"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/containers/userDefinedFunctions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlDatabases/throughputSettings"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlRoleAssignments"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/sqlRoleDefinitions"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/tables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "databaseAccounts/tables/throughputSettings"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "fleets"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "fleets/fleetAnalytics"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "fleets/fleetspaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "fleets/fleetspaces/fleetspaceAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "garnetClusters"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkMongoClusterNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/deleteVirtualNetworkOrSubnets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/mongoClusterAzureAsyncOperation"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/mongoClusterOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/notifyNetworkSecurityPerimeterUpdatesAvailable"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/restorableDatabaseAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/softDeletedDatabaseAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "managedResources"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "mongoClusters"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "mongoClusters/firewallRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "mongoClusters/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "mongoClusters/users"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "restorableDatabaseAccounts"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "throughputPools"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "throughputPools/throughputPoolAccounts"
+    }
+  ]
+}

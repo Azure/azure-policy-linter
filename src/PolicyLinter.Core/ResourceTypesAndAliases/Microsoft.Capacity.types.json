@@ -1,0 +1,157 @@
+{
+  "namespace": "Microsoft.Capacity",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "appliedReservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "autoQuotaIncrease"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "calculateExchange"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "calculatePrice"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "calculatePurchasePrice"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "catalogs"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkBenefitScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkOffers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkPurchaseStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "commercialReservationOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "exchange"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "getVMFamiliesEnrollmentStateForAQM"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "listbenefits"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "listSkus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "ownReservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "placePurchaseOrder"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/availableScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/calculateRefund"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/changeDirectory"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/merge"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/reservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/reservations/availableScopes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/reservations/revisions"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/return"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/split"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservationOrders/swap"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "reservations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceProviders"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceProviders/locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceProviders/locations/serviceLimits"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceProviders/locations/serviceLimitsRequests"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "updateVMFamiliesEnrollmentStateForAQM"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "validateReservationOrder"
+    }
+  ]
+}

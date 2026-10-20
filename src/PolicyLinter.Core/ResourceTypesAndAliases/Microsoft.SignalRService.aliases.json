@@ -1,0 +1,1591 @@
+{
+  "namespace": "Microsoft.SignalRService",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall",
+          "defaultPath": "properties.applicationFirewall"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*]",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtCustomClaimRule",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtCustomClaimRule.claimName",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].claimName"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtCustomClaimRule.maxCount",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].maxCount"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtSignatureRule",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtSignatureRule.maxCount",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].maxCount"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByUserIdRule",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].ThrottleByUserIdRule.maxCount",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].maxCount"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/applicationFirewall.clientConnectionCountRules[*].type",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].type"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/cors",
+          "defaultPath": "properties.cors"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/cors.allowedOrigins",
+          "defaultPath": "properties.cors.allowedOrigins"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/cors.allowedOrigins[*]",
+          "defaultPath": "properties.cors.allowedOrigins[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/disableAadAuth",
+          "defaultPath": "properties.disableAadAuth"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2021-04-01-preview",
+                "2020-07-01-preview",
+                "2020-05-01",
+                "2018-10-01",
+                "2018-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/externalIP",
+          "defaultPath": "properties.externalIP"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/features",
+          "defaultPath": "properties.features"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/features[*]",
+          "defaultPath": "properties.features[*]"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/features[*].flag",
+          "defaultPath": "properties.features[*].flag"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/features[*].value",
+          "defaultPath": "properties.features[*].value"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/hostNamePrefix",
+          "defaultPath": "properties.hostNamePrefix"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/liveTraceConfiguration",
+          "defaultPath": "properties.liveTraceConfiguration"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/liveTraceConfiguration.categories",
+          "defaultPath": "properties.liveTraceConfiguration.categories"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/liveTraceConfiguration.categories[*]",
+          "defaultPath": "properties.liveTraceConfiguration.categories[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/liveTraceConfiguration.categories[*].enabled",
+          "defaultPath": "properties.liveTraceConfiguration.categories[*].enabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/liveTraceConfiguration.categories[*].name",
+          "defaultPath": "properties.liveTraceConfiguration.categories[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/liveTraceConfiguration.enabled",
+          "defaultPath": "properties.liveTraceConfiguration.enabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs",
+          "defaultPath": "properties.networkACLs"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkACLs.defaultAction",
+              "apiVersions": [
+                "2018-10-01",
+                "2018-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkACLs.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.ipRules",
+          "defaultPath": "properties.networkACLs.ipRules"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.ipRules[*]",
+          "defaultPath": "properties.networkACLs.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.ipRules[*].action",
+          "defaultPath": "properties.networkACLs.ipRules[*].action"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.ipRules[*].value",
+          "defaultPath": "properties.networkACLs.ipRules[*].value"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints",
+          "defaultPath": "properties.networkACLs.privateEndpoints"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints[*]",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints[*].allow",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].allow"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints[*].allow[*]",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].allow[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints[*].deny",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].deny"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints[*].deny[*]",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].deny[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.privateEndpoints[*].name",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.publicNetwork",
+          "defaultPath": "properties.networkACLs.publicNetwork"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.publicNetwork.allow",
+          "paths": [
+            {
+              "path": "properties.networkACLs.publicNetwork.allow",
+              "apiVersions": [
+                "2018-10-01",
+                "2018-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkACLs.publicNetwork.allow",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.publicNetwork.allow[*]",
+          "paths": [
+            {
+              "path": "properties.networkACLs.publicNetwork.allow[*]",
+              "apiVersions": [
+                "2018-10-01",
+                "2018-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkACLs.publicNetwork.allow[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.publicNetwork.deny",
+          "defaultPath": "properties.networkACLs.publicNetwork.deny"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/networkACLs.publicNetwork.deny[*]",
+          "defaultPath": "properties.networkACLs.publicNetwork.deny[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-04-01-preview",
+                "2020-07-01-preview",
+                "2020-05-01",
+                "2018-10-01",
+                "2018-03-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/publicPort",
+          "defaultPath": "properties.publicPort"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/regionEndpointEnabled",
+          "defaultPath": "properties.regionEndpointEnabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/resourceLogConfiguration",
+          "defaultPath": "properties.resourceLogConfiguration"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/resourceLogConfiguration.categories",
+          "defaultPath": "properties.resourceLogConfiguration.categories"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/resourceLogConfiguration.categories[*]",
+          "defaultPath": "properties.resourceLogConfiguration.categories[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/resourceLogConfiguration.categories[*].enabled",
+          "defaultPath": "properties.resourceLogConfiguration.categories[*].enabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/resourceLogConfiguration.categories[*].name",
+          "defaultPath": "properties.resourceLogConfiguration.categories[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/resourceStopped",
+          "defaultPath": "properties.resourceStopped"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/serverless",
+          "defaultPath": "properties.serverless"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/serverless.connectionTimeoutInSeconds",
+          "defaultPath": "properties.serverless.connectionTimeoutInSeconds"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/serverPort",
+          "defaultPath": "properties.serverPort"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources",
+          "defaultPath": "properties.sharedPrivateLinkResources"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*]",
+          "defaultPath": "properties.sharedPrivateLinkResources[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].fqdns",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.fqdns"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].fqdns[*]",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].groupId",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].id",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].id"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].name",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].privateLinkResourceId",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].provisioningState",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].requestMessage",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].status",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.status"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData.createdAt",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData.createdBy",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData.createdByType",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/sharedPrivateLinkResources[*].type",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].type"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.SignalRservice/SignalR/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/tls",
+          "defaultPath": "properties.tls"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/tls.clientCertEnabled",
+          "defaultPath": "properties.tls.clientCertEnabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream",
+          "defaultPath": "properties.upstream"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates",
+          "defaultPath": "properties.upstream.templates"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*]",
+          "defaultPath": "properties.upstream.templates[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].auth",
+          "defaultPath": "properties.upstream.templates[*].auth"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].auth.managedIdentity",
+          "defaultPath": "properties.upstream.templates[*].auth.managedIdentity"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].auth.managedIdentity.resource",
+          "defaultPath": "properties.upstream.templates[*].auth.managedIdentity.resource"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].auth.type",
+          "defaultPath": "properties.upstream.templates[*].auth.type"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].categoryPattern",
+          "defaultPath": "properties.upstream.templates[*].categoryPattern"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].eventPattern",
+          "defaultPath": "properties.upstream.templates[*].eventPattern"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].hubPattern",
+          "defaultPath": "properties.upstream.templates[*].hubPattern"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/upstream.templates[*].urlTemplate",
+          "defaultPath": "properties.upstream.templates[*].urlTemplate"
+        },
+        {
+          "name": "Microsoft.SignalRService/SignalR/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "SignalR"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/signalR/customCertificates/keyVaultBaseUri",
+          "defaultPath": "properties.keyVaultBaseUri"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/customCertificates/keyVaultSecretName",
+          "defaultPath": "properties.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/customCertificates/keyVaultSecretVersion",
+          "defaultPath": "properties.keyVaultSecretVersion"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/customCertificates/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "SignalR/customCertificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/signalR/customDomains/customCertificate",
+          "defaultPath": "properties.customCertificate"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/customDomains/customCertificate.id",
+          "defaultPath": "properties.customCertificate.id"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/customDomains/domainName",
+          "defaultPath": "properties.domainName"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/customDomains/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "SignalR/customDomains"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "signalR/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/regionEndpointEnabled",
+          "defaultPath": "properties.regionEndpointEnabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/resourceStopped",
+          "defaultPath": "properties.resourceStopped"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "SignalR/replicas"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/fqdns",
+          "defaultPath": "properties.fqdns"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/fqdns[*]",
+          "defaultPath": "properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/requestMessage",
+          "defaultPath": "properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/replicas/sharedPrivateLinkResources/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "SignalR/replicas/sharedPrivateLinkResources"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/fqdns",
+          "defaultPath": "properties.fqdns"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/fqdns[*]",
+          "defaultPath": "properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/requestMessage",
+          "defaultPath": "properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.SignalRService/signalR/sharedPrivateLinkResources/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "SignalR/sharedPrivateLinkResources"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall",
+          "defaultPath": "properties.applicationFirewall"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*]",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtCustomClaimRule",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtCustomClaimRule.claimName",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].claimName"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtCustomClaimRule.maxCount",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].maxCount"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtSignatureRule",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByJwtSignatureRule.maxCount",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].maxCount"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByUserIdRule",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].ThrottleByUserIdRule.maxCount",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].maxCount"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/applicationFirewall.clientConnectionCountRules[*].type",
+          "defaultPath": "properties.applicationFirewall.clientConnectionCountRules[*].type"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/diagnosticConfiguration",
+          "defaultPath": "properties.diagnosticConfiguration"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/diagnosticConfiguration.enableConnectivityLogs",
+          "defaultPath": "properties.diagnosticConfiguration.enableConnectivityLogs"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/diagnosticConfiguration.enableLiveTrace",
+          "defaultPath": "properties.diagnosticConfiguration.enableLiveTrace"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/diagnosticConfiguration.enableMessagingLogs",
+          "defaultPath": "properties.diagnosticConfiguration.enableMessagingLogs"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/disableAadAuth",
+          "defaultPath": "properties.disableAadAuth"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2021-04-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/eventHandler",
+          "defaultPath": "properties.eventHandler"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/eventHandler.items",
+          "defaultPath": "properties.eventHandler.items"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/externalIP",
+          "defaultPath": "properties.externalIP"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/features",
+          "defaultPath": "properties.features"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/features[*]",
+          "defaultPath": "properties.features[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/features[*].flag",
+          "defaultPath": "properties.features[*].flag"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/features[*].value",
+          "defaultPath": "properties.features[*].value"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hostNamePrefix",
+          "defaultPath": "properties.hostNamePrefix"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/liveTraceConfiguration",
+          "defaultPath": "properties.liveTraceConfiguration"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/liveTraceConfiguration.categories",
+          "defaultPath": "properties.liveTraceConfiguration.categories"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/liveTraceConfiguration.categories[*]",
+          "defaultPath": "properties.liveTraceConfiguration.categories[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/liveTraceConfiguration.categories[*].enabled",
+          "defaultPath": "properties.liveTraceConfiguration.categories[*].enabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/liveTraceConfiguration.categories[*].name",
+          "defaultPath": "properties.liveTraceConfiguration.categories[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/liveTraceConfiguration.enabled",
+          "defaultPath": "properties.liveTraceConfiguration.enabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs",
+          "defaultPath": "properties.networkACLs"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.defaultAction",
+          "defaultPath": "properties.networkACLs.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.ipRules",
+          "defaultPath": "properties.networkACLs.ipRules"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.ipRules[*]",
+          "defaultPath": "properties.networkACLs.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.ipRules[*].action",
+          "defaultPath": "properties.networkACLs.ipRules[*].action"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.ipRules[*].value",
+          "defaultPath": "properties.networkACLs.ipRules[*].value"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints",
+          "defaultPath": "properties.networkACLs.privateEndpoints",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints[*]",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints[*].allow",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].allow",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints[*].allow[*]",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].allow[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints[*].deny",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].deny",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints[*].deny[*]",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].deny[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.privateEndpoints[*].name",
+          "defaultPath": "properties.networkACLs.privateEndpoints[*].name",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.publicNetwork",
+          "defaultPath": "properties.networkACLs.publicNetwork",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.publicNetwork.allow",
+          "defaultPath": "properties.networkACLs.publicNetwork.allow",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.publicNetwork.allow[*]",
+          "defaultPath": "properties.networkACLs.publicNetwork.allow[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.publicNetwork.deny",
+          "defaultPath": "properties.networkACLs.publicNetwork.deny",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/networkACLs.publicNetwork.deny[*]",
+          "defaultPath": "properties.networkACLs.publicNetwork.deny[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/publicPort",
+          "defaultPath": "properties.publicPort"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/regionEndpointEnabled",
+          "defaultPath": "properties.regionEndpointEnabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/resourceLogConfiguration",
+          "defaultPath": "properties.resourceLogConfiguration"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/resourceLogConfiguration.categories",
+          "defaultPath": "properties.resourceLogConfiguration.categories"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/resourceLogConfiguration.categories[*]",
+          "defaultPath": "properties.resourceLogConfiguration.categories[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/resourceLogConfiguration.categories[*].enabled",
+          "defaultPath": "properties.resourceLogConfiguration.categories[*].enabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/resourceLogConfiguration.categories[*].name",
+          "defaultPath": "properties.resourceLogConfiguration.categories[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/resourceStopped",
+          "defaultPath": "properties.resourceStopped"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/serverPort",
+          "defaultPath": "properties.serverPort"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources",
+          "defaultPath": "properties.sharedPrivateLinkResources"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*]",
+          "defaultPath": "properties.sharedPrivateLinkResources[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].fqdns",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.fqdns"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].fqdns[*]",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].groupId",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].id",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].id"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].name",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].name"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].privateLinkResourceId",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].provisioningState",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].requestMessage",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].status",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.status"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData.createdAt",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData.createdBy",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData.createdByType",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources[*].type",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].type"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/socketIO",
+          "defaultPath": "properties.socketIO"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/socketIO.serviceMode",
+          "defaultPath": "properties.socketIO.serviceMode"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/tls",
+          "defaultPath": "properties.tls"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/tls.clientCertEnabled",
+          "defaultPath": "properties.tls.clientCertEnabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/version",
+          "defaultPath": "properties.version"
+        }
+      ],
+      "resourceType": "WebPubSub"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customCertificates/keyVaultBaseUri",
+          "defaultPath": "properties.keyVaultBaseUri"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customCertificates/keyVaultSecretName",
+          "defaultPath": "properties.keyVaultSecretName"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customCertificates/keyVaultSecretVersion",
+          "defaultPath": "properties.keyVaultSecretVersion"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customCertificates/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "WebPubSub/customCertificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customDomains/customCertificate",
+          "defaultPath": "properties.customCertificate"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customDomains/customCertificate.id",
+          "defaultPath": "properties.customCertificate.id"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customDomains/domainName",
+          "defaultPath": "properties.domainName"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/customDomains/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "WebPubSub/customDomains"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/anonymousConnectPolicy",
+          "defaultPath": "properties.anonymousConnectPolicy"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers",
+          "defaultPath": "properties.eventHandlers"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*]",
+          "defaultPath": "properties.eventHandlers[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].auth",
+          "defaultPath": "properties.eventHandlers[*].auth"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].auth.managedIdentity",
+          "defaultPath": "properties.eventHandlers[*].auth.managedIdentity"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].auth.managedIdentity.resource",
+          "defaultPath": "properties.eventHandlers[*].auth.managedIdentity.resource"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].auth.type",
+          "defaultPath": "properties.eventHandlers[*].auth.type"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].systemEvents",
+          "defaultPath": "properties.eventHandlers[*].systemEvents"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].systemEvents[*]",
+          "defaultPath": "properties.eventHandlers[*].systemEvents[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].urlTemplate",
+          "defaultPath": "properties.eventHandlers[*].urlTemplate"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventHandlers[*].userEventPattern",
+          "defaultPath": "properties.eventHandlers[*].userEventPattern"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners",
+          "defaultPath": "properties.eventListeners"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*]",
+          "defaultPath": "properties.eventListeners[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].endpoint",
+          "defaultPath": "properties.eventListeners[*].endpoint"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].endpoint.EventHub",
+          "defaultPath": "properties.eventListeners[*].endpoint"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].endpoint.EventHub.eventHubName",
+          "defaultPath": "properties.eventListeners[*].endpoint.eventHubName"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].endpoint.EventHub.fullyQualifiedNamespace",
+          "defaultPath": "properties.eventListeners[*].endpoint.fullyQualifiedNamespace"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].endpoint.type",
+          "defaultPath": "properties.eventListeners[*].endpoint.type"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].filter",
+          "defaultPath": "properties.eventListeners[*].filter"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].filter.EventName",
+          "defaultPath": "properties.eventListeners[*].filter"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].filter.EventName.systemEvents",
+          "defaultPath": "properties.eventListeners[*].filter.systemEvents"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].filter.EventName.systemEvents[*]",
+          "defaultPath": "properties.eventListeners[*].filter.systemEvents[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].filter.EventName.userEventPattern",
+          "defaultPath": "properties.eventListeners[*].filter.userEventPattern"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/eventListeners[*].filter.type",
+          "defaultPath": "properties.eventListeners[*].filter.type"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/hubs/webSocketKeepAliveIntervalInSeconds",
+          "defaultPath": "properties.webSocketKeepAliveIntervalInSeconds"
+        }
+      ],
+      "resourceType": "WebPubSub/hubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "WebPubSub/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/regionEndpointEnabled",
+          "defaultPath": "properties.regionEndpointEnabled"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/resourceStopped",
+          "defaultPath": "properties.resourceStopped"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "WebPubSub/replicas"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/fqdns",
+          "defaultPath": "properties.fqdns"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/fqdns[*]",
+          "defaultPath": "properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/requestMessage",
+          "defaultPath": "properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/replicas/sharedPrivateLinkResources/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "WebPubSub/replicas/sharedPrivateLinkResources"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/fqdns",
+          "defaultPath": "properties.fqdns"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/fqdns[*]",
+          "defaultPath": "properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/requestMessage",
+          "defaultPath": "properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.SignalRService/webPubSub/sharedPrivateLinkResources/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "WebPubSub/sharedPrivateLinkResources"
+    }
+  ]
+}

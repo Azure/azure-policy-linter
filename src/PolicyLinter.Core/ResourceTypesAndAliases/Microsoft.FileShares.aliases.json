@@ -1,0 +1,178 @@
+{
+  "namespace": "Microsoft.FileShares",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.FileShares/fileShares/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/includedBurstIOPerSec",
+          "defaultPath": "properties.includedBurstIOPerSec"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/maxBurstIOPerSecCredits",
+          "defaultPath": "properties.maxBurstIOPerSecCredits"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/mediaTier",
+          "defaultPath": "properties.mediaTier"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/mountName",
+          "defaultPath": "properties.mountName"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/nfsProtocolProperties",
+          "defaultPath": "properties.nfsProtocolProperties"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/nfsProtocolProperties.rootSquash",
+          "defaultPath": "properties.nfsProtocolProperties.rootSquash"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/protocol",
+          "defaultPath": "properties.protocol"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisionedIOPerSec",
+          "defaultPath": "properties.provisionedIOPerSec"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisionedIOPerSecNextAllowedDowngrade",
+          "defaultPath": "properties.provisionedIOPerSecNextAllowedDowngrade"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisionedStorageGiB",
+          "defaultPath": "properties.provisionedStorageGiB"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisionedStorageNextAllowedDowngrade",
+          "defaultPath": "properties.provisionedStorageNextAllowedDowngrade"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisionedThroughputMiBPerSec",
+          "defaultPath": "properties.provisionedThroughputMiBPerSec"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisionedThroughputNextAllowedDowngrade",
+          "defaultPath": "properties.provisionedThroughputNextAllowedDowngrade"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/publicAccessProperties",
+          "defaultPath": "properties.publicAccessProperties"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/publicAccessProperties.allowedSubnets",
+          "defaultPath": "properties.publicAccessProperties.allowedSubnets"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/publicAccessProperties.allowedSubnets[*]",
+          "defaultPath": "properties.publicAccessProperties.allowedSubnets[*]"
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.FileShares/fileShares/redundancy",
+          "defaultPath": "properties.redundancy"
+        }
+      ],
+      "resourceType": "fileShares"
+    }
+  ]
+}

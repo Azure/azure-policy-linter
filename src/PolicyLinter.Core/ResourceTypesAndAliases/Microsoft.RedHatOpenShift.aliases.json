@@ -1,0 +1,166 @@
+{
+  "namespace": "Microsoft.RedHatOpenShift",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/apiserverProfile",
+          "defaultPath": "properties.apiserverProfile"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/apiserverProfile.ip",
+          "defaultPath": "properties.apiserverProfile.ip"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/apiserverProfile.url",
+          "defaultPath": "properties.apiserverProfile.url"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/apiserverProfile.visibility",
+          "defaultPath": "properties.apiserverProfile.visibility"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/clusterProfile",
+          "defaultPath": "properties.clusterProfile"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/clusterProfile.domain",
+          "defaultPath": "properties.clusterProfile.domain"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/clusterProfile.fipsValidatedModules",
+          "defaultPath": "properties.clusterProfile.fipsValidatedModules"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/clusterProfile.pullSecret",
+          "defaultPath": "properties.clusterProfile.pullSecret"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/clusterProfile.resourceGroupId",
+          "defaultPath": "properties.clusterProfile.resourceGroupId"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/clusterProfile.version",
+          "defaultPath": "properties.clusterProfile.version"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/consoleProfile",
+          "defaultPath": "properties.consoleProfile"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/consoleProfile.url",
+          "defaultPath": "properties.consoleProfile.url"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/ingressProfiles",
+          "defaultPath": "properties.ingressProfiles"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/ingressProfiles[*]",
+          "defaultPath": "properties.ingressProfiles[*]"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/ingressProfiles[*].ip",
+          "defaultPath": "properties.ingressProfiles[*].ip"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/ingressProfiles[*].name",
+          "defaultPath": "properties.ingressProfiles[*].name"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/ingressProfiles[*].visibility",
+          "defaultPath": "properties.ingressProfiles[*].visibility"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/masterProfile",
+          "defaultPath": "properties.masterProfile"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/masterProfile.diskEncryptionSetId",
+          "defaultPath": "properties.masterProfile.diskEncryptionSetId"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/masterProfile.encryptionAtHost",
+          "defaultPath": "properties.masterProfile.encryptionAtHost"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/masterProfile.subnetId",
+          "defaultPath": "properties.masterProfile.subnetId"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/masterProfile.vmSize",
+          "defaultPath": "properties.masterProfile.vmSize"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/networkProfile.podCidr",
+          "defaultPath": "properties.networkProfile.podCidr"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/networkProfile.serviceCidr",
+          "defaultPath": "properties.networkProfile.serviceCidr"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/networkProfile.softwareDefinedNetwork",
+          "defaultPath": "properties.networkProfile.softwareDefinedNetwork"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/servicePrincipalProfile",
+          "defaultPath": "properties.servicePrincipalProfile"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/servicePrincipalProfile.clientId",
+          "defaultPath": "properties.servicePrincipalProfile.clientId"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/servicePrincipalProfile.clientSecret",
+          "defaultPath": "properties.servicePrincipalProfile.clientSecret"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles",
+          "defaultPath": "properties.workerProfiles"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*]",
+          "defaultPath": "properties.workerProfiles[*]"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].count",
+          "defaultPath": "properties.workerProfiles[*].count"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].diskEncryptionSetId",
+          "defaultPath": "properties.workerProfiles[*].diskEncryptionSetId"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].diskSizeGB",
+          "defaultPath": "properties.workerProfiles[*].diskSizeGB"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].encryptionAtHost",
+          "defaultPath": "properties.workerProfiles[*].encryptionAtHost"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].name",
+          "defaultPath": "properties.workerProfiles[*].name"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].subnetId",
+          "defaultPath": "properties.workerProfiles[*].subnetId"
+        },
+        {
+          "name": "Microsoft.RedHatOpenShift/openShiftClusters/workerProfiles[*].vmSize",
+          "defaultPath": "properties.workerProfiles[*].vmSize"
+        }
+      ],
+      "resourceType": "OpenShiftClusters"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "namespace": "Microsoft.DataMigration",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "DatabaseMigrations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "databaseMigrationServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "databaseMigrationServices/migrations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "databaseMigrationServices/migrations/databaseStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "databaseMigrationServices/migrations/schemaStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "databaseMigrationServices/migrations/tableStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/migrationOperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/migrationServiceOperationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationTypes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/sqlMigrationServiceOperationResults"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "migrationServices"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "services"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "services/projects"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "services/projects/files"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "services/projects/tasks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "services/serviceTasks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "slots"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "SqlMigrationServices"
+    }
+  ]
+}

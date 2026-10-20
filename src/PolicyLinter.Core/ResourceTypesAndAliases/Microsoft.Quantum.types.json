@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.Quantum",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/CheckNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/Offerings"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "providerAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "suiteOffers"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "Workspaces"
+    }
+  ]
+}

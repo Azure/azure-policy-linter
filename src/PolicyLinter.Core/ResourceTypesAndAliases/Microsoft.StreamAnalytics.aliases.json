@@ -1,0 +1,3264 @@
+{
+  "namespace": "Microsoft.StreamAnalytics",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/capacityAllocated",
+          "defaultPath": "properties.capacityAllocated"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/capacityAssigned",
+          "defaultPath": "properties.capacityAssigned"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/sku.name",
+          "defaultPath": "sku.name"
+        }
+      ],
+      "resourceType": "clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*]",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].groupIds",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].groupIds[*]",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].privateLinkServiceId",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.privateLinkServiceId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/clusters/privateEndpoints/manualPrivateLinkServiceConnections[*].requestMessage",
+          "defaultPath": "properties.manualPrivateLinkServiceConnections[*].properties.requestMessage"
+        }
+      ],
+      "resourceType": "clusters/privateEndpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/cluster",
+          "defaultPath": "properties.cluster"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/cluster.id",
+          "defaultPath": "properties.cluster.id"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/compatibilityLevel",
+          "defaultPath": "properties.compatibilityLevel"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/contentStoragePolicy",
+          "defaultPath": "properties.contentStoragePolicy"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/createdDate",
+          "defaultPath": "properties.createdDate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/dataLocale",
+          "defaultPath": "properties.dataLocale"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/eventsLateArrivalMaxDelayInSeconds",
+          "defaultPath": "properties.eventsLateArrivalMaxDelayInSeconds"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/eventsOutOfOrderMaxDelayInSeconds",
+          "defaultPath": "properties.eventsOutOfOrderMaxDelayInSeconds"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/eventsOutOfOrderPolicy",
+          "defaultPath": "properties.eventsOutOfOrderPolicy"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals",
+          "defaultPath": "properties.externals"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.container",
+          "defaultPath": "properties.externals.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.path",
+          "defaultPath": "properties.externals.path"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.refreshConfiguration",
+          "defaultPath": "properties.externals.refreshConfiguration"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.refreshConfiguration.dateFormat",
+          "defaultPath": "properties.externals.refreshConfiguration.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.refreshConfiguration.pathPattern",
+          "defaultPath": "properties.externals.refreshConfiguration.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.refreshConfiguration.refreshInterval",
+          "defaultPath": "properties.externals.refreshConfiguration.refreshInterval"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.refreshConfiguration.refreshType",
+          "defaultPath": "properties.externals.refreshConfiguration.refreshType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.refreshConfiguration.timeFormat",
+          "defaultPath": "properties.externals.refreshConfiguration.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.storageAccount",
+          "defaultPath": "properties.externals.storageAccount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.storageAccount.accountKey",
+          "defaultPath": "properties.externals.storageAccount.accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.storageAccount.accountName",
+          "defaultPath": "properties.externals.storageAccount.accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/externals.storageAccount.authenticationMode",
+          "defaultPath": "properties.externals.storageAccount.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions",
+          "defaultPath": "properties.functions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*]",
+          "defaultPath": "properties.functions[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.apiKey",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.batchSize",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.endpoint",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs.columnNames",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*]",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].mapTo",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.inputs.name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.outputs",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.outputs[*]",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.outputs[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearning-WebService.outputs[*].name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.apiKey",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.batchSize",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.endpoint",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.inputRequestName",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputRequestName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.inputs",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.inputs[*]",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.inputs[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.inputs[*].mapTo",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.inputs[*].name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.numberOfParallelRequests",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.numberOfParallelRequests"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.outputResponseName",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputResponseName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.outputs",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.outputs[*]",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.outputs[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.outputs[*].mapTo",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-MachineLearningServices.outputs[*].name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-CLRUdf",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-CLRUdf.class",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.class"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-CLRUdf.dllPath",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.dllPath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-CLRUdf.method",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.method"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-CLRUdf.script",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.script"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-CLRUdf.updateMode",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.updateMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-JavascriptUdf",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.Microsoft-StreamAnalytics-JavascriptUdf.script",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.script"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].binding.type",
+          "defaultPath": "properties.functions[*].properties.properties.binding.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].etag",
+          "defaultPath": "properties.functions[*].properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].id",
+          "defaultPath": "properties.functions[*].id"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].inputs",
+          "defaultPath": "properties.functions[*].properties.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].inputs[*]",
+          "defaultPath": "properties.functions[*].properties.properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].inputs[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.inputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].inputs[*].isConfigurationParameter",
+          "defaultPath": "properties.functions[*].properties.properties.inputs[*].isConfigurationParameter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].name",
+          "defaultPath": "properties.functions[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].output",
+          "defaultPath": "properties.functions[*].properties.properties.output"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].output.dataType",
+          "defaultPath": "properties.functions[*].properties.properties.output.dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.apiKey",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.batchSize",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.endpoint",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*]",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].mapTo",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.columnNames[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.inputs.name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.inputs.name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.outputs",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.outputs[*]",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.outputs[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-MachineLearning-WebService.outputs[*].name",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-StreamAnalytics-JavascriptUdf",
+          "defaultPath": "properties.functions[*].properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.Microsoft-StreamAnalytics-JavascriptUdf.script",
+          "defaultPath": "properties.functions[*].properties.properties.binding.properties.script"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.binding.type",
+          "defaultPath": "properties.functions[*].properties.properties.binding.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.inputs",
+          "defaultPath": "properties.functions[*].properties.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.inputs[*]",
+          "defaultPath": "properties.functions[*].properties.properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.inputs[*].dataType",
+          "defaultPath": "properties.functions[*].properties.properties.inputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.inputs[*].isConfigurationParameter",
+          "defaultPath": "properties.functions[*].properties.properties.inputs[*].isConfigurationParameter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.output",
+          "defaultPath": "properties.functions[*].properties.properties.output"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].Scalar.output.dataType",
+          "defaultPath": "properties.functions[*].properties.properties.output.dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions[*].type",
+          "defaultPath": "properties.functions[*].type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs",
+          "defaultPath": "properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*]",
+          "defaultPath": "properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].compression",
+          "defaultPath": "properties.inputs[*].properties.compression"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].compression.type",
+          "defaultPath": "properties.inputs[*].properties.compression.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].diagnostics",
+          "defaultPath": "properties.inputs[*].properties.diagnostics"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].diagnostics.conditions",
+          "defaultPath": "properties.inputs[*].properties.diagnostics.conditions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].diagnostics.conditions[*]",
+          "defaultPath": "properties.inputs[*].properties.diagnostics.conditions[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].diagnostics.conditions[*].code",
+          "defaultPath": "properties.inputs[*].properties.diagnostics.conditions[*].code"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].diagnostics.conditions[*].message",
+          "defaultPath": "properties.inputs[*].properties.diagnostics.conditions[*].message"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].diagnostics.conditions[*].since",
+          "defaultPath": "properties.inputs[*].properties.diagnostics.conditions[*].since"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].etag",
+          "defaultPath": "properties.inputs[*].properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].id",
+          "defaultPath": "properties.inputs[*].id"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].name",
+          "defaultPath": "properties.inputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].partitionKey",
+          "defaultPath": "properties.inputs[*].properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.File",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.File.path",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.path"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.database",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.deltaSnapshotQuery",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.deltaSnapshotQuery"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.fullSnapshotQuery",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.fullSnapshotQuery"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.password",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.refreshRate",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.refreshRate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.refreshType",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.refreshType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.server",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.table",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Sql-Server-Database.user",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.blobName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.blobName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.container",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.dateFormat",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.deltaPathPattern",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.deltaPathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.deltaSnapshotRefreshRate",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.deltaSnapshotRefreshRate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.fullSnapshotRefreshRate",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.fullSnapshotRefreshRate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.pathPattern",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.sourcePartitionCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sourcePartitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.storageAccounts",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*]",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Microsoft-Storage-Blob.timeFormat",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Raw",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Raw.payload",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.payload"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.Raw.payloadUri",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.payloadUri"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Reference.datasource.type",
+          "defaultPath": "properties.inputs[*].properties.datasource.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Avro",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Csv",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Csv.encoding",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Csv.fieldDelimiter",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.fieldDelimiter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.CustomClr",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.CustomClr.serializationClassName",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.serializationClassName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.CustomClr.serializationDllPath",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.serializationDllPath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Delta",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Delta.deltaTablePath",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.deltaTablePath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Delta.partitionColumns",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.partitionColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Delta.partitionColumns[*]",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.partitionColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Json",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Json.encoding",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Json.format",
+          "defaultPath": "properties.inputs[*].properties.serialization.properties.format"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.Parquet",
+          "defaultPath": "properties.inputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].serialization.type",
+          "defaultPath": "properties.inputs[*].properties.serialization.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.GatewayMessageBus",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.GatewayMessageBus.topic",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.topic"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Devices-IotHubs",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Devices-IotHubs.consumerGroupName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Devices-IotHubs.endpoint",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Devices-IotHubs.iotHubNamespace",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.iotHubNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Devices-IotHubs.sharedAccessPolicyKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Devices-IotHubs.sharedAccessPolicyName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.eventTypes",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.eventTypes"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.eventTypes[*]",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.eventTypes[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.schema",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.schema"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*]",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*].accountKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*].accountName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.consumerGroupName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.eventHubName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.partitionCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.prefetchCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.prefetchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.serviceBusNamespace",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.sharedAccessPolicyKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.sharedAccessPolicyName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.subscriber.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.consumerGroupName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.eventHubName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.partitionCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.prefetchCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.prefetchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.consumerGroupName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.eventHubName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.partitionCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.prefetchCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.prefetchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.container",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.dateFormat",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.pathPattern",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.sourcePartitionCount",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.sourcePartitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.storageAccounts",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*]",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountKey",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountName",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Microsoft-Storage-Blob.timeFormat",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Raw",
+          "defaultPath": "properties.inputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Raw.payload",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.payload"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.Raw.payloadUri",
+          "defaultPath": "properties.inputs[*].properties.datasource.properties.payloadUri"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].Stream.datasource.type",
+          "defaultPath": "properties.inputs[*].properties.datasource.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].type",
+          "defaultPath": "properties.inputs[*].type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].watermarkSettings",
+          "defaultPath": "properties.inputs[*].properties.watermarkSettings"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs[*].watermarkSettings.watermarkMode",
+          "defaultPath": "properties.inputs[*].properties.watermarkSettings.watermarkMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobId",
+          "defaultPath": "properties.jobId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobState",
+          "defaultPath": "properties.jobState"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobStorageAccount",
+          "defaultPath": "properties.jobStorageAccount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobStorageAccount.accountKey",
+          "defaultPath": "properties.jobStorageAccount.accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobStorageAccount.accountName",
+          "defaultPath": "properties.jobStorageAccount.accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobStorageAccount.authenticationMode",
+          "defaultPath": "properties.jobStorageAccount.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/jobType",
+          "defaultPath": "properties.jobType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/lastOutputEventTime",
+          "defaultPath": "properties.lastOutputEventTime"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputErrorPolicy",
+          "defaultPath": "properties.outputErrorPolicy"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs",
+          "defaultPath": "properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*]",
+          "defaultPath": "properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.GatewayMessageBus",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.GatewayMessageBus.topic",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.topic"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-AzureFunction",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-AzureFunction.apiKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-AzureFunction.functionAppName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.functionAppName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-AzureFunction.functionName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.functionName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-AzureFunction.maxBatchCount",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.maxBatchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-AzureFunction.maxBatchSize",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.maxBatchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.accountName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.dateFormat",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.filePathPrefix",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.filePathPrefix"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.refreshToken",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.refreshToken"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.tenantId",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.tenantId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.timeFormat",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.tokenUserDisplayName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.tokenUserDisplayName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DataLake-Accounts.tokenUserPrincipalName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.tokenUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.database",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.maxWriterCount",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.maxWriterCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.password",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.server",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.table",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-DBForPostgreSQL-servers-databases.user",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.eventHubName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.partitionCount",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.partitionKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.propertyColumns",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.propertyColumns[*]",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Kusto-clusters-databases",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Kusto-clusters-databases.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Kusto-clusters-databases.cluster",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.cluster"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Kusto-clusters-databases.database",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Kusto-clusters-databases.table",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.eventHubName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.partitionCount",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.partitionKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.propertyColumns",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.propertyColumns[*]",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.propertyColumns",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.propertyColumns[*]",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.queueName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.queueName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.serviceBusNamespace",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.sharedAccessPolicyKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.sharedAccessPolicyName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Queue.systemPropertyColumns",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.systemPropertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.propertyColumns",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.propertyColumns[*]",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.serviceBusNamespace",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.sharedAccessPolicyKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.sharedAccessPolicyName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.systemPropertyColumns",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.systemPropertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-ServiceBus-Topic.topicName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.topicName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.database",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.maxBatchCount",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.maxBatchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.maxWriterCount",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.maxWriterCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.password",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.server",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.table",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-Database.user",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse.database",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse.password",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse.server",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse.table",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Sql-Server-DataWarehouse.user",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.blobPathPrefix",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.blobPathPrefix"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.blobWriteMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.blobWriteMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.container",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.dateFormat",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.pathPattern",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.storageAccounts",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.storageAccounts[*]",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.storageAccounts[*].accountKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.storageAccounts[*].accountName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Blob.timeFormat",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.accountId",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.accountId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.accountKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.collectionNamePattern",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.collectionNamePattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.database",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.documentId",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.documentId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-DocumentDB.partitionKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.accountKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.accountName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.batchSize",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.columnsToRemove",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.columnsToRemove"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.columnsToRemove[*]",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.columnsToRemove[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.partitionKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.rowKey",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.rowKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Microsoft-Storage-Table.table",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.authenticationMode",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.dataset",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.dataset"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.groupId",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.groupId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.groupName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.groupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.refreshToken",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.refreshToken"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.table",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.tokenUserDisplayName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.tokenUserDisplayName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.PowerBI.tokenUserPrincipalName",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.tokenUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Raw",
+          "defaultPath": "properties.outputs[*].properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.Raw.payloadUri",
+          "defaultPath": "properties.outputs[*].properties.datasource.properties.payloadUri"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].datasource.type",
+          "defaultPath": "properties.outputs[*].properties.datasource.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].diagnostics",
+          "defaultPath": "properties.outputs[*].properties.diagnostics"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].diagnostics.conditions",
+          "defaultPath": "properties.outputs[*].properties.diagnostics.conditions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].diagnostics.conditions[*]",
+          "defaultPath": "properties.outputs[*].properties.diagnostics.conditions[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].diagnostics.conditions[*].code",
+          "defaultPath": "properties.outputs[*].properties.diagnostics.conditions[*].code"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].diagnostics.conditions[*].message",
+          "defaultPath": "properties.outputs[*].properties.diagnostics.conditions[*].message"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].diagnostics.conditions[*].since",
+          "defaultPath": "properties.outputs[*].properties.diagnostics.conditions[*].since"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].etag",
+          "defaultPath": "properties.outputs[*].properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].id",
+          "defaultPath": "properties.outputs[*].id"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].lastOutputEventTimestamps",
+          "defaultPath": "properties.outputs[*].properties.lastOutputEventTimestamps"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].lastOutputEventTimestamps[*]",
+          "defaultPath": "properties.outputs[*].properties.lastOutputEventTimestamps[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].lastOutputEventTimestamps[*].lastOutputEventTime",
+          "defaultPath": "properties.outputs[*].properties.lastOutputEventTimestamps[*].lastOutputEventTime"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].lastOutputEventTimestamps[*].lastUpdateTime",
+          "defaultPath": "properties.outputs[*].properties.lastOutputEventTimestamps[*].lastUpdateTime"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].name",
+          "defaultPath": "properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Avro",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Csv",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Csv.encoding",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Csv.fieldDelimiter",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.fieldDelimiter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.CustomClr",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.CustomClr.serializationClassName",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.serializationClassName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.CustomClr.serializationDllPath",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.serializationDllPath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Delta",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Delta.deltaTablePath",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.deltaTablePath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Delta.partitionColumns",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.partitionColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Delta.partitionColumns[*]",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.partitionColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Json",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Json.encoding",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Json.format",
+          "defaultPath": "properties.outputs[*].properties.serialization.properties.format"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.Parquet",
+          "defaultPath": "properties.outputs[*].properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].serialization.type",
+          "defaultPath": "properties.outputs[*].properties.serialization.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].sizeWindow",
+          "defaultPath": "properties.outputs[*].properties.sizeWindow"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].timeWindow",
+          "defaultPath": "properties.outputs[*].properties.timeWindow"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].type",
+          "defaultPath": "properties.outputs[*].type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].watermarkSettings",
+          "defaultPath": "properties.outputs[*].properties.watermarkSettings"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].watermarkSettings.maxWatermarkDifferenceAcrossPartitions",
+          "defaultPath": "properties.outputs[*].properties.watermarkSettings.maxWatermarkDifferenceAcrossPartitions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs[*].watermarkSettings.watermarkMode",
+          "defaultPath": "properties.outputs[*].properties.watermarkSettings.watermarkMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputStartMode",
+          "defaultPath": "properties.outputStartMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputStartTime",
+          "defaultPath": "properties.outputStartTime"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/sku",
+          "defaultPath": "properties.sku"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/sku.name",
+          "defaultPath": "properties.sku.name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation",
+          "defaultPath": "properties.transformation"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.etag",
+          "defaultPath": "properties.transformation.properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.id",
+          "defaultPath": "properties.transformation.id"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.name",
+          "defaultPath": "properties.transformation.name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.query",
+          "defaultPath": "properties.transformation.properties.query"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.streamingUnits",
+          "defaultPath": "properties.transformation.properties.streamingUnits"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.type",
+          "defaultPath": "properties.transformation.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.validStreamingUnits",
+          "defaultPath": "properties.transformation.properties.validStreamingUnits"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformation.validStreamingUnits[*]",
+          "defaultPath": "properties.transformation.properties.validStreamingUnits[*]"
+        }
+      ],
+      "resourceType": "streamingjobs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.apiKey",
+          "defaultPath": "properties.properties.binding.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.batchSize",
+          "defaultPath": "properties.properties.binding.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.endpoint",
+          "defaultPath": "properties.properties.binding.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs",
+          "defaultPath": "properties.properties.binding.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs.columnNames",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*]",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].dataType",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].mapTo",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].name",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.inputs.name",
+          "defaultPath": "properties.properties.binding.properties.inputs.name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.outputs",
+          "defaultPath": "properties.properties.binding.properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.outputs[*]",
+          "defaultPath": "properties.properties.binding.properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.outputs[*].dataType",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearning-WebService.outputs[*].name",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.apiKey",
+          "defaultPath": "properties.properties.binding.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.batchSize",
+          "defaultPath": "properties.properties.binding.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.endpoint",
+          "defaultPath": "properties.properties.binding.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.inputRequestName",
+          "defaultPath": "properties.properties.binding.properties.inputRequestName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.inputs",
+          "defaultPath": "properties.properties.binding.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.inputs[*]",
+          "defaultPath": "properties.properties.binding.properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.inputs[*].dataType",
+          "defaultPath": "properties.properties.binding.properties.inputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.inputs[*].mapTo",
+          "defaultPath": "properties.properties.binding.properties.inputs[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.inputs[*].name",
+          "defaultPath": "properties.properties.binding.properties.inputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.numberOfParallelRequests",
+          "defaultPath": "properties.properties.binding.properties.numberOfParallelRequests"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.outputResponseName",
+          "defaultPath": "properties.properties.binding.properties.outputResponseName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.outputs",
+          "defaultPath": "properties.properties.binding.properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.outputs[*]",
+          "defaultPath": "properties.properties.binding.properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.outputs[*].dataType",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.outputs[*].mapTo",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-MachineLearningServices.outputs[*].name",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-CLRUdf",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-CLRUdf.class",
+          "defaultPath": "properties.properties.binding.properties.class"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-CLRUdf.dllPath",
+          "defaultPath": "properties.properties.binding.properties.dllPath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-CLRUdf.method",
+          "defaultPath": "properties.properties.binding.properties.method"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-CLRUdf.script",
+          "defaultPath": "properties.properties.binding.properties.script"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-CLRUdf.updateMode",
+          "defaultPath": "properties.properties.binding.properties.updateMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-JavascriptUdf",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.Microsoft-StreamAnalytics-JavascriptUdf.script",
+          "defaultPath": "properties.properties.binding.properties.script"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/binding.type",
+          "defaultPath": "properties.properties.binding.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/inputs",
+          "defaultPath": "properties.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/inputs[*]",
+          "defaultPath": "properties.properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/inputs[*].dataType",
+          "defaultPath": "properties.properties.inputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/inputs[*].isConfigurationParameter",
+          "defaultPath": "properties.properties.inputs[*].isConfigurationParameter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/output",
+          "defaultPath": "properties.properties.output"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/output.dataType",
+          "defaultPath": "properties.properties.output.dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.apiKey",
+          "defaultPath": "properties.properties.binding.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.batchSize",
+          "defaultPath": "properties.properties.binding.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.endpoint",
+          "defaultPath": "properties.properties.binding.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs",
+          "defaultPath": "properties.properties.binding.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*]",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].dataType",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].mapTo",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*].mapTo"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs.columnNames[*].name",
+          "defaultPath": "properties.properties.binding.properties.inputs.columnNames[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.inputs.name",
+          "defaultPath": "properties.properties.binding.properties.inputs.name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.outputs",
+          "defaultPath": "properties.properties.binding.properties.outputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.outputs[*]",
+          "defaultPath": "properties.properties.binding.properties.outputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.outputs[*].dataType",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-MachineLearning-WebService.outputs[*].name",
+          "defaultPath": "properties.properties.binding.properties.outputs[*].name"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-StreamAnalytics-JavascriptUdf",
+          "defaultPath": "properties.properties.binding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.Microsoft-StreamAnalytics-JavascriptUdf.script",
+          "defaultPath": "properties.properties.binding.properties.script"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.binding.type",
+          "defaultPath": "properties.properties.binding.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.inputs",
+          "defaultPath": "properties.properties.inputs"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.inputs[*]",
+          "defaultPath": "properties.properties.inputs[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.inputs[*].dataType",
+          "defaultPath": "properties.properties.inputs[*].dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.inputs[*].isConfigurationParameter",
+          "defaultPath": "properties.properties.inputs[*].isConfigurationParameter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.output",
+          "defaultPath": "properties.properties.output"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/Scalar.output.dataType",
+          "defaultPath": "properties.properties.output.dataType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/functions/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "streamingjobs/functions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/compression",
+          "defaultPath": "properties.compression"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/compression.type",
+          "defaultPath": "properties.compression.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/diagnostics",
+          "defaultPath": "properties.diagnostics"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/diagnostics.conditions",
+          "defaultPath": "properties.diagnostics.conditions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/diagnostics.conditions[*]",
+          "defaultPath": "properties.diagnostics.conditions[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/diagnostics.conditions[*].code",
+          "defaultPath": "properties.diagnostics.conditions[*].code"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/diagnostics.conditions[*].message",
+          "defaultPath": "properties.diagnostics.conditions[*].message"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/diagnostics.conditions[*].since",
+          "defaultPath": "properties.diagnostics.conditions[*].since"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/partitionKey",
+          "defaultPath": "properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.File",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.File.path",
+          "defaultPath": "properties.datasource.properties.path"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.database",
+          "defaultPath": "properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.deltaSnapshotQuery",
+          "defaultPath": "properties.datasource.properties.deltaSnapshotQuery"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.fullSnapshotQuery",
+          "defaultPath": "properties.datasource.properties.fullSnapshotQuery"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.password",
+          "defaultPath": "properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.refreshRate",
+          "defaultPath": "properties.datasource.properties.refreshRate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.refreshType",
+          "defaultPath": "properties.datasource.properties.refreshType"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.server",
+          "defaultPath": "properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Sql-Server-Database.user",
+          "defaultPath": "properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.blobName",
+          "defaultPath": "properties.datasource.properties.blobName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.container",
+          "defaultPath": "properties.datasource.properties.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.dateFormat",
+          "defaultPath": "properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.deltaPathPattern",
+          "defaultPath": "properties.datasource.properties.deltaPathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.deltaSnapshotRefreshRate",
+          "defaultPath": "properties.datasource.properties.deltaSnapshotRefreshRate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.fullSnapshotRefreshRate",
+          "defaultPath": "properties.datasource.properties.fullSnapshotRefreshRate"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.pathPattern",
+          "defaultPath": "properties.datasource.properties.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.sourcePartitionCount",
+          "defaultPath": "properties.datasource.properties.sourcePartitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.storageAccounts",
+          "defaultPath": "properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*]",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountKey",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountName",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Microsoft-Storage-Blob.timeFormat",
+          "defaultPath": "properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Raw",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Raw.payload",
+          "defaultPath": "properties.datasource.properties.payload"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.Raw.payloadUri",
+          "defaultPath": "properties.datasource.properties.payloadUri"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Reference.datasource.type",
+          "defaultPath": "properties.datasource.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Avro",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Csv",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Csv.encoding",
+          "defaultPath": "properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Csv.fieldDelimiter",
+          "defaultPath": "properties.serialization.properties.fieldDelimiter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.CustomClr",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.CustomClr.serializationClassName",
+          "defaultPath": "properties.serialization.properties.serializationClassName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.CustomClr.serializationDllPath",
+          "defaultPath": "properties.serialization.properties.serializationDllPath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Delta",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Delta.deltaTablePath",
+          "defaultPath": "properties.serialization.properties.deltaTablePath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Delta.partitionColumns",
+          "defaultPath": "properties.serialization.properties.partitionColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Delta.partitionColumns[*]",
+          "defaultPath": "properties.serialization.properties.partitionColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Json",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Json.encoding",
+          "defaultPath": "properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Json.format",
+          "defaultPath": "properties.serialization.properties.format"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.Parquet",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/serialization.type",
+          "defaultPath": "properties.serialization.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.GatewayMessageBus",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.GatewayMessageBus.topic",
+          "defaultPath": "properties.datasource.properties.topic"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Devices-IotHubs",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Devices-IotHubs.consumerGroupName",
+          "defaultPath": "properties.datasource.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Devices-IotHubs.endpoint",
+          "defaultPath": "properties.datasource.properties.endpoint"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Devices-IotHubs.iotHubNamespace",
+          "defaultPath": "properties.datasource.properties.iotHubNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Devices-IotHubs.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Devices-IotHubs.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.eventTypes",
+          "defaultPath": "properties.datasource.properties.eventTypes"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.eventTypes[*]",
+          "defaultPath": "properties.datasource.properties.eventTypes[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.schema",
+          "defaultPath": "properties.datasource.properties.schema"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts",
+          "defaultPath": "properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*]",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*].accountKey",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*].accountName",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber",
+          "defaultPath": "properties.datasource.properties.subscriber"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.authenticationMode",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.consumerGroupName",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.eventHubName",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.partitionCount",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.prefetchCount",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.prefetchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventGrid-EventSubscriptions.subscriber.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.subscriber.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.consumerGroupName",
+          "defaultPath": "properties.datasource.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.eventHubName",
+          "defaultPath": "properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.partitionCount",
+          "defaultPath": "properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.prefetchCount",
+          "defaultPath": "properties.datasource.properties.prefetchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.consumerGroupName",
+          "defaultPath": "properties.datasource.properties.consumerGroupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.eventHubName",
+          "defaultPath": "properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.partitionCount",
+          "defaultPath": "properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.prefetchCount",
+          "defaultPath": "properties.datasource.properties.prefetchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.container",
+          "defaultPath": "properties.datasource.properties.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.dateFormat",
+          "defaultPath": "properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.pathPattern",
+          "defaultPath": "properties.datasource.properties.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.sourcePartitionCount",
+          "defaultPath": "properties.datasource.properties.sourcePartitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.storageAccounts",
+          "defaultPath": "properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*]",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountKey",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*].accountName",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Microsoft-Storage-Blob.timeFormat",
+          "defaultPath": "properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Raw",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Raw.payload",
+          "defaultPath": "properties.datasource.properties.payload"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.Raw.payloadUri",
+          "defaultPath": "properties.datasource.properties.payloadUri"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/Stream.datasource.type",
+          "defaultPath": "properties.datasource.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/type",
+          "defaultPath": "properties.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/watermarkSettings",
+          "defaultPath": "properties.watermarkSettings"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/inputs/watermarkSettings.watermarkMode",
+          "defaultPath": "properties.watermarkSettings.watermarkMode"
+        }
+      ],
+      "resourceType": "streamingjobs/inputs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.GatewayMessageBus",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.GatewayMessageBus.topic",
+          "defaultPath": "properties.datasource.properties.topic"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-AzureFunction",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-AzureFunction.apiKey",
+          "defaultPath": "properties.datasource.properties.apiKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-AzureFunction.functionAppName",
+          "defaultPath": "properties.datasource.properties.functionAppName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-AzureFunction.functionName",
+          "defaultPath": "properties.datasource.properties.functionName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-AzureFunction.maxBatchCount",
+          "defaultPath": "properties.datasource.properties.maxBatchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-AzureFunction.maxBatchSize",
+          "defaultPath": "properties.datasource.properties.maxBatchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.accountName",
+          "defaultPath": "properties.datasource.properties.accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.dateFormat",
+          "defaultPath": "properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.filePathPrefix",
+          "defaultPath": "properties.datasource.properties.filePathPrefix"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.refreshToken",
+          "defaultPath": "properties.datasource.properties.refreshToken"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.tenantId",
+          "defaultPath": "properties.datasource.properties.tenantId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.timeFormat",
+          "defaultPath": "properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.tokenUserDisplayName",
+          "defaultPath": "properties.datasource.properties.tokenUserDisplayName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DataLake-Accounts.tokenUserPrincipalName",
+          "defaultPath": "properties.datasource.properties.tokenUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.database",
+          "defaultPath": "properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.maxWriterCount",
+          "defaultPath": "properties.datasource.properties.maxWriterCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.password",
+          "defaultPath": "properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.server",
+          "defaultPath": "properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-DBForPostgreSQL-servers-databases.user",
+          "defaultPath": "properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.eventHubName",
+          "defaultPath": "properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.partitionCount",
+          "defaultPath": "properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.partitionKey",
+          "defaultPath": "properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.propertyColumns",
+          "defaultPath": "properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.propertyColumns[*]",
+          "defaultPath": "properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-EventHub-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Kusto-clusters-databases",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Kusto-clusters-databases.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Kusto-clusters-databases.cluster",
+          "defaultPath": "properties.datasource.properties.cluster"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Kusto-clusters-databases.database",
+          "defaultPath": "properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Kusto-clusters-databases.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.eventHubName",
+          "defaultPath": "properties.datasource.properties.eventHubName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.partitionCount",
+          "defaultPath": "properties.datasource.properties.partitionCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.partitionKey",
+          "defaultPath": "properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.propertyColumns",
+          "defaultPath": "properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.propertyColumns[*]",
+          "defaultPath": "properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-EventHub.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.propertyColumns",
+          "defaultPath": "properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.propertyColumns[*]",
+          "defaultPath": "properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.queueName",
+          "defaultPath": "properties.datasource.properties.queueName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Queue.systemPropertyColumns",
+          "defaultPath": "properties.datasource.properties.systemPropertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.propertyColumns",
+          "defaultPath": "properties.datasource.properties.propertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.propertyColumns[*]",
+          "defaultPath": "properties.datasource.properties.propertyColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.serviceBusNamespace",
+          "defaultPath": "properties.datasource.properties.serviceBusNamespace"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.sharedAccessPolicyKey",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.sharedAccessPolicyName",
+          "defaultPath": "properties.datasource.properties.sharedAccessPolicyName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.systemPropertyColumns",
+          "defaultPath": "properties.datasource.properties.systemPropertyColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-ServiceBus-Topic.topicName",
+          "defaultPath": "properties.datasource.properties.topicName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.database",
+          "defaultPath": "properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.maxBatchCount",
+          "defaultPath": "properties.datasource.properties.maxBatchCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.maxWriterCount",
+          "defaultPath": "properties.datasource.properties.maxWriterCount"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.password",
+          "defaultPath": "properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.server",
+          "defaultPath": "properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-Database.user",
+          "defaultPath": "properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse.database",
+          "defaultPath": "properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse.password",
+          "defaultPath": "properties.datasource.properties.password"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse.server",
+          "defaultPath": "properties.datasource.properties.server"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Sql-Server-DataWarehouse.user",
+          "defaultPath": "properties.datasource.properties.user"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.blobPathPrefix",
+          "defaultPath": "properties.datasource.properties.blobPathPrefix"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.blobWriteMode",
+          "defaultPath": "properties.datasource.properties.blobWriteMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.container",
+          "defaultPath": "properties.datasource.properties.container"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.dateFormat",
+          "defaultPath": "properties.datasource.properties.dateFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.pathPattern",
+          "defaultPath": "properties.datasource.properties.pathPattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.storageAccounts",
+          "defaultPath": "properties.datasource.properties.storageAccounts"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.storageAccounts[*]",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.storageAccounts[*].accountKey",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.storageAccounts[*].accountName",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.storageAccounts[*].authenticationMode",
+          "defaultPath": "properties.datasource.properties.storageAccounts[*].authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Blob.timeFormat",
+          "defaultPath": "properties.datasource.properties.timeFormat"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.accountId",
+          "defaultPath": "properties.datasource.properties.accountId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.accountKey",
+          "defaultPath": "properties.datasource.properties.accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.collectionNamePattern",
+          "defaultPath": "properties.datasource.properties.collectionNamePattern"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.database",
+          "defaultPath": "properties.datasource.properties.database"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.documentId",
+          "defaultPath": "properties.datasource.properties.documentId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-DocumentDB.partitionKey",
+          "defaultPath": "properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.accountKey",
+          "defaultPath": "properties.datasource.properties.accountKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.accountName",
+          "defaultPath": "properties.datasource.properties.accountName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.batchSize",
+          "defaultPath": "properties.datasource.properties.batchSize"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.columnsToRemove",
+          "defaultPath": "properties.datasource.properties.columnsToRemove"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.columnsToRemove[*]",
+          "defaultPath": "properties.datasource.properties.columnsToRemove[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.partitionKey",
+          "defaultPath": "properties.datasource.properties.partitionKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.rowKey",
+          "defaultPath": "properties.datasource.properties.rowKey"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Microsoft-Storage-Table.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.authenticationMode",
+          "defaultPath": "properties.datasource.properties.authenticationMode"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.dataset",
+          "defaultPath": "properties.datasource.properties.dataset"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.groupId",
+          "defaultPath": "properties.datasource.properties.groupId"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.groupName",
+          "defaultPath": "properties.datasource.properties.groupName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.refreshToken",
+          "defaultPath": "properties.datasource.properties.refreshToken"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.table",
+          "defaultPath": "properties.datasource.properties.table"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.tokenUserDisplayName",
+          "defaultPath": "properties.datasource.properties.tokenUserDisplayName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.PowerBI.tokenUserPrincipalName",
+          "defaultPath": "properties.datasource.properties.tokenUserPrincipalName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Raw",
+          "defaultPath": "properties.datasource"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.Raw.payloadUri",
+          "defaultPath": "properties.datasource.properties.payloadUri"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/datasource.type",
+          "defaultPath": "properties.datasource.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/diagnostics",
+          "defaultPath": "properties.diagnostics"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/diagnostics.conditions",
+          "defaultPath": "properties.diagnostics.conditions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/diagnostics.conditions[*]",
+          "defaultPath": "properties.diagnostics.conditions[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/diagnostics.conditions[*].code",
+          "defaultPath": "properties.diagnostics.conditions[*].code"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/diagnostics.conditions[*].message",
+          "defaultPath": "properties.diagnostics.conditions[*].message"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/diagnostics.conditions[*].since",
+          "defaultPath": "properties.diagnostics.conditions[*].since"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/lastOutputEventTimestamps",
+          "defaultPath": "properties.lastOutputEventTimestamps"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/lastOutputEventTimestamps[*]",
+          "defaultPath": "properties.lastOutputEventTimestamps[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/lastOutputEventTimestamps[*].lastOutputEventTime",
+          "defaultPath": "properties.lastOutputEventTimestamps[*].lastOutputEventTime"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/lastOutputEventTimestamps[*].lastUpdateTime",
+          "defaultPath": "properties.lastOutputEventTimestamps[*].lastUpdateTime"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Avro",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Csv",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Csv.encoding",
+          "defaultPath": "properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Csv.fieldDelimiter",
+          "defaultPath": "properties.serialization.properties.fieldDelimiter"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.CustomClr",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.CustomClr.serializationClassName",
+          "defaultPath": "properties.serialization.properties.serializationClassName"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.CustomClr.serializationDllPath",
+          "defaultPath": "properties.serialization.properties.serializationDllPath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Delta",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Delta.deltaTablePath",
+          "defaultPath": "properties.serialization.properties.deltaTablePath"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Delta.partitionColumns",
+          "defaultPath": "properties.serialization.properties.partitionColumns"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Delta.partitionColumns[*]",
+          "defaultPath": "properties.serialization.properties.partitionColumns[*]"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Json",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Json.encoding",
+          "defaultPath": "properties.serialization.properties.encoding"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Json.format",
+          "defaultPath": "properties.serialization.properties.format"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.Parquet",
+          "defaultPath": "properties.serialization"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/serialization.type",
+          "defaultPath": "properties.serialization.type"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/sizeWindow",
+          "defaultPath": "properties.sizeWindow"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/timeWindow",
+          "defaultPath": "properties.timeWindow"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/watermarkSettings",
+          "defaultPath": "properties.watermarkSettings"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/watermarkSettings.maxWatermarkDifferenceAcrossPartitions",
+          "defaultPath": "properties.watermarkSettings.maxWatermarkDifferenceAcrossPartitions"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/outputs/watermarkSettings.watermarkMode",
+          "defaultPath": "properties.watermarkSettings.watermarkMode"
+        }
+      ],
+      "resourceType": "streamingjobs/outputs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformations/etag",
+          "defaultPath": "properties.etag"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformations/query",
+          "defaultPath": "properties.query"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformations/streamingUnits",
+          "defaultPath": "properties.streamingUnits"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformations/validStreamingUnits",
+          "defaultPath": "properties.validStreamingUnits"
+        },
+        {
+          "name": "Microsoft.StreamAnalytics/streamingjobs/transformations/validStreamingUnits[*]",
+          "defaultPath": "properties.validStreamingUnits[*]"
+        }
+      ],
+      "resourceType": "streamingjobs/transformations"
+    }
+  ]
+}

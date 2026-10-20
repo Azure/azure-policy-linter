@@ -1,0 +1,31 @@
+{
+  "namespace": "Microsoft.AzureActiveDirectory",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureActiveDirectory/b2cDirectories/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AzureActiveDirectory/b2cDirectories/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AzureActiveDirectory/b2cDirectories/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "b2cDirectories"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AzureActiveDirectory/guestUsages/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "guestUsages"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "namespace": "Microsoft.StorageMover",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageMover/storageMovers/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "storageMovers"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/agentStatus",
+          "defaultPath": "properties.agentStatus"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/agentVersion",
+          "defaultPath": "properties.agentVersion"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/arcResourceId",
+          "defaultPath": "properties.arcResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/arcVmUuid",
+          "defaultPath": "properties.arcVmUuid"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/errorDetails",
+          "defaultPath": "properties.errorDetails"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/errorDetails.code",
+          "defaultPath": "properties.errorDetails.code"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/errorDetails.message",
+          "defaultPath": "properties.errorDetails.message"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/lastStatusUpdate",
+          "defaultPath": "properties.lastStatusUpdate"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/localIPAddress",
+          "defaultPath": "properties.localIPAddress"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/memoryInMB",
+          "defaultPath": "properties.memoryInMB"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/numberOfCores",
+          "defaultPath": "properties.numberOfCores"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/agents/uptimeInSeconds",
+          "defaultPath": "properties.uptimeInSeconds"
+        }
+      ],
+      "resourceType": "storageMovers/agents"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/AzureStorageBlobContainer.blobContainerName",
+          "defaultPath": "properties.blobContainerName"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/AzureStorageBlobContainer.storageAccountResourceId",
+          "defaultPath": "properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/AzureStorageSmbFileShare.fileShareName",
+          "defaultPath": "properties.fileShareName"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/AzureStorageSmbFileShare.storageAccountResourceId",
+          "defaultPath": "properties.storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/endpointType",
+          "defaultPath": "properties.endpointType"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/NfsMount.export",
+          "defaultPath": "properties.export"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/NfsMount.host",
+          "defaultPath": "properties.host"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/NfsMount.nfsVersion",
+          "defaultPath": "properties.nfsVersion"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials.AzureKeyVaultSmb",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials.AzureKeyVaultSmb.passwordUri",
+          "defaultPath": "properties.credentials.passwordUri"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials.AzureKeyVaultSmb.usernameUri",
+          "defaultPath": "properties.credentials.usernameUri"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials.passwordUri",
+          "defaultPath": "properties.credentials.passwordUri"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials.type",
+          "defaultPath": "properties.credentials.type"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.credentials.usernameUri",
+          "defaultPath": "properties.credentials.usernameUri"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.host",
+          "defaultPath": "properties.host"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/endpoints/SmbMount.shareName",
+          "defaultPath": "properties.shareName"
+        }
+      ],
+      "resourceType": "storageMovers/endpoints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "storageMovers/projects"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/agentName",
+          "defaultPath": "properties.agentName"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/agentResourceId",
+          "defaultPath": "properties.agentResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/copyMode",
+          "defaultPath": "properties.copyMode"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/latestJobRunName",
+          "defaultPath": "properties.latestJobRunName"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/latestJobRunResourceId",
+          "defaultPath": "properties.latestJobRunResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/latestJobRunStatus",
+          "defaultPath": "properties.latestJobRunStatus"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/sourceName",
+          "defaultPath": "properties.sourceName"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/sourceResourceId",
+          "defaultPath": "properties.sourceResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/sourceSubpath",
+          "defaultPath": "properties.sourceSubpath"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/targetName",
+          "defaultPath": "properties.targetName"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/targetResourceId",
+          "defaultPath": "properties.targetResourceId"
+        },
+        {
+          "name": "Microsoft.StorageMover/storageMovers/projects/jobDefinitions/targetSubpath",
+          "defaultPath": "properties.targetSubpath"
+        }
+      ],
+      "resourceType": "storageMovers/projects/jobDefinitions"
+    }
+  ]
+}

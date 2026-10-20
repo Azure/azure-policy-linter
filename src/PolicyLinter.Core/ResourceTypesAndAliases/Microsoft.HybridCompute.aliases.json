@@ -1,0 +1,1700 @@
+{
+  "namespace": "Microsoft.HybridCompute",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/gateways/allowedFeatures",
+          "defaultPath": "properties.allowedFeatures"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/allowedFeatures[*]",
+          "defaultPath": "properties.allowedFeatures[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/gatewayBypass",
+          "defaultPath": "properties.gatewayBypass"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/gatewayBypass[*]",
+          "defaultPath": "properties.gatewayBypass[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/gatewayEndpoint",
+          "defaultPath": "properties.gatewayEndpoint"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/gatewayId",
+          "defaultPath": "properties.gatewayId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/gatewayType",
+          "defaultPath": "properties.gatewayType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/gateways/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "gateways"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails",
+          "defaultPath": "properties.licenseDetails"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.assignedLicenses",
+          "defaultPath": "properties.licenseDetails.assignedLicenses"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.edition",
+          "defaultPath": "properties.licenseDetails.edition"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.immutableId",
+          "defaultPath": "properties.licenseDetails.immutableId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.processors",
+          "defaultPath": "properties.licenseDetails.processors"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.state",
+          "defaultPath": "properties.licenseDetails.state"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.target",
+          "defaultPath": "properties.licenseDetails.target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.type",
+          "defaultPath": "properties.licenseDetails.type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.volumeLicenseDetails",
+          "defaultPath": "properties.licenseDetails.volumeLicenseDetails"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.volumeLicenseDetails[*]",
+          "defaultPath": "properties.licenseDetails.volumeLicenseDetails[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.volumeLicenseDetails[*].invoiceId",
+          "defaultPath": "properties.licenseDetails.volumeLicenseDetails[*].invoiceId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseDetails.volumeLicenseDetails[*].programYear",
+          "defaultPath": "properties.licenseDetails.volumeLicenseDetails[*].programYear"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/licenseType",
+          "defaultPath": "properties.licenseType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/licenses/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "licenses"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/imageOffer",
+          "paths": [
+            {
+              "path": "properties.osName",
+              "apiVersions": [
+                "2019-03-18-preview",
+                "2019-08-02-preview",
+                "2019-12-12"
+              ]
+            }
+          ],
+          "defaultPath": "properties.osName"
+        },
+        {
+          "name": "Microsoft.HybridCompute/imageSKU",
+          "paths": [
+            {
+              "path": "properties.osVersion",
+              "apiVersions": [
+                "2019-03-18-preview",
+                "2019-08-02-preview",
+                "2019-12-12"
+              ]
+            }
+          ],
+          "defaultPath": "properties.osVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/adFqdn",
+          "defaultPath": "properties.adFqdn"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration",
+          "defaultPath": "properties.agentConfiguration"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.configMode",
+          "defaultPath": "properties.agentConfiguration.configMode"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsAllowList",
+          "defaultPath": "properties.agentConfiguration.extensionsAllowList"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsAllowList[*]",
+          "defaultPath": "properties.agentConfiguration.extensionsAllowList[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsAllowList[*].publisher",
+          "defaultPath": "properties.agentConfiguration.extensionsAllowList[*].publisher"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsAllowList[*].type",
+          "defaultPath": "properties.agentConfiguration.extensionsAllowList[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsBlockList",
+          "defaultPath": "properties.agentConfiguration.extensionsBlockList"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsBlockList[*]",
+          "defaultPath": "properties.agentConfiguration.extensionsBlockList[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsBlockList[*].publisher",
+          "defaultPath": "properties.agentConfiguration.extensionsBlockList[*].publisher"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsBlockList[*].type",
+          "defaultPath": "properties.agentConfiguration.extensionsBlockList[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.extensionsEnabled",
+          "defaultPath": "properties.agentConfiguration.extensionsEnabled"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.guestConfigurationEnabled",
+          "defaultPath": "properties.agentConfiguration.guestConfigurationEnabled"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.incomingConnectionsPorts",
+          "defaultPath": "properties.agentConfiguration.incomingConnectionsPorts"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.incomingConnectionsPorts[*]",
+          "defaultPath": "properties.agentConfiguration.incomingConnectionsPorts[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.proxyBypass",
+          "defaultPath": "properties.agentConfiguration.proxyBypass"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.proxyBypass[*]",
+          "defaultPath": "properties.agentConfiguration.proxyBypass[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentConfiguration.proxyUrl",
+          "defaultPath": "properties.agentConfiguration.proxyUrl"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade",
+          "defaultPath": "properties.agentUpgrade"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.correlationId",
+          "defaultPath": "properties.agentUpgrade.correlationId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.desiredVersion",
+          "defaultPath": "properties.agentUpgrade.desiredVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.enableAutomaticUpgrade",
+          "paths": [
+            {
+              "path": "properties.agentUpgrade.enableAutomaticUpgrade",
+              "apiVersions": [
+                "2022-11-10",
+                "2022-08-11-preview",
+                "2022-05-10-preview",
+                "2022-03-10",
+                "2021-12-10-preview",
+                "2021-06-10-preview",
+                "2021-05-20",
+                "2021-05-17-preview",
+                "2021-04-22-preview",
+                "2021-03-25-preview",
+                "2021-01-28-preview",
+                "2020-08-15-preview",
+                "2020-08-02",
+                "2020-07-30-preview",
+                "2019-12-12",
+                "2019-08-02-preview",
+                "2019-03-18-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.agentUpgrade.enableAutomaticUpgrade",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.lastAttemptDesiredVersion",
+          "defaultPath": "properties.agentUpgrade.lastAttemptDesiredVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.lastAttemptMessage",
+          "defaultPath": "properties.agentUpgrade.lastAttemptMessage"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.lastAttemptStatus",
+          "defaultPath": "properties.agentUpgrade.lastAttemptStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentUpgrade.lastAttemptTimestamp",
+          "defaultPath": "properties.agentUpgrade.lastAttemptTimestamp"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/agentVersion",
+          "defaultPath": "properties.agentVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/clientPublicKey",
+          "defaultPath": "properties.clientPublicKey"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/cloudMetadata",
+          "defaultPath": "properties.cloudMetadata"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/cloudMetadata.provider",
+          "defaultPath": "properties.cloudMetadata.provider"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/detectedProperties",
+          "defaultPath": "properties.detectedProperties"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/dnsFqdn",
+          "defaultPath": "properties.dnsFqdn"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/domainName",
+          "defaultPath": "properties.domainName"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails",
+          "defaultPath": "properties.errorDetails"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*]",
+          "defaultPath": "properties.errorDetails[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].additionalInfo",
+          "defaultPath": "properties.errorDetails[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].additionalInfo[*]",
+          "defaultPath": "properties.errorDetails[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].additionalInfo[*].type",
+          "defaultPath": "properties.errorDetails[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].code",
+          "defaultPath": "properties.errorDetails[*].code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details",
+          "defaultPath": "properties.errorDetails[*].details"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*]",
+          "defaultPath": "properties.errorDetails[*].details[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].additionalInfo",
+          "defaultPath": "properties.errorDetails[*].details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].additionalInfo[*]",
+          "defaultPath": "properties.errorDetails[*].details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].additionalInfo[*].type",
+          "defaultPath": "properties.errorDetails[*].details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].code",
+          "defaultPath": "properties.errorDetails[*].details[*].code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].details",
+          "defaultPath": "properties.errorDetails[*].details[*].details"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].details[*]",
+          "defaultPath": "properties.errorDetails[*].details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].message",
+          "defaultPath": "properties.errorDetails[*].details[*].message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].details[*].target",
+          "defaultPath": "properties.errorDetails[*].details[*].target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].message",
+          "defaultPath": "properties.errorDetails[*].message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/errorDetails[*].target",
+          "defaultPath": "properties.errorDetails[*].target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions",
+          "defaultPath": "properties.extensions"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*]",
+          "defaultPath": "properties.extensions[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].name",
+          "defaultPath": "properties.extensions[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].status",
+          "defaultPath": "properties.extensions[*].status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].status.code",
+          "defaultPath": "properties.extensions[*].status.code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].status.displayStatus",
+          "defaultPath": "properties.extensions[*].status.displayStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].status.level",
+          "defaultPath": "properties.extensions[*].status.level"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].status.message",
+          "defaultPath": "properties.extensions[*].status.message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].status.time",
+          "defaultPath": "properties.extensions[*].status.time"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].type",
+          "defaultPath": "properties.extensions[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions[*].typeHandlerVersion",
+          "defaultPath": "properties.extensions[*].typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/firmwareProfile",
+          "defaultPath": "properties.firmwareProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/firmwareProfile.serialNumber",
+          "defaultPath": "properties.firmwareProfile.serialNumber"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/firmwareProfile.type",
+          "defaultPath": "properties.firmwareProfile.type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile",
+          "defaultPath": "properties.hardwareProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile.numberOfCpuSockets",
+          "defaultPath": "properties.hardwareProfile.numberOfCpuSockets"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile.processors",
+          "defaultPath": "properties.hardwareProfile.processors"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile.processors[*]",
+          "defaultPath": "properties.hardwareProfile.processors[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile.processors[*].name",
+          "defaultPath": "properties.hardwareProfile.processors[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile.processors[*].numberOfCores",
+          "defaultPath": "properties.hardwareProfile.processors[*].numberOfCores"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareProfile.totalPhysicalMemoryInBytes",
+          "defaultPath": "properties.hardwareProfile.totalPhysicalMemoryInBytes"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/hardwareResourceId",
+          "defaultPath": "properties.hardwareResourceId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/identityKeyStore",
+          "defaultPath": "properties.identityKeyStore"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/lastStatusChange",
+          "defaultPath": "properties.lastStatusChange"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile",
+          "defaultPath": "properties.licenseProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile",
+          "defaultPath": "properties.licenseProfile.esuProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.id",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.id"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.assignedLicenses",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.assignedLicenses"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.edition",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.edition"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.immutableId",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.immutableId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.processors",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.processors"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.state",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.state"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.target",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseDetails.type",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseDetails.type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.licenseType",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.licenseType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.location",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.location"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.name",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.provisioningState",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.tags",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.tags"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.tenantId",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.properties.tenantId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicense.type",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicense.type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.assignedLicenseImmutableId",
+          "defaultPath": "properties.licenseProfile.esuProfile.assignedLicenseImmutableId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.esuEligibility",
+          "defaultPath": "properties.licenseProfile.esuProfile.esuEligibility"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.esuKeys",
+          "defaultPath": "properties.licenseProfile.esuProfile.esuKeys"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.esuKeys[*]",
+          "defaultPath": "properties.licenseProfile.esuProfile.esuKeys[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.esuKeys[*].licenseStatus",
+          "defaultPath": "properties.licenseProfile.esuProfile.esuKeys[*].licenseStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.esuKeys[*].sku",
+          "defaultPath": "properties.licenseProfile.esuProfile.esuKeys[*].sku"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.esuKeyState",
+          "defaultPath": "properties.licenseProfile.esuProfile.esuKeyState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.licenseAssignmentState",
+          "defaultPath": "properties.licenseProfile.esuProfile.licenseAssignmentState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.esuProfile.serverType",
+          "defaultPath": "properties.licenseProfile.esuProfile.serverType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.licenseChannel",
+          "defaultPath": "properties.licenseProfile.licenseChannel"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.licenseStatus",
+          "defaultPath": "properties.licenseProfile.licenseStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile",
+          "defaultPath": "properties.licenseProfile.productProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.billingEndDate",
+          "defaultPath": "properties.licenseProfile.productProfile.billingEndDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.billingStartDate",
+          "defaultPath": "properties.licenseProfile.productProfile.billingStartDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.disenrollmentDate",
+          "defaultPath": "properties.licenseProfile.productProfile.disenrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.enrollmentDate",
+          "defaultPath": "properties.licenseProfile.productProfile.enrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error",
+          "defaultPath": "properties.licenseProfile.productProfile.error"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.additionalInfo",
+          "defaultPath": "properties.licenseProfile.productProfile.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.additionalInfo[*]",
+          "defaultPath": "properties.licenseProfile.productProfile.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.code",
+          "defaultPath": "properties.licenseProfile.productProfile.error.code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.details",
+          "defaultPath": "properties.licenseProfile.productProfile.error.details"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.details[*]",
+          "defaultPath": "properties.licenseProfile.productProfile.error.details[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.message",
+          "defaultPath": "properties.licenseProfile.productProfile.error.message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.error.target",
+          "defaultPath": "properties.licenseProfile.productProfile.error.target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*]",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].billingEndDate",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].billingEndDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].billingStartDate",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].billingStartDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].disenrollmentDate",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].disenrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].enrollmentDate",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].enrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].error",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].error"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].name",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productFeatures[*].subscriptionStatus",
+          "defaultPath": "properties.licenseProfile.productProfile.productFeatures[*].subscriptionStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.productType",
+          "defaultPath": "properties.licenseProfile.productProfile.productType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.productProfile.subscriptionStatus",
+          "defaultPath": "properties.licenseProfile.productProfile.subscriptionStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.softwareAssurance",
+          "defaultPath": "properties.licenseProfile.softwareAssurance"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfile.softwareAssurance.softwareAssuranceCustomer",
+          "defaultPath": "properties.licenseProfile.softwareAssurance.softwareAssuranceCustomer"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/locationData",
+          "defaultPath": "properties.locationData"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/locationData.city",
+          "defaultPath": "properties.locationData.city"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/locationData.countryOrRegion",
+          "defaultPath": "properties.locationData.countryOrRegion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/locationData.district",
+          "defaultPath": "properties.locationData.district"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/locationData.name",
+          "defaultPath": "properties.locationData.name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/machineFqdn",
+          "defaultPath": "properties.machineFqdn"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/mssqlDiscovered",
+          "defaultPath": "properties.mssqlDiscovered"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile",
+          "defaultPath": "properties.networkProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces",
+          "defaultPath": "properties.networkProfile.networkInterfaces"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].id",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].id"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].ipAddresses",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].ipAddresses[*]",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].ipAddresses[*].address",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses[*].address"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].ipAddresses[*].ipAddressVersion",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses[*].ipAddressVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].ipAddresses[*].subnet",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses[*].subnet"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].ipAddresses[*].subnet.addressPrefix",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].ipAddresses[*].subnet.addressPrefix"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].macAddress",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].macAddress"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/networkProfile.networkInterfaces[*].name",
+          "defaultPath": "properties.networkProfile.networkInterfaces[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osEdition",
+          "defaultPath": "properties.osEdition"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osName",
+          "defaultPath": "properties.osName"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile",
+          "defaultPath": "properties.osProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.computerName",
+          "defaultPath": "properties.osProfile.computerName"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.linuxConfiguration",
+          "defaultPath": "properties.osProfile.linuxConfiguration"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.linuxConfiguration.patchSettings",
+          "defaultPath": "properties.osProfile.linuxConfiguration.patchSettings"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.linuxConfiguration.patchSettings.assessmentMode",
+          "paths": [
+            {
+              "path": "properties.osProfile.linuxConfiguration.patchSettings.assessmentMode",
+              "apiVersions": [
+                "2021-05-20",
+                "2021-05-17-preview",
+                "2021-04-22-preview",
+                "2021-03-25-preview",
+                "2021-01-28-preview",
+                "2020-08-15-preview",
+                "2020-08-02",
+                "2020-07-30-preview",
+                "2019-12-12",
+                "2019-08-02-preview",
+                "2019-03-18-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.osProfile.linuxConfiguration.patchSettings.assessmentMode",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.linuxConfiguration.patchSettings.enableHotpatching",
+          "defaultPath": "properties.osProfile.linuxConfiguration.patchSettings.enableHotpatching"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.linuxConfiguration.patchSettings.patchMode",
+          "defaultPath": "properties.osProfile.linuxConfiguration.patchSettings.patchMode"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.linuxConfiguration.patchSettings.status",
+          "defaultPath": "properties.osProfile.linuxConfiguration.patchSettings.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.windowsConfiguration",
+          "defaultPath": "properties.osProfile.windowsConfiguration"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.windowsConfiguration.patchSettings",
+          "defaultPath": "properties.osProfile.windowsConfiguration.patchSettings"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.windowsConfiguration.patchSettings.assessmentMode",
+          "paths": [
+            {
+              "path": "properties.osProfile.windowsConfiguration.patchSettings.assessmentMode",
+              "apiVersions": [
+                "2021-05-20",
+                "2021-05-17-preview",
+                "2021-04-22-preview",
+                "2021-03-25-preview",
+                "2021-01-28-preview",
+                "2020-08-15-preview",
+                "2020-08-02",
+                "2020-07-30-preview",
+                "2019-12-12",
+                "2019-08-02-preview",
+                "2019-03-18-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.osProfile.windowsConfiguration.patchSettings.assessmentMode",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.windowsConfiguration.patchSettings.enableHotpatching",
+          "defaultPath": "properties.osProfile.windowsConfiguration.patchSettings.enableHotpatching"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.windowsConfiguration.patchSettings.patchMode",
+          "defaultPath": "properties.osProfile.windowsConfiguration.patchSettings.patchMode"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osProfile.windowsConfiguration.patchSettings.status",
+          "defaultPath": "properties.osProfile.windowsConfiguration.patchSettings.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osSku",
+          "defaultPath": "properties.osSku"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osType",
+          "defaultPath": "properties.osType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/osVersion",
+          "defaultPath": "properties.osVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/parentClusterResourceId",
+          "defaultPath": "properties.parentClusterResourceId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/physicalLocation",
+          "defaultPath": "properties.physicalLocation"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/privateLinkScopedResources",
+          "defaultPath": "properties.privateLinkScopedResources"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/privateLinkScopedResources[*]",
+          "defaultPath": "properties.privateLinkScopedResources[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/privateLinkScopeResourceId",
+          "paths": [
+            {
+              "path": "properties.privateLinkScopeResourceId",
+              "apiVersions": [
+                "2020-08-15-preview",
+                "2020-08-02",
+                "2020-07-30-preview",
+                "2019-12-12",
+                "2019-08-02-preview",
+                "2019-03-18-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.privateLinkScopeResourceId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses",
+          "defaultPath": "properties.serviceStatuses"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses.extensionService",
+          "defaultPath": "properties.serviceStatuses.extensionService"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses.extensionService.startupType",
+          "defaultPath": "properties.serviceStatuses.extensionService.startupType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses.extensionService.status",
+          "defaultPath": "properties.serviceStatuses.extensionService.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses.guestConfigurationService",
+          "defaultPath": "properties.serviceStatuses.guestConfigurationService"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses.guestConfigurationService.startupType",
+          "defaultPath": "properties.serviceStatuses.guestConfigurationService.startupType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/serviceStatuses.guestConfigurationService.status",
+          "defaultPath": "properties.serviceStatuses.guestConfigurationService.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/statusReason",
+          "defaultPath": "properties.statusReason"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile",
+          "defaultPath": "properties.storageProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks",
+          "defaultPath": "properties.storageProfile.disks"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*]",
+          "defaultPath": "properties.storageProfile.disks[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].diskType",
+          "defaultPath": "properties.storageProfile.disks[*].diskType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].generatedId",
+          "defaultPath": "properties.storageProfile.disks[*].generatedId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].id",
+          "defaultPath": "properties.storageProfile.disks[*].id"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].maxSizeInBytes",
+          "defaultPath": "properties.storageProfile.disks[*].maxSizeInBytes"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].name",
+          "defaultPath": "properties.storageProfile.disks[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].path",
+          "defaultPath": "properties.storageProfile.disks[*].path"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/storageProfile.disks[*].usedSpaceInBytes",
+          "defaultPath": "properties.storageProfile.disks[*].usedSpaceInBytes"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/tpmEkCertificate",
+          "defaultPath": "properties.tpmEkCertificate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/vmId",
+          "defaultPath": "properties.vmId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/vmUuid",
+          "defaultPath": "properties.vmUuid"
+        }
+      ],
+      "resourceType": "machines"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/autoUpgradeMinorVersion",
+          "defaultPath": "properties.autoUpgradeMinorVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/enableAutomaticUpgrade",
+          "paths": [
+            {
+              "path": "properties.enableAutomaticUpgrade",
+              "apiVersions": [
+                "2021-06-10-preview",
+                "2021-05-20",
+                "2021-05-17-preview",
+                "2021-04-22-preview",
+                "2021-03-25-preview",
+                "2021-01-28-preview",
+                "2020-08-15-preview",
+                "2020-08-02",
+                "2020-07-30-preview",
+                "2019-12-12",
+                "2019-08-02-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enableAutomaticUpgrade",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/forceUpdateTag",
+          "defaultPath": "properties.forceUpdateTag"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView",
+          "defaultPath": "properties.instanceView"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.name",
+          "defaultPath": "properties.instanceView.name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.status",
+          "defaultPath": "properties.instanceView.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.status.code",
+          "defaultPath": "properties.instanceView.status.code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.status.displayStatus",
+          "defaultPath": "properties.instanceView.status.displayStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.status.level",
+          "defaultPath": "properties.instanceView.status.level"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.status.message",
+          "defaultPath": "properties.instanceView.status.message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.status.time",
+          "defaultPath": "properties.instanceView.status.time"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.type",
+          "defaultPath": "properties.instanceView.type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/instanceView.typeHandlerVersion",
+          "defaultPath": "properties.instanceView.typeHandlerVersion"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/protectedSettings",
+          "defaultPath": "properties.protectedSettings"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/publisher",
+          "defaultPath": "properties.publisher"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/settings",
+          "defaultPath": "properties.settings"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/type",
+          "defaultPath": "properties.type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/extensions/typeHandlerVersion",
+          "defaultPath": "properties.typeHandlerVersion"
+        }
+      ],
+      "resourceType": "machines/extensions"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile",
+          "defaultPath": "properties.esuProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.assignedLicense",
+          "defaultPath": "properties.esuProfile.assignedLicense",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.assignedLicenseImmutableId",
+          "defaultPath": "properties.esuProfile.assignedLicenseImmutableId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.esuEligibility",
+          "defaultPath": "properties.esuProfile.esuEligibility"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.esuKeys",
+          "defaultPath": "properties.esuProfile.esuKeys"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.esuKeys[*]",
+          "defaultPath": "properties.esuProfile.esuKeys[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.esuKeys[*].licenseStatus",
+          "defaultPath": "properties.esuProfile.esuKeys[*].licenseStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.esuKeys[*].sku",
+          "defaultPath": "properties.esuProfile.esuKeys[*].sku"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.esuKeyState",
+          "defaultPath": "properties.esuProfile.esuKeyState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/esuProfile.serverType",
+          "defaultPath": "properties.esuProfile.serverType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile",
+          "defaultPath": "properties.productProfile"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.billingEndDate",
+          "defaultPath": "properties.productProfile.billingEndDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.billingStartDate",
+          "defaultPath": "properties.productProfile.billingStartDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.disenrollmentDate",
+          "defaultPath": "properties.productProfile.disenrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.enrollmentDate",
+          "defaultPath": "properties.productProfile.enrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error",
+          "defaultPath": "properties.productProfile.error"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.additionalInfo",
+          "defaultPath": "properties.productProfile.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.additionalInfo[*]",
+          "defaultPath": "properties.productProfile.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.additionalInfo[*].type",
+          "defaultPath": "properties.productProfile.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.code",
+          "defaultPath": "properties.productProfile.error.code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details",
+          "defaultPath": "properties.productProfile.error.details"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*]",
+          "defaultPath": "properties.productProfile.error.details[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].additionalInfo",
+          "defaultPath": "properties.productProfile.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.productProfile.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].code",
+          "defaultPath": "properties.productProfile.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].details",
+          "defaultPath": "properties.productProfile.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].details[*]",
+          "defaultPath": "properties.productProfile.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].message",
+          "defaultPath": "properties.productProfile.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.details[*].target",
+          "defaultPath": "properties.productProfile.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.message",
+          "defaultPath": "properties.productProfile.error.message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.error.target",
+          "defaultPath": "properties.productProfile.error.target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures",
+          "defaultPath": "properties.productProfile.productFeatures"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*]",
+          "defaultPath": "properties.productProfile.productFeatures[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].billingEndDate",
+          "defaultPath": "properties.productProfile.productFeatures[*].billingEndDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].billingStartDate",
+          "defaultPath": "properties.productProfile.productFeatures[*].billingStartDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].disenrollmentDate",
+          "defaultPath": "properties.productProfile.productFeatures[*].disenrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].enrollmentDate",
+          "defaultPath": "properties.productProfile.productFeatures[*].enrollmentDate"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error",
+          "defaultPath": "properties.productProfile.productFeatures[*].error"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.additionalInfo",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.additionalInfo[*]",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.code",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.details",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.details"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.details[*]",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.details[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.message",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].error.target",
+          "defaultPath": "properties.productProfile.productFeatures[*].error.target"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].name",
+          "defaultPath": "properties.productProfile.productFeatures[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productFeatures[*].subscriptionStatus",
+          "defaultPath": "properties.productProfile.productFeatures[*].subscriptionStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.productType",
+          "defaultPath": "properties.productProfile.productType"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/productProfile.subscriptionStatus",
+          "defaultPath": "properties.productProfile.subscriptionStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/softwareAssurance",
+          "defaultPath": "properties.softwareAssurance"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/licenseProfiles/softwareAssurance.softwareAssuranceCustomer",
+          "defaultPath": "properties.softwareAssurance.softwareAssuranceCustomer"
+        }
+      ],
+      "resourceType": "machines/licenseProfiles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/asyncExecution",
+          "defaultPath": "properties.asyncExecution"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/errorBlobManagedIdentity",
+          "defaultPath": "properties.errorBlobManagedIdentity"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/errorBlobManagedIdentity.clientId",
+          "defaultPath": "properties.errorBlobManagedIdentity.clientId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/errorBlobManagedIdentity.objectId",
+          "defaultPath": "properties.errorBlobManagedIdentity.objectId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/errorBlobUri",
+          "defaultPath": "properties.errorBlobUri"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView",
+          "defaultPath": "properties.instanceView"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.endTime",
+          "defaultPath": "properties.instanceView.endTime"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.error",
+          "defaultPath": "properties.instanceView.error"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.executionMessage",
+          "defaultPath": "properties.instanceView.executionMessage"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.executionState",
+          "defaultPath": "properties.instanceView.executionState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.exitCode",
+          "defaultPath": "properties.instanceView.exitCode"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.name",
+          "defaultPath": "properties.instanceView.name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.output",
+          "defaultPath": "properties.instanceView.output"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.startTime",
+          "defaultPath": "properties.instanceView.startTime"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.status",
+          "defaultPath": "properties.instanceView.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.status.code",
+          "defaultPath": "properties.instanceView.status.code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.status.displayStatus",
+          "defaultPath": "properties.instanceView.status.displayStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.status.level",
+          "defaultPath": "properties.instanceView.status.level"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.status.message",
+          "defaultPath": "properties.instanceView.status.message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.status.time",
+          "defaultPath": "properties.instanceView.status.time"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses",
+          "defaultPath": "properties.instanceView.statuses"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses[*]",
+          "defaultPath": "properties.instanceView.statuses[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses[*].code",
+          "defaultPath": "properties.instanceView.statuses[*].code"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses[*].displayStatus",
+          "defaultPath": "properties.instanceView.statuses[*].displayStatus"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses[*].level",
+          "defaultPath": "properties.instanceView.statuses[*].level"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses[*].message",
+          "defaultPath": "properties.instanceView.statuses[*].message"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/instanceView.statuses[*].time",
+          "defaultPath": "properties.instanceView.statuses[*].time"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/outputBlobManagedIdentity",
+          "defaultPath": "properties.outputBlobManagedIdentity"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/outputBlobManagedIdentity.clientId",
+          "defaultPath": "properties.outputBlobManagedIdentity.clientId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/outputBlobManagedIdentity.objectId",
+          "defaultPath": "properties.outputBlobManagedIdentity.objectId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/outputBlobUri",
+          "defaultPath": "properties.outputBlobUri"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/parameters[*]",
+          "defaultPath": "properties.parameters[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/parameters[*].name",
+          "defaultPath": "properties.parameters[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/parameters[*].value",
+          "defaultPath": "properties.parameters[*].value"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/protectedParameters",
+          "defaultPath": "properties.protectedParameters"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/protectedParameters[*]",
+          "defaultPath": "properties.protectedParameters[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/protectedParameters[*].name",
+          "defaultPath": "properties.protectedParameters[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/protectedParameters[*].value",
+          "defaultPath": "properties.protectedParameters[*].value"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/runAsPassword",
+          "defaultPath": "properties.runAsPassword"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/runAsUser",
+          "defaultPath": "properties.runAsUser"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source.commandId",
+          "defaultPath": "properties.source.commandId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source.script",
+          "defaultPath": "properties.source.script"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source.scriptUri",
+          "defaultPath": "properties.source.scriptUri"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source.scriptUriManagedIdentity",
+          "defaultPath": "properties.source.scriptUriManagedIdentity"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source.scriptUriManagedIdentity.clientId",
+          "defaultPath": "properties.source.scriptUriManagedIdentity.clientId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/source.scriptUriManagedIdentity.objectId",
+          "defaultPath": "properties.source.scriptUriManagedIdentity.objectId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/machines/runCommands/timeoutInSeconds",
+          "defaultPath": "properties.timeoutInSeconds"
+        }
+      ],
+      "resourceType": "machines/runcommands"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateLinkScopeId",
+          "defaultPath": "properties.privateLinkScopeId"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/serviceExtensions",
+          "defaultPath": "properties.serviceExtensions"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/serviceExtensions[*]",
+          "defaultPath": "properties.serviceExtensions[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/serviceExtensions[*].serviceExtensionPublicNetworkAccess",
+          "defaultPath": "properties.serviceExtensions[*].serviceExtensionPublicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/serviceExtensions[*].serviceExtensionType",
+          "defaultPath": "properties.serviceExtensions[*].serviceExtensionType"
+        }
+      ],
+      "resourceType": "privateLinkScopes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.HybridCompute/privateLinkScopes/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "privateLinkScopes/privateEndpointConnections"
+    }
+  ]
+}

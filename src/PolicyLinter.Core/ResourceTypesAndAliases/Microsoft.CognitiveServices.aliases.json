@@ -1,0 +1,3000 @@
+{
+  "namespace": "Microsoft.CognitiveServices",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/a365LoggingEnabled",
+          "paths": [
+            {
+              "path": "properties.a365LoggingEnabled",
+              "apiVersions": [
+                "2026-07-01",
+                "2026-05-15-preview",
+                "2026-05-01",
+                "2026-03-15-preview",
+                "2026-03-01",
+                "2026-01-15-preview",
+                "2025-12-01",
+                "2025-10-01-preview",
+                "2025-09-01",
+                "2025-07-01-preview",
+                "2025-06-01",
+                "2025-04-01-preview",
+                "2024-10-01",
+                "2024-06-01-preview",
+                "2024-04-01-preview",
+                "2023-10-01-preview",
+                "2023-05-01",
+                "2022-12-01",
+                "2022-10-01",
+                "2022-03-01",
+                "2021-10-01",
+                "2021-04-30",
+                "2017-04-18",
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.a365LoggingEnabled",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/abusePenalty",
+          "defaultPath": "properties.abusePenalty"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/abusePenalty.action",
+          "defaultPath": "properties.abusePenalty.action"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/abusePenalty.expiration",
+          "defaultPath": "properties.abusePenalty.expiration"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/abusePenalty.rateLimitPercentage",
+          "defaultPath": "properties.abusePenalty.rateLimitPercentage"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations",
+          "defaultPath": "properties.agentHostingConfigurations"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*]",
+          "defaultPath": "properties.agentHostingConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].hostingType",
+          "defaultPath": "properties.agentHostingConfigurations[*].hostingType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].ManagedCluster",
+          "defaultPath": "properties.agentHostingConfigurations[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].ManagedCluster.clusterResourceId",
+          "defaultPath": "properties.agentHostingConfigurations[*].clusterResourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].ManagedCluster.hostingManagementIdentityResourceId",
+          "defaultPath": "properties.agentHostingConfigurations[*].hostingManagementIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].ManagedCluster.storageAccountResourceId",
+          "defaultPath": "properties.agentHostingConfigurations[*].storageAccountResourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].ManagedCluster.workloadIdentityResourceId",
+          "defaultPath": "properties.agentHostingConfigurations[*].workloadIdentityResourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/agentHostingConfigurations[*].name",
+          "defaultPath": "properties.agentHostingConfigurations[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/allowedFqdnList",
+          "defaultPath": "properties.allowedFqdnList"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/allowedFqdnList[*]",
+          "defaultPath": "properties.allowedFqdnList[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/allowProjectManagement",
+          "defaultPath": "properties.allowProjectManagement"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/amlWorkspace",
+          "defaultPath": "properties.amlWorkspace"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/amlWorkspace.identityClientId",
+          "defaultPath": "properties.amlWorkspace.identityClientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/amlWorkspace.resourceId",
+          "defaultPath": "properties.amlWorkspace.resourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties",
+          "defaultPath": "properties.apiProperties"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.aadClientId",
+          "defaultPath": "properties.apiProperties.aadClientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.aadTenantId",
+          "defaultPath": "properties.apiProperties.aadTenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.eventHubConnectionString",
+          "defaultPath": "properties.apiProperties.eventHubConnectionString"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.qnaAzureSearchEndpointId",
+          "defaultPath": "properties.apiProperties.qnaAzureSearchEndpointId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.qnaAzureSearchEndpointKey",
+          "defaultPath": "properties.apiProperties.qnaAzureSearchEndpointKey"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.qnaRuntimeEndpoint",
+          "defaultPath": "properties.apiProperties.qnaRuntimeEndpoint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.statisticsEnabled",
+          "defaultPath": "properties.apiProperties.statisticsEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.storageAccountConnectionString",
+          "defaultPath": "properties.apiProperties.storageAccountConnectionString"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.superUser",
+          "defaultPath": "properties.apiProperties.superUser"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/apiProperties.websiteName",
+          "defaultPath": "properties.apiProperties.websiteName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/associatedProjects",
+          "defaultPath": "properties.associatedProjects"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/associatedProjects[*]",
+          "defaultPath": "properties.associatedProjects[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit",
+          "defaultPath": "properties.callRateLimit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.count",
+          "defaultPath": "properties.callRateLimit.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.renewalPeriod",
+          "defaultPath": "properties.callRateLimit.renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules",
+          "defaultPath": "properties.callRateLimit.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*]",
+          "defaultPath": "properties.callRateLimit.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].count",
+          "defaultPath": "properties.callRateLimit.rules[*].count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].dynamicThrottlingEnabled",
+          "defaultPath": "properties.callRateLimit.rules[*].dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].key",
+          "defaultPath": "properties.callRateLimit.rules[*].key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].matchPatterns",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].matchPatterns[*]",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].matchPatterns[*].method",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns[*].method"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].matchPatterns[*].path",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns[*].path"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].minCount",
+          "defaultPath": "properties.callRateLimit.rules[*].minCount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/callRateLimit.rules[*].renewalPeriod",
+          "defaultPath": "properties.callRateLimit.rules[*].renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilities",
+          "defaultPath": "properties.capabilities"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilities[*]",
+          "defaultPath": "properties.capabilities[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilities[*].name",
+          "defaultPath": "properties.capabilities[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilities[*].value",
+          "defaultPath": "properties.capabilities[*].value"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilitySettings",
+          "defaultPath": "properties.capabilitySettings"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilitySettings.blobStore",
+          "defaultPath": "properties.capabilitySettings.blobStore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilitySettings.documentStore",
+          "defaultPath": "properties.capabilitySettings.documentStore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilitySettings.vectorStore",
+          "defaultPath": "properties.capabilitySettings.vectorStore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlanAssociations",
+          "defaultPath": "properties.commitmentPlanAssociations"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlanAssociations[*]",
+          "defaultPath": "properties.commitmentPlanAssociations[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlanAssociations[*].commitmentPlanId",
+          "defaultPath": "properties.commitmentPlanAssociations[*].commitmentPlanId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlanAssociations[*].commitmentPlanLocation",
+          "defaultPath": "properties.commitmentPlanAssociations[*].commitmentPlanLocation"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/customSubDomainName",
+          "defaultPath": "properties.customSubDomainName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/dateCreated",
+          "defaultPath": "properties.dateCreated"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/defaultProject",
+          "defaultPath": "properties.defaultProject"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deletionDate",
+          "defaultPath": "properties.deletionDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2017-04-18",
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/dynamicThrottlingEnabled",
+          "defaultPath": "properties.dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption.keySource",
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption.keyVaultProperties.identityClientId",
+          "defaultPath": "properties.encryption.keyVaultProperties.identityClientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption.keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryption.keyVaultProperties.keyVersion",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/endpoints",
+          "defaultPath": "properties.endpoints"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/foundryAutoUpgrade",
+          "defaultPath": "properties.foundryAutoUpgrade"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/foundryAutoUpgrade.mode",
+          "defaultPath": "properties.foundryAutoUpgrade.mode"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/foundryAutoUpgrade.plannedByMicrosoft",
+          "defaultPath": "properties.foundryAutoUpgrade.plannedByMicrosoft"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/foundryAutoUpgrade.scheduledAt",
+          "defaultPath": "properties.foundryAutoUpgrade.scheduledAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/foundryAutoUpgrade.statusReason",
+          "defaultPath": "properties.foundryAutoUpgrade.statusReason"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/internalId",
+          "defaultPath": "properties.internalId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/isMigrated",
+          "defaultPath": "properties.isMigrated"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations",
+          "defaultPath": "properties.locations"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations.regions",
+          "defaultPath": "properties.locations.regions"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations.regions[*]",
+          "defaultPath": "properties.locations.regions[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations.regions[*].customsubdomain",
+          "defaultPath": "properties.locations.regions[*].customsubdomain"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations.regions[*].name",
+          "defaultPath": "properties.locations.regions[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations.regions[*].value",
+          "defaultPath": "properties.locations.regions[*].value"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/locations.routingMethod",
+          "defaultPath": "properties.locations.routingMethod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/migrationToken",
+          "defaultPath": "properties.migrationToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls",
+          "defaultPath": "properties.networkAcls"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.bypass",
+          "paths": [
+            {
+              "path": "properties.networkAcls.bypass",
+              "apiVersions": [
+                "2023-05-01",
+                "2022-12-01",
+                "2022-10-01",
+                "2022-03-01",
+                "2021-10-01",
+                "2021-04-30",
+                "2017-04-18",
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.bypass",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkAcls.defaultAction",
+              "apiVersions": [
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.ipRules",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules",
+              "apiVersions": [
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.ipRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*]",
+              "apiVersions": [
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.ipRules[*].value",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*].value",
+              "apiVersions": [
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*].value",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.virtualNetworkRules",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.virtualNetworkRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*]",
+              "apiVersions": [
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.virtualNetworkRules[*].id",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].id"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkAcls.virtualNetworkRules[*].state",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].state"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections",
+          "defaultPath": "properties.networkInjections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections.scenario",
+          "defaultPath": "properties.networkInjections.scenario"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections.subnetArmId",
+          "defaultPath": "properties.networkInjections.subnetArmId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections.useMicrosoftManagedNetwork",
+          "defaultPath": "properties.networkInjections.useMicrosoftManagedNetwork"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections[*]",
+          "defaultPath": "properties.networkInjections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections[*].scenario",
+          "defaultPath": "properties.networkInjections[*].scenario"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections[*].subnetArmId",
+          "defaultPath": "properties.networkInjections[*].subnetArmId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/networkInjections[*].useMicrosoftManagedNetwork",
+          "defaultPath": "properties.networkInjections[*].useMicrosoftManagedNetwork"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].etag",
+          "defaultPath": "properties.privateEndpointConnections[*].etag"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].groupIds",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].groupIds[*]",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].location",
+          "defaultPath": "properties.privateEndpointConnections[*].location"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit",
+          "defaultPath": "properties.quotaLimit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.count",
+          "defaultPath": "properties.quotaLimit.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.renewalPeriod",
+          "defaultPath": "properties.quotaLimit.renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules",
+          "defaultPath": "properties.quotaLimit.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*]",
+          "defaultPath": "properties.quotaLimit.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].count",
+          "defaultPath": "properties.quotaLimit.rules[*].count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].dynamicThrottlingEnabled",
+          "defaultPath": "properties.quotaLimit.rules[*].dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].key",
+          "defaultPath": "properties.quotaLimit.rules[*].key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].matchPatterns",
+          "defaultPath": "properties.quotaLimit.rules[*].matchPatterns"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].matchPatterns[*]",
+          "defaultPath": "properties.quotaLimit.rules[*].matchPatterns[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].matchPatterns[*].method",
+          "defaultPath": "properties.quotaLimit.rules[*].matchPatterns[*].method"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].matchPatterns[*].path",
+          "defaultPath": "properties.quotaLimit.rules[*].matchPatterns[*].path"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].minCount",
+          "defaultPath": "properties.quotaLimit.rules[*].minCount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/quotaLimit.rules[*].renewalPeriod",
+          "defaultPath": "properties.quotaLimit.rules[*].renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiMonitorConfig",
+          "defaultPath": "properties.raiMonitorConfig"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiMonitorConfig.adxStorageResourceId",
+          "defaultPath": "properties.raiMonitorConfig.adxStorageResourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiMonitorConfig.identityClientId",
+          "defaultPath": "properties.raiMonitorConfig.identityClientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/restore",
+          "defaultPath": "properties.restore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/restrictOutboundNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.restrictOutboundNetworkAccess",
+              "apiVersions": [
+                "2017-04-18",
+                "2016-02-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.restrictOutboundNetworkAccess",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/scheduledPurgeDate",
+          "defaultPath": "properties.scheduledPurgeDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/skuChangeInfo",
+          "defaultPath": "properties.skuChangeInfo"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/skuChangeInfo.countOfDowngrades",
+          "defaultPath": "properties.skuChangeInfo.countOfDowngrades"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/skuChangeInfo.countOfUpgradesAfterDowngrades",
+          "defaultPath": "properties.skuChangeInfo.countOfUpgradesAfterDowngrades"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/skuChangeInfo.lastChangeDate",
+          "defaultPath": "properties.skuChangeInfo.lastChangeDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/storedCompletionsDisabled",
+          "defaultPath": "properties.storedCompletionsDisabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/userOwnedStorage",
+          "defaultPath": "properties.userOwnedStorage"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/userOwnedStorage[*]",
+          "defaultPath": "properties.userOwnedStorage[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/userOwnedStorage[*].identityClientId",
+          "defaultPath": "properties.userOwnedStorage[*].identityClientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/userOwnedStorage[*].resourceId",
+          "defaultPath": "properties.userOwnedStorage[*].resourceId"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/capabilities",
+          "defaultPath": "properties.capabilities"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/compute",
+          "defaultPath": "properties.compute"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/deploymentState",
+          "defaultPath": "properties.deploymentState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/deploymentTemplate",
+          "defaultPath": "properties.deploymentTemplate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/extensionId",
+          "defaultPath": "properties.extensionId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/inferenceEndpoint",
+          "defaultPath": "properties.inferenceEndpoint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/model",
+          "defaultPath": "properties.model"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/model.format",
+          "defaultPath": "properties.model.format"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/model.name",
+          "defaultPath": "properties.model.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/nodeSelector",
+          "defaultPath": "properties.nodeSelector"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/provisioningDetails",
+          "defaultPath": "properties.provisioningDetails"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/provisioningDetails.lastOperationTimestamp",
+          "defaultPath": "properties.provisioningDetails.lastOperationTimestamp"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/provisioningDetails.message",
+          "defaultPath": "properties.provisioningDetails.message"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/raiPolicyName",
+          "defaultPath": "properties.raiPolicyName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/replicas",
+          "defaultPath": "properties.replicas"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources",
+          "defaultPath": "properties.resources"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.limits",
+          "defaultPath": "properties.resources.limits"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.limits.cpu",
+          "defaultPath": "properties.resources.limits.cpu"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.limits.gpu",
+          "defaultPath": "properties.resources.limits.gpu"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.limits.memory",
+          "defaultPath": "properties.resources.limits.memory"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.requests",
+          "defaultPath": "properties.resources.requests"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.requests.cpu",
+          "defaultPath": "properties.resources.requests.cpu"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/resources.requests.memory",
+          "defaultPath": "properties.resources.requests.memory"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/runtime",
+          "defaultPath": "properties.runtime"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/vllmParameters",
+          "defaultPath": "properties.vllmParameters"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/vllmParameters.enforceEager",
+          "defaultPath": "properties.vllmParameters.enforceEager"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/vllmParameters.gpuMemoryUtilization",
+          "defaultPath": "properties.vllmParameters.gpuMemoryUtilization"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/vllmParameters.maxModelLen",
+          "defaultPath": "properties.vllmParameters.maxModelLen"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/arcDeployments/vllmParameters.tensorParallelSize",
+          "defaultPath": "properties.vllmParameters.tensorParallelSize"
+        }
+      ],
+      "resourceType": "accounts/arcDeployments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/aiServicesConnections",
+          "defaultPath": "properties.aiServicesConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/aiServicesConnections[*]",
+          "defaultPath": "properties.aiServicesConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/capabilityHostKind",
+          "defaultPath": "properties.capabilityHostKind"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/customerSubnet",
+          "defaultPath": "properties.customerSubnet"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/enablePublicHostingEnvironment",
+          "defaultPath": "properties.enablePublicHostingEnvironment"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/storageConnections",
+          "defaultPath": "properties.storageConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/storageConnections[*]",
+          "defaultPath": "properties.storageConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/threadStorageConnections",
+          "defaultPath": "properties.threadStorageConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/threadStorageConnections[*]",
+          "defaultPath": "properties.threadStorageConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/vectorStoreConnections",
+          "defaultPath": "properties.vectorStoreConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/capabilityHosts/vectorStoreConnections[*]",
+          "defaultPath": "properties.vectorStoreConnections[*]"
+        }
+      ],
+      "resourceType": "accounts/capabilityhosts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/autoRenew",
+          "defaultPath": "properties.autoRenew"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/commitmentPlanGuid",
+          "defaultPath": "properties.commitmentPlanGuid"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current",
+          "defaultPath": "properties.current"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.count",
+          "defaultPath": "properties.current.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.endDate",
+          "defaultPath": "properties.current.endDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.quota",
+          "defaultPath": "properties.current.quota"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.quota.quantity",
+          "defaultPath": "properties.current.quota.quantity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.quota.unit",
+          "defaultPath": "properties.current.quota.unit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.startDate",
+          "defaultPath": "properties.current.startDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/current.tier",
+          "defaultPath": "properties.current.tier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/hostingModel",
+          "defaultPath": "properties.hostingModel"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last",
+          "defaultPath": "properties.last"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.count",
+          "defaultPath": "properties.last.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.endDate",
+          "defaultPath": "properties.last.endDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.quota",
+          "defaultPath": "properties.last.quota"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.quota.quantity",
+          "defaultPath": "properties.last.quota.quantity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.quota.unit",
+          "defaultPath": "properties.last.quota.unit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.startDate",
+          "defaultPath": "properties.last.startDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/last.tier",
+          "defaultPath": "properties.last.tier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next",
+          "defaultPath": "properties.next"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.count",
+          "defaultPath": "properties.next.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.endDate",
+          "defaultPath": "properties.next.endDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.quota",
+          "defaultPath": "properties.next.quota"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.quota.quantity",
+          "defaultPath": "properties.next.quota.quantity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.quota.unit",
+          "defaultPath": "properties.next.quota.unit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.startDate",
+          "defaultPath": "properties.next.startDate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/next.tier",
+          "defaultPath": "properties.next.tier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/planType",
+          "defaultPath": "properties.planType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/provisioningIssues",
+          "defaultPath": "properties.provisioningIssues"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/provisioningIssues[*]",
+          "defaultPath": "properties.provisioningIssues[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/commitmentPlans/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "accounts/commitmentplans"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/AccessKey.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/AccessKey.credentials.accessKeyId",
+          "defaultPath": "properties.credentials.accessKeyId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/AccessKey.credentials.secretAccessKey",
+          "defaultPath": "properties.credentials.secretAccessKey"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/AccountKey.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/AccountKey.credentials.key",
+          "defaultPath": "properties.credentials.key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ApiKey.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ApiKey.credentials.key",
+          "defaultPath": "properties.credentials.key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/authType",
+          "defaultPath": "properties.authType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/category",
+          "defaultPath": "properties.category"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/createdByWorkspaceArmId",
+          "defaultPath": "properties.createdByWorkspaceArmId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/CustomKeys.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/CustomKeys.credentials.keys",
+          "defaultPath": "properties.credentials.keys"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/expiryTime",
+          "defaultPath": "properties.expiryTime"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/group",
+          "defaultPath": "properties.group"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/isSharedToAll",
+          "defaultPath": "properties.isSharedToAll"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ManagedIdentity.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ManagedIdentity.credentials.clientId",
+          "defaultPath": "properties.credentials.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ManagedIdentity.credentials.resourceId",
+          "defaultPath": "properties.credentials.resourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.authUrl",
+          "defaultPath": "properties.credentials.authUrl"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.clientId",
+          "defaultPath": "properties.credentials.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.clientSecret",
+          "defaultPath": "properties.credentials.clientSecret"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.developerToken",
+          "defaultPath": "properties.credentials.developerToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.password",
+          "defaultPath": "properties.credentials.password"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.refreshToken",
+          "defaultPath": "properties.credentials.refreshToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.tenantId",
+          "defaultPath": "properties.credentials.tenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/OAuth2.credentials.username",
+          "defaultPath": "properties.credentials.username"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/PAT.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/PAT.credentials.pat",
+          "defaultPath": "properties.credentials.pat"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/peRequirement",
+          "defaultPath": "properties.peRequirement"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/peStatus",
+          "defaultPath": "properties.peStatus"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/SAS.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/SAS.credentials.sas",
+          "defaultPath": "properties.credentials.sas"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ServicePrincipal.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ServicePrincipal.credentials.clientId",
+          "defaultPath": "properties.credentials.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ServicePrincipal.credentials.clientSecret",
+          "defaultPath": "properties.credentials.clientSecret"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/ServicePrincipal.credentials.tenantId",
+          "defaultPath": "properties.credentials.tenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/sharedUserList",
+          "defaultPath": "properties.sharedUserList"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/sharedUserList[*]",
+          "defaultPath": "properties.sharedUserList[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/target",
+          "defaultPath": "properties.target"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/UsernamePassword.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/UsernamePassword.credentials.password",
+          "defaultPath": "properties.credentials.password"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/UsernamePassword.credentials.securityToken",
+          "defaultPath": "properties.credentials.securityToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/UsernamePassword.credentials.username",
+          "defaultPath": "properties.credentials.username"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/connections/useWorkspaceManagedIdentity",
+          "defaultPath": "properties.useWorkspaceManagedIdentity"
+        }
+      ],
+      "resourceType": "accounts/connections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/defenderForAISettings/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "accounts/defenderForAISettings"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit",
+          "defaultPath": "properties.callRateLimit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.count",
+          "defaultPath": "properties.callRateLimit.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.renewalPeriod",
+          "defaultPath": "properties.callRateLimit.renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules",
+          "defaultPath": "properties.callRateLimit.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*]",
+          "defaultPath": "properties.callRateLimit.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].count",
+          "defaultPath": "properties.callRateLimit.rules[*].count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].dynamicThrottlingEnabled",
+          "defaultPath": "properties.callRateLimit.rules[*].dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].key",
+          "defaultPath": "properties.callRateLimit.rules[*].key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].matchPatterns",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].matchPatterns[*]",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].matchPatterns[*].method",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns[*].method"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].matchPatterns[*].path",
+          "defaultPath": "properties.callRateLimit.rules[*].matchPatterns[*].path"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].minCount",
+          "defaultPath": "properties.callRateLimit.rules[*].minCount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/callRateLimit.rules[*].renewalPeriod",
+          "defaultPath": "properties.callRateLimit.rules[*].renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/capabilities",
+          "defaultPath": "properties.capabilities"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/capacitySettings",
+          "defaultPath": "properties.capacitySettings"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/capacitySettings.designatedCapacity",
+          "defaultPath": "properties.capacitySettings.designatedCapacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/capacitySettings.priority",
+          "defaultPath": "properties.capacitySettings.priority"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/contextCacheContainerId",
+          "defaultPath": "properties.contextCacheContainerId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/currentCapacity",
+          "defaultPath": "properties.currentCapacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/deploymentState",
+          "defaultPath": "properties.deploymentState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/dynamicThrottlingEnabled",
+          "defaultPath": "properties.dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model",
+          "defaultPath": "properties.model"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit",
+          "defaultPath": "properties.model.callRateLimit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.count",
+          "defaultPath": "properties.model.callRateLimit.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.renewalPeriod",
+          "defaultPath": "properties.model.callRateLimit.renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules",
+          "defaultPath": "properties.model.callRateLimit.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*]",
+          "defaultPath": "properties.model.callRateLimit.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].count",
+          "defaultPath": "properties.model.callRateLimit.rules[*].count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].dynamicThrottlingEnabled",
+          "defaultPath": "properties.model.callRateLimit.rules[*].dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].key",
+          "defaultPath": "properties.model.callRateLimit.rules[*].key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].matchPatterns",
+          "defaultPath": "properties.model.callRateLimit.rules[*].matchPatterns"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].matchPatterns[*]",
+          "defaultPath": "properties.model.callRateLimit.rules[*].matchPatterns[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].matchPatterns[*].method",
+          "defaultPath": "properties.model.callRateLimit.rules[*].matchPatterns[*].method"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].matchPatterns[*].path",
+          "defaultPath": "properties.model.callRateLimit.rules[*].matchPatterns[*].path"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].minCount",
+          "defaultPath": "properties.model.callRateLimit.rules[*].minCount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.callRateLimit.rules[*].renewalPeriod",
+          "defaultPath": "properties.model.callRateLimit.rules[*].renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.format",
+          "defaultPath": "properties.model.format"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.name",
+          "defaultPath": "properties.model.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.publisher",
+          "defaultPath": "properties.model.publisher"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.source",
+          "defaultPath": "properties.model.source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.sourceAccount",
+          "defaultPath": "properties.model.sourceAccount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/model.version",
+          "defaultPath": "properties.model.version"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/parentDeploymentName",
+          "defaultPath": "properties.parentDeploymentName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/raiPolicyName",
+          "defaultPath": "properties.raiPolicyName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits",
+          "defaultPath": "properties.rateLimits"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*]",
+          "defaultPath": "properties.rateLimits[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].count",
+          "defaultPath": "properties.rateLimits[*].count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].dynamicThrottlingEnabled",
+          "defaultPath": "properties.rateLimits[*].dynamicThrottlingEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].key",
+          "defaultPath": "properties.rateLimits[*].key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].matchPatterns",
+          "defaultPath": "properties.rateLimits[*].matchPatterns"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].matchPatterns[*]",
+          "defaultPath": "properties.rateLimits[*].matchPatterns[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].matchPatterns[*].method",
+          "defaultPath": "properties.rateLimits[*].matchPatterns[*].method"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].matchPatterns[*].path",
+          "defaultPath": "properties.rateLimits[*].matchPatterns[*].path"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].minCount",
+          "defaultPath": "properties.rateLimits[*].minCount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/rateLimits[*].renewalPeriod",
+          "defaultPath": "properties.rateLimits[*].renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing",
+          "defaultPath": "properties.routing"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.mode",
+          "defaultPath": "properties.routing.mode"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models",
+          "defaultPath": "properties.routing.models"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*]",
+          "defaultPath": "properties.routing.models[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].callRateLimit",
+          "defaultPath": "properties.routing.models[*].callRateLimit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].callRateLimit.count",
+          "defaultPath": "properties.routing.models[*].callRateLimit.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].callRateLimit.renewalPeriod",
+          "defaultPath": "properties.routing.models[*].callRateLimit.renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].callRateLimit.rules",
+          "defaultPath": "properties.routing.models[*].callRateLimit.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].callRateLimit.rules[*]",
+          "defaultPath": "properties.routing.models[*].callRateLimit.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].format",
+          "defaultPath": "properties.routing.models[*].format"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].name",
+          "defaultPath": "properties.routing.models[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].publisher",
+          "defaultPath": "properties.routing.models[*].publisher"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].source",
+          "defaultPath": "properties.routing.models[*].source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].sourceAccount",
+          "defaultPath": "properties.routing.models[*].sourceAccount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/routing.models[*].version",
+          "defaultPath": "properties.routing.models[*].version"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/scaleSettings",
+          "defaultPath": "properties.scaleSettings"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/scaleSettings.activeCapacity",
+          "defaultPath": "properties.scaleSettings.activeCapacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/scaleSettings.capacity",
+          "defaultPath": "properties.scaleSettings.capacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/scaleSettings.scaleType",
+          "defaultPath": "properties.scaleSettings.scaleType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/serviceTier",
+          "defaultPath": "properties.serviceTier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding",
+          "defaultPath": "properties.speculativeDecoding"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel",
+          "defaultPath": "properties.speculativeDecoding.draftModel"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.callRateLimit",
+          "defaultPath": "properties.speculativeDecoding.draftModel.callRateLimit"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.callRateLimit.count",
+          "defaultPath": "properties.speculativeDecoding.draftModel.callRateLimit.count"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.callRateLimit.renewalPeriod",
+          "defaultPath": "properties.speculativeDecoding.draftModel.callRateLimit.renewalPeriod"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.callRateLimit.rules",
+          "defaultPath": "properties.speculativeDecoding.draftModel.callRateLimit.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.callRateLimit.rules[*]",
+          "defaultPath": "properties.speculativeDecoding.draftModel.callRateLimit.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.format",
+          "defaultPath": "properties.speculativeDecoding.draftModel.format"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.name",
+          "defaultPath": "properties.speculativeDecoding.draftModel.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.publisher",
+          "defaultPath": "properties.speculativeDecoding.draftModel.publisher"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.source",
+          "defaultPath": "properties.speculativeDecoding.draftModel.source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.sourceAccount",
+          "defaultPath": "properties.speculativeDecoding.draftModel.sourceAccount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftModel.version",
+          "defaultPath": "properties.speculativeDecoding.draftModel.version"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/speculativeDecoding.draftTokenCount",
+          "defaultPath": "properties.speculativeDecoding.draftTokenCount"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/spilloverDeploymentName",
+          "defaultPath": "properties.spilloverDeploymentName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/deployments/versionUpgradeOption",
+          "defaultPath": "properties.versionUpgradeOption"
+        }
+      ],
+      "resourceType": "accounts/deployments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/keySource",
+          "defaultPath": "properties.keySource"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/keyVaultProperties",
+          "defaultPath": "properties.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/keyVaultProperties.identityClientId",
+          "defaultPath": "properties.keyVaultProperties.identityClientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/keyVaultProperties.keyName",
+          "defaultPath": "properties.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/keyVaultProperties.keyVaultUri",
+          "defaultPath": "properties.keyVaultProperties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/keyVaultProperties.keyVersion",
+          "defaultPath": "properties.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/encryptionScopes/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "accounts/encryptionScopes"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/acceleratorsPerInstance",
+          "defaultPath": "properties.acceleratorsPerInstance"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/acceleratorType",
+          "defaultPath": "properties.acceleratorType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/capabilities",
+          "defaultPath": "properties.capabilities"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/computeId",
+          "defaultPath": "properties.computeId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/deploymentTemplate",
+          "defaultPath": "properties.deploymentTemplate"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/model",
+          "defaultPath": "properties.model"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/priority",
+          "defaultPath": "properties.priority"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/provisioningDetails",
+          "defaultPath": "properties.provisioningDetails"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/provisioningDetails.lastOperationTimestamp",
+          "defaultPath": "properties.provisioningDetails.lastOperationTimestamp"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/provisioningDetails.message",
+          "defaultPath": "properties.provisioningDetails.message"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/routes",
+          "defaultPath": "properties.routes"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/routes.chatCompletionsScoringPath",
+          "defaultPath": "properties.routes.chatCompletionsScoringPath"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/routes.messagesApiScoringPath",
+          "defaultPath": "properties.routes.messagesApiScoringPath"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/routes.swagger",
+          "defaultPath": "properties.routes.swagger"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/sku.size",
+          "defaultPath": "sku.size"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/totalAccelerators",
+          "defaultPath": "properties.totalAccelerators"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedComputeDeployments/versionUpgradeOption",
+          "defaultPath": "properties.versionUpgradeOption"
+        }
+      ],
+      "resourceType": "accounts/managedComputeDeployments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork",
+          "defaultPath": "properties.managedNetwork"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.changeableIsolationModes",
+          "defaultPath": "properties.managedNetwork.changeableIsolationModes"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.changeableIsolationModes[*]",
+          "defaultPath": "properties.managedNetwork.changeableIsolationModes[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.firewallPublicIpAddress",
+          "defaultPath": "properties.managedNetwork.firewallPublicIpAddress"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.firewallSku",
+          "defaultPath": "properties.managedNetwork.firewallSku"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.isolationMode",
+          "defaultPath": "properties.managedNetwork.isolationMode"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.managedNetworkKind",
+          "defaultPath": "properties.managedNetwork.managedNetworkKind"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.networkId",
+          "defaultPath": "properties.managedNetwork.networkId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.outboundRules",
+          "defaultPath": "properties.managedNetwork.outboundRules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.provisioningState",
+          "defaultPath": "properties.managedNetwork.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.status",
+          "defaultPath": "properties.managedNetwork.status"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/managedNetwork.status.status",
+          "defaultPath": "properties.managedNetwork.status.status"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/managedNetworks"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/category",
+          "defaultPath": "properties.category"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/errorInformation",
+          "defaultPath": "properties.errorInformation"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/FQDN.destination",
+          "defaultPath": "properties.destination"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/parentRuleNames",
+          "defaultPath": "properties.parentRuleNames"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/parentRuleNames[*]",
+          "defaultPath": "properties.parentRuleNames[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/PrivateEndpoint.destination",
+          "defaultPath": "properties.destination"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/PrivateEndpoint.destination.serviceResourceId",
+          "defaultPath": "properties.destination.serviceResourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/PrivateEndpoint.destination.subresourceTarget",
+          "defaultPath": "properties.destination.subresourceTarget"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/PrivateEndpoint.fqdns",
+          "defaultPath": "properties.fqdns"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/PrivateEndpoint.fqdns[*]",
+          "defaultPath": "properties.fqdns[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination",
+          "defaultPath": "properties.destination"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination.action",
+          "defaultPath": "properties.destination.action"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination.addressPrefixes",
+          "defaultPath": "properties.destination.addressPrefixes"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination.addressPrefixes[*]",
+          "defaultPath": "properties.destination.addressPrefixes[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination.portRanges",
+          "defaultPath": "properties.destination.portRanges"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination.protocol",
+          "defaultPath": "properties.destination.protocol"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/ServiceTag.destination.serviceTag",
+          "defaultPath": "properties.destination.serviceTag"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/managedNetworks/outboundRules/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "accounts/managedNetworks/outboundRules"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/groupIds",
+          "defaultPath": "properties.groupIds"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/groupIds[*]",
+          "defaultPath": "properties.groupIds[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilitySettings",
+          "defaultPath": "properties.capabilitySettings"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilitySettings.blobStore",
+          "defaultPath": "properties.capabilitySettings.blobStore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilitySettings.documentStore",
+          "defaultPath": "properties.capabilitySettings.documentStore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilitySettings.vectorStore",
+          "defaultPath": "properties.capabilitySettings.vectorStore"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/endpoints",
+          "defaultPath": "properties.endpoints"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/isDefault",
+          "defaultPath": "properties.isDefault"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "accounts/projects"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint",
+          "defaultPath": "properties.agentIdentityBlueprint"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.clientId",
+          "defaultPath": "properties.agentIdentityBlueprint.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.kind",
+          "defaultPath": "properties.agentIdentityBlueprint.kind"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.principalId",
+          "defaultPath": "properties.agentIdentityBlueprint.principalId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.provisioningState",
+          "defaultPath": "properties.agentIdentityBlueprint.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.subject",
+          "defaultPath": "properties.agentIdentityBlueprint.subject"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.tenantId",
+          "defaultPath": "properties.agentIdentityBlueprint.tenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentIdentityBlueprint.type",
+          "defaultPath": "properties.agentIdentityBlueprint.type"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agents",
+          "defaultPath": "properties.agents"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agents[*]",
+          "defaultPath": "properties.agents[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agents[*].agentId",
+          "defaultPath": "properties.agents[*].agentId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agents[*].agentName",
+          "defaultPath": "properties.agents[*].agentName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/authorizationPolicy",
+          "defaultPath": "properties.authorizationPolicy"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/authorizationPolicy.type",
+          "defaultPath": "properties.authorizationPolicy.type"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/baseUrl",
+          "defaultPath": "properties.baseUrl"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity",
+          "defaultPath": "properties.defaultInstanceIdentity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.clientId",
+          "defaultPath": "properties.defaultInstanceIdentity.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.kind",
+          "defaultPath": "properties.defaultInstanceIdentity.kind"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.principalId",
+          "defaultPath": "properties.defaultInstanceIdentity.principalId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.provisioningState",
+          "defaultPath": "properties.defaultInstanceIdentity.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.subject",
+          "defaultPath": "properties.defaultInstanceIdentity.subject"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.tenantId",
+          "defaultPath": "properties.defaultInstanceIdentity.tenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/defaultInstanceIdentity.type",
+          "defaultPath": "properties.defaultInstanceIdentity.type"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/isEnabled",
+          "defaultPath": "properties.isEnabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/tags",
+          "defaultPath": "properties.tags"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy",
+          "defaultPath": "properties.trafficRoutingPolicy"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.protocol",
+          "defaultPath": "properties.trafficRoutingPolicy.protocol"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.rules",
+          "defaultPath": "properties.trafficRoutingPolicy.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.rules[*]",
+          "defaultPath": "properties.trafficRoutingPolicy.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.rules[*].deploymentId",
+          "defaultPath": "properties.trafficRoutingPolicy.rules[*].deploymentId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.rules[*].description",
+          "defaultPath": "properties.trafficRoutingPolicy.rules[*].description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.rules[*].ruleId",
+          "defaultPath": "properties.trafficRoutingPolicy.rules[*].ruleId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/trafficRoutingPolicy.rules[*].trafficPercentage",
+          "defaultPath": "properties.trafficRoutingPolicy.rules[*].trafficPercentage"
+        }
+      ],
+      "resourceType": "accounts/projects/applications"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/agents",
+          "defaultPath": "properties.agents"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/agents[*]",
+          "defaultPath": "properties.agents[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/agents[*].agentId",
+          "defaultPath": "properties.agents[*].agentId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/agents[*].agentName",
+          "defaultPath": "properties.agents[*].agentName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/agents[*].agentVersion",
+          "defaultPath": "properties.agents[*].agentVersion"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/deploymentId",
+          "defaultPath": "properties.deploymentId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/deploymentType",
+          "defaultPath": "properties.deploymentType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/Hosted.maxReplicas",
+          "defaultPath": "properties.maxReplicas"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/Hosted.minReplicas",
+          "defaultPath": "properties.minReplicas"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/protocols",
+          "defaultPath": "properties.protocols"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/protocols[*]",
+          "defaultPath": "properties.protocols[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/protocols[*].protocol",
+          "defaultPath": "properties.protocols[*].protocol"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/protocols[*].version",
+          "defaultPath": "properties.protocols[*].version"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/applications/agentDeployments/tags",
+          "defaultPath": "properties.tags"
+        }
+      ],
+      "resourceType": "accounts/projects/applications/agentdeployments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/aiServicesConnections",
+          "defaultPath": "properties.aiServicesConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/aiServicesConnections[*]",
+          "defaultPath": "properties.aiServicesConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/storageConnections",
+          "defaultPath": "properties.storageConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/storageConnections[*]",
+          "defaultPath": "properties.storageConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/threadStorageConnections",
+          "defaultPath": "properties.threadStorageConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/threadStorageConnections[*]",
+          "defaultPath": "properties.threadStorageConnections[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/vectorStoreConnections",
+          "defaultPath": "properties.vectorStoreConnections"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/capabilityHosts/vectorStoreConnections[*]",
+          "defaultPath": "properties.vectorStoreConnections[*]"
+        }
+      ],
+      "resourceType": "accounts/projects/capabilityhosts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/AccessKey.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/AccessKey.credentials.accessKeyId",
+          "defaultPath": "properties.credentials.accessKeyId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/AccessKey.credentials.secretAccessKey",
+          "defaultPath": "properties.credentials.secretAccessKey"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/AccountKey.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/AccountKey.credentials.key",
+          "defaultPath": "properties.credentials.key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ApiKey.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ApiKey.credentials.key",
+          "defaultPath": "properties.credentials.key"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/authType",
+          "defaultPath": "properties.authType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/category",
+          "defaultPath": "properties.category"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/createdByWorkspaceArmId",
+          "defaultPath": "properties.createdByWorkspaceArmId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/CustomKeys.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/CustomKeys.credentials.keys",
+          "defaultPath": "properties.credentials.keys"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/error",
+          "defaultPath": "properties.error"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/expiryTime",
+          "defaultPath": "properties.expiryTime"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/group",
+          "defaultPath": "properties.group"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/isSharedToAll",
+          "defaultPath": "properties.isSharedToAll"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ManagedIdentity.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ManagedIdentity.credentials.clientId",
+          "defaultPath": "properties.credentials.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ManagedIdentity.credentials.resourceId",
+          "defaultPath": "properties.credentials.resourceId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/metadata",
+          "defaultPath": "properties.metadata"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.authUrl",
+          "defaultPath": "properties.credentials.authUrl"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.clientId",
+          "defaultPath": "properties.credentials.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.clientSecret",
+          "defaultPath": "properties.credentials.clientSecret"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.developerToken",
+          "defaultPath": "properties.credentials.developerToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.password",
+          "defaultPath": "properties.credentials.password"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.refreshToken",
+          "defaultPath": "properties.credentials.refreshToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.tenantId",
+          "defaultPath": "properties.credentials.tenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/OAuth2.credentials.username",
+          "defaultPath": "properties.credentials.username"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/PAT.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/PAT.credentials.pat",
+          "defaultPath": "properties.credentials.pat"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/peRequirement",
+          "defaultPath": "properties.peRequirement"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/peStatus",
+          "defaultPath": "properties.peStatus"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/SAS.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/SAS.credentials.sas",
+          "defaultPath": "properties.credentials.sas"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ServicePrincipal.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ServicePrincipal.credentials.clientId",
+          "defaultPath": "properties.credentials.clientId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ServicePrincipal.credentials.clientSecret",
+          "defaultPath": "properties.credentials.clientSecret"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/ServicePrincipal.credentials.tenantId",
+          "defaultPath": "properties.credentials.tenantId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/sharedUserList",
+          "defaultPath": "properties.sharedUserList"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/sharedUserList[*]",
+          "defaultPath": "properties.sharedUserList[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/target",
+          "defaultPath": "properties.target"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/UsernamePassword.credentials",
+          "defaultPath": "properties.credentials"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/UsernamePassword.credentials.password",
+          "defaultPath": "properties.credentials.password"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/UsernamePassword.credentials.securityToken",
+          "defaultPath": "properties.credentials.securityToken"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/UsernamePassword.credentials.username",
+          "defaultPath": "properties.credentials.username"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/projects/connections/useWorkspaceManagedIdentity",
+          "defaultPath": "properties.useWorkspaceManagedIdentity"
+        }
+      ],
+      "resourceType": "accounts/projects/connections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiBlocklists/description",
+          "defaultPath": "properties.description"
+        }
+      ],
+      "resourceType": "accounts/raiBlocklists"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiBlocklists/raiBlocklistItems/isRegex",
+          "defaultPath": "properties.isRegex"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiBlocklists/raiBlocklistItems/pattern",
+          "defaultPath": "properties.pattern"
+        }
+      ],
+      "resourceType": "accounts/raiBlocklists/raiBlocklistItems"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/basePolicyName",
+          "defaultPath": "properties.basePolicyName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/completionBlocklists",
+          "defaultPath": "properties.completionBlocklists"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/completionBlocklists[*]",
+          "defaultPath": "properties.completionBlocklists[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/completionBlocklists[*].blocking",
+          "defaultPath": "properties.completionBlocklists[*].blocking"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/completionBlocklists[*].blocklistName",
+          "defaultPath": "properties.completionBlocklists[*].blocklistName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters",
+          "defaultPath": "properties.contentFilters"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*]",
+          "defaultPath": "properties.contentFilters[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].action",
+          "defaultPath": "properties.contentFilters[*].action"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].allowedContentLevel",
+          "defaultPath": "properties.contentFilters[*].allowedContentLevel"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].blocking",
+          "defaultPath": "properties.contentFilters[*].blocking"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].enabled",
+          "defaultPath": "properties.contentFilters[*].enabled"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].name",
+          "defaultPath": "properties.contentFilters[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].policyName",
+          "defaultPath": "properties.contentFilters[*].policyName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].severityThreshold",
+          "defaultPath": "properties.contentFilters[*].severityThreshold"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/contentFilters[*].source",
+          "defaultPath": "properties.contentFilters[*].source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customBlocklists",
+          "defaultPath": "properties.customBlocklists"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customBlocklists[*]",
+          "defaultPath": "properties.customBlocklists[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customBlocklists[*].blocking",
+          "defaultPath": "properties.customBlocklists[*].blocking"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customBlocklists[*].blocklistName",
+          "defaultPath": "properties.customBlocklists[*].blocklistName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customBlocklists[*].source",
+          "defaultPath": "properties.customBlocklists[*].source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customTopics",
+          "defaultPath": "properties.customTopics"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customTopics[*]",
+          "defaultPath": "properties.customTopics[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customTopics[*].blocking",
+          "defaultPath": "properties.customTopics[*].blocking"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customTopics[*].source",
+          "defaultPath": "properties.customTopics[*].source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/customTopics[*].topicName",
+          "defaultPath": "properties.customTopics[*].topicName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy",
+          "defaultPath": "properties.egressPolicy"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.defaultAction",
+          "defaultPath": "properties.egressPolicy.defaultAction"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.description",
+          "defaultPath": "properties.egressPolicy.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.mode",
+          "defaultPath": "properties.egressPolicy.mode"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules",
+          "defaultPath": "properties.egressPolicy.rules"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*]",
+          "defaultPath": "properties.egressPolicy.rules[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].action",
+          "defaultPath": "properties.egressPolicy.rules[*].action"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].action.actionType",
+          "defaultPath": "properties.egressPolicy.rules[*].action.actionType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].action.headers",
+          "defaultPath": "properties.egressPolicy.rules[*].action.headers"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].action.headers[*]",
+          "defaultPath": "properties.egressPolicy.rules[*].action.headers[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].action.rewrite",
+          "defaultPath": "properties.egressPolicy.rules[*].action.rewrite"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].description",
+          "defaultPath": "properties.egressPolicy.rules[*].description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].match",
+          "defaultPath": "properties.egressPolicy.rules[*].match"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].match.host",
+          "defaultPath": "properties.egressPolicy.rules[*].match.host"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].match.path",
+          "defaultPath": "properties.egressPolicy.rules[*].match.path"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].name",
+          "defaultPath": "properties.egressPolicy.rules[*].name"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/egressPolicy.rules[*].ruleType",
+          "defaultPath": "properties.egressPolicy.rules[*].ruleType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/policyType",
+          "defaultPath": "properties.policyType"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/promptBlocklists",
+          "defaultPath": "properties.promptBlocklists"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/promptBlocklists[*]",
+          "defaultPath": "properties.promptBlocklists[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/promptBlocklists[*].blocking",
+          "defaultPath": "properties.promptBlocklists[*].blocking"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/promptBlocklists[*].blocklistName",
+          "defaultPath": "properties.promptBlocklists[*].blocklistName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/safetyProviders",
+          "defaultPath": "properties.safetyProviders"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/safetyProviders[*]",
+          "defaultPath": "properties.safetyProviders[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/safetyProviders[*].blocking",
+          "defaultPath": "properties.safetyProviders[*].blocking"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/safetyProviders[*].safetyProviderName",
+          "defaultPath": "properties.safetyProviders[*].safetyProviderName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/safetyProviders[*].source",
+          "defaultPath": "properties.safetyProviders[*].source"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiPolicies/type",
+          "defaultPath": "properties.type"
+        }
+      ],
+      "resourceType": "accounts/raiPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/accountScope",
+          "defaultPath": "properties.accountScope"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/accountScope.labelValues",
+          "defaultPath": "properties.accountScope.labelValues"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/projectScopes",
+          "defaultPath": "properties.projectScopes"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/projectScopes[*]",
+          "defaultPath": "properties.projectScopes[*]"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/projectScopes[*].labelValues",
+          "defaultPath": "properties.projectScopes[*].labelValues"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/projectScopes[*].project",
+          "defaultPath": "properties.projectScopes[*].project"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raiToolLabels/toolConnectionName",
+          "defaultPath": "properties.toolConnectionName"
+        }
+      ],
+      "resourceType": "accounts/raiToolLabels"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/failedReason",
+          "defaultPath": "properties.failedReason"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/lastModifiedAt",
+          "defaultPath": "properties.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/sampleBlobUrl",
+          "defaultPath": "properties.sampleBlobUrl"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/topicId",
+          "defaultPath": "properties.topicId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/accounts/raitopics/topicName",
+          "defaultPath": "properties.topicName"
+        }
+      ],
+      "resourceType": "accounts/raiTopics"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/keyVaultUri",
+          "defaultPath": "properties.keyVaultUri"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/lastModifiedAt",
+          "defaultPath": "properties.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/managedIdentity",
+          "defaultPath": "properties.managedIdentity"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/mode",
+          "defaultPath": "properties.mode"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/providerId",
+          "defaultPath": "properties.providerId"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/providerName",
+          "defaultPath": "properties.providerName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/secretName",
+          "defaultPath": "properties.secretName"
+        },
+        {
+          "name": "Microsoft.CognitiveServices/raiExternalSafetyProviders/url",
+          "defaultPath": "properties.url"
+        }
+      ],
+      "resourceType": "raiExternalSafetyProviders"
+    }
+  ]
+}

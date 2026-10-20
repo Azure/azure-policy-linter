@@ -1,0 +1,599 @@
+{
+  "namespace": "Microsoft.EdgeOrder",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EdgeOrder/addresses/addressValidationStatus",
+          "defaultPath": "properties.addressValidationStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails",
+          "defaultPath": "properties.contactDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails.contactName",
+          "defaultPath": "properties.contactDetails.contactName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails.emailList",
+          "defaultPath": "properties.contactDetails.emailList"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails.emailList[*]",
+          "defaultPath": "properties.contactDetails.emailList[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails.mobile",
+          "defaultPath": "properties.contactDetails.mobile"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails.phone",
+          "defaultPath": "properties.contactDetails.phone"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/contactDetails.phoneExtension",
+          "defaultPath": "properties.contactDetails.phoneExtension"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress",
+          "defaultPath": "properties.shippingAddress"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.addressType",
+          "defaultPath": "properties.shippingAddress.addressType"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.city",
+          "defaultPath": "properties.shippingAddress.city"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.companyName",
+          "defaultPath": "properties.shippingAddress.companyName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.country",
+          "defaultPath": "properties.shippingAddress.country"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.postalCode",
+          "defaultPath": "properties.shippingAddress.postalCode"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.stateOrProvince",
+          "defaultPath": "properties.shippingAddress.stateOrProvince"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.streetAddress1",
+          "defaultPath": "properties.shippingAddress.streetAddress1"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.streetAddress2",
+          "defaultPath": "properties.shippingAddress.streetAddress2"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.streetAddress3",
+          "defaultPath": "properties.shippingAddress.streetAddress3"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/addresses/shippingAddress.zipExtendedCode",
+          "defaultPath": "properties.shippingAddress.zipExtendedCode"
+        }
+      ],
+      "resourceType": "addresses"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails",
+          "defaultPath": "properties.addressDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress",
+          "defaultPath": "properties.addressDetails.forwardAddress"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.addressValidationStatus",
+          "defaultPath": "properties.addressDetails.forwardAddress.addressValidationStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails.contactName",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails.contactName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails.emailList",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails.emailList"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails.emailList[*]",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails.emailList[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails.mobile",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails.mobile"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails.phone",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails.phone"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.contactDetails.phoneExtension",
+          "defaultPath": "properties.addressDetails.forwardAddress.contactDetails.phoneExtension"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.addressType",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.addressType"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.city",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.city"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.companyName",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.companyName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.country",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.country"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.postalCode",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.postalCode"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.stateOrProvince",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.stateOrProvince"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.streetAddress1",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.streetAddress1"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.streetAddress2",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.streetAddress2"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.streetAddress3",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.streetAddress3"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.forwardAddress.shippingAddress.zipExtendedCode",
+          "defaultPath": "properties.addressDetails.forwardAddress.shippingAddress.zipExtendedCode"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress",
+          "defaultPath": "properties.addressDetails.returnAddress"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.addressValidationStatus",
+          "defaultPath": "properties.addressDetails.returnAddress.addressValidationStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails.contactName",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails.contactName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails.emailList",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails.emailList"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails.emailList[*]",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails.emailList[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails.mobile",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails.mobile"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails.phone",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails.phone"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.contactDetails.phoneExtension",
+          "defaultPath": "properties.addressDetails.returnAddress.contactDetails.phoneExtension"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.addressType",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.addressType"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.city",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.city"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.companyName",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.companyName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.country",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.country"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.postalCode",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.postalCode"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.stateOrProvince",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.stateOrProvince"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.streetAddress1",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.streetAddress1"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.streetAddress2",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.streetAddress2"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.streetAddress3",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.streetAddress3"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/addressDetails.returnAddress.shippingAddress.zipExtendedCode",
+          "defaultPath": "properties.addressDetails.returnAddress.shippingAddress.zipExtendedCode"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderId",
+          "defaultPath": "properties.orderId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails",
+          "defaultPath": "properties.orderItemDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.cancellationReason",
+          "defaultPath": "properties.orderItemDetails.cancellationReason"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.cancellationStatus",
+          "defaultPath": "properties.orderItemDetails.cancellationStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.currentStage",
+          "defaultPath": "properties.orderItemDetails.currentStage"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.currentStage.displayName",
+          "defaultPath": "properties.orderItemDetails.currentStage.displayName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.currentStage.stageName",
+          "defaultPath": "properties.orderItemDetails.currentStage.stageName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.currentStage.stageStatus",
+          "defaultPath": "properties.orderItemDetails.currentStage.stageStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.currentStage.startTime",
+          "defaultPath": "properties.orderItemDetails.currentStage.startTime"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.deletionStatus",
+          "defaultPath": "properties.orderItemDetails.deletionStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error",
+          "defaultPath": "properties.orderItemDetails.error"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.additionalInfo",
+          "defaultPath": "properties.orderItemDetails.error.additionalInfo"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.additionalInfo[*]",
+          "defaultPath": "properties.orderItemDetails.error.additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.additionalInfo[*].type",
+          "defaultPath": "properties.orderItemDetails.error.additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.code",
+          "defaultPath": "properties.orderItemDetails.error.code"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details",
+          "defaultPath": "properties.orderItemDetails.error.details"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*]",
+          "defaultPath": "properties.orderItemDetails.error.details[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].additionalInfo",
+          "defaultPath": "properties.orderItemDetails.error.details[*].additionalInfo"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].additionalInfo[*]",
+          "defaultPath": "properties.orderItemDetails.error.details[*].additionalInfo[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].additionalInfo[*].type",
+          "defaultPath": "properties.orderItemDetails.error.details[*].additionalInfo[*].type"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].code",
+          "defaultPath": "properties.orderItemDetails.error.details[*].code"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].details",
+          "defaultPath": "properties.orderItemDetails.error.details[*].details"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].details[*]",
+          "defaultPath": "properties.orderItemDetails.error.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].message",
+          "defaultPath": "properties.orderItemDetails.error.details[*].message"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.details[*].target",
+          "defaultPath": "properties.orderItemDetails.error.details[*].target"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.message",
+          "defaultPath": "properties.orderItemDetails.error.message"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.error.target",
+          "defaultPath": "properties.orderItemDetails.error.target"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.forwardShippingDetails",
+          "defaultPath": "properties.orderItemDetails.forwardShippingDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.forwardShippingDetails.carrierDisplayName",
+          "defaultPath": "properties.orderItemDetails.forwardShippingDetails.carrierDisplayName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.forwardShippingDetails.carrierName",
+          "defaultPath": "properties.orderItemDetails.forwardShippingDetails.carrierName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.forwardShippingDetails.trackingId",
+          "defaultPath": "properties.orderItemDetails.forwardShippingDetails.trackingId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.forwardShippingDetails.trackingUrl",
+          "defaultPath": "properties.orderItemDetails.forwardShippingDetails.trackingUrl"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementResourceDetails",
+          "defaultPath": "properties.orderItemDetails.managementResourceDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementResourceDetails.managementResourceArmId",
+          "defaultPath": "properties.orderItemDetails.managementResourceDetails.managementResourceArmId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementRpDetails",
+          "defaultPath": "properties.orderItemDetails.managementRpDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementRpDetails.resourceProviderNamespace",
+          "defaultPath": "properties.orderItemDetails.managementRpDetails.resourceProviderNamespace"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementRpDetailsList",
+          "defaultPath": "properties.orderItemDetails.managementRpDetailsList"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementRpDetailsList[*]",
+          "defaultPath": "properties.orderItemDetails.managementRpDetailsList[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.managementRpDetailsList[*].resourceProviderNamespace",
+          "defaultPath": "properties.orderItemDetails.managementRpDetailsList[*].resourceProviderNamespace"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.notificationEmailList",
+          "defaultPath": "properties.orderItemDetails.notificationEmailList"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.notificationEmailList[*]",
+          "defaultPath": "properties.orderItemDetails.notificationEmailList[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemStageHistory",
+          "defaultPath": "properties.orderItemDetails.orderItemStageHistory"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemStageHistory[*]",
+          "defaultPath": "properties.orderItemDetails.orderItemStageHistory[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemStageHistory[*].displayName",
+          "defaultPath": "properties.orderItemDetails.orderItemStageHistory[*].displayName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemStageHistory[*].stageName",
+          "defaultPath": "properties.orderItemDetails.orderItemStageHistory[*].stageName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemStageHistory[*].stageStatus",
+          "defaultPath": "properties.orderItemDetails.orderItemStageHistory[*].stageStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemStageHistory[*].startTime",
+          "defaultPath": "properties.orderItemDetails.orderItemStageHistory[*].startTime"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.orderItemType",
+          "defaultPath": "properties.orderItemDetails.orderItemType"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences",
+          "defaultPath": "properties.orderItemDetails.preferences"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.encryptionPreferences",
+          "defaultPath": "properties.orderItemDetails.preferences.encryptionPreferences"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.encryptionPreferences.doubleEncryptionStatus",
+          "defaultPath": "properties.orderItemDetails.preferences.encryptionPreferences.doubleEncryptionStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.managementResourcePreferences",
+          "defaultPath": "properties.orderItemDetails.preferences.managementResourcePreferences"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.managementResourcePreferences.preferredManagementResourceId",
+          "defaultPath": "properties.orderItemDetails.preferences.managementResourcePreferences.preferredManagementResourceId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.notificationPreferences",
+          "defaultPath": "properties.orderItemDetails.preferences.notificationPreferences"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.notificationPreferences[*]",
+          "defaultPath": "properties.orderItemDetails.preferences.notificationPreferences[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.notificationPreferences[*].sendNotification",
+          "defaultPath": "properties.orderItemDetails.preferences.notificationPreferences[*].sendNotification"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.notificationPreferences[*].stageName",
+          "defaultPath": "properties.orderItemDetails.preferences.notificationPreferences[*].stageName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.transportPreferences",
+          "defaultPath": "properties.orderItemDetails.preferences.transportPreferences"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.preferences.transportPreferences.preferredShipmentType",
+          "defaultPath": "properties.orderItemDetails.preferences.transportPreferences.preferredShipmentType"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails",
+          "defaultPath": "properties.orderItemDetails.productDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.count",
+          "defaultPath": "properties.orderItemDetails.productDetails.count"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails[*]",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails[*].deviceHistory",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails[*].deviceHistory"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails[*].deviceHistory[*]",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails[*].deviceHistory[*]"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails[*].managementResourceId",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails[*].managementResourceId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails[*].managementResourceTenantId",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails[*].managementResourceTenantId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.deviceDetails[*].serialNumber",
+          "defaultPath": "properties.orderItemDetails.productDetails.deviceDetails[*].serialNumber"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.displayInfo",
+          "defaultPath": "properties.orderItemDetails.productDetails.displayInfo"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.displayInfo.configurationDisplayName",
+          "defaultPath": "properties.orderItemDetails.productDetails.displayInfo.configurationDisplayName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.displayInfo.productFamilyDisplayName",
+          "defaultPath": "properties.orderItemDetails.productDetails.displayInfo.productFamilyDisplayName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.hierarchyInformation",
+          "defaultPath": "properties.orderItemDetails.productDetails.hierarchyInformation"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.hierarchyInformation.configurationName",
+          "defaultPath": "properties.orderItemDetails.productDetails.hierarchyInformation.configurationName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.hierarchyInformation.productFamilyName",
+          "defaultPath": "properties.orderItemDetails.productDetails.hierarchyInformation.productFamilyName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.hierarchyInformation.productLineName",
+          "defaultPath": "properties.orderItemDetails.productDetails.hierarchyInformation.productLineName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.hierarchyInformation.productName",
+          "defaultPath": "properties.orderItemDetails.productDetails.hierarchyInformation.productName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.productDetails.productDoubleEncryptionStatus",
+          "defaultPath": "properties.orderItemDetails.productDetails.productDoubleEncryptionStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.returnReason",
+          "defaultPath": "properties.orderItemDetails.returnReason"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.returnStatus",
+          "defaultPath": "properties.orderItemDetails.returnStatus"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.reverseShippingDetails",
+          "defaultPath": "properties.orderItemDetails.reverseShippingDetails"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.reverseShippingDetails.carrierDisplayName",
+          "defaultPath": "properties.orderItemDetails.reverseShippingDetails.carrierDisplayName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.reverseShippingDetails.carrierName",
+          "defaultPath": "properties.orderItemDetails.reverseShippingDetails.carrierName"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.reverseShippingDetails.sasKeyForLabel",
+          "defaultPath": "properties.orderItemDetails.reverseShippingDetails.sasKeyForLabel"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.reverseShippingDetails.trackingId",
+          "defaultPath": "properties.orderItemDetails.reverseShippingDetails.trackingId"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/orderItemDetails.reverseShippingDetails.trackingUrl",
+          "defaultPath": "properties.orderItemDetails.reverseShippingDetails.trackingUrl"
+        },
+        {
+          "name": "Microsoft.EdgeOrder/orderItems/startTime",
+          "defaultPath": "properties.startTime"
+        }
+      ],
+      "resourceType": "orderItems"
+    }
+  ]
+}

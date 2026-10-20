@@ -1,0 +1,193 @@
+{
+  "namespace": "Microsoft.DataShare",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataShare/accounts/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/userEmail",
+          "defaultPath": "properties.userEmail"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/userName",
+          "defaultPath": "properties.userName"
+        }
+      ],
+      "resourceType": "accounts"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataShare/accounts/shares/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/shareKind",
+          "defaultPath": "properties.shareKind"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/terms",
+          "defaultPath": "properties.terms"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/userEmail",
+          "defaultPath": "properties.userEmail"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/userName",
+          "defaultPath": "properties.userName"
+        }
+      ],
+      "resourceType": "accounts/shares"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/expirationDate",
+          "defaultPath": "properties.expirationDate"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/invitationId",
+          "defaultPath": "properties.invitationId"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/invitationStatus",
+          "defaultPath": "properties.invitationStatus"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/respondedAt",
+          "defaultPath": "properties.respondedAt"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/sender",
+          "defaultPath": "properties.sender"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/sentAt",
+          "defaultPath": "properties.sentAt"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/targetActiveDirectoryId",
+          "defaultPath": "properties.targetActiveDirectoryId"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/targetEmail",
+          "defaultPath": "properties.targetEmail"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/targetObjectId",
+          "defaultPath": "properties.targetObjectId"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/userEmail",
+          "defaultPath": "properties.userEmail"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shares/invitations/userName",
+          "defaultPath": "properties.userName"
+        }
+      ],
+      "resourceType": "accounts/shares/invitations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/createdAt",
+          "defaultPath": "properties.createdAt"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/createdBy",
+          "defaultPath": "properties.createdBy"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/shareSubscriptions/expirationDate",
+          "defaultPath": "properties.expirationDate"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/invitationId",
+          "defaultPath": "properties.invitationId"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/providerEmail",
+          "defaultPath": "properties.providerEmail"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/providerName",
+          "defaultPath": "properties.providerName"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/providerTenantName",
+          "defaultPath": "properties.providerTenantName"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareDescription",
+          "defaultPath": "properties.shareDescription"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareKind",
+          "defaultPath": "properties.shareKind"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareName",
+          "defaultPath": "properties.shareName"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareSender",
+          "defaultPath": "properties.shareSender"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareSenderCompanyName",
+          "defaultPath": "properties.shareSenderCompanyName"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareSubscriptionStatus",
+          "defaultPath": "properties.shareSubscriptionStatus"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/shareTerms",
+          "defaultPath": "properties.shareTerms"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/sourceShareLocation",
+          "defaultPath": "properties.sourceShareLocation"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/userEmail",
+          "defaultPath": "properties.userEmail"
+        },
+        {
+          "name": "Microsoft.DataShare/accounts/sharesubscriptions/userName",
+          "defaultPath": "properties.userName"
+        }
+      ],
+      "resourceType": "accounts/sharesubscriptions"
+    }
+  ]
+}

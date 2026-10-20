@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.CloudDevicePlatform",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "delegatedIdentities"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "delegatedidentity"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "partnerBusinesses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "sandboxPartners"
+    }
+  ]
+}

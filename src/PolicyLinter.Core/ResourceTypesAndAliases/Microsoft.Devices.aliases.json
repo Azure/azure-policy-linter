@@ -1,0 +1,1144 @@
+{
+  "namespace": "Microsoft.Devices",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Devices/IotHubs/allowedFqdnList",
+          "defaultPath": "properties.allowedFqdnList"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/allowedFqdnList[*]",
+          "defaultPath": "properties.allowedFqdnList[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/authorizationPolicies",
+          "defaultPath": "properties.authorizationPolicies"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/authorizationPolicies[*]",
+          "defaultPath": "properties.authorizationPolicies[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/authorizationPolicies[*].keyName",
+          "defaultPath": "properties.authorizationPolicies[*].keyName"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/authorizationPolicies[*].primaryKey",
+          "defaultPath": "properties.authorizationPolicies[*].primaryKey"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/authorizationPolicies[*].rights",
+          "defaultPath": "properties.authorizationPolicies[*].rights"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/authorizationPolicies[*].secondaryKey",
+          "defaultPath": "properties.authorizationPolicies[*].secondaryKey"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice",
+          "defaultPath": "properties.cloudToDevice"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice.defaultTtlAsIso8601",
+          "defaultPath": "properties.cloudToDevice.defaultTtlAsIso8601"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice.feedback",
+          "defaultPath": "properties.cloudToDevice.feedback"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice.feedback.lockDurationAsIso8601",
+          "defaultPath": "properties.cloudToDevice.feedback.lockDurationAsIso8601"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice.feedback.maxDeliveryCount",
+          "defaultPath": "properties.cloudToDevice.feedback.maxDeliveryCount"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice.feedback.ttlAsIso8601",
+          "defaultPath": "properties.cloudToDevice.feedback.ttlAsIso8601"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/cloudToDevice.maxDeliveryCount",
+          "defaultPath": "properties.cloudToDevice.maxDeliveryCount"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/comments",
+          "defaultPath": "properties.comments"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/deviceStreams",
+          "defaultPath": "properties.deviceStreams"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/deviceStreams.streamingEndpoints",
+          "defaultPath": "properties.deviceStreams.streamingEndpoints"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/deviceStreams.streamingEndpoints[*]",
+          "defaultPath": "properties.deviceStreams.streamingEndpoints[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/disableDeviceSAS",
+          "defaultPath": "properties.disableDeviceSAS"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2021-03-31",
+                "2021-03-03-preview",
+                "2021-02-01-preview",
+                "2020-08-31",
+                "2020-08-31-preview",
+                "2020-08-01",
+                "2020-07-10-preview",
+                "2020-06-15",
+                "2020-04-01",
+                "2020-03-01",
+                "2019-11-04",
+                "2019-07-01-preview",
+                "2019-03-22",
+                "2019-03-22-preview",
+                "2018-12-01-preview",
+                "2018-04-01",
+                "2018-01-22",
+                "2017-07-01",
+                "2017-01-19",
+                "2016-02-03"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/disableModuleSAS",
+          "defaultPath": "properties.disableModuleSAS"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/enableDataResidency",
+          "defaultPath": "properties.enableDataResidency"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/enableFileUploadNotifications",
+          "defaultPath": "properties.enableFileUploadNotifications"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keySource",
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keyVaultProperties.keyIdentifier",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyIdentifier"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keyVaultProperties[*]",
+          "defaultPath": "properties.encryption.keyVaultProperties[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keyVaultProperties[*].identity",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].identity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keyVaultProperties[*].identity.userAssignedIdentity",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/encryption.keyVaultProperties[*].keyIdentifier",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].keyIdentifier"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/eventHubEndpoints",
+          "defaultPath": "properties.eventHubEndpoints"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/features",
+          "defaultPath": "properties.features"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/hostName",
+          "defaultPath": "properties.hostName"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/ipFilterRules",
+          "defaultPath": "properties.ipFilterRules"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/ipFilterRules[*]",
+          "defaultPath": "properties.ipFilterRules[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/ipFilterRules[*].action",
+          "paths": [
+            {
+              "path": "properties.ipFilterRules[*].action",
+              "apiVersions": [
+                "2015-08-15-preview",
+                "2016-02-03",
+                "2017-01-19",
+                "2017-07-01",
+                "2018-01-22",
+                "2018-04-01",
+                "2018-04-01-preview",
+                "2018-12-01-preview",
+                "2019-03-22-preview",
+                "2019-03-22"
+              ]
+            }
+          ],
+          "defaultPath": "properties.ipFilterRules[*].action"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/ipFilterRules[*].filterName",
+          "paths": [
+            {
+              "path": "properties.ipFilterRules[*].filterName",
+              "apiVersions": [
+                "2015-08-15-preview",
+                "2016-02-03",
+                "2017-01-19",
+                "2017-07-01",
+                "2018-01-22",
+                "2018-04-01",
+                "2018-04-01-preview",
+                "2018-12-01-preview",
+                "2019-03-22-preview",
+                "2019-03-22"
+              ]
+            }
+          ],
+          "defaultPath": "properties.ipFilterRules[*].filterName"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/ipFilterRules[*].ipMask",
+          "paths": [
+            {
+              "path": "properties.ipFilterRules[*].ipMask",
+              "apiVersions": [
+                "2015-08-15-preview",
+                "2016-02-03",
+                "2017-01-19",
+                "2017-07-01",
+                "2018-01-22",
+                "2018-04-01",
+                "2018-04-01-preview",
+                "2018-12-01-preview",
+                "2019-03-22-preview",
+                "2019-03-22"
+              ]
+            }
+          ],
+          "defaultPath": "properties.ipFilterRules[*].ipMask"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/locations",
+          "defaultPath": "properties.locations"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/locations[*]",
+          "defaultPath": "properties.locations[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/locations[*].location",
+          "defaultPath": "properties.locations[*].location"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/locations[*].role",
+          "defaultPath": "properties.locations[*].role"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/messagingEndpoints",
+          "defaultPath": "properties.messagingEndpoints"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/minTlsVersion",
+          "defaultPath": "properties.minTlsVersion"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets",
+          "defaultPath": "properties.networkRuleSets"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.applyToBuiltInEventHubEndpoint",
+          "defaultPath": "properties.networkRuleSets.applyToBuiltInEventHubEndpoint"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.defaultAction",
+          "defaultPath": "properties.networkRuleSets.defaultAction"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.ipRules",
+          "defaultPath": "properties.networkRuleSets.ipRules"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.ipRules[*]",
+          "defaultPath": "properties.networkRuleSets.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.ipRules[*].action",
+          "defaultPath": "properties.networkRuleSets.ipRules[*].action"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.ipRules[*].filterName",
+          "defaultPath": "properties.networkRuleSets.ipRules[*].filterName"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/networkRuleSets.ipRules[*].ipMask",
+          "defaultPath": "properties.networkRuleSets.ipRules[*].ipMask"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/operationsMonitoringProperties",
+          "defaultPath": "properties.operationsMonitoringProperties"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/operationsMonitoringProperties.events",
+          "defaultPath": "properties.operationsMonitoringProperties.events"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2019-11-04",
+                "2019-07-01-preview",
+                "2019-03-22",
+                "2019-03-22-preview",
+                "2018-12-01-preview",
+                "2018-04-01",
+                "2018-01-22",
+                "2017-07-01",
+                "2017-01-19",
+                "2016-02-03"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/restrictOutboundNetworkAccess",
+          "defaultPath": "properties.restrictOutboundNetworkAccess"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing",
+          "defaultPath": "properties.routing"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints",
+          "defaultPath": "properties.routing.endpoints"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs",
+          "defaultPath": "properties.routing.endpoints.eventHubs"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*]",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].authenticationType",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].authenticationType"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].connectionString",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].connectionString"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].endpointUri",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].endpointUri"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].entityPath",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].entityPath"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].id",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].id"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].identity",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].identity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].identity.userAssignedIdentity",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].name",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].resourceGroup",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].resourceGroup"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.eventHubs[*].subscriptionId",
+          "defaultPath": "properties.routing.endpoints.eventHubs[*].subscriptionId"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*]",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].authenticationType",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].authenticationType"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].connectionString",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].connectionString"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].endpointUri",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].endpointUri"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].entityPath",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].entityPath"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].id",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].id"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].identity",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].identity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].identity.userAssignedIdentity",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].name",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].resourceGroup",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].resourceGroup"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusQueues[*].subscriptionId",
+          "defaultPath": "properties.routing.endpoints.serviceBusQueues[*].subscriptionId"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*]",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].authenticationType",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].authenticationType"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].connectionString",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].connectionString"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].endpointUri",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].endpointUri"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].entityPath",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].entityPath"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].id",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].id"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].identity",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].identity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].identity.userAssignedIdentity",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].name",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].resourceGroup",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].resourceGroup"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.serviceBusTopics[*].subscriptionId",
+          "defaultPath": "properties.routing.endpoints.serviceBusTopics[*].subscriptionId"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers",
+          "defaultPath": "properties.routing.endpoints.storageContainers"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*]",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].authenticationType",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].authenticationType"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].batchFrequencyInSeconds",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].batchFrequencyInSeconds"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].connectionString",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].connectionString"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].containerName",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].containerName"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].encoding",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].encoding"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].endpointUri",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].endpointUri"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].fileNameFormat",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].fileNameFormat"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].id",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].id"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].identity",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].identity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].identity.userAssignedIdentity",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].maxChunkSizeInBytes",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].maxChunkSizeInBytes"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].name",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].resourceGroup",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].resourceGroup"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.endpoints.storageContainers[*].subscriptionId",
+          "defaultPath": "properties.routing.endpoints.storageContainers[*].subscriptionId"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.enrichments",
+          "defaultPath": "properties.routing.enrichments"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.enrichments[*]",
+          "defaultPath": "properties.routing.enrichments[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.enrichments[*].endpointNames",
+          "defaultPath": "properties.routing.enrichments[*].endpointNames"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.enrichments[*].endpointNames[*]",
+          "defaultPath": "properties.routing.enrichments[*].endpointNames[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.enrichments[*].key",
+          "defaultPath": "properties.routing.enrichments[*].key"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.enrichments[*].value",
+          "defaultPath": "properties.routing.enrichments[*].value"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute",
+          "defaultPath": "properties.routing.fallbackRoute"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute.condition",
+          "defaultPath": "properties.routing.fallbackRoute.condition"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute.endpointNames",
+          "defaultPath": "properties.routing.fallbackRoute.endpointNames"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute.endpointNames[*]",
+          "defaultPath": "properties.routing.fallbackRoute.endpointNames[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute.isEnabled",
+          "defaultPath": "properties.routing.fallbackRoute.isEnabled"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute.name",
+          "defaultPath": "properties.routing.fallbackRoute.name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.fallbackRoute.source",
+          "defaultPath": "properties.routing.fallbackRoute.source"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes",
+          "defaultPath": "properties.routing.routes"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*]",
+          "defaultPath": "properties.routing.routes[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*].condition",
+          "defaultPath": "properties.routing.routes[*].condition"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*].endpointNames",
+          "defaultPath": "properties.routing.routes[*].endpointNames"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*].endpointNames[*]",
+          "defaultPath": "properties.routing.routes[*].endpointNames[*]"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*].isEnabled",
+          "defaultPath": "properties.routing.routes[*].isEnabled"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*].name",
+          "defaultPath": "properties.routing.routes[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/routing.routes[*].source",
+          "defaultPath": "properties.routing.routes[*].source"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/sku.capacity",
+          "paths": [
+            {
+              "path": "sku.capacity",
+              "apiVersions": [
+                "2015-08-15-preview",
+                "2016-02-03",
+                "2017-01-19",
+                "2017-07-01",
+                "2018-01-22",
+                "2018-04-01",
+                "2018-04-01-preview",
+                "2018-12-01-preview",
+                "2019-03-22-preview",
+                "2019-03-22"
+              ]
+            }
+          ],
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/sku.name",
+          "paths": [
+            {
+              "path": "sku.name",
+              "apiVersions": [
+                "2015-08-15-preview",
+                "2016-02-03",
+                "2017-01-19",
+                "2017-07-01",
+                "2018-01-22",
+                "2018-04-01",
+                "2018-04-01-preview",
+                "2018-12-01-preview",
+                "2019-03-22-preview",
+                "2019-03-22"
+              ]
+            }
+          ],
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/sku.tier",
+          "paths": [
+            {
+              "path": "sku.tier",
+              "apiVersions": [
+                "2015-08-15-preview",
+                "2016-02-03",
+                "2017-01-19",
+                "2017-07-01",
+                "2018-01-22",
+                "2018-04-01",
+                "2018-04-01-preview",
+                "2018-12-01-preview",
+                "2019-03-22-preview",
+                "2019-03-22"
+              ]
+            }
+          ],
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/state",
+          "defaultPath": "properties.state"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/storageEndpoints",
+          "defaultPath": "properties.storageEndpoints"
+        }
+      ],
+      "resourceType": "IotHubs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/certificate",
+          "defaultPath": "properties.certificate"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/expiry",
+          "defaultPath": "properties.expiry"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/isVerified",
+          "defaultPath": "properties.isVerified"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/subject",
+          "defaultPath": "properties.subject"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/thumbprint",
+          "defaultPath": "properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.Devices/IotHubs/certificates/updated",
+          "defaultPath": "properties.updated"
+        }
+      ],
+      "resourceType": "IotHubs/certificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Devices/iotHubs/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Devices/iotHubs/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Devices/iotHubs/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Devices/iotHubs/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Devices/iotHubs/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Devices/iotHubs/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        }
+      ],
+      "resourceType": "iotHubs/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/allocationPolicy",
+          "defaultPath": "properties.allocationPolicy"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/authorizationPolicies",
+          "defaultPath": "properties.authorizationPolicies"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/authorizationPolicies[*]",
+          "defaultPath": "properties.authorizationPolicies[*]"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/authorizationPolicies[*].keyName",
+          "defaultPath": "properties.authorizationPolicies[*].keyName"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/authorizationPolicies[*].primaryKey",
+          "defaultPath": "properties.authorizationPolicies[*].primaryKey"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/authorizationPolicies[*].rights",
+          "defaultPath": "properties.authorizationPolicies[*].rights"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/authorizationPolicies[*].secondaryKey",
+          "defaultPath": "properties.authorizationPolicies[*].secondaryKey"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/deviceProvisioningHostName",
+          "defaultPath": "properties.deviceProvisioningHostName"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/enableDataResidency",
+          "defaultPath": "properties.enableDataResidency"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption.identity",
+          "defaultPath": "properties.encryption.identity"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption.identity.userAssignedIdentity",
+          "defaultPath": "properties.encryption.identity.userAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption.keySource",
+          "defaultPath": "properties.encryption.keySource"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption.keyVaultProperties[*]",
+          "defaultPath": "properties.encryption.keyVaultProperties[*]"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/encryption.keyVaultProperties[*].keyIdentifier",
+          "defaultPath": "properties.encryption.keyVaultProperties[*].keyIdentifier"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/idScope",
+          "defaultPath": "properties.idScope"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs",
+          "defaultPath": "properties.iotHubs"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs[*]",
+          "defaultPath": "properties.iotHubs[*]"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs[*].allocationWeight",
+          "defaultPath": "properties.iotHubs[*].allocationWeight"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs[*].applyAllocationPolicy",
+          "defaultPath": "properties.iotHubs[*].applyAllocationPolicy"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs[*].connectionString",
+          "defaultPath": "properties.iotHubs[*].connectionString"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs[*].location",
+          "defaultPath": "properties.iotHubs[*].location"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/iotHubs[*].name",
+          "defaultPath": "properties.iotHubs[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/ipFilterRules",
+          "defaultPath": "properties.ipFilterRules"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/ipFilterRules[*]",
+          "defaultPath": "properties.ipFilterRules[*]"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/ipFilterRules[*].action",
+          "defaultPath": "properties.ipFilterRules[*].action"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/ipFilterRules[*].filterName",
+          "defaultPath": "properties.ipFilterRules[*].filterName"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/ipFilterRules[*].ipMask",
+          "defaultPath": "properties.ipFilterRules[*].ipMask"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/ipFilterRules[*].target",
+          "defaultPath": "properties.ipFilterRules[*].target"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2020-01-01",
+                "2018-01-22",
+                "2017-11-15",
+                "2017-08-21-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/serviceOperationsHostName",
+          "defaultPath": "properties.serviceOperationsHostName"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/sku.capacity",
+          "defaultPath": "sku.capacity"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/sku.tier",
+          "defaultPath": "sku.tier"
+        },
+        {
+          "name": "Microsoft.Devices/ProvisioningServices/state",
+          "defaultPath": "properties.state"
+        }
+      ],
+      "resourceType": "ProvisioningServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Devices/provisioningServices/certificates/created",
+          "defaultPath": "properties.created"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/certificates/expiry",
+          "defaultPath": "properties.expiry"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/certificates/isVerified",
+          "defaultPath": "properties.isVerified"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/certificates/subject",
+          "defaultPath": "properties.subject"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/certificates/thumbprint",
+          "defaultPath": "properties.thumbprint"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/certificates/updated",
+          "defaultPath": "properties.updated"
+        }
+      ],
+      "resourceType": "provisioningServices/certificates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Devices/provisioningServices/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        }
+      ],
+      "resourceType": "provisioningServices/privateEndpointConnections"
+    }
+  ]
+}

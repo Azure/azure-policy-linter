@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.AzureTerraform",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "exportTerraform"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationStatuses"
+    }
+  ]
+}

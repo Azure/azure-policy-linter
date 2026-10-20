@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.Falcon",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "fleetnamespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "Locations/OperationStatuses"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespace"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

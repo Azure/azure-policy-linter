@@ -1,0 +1,22 @@
+{
+  "namespace": "Microsoft.PowerBI",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.PowerBI/workspaceCollections/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.PowerBI/workspaceCollections/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.PowerBI/workspaceCollections/sku.tier",
+          "defaultPath": "sku.tier"
+        }
+      ],
+      "resourceType": "workspaceCollections"
+    }
+  ]
+}

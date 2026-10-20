@@ -1,0 +1,41 @@
+{
+  "namespace": "Microsoft.ServiceLinker",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "configurationNames"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "daprConfigurations"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "dryruns"
+    },
+    {
+      "capabilities": "SupportsExtension",
+      "resourceType": "linkers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/connectors"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/dryruns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationStatuses"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

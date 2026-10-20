@@ -1,0 +1,641 @@
+{
+  "namespace": "Microsoft.Search",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Search/searchServices/authOptions",
+          "paths": [
+            {
+              "path": "properties.authOptions",
+              "apiVersions": [
+                "2020-08-01",
+                "2020-08-01-preview",
+                "2020-03-13",
+                "2019-10-01-preview",
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.authOptions",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/authOptions.aadOrApiKey",
+          "defaultPath": "properties.authOptions.aadOrApiKey"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/authOptions.aadOrApiKey.aadAuthFailureMode",
+          "defaultPath": "properties.authOptions.aadOrApiKey.aadAuthFailureMode"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/computeType",
+          "defaultPath": "properties.computeType"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/dataExfiltrationProtections",
+          "defaultPath": "properties.dataExfiltrationProtections"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/dataExfiltrationProtections[*]",
+          "defaultPath": "properties.dataExfiltrationProtections[*]"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/disabledDataExfiltrationOptions",
+          "defaultPath": "properties.disabledDataExfiltrationOptions"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/disabledDataExfiltrationOptions[*]",
+          "defaultPath": "properties.disabledDataExfiltrationOptions[*]"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/disableLocalAuth",
+          "paths": [
+            {
+              "path": "properties.disableLocalAuth",
+              "apiVersions": [
+                "2020-08-01",
+                "2020-08-01-preview",
+                "2020-03-13",
+                "2019-10-01-preview",
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.disableLocalAuth",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/encryptionWithCmk",
+          "defaultPath": "properties.encryptionWithCmk"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/encryptionWithCmk.encryptionComplianceStatus",
+          "defaultPath": "properties.encryptionWithCmk.encryptionComplianceStatus"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/encryptionWithCmk.enforcement",
+          "defaultPath": "properties.encryptionWithCmk.enforcement"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/endpoint",
+          "defaultPath": "properties.endpoint"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/eTag",
+          "defaultPath": "properties.eTag"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/hostingMode",
+          "paths": [
+            {
+              "path": "properties.hostingMode",
+              "apiVersions": [
+                "2019-10-01-Preview",
+                "2015-02-28",
+                "2014-07-31-Preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.hostingMode",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkRuleSet",
+          "paths": [
+            {
+              "path": "properties.networkRuleSet",
+              "apiVersions": [
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkRuleSet",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkRuleSet.bypass",
+          "defaultPath": "properties.networkRuleSet.bypass"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkRuleSet.endpointAccess",
+          "defaultPath": "properties.networkRuleSet.endpointAccess"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkRuleSet.ipRules",
+          "paths": [
+            {
+              "path": "properties.networkRuleSet.ipRules",
+              "apiVersions": [
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkRuleSet.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkRuleSet.ipRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkRuleSet.ipRules[*]",
+              "apiVersions": [
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkRuleSet.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkRuleSet.ipRules[*].value",
+          "paths": [
+            {
+              "path": "properties.networkRuleSet.ipRules[*].value",
+              "apiVersions": [
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkRuleSet.ipRules[*].value",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/partitionCount",
+          "paths": [
+            {
+              "path": "properties.partitionCount",
+              "apiVersions": [
+                "2019-10-01-Preview",
+                "2015-02-28",
+                "2014-07-31-Preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.partitionCount",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections.privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections.privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections.privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections.privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections.privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections.privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].groupId",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].id.externalDocs",
+          "defaultPath": "properties.privateEndpointConnections[*].id.externalDocs"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].name",
+          "defaultPath": "properties.privateEndpointConnections[*].name"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].name.externalDocs",
+          "defaultPath": "properties.privateEndpointConnections[*].name.externalDocs"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData.createdAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData.createdBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData.createdByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.privateEndpointConnections[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections[*].type",
+          "defaultPath": "properties.privateEndpointConnections[*].type"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2019-10-01-preview",
+                "2015-08-19"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/replicaCount",
+          "paths": [
+            {
+              "path": "properties.replicaCount",
+              "apiVersions": [
+                "2019-10-01-Preview",
+                "2015-02-28",
+                "2014-07-31-Preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.replicaCount",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/semanticSearch",
+          "defaultPath": "properties.semanticSearch"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/serviceUpgradedAt",
+          "defaultPath": "properties.serviceUpgradedAt"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/serviceUpgradeDate",
+          "defaultPath": "properties.serviceUpgradeDate"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources",
+          "defaultPath": "properties.sharedPrivateLinkResources"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources.groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources.privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources.requestMessage",
+          "defaultPath": "properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*]",
+          "defaultPath": "properties.sharedPrivateLinkResources[*]"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].groupId",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.groupId"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].id",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].id"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].name",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].name"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].name.externalDocs",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].name.externalDocs"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].privateLinkResourceId",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.privateLinkResourceId"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].provisioningState",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].requestMessage",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.requestMessage"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].resourceRegion",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.resourceRegion"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].status",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].properties.status"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData.createdAt",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdAt"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData.createdBy",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdBy"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData.createdByType",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.createdByType"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData.lastModifiedAt",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedAt"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData.lastModifiedBy",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedBy"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].systemData.lastModifiedByType",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].systemData.lastModifiedByType"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources[*].type",
+          "defaultPath": "properties.sharedPrivateLinkResources[*].type"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sku",
+          "defaultPath": "sku",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sku.externalDocs",
+          "defaultPath": "sku.externalDocs"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sku.name",
+          "paths": [
+            {
+              "path": "properties.sku.name",
+              "apiVersions": [
+                "2015-02-28",
+                "2014-07-31-Preview"
+              ]
+            }
+          ],
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/statusDetails",
+          "defaultPath": "properties.statusDetails"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/upgradeAvailable",
+          "defaultPath": "properties.upgradeAvailable"
+        }
+      ],
+      "resourceType": "searchServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Search/searchServices/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkSecurityPerimeterConfigurations/profile.name",
+          "defaultPath": "properties.profile.name"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/networkSecurityPerimeterConfigurations/resourceAssociation.accessMode",
+          "defaultPath": "properties.resourceAssociation.accessMode"
+        }
+      ],
+      "resourceType": "searchServices/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/groupId",
+          "defaultPath": "properties.groupId"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.Search/searchServices/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "searchServices/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources/groupId",
+          "defaultPath": "properties.groupId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources/privateLinkResourceId",
+          "defaultPath": "properties.privateLinkResourceId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources/provisioningState",
+          "defaultPath": "properties.provisioningState",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources/requestMessage",
+          "defaultPath": "properties.requestMessage",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources/resourceRegion",
+          "defaultPath": "properties.resourceRegion",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Search/searchServices/sharedPrivateLinkResources/status",
+          "defaultPath": "properties.status",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        }
+      ],
+      "resourceType": "searchServices/sharedPrivateLinkResources"
+    }
+  ]
+}

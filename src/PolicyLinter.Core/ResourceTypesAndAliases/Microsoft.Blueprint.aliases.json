@@ -1,0 +1,348 @@
+{
+  "namespace": "Microsoft.Blueprint",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/blueprintId",
+          "defaultPath": "properties.blueprintId"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/locks",
+          "defaultPath": "properties.locks"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/locks.excludedActions",
+          "defaultPath": "properties.locks.excludedActions"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/locks.excludedActions[*]",
+          "defaultPath": "properties.locks.excludedActions[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/locks.excludedPrincipals",
+          "defaultPath": "properties.locks.excludedPrincipals"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/locks.excludedPrincipals[*]",
+          "defaultPath": "properties.locks.excludedPrincipals[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/locks.mode",
+          "defaultPath": "properties.locks.mode"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/parameters.additionalProperties",
+          "defaultPath": "properties.parameters.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/parameters.additionalProperties.description",
+          "defaultPath": "properties.parameters.additionalProperties.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/resourceGroups",
+          "defaultPath": "properties.resourceGroups"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/resourceGroups.additionalProperties",
+          "defaultPath": "properties.resourceGroups.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/resourceGroups.additionalProperties.location",
+          "defaultPath": "properties.resourceGroups.additionalProperties.location"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/resourceGroups.additionalProperties.name",
+          "defaultPath": "properties.resourceGroups.additionalProperties.name"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/status.lastModified",
+          "defaultPath": "properties.status.lastModified"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/status.managedResources",
+          "defaultPath": "properties.status.managedResources"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/status.managedResources[*]",
+          "defaultPath": "properties.status.managedResources[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprintAssignments/status.timeCreated",
+          "defaultPath": "properties.status.timeCreated"
+        }
+      ],
+      "resourceType": "blueprintAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Blueprint/blueprints/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/layout",
+          "defaultPath": "properties.layout"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties",
+          "defaultPath": "properties.parameters.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.allowedValues",
+          "defaultPath": "properties.parameters.additionalProperties.allowedValues"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.allowedValues[*]",
+          "defaultPath": "properties.parameters.additionalProperties.allowedValues[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.defaultValue",
+          "defaultPath": "properties.parameters.additionalProperties.defaultValue"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.metadata",
+          "defaultPath": "properties.parameters.additionalProperties.metadata"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.metadata.description",
+          "defaultPath": "properties.parameters.additionalProperties.metadata.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.metadata.displayName",
+          "defaultPath": "properties.parameters.additionalProperties.metadata.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.metadata.strongType",
+          "defaultPath": "properties.parameters.additionalProperties.metadata.strongType"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/parameters.additionalProperties.type",
+          "defaultPath": "properties.parameters.additionalProperties.type"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups",
+          "defaultPath": "properties.resourceGroups"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties",
+          "defaultPath": "properties.resourceGroups.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.dependsOn",
+          "defaultPath": "properties.resourceGroups.additionalProperties.dependsOn"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.dependsOn[*]",
+          "defaultPath": "properties.resourceGroups.additionalProperties.dependsOn[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.location",
+          "defaultPath": "properties.resourceGroups.additionalProperties.location"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.metadata",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.metadata.description",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.metadata.displayName",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.metadata.strongType",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata.strongType"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.name",
+          "defaultPath": "properties.resourceGroups.additionalProperties.name"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.tags",
+          "defaultPath": "properties.resourceGroups.additionalProperties.tags"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/resourceGroups.additionalProperties.tags.additionalProperties",
+          "defaultPath": "properties.resourceGroups.additionalProperties.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/status.lastModified",
+          "defaultPath": "properties.status.lastModified"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/status.timeCreated",
+          "defaultPath": "properties.status.timeCreated"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/targetScope",
+          "defaultPath": "properties.targetScope"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions",
+          "defaultPath": "properties.versions"
+        }
+      ],
+      "resourceType": "blueprints"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/blueprintName",
+          "defaultPath": "properties.blueprintName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/changeNotes",
+          "defaultPath": "properties.changeNotes"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters",
+          "defaultPath": "properties.parameters"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties",
+          "defaultPath": "properties.parameters.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.allowedValues",
+          "defaultPath": "properties.parameters.additionalProperties.allowedValues"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.allowedValues[*]",
+          "defaultPath": "properties.parameters.additionalProperties.allowedValues[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.defaultValue",
+          "defaultPath": "properties.parameters.additionalProperties.defaultValue"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.metadata",
+          "defaultPath": "properties.parameters.additionalProperties.metadata"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.metadata.description",
+          "defaultPath": "properties.parameters.additionalProperties.metadata.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.metadata.displayName",
+          "defaultPath": "properties.parameters.additionalProperties.metadata.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.metadata.strongType",
+          "defaultPath": "properties.parameters.additionalProperties.metadata.strongType"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/parameters.additionalProperties.type",
+          "defaultPath": "properties.parameters.additionalProperties.type"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups",
+          "defaultPath": "properties.resourceGroups"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties",
+          "defaultPath": "properties.resourceGroups.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.dependsOn",
+          "defaultPath": "properties.resourceGroups.additionalProperties.dependsOn"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.dependsOn[*]",
+          "defaultPath": "properties.resourceGroups.additionalProperties.dependsOn[*]"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.location",
+          "defaultPath": "properties.resourceGroups.additionalProperties.location"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.metadata",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.metadata.description",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata.description"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.metadata.displayName",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata.displayName"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.metadata.strongType",
+          "defaultPath": "properties.resourceGroups.additionalProperties.metadata.strongType"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.name",
+          "defaultPath": "properties.resourceGroups.additionalProperties.name"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.tags",
+          "defaultPath": "properties.resourceGroups.additionalProperties.tags"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/resourceGroups.additionalProperties.tags.additionalProperties",
+          "defaultPath": "properties.resourceGroups.additionalProperties.tags.additionalProperties"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/status.lastModified",
+          "defaultPath": "properties.status.lastModified"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/status.timeCreated",
+          "defaultPath": "properties.status.timeCreated"
+        },
+        {
+          "name": "Microsoft.Blueprint/blueprints/versions/targetScope",
+          "defaultPath": "properties.targetScope"
+        }
+      ],
+      "resourceType": "blueprints/versions"
+    }
+  ]
+}

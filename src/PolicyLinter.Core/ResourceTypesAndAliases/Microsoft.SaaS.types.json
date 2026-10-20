@@ -1,0 +1,29 @@
+{
+  "namespace": "Microsoft.SaaS",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "applications"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checknameavailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operationResults"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "saasresources"
+    }
+  ]
+}

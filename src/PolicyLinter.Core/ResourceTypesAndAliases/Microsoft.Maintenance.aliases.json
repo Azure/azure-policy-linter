@@ -1,0 +1,268 @@
+{
+  "namespace": "Microsoft.Maintenance",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Maintenance/applyUpdates/lastUpdateTime",
+          "defaultPath": "properties.lastUpdateTime"
+        },
+        {
+          "name": "Microsoft.Maintenance/applyUpdates/resourceId",
+          "defaultPath": "properties.resourceId"
+        },
+        {
+          "name": "Microsoft.Maintenance/applyUpdates/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "applyUpdates"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter",
+          "defaultPath": "properties.filter"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.locations",
+          "defaultPath": "properties.filter.locations"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.locations[*]",
+          "defaultPath": "properties.filter.locations[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.osTypes",
+          "defaultPath": "properties.filter.osTypes"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.osTypes[*]",
+          "defaultPath": "properties.filter.osTypes[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.resourceGroups",
+          "defaultPath": "properties.filter.resourceGroups"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.resourceGroups[*]",
+          "defaultPath": "properties.filter.resourceGroups[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.resourceTypes",
+          "defaultPath": "properties.filter.resourceTypes"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.resourceTypes[*]",
+          "defaultPath": "properties.filter.resourceTypes[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.tagSettings",
+          "defaultPath": "properties.filter.tagSettings"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.tagSettings.filterOperator",
+          "defaultPath": "properties.filter.tagSettings.filterOperator"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/filter.tagSettings.tags",
+          "defaultPath": "properties.filter.tagSettings.tags"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/maintenanceConfigurationId",
+          "defaultPath": "properties.maintenanceConfigurationId"
+        },
+        {
+          "name": "Microsoft.Maintenance/configurationAssignments/resourceId",
+          "defaultPath": "properties.resourceId"
+        }
+      ],
+      "resourceType": "configurationAssignments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/extensionProperties",
+          "defaultPath": "properties.extensionProperties"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches",
+          "defaultPath": "properties.installPatches"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters",
+          "defaultPath": "properties.installPatches.linuxParameters"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters.classificationsToInclude",
+          "defaultPath": "properties.installPatches.linuxParameters.classificationsToInclude"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters.classificationsToInclude[*]",
+          "defaultPath": "properties.installPatches.linuxParameters.classificationsToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters.packageNameMasksToExclude",
+          "defaultPath": "properties.installPatches.linuxParameters.packageNameMasksToExclude"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters.packageNameMasksToExclude[*]",
+          "defaultPath": "properties.installPatches.linuxParameters.packageNameMasksToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters.packageNameMasksToInclude",
+          "defaultPath": "properties.installPatches.linuxParameters.packageNameMasksToInclude"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.linuxParameters.packageNameMasksToInclude[*]",
+          "defaultPath": "properties.installPatches.linuxParameters.packageNameMasksToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.rebootSetting",
+          "defaultPath": "properties.installPatches.rebootSetting"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks",
+          "defaultPath": "properties.installPatches.tasks"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.postTasks",
+          "defaultPath": "properties.installPatches.tasks.postTasks"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.postTasks[*]",
+          "defaultPath": "properties.installPatches.tasks.postTasks[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.postTasks[*].parameters",
+          "defaultPath": "properties.installPatches.tasks.postTasks[*].parameters"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.postTasks[*].source",
+          "defaultPath": "properties.installPatches.tasks.postTasks[*].source"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.postTasks[*].taskScope",
+          "defaultPath": "properties.installPatches.tasks.postTasks[*].taskScope"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.preTasks",
+          "defaultPath": "properties.installPatches.tasks.preTasks"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.preTasks[*]",
+          "defaultPath": "properties.installPatches.tasks.preTasks[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.preTasks[*].parameters",
+          "defaultPath": "properties.installPatches.tasks.preTasks[*].parameters"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.preTasks[*].source",
+          "defaultPath": "properties.installPatches.tasks.preTasks[*].source"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.tasks.preTasks[*].taskScope",
+          "defaultPath": "properties.installPatches.tasks.preTasks[*].taskScope"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters",
+          "defaultPath": "properties.installPatches.windowsParameters"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.classificationsToInclude",
+          "defaultPath": "properties.installPatches.windowsParameters.classificationsToInclude"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.classificationsToInclude[*]",
+          "defaultPath": "properties.installPatches.windowsParameters.classificationsToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.excludeKbsRequiringReboot",
+          "defaultPath": "properties.installPatches.windowsParameters.excludeKbsRequiringReboot"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.kbNumbersToExclude",
+          "defaultPath": "properties.installPatches.windowsParameters.kbNumbersToExclude"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.kbNumbersToExclude[*]",
+          "defaultPath": "properties.installPatches.windowsParameters.kbNumbersToExclude[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.kbNumbersToInclude",
+          "defaultPath": "properties.installPatches.windowsParameters.kbNumbersToInclude"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/installPatches.windowsParameters.kbNumbersToInclude[*]",
+          "defaultPath": "properties.installPatches.windowsParameters.kbNumbersToInclude[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceScope",
+          "defaultPath": "properties.maintenanceScope"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceWindow",
+          "defaultPath": "properties.maintenanceWindow"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceWindow.duration",
+          "defaultPath": "properties.maintenanceWindow.duration"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceWindow.expirationDateTime",
+          "defaultPath": "properties.maintenanceWindow.expirationDateTime"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceWindow.recurEvery",
+          "defaultPath": "properties.maintenanceWindow.recurEvery"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceWindow.startDateTime",
+          "defaultPath": "properties.maintenanceWindow.startDateTime"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/maintenanceWindow.timeZone",
+          "defaultPath": "properties.maintenanceWindow.timeZone"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/namespace",
+          "defaultPath": "properties.namespace"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides",
+          "defaultPath": "properties.overrides"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides.overrides",
+          "defaultPath": "properties.overrides.overrides"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides.overrides[*]",
+          "defaultPath": "properties.overrides.overrides[*]"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides.overrides[*].endDateTime",
+          "defaultPath": "properties.overrides.overrides[*].endDateTime"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides.overrides[*].overrideProperties",
+          "defaultPath": "properties.overrides.overrides[*].overrideProperties"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides.overrides[*].startDateTime",
+          "defaultPath": "properties.overrides.overrides[*].startDateTime"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/overrides.overrides[*].timeZone",
+          "defaultPath": "properties.overrides.overrides[*].timeZone"
+        },
+        {
+          "name": "Microsoft.Maintenance/maintenanceConfigurations/visibility",
+          "defaultPath": "properties.visibility"
+        }
+      ],
+      "resourceType": "maintenanceConfigurations"
+    }
+  ]
+}

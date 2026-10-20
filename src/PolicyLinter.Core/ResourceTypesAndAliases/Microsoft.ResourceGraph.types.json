@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.ResourceGraph",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "generateQuery"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "queries"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceChangeDetails"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourceChanges"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resources"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "resourcesHistory"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "subscriptionsStatus"
+    }
+  ]
+}

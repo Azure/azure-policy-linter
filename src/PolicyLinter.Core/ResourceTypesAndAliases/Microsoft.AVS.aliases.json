@@ -1,0 +1,666 @@
+{
+  "namespace": "Microsoft.AVS",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/availability",
+          "defaultPath": "properties.availability"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/availability.secondaryZone",
+          "defaultPath": "properties.availability.secondaryZone"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/availability.strategy",
+          "defaultPath": "properties.availability.strategy"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/availability.zone",
+          "defaultPath": "properties.availability.zone"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/circuit",
+          "defaultPath": "properties.circuit"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/circuit.expressRouteID",
+          "defaultPath": "properties.circuit.expressRouteID"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/circuit.expressRoutePrivatePeeringID",
+          "defaultPath": "properties.circuit.expressRoutePrivatePeeringID"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/circuit.primarySubnet",
+          "defaultPath": "properties.circuit.primarySubnet"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/circuit.secondarySubnet",
+          "defaultPath": "properties.circuit.secondarySubnet"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption",
+          "defaultPath": "properties.encryption"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.keyVaultProperties",
+          "defaultPath": "properties.encryption.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.keyVaultProperties.keyName",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.keyVaultProperties.keyState",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.keyVaultProperties.keyVaultUrl",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVaultUrl"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.keyVaultProperties.keyVersion",
+          "defaultPath": "properties.encryption.keyVaultProperties.keyVersion"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.keyVaultProperties.versionType",
+          "defaultPath": "properties.encryption.keyVaultProperties.versionType"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/encryption.status",
+          "defaultPath": "properties.encryption.status"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/endpoints",
+          "defaultPath": "properties.endpoints"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/endpoints.hcxCloudManager",
+          "defaultPath": "properties.endpoints.hcxCloudManager"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/endpoints.nsxtManager",
+          "defaultPath": "properties.endpoints.nsxtManager"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/endpoints.vcsa",
+          "defaultPath": "properties.endpoints.vcsa"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/externalCloudLinks",
+          "defaultPath": "properties.externalCloudLinks"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/externalCloudLinks[*]",
+          "defaultPath": "properties.externalCloudLinks[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources",
+          "defaultPath": "properties.identitySources"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*]",
+          "defaultPath": "properties.identitySources[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].alias",
+          "defaultPath": "properties.identitySources[*].alias"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].baseGroupDN",
+          "defaultPath": "properties.identitySources[*].baseGroupDN"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].baseUserDN",
+          "defaultPath": "properties.identitySources[*].baseUserDN"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].domain",
+          "defaultPath": "properties.identitySources[*].domain"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].name",
+          "defaultPath": "properties.identitySources[*].name"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].password",
+          "defaultPath": "properties.identitySources[*].password"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].primaryServer",
+          "defaultPath": "properties.identitySources[*].primaryServer"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].secondaryServer",
+          "defaultPath": "properties.identitySources[*].secondaryServer"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].ssl",
+          "defaultPath": "properties.identitySources[*].ssl"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/identitySources[*].username",
+          "defaultPath": "properties.identitySources[*].username"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/internet",
+          "defaultPath": "properties.internet"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementCluster",
+          "defaultPath": "properties.managementCluster"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementCluster.clusterId",
+          "defaultPath": "properties.managementCluster.clusterId"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementCluster.clusterSize",
+          "defaultPath": "properties.managementCluster.clusterSize"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementCluster.hosts",
+          "defaultPath": "properties.managementCluster.hosts"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementCluster.hosts[*]",
+          "defaultPath": "properties.managementCluster.hosts[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementCluster.provisioningState",
+          "defaultPath": "properties.managementCluster.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/managementNetwork",
+          "defaultPath": "properties.managementNetwork"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/networkBlock",
+          "defaultPath": "properties.networkBlock"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/nsxtCertificateThumbprint",
+          "defaultPath": "properties.nsxtCertificateThumbprint"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/nsxtPassword",
+          "defaultPath": "properties.nsxtPassword"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/provisioningNetwork",
+          "defaultPath": "properties.provisioningNetwork"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/secondaryCircuit",
+          "defaultPath": "properties.secondaryCircuit"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/secondaryCircuit.expressRouteID",
+          "defaultPath": "properties.secondaryCircuit.expressRouteID"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/secondaryCircuit.expressRoutePrivatePeeringID",
+          "defaultPath": "properties.secondaryCircuit.expressRoutePrivatePeeringID"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/secondaryCircuit.primarySubnet",
+          "defaultPath": "properties.secondaryCircuit.primarySubnet"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/secondaryCircuit.secondarySubnet",
+          "defaultPath": "properties.secondaryCircuit.secondarySubnet"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/vcenterCertificateThumbprint",
+          "defaultPath": "properties.vcenterCertificateThumbprint"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/vcenterPassword",
+          "defaultPath": "properties.vcenterPassword"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/vmotionNetwork",
+          "defaultPath": "properties.vmotionNetwork"
+        }
+      ],
+      "resourceType": "privateClouds"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/addons/addonType",
+          "defaultPath": "properties.addonType"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/addons/HCX.offer",
+          "defaultPath": "properties.offer"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/addons/licenseKey",
+          "defaultPath": "properties.licenseKey"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/addons/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/addons/SRM.licenseKey",
+          "defaultPath": "properties.licenseKey"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/addons/VR.vrsCount",
+          "defaultPath": "properties.vrsCount"
+        }
+      ],
+      "resourceType": "privateClouds/addons"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/authorizations/expressRouteAuthorizationId",
+          "defaultPath": "properties.expressRouteAuthorizationId"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/authorizations/expressRouteAuthorizationKey",
+          "defaultPath": "properties.expressRouteAuthorizationKey"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/authorizations/expressRouteId",
+          "defaultPath": "properties.expressRouteId"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/authorizations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "privateClouds/authorizations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/clusterId",
+          "defaultPath": "properties.clusterId"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/clusterSize",
+          "defaultPath": "properties.clusterSize"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/hosts",
+          "defaultPath": "properties.hosts"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/hosts[*]",
+          "defaultPath": "properties.hosts[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/sku.name",
+          "defaultPath": "sku.name"
+        }
+      ],
+      "resourceType": "privateClouds/clusters"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume",
+          "defaultPath": "properties.diskPoolVolume"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume.endpoints",
+          "defaultPath": "properties.diskPoolVolume.endpoints"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume.endpoints[*]",
+          "defaultPath": "properties.diskPoolVolume.endpoints[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume.lunName",
+          "defaultPath": "properties.diskPoolVolume.lunName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume.mountOption",
+          "defaultPath": "properties.diskPoolVolume.mountOption"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume.path",
+          "defaultPath": "properties.diskPoolVolume.path"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/diskPoolVolume.targetId",
+          "defaultPath": "properties.diskPoolVolume.targetId"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/netAppVolume",
+          "defaultPath": "properties.netAppVolume"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/netAppVolume.id",
+          "defaultPath": "properties.netAppVolume.id"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/netAppVolume.nfsFilePath",
+          "defaultPath": "properties.netAppVolume.nfsFilePath"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/netAppVolume.nfsProviderIp",
+          "defaultPath": "properties.netAppVolume.nfsProviderIp"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/clusters/datastores/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "privateClouds/clusters/datastores"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/globalReachConnections/addressPrefix",
+          "defaultPath": "properties.addressPrefix"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/globalReachConnections/authorizationKey",
+          "defaultPath": "properties.authorizationKey"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/globalReachConnections/circuitConnectionStatus",
+          "defaultPath": "properties.circuitConnectionStatus"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/globalReachConnections/expressRouteId",
+          "defaultPath": "properties.expressRouteId"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/globalReachConnections/peerExpressRouteCircuit",
+          "defaultPath": "properties.peerExpressRouteCircuit"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/globalReachConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "privateClouds/globalReachConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/hcxEnterpriseSites/activationKey",
+          "defaultPath": "properties.activationKey"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/hcxEnterpriseSites/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "privateClouds/hcxEnterpriseSites"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/dhcpType",
+          "defaultPath": "properties.dhcpType"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/RELAY.serverAddresses",
+          "defaultPath": "properties.serverAddresses"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/RELAY.serverAddresses[*]",
+          "defaultPath": "properties.serverAddresses[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/segments",
+          "defaultPath": "properties.segments"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/segments[*]",
+          "defaultPath": "properties.segments[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/SERVER.leaseTime",
+          "defaultPath": "properties.leaseTime"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dhcpConfigurations/SERVER.serverAddress",
+          "defaultPath": "properties.serverAddress"
+        }
+      ],
+      "resourceType": "privateClouds/workloadNetworks/dhcpConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/defaultDnsZone",
+          "defaultPath": "properties.defaultDnsZone"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/dnsServiceIp",
+          "defaultPath": "properties.dnsServiceIp"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/fqdnZones",
+          "defaultPath": "properties.fqdnZones"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/fqdnZones[*]",
+          "defaultPath": "properties.fqdnZones[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/logLevel",
+          "defaultPath": "properties.logLevel"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsServices/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "privateClouds/workloadNetworks/dnsServices"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/dnsServerIps",
+          "defaultPath": "properties.dnsServerIps"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/dnsServerIps[*]",
+          "defaultPath": "properties.dnsServerIps[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/dnsServices",
+          "defaultPath": "properties.dnsServices"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/domain",
+          "defaultPath": "properties.domain"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/domain[*]",
+          "defaultPath": "properties.domain[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/dnsZones/sourceIp",
+          "defaultPath": "properties.sourceIp"
+        }
+      ],
+      "resourceType": "privateClouds/workloadNetworks/dnsZones"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/destination",
+          "defaultPath": "properties.destination"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/direction",
+          "defaultPath": "properties.direction"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/source",
+          "defaultPath": "properties.source"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/portMirroringProfiles/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "privateClouds/workloadNetworks/portMirroringProfiles"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/connectedGateway",
+          "defaultPath": "properties.connectedGateway"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/portVif",
+          "defaultPath": "properties.portVif"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/portVif[*]",
+          "defaultPath": "properties.portVif[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/portVif[*].portName",
+          "defaultPath": "properties.portVif[*].portName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/status",
+          "defaultPath": "properties.status"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/subnet",
+          "defaultPath": "properties.subnet"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/subnet.dhcpRanges",
+          "defaultPath": "properties.subnet.dhcpRanges"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/subnet.dhcpRanges[*]",
+          "defaultPath": "properties.subnet.dhcpRanges[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/segments/subnet.gatewayAddress",
+          "defaultPath": "properties.subnet.gatewayAddress"
+        }
+      ],
+      "resourceType": "privateClouds/workloadNetworks/segments"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/vmGroups/displayName",
+          "defaultPath": "properties.displayName"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/vmGroups/members",
+          "defaultPath": "properties.members"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/vmGroups/members[*]",
+          "defaultPath": "properties.members[*]"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/vmGroups/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/vmGroups/revision",
+          "defaultPath": "properties.revision"
+        },
+        {
+          "name": "Microsoft.AVS/privateClouds/workloadNetworks/vmGroups/status",
+          "defaultPath": "properties.status"
+        }
+      ],
+      "resourceType": "privateClouds/workloadNetworks/vmGroups"
+    }
+  ]
+}

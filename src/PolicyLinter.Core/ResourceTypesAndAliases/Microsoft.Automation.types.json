@@ -1,0 +1,141 @@
+{
+  "namespace": "Microsoft.Automation",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automationAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/agentRegistrationInformation"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/certificates"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/compilationjobs"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automationAccounts/configurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/connections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/connectionTypes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/credentials"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/hybridRunbookWorkerGroups"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/hybridRunbookWorkerGroups/hybridRunbookWorkers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/jobs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/jobSchedules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/modules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/nodeConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/nodes"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/privateLinkResources"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/python2Packages"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/python3Packages"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automationAccounts/runbooks"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "automationAccounts/runtimes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/schedules"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/softwareUpdateConfigurationMachineRuns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/softwareUpdateConfigurationRuns"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/softwareUpdateConfigurations"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/sourceControls"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/variables"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "automationAccounts/watchers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "automationAccounts/webhooks"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "deletedAutomationAccounts"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/usages"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

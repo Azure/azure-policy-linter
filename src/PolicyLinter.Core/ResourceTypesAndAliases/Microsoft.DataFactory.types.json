@@ -1,0 +1,77 @@
+{
+  "namespace": "Microsoft.DataFactory",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "CheckNameAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "factories"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/adfcdcs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/credentials"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/dataflows"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/datasets"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "factories/integrationRuntimes"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/linkedservices"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/managedVirtualNetworks"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/managedVirtualNetworks/managedPrivateEndpoints"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/pipelines"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "factories/privateEndpointConnectionProxies"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/privateEndpointConnections"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "factories/triggers"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/configureFactoryRepo"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/getFeatureValue"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

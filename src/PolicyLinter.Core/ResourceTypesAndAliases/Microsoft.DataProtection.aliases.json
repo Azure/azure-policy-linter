@@ -1,0 +1,1184 @@
+{
+  "namespace": "Microsoft.DataProtection",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataProtection/backupVaults/bcdrSecurityLevel",
+          "defaultPath": "properties.bcdrSecurityLevel"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/featureSettings",
+          "defaultPath": "properties.featureSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/featureSettings.crossRegionRestoreSettings",
+          "defaultPath": "properties.featureSettings.crossRegionRestoreSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/featureSettings.crossRegionRestoreSettings.state",
+          "defaultPath": "properties.featureSettings.crossRegionRestoreSettings.state"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/featureSettings.crossSubscriptionRestoreSettings",
+          "defaultPath": "properties.featureSettings.crossSubscriptionRestoreSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/featureSettings.crossSubscriptionRestoreSettings.state",
+          "paths": [
+            {
+              "path": "properties.featureSettings.crossSubscriptionRestoreSettings.state",
+              "apiVersions": [
+                "2022-11-01-preview",
+                "2022-10-01-preview",
+                "2022-09-01-preview",
+                "2022-05-01",
+                "2022-04-01",
+                "2022-03-31-preview",
+                "2022-03-01",
+                "2022-02-01-preview",
+                "2022-01-01",
+                "2021-12-01-preview",
+                "2021-10-01-preview",
+                "2021-07-01",
+                "2021-06-01-preview",
+                "2021-02-01-preview",
+                "2021-01-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.featureSettings.crossSubscriptionRestoreSettings.state",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/isVaultProtectedByResourceGuard",
+          "defaultPath": "properties.isVaultProtectedByResourceGuard"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/monitoringSettings",
+          "defaultPath": "properties.monitoringSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/monitoringSettings.azureMonitorAlertSettings",
+          "defaultPath": "properties.monitoringSettings.azureMonitorAlertSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/monitoringSettings.azureMonitorAlertSettings.alertsForAllJobFailures",
+          "defaultPath": "properties.monitoringSettings.azureMonitorAlertSettings.alertsForAllJobFailures"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/replicatedRegions",
+          "defaultPath": "properties.replicatedRegions"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/replicatedRegions[*]",
+          "defaultPath": "properties.replicatedRegions[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceGuardOperationRequests",
+          "defaultPath": "properties.resourceGuardOperationRequests"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceGuardOperationRequests[*]",
+          "defaultPath": "properties.resourceGuardOperationRequests[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveDetails",
+          "defaultPath": "properties.resourceMoveDetails"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveDetails.completionTimeUtc",
+          "defaultPath": "properties.resourceMoveDetails.completionTimeUtc"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveDetails.operationId",
+          "defaultPath": "properties.resourceMoveDetails.operationId"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveDetails.sourceResourcePath",
+          "defaultPath": "properties.resourceMoveDetails.sourceResourcePath"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveDetails.startTimeUtc",
+          "defaultPath": "properties.resourceMoveDetails.startTimeUtc"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveDetails.targetResourcePath",
+          "defaultPath": "properties.resourceMoveDetails.targetResourcePath"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/resourceMoveState",
+          "defaultPath": "properties.resourceMoveState"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/secureScore",
+          "defaultPath": "properties.secureScore"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings",
+          "defaultPath": "properties.securitySettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings",
+          "defaultPath": "properties.securitySettings.encryptionSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.infrastructureEncryption",
+          "defaultPath": "properties.securitySettings.encryptionSettings.infrastructureEncryption"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.kekIdentity",
+          "defaultPath": "properties.securitySettings.encryptionSettings.kekIdentity"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.kekIdentity.identityId",
+          "defaultPath": "properties.securitySettings.encryptionSettings.kekIdentity.identityId"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.kekIdentity.identityType",
+          "defaultPath": "properties.securitySettings.encryptionSettings.kekIdentity.identityType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.keyVaultProperties",
+          "defaultPath": "properties.securitySettings.encryptionSettings.keyVaultProperties"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.keyVaultProperties.keyUri",
+          "defaultPath": "properties.securitySettings.encryptionSettings.keyVaultProperties.keyUri"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.encryptionSettings.state",
+          "defaultPath": "properties.securitySettings.encryptionSettings.state"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.immutabilitySettings",
+          "defaultPath": "properties.securitySettings.immutabilitySettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.immutabilitySettings.state",
+          "paths": [
+            {
+              "path": "properties.securitySettings.immutabilitySettings.state",
+              "apiVersions": [
+                "2022-05-01",
+                "2022-04-01",
+                "2022-03-31-preview",
+                "2022-03-01",
+                "2022-02-01-preview",
+                "2022-01-01",
+                "2021-12-01-preview",
+                "2021-10-01-preview",
+                "2021-07-01",
+                "2021-06-01-preview",
+                "2021-02-01-preview",
+                "2021-01-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.securitySettings.immutabilitySettings.state",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.softDeleteSettings",
+          "defaultPath": "properties.securitySettings.softDeleteSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.softDeleteSettings.retentionDurationInDays",
+          "paths": [
+            {
+              "path": "properties.securitySettings.softDeleteSettings.retentionDurationInDays",
+              "apiVersions": [
+                "2022-05-01",
+                "2022-04-01",
+                "2022-03-31-preview",
+                "2022-03-01",
+                "2022-02-01-preview",
+                "2022-01-01",
+                "2021-12-01-preview",
+                "2021-10-01-preview",
+                "2021-07-01",
+                "2021-06-01-preview",
+                "2021-02-01-preview",
+                "2021-01-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.securitySettings.softDeleteSettings.retentionDurationInDays",
+          "defaultMetadata": {
+            "type": "Number",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/securitySettings.softDeleteSettings.state",
+          "paths": [
+            {
+              "path": "properties.securitySettings.softDeleteSettings.state",
+              "apiVersions": [
+                "2022-05-01",
+                "2022-04-01",
+                "2022-03-31-preview",
+                "2022-03-01",
+                "2022-02-01-preview",
+                "2022-01-01",
+                "2021-12-01-preview",
+                "2021-10-01-preview",
+                "2021-07-01",
+                "2021-06-01-preview",
+                "2021-02-01-preview",
+                "2021-01-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.securitySettings.softDeleteSettings.state",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/storageSettings",
+          "defaultPath": "properties.storageSettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/storageSettings[*]",
+          "defaultPath": "properties.storageSettings[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/storageSettings[*].datastoreType",
+          "defaultPath": "properties.storageSettings[*].datastoreType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/storageSettings[*].type",
+          "defaultPath": "properties.storageSettings[*].type"
+        }
+      ],
+      "resourceType": "BackupVaults"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/currentProtectionState",
+          "defaultPath": "properties.currentProtectionState"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials",
+          "defaultPath": "properties.datasourceAuthCredentials"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials.objectType",
+          "defaultPath": "properties.datasourceAuthCredentials.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials.SecretStoreBasedAuthCredentials",
+          "defaultPath": "properties.datasourceAuthCredentials"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials.SecretStoreBasedAuthCredentials.secretStoreResource",
+          "defaultPath": "properties.datasourceAuthCredentials.secretStoreResource"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials.SecretStoreBasedAuthCredentials.secretStoreResource.secretStoreType",
+          "defaultPath": "properties.datasourceAuthCredentials.secretStoreResource.secretStoreType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials.SecretStoreBasedAuthCredentials.secretStoreResource.uri",
+          "defaultPath": "properties.datasourceAuthCredentials.secretStoreResource.uri"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/datasourceAuthCredentials.SecretStoreBasedAuthCredentials.secretStoreResource.value",
+          "defaultPath": "properties.datasourceAuthCredentials.secretStoreResource.value"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo",
+          "defaultPath": "properties.dataSourceInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.datasourceType",
+          "defaultPath": "properties.dataSourceInfo.datasourceType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.objectType",
+          "defaultPath": "properties.dataSourceInfo.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceID",
+          "defaultPath": "properties.dataSourceInfo.resourceID"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceLocation",
+          "defaultPath": "properties.dataSourceInfo.resourceLocation"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceName",
+          "defaultPath": "properties.dataSourceInfo.resourceName"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceProperties",
+          "defaultPath": "properties.dataSourceInfo.resourceProperties"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceProperties.objectType",
+          "defaultPath": "properties.dataSourceInfo.resourceProperties.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceProperties.VmwareVMProperties",
+          "defaultPath": "properties.dataSourceInfo.resourceProperties"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceProperties.VmwareVMProperties.instanceUuid",
+          "defaultPath": "properties.dataSourceInfo.resourceProperties.instanceUuid"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceType",
+          "defaultPath": "properties.dataSourceInfo.resourceType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceInfo.resourceUri",
+          "defaultPath": "properties.dataSourceInfo.resourceUri"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo",
+          "defaultPath": "properties.dataSourceSetInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.datasourceType",
+          "defaultPath": "properties.dataSourceSetInfo.datasourceType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.objectType",
+          "defaultPath": "properties.dataSourceSetInfo.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceID",
+          "defaultPath": "properties.dataSourceSetInfo.resourceID"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceLocation",
+          "defaultPath": "properties.dataSourceSetInfo.resourceLocation"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceName",
+          "defaultPath": "properties.dataSourceSetInfo.resourceName"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceProperties",
+          "defaultPath": "properties.dataSourceSetInfo.resourceProperties"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceProperties.objectType",
+          "defaultPath": "properties.dataSourceSetInfo.resourceProperties.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceProperties.VmwareVMProperties",
+          "defaultPath": "properties.dataSourceSetInfo.resourceProperties"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceProperties.VmwareVMProperties.instanceUuid",
+          "defaultPath": "properties.dataSourceSetInfo.resourceProperties.instanceUuid"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceType",
+          "defaultPath": "properties.dataSourceSetInfo.resourceType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/dataSourceSetInfo.resourceUri",
+          "defaultPath": "properties.dataSourceSetInfo.resourceUri"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/friendlyName",
+          "defaultPath": "properties.friendlyName"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/identityDetails",
+          "defaultPath": "properties.identityDetails"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/identityDetails.userAssignedIdentityArmUrl",
+          "defaultPath": "properties.identityDetails.userAssignedIdentityArmUrl"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/identityDetails.useSystemAssignedIdentity",
+          "defaultPath": "properties.identityDetails.useSystemAssignedIdentity"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/objectType",
+          "defaultPath": "properties.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo",
+          "defaultPath": "properties.policyInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyId",
+          "defaultPath": "properties.policyInfo.policyId"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters",
+          "defaultPath": "properties.policyInfo.policyParameters"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].BlobBackupDatasourceParameters",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].BlobBackupDatasourceParameters.containersList",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].containersList"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].BlobBackupDatasourceParameters.containersList[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].containersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].containersList",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].containersList"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].containersList[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].containersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].GenericBackupDatasourceParameters",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.backupHookReferences",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].backupHookReferences"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.backupHookReferences[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].backupHookReferences[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.backupHookReferences[*].name",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].backupHookReferences[*].name"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.backupHookReferences[*].namespace",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].backupHookReferences[*].namespace"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.excludedNamespaces",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].excludedNamespaces"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.excludedNamespaces[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].excludedNamespaces[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.excludedResourceTypes",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].excludedResourceTypes"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.excludedResourceTypes[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].excludedResourceTypes[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.includeClusterScopeResources",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].includeClusterScopeResources"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.includedNamespaces",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].includedNamespaces"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.includedNamespaces[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].includedNamespaces[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.includedResourceTypes",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].includedResourceTypes"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.includedResourceTypes[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].includedResourceTypes[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.labelSelectors",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].labelSelectors"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.labelSelectors[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].labelSelectors[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].KubernetesClusterBackupDatasourceParameters.snapshotVolumes",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].snapshotVolumes"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.backupDatasourceParametersList[*].objectType",
+          "defaultPath": "properties.policyInfo.policyParameters.backupDatasourceParametersList[*].objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.dataStoreParametersList",
+          "defaultPath": "properties.policyInfo.policyParameters.dataStoreParametersList"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.dataStoreParametersList[*]",
+          "defaultPath": "properties.policyInfo.policyParameters.dataStoreParametersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.dataStoreParametersList[*].AzureOperationalStoreParameters",
+          "defaultPath": "properties.policyInfo.policyParameters.dataStoreParametersList[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.dataStoreParametersList[*].AzureOperationalStoreParameters.resourceGroupId",
+          "defaultPath": "properties.policyInfo.policyParameters.dataStoreParametersList[*].resourceGroupId"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.dataStoreParametersList[*].dataStoreType",
+          "defaultPath": "properties.policyInfo.policyParameters.dataStoreParametersList[*].dataStoreType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyParameters.dataStoreParametersList[*].objectType",
+          "defaultPath": "properties.policyInfo.policyParameters.dataStoreParametersList[*].objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/policyInfo.policyVersion",
+          "defaultPath": "properties.policyInfo.policyVersion"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails",
+          "defaultPath": "properties.protectionErrorDetails"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.code",
+          "defaultPath": "properties.protectionErrorDetails.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details",
+          "defaultPath": "properties.protectionErrorDetails.details"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*]",
+          "defaultPath": "properties.protectionErrorDetails.details[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].code",
+          "defaultPath": "properties.protectionErrorDetails.details[*].code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].details",
+          "defaultPath": "properties.protectionErrorDetails.details[*].details"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].details[*]",
+          "defaultPath": "properties.protectionErrorDetails.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].innerError",
+          "defaultPath": "properties.protectionErrorDetails.details[*].innerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].innerError.additionalInfo",
+          "defaultPath": "properties.protectionErrorDetails.details[*].innerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].innerError.code",
+          "defaultPath": "properties.protectionErrorDetails.details[*].innerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].innerError.embeddedInnerError",
+          "defaultPath": "properties.protectionErrorDetails.details[*].innerError.embeddedInnerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].innerError.embeddedInnerError.additionalInfo",
+          "defaultPath": "properties.protectionErrorDetails.details[*].innerError.embeddedInnerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].innerError.embeddedInnerError.code",
+          "defaultPath": "properties.protectionErrorDetails.details[*].innerError.embeddedInnerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].isRetryable",
+          "defaultPath": "properties.protectionErrorDetails.details[*].isRetryable"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].isUserError",
+          "defaultPath": "properties.protectionErrorDetails.details[*].isUserError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].message",
+          "defaultPath": "properties.protectionErrorDetails.details[*].message"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].recommendedAction",
+          "defaultPath": "properties.protectionErrorDetails.details[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].recommendedAction[*]",
+          "defaultPath": "properties.protectionErrorDetails.details[*].recommendedAction[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.details[*].target",
+          "defaultPath": "properties.protectionErrorDetails.details[*].target"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.innerError",
+          "defaultPath": "properties.protectionErrorDetails.innerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.innerError.additionalInfo",
+          "defaultPath": "properties.protectionErrorDetails.innerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.innerError.code",
+          "defaultPath": "properties.protectionErrorDetails.innerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.innerError.embeddedInnerError",
+          "defaultPath": "properties.protectionErrorDetails.innerError.embeddedInnerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.innerError.embeddedInnerError.additionalInfo",
+          "defaultPath": "properties.protectionErrorDetails.innerError.embeddedInnerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.innerError.embeddedInnerError.code",
+          "defaultPath": "properties.protectionErrorDetails.innerError.embeddedInnerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.isRetryable",
+          "defaultPath": "properties.protectionErrorDetails.isRetryable"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.isUserError",
+          "defaultPath": "properties.protectionErrorDetails.isUserError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.message",
+          "defaultPath": "properties.protectionErrorDetails.message"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.recommendedAction",
+          "defaultPath": "properties.protectionErrorDetails.recommendedAction"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.recommendedAction[*]",
+          "defaultPath": "properties.protectionErrorDetails.recommendedAction[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionErrorDetails.target",
+          "defaultPath": "properties.protectionErrorDetails.target"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus",
+          "defaultPath": "properties.protectionStatus"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails",
+          "defaultPath": "properties.protectionStatus.errorDetails"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.code",
+          "defaultPath": "properties.protectionStatus.errorDetails.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details",
+          "defaultPath": "properties.protectionStatus.errorDetails.details"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*]",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].code",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].details",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].details"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].details[*]",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].details[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].innerError",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].innerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].innerError.additionalInfo",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].innerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].innerError.code",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].innerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].innerError.embeddedInnerError",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].innerError.embeddedInnerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].innerError.embeddedInnerError.additionalInfo",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].innerError.embeddedInnerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].innerError.embeddedInnerError.code",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].innerError.embeddedInnerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].isRetryable",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].isRetryable"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].isUserError",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].isUserError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].message",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].message"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].recommendedAction",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].recommendedAction"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].recommendedAction[*]",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].recommendedAction[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.details[*].target",
+          "defaultPath": "properties.protectionStatus.errorDetails.details[*].target"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.innerError",
+          "defaultPath": "properties.protectionStatus.errorDetails.innerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.innerError.additionalInfo",
+          "defaultPath": "properties.protectionStatus.errorDetails.innerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.innerError.code",
+          "defaultPath": "properties.protectionStatus.errorDetails.innerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.innerError.embeddedInnerError",
+          "defaultPath": "properties.protectionStatus.errorDetails.innerError.embeddedInnerError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.innerError.embeddedInnerError.additionalInfo",
+          "defaultPath": "properties.protectionStatus.errorDetails.innerError.embeddedInnerError.additionalInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.innerError.embeddedInnerError.code",
+          "defaultPath": "properties.protectionStatus.errorDetails.innerError.embeddedInnerError.code"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.isRetryable",
+          "defaultPath": "properties.protectionStatus.errorDetails.isRetryable"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.isUserError",
+          "defaultPath": "properties.protectionStatus.errorDetails.isUserError"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.message",
+          "defaultPath": "properties.protectionStatus.errorDetails.message"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.recommendedAction",
+          "defaultPath": "properties.protectionStatus.errorDetails.recommendedAction"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.recommendedAction[*]",
+          "defaultPath": "properties.protectionStatus.errorDetails.recommendedAction[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.errorDetails.target",
+          "defaultPath": "properties.protectionStatus.errorDetails.target"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/protectionStatus.status",
+          "defaultPath": "properties.protectionStatus.status"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/resourceGuardOperationRequests",
+          "defaultPath": "properties.resourceGuardOperationRequests"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/resourceGuardOperationRequests[*]",
+          "defaultPath": "properties.resourceGuardOperationRequests[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupInstances/validationType",
+          "defaultPath": "properties.validationType"
+        }
+      ],
+      "resourceType": "backupVaults/backupInstances"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules",
+          "defaultPath": "properties.policyRules"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*]",
+          "defaultPath": "properties.policyRules[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule",
+          "defaultPath": "properties.policyRules[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.backupParameters",
+          "defaultPath": "properties.policyRules[*].backupParameters"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.backupParameters.AzureBackupParams",
+          "defaultPath": "properties.policyRules[*].backupParameters"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.backupParameters.AzureBackupParams.backupType",
+          "defaultPath": "properties.policyRules[*].backupParameters.backupType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.backupParameters.objectType",
+          "defaultPath": "properties.policyRules[*].backupParameters.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.dataStore",
+          "defaultPath": "properties.policyRules[*].dataStore"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.dataStore.dataStoreType",
+          "defaultPath": "properties.policyRules[*].dataStore.dataStoreType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.dataStore.objectType",
+          "defaultPath": "properties.policyRules[*].dataStore.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger",
+          "defaultPath": "properties.policyRules[*].trigger"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.AdhocBasedTriggerContext",
+          "defaultPath": "properties.policyRules[*].trigger"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.AdhocBasedTriggerContext.taggingCriteria",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.AdhocBasedTriggerContext.taggingCriteria.tagInfo",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria.tagInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.AdhocBasedTriggerContext.taggingCriteria.tagInfo.eTag",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria.tagInfo.eTag"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.AdhocBasedTriggerContext.taggingCriteria.tagInfo.id",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria.tagInfo.id"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.AdhocBasedTriggerContext.taggingCriteria.tagInfo.tagName",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria.tagInfo.tagName"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.objectType",
+          "defaultPath": "properties.policyRules[*].trigger.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext",
+          "defaultPath": "properties.policyRules[*].trigger"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.schedule",
+          "defaultPath": "properties.policyRules[*].trigger.schedule"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.schedule.repeatingTimeIntervals",
+          "defaultPath": "properties.policyRules[*].trigger.schedule.repeatingTimeIntervals"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.schedule.repeatingTimeIntervals[*]",
+          "defaultPath": "properties.policyRules[*].trigger.schedule.repeatingTimeIntervals[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.schedule.timeZone",
+          "defaultPath": "properties.policyRules[*].trigger.schedule.timeZone"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].objectType",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.absoluteCriteria",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].absoluteCriteria"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.absoluteCriteria[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].absoluteCriteria[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.daysOfMonth",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].daysOfMonth"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.daysOfMonth[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].daysOfMonth[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.daysOfMonth[*].date",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].daysOfMonth[*].date"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.daysOfMonth[*].isLast",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].daysOfMonth[*].isLast"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.daysOfTheWeek",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].daysOfTheWeek"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.daysOfTheWeek[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].daysOfTheWeek[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.monthsOfYear",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].monthsOfYear"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.monthsOfYear[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].monthsOfYear[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.scheduleTimes",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].scheduleTimes"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.scheduleTimes[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].scheduleTimes[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.weeksOfTheMonth",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].weeksOfTheMonth"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].criteria[*].ScheduleBasedBackupCriteria.weeksOfTheMonth[*]",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].criteria[*].weeksOfTheMonth[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].isDefault",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].isDefault"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].taggingPriority",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].taggingPriority"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].tagInfo",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].tagInfo"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].tagInfo.eTag",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].tagInfo.eTag"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].tagInfo.id",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].tagInfo.id"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureBackupRule.trigger.ScheduleBasedTriggerContext.taggingCriteria[*].tagInfo.tagName",
+          "defaultPath": "properties.policyRules[*].trigger.taggingCriteria[*].tagInfo.tagName"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule",
+          "defaultPath": "properties.policyRules[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.isDefault",
+          "defaultPath": "properties.policyRules[*].isDefault"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles",
+          "defaultPath": "properties.policyRules[*].lifecycles"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*]",
+          "defaultPath": "properties.policyRules[*].lifecycles[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].deleteAfter",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].deleteAfter"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].deleteAfter.duration",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].deleteAfter.duration"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].deleteAfter.objectType",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].deleteAfter.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].sourceDataStore",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].sourceDataStore"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].sourceDataStore.dataStoreType",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].sourceDataStore.dataStoreType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].sourceDataStore.objectType",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].sourceDataStore.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*]",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].copyAfter",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].copyAfter"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].copyAfter.CustomCopyOption",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].copyAfter"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].copyAfter.CustomCopyOption.duration",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].copyAfter.duration"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].copyAfter.objectType",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].copyAfter.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].dataStore",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].dataStore"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].dataStore.dataStoreType",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].dataStore.dataStoreType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].AzureRetentionRule.lifecycles[*].targetDataStoreCopySettings[*].dataStore.objectType",
+          "defaultPath": "properties.policyRules[*].lifecycles[*].targetDataStoreCopySettings[*].dataStore.objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].name",
+          "defaultPath": "properties.policyRules[*].name"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/BackupPolicy.policyRules[*].objectType",
+          "defaultPath": "properties.policyRules[*].objectType"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/datasourceTypes",
+          "defaultPath": "properties.datasourceTypes"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/datasourceTypes[*]",
+          "defaultPath": "properties.datasourceTypes[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupPolicies/objectType",
+          "defaultPath": "properties.objectType"
+        }
+      ],
+      "resourceType": "backupVaults/backupPolicies"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/description",
+          "defaultPath": "properties.description"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/lastUpdatedTime",
+          "defaultPath": "properties.lastUpdatedTime"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/resourceGuardOperationDetails",
+          "defaultPath": "properties.resourceGuardOperationDetails"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/resourceGuardOperationDetails[*]",
+          "defaultPath": "properties.resourceGuardOperationDetails[*]"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/resourceGuardOperationDetails[*].defaultResourceRequest",
+          "defaultPath": "properties.resourceGuardOperationDetails[*].defaultResourceRequest"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/resourceGuardOperationDetails[*].vaultCriticalOperation",
+          "defaultPath": "properties.resourceGuardOperationDetails[*].vaultCriticalOperation"
+        },
+        {
+          "name": "Microsoft.DataProtection/backupVaults/backupResourceGuardProxies/resourceGuardResourceId",
+          "defaultPath": "properties.resourceGuardResourceId"
+        }
+      ],
+      "resourceType": "backupVaults/backupResourceGuardProxies"
+    }
+  ]
+}

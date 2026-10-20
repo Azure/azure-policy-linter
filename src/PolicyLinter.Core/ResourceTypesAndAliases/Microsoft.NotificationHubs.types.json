@@ -1,0 +1,37 @@
+{
+  "namespace": "Microsoft.NotificationHubs",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "checkNameAvailability"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "checkNamespaceAvailability"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "Namespaces/AuthorizationRules"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "namespaces/notificationHubs"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/notificationHubs/authorizationRules"
+    },
+    {
+      "capabilities": null,
+      "resourceType": "namespaces/privateEndpointConnections"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

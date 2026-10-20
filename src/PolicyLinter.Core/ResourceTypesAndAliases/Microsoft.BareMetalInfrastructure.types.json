@@ -1,0 +1,25 @@
+{
+  "namespace": "Microsoft.BareMetalInfrastructure",
+  "resourceTypes": [
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bareMetalInstances"
+    },
+    {
+      "capabilities": "SupportsTags, SupportsLocation",
+      "resourceType": "bareMetalStorageInstances"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "locations/operationsStatus"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    }
+  ]
+}

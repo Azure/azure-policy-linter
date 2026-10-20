@@ -1,0 +1,17 @@
+{
+  "namespace": "Microsoft.Commerce",
+  "resourceTypes": [
+    {
+      "capabilities": "None",
+      "resourceType": "operations"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "RateCard"
+    },
+    {
+      "capabilities": "None",
+      "resourceType": "UsageAggregates"
+    }
+  ]
+}

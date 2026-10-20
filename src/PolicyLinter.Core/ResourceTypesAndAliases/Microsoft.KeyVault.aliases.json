@@ -1,0 +1,1353 @@
+{
+  "namespace": "Microsoft.KeyVault",
+  "resourceTypes": [
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/createMode",
+          "defaultPath": "properties.createMode"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/enablePurgeProtection",
+          "defaultPath": "properties.enablePurgeProtection",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/enableSoftDelete",
+          "defaultPath": "properties.enableSoftDelete"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/hsmUri",
+          "defaultPath": "properties.hsmUri"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/initialAdminObjectIds",
+          "defaultPath": "properties.initialAdminObjectIds"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/initialAdminObjectIds[*]",
+          "defaultPath": "properties.initialAdminObjectIds[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls",
+          "defaultPath": "properties.networkAcls"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.bypass",
+          "paths": [
+            {
+              "path": "properties.networkAcls.bypass",
+              "apiVersions": [
+                "2020-04-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.bypass",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkAcls.defaultAction",
+              "apiVersions": [
+                "2020-04-01-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.ipRules",
+          "defaultPath": "properties.networkAcls.ipRules"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.ipRules[*]",
+          "defaultPath": "properties.networkAcls.ipRules[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.ipRules[*].value",
+          "defaultPath": "properties.networkAcls.ipRules[*].value"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.serviceTags",
+          "defaultPath": "properties.networkAcls.serviceTags"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.serviceTags[*]",
+          "defaultPath": "properties.networkAcls.serviceTags[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.serviceTags[*].tag",
+          "defaultPath": "properties.networkAcls.serviceTags[*].tag"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.virtualNetworkRules",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.virtualNetworkRules[*]",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/networkAcls.virtualNetworkRules[*].id",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].id"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].etag",
+          "defaultPath": "properties.privateEndpointConnections[*].etag"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/publicNetworkAccess",
+          "defaultPath": "properties.publicNetworkAccess"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/regions",
+          "defaultPath": "properties.regions"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/regions[*]",
+          "defaultPath": "properties.regions[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/regions[*].isPrimary",
+          "defaultPath": "properties.regions[*].isPrimary"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/regions[*].name",
+          "defaultPath": "properties.regions[*].name"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/regions[*].provisioningState",
+          "defaultPath": "properties.regions[*].provisioningState"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/scheduledPurgeDate",
+          "defaultPath": "properties.scheduledPurgeDate"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/securityDomainProperties",
+          "defaultPath": "properties.securityDomainProperties"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/securityDomainProperties.activationStatus",
+          "defaultPath": "properties.securityDomainProperties.activationStatus"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/securityDomainProperties.activationStatusMessage",
+          "defaultPath": "properties.securityDomainProperties.activationStatusMessage"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/sku.name",
+          "defaultPath": "sku.name"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/softDeleteRetentionInDays",
+          "defaultPath": "properties.softDeleteRetentionInDays"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/statusMessage",
+          "defaultPath": "properties.statusMessage"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/tenantId",
+          "defaultPath": "properties.tenantId"
+        }
+      ],
+      "resourceType": "managedHSMs"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes",
+          "defaultPath": "properties.attributes"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.created",
+          "defaultPath": "properties.attributes.created"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.enabled",
+          "defaultPath": "properties.attributes.enabled"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.exp",
+          "defaultPath": "properties.attributes.exp"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.exportable",
+          "defaultPath": "properties.attributes.exportable"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.nbf",
+          "defaultPath": "properties.attributes.nbf"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.recoveryLevel",
+          "defaultPath": "properties.attributes.recoveryLevel"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/attributes.updated",
+          "defaultPath": "properties.attributes.updated"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/curveName",
+          "defaultPath": "properties.curveName"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/keyOps",
+          "defaultPath": "properties.keyOps"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/keyOps[*]",
+          "defaultPath": "properties.keyOps[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/keySize",
+          "defaultPath": "properties.keySize"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/keyUri",
+          "defaultPath": "properties.keyUri"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/keyUriWithVersion",
+          "defaultPath": "properties.keyUriWithVersion"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/kty",
+          "defaultPath": "properties.kty"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy",
+          "defaultPath": "properties.rotationPolicy"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.attributes",
+          "defaultPath": "properties.rotationPolicy.attributes"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.attributes.created",
+          "defaultPath": "properties.rotationPolicy.attributes.created"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.attributes.expiryTime",
+          "defaultPath": "properties.rotationPolicy.attributes.expiryTime"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.attributes.updated",
+          "defaultPath": "properties.rotationPolicy.attributes.updated"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions[*]",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions[*].action",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].action"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions[*].action.type",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].action.type"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions[*].trigger",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].trigger"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions[*].trigger.timeAfterCreate",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].trigger.timeAfterCreate"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/keys/rotationPolicy.lifetimeActions[*].trigger.timeBeforeExpiry",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].trigger.timeBeforeExpiry"
+        }
+      ],
+      "resourceType": "managedHSMs/keys"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/sku",
+          "defaultPath": "sku"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/sku.family",
+          "defaultPath": "sku.family"
+        },
+        {
+          "name": "Microsoft.KeyVault/managedHSMs/privateEndpointConnections/sku.name",
+          "defaultPath": "sku.name"
+        }
+      ],
+      "resourceType": "managedHSMs/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies",
+          "defaultPath": "properties.accessPolicies",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*]",
+          "defaultPath": "properties.accessPolicies[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].applicationId",
+          "defaultPath": "properties.accessPolicies[*].applicationId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].objectId",
+          "defaultPath": "properties.accessPolicies[*].objectId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions",
+          "defaultPath": "properties.accessPolicies[*].permissions",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.certificates",
+          "defaultPath": "properties.accessPolicies[*].permissions.certificates",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.certificates[*]",
+          "defaultPath": "properties.accessPolicies[*].permissions.certificates[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.keys",
+          "defaultPath": "properties.accessPolicies[*].permissions.keys",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.keys[*]",
+          "defaultPath": "properties.accessPolicies[*].permissions.keys[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.secrets",
+          "defaultPath": "properties.accessPolicies[*].permissions.secrets",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.secrets[*]",
+          "defaultPath": "properties.accessPolicies[*].permissions.secrets[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.storage",
+          "paths": [
+            {
+              "path": "properties.accessPolicies[*].permissions.storage",
+              "apiVersions": [
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.accessPolicies[*].permissions.storage",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].permissions.storage[*]",
+          "paths": [
+            {
+              "path": "properties.accessPolicies[*].permissions.storage[*]",
+              "apiVersions": [
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.accessPolicies[*].permissions.storage[*]",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/accessPolicies[*].tenantId",
+          "defaultPath": "properties.accessPolicies[*].tenantId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/createMode",
+          "paths": [
+            {
+              "path": "properties.createMode",
+              "apiVersions": [
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.createMode",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/enabledForDeployment",
+          "paths": [
+            {
+              "path": "properties.enabledForDeployment",
+              "apiVersions": [
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enabledForDeployment",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/enabledForDiskEncryption",
+          "paths": [
+            {
+              "path": "properties.enabledForDiskEncryption",
+              "apiVersions": [
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enabledForDiskEncryption",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/enabledForTemplateDeployment",
+          "paths": [
+            {
+              "path": "properties.enabledForTemplateDeployment",
+              "apiVersions": [
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enabledForTemplateDeployment",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/enablePurgeProtection",
+          "paths": [
+            {
+              "path": "properties.enablePurgeProtection",
+              "apiVersions": [
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enablePurgeProtection",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/enableRbacAuthorization",
+          "paths": [
+            {
+              "path": "properties.enableRbacAuthorization",
+              "apiVersions": [
+                "2018-02-14",
+                "2018-02-14-preview",
+                "2016-10-01",
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enableRbacAuthorization",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/enableSoftDelete",
+          "paths": [
+            {
+              "path": "properties.enableSoftDelete",
+              "apiVersions": [
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.enableSoftDelete",
+          "defaultMetadata": {
+            "type": "Boolean",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/hsmPoolResourceId",
+          "defaultPath": "properties.hsmPoolResourceId"
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/networkAcls",
+          "paths": [
+            {
+              "path": "properties.networkAcls",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/networkAcls.bypass",
+          "paths": [
+            {
+              "path": "properties.networkAcls.bypass",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.bypass",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.defaultAction",
+          "paths": [
+            {
+              "path": "properties.networkAcls.defaultAction",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.defaultAction",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.ipRules",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.ipRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*]",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.ipRules[*].value",
+          "paths": [
+            {
+              "path": "properties.networkAcls.ipRules[*].value",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.ipRules[*].value",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.virtualNetworkRules",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules",
+          "defaultMetadata": {
+            "type": "Array",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.virtualNetworkRules[*]",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*]",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*]",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.virtualNetworkRules[*].id",
+          "paths": [
+            {
+              "path": "properties.networkAcls.virtualNetworkRules[*].id",
+              "apiVersions": [
+                "2016-10-01",
+                "2015-06-01",
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].id",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkAcls.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint",
+          "defaultPath": "properties.networkAcls.virtualNetworkRules[*].ignoreMissingVnetServiceEndpoint"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections",
+          "defaultPath": "properties.privateEndpointConnections"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*]",
+          "defaultPath": "properties.privateEndpointConnections[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].etag",
+          "defaultPath": "properties.privateEndpointConnections[*].etag"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].id",
+          "defaultPath": "properties.privateEndpointConnections[*].id"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateEndpoint",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateEndpoint.id",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections[*].provisioningState",
+          "defaultPath": "properties.privateEndpointConnections[*].properties.provisioningState"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/provisioningState",
+          "paths": [
+            {
+              "path": "properties.provisioningState",
+              "apiVersions": [
+                "2018-02-14",
+                "2018-02-14-preview",
+                "2016-10-01",
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.provisioningState",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/publicNetworkAccess",
+          "paths": [
+            {
+              "path": "properties.publicNetworkAccess",
+              "apiVersions": [
+                "2021-04-01-preview",
+                "2020-04-01-preview",
+                "2019-09-01",
+                "2018-02-14",
+                "2018-02-14-preview",
+                "2016-10-01",
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.publicNetworkAccess",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/sku",
+          "defaultPath": "properties.sku",
+          "defaultMetadata": {
+            "type": "Object",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/sku.family",
+          "paths": [
+            {
+              "path": "properties.sku.family",
+              "apiVersions": [
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sku.family",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/sku.name",
+          "paths": [
+            {
+              "path": "properties.sku.name",
+              "apiVersions": [
+                "2014-12-19-preview"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.sku.name",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/softDeleteRetentionInDays",
+          "paths": [
+            {
+              "path": "properties.softDeleteRetentionInDays",
+              "apiVersions": [
+                "2018-02-14",
+                "2018-02-14-preview",
+                "2016-10-01",
+                "2015-06-01"
+              ],
+              "metadata": {
+                "type": "NotSpecified",
+                "attributes": "None"
+              }
+            }
+          ],
+          "defaultPath": "properties.softDeleteRetentionInDays",
+          "defaultMetadata": {
+            "type": "Integer",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/tenantId",
+          "defaultPath": "properties.tenantId",
+          "defaultMetadata": {
+            "type": "String",
+            "attributes": "Modifiable"
+          }
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/tokenBindingParameters",
+          "defaultPath": "properties.tokenBindingParameters"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/tokenBindingParameters.minimumTokenBindingStrength",
+          "defaultPath": "properties.tokenBindingParameters.minimumTokenBindingStrength"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/tokenBindingParameters.mode",
+          "defaultPath": "properties.tokenBindingParameters.mode"
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/vaultUri",
+          "defaultPath": "properties.vaultUri"
+        }
+      ],
+      "resourceType": "vaults"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes",
+          "defaultPath": "properties.attributes"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.created",
+          "defaultPath": "properties.attributes.created"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.enabled",
+          "defaultPath": "properties.attributes.enabled"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.exp",
+          "defaultPath": "properties.attributes.exp"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.exportable",
+          "defaultPath": "properties.attributes.exportable"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.nbf",
+          "defaultPath": "properties.attributes.nbf"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.recoveryLevel",
+          "defaultPath": "properties.attributes.recoveryLevel"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/attributes.updated",
+          "defaultPath": "properties.attributes.updated"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/curveName",
+          "defaultPath": "properties.curveName"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/keyOps",
+          "defaultPath": "properties.keyOps"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/keyOps[*]",
+          "defaultPath": "properties.keyOps[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/keySize",
+          "defaultPath": "properties.keySize"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/keyUri",
+          "defaultPath": "properties.keyUri"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/keyUriWithVersion",
+          "defaultPath": "properties.keyUriWithVersion"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/kty",
+          "defaultPath": "properties.kty"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy",
+          "defaultPath": "properties.rotationPolicy"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.attributes",
+          "defaultPath": "properties.rotationPolicy.attributes"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.attributes.created",
+          "defaultPath": "properties.rotationPolicy.attributes.created"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.attributes.expiryTime",
+          "defaultPath": "properties.rotationPolicy.attributes.expiryTime"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.attributes.updated",
+          "defaultPath": "properties.rotationPolicy.attributes.updated"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions[*]",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*]"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions[*].action",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].action"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions[*].action.type",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].action.type"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions[*].trigger",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].trigger"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions[*].trigger.timeAfterCreate",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].trigger.timeAfterCreate"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/keys/rotationPolicy.lifetimeActions[*].trigger.timeBeforeExpiry",
+          "defaultPath": "properties.rotationPolicy.lifetimeActions[*].trigger.timeBeforeExpiry"
+        }
+      ],
+      "resourceType": "vaults/keys"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/vaults/networkSecurityPerimeterConfigurations/networkSecurityPerimeter.id",
+          "defaultPath": "properties.networkSecurityPerimeter.id"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkSecurityPerimeterConfigurations/profile.name",
+          "defaultPath": "properties.profile.name"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/networkSecurityPerimeterConfigurations/resourceAssociation.accessMode",
+          "defaultPath": "properties.resourceAssociation.accessMode"
+        }
+      ],
+      "resourceType": "vaults/networkSecurityPerimeterConfigurations"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateEndpoint",
+          "defaultPath": "properties.privateEndpoint"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateEndpoint.id",
+          "defaultPath": "properties.privateEndpoint.id"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateLinkServiceConnectionState",
+          "defaultPath": "properties.privateLinkServiceConnectionState"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateLinkServiceConnectionState.actionRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionRequired"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateLinkServiceConnectionState.actionsRequired",
+          "defaultPath": "properties.privateLinkServiceConnectionState.actionsRequired"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateLinkServiceConnectionState.description",
+          "defaultPath": "properties.privateLinkServiceConnectionState.description"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/privateLinkServiceConnectionState.status",
+          "defaultPath": "properties.privateLinkServiceConnectionState.status"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/privateEndpointConnections/provisioningState",
+          "defaultPath": "properties.provisioningState"
+        }
+      ],
+      "resourceType": "vaults/privateEndpointConnections"
+    },
+    {
+      "aliases": [
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/attributes",
+          "paths": [
+            {
+              "path": "properties.attributes",
+              "apiVersions": [
+                "2014-12-19-preview",
+                "2015-06-01",
+                "2016-10-01",
+                "2018-02-14-preview",
+                "2018-02-14"
+              ]
+            }
+          ],
+          "defaultPath": "properties.attributes"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/attributes.created",
+          "paths": [
+            {
+              "path": "properties.attributes.created",
+              "apiVersions": [
+                "2014-12-19-preview",
+                "2015-06-01",
+                "2016-10-01",
+                "2018-02-14-preview",
+                "2018-02-14"
+              ]
+            }
+          ],
+          "defaultPath": "properties.attributes.created"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/attributes.enabled",
+          "paths": [
+            {
+              "path": "properties.attributes.enabled",
+              "apiVersions": [
+                "2014-12-19-preview",
+                "2015-06-01",
+                "2016-10-01",
+                "2018-02-14-preview",
+                "2018-02-14"
+              ]
+            }
+          ],
+          "defaultPath": "properties.attributes.enabled"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/attributes.exp",
+          "paths": [
+            {
+              "path": "properties.attributes.exp",
+              "apiVersions": [
+                "2014-12-19-preview",
+                "2015-06-01",
+                "2016-10-01",
+                "2018-02-14-preview",
+                "2018-02-14"
+              ]
+            }
+          ],
+          "defaultPath": "properties.attributes.exp"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/attributes.nbf",
+          "paths": [
+            {
+              "path": "properties.attributes.nbf",
+              "apiVersions": [
+                "2014-12-19-preview",
+                "2015-06-01",
+                "2016-10-01",
+                "2018-02-14-preview",
+                "2018-02-14"
+              ]
+            }
+          ],
+          "defaultPath": "properties.attributes.nbf"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/attributes.updated",
+          "paths": [
+            {
+              "path": "properties.attributes.updated",
+              "apiVersions": [
+                "2014-12-19-preview",
+                "2015-06-01",
+                "2016-10-01",
+                "2018-02-14-preview",
+                "2018-02-14"
+              ]
+            }
+          ],
+          "defaultPath": "properties.attributes.updated"
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/secrets/contentType",
+          "defaultPath": "properties.contentType"
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/secrets/secretUri",
+          "defaultPath": "properties.secretUri"
+        },
+        {
+          "name": "Microsoft.Keyvault/vaults/secrets/secretUriWithVersion",
+          "defaultPath": "properties.secretUriWithVersion"
+        },
+        {
+          "name": "Microsoft.KeyVault/vaults/secrets/value",
+          "defaultPath": "properties.value"
+        }
+      ],
+      "resourceType": "vaults/secrets"
+    }
+  ]
+}
