@@ -35,22 +35,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
             var comparisonOperator = expression.Operator;
-            if (comparisonOperator == null ||
-                (!comparisonOperator.Name.EqualsOrdinalInsensitively("equals") &&
-                !comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")) ||
-                !comparisonOperator.IsSimpleParameterReference(parameterName: out var parameterName) ||
-                context.Parameters == null ||
-                !context.Parameters.TryGetValue(key: parameterName, value: out var parameter) ||
-                (!parameter.Type.EqualsOrdinalInsensitively(PolicyParameterType.Array) &&
-                !parameter.Type.EqualsOrdinalInsensitively(PolicyParameterType.Object)))
+            if (comparisonOperator != null &&
+                (comparisonOperator.Name.EqualsOrdinalInsensitively("equals") ||
+                comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")) &&
+                comparisonOperator.IsSimpleParameterReference(parameterName: out var parameterName) &&
+                context.Parameters != null &&
+                context.Parameters.TryGetValue(key: parameterName, value: out var parameter) &&
+                (parameter.Type.EqualsOrdinalInsensitively(PolicyParameterType.Array) ||
+                parameter.Type.EqualsOrdinalInsensitively(PolicyParameterType.Object)))
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateError(comparisonOperator, comparisonOperator.Name, parameterName, parameter.Type),
+                };
             }
 
-            return new[]
-            {
-                this.CreateError(comparisonOperator, comparisonOperator.Name, parameterName, parameter.Type),
-            };
+            return Array.Empty<LinterOutput>();
         }
     }
 }
