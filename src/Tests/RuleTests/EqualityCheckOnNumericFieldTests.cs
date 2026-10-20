@@ -23,8 +23,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "equals", "\"5\"", 37)]
         // Integer property compared with 'notEquals'.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "notEquals", "\"5\"", 40)]
-        // Property that is numeric in some API versions and a string in others.
-        [InlineData("Microsoft.Sql/servers/databases/maxSizeBytes", "equals", "\"5\"", 37)]
         // Numeric JSON literal: the unquoted value shifts the reported line position.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "eQuAls", "5", 35)]
         // Mixed-case 'notEquals' should also match case-insensitively.
@@ -77,7 +75,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Category: Category.ResourceFields,
                 LineNumber: 8,
                 LinePosition: linePosition,
-                Description: $"The field alias: '{field}' maps to a numeric property, but the '{expectedOperator}' condition compares that property directly against a JSON value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.",
+                Description: $"The field alias: '{field}' maps to an integer property, but the '{expectedOperator}' condition compares that property directly against a JSON value. The operator coerces both operands to string, so equal values whose string forms differ (for example '05' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.",
                 Path: "properties.policyRule.if." + expectedOperator);
 
             results.Should().ContainEquivalentOf(output);
@@ -88,6 +86,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Microsoft.Storage/storageAccounts/sku.name", "equals")]
         // A boolean-typed field alias: booleans coerce deterministically, nothing to act on.
         [InlineData("Microsoft.Web/sites/httpsOnly", "equals")]
+        // A floating-point field is owned by EqualityCheckOnFloatingPointValue.
+        [InlineData("Microsoft.Compute/virtualMachines/billingProfile.maxPrice", "equals")]
         // A numeric field but the operator is not an equality operator.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "greater")]
         // A plain top-level field that is not a field alias at all.

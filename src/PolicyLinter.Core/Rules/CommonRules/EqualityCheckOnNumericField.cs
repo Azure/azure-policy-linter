@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
     /// <summary>
     /// Flags a 'field' condition that uses 'equals' or 'notEquals' to directly
-    /// compare a field alias whose resource property is numeric against a JSON value. The equality
+    /// compare a field alias whose resource property is an integer against a JSON value. The equality
     /// operators coerce both operands to string, so numerically equal values whose
     /// string forms differ (for example '5.0' versus '5') can compare as unequal.
     /// </summary>
@@ -22,7 +22,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Equality Check on Numeric Field";
         private const string RuleDescription =
-            "The field alias: '{0}' maps to a numeric property, but the '{1}' condition compares that property directly against a JSON value. The operator coerces both operands to string, so numerically equal values whose string forms differ (for example '5.0' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.";
+            "The field alias: '{0}' maps to an integer property, but the '{1}' condition compares that property directly against a JSON value. The operator coerces both operands to string, so equal values whose string forms differ (for example '05' versus '5') can compare as unequal. Test the policy, or use a 'value' expression for type-accurate equality.";
 
         private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
         {
@@ -30,10 +30,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             "notEquals",
         };
 
-        private static readonly OrdinalInsensitiveHashSet NumericPropertyTypes = new OrdinalInsensitiveHashSet
+        private static readonly OrdinalInsensitiveHashSet IntegerPropertyTypes = new OrdinalInsensitiveHashSet
         {
             "Integer",
-            "Number",
         };
 
         /// <summary>
@@ -67,7 +66,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var isNumeric = fieldReference.ResourcePropertyMetadata
-                .Any(metadata => metadata.Exists && EqualityCheckOnNumericField.NumericPropertyTypes.Contains(metadata.Type));
+                .Any(metadata => metadata.Exists && EqualityCheckOnNumericField.IntegerPropertyTypes.Contains(metadata.Type));
 
             if (!isNumeric)
             {
