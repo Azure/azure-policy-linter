@@ -11,6 +11,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
     /// Flags a 'field' condition that uses 'equals' or 'notEquals' to directly
@@ -65,10 +66,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 return Array.Empty<LinterOutput>();
             }
 
-            var isNumeric = fieldReference.ResourcePropertyMetadata
-                .Any(metadata => metadata.Exists && EqualityCheckOnNumericField.IntegerPropertyTypes.Contains(metadata.Type));
+            var existingTypes = fieldReference.ResourcePropertyMetadata
+                .Where(metadata => metadata.Exists)
+                .Select(metadata => metadata.Type)
+                .ToArray();
 
-            if (!isNumeric)
+            if (!existingTypes.Any(type => EqualityCheckOnNumericField.IntegerPropertyTypes.Contains(type)) ||
+                existingTypes.Any(type => type.EqualsOrdinalInsensitively("Number")))
             {
                 return Array.Empty<LinterOutput>();
             }

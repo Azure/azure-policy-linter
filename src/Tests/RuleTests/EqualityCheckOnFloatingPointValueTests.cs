@@ -22,10 +22,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             metadataProvider: new OfflineMetadataProvider(),
             aliasResolver: new AliasResolver());
 
-        [Fact]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_Field()
+        [Theory]
+        [InlineData("Microsoft.Compute/virtualMachines/billingProfile.maxPrice")]
+        [InlineData("Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies/diffBackupIntervalInHours")]
+        public void RuleTests_EqualityCheckOnFloatingPointValue_Field(string alias)
         {
-            const string alias = "Microsoft.Compute/virtualMachines/billingProfile.maxPrice";
             var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
             var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
                 leftOperand: $@"""field"": ""{alias}""",
@@ -42,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 12,
-                LinePosition: 92,
+                LinePosition: 35 + alias.Length,
                 Path: "properties.policyRule.if.field",
                 Description: $"The 'equals' condition compares a floating-point value as text (field alias '{alias}'). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
 

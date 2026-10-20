@@ -88,6 +88,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Microsoft.Web/sites/httpsOnly", "equals")]
         // A floating-point field is owned by EqualityCheckOnFloatingPointValue.
         [InlineData("Microsoft.Compute/virtualMachines/billingProfile.maxPrice", "equals")]
+        // A field that changes between integer and floating-point types is also owned by the floating-point rule.
+        [InlineData("Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies/diffBackupIntervalInHours", "equals")]
         // A numeric field but the operator is not an equality operator.
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays", "greater")]
         // A plain top-level field that is not a field alias at all.

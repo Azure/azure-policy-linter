@@ -31,7 +31,7 @@ The `equals()` template function compares the values as numbers.
 
 ```json
 {
-  "value": "[equals(5.0, 5.0)]",
+  "value": "[equals(float('5.0'), float('5.0'))]",
   "equals": true
 }
 ```
