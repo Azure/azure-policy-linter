@@ -6,7 +6,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -14,13 +13,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Detects value conditions that combine field checks with a logical template function.
+    /// Detects value conditions that use a logical template function.
     /// </summary>
     public sealed class LogicalFunctionsInValueConditions : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "Logical Functions in Value Conditions";
         private const string RuleDescription =
-            "The value condition combines field checks with the '{0}()' function, so compliance details show only the expression's final result. Use native policy conditions when they preserve the expression's behavior.";
+            "The value condition uses the '{0}()' function, so compliance details show only the expression's final result. Use native policy conditions when they preserve the expression's behavior.";
 
         private static readonly OrdinalInsensitiveHashSet LogicalFunctions = new OrdinalInsensitiveHashSet
         {
@@ -60,10 +59,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var languageExpression = value.LanguageExpressions[0];
-            if (!string.Equals(value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
-                !languageExpression.TryGetFunctionName(out var functionName) ||
-                !LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName) ||
-                !languageExpression.References.Any(reference => reference.Kind == ReferenceKind.ResourceField))
+            if (            !string.Equals(value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
+            !languageExpression.TryGetFunctionName(out var functionName) ||
+            !LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName))
             {
                 return Array.Empty<LinterOutput>();
             }

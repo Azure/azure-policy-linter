@@ -22,6 +22,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("not", "[not(equals(field('name'), 'a'))]")]
         [InlineData("if", "[if(equals(field('name'), 'a'), true(), false())]")]
         [InlineData("AnD", "[AnD(equals(field('name'), 'a'), equals(field('type'), 'Contoso/widgets'))]")]
+        [InlineData("and", "[and(true(), false())]")]
+        [InlineData("or", "[or(parameters('condition'), false())]")]
         public void RuleTests_LogicalFunctionsInValueConditions_LogicalFunction(
             string expectedFunction,
             string valueExpression)
@@ -44,7 +46,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Path: "properties.policyRule.if.value",
-                Description: $"The value condition combines field checks with the '{expectedFunction}()' function, so compliance details show only the expression's final result. Use native policy conditions when they preserve the expression's behavior.");
+                Description: $"The value condition uses the '{expectedFunction}()' function, so compliance details show only the expression's final result. Use native policy conditions when they preserve the expression's behavior.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -65,7 +67,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("[equals(field('name'), 'a')]", "equals", "true")]
-        [InlineData("[and(true(), false())]", "equals", "true")]
         [InlineData("[concat(field('name'), '-suffix')]", "equals", "\"a-suffix\"")]
         [InlineData("[and(equals(field('name'), 'a'), true())]", "greater", "0")]
         [InlineData("[parameters('condition')]", "equals", "true")]
