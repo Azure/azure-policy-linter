@@ -39,6 +39,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(ObjectComparedAsScalarTests.ObjectAlias, "notEquals")]
         [InlineData(ObjectComparedAsScalarTests.ObjectAliasWithUnknownVersions, "eQuAlS")]
         [InlineData(ObjectComparedAsScalarTests.ObjectArrayMemberAlias, "nOtEqUaLs")]
+        [InlineData(ObjectComparedAsScalarTests.MixedTypeAlias, "equals")]
         public void RuleTests_ObjectComparedAsScalar_ObjectField(string alias, string operatorName)
         {
             var linter = ObjectComparedAsScalarTests.CreateLinter();
@@ -83,7 +84,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Theory]
-        [InlineData(ObjectComparedAsScalarTests.MixedTypeAlias)]
         [InlineData(ObjectComparedAsScalarTests.ArrayAlias)]
         [InlineData(ObjectComparedAsScalarTests.ScalarAlias)]
         [InlineData(ObjectComparedAsScalarTests.UnknownAlias)]

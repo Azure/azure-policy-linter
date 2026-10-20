@@ -39,41 +39,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var field = expression.Field;
             var fieldReference = field?.FieldAccessorReference;
             var comparisonOperator = expression.Operator;
-            if (field == null ||
-                fieldReference == null ||
-                comparisonOperator == null ||
-                !field.HasLiteralValue ||
-                !fieldReference.IsResolvedFieldReference() ||
-                !FieldPathHelper.IsFieldAlias(fieldReference.Identifier) ||
-                (!comparisonOperator.Name.EqualsOrdinalInsensitively("equals") &&
-                !comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")) ||
-                !comparisonOperator.HasLiteralValue)
+            if (field != null &&
+                fieldReference != null &&
+                comparisonOperator != null &&
+                field.HasLiteralValue &&
+                fieldReference.IsResolvedFieldReference() &&
+                FieldPathHelper.IsFieldAlias(fieldReference.Identifier) &&
+                (comparisonOperator.Name.EqualsOrdinalInsensitively("equals") ||
+                comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")) &&
+                comparisonOperator.HasLiteralValue &&
+                fieldReference.ResourcePropertyMetadata.Any(
+                    metadata => metadata.Exists && metadata.Type.EqualsOrdinalInsensitively("Object")))
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateWarning(field, fieldReference.Identifier, comparisonOperator.Name),
+                };
             }
 
-            var knownTypes = fieldReference.ResourcePropertyMetadata
-                .Where(metadata => metadata.Exists && ObjectComparedAsScalar.IsKnownType(metadata.Type))
-                .Select(metadata => metadata.Type)
-                .ToArray();
-
-            if (knownTypes.Length == 0 ||
-                knownTypes.Any(type => !type.EqualsOrdinalInsensitively("Object")))
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            return new[]
-            {
-                this.CreateWarning(field, fieldReference.Identifier, comparisonOperator.Name),
-            };
-        }
-
-        private static bool IsKnownType(string type)
-        {
-            return !string.IsNullOrEmpty(type) &&
-                !type.EqualsOrdinalInsensitively("NotSpecified") &&
-                !type.EqualsOrdinalInsensitively("Any");
+            return Array.Empty<LinterOutput>();
         }
     }
 }
