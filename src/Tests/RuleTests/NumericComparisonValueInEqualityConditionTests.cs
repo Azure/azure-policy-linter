@@ -28,7 +28,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
             var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
-                leftOperand: @"""value"": ""5""",
+                leftOperand: @"""value"": ""[field('tags.expectedValue')]""",
                 operatorName: operatorName,
                 operatorValue: $@"""[parameters('{parameterName}')]""",
                 parameterType: parameterType);
@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
             var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
-                leftOperand: @"""value"": ""5""",
+                leftOperand: @"""value"": ""[field('tags.expectedValue')]""",
                 operatorName: "equals",
                 operatorValue: @"""[parameters('value')]""",
                 parameterType: parameterType);
@@ -91,7 +91,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
             var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
-                leftOperand: @"""value"": ""5""",
+                leftOperand: @"""value"": ""[field('tags.expectedValue')]""",
                 operatorName: "equals",
                 operatorValue: @"""[add(parameters('integer'), 1)]""",
                 parameterType: "Integer");

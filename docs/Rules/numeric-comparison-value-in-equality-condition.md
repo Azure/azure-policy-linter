@@ -14,7 +14,7 @@ The comparison value of an `equals` or `notEquals` condition is an `Integer` or 
 
 ## Examples
 
-`expectedValue` is an `Integer` parameter with value `5`.
+`expectedValue` is an `Integer` parameter with value `5`, and the `expectedValue` tag contains string `"5"`.
 
 ### Violation
 
@@ -22,18 +22,18 @@ The condition evaluates to `true` because the numeric comparison value is conver
 
 ```json
 {
-  "value": "5",
+  "value": "[field('tags.expectedValue')]",
   "equals": "[parameters('expectedValue')]"
 }
 ```
 
 ### Correct
 
-The `equals()` template function preserves the value types, so string `"5"` and integer `5` compare as unequal.
+The `equals()` template function preserves the value types, so the string tag value and integer parameter compare as unequal.
 
 ```json
 {
-  "value": "[equals('5', parameters('expectedValue'))]",
+  "value": "[equals(field('tags.expectedValue'), parameters('expectedValue'))]",
   "equals": true
 }
 ```

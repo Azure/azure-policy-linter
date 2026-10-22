@@ -124,6 +124,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"""value"": ""[add(parameters('integer'), 1)]""", "equals", @"""5""")]
         [InlineData(@"""value"": ""[equals('5', parameters('integer'))]""", "equals", "true")]
         [InlineData(@"""value"": ""[equals(field('Microsoft.KeyVault/vaults/softDeleteRetentionInDays'), '5')]""", "equals", "true")]
+        [InlineData(@"""value"": ""[equals(field('tags.expectedValue'), parameters('integer'))]""", "equals", "true")]
         [InlineData(@"""field"": ""Microsoft.Storage/storageAccounts/sku.name""", "equals", @"""5""")]
         public void RuleTests_NumericFieldOrValueInEqualityCondition_NoFinding(
             string leftOperand,
