@@ -6,6 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -47,28 +48,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
+            // Inside a count 'where', a field count over the array is either bound to the counted member or not allowed.
             if (expression.Value?.Value.Type != JTokenType.String ||
                 expression.Value.LanguageExpressions.Length != 1 ||
+                expression.Value.LanguageExpressions[0].References.Length != 1 ||
                 expression.Operator == null ||
-                !LengthFunctionOnArrayAlias.NumericOperators.Contains(expression.Operator.Name))
+                !LengthFunctionOnArrayAlias.NumericOperators.Contains(expression.Operator.Name) ||
+                expression.PathSegments.Any(segment => segment.EqualsOrdinalInsensitively("where")))
             {
                 return Array.Empty<LinterOutput>();
             }
 
             var languageExpression = expression.Value.LanguageExpressions[0];
-            if (!languageExpression.TryGetFunctionName(out var functionName) ||
-                !functionName.EqualsOrdinalInsensitively("length") ||
-                languageExpression.References.Length != 1)
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            // A field() bound to an enclosing count over the same array returns the current member, not the array.
             var reference = languageExpression.References[0];
             if (reference.Kind == ReferenceKind.ResourceField &&
                 reference.IsResolved &&
-                reference.ReferencedCountExpressionScope == null &&
-                reference.Identifier.EndsWith("[*]", StringComparison.Ordinal))
+                reference.Identifier.EndsWith("[*]", StringComparison.Ordinal) &&
+                languageExpression.Expression.EqualsOrdinalInsensitively($"[length(field('{reference.Identifier}'))]"))
             {
                 return new[]
                 {

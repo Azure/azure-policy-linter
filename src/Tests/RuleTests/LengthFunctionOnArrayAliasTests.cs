@@ -62,17 +62,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_LengthFunctionOnArrayAlias_InsideCountOverOtherArray()
+        public void RuleTests_LengthFunctionOnArrayAlias_CaseInsensitiveFunctionName()
         {
-            var condition = @"{
-        ""count"": {
-          ""field"": ""Microsoft.Test/resourceType/objectArray[*]"",
-          ""where"": { ""value"": ""[LENGTH(field('Microsoft.Test/resourceType/stringArray[*]'))]"", ""greater"": 0 }
-        },
-        ""greater"": 0
-      }";
-
-            var results = LengthFunctionOnArrayAliasTests.Lint(condition);
+            var results = LengthFunctionOnArrayAliasTests.Lint(
+                @"{ ""value"": ""[LENGTH(FIELD('Microsoft.Test/resourceType/stringArray[*]'))]"", ""greater"": 0 }");
 
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(new LinterOutput(
@@ -80,10 +73,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Length Function on Array Alias",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
-                LineNumber: 7,
-                LinePosition: 93,
-                Path: "properties.policyRule.if.count.where.value",
+                LineNumber: 4,
+                LinePosition: 86,
+                Path: "properties.policyRule.if.value",
                 Description: "The condition checks the length of the array field 'Microsoft.Test/resourceType/stringArray[*]' using the length() function. Use a field count expression over 'Microsoft.Test/resourceType/stringArray[*]' instead."));
+        }
+
+        [Fact]
+        public void RuleTests_LengthFunctionOnArrayAlias_InsideCountOverOtherArray()
+        {
+            var condition = @"{
+        ""count"": {
+          ""field"": ""Microsoft.Test/resourceType/objectArray[*]"",
+          ""where"": { ""value"": ""[length(field('Microsoft.Test/resourceType/stringArray[*]'))]"", ""greater"": 0 }
+        },
+        ""greater"": 0
+      }";
+
+            LengthFunctionOnArrayAliasTests.Lint(condition).Should().BeEmpty();
         }
 
         [Fact]
@@ -121,6 +128,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[length(parameters('values'))]")]
         [InlineData("[add(length(field('Microsoft.Test/resourceType/stringArray[*]')), 1)]")]
         [InlineData("[length(concat(field('Microsoft.Test/resourceType/stringArray[*]'), field('Microsoft.Test/resourceType/otherArray[*]')))]")]
+        [InlineData("[length(first(field('Microsoft.Test/resourceType/stringArray[*]')))]")]
+        [InlineData("[length(string(field('Microsoft.Test/resourceType/stringArray[*]')))]")]
+        [InlineData("[length(field('Microsoft.Test/resourceType/stringArray[*]')[0])]")]
         public void RuleTests_LengthFunctionOnArrayAlias_NotLengthOfArrayAlias(string value)
         {
             var condition = @"{ ""value"": """ + value + @""", ""greater"": 0 }";
