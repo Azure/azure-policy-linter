@@ -6,7 +6,7 @@
 
 ## Description
 
-The policy's effect is set by a parameter, and the parameter's `allowedValues` or `defaultValue` contains a value that isn't a policy [effect](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics). Azure Policy rejects a policy definition with such a value. This is usually a typo, or a property value such as `Enabled` used by mistake. Policies with a Resource Provider mode aren't checked.
+The policy's effect is set by a parameter, and the parameter's `allowedValues` or `defaultValue` contains a value that isn't a policy [effect](https://learn.microsoft.com/azure/governance/policy/concepts/effect-basics). Azure Policy rejects a policy definition with such a value. Policies with a Resource Provider mode aren't checked.
 
 ## Suggestions
 
