@@ -122,6 +122,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"""value"": ""[parameters('text')]""", "equals", @"""text""")]
         [InlineData(@"""value"": ""[parameters('integer')]""", "greater", "5")]
         [InlineData(@"""value"": ""[add(parameters('integer'), 1)]""", "equals", @"""5""")]
+        [InlineData(@"""value"": ""[equals('5', parameters('integer'))]""", "equals", "true")]
         [InlineData(@"""field"": ""Microsoft.Storage/storageAccounts/sku.name""", "equals", @"""5""")]
         public void RuleTests_NumericFieldOrValueInEqualityCondition_NoFinding(
             string leftOperand,

@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Numeric Comparison Value in Equality Condition";
         private const string RuleDescription =
-            "The '{0}' condition converts comparison parameter '{1}' of type '{2}' to a string. Numerically equal values with different string representations can compare as unequal. Use the 'equals()' function in a 'value' condition for numeric equality.";
+            "The '{0}' condition converts comparison parameter '{1}' of type '{2}' to a string. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NumericComparisonValueInEqualityCondition"/> class.

@@ -28,7 +28,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
             var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
-                leftOperand: @"""value"": ""05""",
+                leftOperand: @"""value"": ""5""",
                 operatorName: operatorName,
                 operatorValue: $@"""[parameters('{parameterName}')]""",
                 parameterType: parameterType);
@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 12,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if." + expectedOperator,
-                Description: $"The '{expectedOperator}' condition converts comparison parameter '{parameterName}' of type '{parameterType}' to a string. Numerically equal values with different string representations can compare as unequal. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: $"The '{expectedOperator}' condition converts comparison parameter '{parameterName}' of type '{parameterType}' to a string. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -61,7 +61,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
             var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
-                leftOperand: @"""value"": ""05""",
+                leftOperand: @"""value"": ""5""",
                 operatorName: "equals",
                 operatorValue: @"""[parameters('value')]""",
                 parameterType: parameterType);
@@ -91,7 +91,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
             var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
-                leftOperand: @"""value"": ""05""",
+                leftOperand: @"""value"": ""5""",
                 operatorName: "equals",
                 operatorValue: @"""[add(parameters('integer'), 1)]""",
                 parameterType: "Integer");
