@@ -46,7 +46,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Path: "properties.policyRule.if.value",
-                Description: $"The value condition uses the '{expectedFunction}()' function, so compliance details show only the expression's final result. Use native policy conditions when they preserve the expression's behavior.");
+                Description: $"The 'value' condition uses the '{expectedFunction}()' template function. Compliance details show only the final result, not the result of each check. Where possible, use the 'allOf', 'anyOf', or 'not' logical operators instead.");
 
             results.Should().ContainEquivalentOf(output);
         }

@@ -14,9 +14,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="NumericFieldOrValueInEqualityCondition"/> rule.
+    /// Tests for the <see cref="NumericFieldOrValueInEqualityOperator"/> rule.
     /// </summary>
-    public class NumericFieldOrValueInEqualityConditionTests
+    public class NumericFieldOrValueInEqualityOperatorTests
     {
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(
             metadataProvider: new OfflineMetadataProvider(),
@@ -25,10 +25,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays")]
         [InlineData("Microsoft.Compute/virtualMachines/billingProfile.maxPrice")]
-        public void RuleTests_NumericFieldOrValueInEqualityCondition_NumericField(string alias)
+        public void RuleTests_NumericFieldOrValueInEqualityOperator_NumericField(string alias)
         {
-            var linter = NumericFieldOrValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericFieldOrValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericFieldOrValueInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericFieldOrValueInEqualityOperatorTests.CreatePolicy(
                 leftOperand: $@"""field"": ""{alias}""",
                 operatorName: "equals",
                 operatorValue: @"""5""");
@@ -38,14 +38,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "numeric-field-or-value-in-equality-condition",
-                Title: "Numeric Field or Value in Equality Condition",
+                RuleIdentifier: "numeric-field-or-value-in-equality-operator",
+                Title: "Numeric Field or Value in Equality Operator",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 11,
                 LinePosition: 35 + alias.Length,
                 Path: "properties.policyRule.if.field",
-                Description: $"The 'equals' condition converts field alias '{alias}' to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
+                Description: $"The 'equals' operator converts the value of field alias '{alias}' to a string before it compares the values, so the number 5 equals the string '5'. To also compare the value types, use the 'equals()' template function in a 'value' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -53,13 +53,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("integer", "equals", 58)]
         [InlineData("floatingPoint", "notEquals", 64)]
-        public void RuleTests_NumericFieldOrValueInEqualityCondition_NumericParameter(
+        public void RuleTests_NumericFieldOrValueInEqualityOperator_NumericParameter(
             string parameterName,
             string operatorName,
             int linePosition)
         {
-            var linter = NumericFieldOrValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericFieldOrValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericFieldOrValueInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericFieldOrValueInEqualityOperatorTests.CreatePolicy(
                 leftOperand: $@"""value"": ""[parameters('{parameterName}')]""",
                 operatorName: operatorName,
                 operatorValue: @"""5""");
@@ -70,14 +70,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var expectedOperator = operatorName == "equals" ? "equals" : "notEquals";
             var output = new LinterOutput(
-                RuleIdentifier: "numeric-field-or-value-in-equality-condition",
-                Title: "Numeric Field or Value in Equality Condition",
+                RuleIdentifier: "numeric-field-or-value-in-equality-operator",
+                Title: "Numeric Field or Value in Equality Operator",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 11,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if.value",
-                Description: $"The '{expectedOperator}' condition converts value parameter '{parameterName}' to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
+                Description: $"The '{expectedOperator}' operator converts numeric parameter '{parameterName}' to a string before it compares the values, so the number 5 equals the string '5'. To also compare the value types, use the 'equals()' template function in a 'value' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -85,13 +85,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("5", "equals", "Integer")]
         [InlineData("5.0", "nOtEqUaLs", "Float")]
-        public void RuleTests_NumericFieldOrValueInEqualityCondition_NumericLiteral(
+        public void RuleTests_NumericFieldOrValueInEqualityOperator_NumericLiteral(
             string value,
             string operatorName,
             string expectedType)
         {
-            var linter = NumericFieldOrValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericFieldOrValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericFieldOrValueInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericFieldOrValueInEqualityOperatorTests.CreatePolicy(
                 leftOperand: $@"""value"": {value}",
                 operatorName: operatorName,
                 operatorValue: @"""5""");
@@ -105,14 +105,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 : "notEquals";
             var linePosition = expectedType == "Integer" ? 34 : 36;
             var output = new LinterOutput(
-                RuleIdentifier: "numeric-field-or-value-in-equality-condition",
-                Title: "Numeric Field or Value in Equality Condition",
+                RuleIdentifier: "numeric-field-or-value-in-equality-operator",
+                Title: "Numeric Field or Value in Equality Operator",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 11,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if.value",
-                Description: $"The '{expectedOperator}' condition converts the numeric value to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
+                Description: $"The '{expectedOperator}' operator converts the numeric 'value' to a string before it compares the values, so the number 5 equals the string '5'. To also compare the value types, use the 'equals()' template function in a 'value' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -126,13 +126,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"""value"": ""[equals(field('Microsoft.KeyVault/vaults/softDeleteRetentionInDays'), '5')]""", "equals", "true")]
         [InlineData(@"""value"": ""[equals(field('tags.expectedValue'), parameters('integer'))]""", "equals", "true")]
         [InlineData(@"""field"": ""Microsoft.Storage/storageAccounts/sku.name""", "equals", @"""5""")]
-        public void RuleTests_NumericFieldOrValueInEqualityCondition_NoFinding(
+        public void RuleTests_NumericFieldOrValueInEqualityOperator_NoFinding(
             string leftOperand,
             string operatorName,
             string operatorValue)
         {
-            var linter = NumericFieldOrValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericFieldOrValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericFieldOrValueInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericFieldOrValueInEqualityOperatorTests.CreatePolicy(
                 leftOperand: leftOperand,
                 operatorName: operatorName,
                 operatorValue: operatorValue);
@@ -147,9 +147,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new NumericFieldOrValueInEqualityCondition(),
+                    new NumericFieldOrValueInEqualityOperator(),
                 },
-                metadata: NumericFieldOrValueInEqualityConditionTests.TypeMetadata);
+                metadata: NumericFieldOrValueInEqualityOperatorTests.TypeMetadata);
         }
 
         private static string CreatePolicy(

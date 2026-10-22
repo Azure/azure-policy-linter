@@ -63,7 +63,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 6,
                 LinePosition: 35 + alias.Length,
                 Path: "properties.policyRule.if.field",
-                Description: $"The field alias: '{alias}' refers to an object. The '{expectedOperator}' condition does not compare the object's contents, so its result is independent of the object's properties. Reference a property alias or use a 'value' expression for complete-object equality.");
+                Description: $"The field alias: '{alias}' refers to an object. The '{expectedOperator}' operator does not compare the contents of the object, so the result does not depend on its properties. Reference the alias of a property in the object instead.");
 
             results.Should().ContainEquivalentOf(output);
         }

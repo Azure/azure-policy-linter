@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Logical Functions in Value Conditions";
         private const string RuleDescription =
-            "The value condition uses the '{0}()' function, so compliance details show only the expression's final result. Use native policy conditions when they preserve the expression's behavior.";
+            "The 'value' condition uses the '{0}()' template function. Compliance details show only the final result, not the result of each check. Where possible, use the 'allOf', 'anyOf', or 'not' logical operators instead.";
 
         private static readonly OrdinalInsensitiveHashSet LogicalFunctions = new OrdinalInsensitiveHashSet
         {

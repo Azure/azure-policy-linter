@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Object Compared as Scalar";
         private const string RuleDescription =
-            "The field alias: '{0}' refers to an object. The '{1}' condition does not compare the object's contents, so its result is independent of the object's properties. Reference a property alias or use a 'value' expression for complete-object equality.";
+            "The field alias: '{0}' refers to an object. The '{1}' operator does not compare the contents of the object, so the result does not depend on its properties. Reference the alias of a property in the object instead.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ObjectComparedAsScalar"/> class.

@@ -12,21 +12,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="NonScalarParameterInEqualityCondition"/> rule.
+    /// Tests for the <see cref="ArrayOrObjectParameterInEqualityOperator"/> rule.
     /// </summary>
-    public class NonScalarParameterInEqualityConditionTests
+    public class ArrayOrObjectParameterInEqualityOperatorTests
     {
         [Theory]
         [InlineData("equals", "Array", "values")]
         [InlineData("notEquals", "Object", "settings")]
         [InlineData("eQuAlS", "aRrAy", "values")]
-        public void RuleTests_NonScalarParameterInEqualityCondition_NonScalarParameter(
+        public void RuleTests_ArrayOrObjectParameterInEqualityOperator_NonScalarParameter(
             string operatorName,
             string parameterType,
             string parameterName)
         {
-            var linter = NonScalarParameterInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NonScalarParameterInEqualityConditionTests.CreatePolicy(
+            var linter = ArrayOrObjectParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = ArrayOrObjectParameterInEqualityOperatorTests.CreatePolicy(
                 operatorName: operatorName,
                 operatorValue: $"\"[parameters('{parameterName}')]\"",
                 parameterName: parameterName,
@@ -40,13 +40,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 ? "notEquals"
                 : "equals";
             var output = new LinterOutput(
-                RuleIdentifier: "non-scalar-parameter-in-equality-condition",
-                Title: "Non-Scalar Parameter in Equality Condition",
+                RuleIdentifier: "array-or-object-parameter-in-equality-operator",
+                Title: "Array or Object Parameter in Equality Operator",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 12,
                 LinePosition: expectedOperator == "equals" ? 58 : 63,
-                Description: $"The '{expectedOperator}' condition uses parameter '{parameterName}' of type '{parameterType}' as its comparison value. Equality conditions require a scalar value. Use 'in' or 'notIn' for an array, or the 'equals()' function in a 'value' condition for complete-value equality.",
+                Description: $"The '{expectedOperator}' operator compares with parameter '{parameterName}' of type '{parameterType}'. This operator needs a single value, so the condition is not valid.",
                 Path: "properties.policyRule.if." + expectedOperator);
 
             results.Should().ContainEquivalentOf(output);
@@ -58,10 +58,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("Float")]
         [InlineData("Boolean")]
         [InlineData("DateTime")]
-        public void RuleTests_NonScalarParameterInEqualityCondition_ScalarParameter(string parameterType)
+        public void RuleTests_ArrayOrObjectParameterInEqualityOperator_ScalarParameter(string parameterType)
         {
-            var linter = NonScalarParameterInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NonScalarParameterInEqualityConditionTests.CreatePolicy(
+            var linter = ArrayOrObjectParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = ArrayOrObjectParameterInEqualityOperatorTests.CreatePolicy(
                 operatorName: "equals",
                 operatorValue: "\"[parameters('value')]\"",
                 parameterName: "value",
@@ -76,10 +76,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("\"[first(parameters('values'))]\"")]
         [InlineData("\"[parameters('missing')]\"")]
         [InlineData("\"literal\"")]
-        public void RuleTests_NonScalarParameterInEqualityCondition_OtherValue(string operatorValue)
+        public void RuleTests_ArrayOrObjectParameterInEqualityOperator_OtherValue(string operatorValue)
         {
-            var linter = NonScalarParameterInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NonScalarParameterInEqualityConditionTests.CreatePolicy(
+            var linter = ArrayOrObjectParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = ArrayOrObjectParameterInEqualityOperatorTests.CreatePolicy(
                 operatorName: "equals",
                 operatorValue: operatorValue,
                 parameterName: "values",
@@ -91,10 +91,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_NonScalarParameterInEqualityCondition_OtherOperator()
+        public void RuleTests_ArrayOrObjectParameterInEqualityOperator_OtherOperator()
         {
-            var linter = NonScalarParameterInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NonScalarParameterInEqualityConditionTests.CreatePolicy(
+            var linter = ArrayOrObjectParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = ArrayOrObjectParameterInEqualityOperatorTests.CreatePolicy(
                 operatorName: "in",
                 operatorValue: "\"[parameters('values')]\"",
                 parameterName: "values",
@@ -110,7 +110,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new NonScalarParameterInEqualityCondition(),
+                    new ArrayOrObjectParameterInEqualityOperator(),
                 },
                 metadata: new MockTypeMetadata());
         }

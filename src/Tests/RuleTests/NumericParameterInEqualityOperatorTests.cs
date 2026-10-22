@@ -12,22 +12,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="NumericComparisonValueInEqualityCondition"/> rule.
+    /// Tests for the <see cref="NumericParameterInEqualityOperator"/> rule.
     /// </summary>
-    public class NumericComparisonValueInEqualityConditionTests
+    public class NumericParameterInEqualityOperatorTests
     {
         [Theory]
         [InlineData("Integer", "integer", "equals", 59)]
         [InlineData("Float", "floatingPoint", "notEquals", 68)]
         [InlineData("iNtEgEr", "integer", "eQuAlS", 59)]
-        public void RuleTests_NumericComparisonValueInEqualityCondition_NumericParameter(
+        public void RuleTests_NumericParameterInEqualityOperator_NumericParameter(
             string parameterType,
             string parameterName,
             string operatorName,
             int linePosition)
         {
-            var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericParameterInEqualityOperatorTests.CreatePolicy(
                 leftOperand: @"""value"": ""[field('tags.expectedValue')]""",
                 operatorName: operatorName,
                 operatorValue: $@"""[parameters('{parameterName}')]""",
@@ -41,14 +41,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 ? "equals"
                 : "notEquals";
             var output = new LinterOutput(
-                RuleIdentifier: "numeric-comparison-value-in-equality-condition",
-                Title: "Numeric Comparison Value in Equality Condition",
+                RuleIdentifier: "numeric-parameter-in-equality-operator",
+                Title: "Numeric Parameter in Equality Operator",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 12,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if." + expectedOperator,
-                Description: $"The '{expectedOperator}' condition converts comparison parameter '{parameterName}' of type '{parameterType}' to a string. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
+                Description: $"The '{expectedOperator}' operator converts numeric parameter '{parameterName}' to a string before it compares the values, so the number 5 equals the string '5'. To also compare the value types, use the 'equals()' template function in a 'value' condition.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -57,10 +57,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("String")]
         [InlineData("Boolean")]
         [InlineData("DateTime")]
-        public void RuleTests_NumericComparisonValueInEqualityCondition_NonNumericParameter(string parameterType)
+        public void RuleTests_NumericParameterInEqualityOperator_NonNumericParameter(string parameterType)
         {
-            var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericParameterInEqualityOperatorTests.CreatePolicy(
                 leftOperand: @"""value"": ""[field('tags.expectedValue')]""",
                 operatorName: "equals",
                 operatorValue: @"""[parameters('value')]""",
@@ -72,10 +72,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_NumericComparisonValueInEqualityCondition_NumericLeftSide_NoFinding()
+        public void RuleTests_NumericParameterInEqualityOperator_NumericLeftSide_NoFinding()
         {
-            var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericParameterInEqualityOperatorTests.CreatePolicy(
                 leftOperand: @"""value"": 5",
                 operatorName: "equals",
                 operatorValue: @"""[parameters('integer')]""",
@@ -87,10 +87,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_NumericComparisonValueInEqualityCondition_ComputedValue_NoFinding()
+        public void RuleTests_NumericParameterInEqualityOperator_ComputedValue_NoFinding()
         {
-            var linter = NumericComparisonValueInEqualityConditionTests.CreateLinter();
-            var policyDefinition = NumericComparisonValueInEqualityConditionTests.CreatePolicy(
+            var linter = NumericParameterInEqualityOperatorTests.CreateLinter();
+            var policyDefinition = NumericParameterInEqualityOperatorTests.CreatePolicy(
                 leftOperand: @"""value"": ""[field('tags.expectedValue')]""",
                 operatorName: "equals",
                 operatorValue: @"""[add(parameters('integer'), 1)]""",
@@ -106,7 +106,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new NumericComparisonValueInEqualityCondition(),
+                    new NumericParameterInEqualityOperator(),
                 },
                 metadata: new MockTypeMetadata());
         }

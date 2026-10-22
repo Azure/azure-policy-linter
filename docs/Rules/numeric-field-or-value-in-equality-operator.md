@@ -1,16 +1,16 @@
-# Numeric Field or Value in Equality Condition
+# Numeric Field or Value in Equality Operator
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | numeric-field-or-value-in-equality-condition | Informational | default |
+| BestPractices | numeric-field-or-value-in-equality-operator | Informational | default |
 
 ## Description
 
-An `equals` or `notEquals` condition has a `field` or `value` that resolves to an integer or floating-point number. Azure Policy converts the resolved field or value to a string before comparison, so a string and a number with the same text can compare as equal. Numeric formatting can also affect the result.
+An `equals` or `notEquals` condition has a `field` or `value` that is a number. Azure Policy converts the number to a string before it compares the values. As a result, the number `5` equals the string `"5"`.
 
 ## Suggestions
 
-- For type-sensitive equality, use the [`equals()` template function](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-comparison#equals) in a `value` condition.
+- To also compare the value types, use the [`equals()` template function](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-comparison#equals) in a `value` condition.
 
 ## Examples
 

@@ -17,11 +17,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Detects equality conditions whose field or value resolves to a number.
     /// </summary>
-    public sealed class NumericFieldOrValueInEqualityCondition : LinterRule<LeafCondition>
+    public sealed class NumericFieldOrValueInEqualityOperator : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Numeric Field or Value in Equality Condition";
+        private const string RuleTitle = "Numeric Field or Value in Equality Operator";
         private const string RuleDescription =
-            "The '{0}' condition converts {1} to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.";
+            "The '{0}' operator converts {1} to a string before it compares the values, so the number 5 equals the string '5'. To also compare the value types, use the 'equals()' template function in a 'value' condition.";
 
         private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
         {
@@ -36,13 +36,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumericFieldOrValueInEqualityCondition"/> class.
+        /// Initializes a new instance of the <see cref="NumericFieldOrValueInEqualityOperator"/> class.
         /// </summary>
-        public NumericFieldOrValueInEqualityCondition() : base(
-            identifier: "numeric-field-or-value-in-equality-condition",
+        public NumericFieldOrValueInEqualityOperator() : base(
+            identifier: "numeric-field-or-value-in-equality-operator",
             category: Category.BestPractices,
-            title: NumericFieldOrValueInEqualityCondition.RuleTitle,
-            descriptionFormat: NumericFieldOrValueInEqualityCondition.RuleDescription,
+            title: NumericFieldOrValueInEqualityOperator.RuleTitle,
+            descriptionFormat: NumericFieldOrValueInEqualityOperator.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -52,8 +52,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             var comparisonOperator = expression.Operator;
             if (comparisonOperator != null &&
-                NumericFieldOrValueInEqualityCondition.EqualityOperators.Contains(comparisonOperator.Name) &&
-                NumericFieldOrValueInEqualityCondition.TryGetNumericExpression(
+                NumericFieldOrValueInEqualityOperator.EqualityOperators.Contains(comparisonOperator.Name) &&
+                NumericFieldOrValueInEqualityOperator.TryGetNumericExpression(
                     expression: expression,
                     context: context,
                     numericExpression: out var numericExpression,
@@ -83,21 +83,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 FieldPathHelper.IsFieldAlias(fieldReference.Identifier) &&
                 fieldReference.ResourcePropertyMetadata.Any(
                     metadata => metadata.Exists &&
-                    NumericFieldOrValueInEqualityCondition.NumericPropertyTypes.Contains(metadata.Type)))
+                    NumericFieldOrValueInEqualityOperator.NumericPropertyTypes.Contains(metadata.Type)))
             {
                 numericExpression = field;
-                description = $"field alias '{fieldReference.Identifier}'";
+                description = $"the value of field alias '{fieldReference.Identifier}'";
                 return true;
             }
 
             var value = expression.Value;
-            if (NumericFieldOrValueInEqualityCondition.TryGetNumericParameter(
+            if (NumericFieldOrValueInEqualityOperator.TryGetNumericParameter(
                 property: value,
                 context: context,
                 parameterName: out var parameterName))
             {
                 numericExpression = value;
-                description = $"value parameter '{parameterName}'";
+                description = $"numeric parameter '{parameterName}'";
                 return true;
             }
 
@@ -105,7 +105,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 value.Value.Type is JTokenType.Integer or JTokenType.Float)
             {
                 numericExpression = value;
-                description = "the numeric value";
+                description = "the numeric 'value'";
                 return true;
             }
 

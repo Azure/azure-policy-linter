@@ -6,16 +6,13 @@
 
 ## Description
 
-Complex conditions folded into template functions (`and()`, `or()`, `not()`, or `if()`) instead of using native policy conditions (`allOf`, `anyOf`, and `not`) are hard to read and debug.
-Compliance details show the full expression and its result (e.g. `true`), but not the results of the individual field checks.
+A `value` condition uses the `and()`, `or()`, `not()`, or `if()` template function to combine checks. Compliance details show the expression and its final result, for example `true`, but not the result of each check. This makes the policy harder to read and debug.
 
-Using these template functions can be useful to:
+The template functions are still the correct choice when you need to:
 
-- Keep expression-based guards that [prevent template failures](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures) from invalid function calls or property selection.
-- Preserve intentional type conversions and case-sensitive comparisons when moving checks out of a `value` expression.
-
-But for most cases, using the native policy conditions is preferred.
+- [Prevent template failures](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures) from invalid function calls or property access.
+- Keep a type conversion or case-sensitive comparison that the expression depends on.
 
 ## Suggestions
 
-- Express separate conditions with [`allOf`, `anyOf`, and `not`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#logical-operators) whenever possible.
+- Replace the template function with the [`allOf`, `anyOf`, or `not`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#logical-operators) logical operators, unless one of the cases above applies.

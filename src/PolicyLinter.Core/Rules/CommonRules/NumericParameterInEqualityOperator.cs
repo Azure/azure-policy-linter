@@ -13,20 +13,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Detects equality conditions whose comparison value is a numeric parameter.
     /// </summary>
-    public sealed class NumericComparisonValueInEqualityCondition : LinterRule<LeafCondition>
+    public sealed class NumericParameterInEqualityOperator : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Numeric Comparison Value in Equality Condition";
+        private const string RuleTitle = "Numeric Parameter in Equality Operator";
         private const string RuleDescription =
-            "The '{0}' condition converts comparison parameter '{1}' of type '{2}' to a string. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.";
+            "The '{0}' operator converts numeric parameter '{1}' to a string before it compares the values, so the number 5 equals the string '5'. To also compare the value types, use the 'equals()' template function in a 'value' condition.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumericComparisonValueInEqualityCondition"/> class.
+        /// Initializes a new instance of the <see cref="NumericParameterInEqualityOperator"/> class.
         /// </summary>
-        public NumericComparisonValueInEqualityCondition() : base(
-            identifier: "numeric-comparison-value-in-equality-condition",
+        public NumericParameterInEqualityOperator() : base(
+            identifier: "numeric-parameter-in-equality-operator",
             category: Category.BestPractices,
-            title: NumericComparisonValueInEqualityCondition.RuleTitle,
-            descriptionFormat: NumericComparisonValueInEqualityCondition.RuleDescription,
+            title: NumericParameterInEqualityOperator.RuleTitle,
+            descriptionFormat: NumericParameterInEqualityOperator.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -38,11 +38,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             if (comparisonOperator != null &&
                 (comparisonOperator.Name.EqualsOrdinalInsensitively("equals") ||
                 comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")) &&
-                NumericFieldOrValueInEqualityCondition.TryGetNumericParameter(
+                NumericFieldOrValueInEqualityOperator.TryGetNumericParameter(
                     property: comparisonOperator,
                     context: context,
                     parameterName: out var parameterName) &&
-                !NumericFieldOrValueInEqualityCondition.TryGetNumericExpression(
+                !NumericFieldOrValueInEqualityOperator.TryGetNumericExpression(
                     expression: expression,
                     context: context,
                     numericExpression: out _,
@@ -54,8 +54,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     this.CreateInformational(
                         comparisonOperator,
                         comparisonOperator.Name,
-                        parameterName,
-                        parameter.Type),
+                        parameterName),
                 };
             }
 

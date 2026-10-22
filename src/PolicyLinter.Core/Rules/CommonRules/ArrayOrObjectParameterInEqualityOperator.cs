@@ -13,20 +13,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Detects equality conditions that use an Array or Object parameter as the comparison value.
     /// </summary>
-    public sealed class NonScalarParameterInEqualityCondition : LinterRule<LeafCondition>
+    public sealed class ArrayOrObjectParameterInEqualityOperator : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Non-Scalar Parameter in Equality Condition";
+        private const string RuleTitle = "Array or Object Parameter in Equality Operator";
         private const string RuleDescription =
-            "The '{0}' condition uses parameter '{1}' of type '{2}' as its comparison value. Equality conditions require a scalar value. Use 'in' or 'notIn' for an array, or the 'equals()' function in a 'value' condition for complete-value equality.";
+            "The '{0}' operator compares with parameter '{1}' of type '{2}'. This operator needs a single value, so the condition is not valid.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NonScalarParameterInEqualityCondition"/> class.
+        /// Initializes a new instance of the <see cref="ArrayOrObjectParameterInEqualityOperator"/> class.
         /// </summary>
-        public NonScalarParameterInEqualityCondition() : base(
-            identifier: "non-scalar-parameter-in-equality-condition",
+        public ArrayOrObjectParameterInEqualityOperator() : base(
+            identifier: "array-or-object-parameter-in-equality-operator",
             category: Category.BestPractices,
-            title: NonScalarParameterInEqualityCondition.RuleTitle,
-            descriptionFormat: NonScalarParameterInEqualityCondition.RuleDescription,
+            title: ArrayOrObjectParameterInEqualityOperator.RuleTitle,
+            descriptionFormat: ArrayOrObjectParameterInEqualityOperator.RuleDescription,
             applyToDerivedTypes: false)
         {
         }

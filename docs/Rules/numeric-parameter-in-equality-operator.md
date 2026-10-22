@@ -1,16 +1,16 @@
-# Numeric Comparison Value in Equality Condition
+# Numeric Parameter in Equality Operator
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | numeric-comparison-value-in-equality-condition | Informational | default |
+| BestPractices | numeric-parameter-in-equality-operator | Informational | default |
 
 ## Description
 
-The comparison value of an `equals` or `notEquals` condition is an `Integer` or `Float` parameter. Azure Policy converts the parameter value to a string before comparison, so a string and a number with the same text can compare as equal. Numeric formatting can also affect the result.
+An `equals` or `notEquals` condition compares with an `Integer` or `Float` parameter. Azure Policy converts the parameter value to a string before it compares the values. As a result, a parameter value of `5` equals the string `"5"`.
 
 ## Suggestions
 
-- For type-sensitive equality, use the [`equals()` template function](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-comparison#equals) in a `value` condition.
+- To also compare the value types, use the [`equals()` template function](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-comparison#equals) in a `value` condition.
 
 ## Examples
 
