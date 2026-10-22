@@ -45,7 +45,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 11,
                 LinePosition: 35 + alias.Length,
                 Path: "properties.policyRule.if.field",
-                Description: $"The 'equals' condition converts field alias '{alias}' to a string before comparison. Numerically equal values with different string representations can compare as unequal. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: $"The 'equals' condition converts field alias '{alias}' to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 11,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if.value",
-                Description: $"The '{expectedOperator}' condition converts value parameter '{parameterName}' to a string before comparison. Numerically equal values with different string representations can compare as unequal. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: $"The '{expectedOperator}' condition converts value parameter '{parameterName}' to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -112,7 +112,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 11,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if.value",
-                Description: $"The '{expectedOperator}' condition converts the numeric value to a string before comparison. Numerically equal values with different string representations can compare as unequal. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: $"The '{expectedOperator}' condition converts the numeric value to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -123,6 +123,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"""value"": ""[parameters('integer')]""", "greater", "5")]
         [InlineData(@"""value"": ""[add(parameters('integer'), 1)]""", "equals", @"""5""")]
         [InlineData(@"""value"": ""[equals('5', parameters('integer'))]""", "equals", "true")]
+        [InlineData(@"""value"": ""[equals(field('Microsoft.KeyVault/vaults/softDeleteRetentionInDays'), '5')]""", "equals", "true")]
         [InlineData(@"""field"": ""Microsoft.Storage/storageAccounts/sku.name""", "equals", @"""5""")]
         public void RuleTests_NumericFieldOrValueInEqualityCondition_NoFinding(
             string leftOperand,

@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     {
         private const string RuleTitle = "Numeric Field or Value in Equality Condition";
         private const string RuleDescription =
-            "The '{0}' condition converts {1} to a string before comparison. Numerically equal values with different string representations can compare as unequal. Use the 'equals()' function in a 'value' condition for numeric equality.";
+            "The '{0}' condition converts {1} to a string before comparison. Values of different JSON types can compare as equal, and numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for type-sensitive equality.";
 
         private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
         {
