@@ -59,9 +59,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var languageExpression = value.LanguageExpressions[0];
-            if (            !string.Equals(value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
-            !languageExpression.TryGetFunctionName(out var functionName) ||
-            !LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName))
+            if (!string.Equals(value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
+                !languageExpression.TryGetFunctionName(out var functionName) ||
+                !LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName))
             {
                 return Array.Empty<LinterOutput>();
             }

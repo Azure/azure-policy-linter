@@ -6,9 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using FluentAssertions;
-    using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
@@ -18,38 +16,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// </summary>
     public class EqualityCheckOnFloatingPointValueTests
     {
-        private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(
-            metadataProvider: new OfflineMetadataProvider(),
-            aliasResolver: new AliasResolver());
-
-        [Theory]
-        [InlineData("Microsoft.Compute/virtualMachines/billingProfile.maxPrice")]
-        [InlineData("Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies/diffBackupIntervalInHours")]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_Field(string alias)
-        {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
-                leftOperand: $@"""field"": ""{alias}""",
-                operatorName: "equals",
-                operatorValue: @"""5.0""");
-
-            var results = linter.Lint(policyDefinition);
-
-            results.Should().HaveCount(1);
-
-            var output = new LinterOutput(
-                RuleIdentifier: "equality-check-on-floating-point-value",
-                Title: "Equality Check on Floating-Point Value",
-                Severity: Severity.Informational,
-                Category: Category.BestPractices,
-                LineNumber: 12,
-                LinePosition: 35 + alias.Length,
-                Path: "properties.policyRule.if.field",
-                Description: $"The 'equals' condition compares a floating-point value as text (field alias '{alias}'). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
-
-            results.Should().ContainEquivalentOf(output);
-        }
-
         [Theory]
         [InlineData(@"""value"": ""[parameters('actual')]""", "equals", @"""5.0""", "actual", 12, 57)]
         [InlineData(@"""value"": 5", "notEquals", @"""[parameters('expected')]""", "expected", 13, 63)]
@@ -138,20 +104,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
-        [Fact]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_FieldAndParameter_OneFinding()
-        {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
-                leftOperand: @"""field"": ""Microsoft.Compute/virtualMachines/billingProfile.maxPrice""",
-                operatorName: "equals",
-                operatorValue: @"""[parameters('expected')]""");
-
-            var results = linter.Lint(policyDefinition);
-
-            results.Should().HaveCount(1);
-        }
-
         private static PolicyLinter CreateLinter()
         {
             return new PolicyLinter(
@@ -159,7 +111,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {
                     new EqualityCheckOnFloatingPointValue(),
                 },
-                metadata: EqualityCheckOnFloatingPointValueTests.TypeMetadata);
+                metadata: new MockTypeMetadata());
         }
 
         private static string CreatePolicy(

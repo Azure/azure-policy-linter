@@ -6,15 +6,13 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Detects equality conditions with a floating-point field, parameter, or literal value.
+    /// Detects equality conditions with a Float parameter or floating-point literal value.
     /// </summary>
     public sealed class EqualityCheckOnFloatingPointValue : LinterRule<LeafCondition>
     {
@@ -43,25 +41,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 !comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")))
             {
                 return Array.Empty<LinterOutput>();
-            }
-
-            var field = expression.Field;
-            var fieldReference = field?.FieldAccessorReference;
-            if (field != null &&
-                fieldReference != null &&
-                field.HasLiteralValue &&
-                fieldReference.IsResolvedFieldReference() &&
-                FieldPathHelper.IsFieldAlias(fieldReference.Identifier) &&
-                fieldReference.ResourcePropertyMetadata.Any(
-                    metadata => metadata.Exists && metadata.Type.EqualsOrdinalInsensitively("Number")))
-            {
-                return new[]
-                {
-                    this.CreateInformational(
-                        field,
-                        comparisonOperator.Name,
-                        $"field alias '{fieldReference.Identifier}'"),
-                };
             }
 
             if (EqualityCheckOnFloatingPointValue.TryGetFloatParameter(

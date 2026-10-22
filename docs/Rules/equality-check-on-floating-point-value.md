@@ -6,7 +6,7 @@
 
 ## Description
 
-An `equals` or `notEquals` condition compares floating-point values (provided as literals, parameters, or field values) as strings rather than comparing numbers. Numeric formatting can therefore affect the result. For example, `5.0` can be converted to `"5"` for comparison.
+An `equals` or `notEquals` condition compares a floating-point literal or `Float` parameter as a string rather than comparing numbers. Numeric formatting can therefore affect the result. For example, `5.0` can be converted to `"5"` for comparison.
 
 ## Suggestions
 
