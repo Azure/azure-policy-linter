@@ -6,12 +6,13 @@
 
 ## Description
 
-The policy can enforce (`deny`, `modify`, or `append`) on the security rules of a network security group (NSG) through `Microsoft.Network/networkSecurityGroups/securityRules[*]` fields, but not on the `Microsoft.Network/networkSecurityGroups/securityRules` resource type. A single security rule can also be created or changed directly as a `Microsoft.Network/networkSecurityGroups/securityRules` resource. Azure Policy evaluates those requests only against the security rule resource type, so this policy doesn't apply to them, and non-compliant security rules can still be created.
+The policy is enforcing a rule on network security group (NSG) security rules through `Microsoft.Network/networkSecurityGroups/securityRules[*]` fields of the parent NSG. A single security rule can also be created or changed directly as a `Microsoft.Network/networkSecurityGroups/securityRules` resource. Azure Policy evaluates those requests only against the security rule resource type, so this policy doesn't apply to them, and non-compliant security rules can still be created.
 
 ## Suggestions
 
 - Also enforce on `Microsoft.Network/networkSecurityGroups/securityRules`, using its `Microsoft.Network/networkSecurityGroups/securityRules/*` fields.
-- You can do this in this policy, with an `anyOf` that has a branch for each resource type, or in a separate policy.
+- You can do this in this policy, with an `anyOf` that has a branch for each resource type.
+- Alternatively, create a separate policy targeting `Microsoft.Network/networkSecurityGroups/securityRules`.
 
 ## Examples
 

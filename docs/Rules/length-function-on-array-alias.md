@@ -6,7 +6,7 @@
 
 ## Description
 
-A `value` condition uses `length()` to get the number of members of an array alias (an alias with `[*]`) and compares it to a number. A [field count expression](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#field-count-expressions) without a `where` condition returns the same number and is the standard way to check the number of array members. A `count` is also easier to change later, for example to count only the members that meet a condition.
+The policy asserts the length of an array field using the `length()` template function. A [field count expression](https://learn.microsoft.com/azure/governance/policy/how-to/author-policies-for-arrays#field-count-expressions) returns the same number and is the recommended way to check array length. To count only the array members that match a condition, add a `where` condition.
 
 ## Suggestions
 
