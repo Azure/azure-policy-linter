@@ -14,38 +14,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="EqualityCheckOnFloatingPointValue"/> rule.
+    /// Tests for the <see cref="EqualityCheckOnNumericValue"/> rule.
     /// </summary>
-    public class EqualityCheckOnFloatingPointValueTests
+    public class EqualityCheckOnNumericValueTests
     {
         private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(
             metadataProvider: new OfflineMetadataProvider(),
             aliasResolver: new AliasResolver());
 
         [Theory]
+        [InlineData("Microsoft.KeyVault/vaults/softDeleteRetentionInDays")]
         [InlineData("Microsoft.Compute/virtualMachines/billingProfile.maxPrice")]
         [InlineData("Microsoft.Sql/servers/databases/backupShortTermRetentionPolicies/diffBackupIntervalInHours")]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_Field(string alias)
+        public void RuleTests_EqualityCheckOnNumericValue_NumericField(string alias)
         {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
+            var linter = EqualityCheckOnNumericValueTests.CreateLinter();
+            var policyDefinition = EqualityCheckOnNumericValueTests.CreatePolicy(
                 leftOperand: $@"""field"": ""{alias}""",
                 operatorName: "equals",
-                operatorValue: @"""5.0""");
+                operatorValue: @"""5""");
 
             var results = linter.Lint(policyDefinition);
 
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "equality-check-on-floating-point-value",
-                Title: "Equality Check on Floating-Point Value",
+                RuleIdentifier: "equality-check-on-numeric-value",
+                Title: "Equality Check on Numeric Value",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 12,
                 LinePosition: 35 + alias.Length,
                 Path: "properties.policyRule.if.field",
-                Description: $"The 'equals' condition compares a floating-point value as text (field alias '{alias}'). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: $"The 'equals' condition compares a numeric value as text (field alias '{alias}'). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -53,7 +54,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData(@"""value"": ""[parameters('actual')]""", "equals", @"""5.0""", "actual", 12, 57)]
         [InlineData(@"""value"": 5", "notEquals", @"""[parameters('expected')]""", "expected", 13, 63)]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_FloatParameter(
+        public void RuleTests_EqualityCheckOnNumericValue_FloatParameter(
             string leftOperand,
             string operatorName,
             string operatorValue,
@@ -61,8 +62,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             int lineNumber,
             int linePosition)
         {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
+            var linter = EqualityCheckOnNumericValueTests.CreateLinter();
+            var policyDefinition = EqualityCheckOnNumericValueTests.CreatePolicy(
                 leftOperand: leftOperand,
                 operatorName: operatorName,
                 operatorValue: operatorValue);
@@ -73,14 +74,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var expectedOperator = operatorName == "equals" ? "equals" : "notEquals";
             var output = new LinterOutput(
-                RuleIdentifier: "equality-check-on-floating-point-value",
-                Title: "Equality Check on Floating-Point Value",
+                RuleIdentifier: "equality-check-on-numeric-value",
+                Title: "Equality Check on Numeric Value",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if." + (parameterName == "actual" ? "value" : expectedOperator),
-                Description: $"The '{expectedOperator}' condition compares a floating-point value as text (parameter '{parameterName}'). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: $"The '{expectedOperator}' condition compares a numeric value as text (parameter '{parameterName}'). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -88,14 +89,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData(@"""value"": 5.0", "equals", @"""5.0""", 36)]
         [InlineData(@"""value"": 5.5", "eQuAlS", @"""5.5""", 36)]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_FloatLiteral(
+        public void RuleTests_EqualityCheckOnNumericValue_FloatLiteral(
             string leftOperand,
             string operatorName,
             string operatorValue,
             int linePosition)
         {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
+            var linter = EqualityCheckOnNumericValueTests.CreateLinter();
+            var policyDefinition = EqualityCheckOnNumericValueTests.CreatePolicy(
                 leftOperand: leftOperand,
                 operatorName: operatorName,
                 operatorValue: operatorValue);
@@ -105,14 +106,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
 
             var output = new LinterOutput(
-                RuleIdentifier: "equality-check-on-floating-point-value",
-                Title: "Equality Check on Floating-Point Value",
+                RuleIdentifier: "equality-check-on-numeric-value",
+                Title: "Equality Check on Numeric Value",
                 Severity: Severity.Informational,
                 Category: Category.BestPractices,
                 LineNumber: 12,
                 LinePosition: linePosition,
                 Path: "properties.policyRule.if.value",
-                Description: "The 'equals' condition compares a floating-point value as text (floating-point literal). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
+                Description: "The 'equals' condition compares a numeric value as text (floating-point literal). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -122,13 +123,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"""value"": 5", "equals", @"""[parameters('text')]""")]
         [InlineData(@"""value"": 5", "greater", "5.0")]
         [InlineData(@"""value"": ""[add(parameters('actual'), 1)]""", "equals", @"""5.0""")]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_NoFinding(
+        [InlineData(@"""field"": ""Microsoft.Storage/storageAccounts/sku.name""", "equals", @"""5""")]
+        public void RuleTests_EqualityCheckOnNumericValue_NoFinding(
             string leftOperand,
             string operatorName,
             string operatorValue)
         {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
+            var linter = EqualityCheckOnNumericValueTests.CreateLinter();
+            var policyDefinition = EqualityCheckOnNumericValueTests.CreatePolicy(
                 leftOperand: leftOperand,
                 operatorName: operatorName,
                 operatorValue: operatorValue);
@@ -138,28 +140,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
-        [Fact]
-        public void RuleTests_EqualityCheckOnFloatingPointValue_FieldAndParameter_OneFinding()
-        {
-            var linter = EqualityCheckOnFloatingPointValueTests.CreateLinter();
-            var policyDefinition = EqualityCheckOnFloatingPointValueTests.CreatePolicy(
-                leftOperand: @"""field"": ""Microsoft.Compute/virtualMachines/billingProfile.maxPrice""",
-                operatorName: "equals",
-                operatorValue: @"""[parameters('expected')]""");
-
-            var results = linter.Lint(policyDefinition);
-
-            results.Should().HaveCount(1);
-        }
-
         private static PolicyLinter CreateLinter()
         {
             return new PolicyLinter(
                 rules: new ILinterRule[]
                 {
-                    new EqualityCheckOnFloatingPointValue(),
+                    new EqualityCheckOnNumericValue(),
                 },
-                metadata: EqualityCheckOnFloatingPointValueTests.TypeMetadata);
+                metadata: EqualityCheckOnNumericValueTests.TypeMetadata);
         }
 
         private static string CreatePolicy(

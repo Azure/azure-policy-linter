@@ -10,26 +10,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Detects equality conditions with a floating-point field, parameter, or literal value.
+    /// Detects equality conditions with a numeric field, Float parameter, or floating-point literal value.
     /// </summary>
-    public sealed class EqualityCheckOnFloatingPointValue : LinterRule<LeafCondition>
+    public sealed class EqualityCheckOnNumericValue : LinterRule<LeafCondition>
     {
-        private const string RuleTitle = "Equality Check on Floating-Point Value";
+        private const string RuleTitle = "Equality Check on Numeric Value";
         private const string RuleDescription =
-            "The '{0}' condition compares a floating-point value as text ({1}). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.";
+            "The '{0}' condition compares a numeric value as text ({1}). Numeric formatting can affect the result. Use the 'equals()' function in a 'value' condition for numeric equality.";
+
+        private static readonly OrdinalInsensitiveHashSet EqualityOperators = new OrdinalInsensitiveHashSet
+        {
+            "equals",
+            "notEquals",
+        };
+
+        private static readonly OrdinalInsensitiveHashSet NumericPropertyTypes = new OrdinalInsensitiveHashSet
+        {
+            "Integer",
+            "Number",
+        };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EqualityCheckOnFloatingPointValue"/> class.
+        /// Initializes a new instance of the <see cref="EqualityCheckOnNumericValue"/> class.
         /// </summary>
-        public EqualityCheckOnFloatingPointValue() : base(
-            identifier: "equality-check-on-floating-point-value",
+        public EqualityCheckOnNumericValue() : base(
+            identifier: "equality-check-on-numeric-value",
             category: Category.BestPractices,
-            title: EqualityCheckOnFloatingPointValue.RuleTitle,
-            descriptionFormat: EqualityCheckOnFloatingPointValue.RuleDescription,
+            title: EqualityCheckOnNumericValue.RuleTitle,
+            descriptionFormat: EqualityCheckOnNumericValue.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -39,21 +52,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             var comparisonOperator = expression.Operator;
             if (comparisonOperator == null ||
-                (!comparisonOperator.Name.EqualsOrdinalInsensitively("equals") &&
-                !comparisonOperator.Name.EqualsOrdinalInsensitively("notEquals")))
+                !EqualityCheckOnNumericValue.EqualityOperators.Contains(comparisonOperator.Name))
             {
                 return Array.Empty<LinterOutput>();
             }
 
             var field = expression.Field;
-            var fieldReference = field?.FieldAccessorReference;
+            var fieldReference = expression.Field?.FieldAccessorReference;
             if (field != null &&
                 fieldReference != null &&
                 field.HasLiteralValue &&
                 fieldReference.IsResolvedFieldReference() &&
                 FieldPathHelper.IsFieldAlias(fieldReference.Identifier) &&
                 fieldReference.ResourcePropertyMetadata.Any(
-                    metadata => metadata.Exists && metadata.Type.EqualsOrdinalInsensitively("Number")))
+                    metadata => metadata.Exists && EqualityCheckOnNumericValue.NumericPropertyTypes.Contains(metadata.Type)))
             {
                 return new[]
                 {
@@ -64,7 +76,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 };
             }
 
-            if (EqualityCheckOnFloatingPointValue.TryGetFloatParameter(
+            if (EqualityCheckOnNumericValue.TryGetFloatParameter(
                 property: expression.Value,
                 context: context,
                 parameterName: out var valueParameterName))
@@ -78,7 +90,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 };
             }
 
-            if (expression.Value?.HasLiteralValue == true && expression.Value.Value.Type == JTokenType.Float)
+            if (expression.Value?.HasLiteralValue == true &&
+                expression.Value.Value.Type == JTokenType.Float)
             {
                 return new[]
                 {
@@ -86,7 +99,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 };
             }
 
-            if (EqualityCheckOnFloatingPointValue.TryGetFloatParameter(
+            if (EqualityCheckOnNumericValue.TryGetFloatParameter(
                 property: comparisonOperator,
                 context: context,
                 parameterName: out var operatorParameterName))
