@@ -26,7 +26,7 @@ The node types you'll most often target as a rule author:
 | `IfCondition` | Wraps a single `Condition`. |
 | `LeafCondition` | One condition: `Field?` / `Value?` / `Count?` (mutually exclusive) plus an `Operator?` (one of 18 supported operator names). |
 | `Quantifier` | `AllOf?`, `AnyOf?`, `Not?`. |
-| `ThenExpression` | Just `Effect` (a `Property`). The linter does **not** currently model effect details (`details.roleDefinitionIds`, `existenceCondition`, etc.) as typed nodes - if you need them, walk the raw `JToken`. |
+| `ThenExpression` | Just `Effect` (a `Property`). The linter does **not** parse effect details (`then.details`, including `existenceCondition`, `roleDefinitionIds`, and `operations`). They are dropped during parsing, so rules can't inspect them. |
 | `Property` | Key-value pair derived from a json property. Holds `Name`, `Value` (`JToken`), `LanguageExpressions` (template references in the value), `HasLiteralValue`, and `HasSimpleParameterizedValue(...)`. |
 | `Reference` | A parsed template-language reference (`field`, `parameters`, `current`, `claims`, etc.). Carries `Kind`, `Identifier`, `IsResolved`, `PropertySelectionPath?`, and `ResourcePropertyMetadata` for resolved field aliases. |
 | `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, `Metadata?` (raw `JToken` for the unmodeled metadata bag), plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
@@ -158,7 +158,7 @@ These show up in most shipped rules. Use them instead of writing the equivalent 
 - **`Reference.IsResolvedFieldReference()`** - true for both `[field('alias')]` and `[current('alias')]`-inside-count. Single check that covers both shapes; don't compare `Kind` directly.
 - **`Reference.FromLanguageExpression`** - given a parsed `LanguageExpression`, returns every reference inside it (recursively). Use when you need to find references nested inside an arbitrary expression that isn't itself a top-level reference function.
 - **`ExpressionsEngine.IsLanguageExpression(string)` / `ParseLanguageExpression(string)`** - from the upstream `Azure.Deployments.Expression` package. The right way to detect and parse a `[...]` value. Never use regex.
-- **`TemplateLanguageExpression.ExtractFromJToken(JToken)`** - walks an arbitrary JSON sub-tree and returns every template-language expression it finds, with references already resolved. Useful when you need to inspect expressions inside JSON the linter doesn't model (e.g. `then.details`).
+- **`TemplateLanguageExpression.ExtractFromJToken(JToken)`** - walks an arbitrary JSON sub-tree and returns every template-language expression it finds, with references already resolved. Useful when you need to inspect expressions inside a JSON value, such as a `Property` value with nested objects or arrays.
 - **`TemplateLanguageExpression.TryGetFunctionName(out string)`** - returns the already-parsed root function name without exposing expression-engine types or reparsing the raw expression string.
 - **`EqualsOrdinalInsensitively` / `OrdinalInsensitiveHashSet`** - from `Microsoft.WindowsAzure.ResourceStack.Common`. Case-insensitive string equality and set lookup without repeating `StringComparison.OrdinalIgnoreCase` on every line.
 - **`Parameter.TryAsConcreteType<T>(out T[]? allowed, out T? def)`** - type-checks and unwraps a parameter's `allowedValues` and `defaultValue` to concrete C#. Powers `HasSimpleParameterizedValue`.
