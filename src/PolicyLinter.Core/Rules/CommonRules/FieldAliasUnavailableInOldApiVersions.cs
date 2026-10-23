@@ -5,20 +5,20 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
-    using global::Azure.Deployments.ResourceMetadata.ApiVersion;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
 
     /// <summary>
     /// Detects field aliases that map to properties that exist in the latest API version but are missing in one or more older API versions of the resource type.
     /// </summary>
-    public sealed class FieldAliasUnavailableInOldApiVersions : LinterRule<Reference>
+    public sealed class FieldAliasUnavailableInOldApiVersions : LinterRule<IfCondition>
     {
         private const string RuleTitle = "Field Alias Unavailable In Old API Versions";
-        private const string RuleDescription = "The field alias: '{0}' maps to a property path that doesn't exist in one or more old API versions of resource type: '{1}'. API versions: '{2}'";
+        private const string RuleDescription = "These aliases are unavailable in older API versions, which can cause unexpected policy evaluation: {0}.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldAliasUnavailableInOldApiVersions"/> class.
@@ -26,51 +26,68 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         public FieldAliasUnavailableInOldApiVersions() : base(
             identifier: "field-alias-unavailable-in-old-api-versions",
             category: Category.ResourceFields,
-            title: RuleTitle,
-            descriptionFormat: RuleDescription,
+            title: FieldAliasUnavailableInOldApiVersions.RuleTitle,
+            descriptionFormat: FieldAliasUnavailableInOldApiVersions.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
-            // If this is a resolved alias reference.
-            // - "Resolved" means that the field name expressed in the policy definition is a literal value and not a field\parameter reference itself.
-            // - IsResolvedFieldReference() Is helpful here because an instance of the Reference class can express a field reference in multiple ways:
-            //   - As a field reference (e.g. "[field('name')]" or a field leaf expression)
-            //   - In a 'current()' function under a field count expression.
-            if (expression.IsResolvedFieldReference() && FieldPathHelper.IsFieldAlias(expression.Identifier))
+            var affectedAliases = new List<(Reference Reference, ApiVersionSubset ApiVersionSubset)>();
+
+            var visitor = new PolicyExpressionVisitor
             {
-                // If we have any metadata for it, it means that we successfully mapped the alias
-                if (expression.ResourcePropertyMetadata.Any())
+                Visit = visited =>
                 {
-                    var latestApiVersionMetadata = expression.ResourcePropertyMetadata
-                        .MaxBy(
-                            keySelector: metadata => metadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance),
-                            comparer: SuffixAwareApiVersionComparer.Instance);
-
-                    var apiVersionsWithoutProperty = expression.ResourcePropertyMetadata
-                        .Where(metadata => !metadata.Exists)
-                        .SelectMany(metadata => metadata.ApiVersions)
-                        .Distinct()
-                        .OrderBy(v => v, comparer: SuffixAwareApiVersionComparer.Instance)
-                        .ToArray();
-
-                    // Only fire when the property exists in the latest API version but is missing in one or more older
-                    // versions. The states where the property is missing in the latest version (deprecated, or missing
-                    // in all versions) are covered by other rules.
-                    if (latestApiVersionMetadata != null && latestApiVersionMetadata.Exists && apiVersionsWithoutProperty.Length != 0)
+                    if (visited is not Reference reference ||
+                        !reference.IsResolvedFieldReference() ||
+                        !FieldPathHelper.IsFieldAlias(reference.Identifier) ||
+                        !reference.ResourcePropertyMetadata.Any())
                     {
-                        var resourceType = expression.ResourcePropertyMetadata.First().ResourceType;
-                        var apiVersionsFormatted = string.Join(", ", apiVersionsWithoutProperty);
-                        return new[] { this.CreateWarning(expression, expression.Identifier, resourceType, apiVersionsFormatted) };
+                        return;
                     }
-                }
+
+                    var apiVersionSubset = ApiVersionSubset.CreateUnavailableInOldApiVersions(
+                        propertyMetadata: reference.ResourcePropertyMetadata);
+                    if (apiVersionSubset == null)
+                    {
+                        return;
+                    }
+
+                    affectedAliases.Add((reference, apiVersionSubset));
+                },
+            };
+
+            expression.Visit(visitor);
+
+            if (affectedAliases.Count == 0)
+            {
+                return Array.Empty<LinterOutput>();
             }
 
-            return Array.Empty<LinterOutput>();
+            var maximumDetailsLength =
+                FieldAliasFindingFormatter.MaximumDescriptionLength -
+                string.Format(FieldAliasUnavailableInOldApiVersions.RuleDescription, string.Empty).Length;
 
+            var groups = FieldAliasFindingGroup.Create(
+                aliasDetails: affectedAliases.Select(item => (
+                    Alias: item.Reference.Identifier,
+                    ApiVersionSubset: item.ApiVersionSubset)));
+
+            PolicyExpression outputExpression = groups.Sum(group => group.Aliases.Length) == 1
+                ? affectedAliases[0].Reference
+                : expression;
+
+            var details = FieldAliasFindingFormatter.Format(
+                groups: groups,
+                maximumLength: maximumDetailsLength);
+
+            return new[]
+            {
+                this.CreateWarning(outputExpression, details),
+            };
         }
     }
 }
