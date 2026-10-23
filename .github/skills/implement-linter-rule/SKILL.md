@@ -86,7 +86,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
 - **File location**: see the architecture doc for the current layout. Default-set rules and non-default rules live in different folders; verify against where rules of the same set actually live today rather than hardcoding.
 - **Namespace**: all rule namespaces sit under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>`.
 - **Standard structure**: `sealed class`, parameterless constructor calling `base(...)`, `private const string RuleTitle` and `RuleDescription` fields, override `Evaluate` returning `LinterOutput[]`.
-- **Express the check directly when it's a single condition.** If one condition identifies the wrong state, test it and emit; don't first filter out every passing or non-applicable case. Use early-return guards when the rule narrows its scope (applicability) before running separate decision logic.
+- **Keep the check shape simple.** If the rule can be expressed as one simple condition, check it and emit. For more complex rules, first return early for expressions the rule doesn't apply to, then check whether the expression has the issue and emit.
 - **Don't modify files outside the rule's own file, its tests, and its doc.** Utility methods specific to the rule can live in the rule file. If the implementation needs a generic core capability or an engine change, return to step 1 and stop for explicit user approval.
 
 **Complexity check before continuing:**

@@ -26,7 +26,7 @@ The node types you'll most often target as a rule author:
 | `IfCondition` | Wraps a single `Condition`. |
 | `LeafCondition` | One condition: `Field?` / `Value?` / `Count?` (mutually exclusive) plus an `Operator?` (one of 18 supported operator names). |
 | `Quantifier` | `AllOf?`, `AnyOf?`, `Not?`. |
-| `ThenExpression` | Just `Effect` (a `Property`). The linter does **not** parse effect details (`then.details`, including `existenceCondition`, `roleDefinitionIds`, and `operations`). They are dropped during parsing, so rules can't inspect them. |
+| `ThenExpression` | Just `Effect` (a `Property`). The linter currently doesn't parse effect details. |
 | `Property` | Key-value pair derived from a json property. Holds `Name`, `Value` (`JToken`), `LanguageExpressions` (template references in the value), `HasLiteralValue`, and `HasSimpleParameterizedValue(...)`. |
 | `Reference` | A parsed template-language reference (`field`, `parameters`, `current`, `claims`, etc.). Carries `Kind`, `Identifier`, `IsResolved`, `PropertySelectionPath?`, and `ResourcePropertyMetadata` for resolved field aliases. |
 | `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, `Metadata?` (raw `JToken` for the unmodeled metadata bag), plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
