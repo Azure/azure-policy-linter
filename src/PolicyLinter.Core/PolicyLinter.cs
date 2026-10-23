@@ -13,6 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Microsoft.WindowsAzure.ResourceStack.Common.Json;
     using Newtonsoft.Json;
 
@@ -69,6 +70,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core
 
                 context.Parameters = policyDefinition.Properties.Parameters;
                 context.ExternalEvaluationEnforcementSettings = policyDefinition.Properties.ExternalEvaluationEnforcementSettings;
+
+                var mode = policyDefinition.Properties.Mode?.Value.ToString();
+                context.IsControlPlanePolicyMode = string.IsNullOrEmpty(mode) ||
+                    mode.EqualsOrdinalInsensitively("All") ||
+                    mode.EqualsOrdinalInsensitively("Indexed");
 
                 var visitor = new PolicyExpressionVisitor
                 {
