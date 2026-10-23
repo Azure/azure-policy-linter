@@ -43,6 +43,7 @@ A rule's `Evaluate` is called with the typed expression node it targets, plus a 
 - `Parameters` - the policy's parameters as an immutable dictionary, populated during parsing.
 - `ExternalEvaluationEnforcementSettings` - the parsed external-evaluation block if the policy has one.
 - `FilePath` - caller-supplied. Optional; if non-null the engine validates it's absolute. Rules that consume it must handle null.
+- `IsControlPlanePolicyMode` - true when the policy mode is `All`, `Indexed`, or not set. Use it to skip policies with a Resource Provider mode (for example, `Microsoft.Kubernetes.Data`).
 
 Resolved field references in `Reference.ResourcePropertyMetadata` are pre-populated at parse time, so a rule asking "what resource type and properties does this alias map to" doesn't have to call the metadata service itself.
 

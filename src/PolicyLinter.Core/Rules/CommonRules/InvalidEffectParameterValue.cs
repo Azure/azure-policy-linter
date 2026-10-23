@@ -10,7 +10,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
-    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
     /// Flags effect parameter values that are not policy effects.
@@ -52,14 +51,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(PolicyDefinitionProperties expression, LinterContext context)
         {
             // Resource Provider modes have their own effects, which this rule doesn't know.
-            var mode = expression.Mode?.Value.ToString();
-            if (!string.IsNullOrEmpty(mode) && !mode.EqualsOrdinalInsensitively("All") && !mode.EqualsOrdinalInsensitively("Indexed"))
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
             var effect = expression.PolicyRule.Then.Effect;
-            if (!effect.HasSimpleParameterizedValue(context: context, out var parameterName, out var allowedValues, out var defaultValue))
+            if (!context.IsControlPlanePolicyMode ||
+                !effect.HasSimpleParameterizedValue(context: context, out var parameterName, out var allowedValues, out var defaultValue))
             {
                 return Array.Empty<LinterOutput>();
             }

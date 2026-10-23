@@ -1106,6 +1106,32 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 .Which.Description.Should().Be("Test rule for ThenExpression was invoked");
         }
 
+        [Theory]
+        [InlineData(@"'mode': 'All',", true)]
+        [InlineData(@"'mode': 'indexed',", true)]
+        [InlineData("", true)]
+        [InlineData(@"'mode': 'Microsoft.Kubernetes.Data',", false)]
+        [InlineData(@"'mode': 'Microsoft.KeyVault.Data',", false)]
+        public void LinterTests_ContextContainsControlPlanePolicyMode(string modeProperty, bool expected)
+        {
+            bool? actual = null;
+            var testRule = new TestThenExpressionLinterRule(descriptionFormat: "Test rule was invoked")
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    actual = context.IsControlPlanePolicyMode;
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            var result = linter.Lint(@"{ 'properties': { " + modeProperty + @" 'policyRule': { 'if': { 'field': 'name', 'equals': 'whatever' }, 'then': { 'effect': 'deny' } } } }");
+
+            result.Should().BeEmpty();
+            actual.Should().Be(expected);
+        }
+
         [Fact]
         public void LinterTests_ContextContainsParametersReference()
         {
