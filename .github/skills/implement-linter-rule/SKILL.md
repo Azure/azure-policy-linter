@@ -34,7 +34,7 @@ Read these before writing anything:
   - An engineer familiar with the linter should be able to review the core implementation in 10 minutes or less.
   - Getting partial rule coverage is preferred if the "perfect" implementation requires complex, over-the-top, implementation.
     - The main red flags are custom logic for expression parsing, processing or evaluation logic for a specific linter rule.
-    - Example: Identifying resource type applicability in a rule that looks for policies for a specific resource type can do a simple check of which aliases are being used. No need to write a perfect applicability detector, which is most likely an NP-Complete problem. This is a linter, not a SAT solver.
+    - Example: Identifying resource type applicability in a rule that looks for policies for a specific resource type can do a simple check of which aliases are being used, or use `IfCondition.ReferencedResourceTypes`. No need to write a perfect applicability detector, which is most likely an NP-Complete problem. This is a linter, not a SAT solver.
 
 - **Use the policy author's vocabulary.**
   - Names, descriptions, and docs only use terms that already exist in Azure Policy documentation - `field`, `alias`, `effect`, `parameter`, `allowedValues`, etc. **Do not invent categorizing nouns** ("groups", "shapes", "patterns", "buckets"). If you find yourself coining a term, describe the pattern instead, or pick a name that already exists in the policy documentation.
@@ -86,7 +86,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
 - **File location**: see the architecture doc for the current layout. Default-set rules and non-default rules live in different folders; verify against where rules of the same set actually live today rather than hardcoding.
 - **Namespace**: all rule namespaces sit under `Microsoft.Azure.Policy.PolicyLinter.Core.Rules.<Folder>`.
 - **Standard structure**: `sealed class`, parameterless constructor calling `base(...)`, `private const string RuleTitle` and `RuleDescription` fields, override `Evaluate` returning `LinterOutput[]`.
-- **Early-return guards first**; emit only after all preconditions are satisfied.
+- **Keep the check shape simple.** If the rule can be expressed as one simple condition, check it and emit. For more complex rules, first return early for expressions the rule doesn't apply to, then check whether the expression has the issue and emit.
 - **Don't modify files outside the rule's own file, its tests, and its doc.** Utility methods specific to the rule can live in the rule file. If the implementation needs a generic core capability or an engine change, return to step 1 and stop for explicit user approval.
 
 **Complexity check before continuing:**
