@@ -36,6 +36,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
         public string? FilePath { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the policy mode is a control-plane (Resource Manager) mode: 'All', 'Indexed', or no mode.
+        /// </summary>
+        public bool IsControlPlanePolicyMode { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="LinterContext"/> class.
         /// </summary>
         /// <param name="resourceTypeMetadata">The resource type metadata.</param>

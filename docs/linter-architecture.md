@@ -26,7 +26,7 @@ The node types you'll most often target as a rule author:
 | `IfCondition` | Wraps a single `Condition`. |
 | `LeafCondition` | One condition: `Field?` / `Value?` / `Count?` (mutually exclusive) plus an `Operator?` (one of 18 supported operator names). |
 | `Quantifier` | `AllOf?`, `AnyOf?`, `Not?`. |
-| `ThenExpression` | Just `Effect` (a `Property`). The linter does **not** currently model effect details (`details.roleDefinitionIds`, `existenceCondition`, etc.) as typed nodes - if you need them, walk the raw `JToken`. |
+| `ThenExpression` | Just `Effect` (a `Property`). The linter currently doesn't parse effect details. |
 | `Property` | Key-value pair derived from a json property. Holds `Name`, `Value` (`JToken`), `LanguageExpressions` (template references in the value), `HasLiteralValue`, and `HasSimpleParameterizedValue(...)`. |
 | `Reference` | A parsed template-language reference (`field`, `parameters`, `current`, `claims`, etc.). Carries `Kind`, `Identifier`, `IsResolved`, `PropertySelectionPath?`, and `ResourcePropertyMetadata` for resolved field aliases. |
 | `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, `Metadata?` (raw `JToken` for the unmodeled metadata bag), plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
@@ -43,6 +43,7 @@ A rule's `Evaluate` is called with the typed expression node it targets, plus a 
 - `Parameters` - the policy's parameters as an immutable dictionary, populated during parsing.
 - `ExternalEvaluationEnforcementSettings` - the parsed external-evaluation block if the policy has one.
 - `FilePath` - caller-supplied. Optional; if non-null the engine validates it's absolute. Rules that consume it must handle null.
+- `IsControlPlanePolicyMode` - true when the policy mode is `All`, `Indexed`, or not set. Use it to skip policies with a Resource Provider mode (for example, `Microsoft.Kubernetes.Data`).
 
 Resolved field references in `Reference.ResourcePropertyMetadata` are pre-populated at parse time, so a rule asking "what resource type and properties does this alias map to" doesn't have to call the metadata service itself.
 
@@ -156,9 +157,10 @@ These show up in most shipped rules. Use them instead of writing the equivalent 
 - **`Property.HasSimpleParameterizedValue(context, out parameterName, out allowedValues, out defaultValue)`** - returns true only when the value is a bare `[parameters('name')]` referring to a `String`-typed parameter, and populates the parameter's constraints. Powers most "is this a simple parameter reference and what are its allowed values" checks.
 - **`FieldPathHelper`** (`src/PolicyLinter.Core/Expressions/EvaluationHelpers/FieldPathHelper.cs`) - `IsFieldAlias`, `IsArrayAlias`, `FieldAliasHasFullyQualifiedResourceType`, `GetFieldAliasFullyQualifiedResourceType`. Handles the "tags*" exception correctly.
 - **`Reference.IsResolvedFieldReference()`** - true for both `[field('alias')]` and `[current('alias')]`-inside-count. Single check that covers both shapes; don't compare `Kind` directly.
+- **`IfCondition.ReferencedResourceTypes`** - the resource types the `if` condition refers to, collected from non-negated `type` conditions (`equals`/`in`) and from resolved field aliases. It's a best-effort check that ignores the condition logic. Use it to quickly find which resource types a policy targets instead of walking the condition tree.
 - **`Reference.FromLanguageExpression`** - given a parsed `LanguageExpression`, returns every reference inside it (recursively). Use when you need to find references nested inside an arbitrary expression that isn't itself a top-level reference function.
 - **`ExpressionsEngine.IsLanguageExpression(string)` / `ParseLanguageExpression(string)`** - from the upstream `Azure.Deployments.Expression` package. The right way to detect and parse a `[...]` value. Never use regex.
-- **`TemplateLanguageExpression.ExtractFromJToken(JToken)`** - walks an arbitrary JSON sub-tree and returns every template-language expression it finds, with references already resolved. Useful when you need to inspect expressions inside JSON the linter doesn't model (e.g. `then.details`).
+- **`TemplateLanguageExpression.ExtractFromJToken(JToken)`** - walks an arbitrary JSON sub-tree and returns every template-language expression it finds, with references already resolved. Useful when you need to inspect expressions inside a JSON value, such as a `Property` value with nested objects or arrays.
 - **`TemplateLanguageExpression.TryGetFunctionName(out string)`** - returns the already-parsed root function name without exposing expression-engine types or reparsing the raw expression string.
 - **`EqualsOrdinalInsensitively` / `OrdinalInsensitiveHashSet`** - from `Microsoft.WindowsAzure.ResourceStack.Common`. Case-insensitive string equality and set lookup without repeating `StringComparison.OrdinalIgnoreCase` on every line.
 - **`Parameter.TryAsConcreteType<T>(out T[]? allowed, out T? def)`** - type-checks and unwraps a parameter's `allowedValues` and `defaultValue` to concrete C#. Powers `HasSimpleParameterizedValue`.
