@@ -7,7 +7,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -51,7 +50,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(PolicyRule expression, LinterContext context)
         {
-            if (!VmOsTypeFieldAlias.ActsOnRequests(effect: expression.Then.Effect, context: context))
+            if (!expression.Then.CanHaveEffect(context: context, effects: VmOsTypeFieldAlias.RequestEffects))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -71,21 +70,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             });
 
             return outputs.ToArray();
-        }
-
-        /// <summary>
-        /// Determines whether the effect acts on the create request, or is a parameter whose allowedValues include one that does.
-        /// </summary>
-        private static bool ActsOnRequests(Property effect, LinterContext context)
-        {
-            if (effect.HasLiteralValue)
-            {
-                return VmOsTypeFieldAlias.RequestEffects.Contains(effect.Value.ToString());
-            }
-
-            return effect.HasSimpleParameterizedValue(context: context, out _, out var allowedValues, out _) &&
-                allowedValues != null &&
-                allowedValues.Any(value => VmOsTypeFieldAlias.RequestEffects.Contains(value));
         }
     }
 }

@@ -6,7 +6,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -49,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             var resourceTypes = expression.If.ReferencedResourceTypes;
 
-            if (NsgSecurityRuleChildOnlyEnforcement.CanEnforce(effect: expression.Then.Effect, context: context) &&
+            if (expression.Then.CanHaveEffect(context: context, effects: NsgSecurityRuleChildOnlyEnforcement.EnforcementEffects) &&
                 resourceTypes.Contains(NsgSecurityRuleChildOnlyEnforcement.SecurityRuleType) &&
                 !resourceTypes.Contains(NsgSecurityRuleChildOnlyEnforcement.NsgType))
             {
@@ -60,21 +59,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             return Array.Empty<LinterOutput>();
-        }
-
-        /// <summary>
-        /// Determines whether the effect is an enforcement effect, or a parameter whose allowedValues include one.
-        /// </summary>
-        private static bool CanEnforce(Property effect, LinterContext context)
-        {
-            if (effect.HasLiteralValue)
-            {
-                return NsgSecurityRuleChildOnlyEnforcement.EnforcementEffects.Contains(effect.Value.ToString());
-            }
-
-            return effect.HasSimpleParameterizedValue(context: context, out _, out var allowedValues, out _) &&
-                allowedValues != null &&
-                allowedValues.Any(value => NsgSecurityRuleChildOnlyEnforcement.EnforcementEffects.Contains(value));
         }
     }
 }
