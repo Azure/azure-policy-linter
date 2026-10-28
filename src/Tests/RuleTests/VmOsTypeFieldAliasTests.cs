@@ -28,7 +28,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             LineNumber: 4,
             LinePosition: 87,
             Path: "properties.policyRule.if.field",
-            Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType' maps to a property that the resource provider sets after the VM is created. Policies that depend on it don't act when VMs are created. Identify the operating system from image properties such as 'Microsoft.Compute/imagePublisher'.");
+            Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType' maps to a property that the resource provider sets after the VM is created. Conditions on it evaluate against a missing value when VMs are created. Identify the operating system from image properties such as 'Microsoft.Compute/imagePublisher'.");
 
         private static string Policy(string condition, string effect = "deny", string parameters = "{}") => @"{
   ""properties"": {
@@ -70,6 +70,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = VmOsTypeFieldAliasTests.Lint(VmOsTypeFieldAliasTests.Policy(condition: condition));
 
             results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(VmOsTypeFieldAliasTests.ExpectedOutput with { LinePosition = 172, Path = "properties.policyRule.if.anyOf[1].field" });
         }
 
         [Fact]

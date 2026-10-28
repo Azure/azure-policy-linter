@@ -82,6 +82,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 condition: @"{ ""allOf"": [ { ""field"": ""Microsoft.Web/sites/siteConfig.ftpsState"", ""exists"": true }, { ""field"": ""Microsoft.Web/sites/siteConfig.ftpsState"", ""notEquals"": ""Disabled"" } ] }"));
 
             results.Should().HaveCount(2);
+            results.Should().ContainEquivalentOf(AppServiceSiteConfigFieldAliasTests.Output(
+                alias: "Microsoft.Web/sites/siteConfig.ftpsState",
+                linePosition: 78,
+                path: "properties.policyRule.if.allOf[0].field"));
+            results.Should().ContainEquivalentOf(AppServiceSiteConfigFieldAliasTests.Output(
+                alias: "Microsoft.Web/sites/siteConfig.ftpsState",
+                linePosition: 151,
+                path: "properties.policyRule.if.allOf[1].field"));
         }
 
         [Theory]

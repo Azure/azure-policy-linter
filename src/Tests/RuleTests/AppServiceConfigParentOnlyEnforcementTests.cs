@@ -43,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             LineNumber: 4,
             LinePosition: 13,
             Path: "properties.policyRule.if",
-            Description: $"The policy enforces on app settings through '{prefix}*' field aliases but not on the '{config}' resource type. App settings changed through the app's '{config}' resource are not evaluated by this policy. Also enforce on '{config}'.");
+            Description: $"The policy enforces on App Service settings through '{prefix}*' field aliases but not on the '{config}' resource type. App Service settings changed through the app's '{config}' resource are not evaluated by this policy. Also enforce on '{config}'.");
 
         /// <summary>
         /// Builds a policy definition with the given 'if' condition, effect, and parameters.

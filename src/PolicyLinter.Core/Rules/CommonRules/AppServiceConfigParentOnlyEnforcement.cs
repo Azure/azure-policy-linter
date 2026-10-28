@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "App Service Config Parent-Only Enforcement";
 
         private const string RuleDescription =
-            "The policy enforces on app settings through '{0}*' field aliases but not on the '{1}' resource type. App settings changed through the app's '{1}' resource are not evaluated by this policy. Also enforce on '{1}'.";
+            "The policy enforces on App Service settings through '{0}*' field aliases but not on the '{1}' resource type. App Service settings changed through the app's '{1}' resource are not evaluated by this policy. Also enforce on '{1}'.";
 
         /// <summary>
         /// The 'siteConfig' field alias prefixes and the config resource types that can change the same settings.

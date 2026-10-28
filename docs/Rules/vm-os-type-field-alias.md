@@ -6,7 +6,7 @@
 
 ## Description
 
-The policy references the `Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType` field alias. The resource provider sets this property after the VM is created. As a result, `audit`, `deny`, `append`, and `modify` policies that depend on it don't act when VMs are created. Compliance results for existing VMs are correct.
+The policy references the `Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType` field alias. The resource provider sets this property after the VM is created. As a result, conditions on it evaluate against a missing value when VMs are created, so `audit`, `deny`, `append`, and `modify` policies that depend on it don't act as expected. Compliance results for existing VMs are correct.
 
 ## Suggestions
 

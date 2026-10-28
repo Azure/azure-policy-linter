@@ -21,7 +21,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "VM OS Type Field Alias";
 
         private const string RuleDescription =
-            "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType' maps to a property that the resource provider sets after the VM is created. Policies that depend on it don't act when VMs are created. Identify the operating system from image properties such as 'Microsoft.Compute/imagePublisher'.";
+            "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType' maps to a property that the resource provider sets after the VM is created. Conditions on it evaluate against a missing value when VMs are created. Identify the operating system from image properties such as 'Microsoft.Compute/imagePublisher'.";
 
         private const string OsTypeAlias = "Microsoft.Compute/virtualMachines/storageProfile.osDisk.osType";
 

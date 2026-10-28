@@ -43,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             LineNumber: 4,
             LinePosition: 13,
             Path: "properties.policyRule.if",
-            Description: $"The policy enforces on the '{config}' resource type but not on '{app}'. App settings set through the 'siteConfig' property of the app are not evaluated by this policy. Also enforce on '{app}'.");
+            Description: $"The policy enforces on the '{config}' resource type but not on '{app}'. App Service settings set through the 'siteConfig' property of the app are not evaluated by this policy. Also enforce on '{app}'.");
 
         /// <summary>
         /// Builds a policy definition with the given 'if' condition, effect, and parameters.
@@ -140,6 +140,26 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         public void RuleTests_AppServiceConfigChildOnlyEnforcement_BothResourceTypes()
         {
             var condition = @"{ ""anyOf"": [ " + AppServiceConfigChildOnlyEnforcementTests.ConfigCondition + ", " + AppServiceConfigChildOnlyEnforcementTests.SiteCondition + " ] }";
+
+            var results = AppServiceConfigChildOnlyEnforcementTests.Lint(AppServiceConfigChildOnlyEnforcementTests.Policy(condition: condition));
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_AppServiceConfigChildOnlyEnforcement_ConfigAliasWithoutSiteConfigAlias()
+        {
+            var condition = @"{ ""field"": ""Microsoft.Web/sites/config/globalValidation.requireAuthentication"", ""equals"": false }";
+
+            var results = AppServiceConfigChildOnlyEnforcementTests.Lint(AppServiceConfigChildOnlyEnforcementTests.Policy(condition: condition));
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_AppServiceConfigChildOnlyEnforcement_TypeConditionOnly()
+        {
+            var condition = @"{ ""field"": ""type"", ""equals"": ""Microsoft.Web/sites/config"" }";
 
             var results = AppServiceConfigChildOnlyEnforcementTests.Lint(AppServiceConfigChildOnlyEnforcementTests.Policy(condition: condition));
 
