@@ -49,17 +49,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(PolicyRule expression, LinterContext context)
         {
-            if (!context.IsControlPlanePolicyMode ||
-                !TypeOnlyIfCondition.HasTypeApplicabilityEffect(effect: expression.Then.Effect, context: context) ||
-                !TypeOnlyIfCondition.ChecksOnlyType(ifCondition: expression.If))
+            if (context.IsControlPlanePolicyMode &&
+                TypeOnlyIfCondition.HasTypeApplicabilityEffect(effect: expression.Then.Effect, context: context) &&
+                TypeOnlyIfCondition.ChecksOnlyType(ifCondition: expression.If))
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateInformational(expression.If),
+                };
             }
 
-            return new[]
-            {
-                this.CreateInformational(expression.If),
-            };
+            return Array.Empty<LinterOutput>();
         }
 
         /// <summary>

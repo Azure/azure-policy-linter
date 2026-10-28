@@ -37,21 +37,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
             var arrayAlias = expression.Count?.EnumeratedArray?.FieldAccessorReference?.Identifier;
-            if (arrayAlias == null ||
-                expression.Count!.Where == null ||
-                expression.Operator == null ||
-                !expression.Operator.Name.EqualsOrdinalInsensitively("less") ||
-                expression.Operator.Value.Type != JTokenType.String ||
-                expression.Operator.LanguageExpressions.Length != 1 ||
-                !expression.Operator.LanguageExpressions[0].Expression.EqualsOrdinalInsensitively($"[length(field('{arrayAlias}'))]"))
+            if (arrayAlias != null &&
+                expression.Count!.Where != null &&
+                expression.Operator!.Name.EqualsOrdinalInsensitively("less") &&
+                expression.Operator.Value.Type == JTokenType.String &&
+                expression.Operator.Value.ToString().EqualsOrdinalInsensitively($"[length(field('{arrayAlias}'))]"))
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateInformational(expression.Operator, arrayAlias),
+                };
             }
 
-            return new[]
-            {
-                this.CreateInformational(expression.Operator, arrayAlias),
-            };
+            return Array.Empty<LinterOutput>();
         }
     }
 }
