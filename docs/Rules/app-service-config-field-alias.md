@@ -12,10 +12,13 @@ The policy checks App Service settings through `Microsoft.Web/sites/siteConfig.*
 
 App Service settings can be set through the `siteConfig` property of the app in a `Microsoft.Web/sites` request, or through the app's `Microsoft.Web/sites/config` child resource. A policy that enforces on only one of these resource types doesn't apply to changes made through the other, and apps can still be changed to non-compliant settings. This applies to `config` field aliases that have a matching `siteConfig` alias; other config settings, such as authentication and logging, can't be set through `siteConfig`.
 
-### Incorrect Enforcement
+### Null Setting Values Returned by the Resource Provider
 
 Some properties under `siteConfig` are known to be returned as null when reading an existing app, even when they are set.
-`PUT` requests can be used to update a subset of the `siteConfig` properties while leaving all other properties unchanged (i.e. the `PUT` request acts more like a `PATCH`).
+
+When scanned for compliance, these properties have a `null` value, resulting in incorrect [compliance results](https://learn.microsoft.com/azure/governance/policy/concepts/compliance-states).
+
+In enforcement scenarios, `PUT` requests can be used to update a subset of the `siteConfig` properties while leaving all other properties unchanged (i.e. the `PUT` request acts more like a `PATCH`).
 An enforcement policy expecting a `siteConfig` property to have an explicit value can treat these missing or null properties as having a non-compliant value.
 
 **Example:**
@@ -63,10 +66,6 @@ A policy might interpret the missing or null value of `ftpsState` as an attempt 
   }
 }
 ```
-
-### Incorrect Compliance
-
-When scanned for compliance, these properties have a `null` value, resulting in incorrect [compliance results](https://learn.microsoft.com/azure/governance/policy/concepts/compliance-states).
 
 ## Suggestions
 
