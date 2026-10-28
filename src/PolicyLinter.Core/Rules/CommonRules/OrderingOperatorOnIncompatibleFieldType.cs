@@ -53,31 +53,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
-            var match = OrderingOperatorOnIncompatibleFieldType.GetLatestApiVersionMetadata(expression);
-            if (match == null || OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(match.Value.Latest.Type, expression.Operator!.Value))
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            return new[]
-            {
-                this.CreateError(
-                    expression.Operator,
-                    match.Value.FieldReference.Identifier,
-                    OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName(match.Value.Latest.Type),
-                    expression.Operator.Name,
-                    OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(expression.Operator.Value)),
-            };
-        }
-
-        /// <summary>
-        /// Gets the field reference and its latest API version metadata for an ordering condition on a resolved
-        /// field alias with a literal comparison value, when the field exists in the latest API version with a known type.
-        /// </summary>
-        /// <param name="expression">The leaf condition.</param>
-        /// <returns>The field reference and its latest API version metadata, or null if the condition doesn't qualify.</returns>
-        internal static (Reference FieldReference, ResourcePropertyMetadata Latest)? GetLatestApiVersionMetadata(LeafCondition expression)
-        {
             var fieldReference = expression.Field?.FieldAccessorReference;
             if (expression.Operator == null ||
                 !OrderingOperatorOnIncompatibleFieldType.OrderingOperators.Contains(expression.Operator.Name) ||
@@ -85,32 +60,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 !fieldReference.IsResolvedFieldReference() ||
                 !expression.Operator.HasLiteralValue)
             {
-                return null;
+                return Array.Empty<LinterOutput>();
             }
 
-            var latest = fieldReference.ResourcePropertyMetadata
+            var latestApiVersionMetadata = fieldReference.ResourcePropertyMetadata
                 .MaxBy(
                     keySelector: metadata => metadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance),
                     comparer: SuffixAwareApiVersionComparer.Instance);
 
-            if (latest == null || !latest.Exists || !OrderingOperatorOnIncompatibleFieldType.IsKnownType(latest.Type))
+            if (latestApiVersionMetadata == null ||
+                !latestApiVersionMetadata.Exists ||
+                OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, expression.Operator.Value))
             {
-                return null;
+                return Array.Empty<LinterOutput>();
             }
 
-            return (fieldReference, latest);
-        }
+            var valueType = OrderingOperatorOnIncompatibleFieldType.ClassifyValue(expression.Operator.Value);
+            var valueTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(valueType, expression.Operator.Value);
 
-        /// <summary>
-        /// Determines whether the alias data type is known. Unresolved, unspecified, or 'any' types can hold
-        /// values of any shape, so the rule can't decide their ordering compatibility and stays silent.
-        /// </summary>
-        /// <param name="type">The alias data type.</param>
-        internal static bool IsKnownType(string type)
-        {
-            return !string.IsNullOrEmpty(type) &&
-                !type.Equals(AliasPathTokenType.NotSpecified.ToString(), StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals(AliasPathTokenType.Any.ToString(), StringComparison.OrdinalIgnoreCase);
+            return new[]
+            {
+                this.CreateError(expression.Operator, fieldReference.Identifier, latestApiVersionMetadata.Type.ToLowerInvariant(), expression.Operator.Name, valueTypeName),
+            };
         }
 
         /// <summary>
@@ -138,58 +109,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <summary>
         /// Determines whether a field of the given data type can be ordered against the comparison value.
         /// Azure Policy throws when the field's value and the comparison value have different JSON types.
+        /// Unknown, unspecified, and 'any' field types can hold any value, so they're treated as orderable.
         /// </summary>
         /// <param name="fieldType">The field's alias data type.</param>
         /// <param name="value">The literal comparison value.</param>
         internal static bool IsOrderableWithValue(string fieldType, JToken value)
         {
+            if (!Enum.TryParse<AliasPathTokenType>(fieldType, ignoreCase: true, out var type))
+            {
+                return true;
+            }
+
             var valueType = OrderingOperatorOnIncompatibleFieldType.ClassifyValue(value);
-
-            if (fieldType.Equals(AliasPathTokenType.Integer.ToString(), StringComparison.OrdinalIgnoreCase))
+            return type switch
             {
-                // An integer field value is a whole number, which throws against a decimal comparison value.
-                return valueType == ComparisonValueType.Integer;
-            }
+                // An integer field holds a whole number, which throws against a decimal comparison value.
+                AliasPathTokenType.Integer => valueType == ComparisonValueType.Integer,
+                AliasPathTokenType.Number => valueType is ComparisonValueType.Integer or ComparisonValueType.Float,
 
-            if (fieldType.Equals(AliasPathTokenType.Number.ToString(), StringComparison.OrdinalIgnoreCase))
-            {
-                // A number field can hold a whole or a decimal number, so either comparison value can work.
-                return valueType is ComparisonValueType.Integer or ComparisonValueType.Float;
-            }
-
-            if (fieldType.Equals(AliasPathTokenType.String.ToString(), StringComparison.OrdinalIgnoreCase))
-            {
-                // Dates are stored as strings, so a string field orders against a string or a date, but a
-                // number condition type throws.
-                return valueType is ComparisonValueType.String or ComparisonValueType.Date;
-            }
-
-            // Boolean, object, and array fields can't be ordered against any value.
-            return false;
-        }
-
-        /// <summary>
-        /// Maps an alias data type to a name for the failure message.
-        /// </summary>
-        /// <param name="type">The alias data type.</param>
-        internal static string FriendlyTypeName(string type)
-        {
-            return type.ToLowerInvariant();
-        }
-
-        /// <summary>
-        /// Maps a literal comparison value to a type name for the failure message.
-        /// </summary>
-        /// <param name="value">The comparison value.</param>
-        internal static string FriendlyValueTypeName(JToken value)
-        {
-            return OrderingOperatorOnIncompatibleFieldType.ClassifyValue(value) switch
-            {
-                ComparisonValueType.Integer => "number",
-                ComparisonValueType.Float => "decimal number",
-                ComparisonValueType.Date => "date",
-                ComparisonValueType.String => "string",
-                _ => value.Type.ToString().ToLowerInvariant(),
+                // Dates are stored as strings, so a string field orders against a string or a date.
+                AliasPathTokenType.String => valueType is ComparisonValueType.String or ComparisonValueType.Date,
+                AliasPathTokenType.Boolean or AliasPathTokenType.Object or AliasPathTokenType.Array => false,
+                _ => true,
             };
         }
 
@@ -217,6 +158,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             return ComparisonValueType.Other;
+        }
+
+        /// <summary>
+        /// Maps a literal comparison value to a type name for the failure message.
+        /// </summary>
+        /// <param name="valueType">The comparison value's classified type.</param>
+        /// <param name="value">The comparison value.</param>
+        private static string FriendlyValueTypeName(ComparisonValueType valueType, JToken value)
+        {
+            return valueType switch
+            {
+                ComparisonValueType.Integer => "number",
+                ComparisonValueType.Float => "decimal number",
+                ComparisonValueType.Date => "date",
+                ComparisonValueType.String => "string",
+                _ => value.Type.ToString().ToLowerInvariant(),
+            };
         }
     }
 }

@@ -91,7 +91,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(OrderingOperatorOnIncompatibleFieldTypeInOldApiVersionsTests.Output(
                 linePosition: 83,
-                description: "The field alias 'Microsoft.Sql/servers/databases/maxSizeBytes' cannot be ordered with the 'greater' operator against a value of type 'number' in older API versions of the resource type: '2014-04-01'. Requests that use these API versions fail evaluation, which implicitly denies the resource."));
+                description: "The field alias 'Microsoft.Sql/servers/databases/maxSizeBytes' has a data type in older API versions that cannot be ordered with the 'greater' operator against the comparison value. Requests that use these API versions fail evaluation, which implicitly denies the resource. API versions: '2014-04-01'."));
         }
 
         [Fact]
@@ -109,7 +109,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(OrderingOperatorOnIncompatibleFieldTypeInOldApiVersionsTests.Output(
                 linePosition: 68,
-                description: "The field alias 'Microsoft.Test/resources/size' cannot be ordered with the 'greater' operator against a value of type 'number' in older API versions of the resource type: '2018-01-01, 2019-01-01, 2020-01-01'. Requests that use these API versions fail evaluation, which implicitly denies the resource."));
+                description: "The field alias 'Microsoft.Test/resources/size' has a data type in older API versions that cannot be ordered with the 'greater' operator against the comparison value. Requests that use these API versions fail evaluation, which implicitly denies the resource. API versions: '2018-01-01, 2019-01-01, 2020-01-01'."));
         }
 
         [Fact]
@@ -126,7 +126,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(OrderingOperatorOnIncompatibleFieldTypeInOldApiVersionsTests.Output(
                 linePosition: 70,
-                description: "The field alias 'Microsoft.Test/resources/size' cannot be ordered with the 'greater' operator against a value of type 'decimal number' in older API versions of the resource type: '2020-01-01'. Requests that use these API versions fail evaluation, which implicitly denies the resource."));
+                description: "The field alias 'Microsoft.Test/resources/size' has a data type in older API versions that cannot be ordered with the 'greater' operator against the comparison value. Requests that use these API versions fail evaluation, which implicitly denies the resource. API versions: '2020-01-01'."));
         }
 
         [Fact]
