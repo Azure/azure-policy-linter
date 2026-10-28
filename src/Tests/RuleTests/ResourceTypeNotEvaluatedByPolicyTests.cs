@@ -37,7 +37,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return linter.Lint(policyDefinition);
         }
 
-        private static LinterOutput Output(string resourceType) => new LinterOutput(
+        private static LinterOutput Output(string resourceTypes) => new LinterOutput(
             RuleIdentifier: "resource-type-not-evaluated-by-policy",
             Title: "Resource Type Not Evaluated by Policy",
             Severity: Severity.Error,
@@ -45,7 +45,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             LineNumber: 5,
             LinePosition: 13,
             Path: "properties.policyRule.if",
-            Description: $"The policy targets the resource type '{resourceType}', which Azure Policy doesn't evaluate. The policy has no effect on resources of this type.");
+            Description: $"The policy targets resource types that Azure Policy doesn't evaluate: '{resourceTypes}'. The policy has no effect on resources of these types.");
 
         [Theory]
         [InlineData("Microsoft.Resources/deployments")]
@@ -77,9 +77,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = ResourceTypeNotEvaluatedByPolicyTests.Lint(ResourceTypeNotEvaluatedByPolicyTests.Policy(
                 condition: @"{ ""field"": ""type"", ""in"": [ ""Microsoft.Storage/storageAccounts"", ""Microsoft.Resources/deployments"", ""Microsoft.Help/diagnostics"" ] }"));
 
-            results.Should().HaveCount(2);
-            results.Should().ContainEquivalentOf(ResourceTypeNotEvaluatedByPolicyTests.Output("Microsoft.Resources/deployments"));
-            results.Should().ContainEquivalentOf(ResourceTypeNotEvaluatedByPolicyTests.Output("Microsoft.Help/diagnostics"));
+            results.Should().HaveCount(1);
+            results.Should().ContainEquivalentOf(ResourceTypeNotEvaluatedByPolicyTests.Output("Microsoft.Help/diagnostics, Microsoft.Resources/deployments"));
         }
 
         [Theory]

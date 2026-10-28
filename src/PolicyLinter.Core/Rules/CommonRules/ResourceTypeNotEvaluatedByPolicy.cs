@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Resource Type Not Evaluated by Policy";
 
         private const string RuleDescription =
-            "The policy targets the resource type '{0}', which Azure Policy doesn't evaluate. The policy has no effect on resources of this type.";
+            "The policy targets resource types that Azure Policy doesn't evaluate: '{0}'. The policy has no effect on resources of these types.";
 
         /// <summary>
         /// Resource type prefixes that Azure Policy doesn't evaluate.
@@ -70,15 +70,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(IfCondition expression, LinterContext context)
         {
-            if (!context.IsControlPlanePolicyMode)
+            var notEvaluatedResourceTypes = expression.ReferencedResourceTypes
+                .Where(ResourceTypeNotEvaluatedByPolicy.IsNotEvaluated)
+                .OrderBy(resourceType => resourceType, StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            if (context.IsControlPlanePolicyMode && notEvaluatedResourceTypes.Length > 0)
             {
-                return Array.Empty<LinterOutput>();
+                return new[]
+                {
+                    this.CreateError(expression, string.Join(", ", notEvaluatedResourceTypes)),
+                };
             }
 
-            return expression.ReferencedResourceTypes
-                .Where(ResourceTypeNotEvaluatedByPolicy.IsNotEvaluated)
-                .Select(resourceType => this.CreateError(expression, resourceType))
-                .ToArray();
+            return Array.Empty<LinterOutput>();
         }
 
         /// <summary>
