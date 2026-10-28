@@ -12,8 +12,30 @@ The rule fires when the field's type in the latest known API version is incompat
 
 ## Suggestions
 
-- Order a numeric field against a number. Order an integer field against a whole number. To compare a date, use a string field (dates are stored as strings) and an ISO 8601 date value.
-- Don't compare a string field against a number, or use an ordering operator on a boolean, object, or array field. Compare the specific property you care about with `equals`, `exists`, or a `count` condition instead.
+- If the comparison value has the wrong type, change it to match the field. For example, compare an integer field against a whole number.
+- Otherwise, convert the field with a template function in a [`value` condition](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#value), so both sides have the same type:
+  - Convert to a decimal number with `float()`, and write the comparison value as a decimal number (`2.0`, not `2`). Evaluation fails when the property is missing or isn't a number.
+
+    ```json
+    { "value": "[float(field('Microsoft.Test/resourceType/size'))]", "greater": 2.0 }
+    ```
+
+  - Convert to a decimal number with `float()` and check for a missing property first. A missing property is returned as an empty string; set the fallback value to the value that gives the result you want for a missing property.
+
+    ```json
+    {
+      "value": "[if(equals(field('Microsoft.Test/resourceType/size'), ''), float(0), float(field('Microsoft.Test/resourceType/size')))]",
+      "greater": 2.0
+    }
+    ```
+
+  - Convert to a string with `string()`, and compare against a string. This works for string and integer fields, but strings are compared as text: it gives correct results only when text order matches the order you want, such as ISO 8601 dates or values with the same number of digits (`"9"` is greater than `"10"`).
+
+    ```json
+    { "value": "[string(field('Microsoft.Test/resourceType/tier'))]", "greaterOrEquals": "3" }
+    ```
+
+- Boolean, object, and array fields can't be ordered. Compare the specific property you care about with `equals`, `exists`, or a `count` condition.
 
 ## Examples
 

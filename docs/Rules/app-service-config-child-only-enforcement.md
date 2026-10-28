@@ -6,11 +6,11 @@
 
 ## Description
 
-The policy is enforcing a rule on the `Microsoft.Web/sites/config` (or `Microsoft.Web/sites/slots/config`) resource type. App Service settings can also be set through the `siteConfig` property of the parent app in a `Microsoft.Web/sites` (or `Microsoft.Web/sites/slots`) request. Azure Policy evaluates those requests only against the parent resource type, so this policy doesn't apply to them, and apps with non-compliant settings can still be created or updated.
+The policy is enforcing a rule on the `Microsoft.Web/sites/config` (or `Microsoft.Web/sites/slots/config`) resource type. App Service settings can also be set through the `siteConfig` property of the parent app in a `Microsoft.Web/sites` (or `Microsoft.Web/sites/slots`) request. This policy doesn't apply to changes made via the parent resource, and apps with non-compliant settings can still be created or updated.
 
 ## Suggestions
 
-- Also enforce on `Microsoft.Web/sites` and check the matching `Microsoft.Web/sites/siteConfig.*` alias, with an `exists` condition on it (see [Unguarded App Service Site Config Field Alias](unguarded-app-service-site-config-field-alias.md)).
+- Also enforce on `Microsoft.Web/sites` and check the matching `Microsoft.Web/sites/siteConfig.*` alias, with an `exists` condition on it (see [App Service Site Config Field Alias](app-service-site-config-field-alias.md)).
 - You can do this in this policy, with an `anyOf` that has a branch for each resource type.
 - Alternatively, create a separate policy targeting `Microsoft.Web/sites`.
 

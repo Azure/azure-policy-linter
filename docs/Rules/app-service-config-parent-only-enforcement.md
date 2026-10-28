@@ -6,7 +6,7 @@
 
 ## Description
 
-The policy is enforcing a rule on App Service settings through `Microsoft.Web/sites/siteConfig.*` (or `Microsoft.Web/sites/slots/siteConfig.*`) field aliases. The same settings can also be changed through the app's `Microsoft.Web/sites/config` (or `Microsoft.Web/sites/slots/config`) resource. Azure Policy evaluates those requests only against the `config` resource type, so this policy doesn't apply to them, and apps can still be changed to non-compliant settings.
+The policy is enforcing a rule on App Service settings through `Microsoft.Web/sites/siteConfig.*` (or `Microsoft.Web/sites/slots/siteConfig.*`) field aliases. The same settings can also be changed through the app's `Microsoft.Web/sites/config` (or `Microsoft.Web/sites/slots/config`) child resource. This policy doesn't apply to changes made via the child resource, and apps can still be changed to non-compliant settings.
 
 ## Suggestions
 

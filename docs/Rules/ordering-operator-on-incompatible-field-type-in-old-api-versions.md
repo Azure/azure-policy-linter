@@ -12,20 +12,19 @@ The comparison rules are the same as in [Ordering Operator on Incompatible Field
 
 ## Suggestions
 
-- Check whether clients in your environment still send requests with the API versions in the finding.
-- To handle older API versions explicitly, add a condition on `[requestContext().apiVersion]` that skips or handles the comparison for those versions.
+- Convert the field with a template function in a `value` condition, so the comparison works with every API version. `float()` converts both numbers and numeric strings. See [Ordering Operator on Incompatible Field Type](ordering-operator-on-incompatible-field-type.md#suggestions) for the options and their limitations.
 - To find affected requests before enforcing, assign the policy with the `audit` effect and inspect the [activity logs](https://learn.microsoft.com/azure/azure-monitor/essentials/activity-log-schema#policy-category).
 
 ## Examples
 
 ### Violation
 
-The field is a number in the latest API version and a string in an older API version.
+`Microsoft.Sql/servers/databases/maxSizeBytes` is an integer in the latest API versions and a string in API version `2014-04-01`.
 
 ```json
 {
-  "field": "Microsoft.Test/resourceType/size",
-  "greater": 100
+  "field": "Microsoft.Sql/servers/databases/maxSizeBytes",
+  "greater": 268435456000
 }
 ```
 
@@ -33,9 +32,7 @@ The field is a number in the latest API version and a string in an older API ver
 
 ```json
 {
-  "allOf": [
-    { "value": "[requestContext().apiVersion]", "greaterOrEquals": "2023-01-01" },
-    { "field": "Microsoft.Test/resourceType/size", "greater": 100 }
-  ]
+  "value": "[if(equals(field('Microsoft.Sql/servers/databases/maxSizeBytes'), ''), float(0), float(field('Microsoft.Sql/servers/databases/maxSizeBytes')))]",
+  "greater": 268435456000.0
 }
 ```

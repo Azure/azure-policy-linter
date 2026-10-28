@@ -10,30 +10,4 @@ The policy's `if` condition checks only the resource `type`. With the `audit`, `
 
 ## Suggestions
 
-- If the policy should report compliant resources, add a condition that checks a property of the resource, so resources that don't match it are compliant.
 - If the policy is meant to flag every resource of the type, no change is needed.
-
-## Examples
-
-### Violation
-
-```json
-{
-  "if": { "field": "type", "equals": "Microsoft.Storage/storageAccounts" },
-  "then": { "effect": "audit" }
-}
-```
-
-### Correct
-
-```json
-{
-  "if": {
-    "allOf": [
-      { "field": "type", "equals": "Microsoft.Storage/storageAccounts" },
-      { "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly", "notEquals": true }
-    ]
-  },
-  "then": { "effect": "audit" }
-}
-```
