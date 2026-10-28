@@ -53,8 +53,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
-            if (!OrderingOperatorOnIncompatibleFieldType.TryGetLatestApiVersionMetadata(expression, out var fieldReference, out var latestApiVersionMetadata) ||
-                OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, expression.Operator!.Value))
+            var match = OrderingOperatorOnIncompatibleFieldType.GetLatestApiVersionMetadata(expression);
+            if (match == null || OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(match.Value.Latest.Type, expression.Operator!.Value))
             {
                 return Array.Empty<LinterOutput>();
             }
@@ -63,8 +63,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             {
                 this.CreateError(
                     expression.Operator,
-                    fieldReference.Identifier,
-                    OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName(latestApiVersionMetadata.Type),
+                    match.Value.FieldReference.Identifier,
+                    OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName(match.Value.Latest.Type),
                     expression.Operator.Name,
                     OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(expression.Operator.Value)),
             };
@@ -75,19 +75,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// field alias with a literal comparison value, when the field exists in the latest API version with a known type.
         /// </summary>
         /// <param name="expression">The leaf condition.</param>
-        /// <param name="fieldReference">The field reference.</param>
-        /// <param name="latestApiVersionMetadata">The field's metadata in the latest API version.</param>
-        internal static bool TryGetLatestApiVersionMetadata(LeafCondition expression, out Reference fieldReference, out ResourcePropertyMetadata latestApiVersionMetadata)
+        /// <returns>The field reference and its latest API version metadata, or null if the condition doesn't qualify.</returns>
+        internal static (Reference FieldReference, ResourcePropertyMetadata Latest)? GetLatestApiVersionMetadata(LeafCondition expression)
         {
-            fieldReference = expression.Field?.FieldAccessorReference!;
-            latestApiVersionMetadata = null!;
+            var fieldReference = expression.Field?.FieldAccessorReference;
             if (expression.Operator == null ||
                 !OrderingOperatorOnIncompatibleFieldType.OrderingOperators.Contains(expression.Operator.Name) ||
                 fieldReference == null ||
                 !fieldReference.IsResolvedFieldReference() ||
                 !expression.Operator.HasLiteralValue)
             {
-                return false;
+                return null;
             }
 
             var latest = fieldReference.ResourcePropertyMetadata
@@ -97,11 +95,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             if (latest == null || !latest.Exists || !OrderingOperatorOnIncompatibleFieldType.IsKnownType(latest.Type))
             {
-                return false;
+                return null;
             }
 
-            latestApiVersionMetadata = latest;
-            return true;
+            return (fieldReference, latest);
         }
 
         /// <summary>

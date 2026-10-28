@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     public sealed class OrderingOperatorOnIncompatibleFieldTypeInOldApiVersions : LinterRule<LeafCondition>
     {
         private const string RuleTitle = "Ordering Operator on Incompatible Field Type in Old API Versions";
-        private const string RuleDescription = "The field alias '{0}' is of type '{1}' in API versions '{2}' and cannot be ordered with the '{3}' operator against a value of type '{4}'. Requests that use these API versions fail evaluation, which implicitly denies the resource.";
+        private const string RuleDescription = "The field alias '{0}' cannot be ordered with the '{1}' operator against a value of type '{2}' in older API versions of the resource type: '{3}'. Requests that use these API versions fail evaluation, which implicitly denies the resource.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderingOperatorOnIncompatibleFieldTypeInOldApiVersions"/> class.
@@ -36,26 +36,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(LeafCondition expression, LinterContext context)
         {
-            if (!OrderingOperatorOnIncompatibleFieldType.TryGetLatestApiVersionMetadata(expression, out var fieldReference, out var latestApiVersionMetadata) ||
-                !OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, expression.Operator!.Value))
+            var match = OrderingOperatorOnIncompatibleFieldType.GetLatestApiVersionMetadata(expression);
+            if (match == null || !OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(match.Value.Latest.Type, expression.Operator!.Value))
             {
                 return Array.Empty<LinterOutput>();
             }
 
-            return fieldReference.ResourcePropertyMetadata
-                .Where(metadata => metadata != latestApiVersionMetadata &&
-                    metadata.Exists &&
+            var incompatibleApiVersions = match.Value.FieldReference.ResourcePropertyMetadata
+                .Where(metadata => metadata.Exists &&
                     OrderingOperatorOnIncompatibleFieldType.IsKnownType(metadata.Type) &&
                     !OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(metadata.Type, expression.Operator.Value))
-                .GroupBy(metadata => OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName(metadata.Type))
-                .Select(group => this.CreateWarning(
-                    expression.Operator,
-                    fieldReference.Identifier,
-                    group.Key,
-                    string.Join(", ", group.SelectMany(metadata => metadata.ApiVersions).Distinct().OrderBy(version => version, SuffixAwareApiVersionComparer.Instance)),
-                    expression.Operator.Name,
-                    OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(expression.Operator.Value)))
+                .SelectMany(metadata => metadata.ApiVersions)
+                .Distinct()
+                .OrderBy(version => version, SuffixAwareApiVersionComparer.Instance)
                 .ToArray();
+
+            if (incompatibleApiVersions.Length == 0)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[]
+            {
+                this.CreateWarning(
+                    expression.Operator,
+                    match.Value.FieldReference.Identifier,
+                    expression.Operator.Name,
+                    OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(expression.Operator.Value),
+                    string.Join(", ", incompatibleApiVersions)),
+            };
         }
     }
 }

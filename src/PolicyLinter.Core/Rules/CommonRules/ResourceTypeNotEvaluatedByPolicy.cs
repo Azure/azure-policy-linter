@@ -77,7 +77,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return expression.ReferencedResourceTypes
                 .Where(ResourceTypeNotEvaluatedByPolicy.IsNotEvaluated)
-                .OrderBy(resourceType => resourceType, StringComparer.OrdinalIgnoreCase)
                 .Select(resourceType => this.CreateError(expression, resourceType))
                 .ToArray();
         }
