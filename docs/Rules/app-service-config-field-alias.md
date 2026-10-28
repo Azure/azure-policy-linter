@@ -10,7 +10,7 @@ The policy checks App Service settings through `Microsoft.Web/sites/siteConfig.*
 
 ### Settings Changed Through Two Resources
 
-App Service settings can be set through the `siteConfig` property of the app in a `Microsoft.Web/sites` request, or through the app's `Microsoft.Web/sites/config` child resource. A policy that enforces on only one of these resource types doesn't apply to changes made through the other, and apps can still be changed to non-compliant settings.
+App Service settings can be set through the `siteConfig` property of the app in a `Microsoft.Web/sites` request, or through the app's `Microsoft.Web/sites/config` child resource. A policy that enforces on only one of these resource types doesn't apply to changes made through the other, and apps can still be changed to non-compliant settings. This applies to `config` field aliases that have a matching `siteConfig` alias; other config settings, such as authentication and logging, can't be set through `siteConfig`.
 
 ### Incorrect Enforcement
 

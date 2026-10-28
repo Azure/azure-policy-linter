@@ -1,7 +1,9 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
     using FluentAssertions;
+    using global::Azure.Deployments.ResourceMetadata.Offline;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Xunit;
@@ -11,6 +13,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     /// </summary>
     public class AppServiceConfigFieldAliasTests
     {
+        /// <summary>
+        /// The type metadata used for the tests.
+        /// </summary>
+        private static readonly ITypeMetadata TypeMetadata = new TypeMetadata(metadataProvider: new OfflineMetadataProvider(), aliasResolver: new AliasResolver());
+
         private static string Policy(string condition) => @"{
   ""properties"": {
     ""policyRule"": {
@@ -24,7 +31,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         {
             var linter = new PolicyLinter(
                 rules: new ILinterRule[] { new AppServiceConfigFieldAlias() },
-                metadata: new MockTypeMetadata());
+                metadata: AppServiceConfigFieldAliasTests.TypeMetadata);
 
             return linter.Lint(policyDefinition);
         }
@@ -85,6 +92,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("Microsoft.Web/sites/httpsOnly")]
+        [InlineData("Microsoft.Web/sites/config/siteAuthEnabled")]
+        [InlineData("Microsoft.Web/sites/slots/config/httpLogs.fileSystem.enabled")]
         [InlineData("type")]
         public void RuleTests_AppServiceConfigFieldAlias_OtherField(string field)
         {

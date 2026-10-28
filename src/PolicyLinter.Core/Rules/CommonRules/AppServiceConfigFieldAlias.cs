@@ -6,7 +6,9 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
+    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
@@ -21,12 +23,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleDescription =
             "The field alias '{0}' checks an App Service setting. These settings can be changed through both the app and its 'config' resource, and some 'siteConfig' properties are returned as null when reading an existing app. Enforce on both resource types and add an 'exists' condition on 'siteConfig' aliases.";
 
-        private static readonly string[] AliasPrefixes = new[]
+        /// <summary>
+        /// The 'siteConfig' field alias prefixes and the matching 'config' field alias prefixes.
+        /// </summary>
+        private static readonly (string SiteConfig, string Config)[] AliasPrefixes = new[]
         {
-            "Microsoft.Web/sites/siteConfig.",
-            "Microsoft.Web/sites/slots/siteConfig.",
-            "Microsoft.Web/sites/config/",
-            "Microsoft.Web/sites/slots/config/",
+            ("Microsoft.Web/sites/siteConfig.", "Microsoft.Web/sites/config/"),
+            ("Microsoft.Web/sites/slots/siteConfig.", "Microsoft.Web/sites/slots/config/"),
         };
 
         /// <summary>
@@ -52,7 +55,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     if (firstReference == null &&
                         node is Reference reference &&
                         reference.IsResolvedFieldReference() &&
-                        Array.Exists(AppServiceConfigFieldAlias.AliasPrefixes, prefix => reference.Identifier.StartsWithOrdinalInsensitively(prefix)))
+                        AppServiceConfigFieldAlias.IsSiteConfigSetting(alias: reference.Identifier, metadata: context.ResourceTypeMetadata))
                     {
                         firstReference = reference;
                     }
@@ -68,6 +71,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             return Array.Empty<LinterOutput>();
+        }
+
+        /// <summary>
+        /// Determines whether the alias is a 'siteConfig' alias, or a 'config' alias whose setting also has a 'siteConfig' alias.
+        /// Other config resources, such as authentication and logging settings, can't be set through 'siteConfig'.
+        /// </summary>
+        private static bool IsSiteConfigSetting(string alias, ITypeMetadata metadata)
+        {
+            return AppServiceConfigFieldAlias.AliasPrefixes.Any(prefixes =>
+                alias.StartsWithOrdinalInsensitively(prefixes.SiteConfig) ||
+                (alias.StartsWithOrdinalInsensitively(prefixes.Config) &&
+                    metadata.TryGetAliasPropertyMetadata(prefixes.SiteConfig + alias.Substring(prefixes.Config.Length), out var siteConfigMetadata) &&
+                    siteConfigMetadata.Length > 0));
         }
     }
 }

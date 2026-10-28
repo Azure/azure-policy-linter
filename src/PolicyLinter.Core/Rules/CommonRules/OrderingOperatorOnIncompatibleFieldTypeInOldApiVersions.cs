@@ -52,6 +52,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                     keySelector: metadata => metadata.ApiVersions.Max(comparer: SuffixAwareApiVersionComparer.Instance),
                     comparer: SuffixAwareApiVersionComparer.Instance);
 
+            // An incompatible type in the latest API version is a different, more severe issue.
+            if (latestApiVersionMetadata?.Exists != true ||
+                !OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, expression.Operator.Value))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             var incompatibleApiVersions = fieldReference.ResourcePropertyMetadata
                 .Where(metadata => metadata.Exists && !OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(metadata.Type, expression.Operator.Value))
                 .SelectMany(metadata => metadata.ApiVersions)
@@ -59,10 +66,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 .OrderBy(version => version, SuffixAwareApiVersionComparer.Instance)
                 .ToArray();
 
-            // An incompatible type in the latest API version is a different, more severe issue.
-            if (latestApiVersionMetadata?.Exists != true ||
-                !OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, expression.Operator.Value) ||
-                incompatibleApiVersions.Length == 0)
+            if (incompatibleApiVersions.Length == 0)
             {
                 return Array.Empty<LinterOutput>();
             }
