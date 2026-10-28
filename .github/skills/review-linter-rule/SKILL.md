@@ -61,6 +61,7 @@ Check every user-facing string (title, description format, doc body, suggestions
 - **Invented categorical nouns.** "Effect groups", "shapes", "buckets", "patterns" - terms that don't exist in Azure Policy documentation. Flag and propose either the existing taxonomy term or a prose description.
 - **Engine-mechanics digressions.** "More efficient", "the engine still performs pattern matching", "avoids extra allocations." The policy author doesn't care. Flag.
 - **Speculative-mistake explanations.** "Typically indicates a typo", "the author probably forgot to..." Don't speculate about author intent. Flag.
+- **Questioning the author's intent.** Suggestions like "if the policy is meant to do X instead, ..." Suggestions assume the policy expresses the author's intent. Flag.
 - **Harsh verdicts.** "Incorrectly cased", "wrong value", "invalid configuration." The author hasn't done anything wrong; the rule found a pattern. Flag.
 - **Branching descriptions.** Single description format string with "missing X" / "missing Y" / "missing X and Y" fragments. Should be one finding per problem. Flag.
 - **`Must` outside Error severity.** `Must` in class name, title, description, or doc with anything other than `Severity.Error`. Flag.

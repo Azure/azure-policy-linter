@@ -26,6 +26,8 @@ A rule does one specific check. If one idea covers multiple checks ("use paramet
 
 A rule does not need exhaustive coverage. Prefer a simple check with clear, documented gaps over complex analysis that attempts to cover every possible form of the problem.
 
+A rule that warns about the behavior of a construct (a field alias, an operator, a resource type) fires wherever the construct is used. It does not inspect the other conditions in the policy to guess whether the author already handled the behavior - the linter can't tell what a combination of conditions is meant to do.
+
 A rule has well-defined applicability and preconditions - it knows exactly when it should fire and when it shouldn't. For example, a rule ensuring that a policy with a parameterized effect includes `Disabled` in its allowed values must first check that the effect is parameterized, and exit early if it isn't. It should not also flag that the effect should be parameterized in the first place - that's a separate best practice, captured by a different rule.
 
 The same principle applies when an idea describes two finding flavors with different severities or different remediations - for example, an Error for a structural conflict and an Informational for an adjacent observation. Those are two rules, sharing a target. Each gets its own identifier, title, description, and doc. Users get clean filtering, severities stay mono-typed, and descriptions don't have to branch on which case fired.
@@ -35,6 +37,7 @@ The same principle applies when an idea describes two finding flavors with diffe
 Ideally, every finding should give the policy author something to do to address a concrete or potential issue with their policy.
 The rule should clearly articulate the issue, it's implications and possible remediations.
 When possible, the rule must provide a concrete fix or enhancement to the policy definition to address the issue.
+Suggestions assume the policy expresses what the author intended, and help them achieve it. Don't question the intent ("if the policy is meant to do X instead, ...").
 Rules that are more informational in nature (raising awareness to platform limitations, missing edge cases, etc) should be clear about what the author should do to mitigate them.
 In the rare cases where a rule is not actionable in any way (e.g. the policy is trying to manipulate free-form objects, which is something the language is bad at), it should also be made clear to the user there's nothing to be done.
 
