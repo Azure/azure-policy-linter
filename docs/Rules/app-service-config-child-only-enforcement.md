@@ -10,11 +10,9 @@ The policy is enforcing a rule on the `Microsoft.Web/sites/config` (or `Microsof
 
 ## Suggestions
 
-- Also enforce on `Microsoft.Web/sites` and check the matching `Microsoft.Web/sites/siteConfig.*` alias.
+- Also enforce on `Microsoft.Web/sites` and check the matching `Microsoft.Web/sites/siteConfig.*` alias, with an `exists` condition on it (see [Unguarded App Service Site Config Field Alias](unguarded-app-service-site-config-field-alias.md)).
 - You can do this in this policy, with an `anyOf` that has a branch for each resource type.
 - Alternatively, create a separate policy targeting `Microsoft.Web/sites`.
-
-See [Azure/azure-policy#342](https://github.com/Azure/azure-policy/issues/342) and [Azure/azure-policy#864](https://github.com/Azure/azure-policy/issues/864).
 
 ## Examples
 
@@ -47,6 +45,7 @@ See [Azure/azure-policy#342](https://github.com/Azure/azure-policy/issues/342) a
       {
         "allOf": [
           { "field": "type", "equals": "Microsoft.Web/sites" },
+          { "field": "Microsoft.Web/sites/siteConfig.ftpsState", "exists": true },
           { "field": "Microsoft.Web/sites/siteConfig.ftpsState", "equals": "AllAllowed" }
         ]
       }
