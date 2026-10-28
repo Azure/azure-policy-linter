@@ -220,7 +220,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 46,
                 Path: "properties.policyRule.if.less",
-                Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.dataDisks[*].diskSizeGB' is of type 'number' in the latest API version and cannot be ordered with the 'less' operator against a value of type 'string'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
+                Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.dataDisks[*].diskSizeGB' is of type 'integer' in the latest API version and cannot be ordered with the 'less' operator against a value of type 'string'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -294,7 +294,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 54,
                 Path: "properties.policyRule.if.less",
-                Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.dataDisks[*].diskSizeGB' is of type 'number' in the latest API version and cannot be ordered with the 'less' operator against a value of type 'date'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
+                Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.dataDisks[*].diskSizeGB' is of type 'integer' in the latest API version and cannot be ordered with the 'less' operator against a value of type 'date'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -444,7 +444,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 46,
                 Path: "properties.policyRule.if.less",
-                Description: "The field alias 'Microsoft.Sql/servers/databases/maxSizeBytes' is of type 'number' in the latest API version and cannot be ordered with the 'less' operator against a value of type 'string'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
+                Description: "The field alias 'Microsoft.Sql/servers/databases/maxSizeBytes' is of type 'integer' in the latest API version and cannot be ordered with the 'less' operator against a value of type 'string'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -519,7 +519,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 LineNumber: 8,
                 LinePosition: 39,
                 Path: "properties.policyRule.if.greater",
-                Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.dataDisks[*].diskSizeGB' is of type 'number' in the latest API version and cannot be ordered with the 'greater' operator against a value of type 'boolean'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
+                Description: "The field alias 'Microsoft.Compute/virtualMachines/storageProfile.dataDisks[*].diskSizeGB' is of type 'integer' in the latest API version and cannot be ordered with the 'greater' operator against a value of type 'boolean'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
 
             results.Should().ContainEquivalentOf(output);
         }
@@ -673,6 +673,82 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                       ""if"": {
                         ""field"": ""Microsoft.Test/resources/property"",
                         ""greater"": 5
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_OrderingOperatorOnIncompatibleFieldType_IntegerFieldAgainstDecimalNumber_ShouldFire()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new OrderingOperatorOnIncompatibleFieldType()
+                },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""Microsoft.Sql/servers/databases/maxSizeBytes"",
+                        ""greater"": 2.0
+                      },
+                      ""then"": {
+                        ""effect"": ""deny""
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(1);
+
+            var output = new LinterOutput(
+                RuleIdentifier: "ordering-operator-on-incompatible-field-type",
+                Title: "Ordering Operator on Incompatible Field Type",
+                Severity: Severity.Error,
+                Category: Category.ResourceFields,
+                LineNumber: 8,
+                LinePosition: 38,
+                Path: "properties.policyRule.if.greater",
+                Description: "The field alias 'Microsoft.Sql/servers/databases/maxSizeBytes' is of type 'integer' in the latest API version and cannot be ordered with the 'greater' operator against a value of type 'decimal number'. The comparison throws at evaluation, which fails the policy and implicitly denies the resource.");
+
+            results.Should().ContainEquivalentOf(output);
+        }
+
+        [Theory]
+        [InlineData("5")]
+        [InlineData("5.5")]
+        public void RuleTests_OrderingOperatorOnIncompatibleFieldType_NumberFieldAgainstAnyNumber_ShouldNotFire(string value)
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[]
+                {
+                    new OrderingOperatorOnIncompatibleFieldType()
+                },
+                metadata: new FixedTypeMetadata(type: "Number"));
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""mode"": ""Indexed"",
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""Microsoft.Test/resources/property"",
+                        ""greater"": " + value + @"
                       },
                       ""then"": {
                         ""effect"": ""deny""
