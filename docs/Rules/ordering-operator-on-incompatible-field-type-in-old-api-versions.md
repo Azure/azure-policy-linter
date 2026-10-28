@@ -13,7 +13,6 @@ The comparison rules are the same as in [Ordering Operator on Incompatible Field
 ## Suggestions
 
 - Convert the field with a template function in a `value` condition, so the comparison works with every API version. `float()` converts both numbers and numeric strings. See [Ordering Operator on Incompatible Field Type](ordering-operator-on-incompatible-field-type.md#suggestions) for the options and their limitations.
-- To find affected requests before enforcing, assign the policy with the `audit` effect and inspect the [activity logs](https://learn.microsoft.com/azure/azure-monitor/essentials/activity-log-schema#policy-category).
 
 ## Examples
 

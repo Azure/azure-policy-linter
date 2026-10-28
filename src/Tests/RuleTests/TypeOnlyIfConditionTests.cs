@@ -117,6 +117,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData(@"{ ""field"": ""location"", ""equals"": ""westus"" }")]
         [InlineData(@"{ ""value"": ""[field('name')]"", ""equals"": ""a"" }")]
         [InlineData(@"{ ""count"": { ""field"": ""Microsoft.Test/resources/array[*]"" }, ""greater"": 0 }")]
+        [InlineData(@"{ ""field"": ""type"", ""equals"": ""[field('tags.expectedType')]"" }")]
         public void RuleTests_TypeOnlyIfCondition_OtherCondition(string otherCondition)
         {
             var condition = @"{ ""allOf"": [ " + TypeOnlyIfConditionTests.TypeCondition + ", " + otherCondition + " ] }";

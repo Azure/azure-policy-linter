@@ -89,7 +89,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             {
                 Visit = node =>
                 {
-                    if (node is LeafCondition leaf && !"type".EqualsOrdinalInsensitively(leaf.Field?.FieldAccessorReference?.Identifier))
+                    if (node is LeafCondition leaf &&
+                        (!"type".EqualsOrdinalInsensitively(leaf.Field?.FieldAccessorReference?.Identifier) ||
+                            leaf.Operator!.LanguageExpressions.Any(expression => expression.References.Any(reference => reference.IsResolvedFieldReference()))))
                     {
                         checksOnlyType = false;
                     }
