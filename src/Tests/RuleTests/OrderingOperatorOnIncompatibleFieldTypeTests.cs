@@ -656,6 +656,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("Any")]
         [InlineData("NotSpecified")]
+        [InlineData("")]
         public void RuleTests_OrderingOperatorOnIncompatibleFieldType_UnknownMetadataType_ShouldNotFire(string fieldType)
         {
             var linter = new PolicyLinter(
