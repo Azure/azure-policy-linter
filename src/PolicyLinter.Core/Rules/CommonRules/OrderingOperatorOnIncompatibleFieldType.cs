@@ -30,7 +30,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <summary>
         /// The ordering operators, which throw at evaluation when their operand types don't match.
         /// </summary>
-        private static readonly OrdinalInsensitiveHashSet OrderingOperators = new OrdinalInsensitiveHashSet
+        internal static readonly OrdinalInsensitiveHashSet OrderingOperators = new OrdinalInsensitiveHashSet
         {
             "greater",
             "greaterOrEquals",
@@ -70,36 +70,18 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             if (latestApiVersionMetadata == null ||
                 !latestApiVersionMetadata.Exists ||
-                !OrderingOperatorOnIncompatibleFieldType.IsKnownType(latestApiVersionMetadata.Type))
+                OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, expression.Operator.Value))
             {
                 return Array.Empty<LinterOutput>();
             }
 
             var valueType = OrderingOperatorOnIncompatibleFieldType.ClassifyValue(expression.Operator.Value);
-            if (OrderingOperatorOnIncompatibleFieldType.IsOrderableWithValue(latestApiVersionMetadata.Type, valueType))
-            {
-                return Array.Empty<LinterOutput>();
-            }
-
-            var fieldTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyTypeName(latestApiVersionMetadata.Type);
             var valueTypeName = OrderingOperatorOnIncompatibleFieldType.FriendlyValueTypeName(valueType, expression.Operator.Value);
 
             return new[]
             {
-                this.CreateError(expression.Operator, fieldReference.Identifier, fieldTypeName, expression.Operator.Name, valueTypeName),
+                this.CreateError(expression.Operator, fieldReference.Identifier, latestApiVersionMetadata.Type.ToLowerInvariant(), expression.Operator.Name, valueTypeName),
             };
-        }
-
-        /// <summary>
-        /// Determines whether the alias data type is known. Unresolved, unspecified, or 'any' types can hold
-        /// values of any shape, so the rule can't decide their ordering compatibility and stays silent.
-        /// </summary>
-        /// <param name="type">The alias data type.</param>
-        private static bool IsKnownType(string type)
-        {
-            return !string.IsNullOrEmpty(type) &&
-                !type.Equals(AliasPathTokenType.NotSpecified.ToString(), StringComparison.OrdinalIgnoreCase) &&
-                !type.Equals(AliasPathTokenType.Any.ToString(), StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -108,8 +90,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         private enum ComparisonValueType
         {
-            /// <summary>A number (integer or float).</summary>
-            Numeric,
+            /// <summary>A whole number.</summary>
+            Integer,
+
+            /// <summary>A decimal number.</summary>
+            Float,
 
             /// <summary>A string that parses as an ISO 8601 date.</summary>
             Date,
@@ -123,28 +108,30 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
         /// <summary>
         /// Determines whether a field of the given data type can be ordered against the comparison value.
-        /// Azure Policy throws when the field's type doesn't match the comparison value's condition type.
+        /// Azure Policy throws when the field's value and the comparison value have different JSON types.
+        /// Unknown, unspecified, and 'any' field types can hold any value, so they're treated as orderable.
         /// </summary>
         /// <param name="fieldType">The field's alias data type.</param>
-        /// <param name="valueType">The comparison value's type.</param>
-        private static bool IsOrderableWithValue(string fieldType, ComparisonValueType valueType)
+        /// <param name="value">The literal comparison value.</param>
+        internal static bool IsOrderableWithValue(string fieldType, JToken value)
         {
-            if (fieldType.Equals(AliasPathTokenType.Integer.ToString(), StringComparison.OrdinalIgnoreCase) ||
-                fieldType.Equals(AliasPathTokenType.Number.ToString(), StringComparison.OrdinalIgnoreCase))
+            if (!Enum.TryParse<AliasPathTokenType>(fieldType, ignoreCase: true, out var type))
             {
-                // A numeric field orders only against a number; a string or date condition type throws.
-                return valueType == ComparisonValueType.Numeric;
+                return true;
             }
 
-            if (fieldType.Equals(AliasPathTokenType.String.ToString(), StringComparison.OrdinalIgnoreCase))
+            var valueType = OrderingOperatorOnIncompatibleFieldType.ClassifyValue(value);
+            return type switch
             {
-                // Dates are stored as strings, so a string field orders against a string or a date, but a
-                // number condition type throws.
-                return valueType is ComparisonValueType.String or ComparisonValueType.Date;
-            }
+                // An integer field holds a whole number, which throws against a decimal comparison value.
+                AliasPathTokenType.Integer => valueType == ComparisonValueType.Integer,
+                AliasPathTokenType.Number => valueType is ComparisonValueType.Integer or ComparisonValueType.Float,
 
-            // Boolean, object, and array fields can't be ordered against any value.
-            return false;
+                // Dates are stored as strings, so a string field orders against a string or a date.
+                AliasPathTokenType.String => valueType is ComparisonValueType.String or ComparisonValueType.Date,
+                AliasPathTokenType.Boolean or AliasPathTokenType.Object or AliasPathTokenType.Array => false,
+                _ => true,
+            };
         }
 
         /// <summary>
@@ -153,9 +140,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <param name="value">The comparison value.</param>
         private static ComparisonValueType ClassifyValue(JToken value)
         {
-            if (value.Type is JTokenType.Integer or JTokenType.Float)
+            if (value.Type == JTokenType.Integer)
             {
-                return ComparisonValueType.Numeric;
+                return ComparisonValueType.Integer;
+            }
+
+            if (value.Type == JTokenType.Float)
+            {
+                return ComparisonValueType.Float;
             }
 
             if (value.Type == JTokenType.String)
@@ -169,18 +161,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <summary>
-        /// Maps an alias data type to a name for the failure message.
-        /// </summary>
-        /// <param name="type">The alias data type.</param>
-        private static string FriendlyTypeName(string type)
-        {
-            return type.Equals(AliasPathTokenType.Integer.ToString(), StringComparison.OrdinalIgnoreCase) ||
-                type.Equals(AliasPathTokenType.Number.ToString(), StringComparison.OrdinalIgnoreCase)
-                    ? "number"
-                    : type.ToLowerInvariant();
-        }
-
-        /// <summary>
         /// Maps a literal comparison value to a type name for the failure message.
         /// </summary>
         /// <param name="valueType">The comparison value's classified type.</param>
@@ -189,7 +169,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             return valueType switch
             {
-                ComparisonValueType.Numeric => "number",
+                ComparisonValueType.Integer => "number",
+                ComparisonValueType.Float => "decimal number",
                 ComparisonValueType.Date => "date",
                 ComparisonValueType.String => "string",
                 _ => value.Type.ToString().ToLowerInvariant(),

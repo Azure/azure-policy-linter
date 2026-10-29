@@ -104,6 +104,7 @@ Renames after this step are expensive - they ripple across the cascade audit.
   - Recursive expression traversal instead of using visitors
   - Re-inventing common helper methods identifying common policy patterns (e.g. `HasSimpleParameterizedValue`).
 - Crazy over the top implementation to achieve a perfect linter rule coverage.
+- Inspecting other conditions in the policy to decide whether the author already handled the issue (e.g. staying silent when an `exists` guard or another field check is present). Detect the construct and explain its behavior.
 - The above typically comes with attempts to implement (or re-implement) things that should either be in the core linter as a utility method, or things that shouldn't be in the linter at all.
 - Writing linter rules that target parent expressions and then implement additional tree traversal and parsing.
   - e.g. a rule that targets field references but instead of targeting `Reference` expressions, targets `Condition` expressions and traverses each condition to extract all references.

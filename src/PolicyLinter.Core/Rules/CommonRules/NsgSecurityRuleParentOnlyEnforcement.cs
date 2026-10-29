@@ -6,7 +6,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
     using System;
-    using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
@@ -52,7 +51,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             var resourceTypes = expression.If.ReferencedResourceTypes;
 
-            if (NsgSecurityRuleParentOnlyEnforcement.CanEnforce(effect: expression.Then.Effect, context: context) &&
+            if (expression.Then.CanHaveEffect(context: context, effects: NsgSecurityRuleParentOnlyEnforcement.EnforcementEffects) &&
                 resourceTypes.Contains(NsgSecurityRuleParentOnlyEnforcement.NsgType) &&
                 !resourceTypes.Contains(NsgSecurityRuleParentOnlyEnforcement.SecurityRuleType) &&
                 NsgSecurityRuleParentOnlyEnforcement.ReferencesSecurityRulesArray(ifCondition: expression.If))
@@ -66,20 +65,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             return Array.Empty<LinterOutput>();
         }
 
-        /// <summary>
-        /// Determines whether the effect is an enforcement effect, or a parameter whose allowedValues include one.
-        /// </summary>
-        private static bool CanEnforce(Property effect, LinterContext context)
-        {
-            if (effect.HasLiteralValue)
-            {
-                return NsgSecurityRuleParentOnlyEnforcement.EnforcementEffects.Contains(effect.Value.ToString());
-            }
-
-            return effect.HasSimpleParameterizedValue(context: context, out _, out var allowedValues, out _) &&
-                allowedValues != null &&
-                allowedValues.Any(value => NsgSecurityRuleParentOnlyEnforcement.EnforcementEffects.Contains(value));
-        }
 
         /// <summary>
         /// Determines whether the condition references a field of the parent NSG's security rules array.

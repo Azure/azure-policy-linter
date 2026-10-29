@@ -12,6 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
@@ -56,6 +57,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 visitor.Visit(this);
                 this.Effect.Visit(visitor);
             }
+        }
+
+        /// <summary>
+        /// Determines whether the policy can have one of the given effects: the effect is one of them, or is a simple
+        /// parameter reference whose allowedValues include one of them. A parameter without allowedValues returns false.
+        /// </summary>
+        /// <param name="context">The linter rule evaluation context.</param>
+        /// <param name="effects">The effects to look for, compared by the set's comparer.</param>
+        public bool CanHaveEffect(LinterContext context, ISet<string> effects)
+        {
+            if (this.Effect.HasLiteralValue)
+            {
+                return effects.Contains(this.Effect.Value.ToString());
+            }
+
+            return this.Effect.HasSimpleParameterizedValue(context: context, out _, out var allowedValues, out _) &&
+                allowedValues != null &&
+                allowedValues.Any(effects.Contains);
         }
     }
 }
