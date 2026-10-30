@@ -37,5 +37,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
                 new AdjustToUniversalIsoDateTimeConverter()
             }
         };
+
+        /// <summary>
+        /// A serializer using <see cref="Settings"/>. Use it to convert already-loaded tokens (e.g. effect details) to parsing objects.
+        /// </summary>
+        public static readonly JsonSerializer Serializer = JsonSerializer.Create(PolicySerializerSettings.Settings);
     }
 }

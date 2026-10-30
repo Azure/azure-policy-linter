@@ -121,6 +121,46 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
     {
         [JsonProperty(Required = Required.Always)]
         public GenericObjectProperty<string>? Effect { get; set; }
+
+        /// <summary>
+        /// The raw effect details. Kept as a token because the shape depends on the effect, and policies with
+        /// a 'disabled' effect may carry any details. Object-shaped details convert to <see cref="EffectDetailsObject"/>,
+        /// array-shaped (append) details convert to an array of <see cref="FieldOperationObject"/>.
+        /// </summary>
+        public GenericObjectProperty<JToken>? Details { get; set; }
+    }
+
+    /// <summary>
+    /// The union of the members of all object-shaped control-plane effect details (auditIfNotExists, deployIfNotExists,
+    /// modify, denyAction, manual). Members are tokens so that unexpected value types don't fail the conversion.
+    /// </summary>
+    public class EffectDetailsObject
+    {
+        public GenericObjectProperty<JToken>? Type { get; set; }
+        public GenericObjectProperty<JToken>? Name { get; set; }
+        public GenericObjectProperty<JToken>? ResourceGroupName { get; set; }
+        public GenericObjectProperty<JToken>? ExistenceScope { get; set; }
+        public GenericObjectProperty<JToken>? EvaluationDelay { get; set; }
+        public GenericObjectProperty<ConditionObject>? ExistenceCondition { get; set; }
+        public GenericObjectProperty<JToken>? DeploymentScope { get; set; }
+        public GenericObjectProperty<JToken>? Deployment { get; set; }
+        public GenericObjectProperty<JToken>? RoleDefinitionIds { get; set; }
+        public GenericObjectProperty<JToken>? ConflictEffect { get; set; }
+        public GenericObjectProperty<GenericObjectProperty<FieldOperationObject>[]>? Operations { get; set; }
+        public GenericObjectProperty<JToken>? ActionNames { get; set; }
+        public GenericObjectProperty<JToken>? CascadeBehaviors { get; set; }
+        public GenericObjectProperty<JToken>? DefaultState { get; set; }
+    }
+
+    /// <summary>
+    /// A modify operation or an append entry.
+    /// </summary>
+    public class FieldOperationObject
+    {
+        public GenericObjectProperty<JToken>? Operation { get; set; }
+        public GenericObjectProperty<JToken>? Field { get; set; }
+        public GenericObjectProperty<JToken>? Value { get; set; }
+        public GenericObjectProperty<JToken>? Condition { get; set; }
     }
 
     public class ExternalEvaluationEnforcementSettingsObject

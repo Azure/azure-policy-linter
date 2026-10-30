@@ -13,6 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.WindowsAzure.ResourceStack.Common.Json;
+    using Newtonsoft.Json.Linq;
     using Xunit;
 
     /// <summary>
@@ -232,6 +233,149 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             effect.Should().NotBeNull();
             effect.LineNumber.Should().Be(52);
             effect.LinePosition.Should().Be(52);
+        }
+
+        [Fact]
+        public void LinterTests_Parsing_IfNotExistsEffectDetailsHaveLineInfo()
+        {
+            var policy = @"
+{
+    'properties': {
+        'policyRule': {
+            'if': {
+                'field': 'type',
+                'equals': 'Microsoft.Sql/servers/databases'
+            },
+            'then': {
+                'effect': 'deployIfNotExists',
+                'details': {
+                    'type': 'Microsoft.Sql/servers/databases/transparentDataEncryption',
+                    'name': 'current',
+                    'existenceCondition': {
+                        'allOf': [
+                            {
+                                'field': 'Microsoft.Sql/transparentDataEncryption.status',
+                                'equals': 'Enabled'
+                            }
+                        ]
+                    },
+                    'roleDefinitionIds': [ '/providers/Microsoft.Authorization/roleDefinitions/abc' ],
+                    'deployment': {
+                        'properties': {
+                            'mode': 'incremental',
+                            'template': {},
+                            'parameters': {
+                                'fullDbName': { 'value': '[field(\'fullName\')]' }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}";
+
+            var details = ParsingTests.ParseDetails(policy);
+            details.LineNumber.Should().Be(11);
+
+            var detailsObject = details.Value.ToObject<EffectDetailsObject>(PolicySerializerSettings.Serializer);
+            detailsObject.Type.LineNumber.Should().Be(12);
+            detailsObject.Type.Value.ToString().Should().Be("Microsoft.Sql/servers/databases/transparentDataEncryption");
+            detailsObject.Name.LineNumber.Should().Be(13);
+            detailsObject.ExistenceCondition.LineNumber.Should().Be(14);
+
+            var existenceLeaf = detailsObject.ExistenceCondition.Value.AllOf.Value[0];
+            existenceLeaf.LineNumber.Should().Be(16);
+            existenceLeaf.Value.Field.LineNumber.Should().Be(17);
+            existenceLeaf.Value.Field.Value.Should().Be("Microsoft.Sql/transparentDataEncryption.status");
+            existenceLeaf.Value.EqualsOperator.LineNumber.Should().Be(18);
+
+            detailsObject.RoleDefinitionIds.LineNumber.Should().Be(22);
+            detailsObject.Deployment.LineNumber.Should().Be(23);
+            detailsObject.Operations.Should().BeNull();
+        }
+
+        [Fact]
+        public void LinterTests_Parsing_ModifyEffectDetailsHaveLineInfo()
+        {
+            var policy = @"
+{
+    'properties': {
+        'policyRule': {
+            'if': {
+                'field': 'type',
+                'equals': 'Microsoft.Storage/storageAccounts'
+            },
+            'then': {
+                'effect': '[parameters(\'effect\')]',
+                'details': {
+                    'roleDefinitionIds': [ '/providers/Microsoft.Authorization/roleDefinitions/abc' ],
+                    'conflictEffect': 'audit',
+                    'operations': [
+                        {
+                            'condition': '[greaterOrEquals(requestContext().apiVersion, \'2019-04-01\')]',
+                            'operation': 'addOrReplace',
+                            'field': 'Microsoft.Storage/storageAccounts/allowBlobPublicAccess',
+                            'value': false
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}";
+
+            var detailsObject = ParsingTests.ParseDetails(policy).Value.ToObject<EffectDetailsObject>(PolicySerializerSettings.Serializer);
+            detailsObject.RoleDefinitionIds.LineNumber.Should().Be(12);
+            detailsObject.ConflictEffect.LineNumber.Should().Be(13);
+            detailsObject.Operations.LineNumber.Should().Be(14);
+
+            var operation = detailsObject.Operations.Value[0];
+            operation.LineNumber.Should().Be(15);
+            operation.Value.Condition.LineNumber.Should().Be(16);
+            operation.Value.Operation.LineNumber.Should().Be(17);
+            operation.Value.Field.LineNumber.Should().Be(18);
+            operation.Value.Value.LineNumber.Should().Be(19);
+            operation.Value.Value.Value.Type.Should().Be(JTokenType.Boolean);
+        }
+
+        [Fact]
+        public void LinterTests_Parsing_AppendEffectDetailsHaveLineInfo()
+        {
+            var policy = @"
+{
+    'properties': {
+        'policyRule': {
+            'if': {
+                'field': 'type',
+                'equals': 'Microsoft.Storage/storageAccounts'
+            },
+            'then': {
+                'effect': 'append',
+                'details': [
+                    {
+                        'field': 'Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]',
+                        'value': { 'value': '40.40.40.40', 'action': 'Allow' }
+                    }
+                ]
+            }
+        }
+    }
+}";
+
+            var entries = ParsingTests.ParseDetails(policy).Value.ToObject<GenericObjectProperty<FieldOperationObject>[]>(PolicySerializerSettings.Serializer);
+            entries.Should().HaveCount(1);
+            entries[0].LineNumber.Should().Be(12);
+            entries[0].Value.Field.LineNumber.Should().Be(13);
+            entries[0].Value.Value.LineNumber.Should().Be(14);
+            entries[0].Value.Value.Value.Type.Should().Be(JTokenType.Object);
+        }
+
+        private static GenericObjectProperty<JToken> ParseDetails(string policy)
+        {
+            var details = policy.FromJson<PolicyDefinitionObject>(settings: PolicySerializerSettings.Settings).Properties.Value.PolicyRule.Value.Then.Value.Details;
+            details.Should().NotBeNull();
+            return details;
         }
 
         [Fact]
