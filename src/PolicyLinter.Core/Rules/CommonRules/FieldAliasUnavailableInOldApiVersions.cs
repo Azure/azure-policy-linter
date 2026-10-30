@@ -35,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            // The existence condition reads the stored related resource, not a request that may use an old API version.
+            // Field accessors in the existence condition read the stored related resource, not a request that may use an old API version. Field functions in it are skipped too.
             if (expression.IsInExistenceCondition())
             {
                 return Array.Empty<LinterOutput>();

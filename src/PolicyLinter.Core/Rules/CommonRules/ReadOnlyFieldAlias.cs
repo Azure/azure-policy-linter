@@ -35,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            // The existence condition reads the stored related resource, where read-only properties are set.
+            // Field accessors in the existence condition read the stored related resource, where read-only properties are set. Field functions in it are skipped too.
             if (expression.IsInExistenceCondition())
             {
                 return Array.Empty<LinterOutput>();

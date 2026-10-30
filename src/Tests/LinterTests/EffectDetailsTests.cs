@@ -41,6 +41,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'field': 'name' } }")]
         [InlineData("{ 'operations': [ { 'operation': 'add', 'field': [ 'tags.a' ] } ] }")]
         [InlineData("{ 'operations': 'add' }")]
+        [InlineData("{ 'operations': [ null ] }")]
         [InlineData("{ 'type': '[concat(]' }")]
         [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'allOf': [ null ] } }")]
         [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'count': { 'field': '[parameters(\\'x\\')]' }, 'equals': 0 } }")]

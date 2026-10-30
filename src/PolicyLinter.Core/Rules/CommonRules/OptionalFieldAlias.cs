@@ -35,7 +35,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
-            // The existence condition reads the stored related resource, and a write target is added when missing. Neither depends on the request payload.
+            // Field accessors in the existence condition read the stored related resource, and a write target is not evaluated against the request,
+            // so the guidance about properties missing from requests doesn't apply. Field functions in the existence condition are skipped too.
             if (expression.IsInExistenceCondition() || expression.FindAncestor<FieldOperation>()?.Field?.FieldAccessorReference == expression)
             {
                 return Array.Empty<LinterOutput>();
