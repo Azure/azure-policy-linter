@@ -104,6 +104,36 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
         }
 
+        /// <summary>
+        /// Creates a property, or returns null when the property is absent in the policy.
+        /// </summary>
+        /// <param name="property">The parsed property.</param>
+        /// <param name="name">The property name.</param>
+        /// <param name="parent">The parent of the property.</param>
+        /// <param name="typeMetadata">The type metadata.</param>
+        /// <param name="isFieldAccessor">Whether the property value represents a field accessor.</param>
+        /// <param name="parentPath">The path of the parent. Defaults to the path of <paramref name="parent"/>.</param>
+        internal static Property? CreateOptional(
+            GenericObjectProperty<JToken>? property,
+            string name,
+            PolicyExpression parent,
+            ITypeMetadata typeMetadata,
+            bool isFieldAccessor = false,
+            ImmutableArray<string>? parentPath = null)
+        {
+            return property == null
+                ? null
+                : new Property(
+                    name: name,
+                    value: property.Value,
+                    jTokenMetadata: property,
+                    isFieldAccessor: isFieldAccessor,
+                    parentPath: parentPath ?? parent.PathSegments,
+                    parent: parent,
+                    countExpressionScopes: new Stack<CountExpressionScope>(),
+                    typeMetadata: typeMetadata);
+        }
+
         /// <inheritdoc/>
         public override void Visit(PolicyExpressionVisitor visitor)
         {

@@ -37,8 +37,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent,
             ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, path, parent)
         {
-            this.ActionNames = details.Value.ActionNames.CreateProperty(name: "actionNames", parent: this, typeMetadata: typeMetadata);
-            this.CascadeBehaviors = details.Value.CascadeBehaviors.CreateProperty(name: "cascadeBehaviors", parent: this, typeMetadata: typeMetadata);
+            this.ActionNames = Property.CreateOptional(property: details.Value.ActionNames, name: "actionNames", parent: this, typeMetadata: typeMetadata);
+            this.CascadeBehaviors = Property.CreateOptional(property: details.Value.CascadeBehaviors, name: "cascadeBehaviors", parent: this, typeMetadata: typeMetadata);
         }
 
         /// <inheritdoc/>

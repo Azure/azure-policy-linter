@@ -53,10 +53,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 throw new ArgumentNullException(nameof(operation), "Modify operation cannot be null.");
             }
 
-            this.Operation = operation.Value.Operation.CreateProperty(name: "operation", parent: this, typeMetadata: typeMetadata);
-            this.Field = operation.Value.Field.CreateProperty(name: "field", parent: this, typeMetadata: typeMetadata, isFieldAccessor: true);
-            this.Value = operation.Value.Value.CreateProperty(name: "value", parent: this, typeMetadata: typeMetadata);
-            this.Condition = operation.Value.Condition.CreateProperty(name: "condition", parent: this, typeMetadata: typeMetadata);
+            this.Operation = Property.CreateOptional(property: operation.Value.Operation, name: "operation", parent: this, typeMetadata: typeMetadata);
+            this.Field = Property.CreateOptional(property: operation.Value.Field, name: "field", parent: this, typeMetadata: typeMetadata, isFieldAccessor: true);
+            this.Value = Property.CreateOptional(property: operation.Value.Value, name: "value", parent: this, typeMetadata: typeMetadata);
+            this.Condition = Property.CreateOptional(property: operation.Value.Condition, name: "condition", parent: this, typeMetadata: typeMetadata);
         }
 
         /// <inheritdoc/>

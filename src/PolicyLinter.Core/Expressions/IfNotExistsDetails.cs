@@ -83,13 +83,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, path, parent)
         {
             var value = details.Value;
-            this.Type = value.Type.CreateProperty(name: "type", parent: this, typeMetadata: typeMetadata);
-            this.Name = value.Name.CreateProperty(name: "name", parent: this, typeMetadata: typeMetadata);
-            this.ResourceGroupName = value.ResourceGroupName.CreateProperty(name: "resourceGroupName", parent: this, typeMetadata: typeMetadata);
-            this.ExistenceScope = value.ExistenceScope.CreateProperty(name: "existenceScope", parent: this, typeMetadata: typeMetadata);
-            this.EvaluationDelay = value.EvaluationDelay.CreateProperty(name: "evaluationDelay", parent: this, typeMetadata: typeMetadata);
-            this.RoleDefinitionIds = value.RoleDefinitionIds.CreateProperty(name: "roleDefinitionIds", parent: this, typeMetadata: typeMetadata);
-            this.DeploymentScope = value.DeploymentScope.CreateProperty(name: "deploymentScope", parent: this, typeMetadata: typeMetadata);
+            this.Type = Property.CreateOptional(property: value.Type, name: "type", parent: this, typeMetadata: typeMetadata);
+            this.Name = Property.CreateOptional(property: value.Name, name: "name", parent: this, typeMetadata: typeMetadata);
+            this.ResourceGroupName = Property.CreateOptional(property: value.ResourceGroupName, name: "resourceGroupName", parent: this, typeMetadata: typeMetadata);
+            this.ExistenceScope = Property.CreateOptional(property: value.ExistenceScope, name: "existenceScope", parent: this, typeMetadata: typeMetadata);
+            this.EvaluationDelay = Property.CreateOptional(property: value.EvaluationDelay, name: "evaluationDelay", parent: this, typeMetadata: typeMetadata);
+            this.RoleDefinitionIds = Property.CreateOptional(property: value.RoleDefinitionIds, name: "roleDefinitionIds", parent: this, typeMetadata: typeMetadata);
+            this.DeploymentScope = Property.CreateOptional(property: value.DeploymentScope, name: "deploymentScope", parent: this, typeMetadata: typeMetadata);
 
             this.ExistenceCondition = value.ExistenceCondition?.CreateCondition(
                 conditionPath: this.PathSegments.Add("existenceCondition"),
@@ -100,13 +100,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Deployment = value.Deployment?.Value;
             var deploymentProperties = (this.Deployment as JObject)?.GetValue(propertyName: "properties", comparison: StringComparison.OrdinalIgnoreCase);
             var deploymentParameters = (deploymentProperties as JObject)?.GetValue(propertyName: "parameters", comparison: StringComparison.OrdinalIgnoreCase);
-            this.DeploymentParameters = deploymentParameters?
-                .ToObject<GenericObjectProperty<JToken>>(jsonSerializer: PolicySerializerSettings.Serializer)
-                .CreateProperty(
-                    name: "parameters",
-                    parent: this,
-                    typeMetadata: typeMetadata,
-                    parentPath: this.PathSegments.Add("deployment").Add("properties"));
+            this.DeploymentParameters = Property.CreateOptional(
+                property: deploymentParameters?.ToObject<GenericObjectProperty<JToken>>(jsonSerializer: PolicySerializerSettings.Serializer),
+                name: "parameters",
+                parent: this,
+                typeMetadata: typeMetadata,
+                parentPath: this.PathSegments.Add("deployment").Add("properties"));
         }
 
         /// <inheritdoc/>

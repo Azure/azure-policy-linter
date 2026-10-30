@@ -44,8 +44,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent,
             ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, path, parent)
         {
-            this.RoleDefinitionIds = details.Value.RoleDefinitionIds.CreateProperty(name: "roleDefinitionIds", parent: this, typeMetadata: typeMetadata);
-            this.ConflictEffect = details.Value.ConflictEffect.CreateProperty(name: "conflictEffect", parent: this, typeMetadata: typeMetadata);
+            this.RoleDefinitionIds = Property.CreateOptional(property: details.Value.RoleDefinitionIds, name: "roleDefinitionIds", parent: this, typeMetadata: typeMetadata);
+            this.ConflictEffect = Property.CreateOptional(property: details.Value.ConflictEffect, name: "conflictEffect", parent: this, typeMetadata: typeMetadata);
             this.Operations = (details.Value.Operations?.Value ?? Array.Empty<GenericObjectProperty<ModifyOperationObject>>())
                 .Select((operation, index) => new ModifyOperation(
                     operation: operation,

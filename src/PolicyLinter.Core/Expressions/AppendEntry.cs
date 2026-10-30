@@ -43,8 +43,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 throw new ArgumentNullException(nameof(entry), "Append entry cannot be null.");
             }
 
-            this.Field = entry.Value.Field.CreateProperty(name: "field", parent: this, typeMetadata: typeMetadata, isFieldAccessor: true);
-            this.Value = entry.Value.Value.CreateProperty(name: "value", parent: this, typeMetadata: typeMetadata);
+            this.Field = Property.CreateOptional(property: entry.Value.Field, name: "field", parent: this, typeMetadata: typeMetadata, isFieldAccessor: true);
+            this.Value = Property.CreateOptional(property: entry.Value.Value, name: "value", parent: this, typeMetadata: typeMetadata);
         }
 
         /// <inheritdoc/>

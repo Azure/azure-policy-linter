@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent,
             ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, path, parent)
         {
-            this.DefaultState = details.Value.DefaultState.CreateProperty(name: "defaultState", parent: this, typeMetadata: typeMetadata);
+            this.DefaultState = Property.CreateOptional(property: details.Value.DefaultState, name: "defaultState", parent: this, typeMetadata: typeMetadata);
         }
 
         /// <inheritdoc/>
