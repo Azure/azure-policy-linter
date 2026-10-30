@@ -5,6 +5,7 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using FluentAssertions;
@@ -65,20 +66,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Theory]
-        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'field': 'name' } }", EffectDetailsKind.IfNotExists)]
-        [InlineData("{ 'operations': [ { 'operation': 'add', 'field': [ 'tags.a' ] } ] }", EffectDetailsKind.Modify)]
-        [InlineData("{ 'operations': 'add' }", EffectDetailsKind.Modify)]
-        [InlineData("{ 'operations': [ null ] }", EffectDetailsKind.Modify)]
-        [InlineData("[ null ]", EffectDetailsKind.Append)]
-        [InlineData("{ 'type': '[concat(]' }", EffectDetailsKind.IfNotExists)]
-        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'allOf': [ null ] } }", EffectDetailsKind.IfNotExists)]
-        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'count': { 'field': '[parameters(\\'x\\')]' }, 'equals': 0 } }", EffectDetailsKind.IfNotExists)]
-        public void EffectDetails_MalformedDetailsKeepKindOnly(string details, EffectDetailsKind expectedKind)
+        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'field': 'name' } }")]
+        [InlineData("{ 'operations': [ { 'operation': 'add', 'field': [ 'tags.a' ] } ] }")]
+        [InlineData("{ 'operations': [ null ] }")]
+        [InlineData("[ null ]")]
+        [InlineData("{ 'type': '[concat(]' }")]
+        public void EffectDetails_MalformedDetailsThrow(string details)
         {
-            var effectDetails = EffectDetailsTests.CreateThen(details: details).Details;
+            Action act = () => EffectDetailsTests.CreateThen(details: details);
 
-            effectDetails.Kind.Should().Be(expectedKind);
-            EffectDetailsTests.Collect<PolicyExpression>(expression: effectDetails).Should().Equal(effectDetails);
+            act.Should().Throw<Exception>();
         }
 
         [Fact]
