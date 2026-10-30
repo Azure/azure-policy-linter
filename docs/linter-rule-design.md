@@ -28,6 +28,8 @@ A rule does not need exhaustive coverage. Prefer a simple check with clear, docu
 
 A rule that warns about the behavior of a construct (a field alias, an operator, a resource type) fires wherever the construct is used. It does not inspect the other conditions in the policy to guess whether the author already handled the behavior - the linter can't tell what a combination of conditions is meant to do.
 
+"Wherever the construct is used" includes the effect details. Conditions, field references and expressions also appear in the existence condition, modify and append operations, and deployment parameters. Check that the rule's reasoning holds there too, and skip the locations where it doesn't. For example, a rule about properties missing from incoming requests doesn't apply to the existence condition, which reads stored resources.
+
 A rule has well-defined applicability and preconditions - it knows exactly when it should fire and when it shouldn't. For example, a rule ensuring that a policy with a parameterized effect includes `Disabled` in its allowed values must first check that the effect is parameterized, and exit early if it isn't. It should not also flag that the effect should be parameterized in the first place - that's a separate best practice, captured by a different rule.
 
 The same principle applies when an idea describes two finding flavors with different severities or different remediations - for example, an Error for a structural conflict and an Informational for an adjacent observation. Those are two rules, sharing a target. Each gets its own identifier, title, description, and doc. Users get clean filtering, severities stay mono-typed, and descriptions don't have to branch on which case fired.

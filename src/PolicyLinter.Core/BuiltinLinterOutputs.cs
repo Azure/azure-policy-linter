@@ -73,19 +73,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core
         }
 
         /// <summary>
-        /// The linter doesn't currently support evaluating effect details.
-        /// </summary>
-        public static LinterOutput EffectDetailsNotSupported()
-        {
-            return new LinterOutput(
-                RuleIdentifier: "system-rule",
-                Title: "Effect Details Not Supported",
-                Severity: Severity.Warning,
-                Category: Category.Linter,
-                Description: $"The linter doesn't currently support evaluating effect details");
-        }
-
-        /// <summary>
         /// Creates a linter output indicating that a file could not be found.
         /// </summary>
         /// <param name="filePath">The file path that was not found.</param>

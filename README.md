@@ -90,7 +90,7 @@ The exit code indicates whether the linter successfully performed the requested 
 ## Known gaps and issues
 - No support for the more obscure leaf expressions like `source`.
 - No support for data-plane policies.
-- No support for effect details.
+- Effect details are only modeled for the control-plane effects (append, modify, auditIfNotExists, deployIfNotExists, denyAction, manual). The template of a deployIfNotExists deployment isn't linted.
 
 ## Documentation
 
