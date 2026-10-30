@@ -42,6 +42,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("{ 'operations': [ { 'operation': 'add', 'field': [ 'tags.a' ] } ] }")]
         [InlineData("{ 'operations': 'add' }")]
         [InlineData("{ 'type': '[concat(]' }")]
+        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'allOf': [ null ] } }")]
+        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'count': { 'field': '[parameters(\\'x\\')]' }, 'equals': 0 } }")]
         public void EffectDetails_UnknownOrMalformedDetailsAreNotModeled(string details)
         {
             EffectDetailsTests.CreateThen(details: details).Details.Should().BeNull();
@@ -117,6 +119,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             parameterName.Should().Be("env");
             operation.Condition.LanguageExpressions.Should().ContainSingle();
             then.Details.RoleDefinitionIds.LineNumber.Should().Be(11);
+            EffectDetailsTests.Collect<Property>(expression: then.Details).Should().Contain(new[] { operation.Operation, operation.Field, operation.Value, operation.Condition });
         }
 
         [Fact]

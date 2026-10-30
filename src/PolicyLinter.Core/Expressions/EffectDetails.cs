@@ -9,11 +9,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
-    using global::Azure.Deployments.Core.Exceptions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
-    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -159,7 +157,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 return new EffectDetails(kind: kind, details: details, parentPath: parentPath, parent: parent, typeMetadata: typeMetadata);
             }
-            catch (Exception ex) when (ex is JsonException || ex is ArgumentException || ex is ExpressionException)
+            catch (Exception)
             {
                 return null;
             }
@@ -255,29 +253,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
             var detailsObject = details.Value.ToObject<EffectDetailsObject>(jsonSerializer: PolicySerializerSettings.Serializer)!;
 
-            Property? CreateProperty(string name, GenericObjectProperty<JToken>? property, ImmutableArray<string> propertyParentPath) => property == null
+            Property? CreateProperty(string name, GenericObjectProperty<JToken>? property, ImmutableArray<string>? propertyParentPath = null) => property == null
                 ? null
                 : new Property(
                     name: name,
                     value: property.Value,
                     jTokenMetadata: property,
                     isFieldAccessor: false,
-                    parentPath: propertyParentPath,
+                    parentPath: propertyParentPath ?? this.PathSegments,
                     parent: this,
                     countExpressionScopes: new Stack<CountExpressionScope>(),
                     typeMetadata: typeMetadata);
 
-            this.Type = CreateProperty(name: "type", property: detailsObject.Type, propertyParentPath: this.PathSegments);
-            this.Name = CreateProperty(name: "name", property: detailsObject.Name, propertyParentPath: this.PathSegments);
-            this.ResourceGroupName = CreateProperty(name: "resourceGroupName", property: detailsObject.ResourceGroupName, propertyParentPath: this.PathSegments);
-            this.ExistenceScope = CreateProperty(name: "existenceScope", property: detailsObject.ExistenceScope, propertyParentPath: this.PathSegments);
-            this.EvaluationDelay = CreateProperty(name: "evaluationDelay", property: detailsObject.EvaluationDelay, propertyParentPath: this.PathSegments);
-            this.DeploymentScope = CreateProperty(name: "deploymentScope", property: detailsObject.DeploymentScope, propertyParentPath: this.PathSegments);
-            this.RoleDefinitionIds = CreateProperty(name: "roleDefinitionIds", property: detailsObject.RoleDefinitionIds, propertyParentPath: this.PathSegments);
-            this.ConflictEffect = CreateProperty(name: "conflictEffect", property: detailsObject.ConflictEffect, propertyParentPath: this.PathSegments);
-            this.ActionNames = CreateProperty(name: "actionNames", property: detailsObject.ActionNames, propertyParentPath: this.PathSegments);
-            this.CascadeBehaviors = CreateProperty(name: "cascadeBehaviors", property: detailsObject.CascadeBehaviors, propertyParentPath: this.PathSegments);
-            this.DefaultState = CreateProperty(name: "defaultState", property: detailsObject.DefaultState, propertyParentPath: this.PathSegments);
+            this.Type = CreateProperty(name: "type", property: detailsObject.Type);
+            this.Name = CreateProperty(name: "name", property: detailsObject.Name);
+            this.ResourceGroupName = CreateProperty(name: "resourceGroupName", property: detailsObject.ResourceGroupName);
+            this.ExistenceScope = CreateProperty(name: "existenceScope", property: detailsObject.ExistenceScope);
+            this.EvaluationDelay = CreateProperty(name: "evaluationDelay", property: detailsObject.EvaluationDelay);
+            this.DeploymentScope = CreateProperty(name: "deploymentScope", property: detailsObject.DeploymentScope);
+            this.RoleDefinitionIds = CreateProperty(name: "roleDefinitionIds", property: detailsObject.RoleDefinitionIds);
+            this.ConflictEffect = CreateProperty(name: "conflictEffect", property: detailsObject.ConflictEffect);
+            this.ActionNames = CreateProperty(name: "actionNames", property: detailsObject.ActionNames);
+            this.CascadeBehaviors = CreateProperty(name: "cascadeBehaviors", property: detailsObject.CascadeBehaviors);
+            this.DefaultState = CreateProperty(name: "defaultState", property: detailsObject.DefaultState);
 
             this.ExistenceCondition = detailsObject.ExistenceCondition?.CreateCondition(
                 conditionPath: this.PathSegments.Add("existenceCondition"),
