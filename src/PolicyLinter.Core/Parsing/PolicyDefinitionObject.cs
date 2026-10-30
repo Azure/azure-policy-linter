@@ -163,6 +163,54 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Parsing
         public GenericObjectProperty<JToken>? Condition { get; set; }
     }
 
+    // Effect details parsing objects, one per control-plane details shape. Leaf members are tokens so that
+    // unexpected value types don't fail the conversion.
+
+    public class IfNotExistsDetailsObject
+    {
+        public GenericObjectProperty<JToken>? Type { get; set; }
+        public GenericObjectProperty<JToken>? Name { get; set; }
+        public GenericObjectProperty<JToken>? ResourceGroupName { get; set; }
+        public GenericObjectProperty<JToken>? ExistenceScope { get; set; }
+        public GenericObjectProperty<JToken>? EvaluationDelay { get; set; }
+        public GenericObjectProperty<ConditionObject>? ExistenceCondition { get; set; }
+        public GenericObjectProperty<JToken>? RoleDefinitionIds { get; set; }
+        public GenericObjectProperty<JToken>? DeploymentScope { get; set; }
+        public GenericObjectProperty<JToken>? Deployment { get; set; }
+    }
+
+    public class ModifyDetailsObject
+    {
+        public GenericObjectProperty<JToken>? RoleDefinitionIds { get; set; }
+        public GenericObjectProperty<JToken>? ConflictEffect { get; set; }
+        public GenericObjectProperty<GenericObjectProperty<ModifyOperationObject>[]>? Operations { get; set; }
+    }
+
+    public class ModifyOperationObject
+    {
+        public GenericObjectProperty<JToken>? Operation { get; set; }
+        public GenericObjectProperty<JToken>? Field { get; set; }
+        public GenericObjectProperty<JToken>? Value { get; set; }
+        public GenericObjectProperty<JToken>? Condition { get; set; }
+    }
+
+    public class AppendEntryObject
+    {
+        public GenericObjectProperty<JToken>? Field { get; set; }
+        public GenericObjectProperty<JToken>? Value { get; set; }
+    }
+
+    public class ActionDetailsObject
+    {
+        public GenericObjectProperty<JToken>? ActionNames { get; set; }
+        public GenericObjectProperty<JToken>? CascadeBehaviors { get; set; }
+    }
+
+    public class ManualDetailsObject
+    {
+        public GenericObjectProperty<JToken>? DefaultState { get; set; }
+    }
+
     public class ExternalEvaluationEnforcementSettingsObject
     {
         public GenericObjectProperty<string>? MissingTokenAction { get; set; }

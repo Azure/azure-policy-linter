@@ -278,7 +278,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var details = ParsingTests.ParseDetails(policy);
             details.LineNumber.Should().Be(11);
 
-            var detailsObject = details.Value.ToObject<EffectDetailsObject>(PolicySerializerSettings.Serializer);
+            var detailsObject = details.Value.ToObject<IfNotExistsDetailsObject>(PolicySerializerSettings.Serializer);
             detailsObject.Type.LineNumber.Should().Be(12);
             detailsObject.Type.Value.ToString().Should().Be("Microsoft.Sql/servers/databases/transparentDataEncryption");
             detailsObject.Name.LineNumber.Should().Be(13);
@@ -292,7 +292,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             detailsObject.RoleDefinitionIds.LineNumber.Should().Be(22);
             detailsObject.Deployment.LineNumber.Should().Be(23);
-            detailsObject.Operations.Should().BeNull();
         }
 
         [Fact]
@@ -325,7 +324,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 }";
 
-            var detailsObject = ParsingTests.ParseDetails(policy).Value.ToObject<EffectDetailsObject>(PolicySerializerSettings.Serializer);
+            var detailsObject = ParsingTests.ParseDetails(policy).Value.ToObject<ModifyDetailsObject>(PolicySerializerSettings.Serializer);
             detailsObject.RoleDefinitionIds.LineNumber.Should().Be(12);
             detailsObject.ConflictEffect.LineNumber.Should().Be(13);
             detailsObject.Operations.LineNumber.Should().Be(14);
@@ -363,7 +362,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 }";
 
-            var entries = ParsingTests.ParseDetails(policy).Value.ToObject<GenericObjectProperty<FieldOperationObject>[]>(PolicySerializerSettings.Serializer);
+            var entries = ParsingTests.ParseDetails(policy).Value.ToObject<GenericObjectProperty<AppendEntryObject>[]>(PolicySerializerSettings.Serializer);
             entries.Should().HaveCount(1);
             entries[0].LineNumber.Should().Be(12);
             entries[0].Value.Field.LineNumber.Should().Be(13);
