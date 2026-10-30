@@ -190,6 +190,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void EffectDetails_ManualDetails()
+        {
+            var then = EffectDetailsTests.CreateThen(details: "{ 'defaultState': '[parameters(\\'state\\')]' }");
+
+            then.Details.Manual.DefaultState.IsSimpleParameterReference(parameterName: out var parameterName).Should().BeTrue();
+            parameterName.Should().Be("state");
+            EffectDetailsTests.Collect<Property>(expression: then.Details).Should().Equal(then.Details.Manual.DefaultState);
+        }
+
+        [Fact]
         public void EffectDetails_IsInExistenceCondition()
         {
             var then = EffectDetailsTests.CreateThen(details: @"{
