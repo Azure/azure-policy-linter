@@ -184,5 +184,48 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().BeEmpty();
         }
+
+        [Fact]
+        public void RuleTests_OptionalFieldAlias_InExistenceConditionOrWriteTarget_NoViolation()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new OptionalFieldAlias() },
+                metadata: TypeMetadata);
+
+            var details = new[]
+            {
+                @"{
+                    ""type"": ""Microsoft.Storage/storageAccounts"",
+                    ""existenceCondition"": { ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"", ""equals"": false }
+                }",
+                @"{
+                    ""operations"": [ { ""operation"": ""addOrReplace"", ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"", ""value"": false } ]
+                }",
+                @"[ { ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"", ""value"": false } ]",
+            };
+
+            foreach (var detail in details)
+            {
+                var policyDefinition = @"
+                    {
+                      ""properties"": {
+                        ""policyRule"": {
+                          ""if"": {
+                            ""field"": ""Microsoft.Storage/storageAccounts/allowBlobPublicAccess"",
+                            ""equals"": true
+                          },
+                          ""then"": {
+                            ""effect"": ""[parameters('effect')]"",
+                            ""details"": " + detail + @"
+                          }
+                        }
+                      }
+                    }";
+
+                var results = linter.Lint(policyDefinition);
+
+                results.Should().ContainSingle().Which.Path.Should().Be("properties.policyRule.if.field");
+            }
+        }
     }
 }

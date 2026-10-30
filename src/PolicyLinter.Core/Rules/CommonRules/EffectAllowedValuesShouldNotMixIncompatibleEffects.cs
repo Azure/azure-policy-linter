@@ -124,28 +124,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         private static bool IsControlPlaneMode(ThenExpression expression)
         {
-            var definition = EffectAllowedValuesShouldNotMixIncompatibleEffects.FindPolicyDefinition(expression);
+            var definition = expression.FindAncestor<PolicyDefinition>();
             var mode = definition?.Properties?.Mode?.Value?.ToString();
 
             return mode == null ||
                 string.Equals(mode, "All", StringComparison.OrdinalIgnoreCase) ||
                 string.Equals(mode, "Indexed", StringComparison.OrdinalIgnoreCase);
-        }
-
-        /// <summary>
-        /// Walks up the expression tree to find the enclosing <see cref="PolicyDefinition"/>.
-        /// </summary>
-        private static PolicyDefinition? FindPolicyDefinition(PolicyExpression expression)
-        {
-            for (var current = expression.Parent; current != null; current = current.Parent)
-            {
-                if (current is PolicyDefinition definition)
-                {
-                    return definition;
-                }
-            }
-
-            return null;
         }
     }
 }

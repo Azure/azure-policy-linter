@@ -35,6 +35,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
+            // The existence condition reads the stored related resource, not a request that may use an old API version.
+            if (expression.IsInExistenceCondition())
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             // If this is a resolved alias reference.
             // - "Resolved" means that the field name expressed in the policy definition is a literal value and not a field\parameter reference itself.
             // - IsResolvedFieldReference() Is helpful here because an instance of the Reference class can express a field reference in multiple ways:

@@ -58,6 +58,34 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public abstract void Visit(PolicyExpressionVisitor visitor);
 
         /// <summary>
+        /// Finds the nearest ancestor of the given type. Use it to tell where an expression is,
+        /// e.g. <c>FindAncestor&lt;IfCondition&gt;() != null</c> for the 'if' condition or <c>FindAncestor&lt;EffectDetails&gt;() != null</c> for the effect details.
+        /// </summary>
+        /// <typeparam name="T">The ancestor type.</typeparam>
+        public T? FindAncestor<T>() where T : PolicyExpression
+        {
+            for (var current = this.Parent; current != null; current = current.Parent)
+            {
+                if (current is T ancestor)
+                {
+                    return ancestor;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Whether the expression is (or is within) the existence condition of the effect details.
+        /// The existence condition is evaluated against related resources, not against the resource evaluated by the 'if' condition.
+        /// </summary>
+        public bool IsInExistenceCondition()
+        {
+            // The existence condition is the only condition within the effect details.
+            return this.FindAncestor<EffectDetails>() != null && (this is Condition || this.FindAncestor<Condition>() != null);
+        }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="PolicyExpression"/> class.
         /// </summary>
         /// <param name="lineNumber">The line number of the expression within the policy definition.</param>

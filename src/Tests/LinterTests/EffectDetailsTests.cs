@@ -152,6 +152,27 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             });
         }
 
+        [Fact]
+        public void EffectDetails_IsInExistenceCondition()
+        {
+            var then = EffectDetailsTests.CreateThen(details: @"{
+                'type': 'Contoso.One/items',
+                'name': '[field(\'name\')]',
+                'existenceCondition': { 'field': 'name', 'equals': '[field(\'name\')]' }
+            }");
+
+            var existenceCondition = (LeafCondition)then.Details.ExistenceCondition;
+            existenceCondition.IsInExistenceCondition().Should().BeTrue();
+            existenceCondition.Operator.FindAncestor<LeafCondition>().Should().BeSameAs(existenceCondition);
+            existenceCondition.Operator.IsInExistenceCondition().Should().BeTrue();
+            existenceCondition.Field.FieldAccessorReference.IsInExistenceCondition().Should().BeTrue();
+            then.Details.Name.IsInExistenceCondition().Should().BeFalse();
+
+            var ifCondition = (LeafCondition)((PolicyRule)then.Parent).If.Condition;
+            ifCondition.IsInExistenceCondition().Should().BeFalse();
+            ifCondition.Operator.FindAncestor<IfCondition>().Should().NotBeNull();
+        }
+
         private static ThenExpression CreateThen(string details)
         {
             var policy = JObject.Parse(json: @"{

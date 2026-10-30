@@ -33,10 +33,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
+            // In the existence condition, field() refers to the resource evaluated by the 'if' condition, not to the counted array of the related resource.
             if (expression.Kind == ReferenceKind.ResourceField &&
                 expression.IsResolved &&
                 expression.ReferencedCountExpressionScope != null &&
-                expression.Parent is TemplateLanguageExpression)
+                expression.Parent is TemplateLanguageExpression &&
+                !expression.IsInExistenceCondition())
             {
                 return new[]
                 {

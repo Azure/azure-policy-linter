@@ -228,5 +228,35 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 }
               }
             }";
+
+        [Fact]
+        public void RuleTests_FieldAliasUnavailableInOldApiVersions_InExistenceCondition_DoesNotFire()
+        {
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""Microsoft.Storage/storageAccounts/networkAcls.defaultAction"",
+                        ""equals"": ""Allow""
+                      },
+                      ""then"": {
+                        ""effect"": ""auditIfNotExists"",
+                        ""details"": {
+                          ""type"": ""Microsoft.Storage/storageAccounts"",
+                          ""existenceCondition"": {
+                            ""field"": ""Microsoft.Storage/storageAccounts/networkAcls.defaultAction"",
+                            ""equals"": ""Deny""
+                          }
+                        }
+                      }
+                    }
+                  }
+                }";
+
+            var results = Lint(policyDefinition);
+
+            results.Should().ContainSingle().Which.Path.Should().Be("properties.policyRule.if.field");
+        }
     }
 }

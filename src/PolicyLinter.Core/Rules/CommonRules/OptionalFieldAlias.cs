@@ -35,6 +35,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
+            // The existence condition reads the stored related resource, and a write target is added when missing. Neither depends on the request payload.
+            if (expression.IsInExistenceCondition() || expression.FindAncestor<FieldOperation>()?.Field?.FieldAccessorReference == expression)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             if (expression.IsResolvedFieldReference() && FieldPathHelper.IsFieldAlias(expression.Identifier))
             {
                 if (expression.ResourcePropertyMetadata.Any())

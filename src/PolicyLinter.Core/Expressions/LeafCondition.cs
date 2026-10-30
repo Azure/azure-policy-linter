@@ -105,7 +105,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     jTokenMetadata: operatorTokenMetadata,
                     isFieldAccessor: false,
                     parentPath: this.PathSegments,
-                    parent: parent,
+                    parent: this,
                     countExpressionScopes: countExpressionScopes,
                     typeMetadata: typeMetadata);
             }

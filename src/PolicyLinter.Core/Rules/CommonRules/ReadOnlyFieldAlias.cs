@@ -35,6 +35,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(Reference expression, LinterContext context)
         {
+            // The existence condition reads the stored related resource, where read-only properties are set.
+            if (expression.IsInExistenceCondition())
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
             if (expression.IsResolvedFieldReference() && FieldPathHelper.IsFieldAlias(expression.Identifier))
             {
                 // If we have any metadata for it, it means that we successfully mapped the alias

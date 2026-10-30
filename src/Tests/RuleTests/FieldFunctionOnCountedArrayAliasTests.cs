@@ -571,5 +571,43 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().HaveCount(1);
         }
+
+        [Fact]
+        public void RuleTests_FieldFunctionOnCountedArrayAlias_InExistenceCondition_DoesNotFire()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new FieldFunctionOnCountedArrayAlias() },
+                metadata: MockMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""type"",
+                        ""equals"": ""Microsoft.Test/widgets""
+                      },
+                      ""then"": {
+                        ""effect"": ""auditIfNotExists"",
+                        ""details"": {
+                          ""type"": ""Microsoft.Test/widgets"",
+                          ""existenceCondition"": {
+                            ""count"": {
+                              ""field"": ""Microsoft.Test/widgets/items[*]"",
+                              ""where"": {
+                                ""value"": ""[field('Microsoft.Test/widgets/items[*]')]"",
+                                ""equals"": ""approved""
+                              }
+                            },
+                            ""greater"": 0
+                          }
+                        }
+                      }
+                    }
+                  }
+                }";
+
+            linter.Lint(policyDefinition).Should().BeEmpty();
+        }
     }
 }

@@ -112,5 +112,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             results.Should().BeEmpty();
         }
+
+        [Fact]
+        public void RuleTests_ReadOnlyFieldAlias_InExistenceCondition_ShouldNotFire()
+        {
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new ReadOnlyFieldAlias() },
+                metadata: TypeMetadata);
+
+            var policyDefinition = @"
+                {
+                  ""properties"": {
+                    ""policyRule"": {
+                      ""if"": {
+                        ""field"": ""Microsoft.Storage/storageAccounts/privateEndpointConnections"",
+                        ""exists"": true
+                      },
+                      ""then"": {
+                        ""effect"": ""auditIfNotExists"",
+                        ""details"": {
+                          ""type"": ""Microsoft.Storage/storageAccounts"",
+                          ""existenceCondition"": {
+                            ""field"": ""Microsoft.Storage/storageAccounts/privateEndpointConnections"",
+                            ""exists"": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }";
+
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().ContainSingle().Which.Path.Should().Be("properties.policyRule.if.field");
+        }
     }
 }
