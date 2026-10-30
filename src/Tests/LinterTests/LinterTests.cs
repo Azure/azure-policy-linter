@@ -2101,5 +2101,455 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 .WithMessage("*file path must be an absolute path*")
                 .And.ParamName.Should().Be("filePath");
         }
+
+        [Theory]
+        [InlineData("[ { 'field': 'tags.a', 'value': 'b' } ]", EffectDetailsKind.Append)]
+        [InlineData("{ 'type': 'Contoso.One/items' }", EffectDetailsKind.IfNotExists)]
+        [InlineData("{ 'TYPE': 'Contoso.One/items' }", EffectDetailsKind.IfNotExists)]
+        [InlineData("{ 'type': 'Contoso.One/items', 'operations': [] }", EffectDetailsKind.IfNotExists)]
+        [InlineData("{ 'operations': [ { 'operation': 'add', 'field': 'tags.a', 'value': 'b' } ] }", EffectDetailsKind.Modify)]
+        [InlineData("{ 'actionNames': [ 'delete' ] }", EffectDetailsKind.Action)]
+        [InlineData("{}", EffectDetailsKind.Manual)]
+        [InlineData("{ 'defaultState': 'Unknown' }", EffectDetailsKind.Manual)]
+        [InlineData("{ 'defaultState': 'Unknown', 'other': 1 }", EffectDetailsKind.Unknown)]
+        [InlineData("'details'", EffectDetailsKind.Unknown)]
+        public void LinterTests_EffectDetailsRuleIsInvoked(string details, EffectDetailsKind expectedKind)
+        {
+            var invocations = new List<EffectDetails>();
+            var testRule = new TestEffectDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: details)).Should().BeEmpty();
+
+            var effectDetails = invocations.Should().ContainSingle().Subject;
+            effectDetails.Kind.Should().Be(expectedKind);
+            effectDetails.Path.Should().Be("properties.policyRule.then.details");
+            effectDetails.LineNumber.Should().Be(9);
+            effectDetails.Raw.Should().NotBeNull();
+
+            // Only the typed details that match the kind are built.
+            var typedDetails = new PolicyExpression[] { effectDetails.Append, effectDetails.IfNotExists, effectDetails.Modify, effectDetails.Action, effectDetails.Manual }
+                .Where(typed => typed != null)
+                .ToArray();
+            PolicyExpression expectedTypedDetails = expectedKind switch
+            {
+                EffectDetailsKind.Append => effectDetails.Append,
+                EffectDetailsKind.IfNotExists => effectDetails.IfNotExists,
+                EffectDetailsKind.Modify => effectDetails.Modify,
+                EffectDetailsKind.Action => effectDetails.Action,
+                EffectDetailsKind.Manual => effectDetails.Manual,
+                _ => null,
+            };
+            typedDetails.Should().Equal(expectedTypedDetails == null ? Array.Empty<PolicyExpression>() : new[] { expectedTypedDetails });
+        }
+
+        [Theory]
+        [InlineData("{ 'properties': { 'policyRule': { 'if': { 'field': 'type', 'equals': 'a/b' }, 'then': { 'effect': 'audit' } } } }")]
+        [InlineData("{ 'properties': { 'policyRule': { 'if': { 'field': 'type', 'equals': 'a/b' }, 'then': { 'effect': 'audit', 'details': null } } } }")]
+        public void LinterTests_EffectDetailsRuleIsNotInvokedWithoutDetails(string policy)
+        {
+            var testRule = new TestEffectDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) => new[] { rule.CreateError(expression) }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(policy).Should().BeEmpty();
+        }
+
+        [Fact]
+        public void LinterTests_UnknownEffectDetails_NothingBelowDetailsIsInvoked()
+        {
+            var detailsPaths = new List<string>();
+            var testRule = new TestPolicyExpressionLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    if (expression.Path.StartsWith("properties.policyRule.then.details", StringComparison.Ordinal))
+                    {
+                        detailsPaths.Add($"{expression.GetType().Name}:{expression.Path}");
+                    }
+
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: "{ 'templateInfo': { 'url': '[parameters(\\'x\\')]' }, 'values': { 'a': '[field(\\'name\\')]' } }")).Should().BeEmpty();
+
+            detailsPaths.Should().Equal("EffectDetails:properties.policyRule.then.details");
+        }
+
+        [Fact]
+        public void LinterTests_IfNotExistsDetailsRuleIsInvoked()
+        {
+            var invocations = new List<IfNotExistsDetails>();
+            var testRule = new TestIfNotExistsDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: @"{
+                    'type': 'Microsoft.Sql/servers/databases/transparentDataEncryption',
+                    'name': 'current',
+                    'resourceGroupName': '[resourceGroup().name]',
+                    'existenceScope': 'resourceGroup',
+                    'evaluationDelay': 'AfterProvisioning',
+                    'existenceCondition': {
+                        'field': 'Microsoft.Sql/transparentDataEncryption.status',
+                        'equals': 'Enabled'
+                    },
+                    'roleDefinitionIds': [ '/providers/Microsoft.Authorization/roleDefinitions/abc' ],
+                    'deploymentScope': 'resourceGroup',
+                    'deployment': {
+                        'properties': {
+                            'mode': 'incremental',
+                            'template': {},
+                            'parameters': { 'fullDbName': { 'value': '[field(\'fullName\')]' } }
+                        }
+                    }
+                }")).Should().BeEmpty();
+
+            var details = invocations.Should().ContainSingle().Subject;
+            details.Path.Should().Be("properties.policyRule.then.details");
+            details.LineNumber.Should().Be(9);
+            details.Parent.Should().BeOfType<EffectDetails>();
+
+            details.Type.Value.ToString().Should().Be("Microsoft.Sql/servers/databases/transparentDataEncryption");
+            details.Type.LineNumber.Should().Be(10);
+            details.Name.Value.ToString().Should().Be("current");
+            details.Name.LineNumber.Should().Be(11);
+            details.ResourceGroupName.LanguageExpressions.Should().ContainSingle();
+            details.ResourceGroupName.LineNumber.Should().Be(12);
+            details.ExistenceScope.Value.ToString().Should().Be("resourceGroup");
+            details.ExistenceScope.LineNumber.Should().Be(13);
+            details.EvaluationDelay.Value.ToString().Should().Be("AfterProvisioning");
+            details.EvaluationDelay.LineNumber.Should().Be(14);
+
+            var existenceCondition = details.ExistenceCondition.Should().BeOfType<LeafCondition>().Subject;
+            existenceCondition.Path.Should().Be("properties.policyRule.then.details.existenceCondition");
+            existenceCondition.LineNumber.Should().Be(15);
+            existenceCondition.Field.FieldAccessorReference.Identifier.Should().Be("Microsoft.Sql/transparentDataEncryption.status");
+
+            details.RoleDefinitionIds.Value.Should().BeOfType<JArray>();
+            details.RoleDefinitionIds.LineNumber.Should().Be(19);
+            details.DeploymentScope.Value.ToString().Should().Be("resourceGroup");
+            details.DeploymentScope.LineNumber.Should().Be(20);
+            details.Deployment.Should().BeOfType<JObject>();
+            details.DeploymentParameters.Path.Should().Be("properties.policyRule.then.details.deployment.properties.parameters");
+            details.DeploymentParameters.LineNumber.Should().Be(25);
+        }
+
+        [Fact]
+        public void LinterTests_ModifyDetailsAndModifyOperationRulesAreInvoked()
+        {
+            var detailsInvocations = new List<ModifyDetails>();
+            var operationInvocations = new List<ModifyOperation>();
+            var detailsRule = new TestModifyDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    detailsInvocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var operationRule = new TestModifyOperationLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    operationInvocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new ILinterRule[] { detailsRule, operationRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: @"{
+                    'roleDefinitionIds': [ '/providers/Microsoft.Authorization/roleDefinitions/abc' ],
+                    'conflictEffect': 'audit',
+                    'operations': [
+                        {
+                            'operation': 'addOrReplace',
+                            'field': 'tags[\'env\']',
+                            'value': 'prod',
+                            'condition': '[equals(requestContext().apiVersion, \'2019-04-01\')]'
+                        },
+                        { 'operation': 'remove', 'field': 'tags[\'old\']' }
+                    ]
+                }")).Should().BeEmpty();
+
+            var details = detailsInvocations.Should().ContainSingle().Subject;
+            details.Path.Should().Be("properties.policyRule.then.details");
+            details.LineNumber.Should().Be(9);
+            details.RoleDefinitionIds.LineNumber.Should().Be(10);
+            details.ConflictEffect.Value.ToString().Should().Be("audit");
+            details.ConflictEffect.LineNumber.Should().Be(11);
+            details.Operations.Should().HaveCount(2);
+
+            operationInvocations.Should().Equal(details.Operations);
+
+            var first = operationInvocations[0];
+            first.Path.Should().Be("properties.policyRule.then.details.operations[0]");
+            first.LineNumber.Should().Be(13);
+            first.Operation.Value.ToString().Should().Be("addOrReplace");
+            first.Operation.LineNumber.Should().Be(14);
+            first.Field.FieldAccessorReference.Identifier.Should().Be("tags['env']");
+            first.Field.LineNumber.Should().Be(15);
+            first.Value.Value.ToString().Should().Be("prod");
+            first.Value.LineNumber.Should().Be(16);
+            first.Condition.LanguageExpressions.Should().ContainSingle();
+            first.Condition.LineNumber.Should().Be(17);
+
+            var second = operationInvocations[1];
+            second.Path.Should().Be("properties.policyRule.then.details.operations[1]");
+            second.LineNumber.Should().Be(19);
+            second.Value.Should().BeNull();
+            second.Condition.Should().BeNull();
+        }
+
+        [Fact]
+        public void LinterTests_AppendDetailsAndAppendEntryRulesAreInvoked()
+        {
+            var detailsInvocations = new List<AppendDetails>();
+            var entryInvocations = new List<AppendEntry>();
+            var detailsRule = new TestAppendDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    detailsInvocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var entryRule = new TestAppendEntryLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    entryInvocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new ILinterRule[] { detailsRule, entryRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: @"[
+                    { 'field': 'tags[\'env\']', 'value': 'prod' },
+                    { 'field': 'Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]', 'value': { 'value': '1.1.1.1', 'action': 'Allow' } }
+                ]")).Should().BeEmpty();
+
+            var details = detailsInvocations.Should().ContainSingle().Subject;
+            details.Path.Should().Be("properties.policyRule.then.details");
+            details.LineNumber.Should().Be(9);
+
+            entryInvocations.Should().Equal(details.Entries);
+            entryInvocations.Select(entry => entry.Path).Should().Equal("properties.policyRule.then.details[0]", "properties.policyRule.then.details[1]");
+            entryInvocations.Select(entry => entry.LineNumber).Should().Equal(10, 11);
+            entryInvocations.Select(entry => entry.Field.FieldAccessorReference.Identifier).Should().Equal("tags['env']", "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]");
+            entryInvocations[0].Value.Value.ToString().Should().Be("prod");
+            entryInvocations[1].Value.Value.Should().BeOfType<JObject>();
+        }
+
+        [Fact]
+        public void LinterTests_ActionDetailsRuleIsInvoked()
+        {
+            var invocations = new List<ActionDetails>();
+            var testRule = new TestActionDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: @"{
+                    'actionNames': [ 'delete' ],
+                    'cascadeBehaviors': { 'resourceGroup': 'deny' }
+                }")).Should().BeEmpty();
+
+            var details = invocations.Should().ContainSingle().Subject;
+            details.Path.Should().Be("properties.policyRule.then.details");
+            details.LineNumber.Should().Be(9);
+            details.ActionNames.Value.Should().BeEquivalentTo(new JArray { "delete" });
+            details.ActionNames.LineNumber.Should().Be(10);
+            details.CascadeBehaviors.Value["resourceGroup"].ToString().Should().Be("deny");
+            details.CascadeBehaviors.LineNumber.Should().Be(11);
+        }
+
+        [Fact]
+        public void LinterTests_ManualDetailsRuleIsInvoked()
+        {
+            var invocations = new List<ManualDetails>();
+            var testRule = new TestManualDetailsLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invocations.Add(expression);
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: @"{
+                    'defaultState': 'Compliant'
+                }")).Should().BeEmpty();
+
+            var details = invocations.Should().ContainSingle().Subject;
+            details.Path.Should().Be("properties.policyRule.then.details");
+            details.LineNumber.Should().Be(9);
+            details.DefaultState.Value.ToString().Should().Be("Compliant");
+            details.DefaultState.LineNumber.Should().Be(10);
+        }
+
+        [Fact]
+        public void LinterTests_ExistenceCondition_ConditionRulesAreInvoked()
+        {
+            var invokedRules = new List<string>();
+            var leafRule = new TestLeafConditionLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invokedRules.Add($"leaf: {expression.Path}");
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var quantifierRule = new TestQuantifierLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invokedRules.Add($"quantifier: {expression.Path}");
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var countRule = new TestCountLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    invokedRules.Add($"count: {expression.Path}");
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new ILinterRule[] { leafRule, quantifierRule, countRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: @"{
+                    'type': 'Microsoft.Test/items',
+                    'existenceCondition': {
+                        'allOf': [
+                            { 'field': 'name', 'equals': '[field(\'name\')]' },
+                            { 'count': { 'field': 'Microsoft.Test/items/values[*]', 'where': { 'field': 'Microsoft.Test/items/values[*]', 'equals': 'a' } }, 'greater': 0 }
+                        ]
+                    }
+                }")).Should().BeEmpty();
+
+            invokedRules.Should().Equal(
+                "leaf: properties.policyRule.if",
+                "quantifier: properties.policyRule.then.details.existenceCondition.allOf",
+                "leaf: properties.policyRule.then.details.existenceCondition.allOf[0]",
+                "leaf: properties.policyRule.then.details.existenceCondition.allOf[1]",
+                "count: properties.policyRule.then.details.existenceCondition.allOf[1].count",
+                "leaf: properties.policyRule.then.details.existenceCondition.allOf[1].count.where");
+        }
+
+        [Theory]
+        [InlineData(
+            "{ 'type': 'a/b', 'name': 'n', 'resourceGroupName': 'rg', 'existenceScope': 's', 'evaluationDelay': 'd', 'existenceCondition': { 'field': 'name', 'equals': 'x' }, 'roleDefinitionIds': [], 'deploymentScope': 's', 'deployment': { 'properties': { 'mode': 'incremental', 'template': {}, 'parameters': {} } } }",
+            "type,name,resourceGroupName,existenceScope,evaluationDelay,existenceCondition.field,existenceCondition.equals,roleDefinitionIds,deploymentScope,deployment.properties.parameters")]
+        [InlineData(
+            "{ 'roleDefinitionIds': [], 'conflictEffect': 'audit', 'operations': [ { 'operation': 'add', 'field': 'tags.a', 'value': 'b', 'condition': 'c' } ] }",
+            "roleDefinitionIds,conflictEffect,operations[0].operation,operations[0].field,operations[0].value,operations[0].condition")]
+        [InlineData(
+            "[ { 'field': 'tags.a', 'value': 'b' } ]",
+            "[0].field,[0].value")]
+        [InlineData(
+            "{ 'actionNames': [ 'delete' ], 'cascadeBehaviors': { 'resourceGroup': 'deny' } }",
+            "actionNames,cascadeBehaviors")]
+        [InlineData(
+            "{ 'defaultState': 'Compliant' }",
+            "defaultState")]
+        public void LinterTests_EffectDetails_PropertyRuleIsInvoked(string details, string expectedPaths)
+        {
+            var paths = new List<string>();
+            var testRule = new TestPropertyLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    if (expression.Path.StartsWith("properties.policyRule.then.details", StringComparison.Ordinal))
+                    {
+                        paths.Add(expression.Path.Substring("properties.policyRule.then.details".Length).TrimStart('.'));
+                    }
+
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: details)).Should().BeEmpty();
+
+            paths.Should().Equal(expectedPaths.Split(','));
+        }
+
+        [Theory]
+        [InlineData(
+            "{ 'type': 'a/b', 'name': '[field(\\'name\\')]', 'existenceCondition': { 'field': 'Microsoft.Test/items/status', 'equals': '[parameters(\\'status\\')]' }, 'deployment': { 'properties': { 'template': { 'resources': [ { 'name': '[parameters(\\'templateParameter\\')]' } ] }, 'parameters': { 'id': { 'value': '[field(\\'id\\')]' } } } } }",
+            "name:ResourceField:name|existenceCondition.field:ResourceField:Microsoft.Test/items/status|existenceCondition.equals:PolicyParameterName:status|deployment.properties.parameters:ResourceField:id")]
+        [InlineData(
+            "{ 'operations': [ { 'operation': 'add', 'field': 'Microsoft.Test/items/a', 'value': '[parameters(\\'a\\')]' } ] }",
+            "operations[0].field:ResourceField:Microsoft.Test/items/a|operations[0].value:PolicyParameterName:a")]
+        [InlineData(
+            "[ { 'field': 'Microsoft.Test/items/a', 'value': '[field(\\'name\\')]' } ]",
+            "[0].field:ResourceField:Microsoft.Test/items/a|[0].value:ResourceField:name")]
+        public void LinterTests_EffectDetails_ReferenceRuleIsInvoked(string details, string expectedReferences)
+        {
+            var references = new List<string>();
+            var testRule = new TestReferenceLinterRule
+            {
+                EvaluateFunc = (rule, expression, context) =>
+                {
+                    if (expression.Path.StartsWith("properties.policyRule.then.details", StringComparison.Ordinal))
+                    {
+                        var path = expression.Path.Substring("properties.policyRule.then.details".Length).TrimStart('.');
+                        references.Add($"{path}:{expression.Kind}:{expression.Identifier}");
+                    }
+
+                    return Enumerable.Empty<LinterOutput>();
+                }
+            };
+            var linter = new PolicyLinter(new[] { testRule }, new MockTypeMetadata());
+
+            linter.Lint(LinterTests.EffectDetailsPolicy(details: details)).Should().BeEmpty();
+
+            // Expressions in the deployment template are evaluated by ARM, so they are not policy references.
+            references.Should().Equal(expectedReferences.Split('|'));
+        }
+
+        /// <summary>
+        /// Creates a policy with the given effect details. The details start on line 9.
+        /// </summary>
+        private static string EffectDetailsPolicy(string details)
+        {
+            return @"
+{
+    'properties': {
+        'mode': 'Indexed',
+        'policyRule': {
+            'if': { 'field': 'type', 'equals': 'Microsoft.Test/items' },
+            'then': {
+                'effect': '[parameters(\'effect\')]',
+                'details': " + details + @"
+            }
+        }
+    }
+}";
+        }
     }
 }

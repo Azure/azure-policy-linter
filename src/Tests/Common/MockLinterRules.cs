@@ -387,4 +387,213 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             throw new NotImplementedException();
         }
     }
+
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestEffectDetailsLinterRule : LinterRule<EffectDetails>
+    {
+        public Func<TestEffectDetailsLinterRule, EffectDetails, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestEffectDetailsLinterRule() : base(
+            identifier: "test-effect-details-rule",
+            category: Category.Test,
+            title: "Test Effect Details Rule",
+            descriptionFormat: "Test Effect Details Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(EffectDetails expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestIfNotExistsDetailsLinterRule : LinterRule<IfNotExistsDetails>
+    {
+        public Func<TestIfNotExistsDetailsLinterRule, IfNotExistsDetails, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestIfNotExistsDetailsLinterRule() : base(
+            identifier: "test-if-not-exists-details-rule",
+            category: Category.Test,
+            title: "Test If Not Exists Details Rule",
+            descriptionFormat: "Test If Not Exists Details Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(IfNotExistsDetails expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestModifyDetailsLinterRule : LinterRule<ModifyDetails>
+    {
+        public Func<TestModifyDetailsLinterRule, ModifyDetails, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestModifyDetailsLinterRule() : base(
+            identifier: "test-modify-details-rule",
+            category: Category.Test,
+            title: "Test Modify Details Rule",
+            descriptionFormat: "Test Modify Details Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(ModifyDetails expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestModifyOperationLinterRule : LinterRule<ModifyOperation>
+    {
+        public Func<TestModifyOperationLinterRule, ModifyOperation, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestModifyOperationLinterRule() : base(
+            identifier: "test-modify-operation-rule",
+            category: Category.Test,
+            title: "Test Modify Operation Rule",
+            descriptionFormat: "Test Modify Operation Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(ModifyOperation expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestAppendDetailsLinterRule : LinterRule<AppendDetails>
+    {
+        public Func<TestAppendDetailsLinterRule, AppendDetails, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestAppendDetailsLinterRule() : base(
+            identifier: "test-append-details-rule",
+            category: Category.Test,
+            title: "Test Append Details Rule",
+            descriptionFormat: "Test Append Details Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(AppendDetails expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestAppendEntryLinterRule : LinterRule<AppendEntry>
+    {
+        public Func<TestAppendEntryLinterRule, AppendEntry, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestAppendEntryLinterRule() : base(
+            identifier: "test-append-entry-rule",
+            category: Category.Test,
+            title: "Test Append Entry Rule",
+            descriptionFormat: "Test Append Entry Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(AppendEntry expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestActionDetailsLinterRule : LinterRule<ActionDetails>
+    {
+        public Func<TestActionDetailsLinterRule, ActionDetails, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestActionDetailsLinterRule() : base(
+            identifier: "test-action-details-rule",
+            category: Category.Test,
+            title: "Test Action Details Rule",
+            descriptionFormat: "Test Action Details Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(ActionDetails expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+    /// <summary>
+    /// A test linter rule for testing purposes.
+    /// </summary>
+    public class TestManualDetailsLinterRule : LinterRule<ManualDetails>
+    {
+        public Func<TestManualDetailsLinterRule, ManualDetails, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestManualDetailsLinterRule() : base(
+            identifier: "test-manual-details-rule",
+            category: Category.Test,
+            title: "Test Manual Details Rule",
+            descriptionFormat: "Test Manual Details Rule",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(ManualDetails expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
 }
