@@ -33,6 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent,
             ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, path, parent)
         {
+            // The details are the array, so entries are indexed on the 'details' segment itself (e.g. 'then.details[0]').
             this.Entries = details.Value
                 .Select((entry, index) => new AppendEntry(
                     entry: entry,

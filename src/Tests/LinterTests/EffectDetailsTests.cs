@@ -32,13 +32,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             then.Details.Should().NotBeNull();
             then.Details.Kind.Should().Be(expectedKind);
+            PolicyExpression expectedSlot = expectedKind switch
+            {
+                EffectDetailsKind.Append => then.Details.Append,
+                EffectDetailsKind.IfNotExists => then.Details.IfNotExists,
+                EffectDetailsKind.Modify => then.Details.Modify,
+                EffectDetailsKind.Action => then.Details.Action,
+                _ => then.Details.Manual,
+            };
             new PolicyExpression[] { then.Details.Append, then.Details.IfNotExists, then.Details.Modify, then.Details.Action, then.Details.Manual }
                 .Where(slot => slot != null)
-                .Should().ContainSingle();
+                .Should().ContainSingle()
+                .Which.Should().NotBeNull().And.BeSameAs(expectedSlot);
         }
 
         [Fact]
-        public void EffectDetails_AbsentDetails()
+        public void EffectDetails_NullDetails()
         {
             EffectDetailsTests.CreateThen(details: null).Details.Should().BeNull();
         }
