@@ -26,6 +26,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public Property Effect { get; }
 
         /// <summary>
+        /// The effect details. Null when the policy has no details, or when their shape is unknown or malformed.
+        /// </summary>
+        public EffectDetails? Details { get; }
+
+        /// <summary>
         /// Creates a new instance of the <see cref="ThenExpression"/> class.
         /// </summary>
         /// <param name="then">The then expression.</param>
@@ -47,6 +52,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 parent: this,
                 countExpressionScopes: new Stack<CountExpressionScope>(),
                 typeMetadata: typeMetadata);
+
+            this.Details = EffectDetails.TryCreate(
+                details: then?.Value.Details,
+                parentPath: this.PathSegments,
+                parent: this,
+                typeMetadata: typeMetadata);
         }
 
         /// <inheritdoc/>
@@ -56,6 +67,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 visitor.Visit(this);
                 this.Effect.Visit(visitor);
+                this.Details?.Visit(visitor);
             }
         }
 
