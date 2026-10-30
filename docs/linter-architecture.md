@@ -27,8 +27,11 @@ The node types you'll most often target as a rule author:
 | `LeafCondition` | One condition: `Field?` / `Value?` / `Count?` (mutually exclusive) plus an `Operator?` (one of 18 supported operator names). |
 | `Quantifier` | `AllOf?`, `AnyOf?`, `Not?`. |
 | `ThenExpression` | `Effect` (a `Property`) and `Details` (`EffectDetails?`). |
-| `EffectDetails` | The control-plane effect details (`then.details`). `Kind` (`Append`, `IfNotExists`, `Modify`, `Action`, `Manual`) plus a nullable member per details property: `Type`, `Name`, `ExistenceCondition` (a `Condition`), `DeploymentParameters`, `RoleDefinitionIds`, `ConflictEffect`, `Operations`, `ActionNames`, `DefaultState`, etc. |
-| `FieldOperation` | A modify operation (`details.operations[i]`) or an append entry (`details[i]`): `Operation?`, `Field` (a field accessor), `Value`, `Condition?`. |
+| `EffectDetails` | The effect details (`then.details`). `Kind` (`Unknown`, `Append`, `IfNotExists`, `Modify`, `Action`, `Manual`), `Raw` (the raw token), and one typed object per effect: `Append`, `IfNotExists`, `Modify`, `Action`, `Manual`. Only the one that matches `Kind` is set. |
+| `IfNotExistsDetails` | auditIfNotExists / deployIfNotExists details: `Type`, `Name`, `ResourceGroupName`, `ExistenceScope`, `EvaluationDelay`, `ExistenceCondition` (a `Condition`), `RoleDefinitionIds`, `DeploymentScope`, `DeploymentParameters`, and the raw `Deployment`. |
+| `ModifyDetails` / `ModifyOperation` | `RoleDefinitionIds`, `ConflictEffect`, `Operations` (`details.operations[i]`: `Operation`, `Field` (a field accessor), `Value`, `Condition`). |
+| `AppendDetails` / `AppendEntry` | `Entries` (`details[i]`: `Field` (a field accessor), `Value`). |
+| `ActionDetails`, `ManualDetails` | denyAction (`ActionNames`, `CascadeBehaviors`) and manual (`DefaultState`) details. |
 | `Property` | Key-value pair derived from a json property. Holds `Name`, `Value` (`JToken`), `LanguageExpressions` (template references in the value), `HasLiteralValue`, and `HasSimpleParameterizedValue(...)`. |
 | `Reference` | A parsed template-language reference (`field`, `parameters`, `current`, `claims`, etc.). Carries `Kind`, `Identifier`, `IsResolved`, `PropertySelectionPath?`, and `ResourcePropertyMetadata` for resolved field aliases. |
 | `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, `Metadata?` (raw `JToken` for the unmodeled metadata bag), plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
@@ -39,13 +42,13 @@ Things to know about parsing: it's eager (every child is built when its parent i
 
 ### Effect details
 
-`then.details` is modeled as a single `EffectDetails` node that holds the members of every control-plane details shape. Things to know:
+`then.details` is modeled as an `EffectDetails` node with the detected `Kind`, the `Raw` token, and one typed object per control-plane effect. Only the object that matches `Kind` is built, as the policy service does for a parameterized effect (for a literal effect, the service uses the effect value; the linter never does). All typed objects have the same path as `EffectDetails` (`then.details`). Things to know:
 
 - **The shape comes from the JSON structure, never from the effect.** The effect is often a parameter. `Kind` is detected the same way the policy service infers a parameterized effect: an array is `Append`; an object with `type` is `IfNotExists` (auditIfNotExists, or deployIfNotExists when `Deployment` is set); `operations` is `Modify`; `actionNames` is `Action`; `{}` or only `defaultState` is `Manual`.
-- **Details never fail the lint.** Details with an unknown shape (including data-plane details) or malformed details leave `ThenExpression.Details` null. Policies with a `disabled` effect may legally carry any details.
+- **Details never fail the lint.** Details that match no control-plane shape (for example, data-plane details) have `Kind` `Unknown`. Malformed details keep their `Kind`, but the typed object is null. In both cases only `Raw` is available, and it is never visited. Policies with a `disabled` effect may legally carry any details. One malformed member (for example, an invalid expression in `name`) drops the whole typed object, so the rest of those details is not linted.
 - **The existence condition is a regular `Condition`**, evaluated against each related resource. Field accessors in it refer to the related resource; field functions (`[field('name')]`) refer to the resource evaluated by the `if` condition.
-- **Only `deployment.properties.parameters` is modeled from a deployIfNotExists deployment** (`DeploymentParameters`). The template is evaluated by ARM, not by policy, so it's only available as the raw `Deployment` token and its expressions are never visited.
-- **Write targets are field accessors.** `FieldOperation.Field` resolves like any field alias, so alias rules apply to modify and append targets.
+- **Only `deployment.properties.parameters` is modeled from a deployIfNotExists deployment** (`DeploymentParameters`). The template is evaluated by ARM, not by policy, so it's only available as the raw `IfNotExistsDetails.Deployment` token and its expressions are never visited.
+- **Write targets are field accessors.** `ModifyOperation.Field` and `AppendEntry.Field` resolve like any field alias, so alias rules apply to modify and append targets.
 
 ### Rules run everywhere
 
@@ -53,6 +56,7 @@ The engine visits effect details like any other part of the policy, so a rule ta
 
 - `expression.FindAncestor<IfCondition>() != null` - in the `if` condition.
 - `expression.FindAncestor<EffectDetails>() != null` - in the effect details.
+- `expression.FindAncestor<ModifyDetails>() != null` (or any other typed details class) - in the details of a specific effect.
 - `expression.IsInExistenceCondition()` - in the existence condition (which reads stored related resources, not the incoming request).
 
 For example, `read-only-field-alias` skips the existence condition, because read-only properties are set on stored resources.
