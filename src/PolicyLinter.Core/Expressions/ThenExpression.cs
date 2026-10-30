@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public Property Effect { get; }
 
         /// <summary>
-        /// The effect details. Null when the policy has no details, or when their shape is unknown or malformed.
+        /// The effect details. Null when the policy has no details.
         /// </summary>
         public EffectDetails? Details { get; }
 
@@ -53,11 +53,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 countExpressionScopes: new Stack<CountExpressionScope>(),
                 typeMetadata: typeMetadata);
 
-            this.Details = EffectDetails.TryCreate(
-                details: then?.Value.Details,
-                parentPath: this.PathSegments,
-                parent: this,
-                typeMetadata: typeMetadata);
+            var details = then?.Value.Details;
+            this.Details = details != null
+                ? new EffectDetails(
+                    details: details,
+                    parentPath: this.PathSegments,
+                    parent: this,
+                    typeMetadata: typeMetadata)
+                : null;
         }
 
         /// <inheritdoc/>

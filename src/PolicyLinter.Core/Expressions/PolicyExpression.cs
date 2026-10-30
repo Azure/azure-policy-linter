@@ -81,8 +81,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </summary>
         public bool IsInExistenceCondition()
         {
-            // The existence condition is the only condition within the effect details.
-            return this.FindAncestor<EffectDetails>() != null && (this is Condition || this.FindAncestor<Condition>() != null);
+            // The existence condition is the only condition within the if-not-exists details.
+            return this.FindAncestor<IfNotExistsDetails>() != null && (this is Condition || this.FindAncestor<Condition>() != null);
         }
 
         /// <summary>

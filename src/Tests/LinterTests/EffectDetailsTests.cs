@@ -32,22 +32,44 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             then.Details.Should().NotBeNull();
             then.Details.Kind.Should().Be(expectedKind);
+            new PolicyExpression[] { then.Details.Append, then.Details.IfNotExists, then.Details.Modify, then.Details.Action, then.Details.Manual }
+                .Where(slot => slot != null)
+                .Should().ContainSingle();
+        }
+
+        [Fact]
+        public void EffectDetails_AbsentDetails()
+        {
+            EffectDetailsTests.CreateThen(details: null).Details.Should().BeNull();
         }
 
         [Theory]
-        [InlineData(null)]
         [InlineData("'details'")]
         [InlineData("{ 'defaultState': 'Unknown', 'other': 1 }")]
-        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'field': 'name' } }")]
-        [InlineData("{ 'operations': [ { 'operation': 'add', 'field': [ 'tags.a' ] } ] }")]
-        [InlineData("{ 'operations': 'add' }")]
-        [InlineData("{ 'operations': [ null ] }")]
-        [InlineData("{ 'type': '[concat(]' }")]
-        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'allOf': [ null ] } }")]
-        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'count': { 'field': '[parameters(\\'x\\')]' }, 'equals': 0 } }")]
-        public void EffectDetails_UnknownOrMalformedDetailsAreNotModeled(string details)
+        public void EffectDetails_UnknownShape(string details)
         {
-            EffectDetailsTests.CreateThen(details: details).Details.Should().BeNull();
+            var effectDetails = EffectDetailsTests.CreateThen(details: details).Details;
+
+            effectDetails.Kind.Should().Be(EffectDetailsKind.Unknown);
+            effectDetails.Raw.Should().NotBeNull();
+            EffectDetailsTests.Collect<PolicyExpression>(expression: effectDetails).Should().Equal(effectDetails);
+        }
+
+        [Theory]
+        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'field': 'name' } }", EffectDetailsKind.IfNotExists)]
+        [InlineData("{ 'operations': [ { 'operation': 'add', 'field': [ 'tags.a' ] } ] }", EffectDetailsKind.Modify)]
+        [InlineData("{ 'operations': 'add' }", EffectDetailsKind.Modify)]
+        [InlineData("{ 'operations': [ null ] }", EffectDetailsKind.Modify)]
+        [InlineData("[ null ]", EffectDetailsKind.Append)]
+        [InlineData("{ 'type': '[concat(]' }", EffectDetailsKind.IfNotExists)]
+        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'allOf': [ null ] } }", EffectDetailsKind.IfNotExists)]
+        [InlineData("{ 'type': 'Contoso.One/items', 'existenceCondition': { 'count': { 'field': '[parameters(\\'x\\')]' }, 'equals': 0 } }", EffectDetailsKind.IfNotExists)]
+        public void EffectDetails_MalformedDetailsKeepKindOnly(string details, EffectDetailsKind expectedKind)
+        {
+            var effectDetails = EffectDetailsTests.CreateThen(details: details).Details;
+
+            effectDetails.Kind.Should().Be(expectedKind);
+            EffectDetailsTests.Collect<PolicyExpression>(expression: effectDetails).Should().Equal(effectDetails);
         }
 
         [Fact]
@@ -72,8 +94,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 }
             }");
 
-            var details = then.Details;
+            var details = then.Details.IfNotExists;
             details.Path.Should().Be("properties.policyRule.then.details");
+            details.Parent.Should().BeSameAs(then.Details);
             details.Type.Path.Should().Be("properties.policyRule.then.details.type");
             details.Type.LineNumber.Should().Be(11);
             details.Deployment.Should().NotBeNull();
@@ -82,6 +105,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             existenceCondition.Path.Should().Be("properties.policyRule.then.details.existenceCondition");
             existenceCondition.Field.FieldAccessorReference.Identifier.Should().Be("Microsoft.Sql/transparentDataEncryption.status");
             existenceCondition.Field.LineNumber.Should().Be(13);
+            existenceCondition.Parent.Should().BeSameAs(details);
 
             details.DeploymentParameters.Path.Should().Be("properties.policyRule.then.details.deployment.properties.parameters");
             details.DeploymentParameters.LineNumber.Should().Be(22);
@@ -110,7 +134,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 ]
             }");
 
-            var operation = then.Details.Operations.Should().ContainSingle().Subject;
+            var modify = then.Details.Modify;
+            var operation = modify.Operations.Should().ContainSingle().Subject;
             operation.Path.Should().Be("properties.policyRule.then.details.operations[0]");
             operation.LineNumber.Should().Be(13);
             operation.Operation.Value.ToString().Should().Be("addOrReplace");
@@ -119,7 +144,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             operation.Value.IsSimpleParameterReference(parameterName: out var parameterName).Should().BeTrue();
             parameterName.Should().Be("env");
             operation.Condition.LanguageExpressions.Should().ContainSingle();
-            then.Details.RoleDefinitionIds.LineNumber.Should().Be(11);
+            modify.RoleDefinitionIds.LineNumber.Should().Be(11);
             EffectDetailsTests.Collect<Property>(expression: then.Details).Should().Contain(new[] { operation.Operation, operation.Field, operation.Value, operation.Condition });
         }
 
@@ -131,14 +156,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 { 'field': 'tags.a', 'value': 'b' }
             ]");
 
-            then.Details.Operations.Should().HaveCount(2);
+            then.Details.Append.Entries.Should().HaveCount(2);
 
-            var entry = then.Details.Operations[1];
+            var entry = then.Details.Append.Entries[1];
             entry.Path.Should().Be("properties.policyRule.then.details[1]");
             entry.LineNumber.Should().Be(12);
-            entry.Operation.Should().BeNull();
             entry.Field.FieldAccessorReference.Identifier.Should().Be("tags.a");
-            then.Details.Type.Should().BeNull();
+            entry.Value.Value.ToString().Should().Be("b");
         }
 
         [Fact]
@@ -165,12 +189,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 'existenceCondition': { 'field': 'name', 'equals': '[field(\'name\')]' }
             }");
 
-            var existenceCondition = (LeafCondition)then.Details.ExistenceCondition;
+            var existenceCondition = (LeafCondition)then.Details.IfNotExists.ExistenceCondition;
             existenceCondition.IsInExistenceCondition().Should().BeTrue();
             existenceCondition.Operator.FindAncestor<LeafCondition>().Should().BeSameAs(existenceCondition);
             existenceCondition.Operator.IsInExistenceCondition().Should().BeTrue();
             existenceCondition.Field.FieldAccessorReference.IsInExistenceCondition().Should().BeTrue();
-            then.Details.Name.IsInExistenceCondition().Should().BeFalse();
+            then.Details.IfNotExists.Name.IsInExistenceCondition().Should().BeFalse();
 
             var ifCondition = (LeafCondition)((PolicyRule)then.Parent).If.Condition;
             ifCondition.IsInExistenceCondition().Should().BeFalse();

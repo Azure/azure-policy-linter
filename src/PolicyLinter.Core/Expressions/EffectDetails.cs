@@ -6,10 +6,7 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Immutable;
-    using System.Linq;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Newtonsoft.Json.Linq;
@@ -19,6 +16,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// </summary>
     public enum EffectDetailsKind
     {
+        /// <summary>
+        /// The details don't match any control-plane effect details shape.
+        /// </summary>
+        Unknown,
+
         /// <summary>
         /// An array of field/value entries (append).
         /// </summary>
@@ -46,8 +48,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     }
 
     /// <summary>
-    /// Represents the control-plane effect details ("then.details") of a policy rule.
-    /// Holds the members of every details shape; members that are absent in the policy are null.
+    /// Represents the effect details ("then.details") of a policy rule.
+    /// At most one of the typed details is set: the one that matches <see cref="Kind"/>.
     /// </summary>
     public class EffectDetails : PolicyExpression
     {
@@ -57,109 +59,96 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public EffectDetailsKind Kind { get; }
 
         /// <summary>
-        /// The related resource type (auditIfNotExists, deployIfNotExists).
+        /// The raw details. Expressions in it are not visited.
         /// </summary>
-        public Property? Type { get; }
+        public JToken Raw { get; }
 
         /// <summary>
-        /// The related resource name (auditIfNotExists, deployIfNotExists).
+        /// The append details, when <see cref="Kind"/> is <see cref="EffectDetailsKind.Append"/> and the details are well formed.
         /// </summary>
-        public Property? Name { get; }
+        public AppendDetails? Append { get; }
 
         /// <summary>
-        /// The related resource group name (auditIfNotExists, deployIfNotExists).
+        /// The auditIfNotExists or deployIfNotExists details, when <see cref="Kind"/> is <see cref="EffectDetailsKind.IfNotExists"/> and the details are well formed.
         /// </summary>
-        public Property? ResourceGroupName { get; }
+        public IfNotExistsDetails? IfNotExists { get; }
 
         /// <summary>
-        /// The scope to look for the related resource in (auditIfNotExists, deployIfNotExists).
+        /// The modify details, when <see cref="Kind"/> is <see cref="EffectDetailsKind.Modify"/> and the details are well formed.
         /// </summary>
-        public Property? ExistenceScope { get; }
+        public ModifyDetails? Modify { get; }
 
         /// <summary>
-        /// The delay before the related resource is evaluated (auditIfNotExists, deployIfNotExists).
+        /// The denyAction details, when <see cref="Kind"/> is <see cref="EffectDetailsKind.Action"/> and the details are well formed.
         /// </summary>
-        public Property? EvaluationDelay { get; }
+        public ActionDetails? Action { get; }
 
         /// <summary>
-        /// The condition evaluated against each related resource (auditIfNotExists, deployIfNotExists).
-        /// Field accessors in it refer to the related resource. Field functions (e.g. "[field('name')]") refer to the resource evaluated by the 'if' condition.
+        /// The manual details, when <see cref="Kind"/> is <see cref="EffectDetailsKind.Manual"/> and the details are well formed.
         /// </summary>
-        public Condition? ExistenceCondition { get; }
+        public ManualDetails? Manual { get; }
 
         /// <summary>
-        /// The deployment scope (deployIfNotExists).
+        /// Creates a new instance of the <see cref="EffectDetails"/> class.
         /// </summary>
-        public Property? DeploymentScope { get; }
-
-        /// <summary>
-        /// The raw deployment (deployIfNotExists). The template inside it is evaluated by ARM, not by policy, so it isn't modeled.
-        /// </summary>
-        public JToken? Deployment { get; }
-
-        /// <summary>
-        /// The deployment parameter values ("deployment.properties.parameters"), the only part of the deployment evaluated by policy.
-        /// </summary>
-        public Property? DeploymentParameters { get; }
-
-        /// <summary>
-        /// The role definition IDs needed for remediation (deployIfNotExists, modify).
-        /// </summary>
-        public Property? RoleDefinitionIds { get; }
-
-        /// <summary>
-        /// The effect to apply on a conflict (modify).
-        /// </summary>
-        public Property? ConflictEffect { get; }
-
-        /// <summary>
-        /// The modify operations, or the append entries.
-        /// </summary>
-        public ImmutableArray<FieldOperation> Operations { get; }
-
-        /// <summary>
-        /// The actions to deny (denyAction).
-        /// </summary>
-        public Property? ActionNames { get; }
-
-        /// <summary>
-        /// The behavior on cascade deletion (denyAction).
-        /// </summary>
-        public Property? CascadeBehaviors { get; }
-
-        /// <summary>
-        /// The default compliance state (manual).
-        /// </summary>
-        public Property? DefaultState { get; }
-
-        /// <summary>
-        /// Creates the effect details, or returns null when the details are absent, have an unknown shape, or are malformed.
-        /// </summary>
-        /// <remarks>
-        /// Malformed details don't fail the lint because policies with a 'disabled' effect may carry any details.
-        /// </remarks>
         /// <param name="details">The raw effect details.</param>
         /// <param name="parentPath">The path of the parent of the current expression.</param>
         /// <param name="parent">The parent of the current expression.</param>
         /// <param name="typeMetadata">The type metadata.</param>
-        public static EffectDetails? TryCreate(
-            GenericObjectProperty<JToken>? details,
+        public EffectDetails(
+            GenericObjectProperty<JToken> details,
             ImmutableArray<string> parentPath,
             PolicyExpression parent,
-            ITypeMetadata typeMetadata)
+            ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, parentPath.Add("details"), parent)
         {
-            if (details?.Value == null || !EffectDetails.TryGetKind(details: details.Value, kind: out var kind))
-            {
-                return null;
-            }
+            this.Raw = details.Value;
+            this.Kind = EffectDetails.GetKind(details: details.Value);
 
             try
             {
-                return new EffectDetails(kind: kind, details: details, parentPath: parentPath, parent: parent, typeMetadata: typeMetadata);
+                switch (this.Kind)
+                {
+                    case EffectDetailsKind.Append:
+                        this.Append = new AppendDetails(
+                            details: EffectDetails.Convert<GenericObjectProperty<AppendEntryObject>[]>(details: details.Value),
+                            path: this.PathSegments,
+                            parent: this,
+                            typeMetadata: typeMetadata);
+                        break;
+                    case EffectDetailsKind.IfNotExists:
+                        this.IfNotExists = new IfNotExistsDetails(
+                            details: EffectDetails.Convert<IfNotExistsDetailsObject>(details: details.Value),
+                            path: this.PathSegments,
+                            parent: this,
+                            typeMetadata: typeMetadata);
+                        break;
+                    case EffectDetailsKind.Modify:
+                        this.Modify = new ModifyDetails(
+                            details: EffectDetails.Convert<ModifyDetailsObject>(details: details.Value),
+                            path: this.PathSegments,
+                            parent: this,
+                            typeMetadata: typeMetadata);
+                        break;
+                    case EffectDetailsKind.Action:
+                        this.Action = new ActionDetails(
+                            details: EffectDetails.Convert<ActionDetailsObject>(details: details.Value),
+                            path: this.PathSegments,
+                            parent: this,
+                            typeMetadata: typeMetadata);
+                        break;
+                    case EffectDetailsKind.Manual:
+                        this.Manual = new ManualDetails(
+                            details: EffectDetails.Convert<ManualDetailsObject>(details: details.Value),
+                            path: this.PathSegments,
+                            parent: this,
+                            typeMetadata: typeMetadata);
+                        break;
+                }
             }
             catch (Exception)
             {
-                return null;
+                // Malformed details don't fail the lint because policies with a 'disabled' effect may carry any details.
+                // The typed details stay null; Kind and Raw still describe them.
             }
         }
 
@@ -167,137 +156,59 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public override void Visit(PolicyExpressionVisitor visitor)
         {
             visitor.Visit?.Invoke(this);
-
-            var properties = new[]
-            {
-                this.Type, this.Name, this.ResourceGroupName, this.ExistenceScope, this.EvaluationDelay, this.DeploymentScope,
-                this.DeploymentParameters, this.RoleDefinitionIds, this.ConflictEffect, this.ActionNames, this.CascadeBehaviors, this.DefaultState,
-            };
-
-            foreach (var property in properties)
-            {
-                property?.Visit(visitor);
-            }
-
-            this.ExistenceCondition?.Visit(visitor);
-
-            foreach (var operation in this.Operations)
-            {
-                operation.Visit(visitor);
-            }
+            this.Append?.Visit(visitor);
+            this.IfNotExists?.Visit(visitor);
+            this.Modify?.Visit(visitor);
+            this.Action?.Visit(visitor);
+            this.Manual?.Visit(visitor);
         }
 
         /// <summary>
         /// Detects the details shape the same way the policy service infers a parameterized control-plane effect.
         /// </summary>
-        private static bool TryGetKind(JToken details, out EffectDetailsKind kind)
+        private static EffectDetailsKind GetKind(JToken details)
         {
-            kind = EffectDetailsKind.Append;
             if (details is JArray)
             {
-                return true;
+                return EffectDetailsKind.Append;
             }
 
             if (details is not JObject detailsObject)
             {
-                return false;
+                return EffectDetailsKind.Unknown;
             }
 
             bool Has(string name) => detailsObject.GetValue(propertyName: name, comparison: StringComparison.OrdinalIgnoreCase) != null;
 
             if (Has("type"))
             {
-                kind = EffectDetailsKind.IfNotExists;
-            }
-            else if (Has("operations"))
-            {
-                kind = EffectDetailsKind.Modify;
-            }
-            else if (Has("actionNames"))
-            {
-                kind = EffectDetailsKind.Action;
-            }
-            else if (detailsObject.Count == 0 || (detailsObject.Count == 1 && Has("defaultState")))
-            {
-                kind = EffectDetailsKind.Manual;
-            }
-            else
-            {
-                return false;
+                return EffectDetailsKind.IfNotExists;
             }
 
-            return true;
+            if (Has("operations"))
+            {
+                return EffectDetailsKind.Modify;
+            }
+
+            if (Has("actionNames"))
+            {
+                return EffectDetailsKind.Action;
+            }
+
+            if (detailsObject.Count == 0 || (detailsObject.Count == 1 && Has("defaultState")))
+            {
+                return EffectDetailsKind.Manual;
+            }
+
+            return EffectDetailsKind.Unknown;
         }
 
-        private EffectDetails(
-            EffectDetailsKind kind,
-            GenericObjectProperty<JToken> details,
-            ImmutableArray<string> parentPath,
-            PolicyExpression parent,
-            ITypeMetadata typeMetadata) : base(details.LineNumber, details.LinePosition, parentPath.Add("details"), parent)
+        /// <summary>
+        /// Converts the raw details to a parsing object with line info.
+        /// </summary>
+        private static GenericObjectProperty<T> Convert<T>(JToken details)
         {
-            this.Kind = kind;
-
-            if (kind == EffectDetailsKind.Append)
-            {
-                this.Operations = details.Value
-                    .ToObject<GenericObjectProperty<FieldOperationObject>[]>(jsonSerializer: PolicySerializerSettings.Serializer)!
-                    .Select((entry, index) => new FieldOperation(
-                        operation: entry,
-                        path: parentPath.Add($"details[{index}]"),
-                        parent: this,
-                        typeMetadata: typeMetadata))
-                    .ToImmutableArray();
-                return;
-            }
-
-            var detailsObject = details.Value.ToObject<EffectDetailsObject>(jsonSerializer: PolicySerializerSettings.Serializer)!;
-
-            Property? CreateProperty(string name, GenericObjectProperty<JToken>? property, ImmutableArray<string>? propertyParentPath = null) => property == null
-                ? null
-                : new Property(
-                    name: name,
-                    value: property.Value,
-                    jTokenMetadata: property,
-                    isFieldAccessor: false,
-                    parentPath: propertyParentPath ?? this.PathSegments,
-                    parent: this,
-                    countExpressionScopes: new Stack<CountExpressionScope>(),
-                    typeMetadata: typeMetadata);
-
-            this.Type = CreateProperty(name: "type", property: detailsObject.Type);
-            this.Name = CreateProperty(name: "name", property: detailsObject.Name);
-            this.ResourceGroupName = CreateProperty(name: "resourceGroupName", property: detailsObject.ResourceGroupName);
-            this.ExistenceScope = CreateProperty(name: "existenceScope", property: detailsObject.ExistenceScope);
-            this.EvaluationDelay = CreateProperty(name: "evaluationDelay", property: detailsObject.EvaluationDelay);
-            this.DeploymentScope = CreateProperty(name: "deploymentScope", property: detailsObject.DeploymentScope);
-            this.RoleDefinitionIds = CreateProperty(name: "roleDefinitionIds", property: detailsObject.RoleDefinitionIds);
-            this.ConflictEffect = CreateProperty(name: "conflictEffect", property: detailsObject.ConflictEffect);
-            this.ActionNames = CreateProperty(name: "actionNames", property: detailsObject.ActionNames);
-            this.CascadeBehaviors = CreateProperty(name: "cascadeBehaviors", property: detailsObject.CascadeBehaviors);
-            this.DefaultState = CreateProperty(name: "defaultState", property: detailsObject.DefaultState);
-
-            this.ExistenceCondition = detailsObject.ExistenceCondition?.CreateCondition(
-                conditionPath: this.PathSegments.Add("existenceCondition"),
-                typeMetadata: typeMetadata,
-                parent: this,
-                countExpressionScopes: new Stack<CountExpressionScope>());
-
-            this.Deployment = detailsObject.Deployment?.Value;
-            var deploymentProperties = (this.Deployment as JObject)?.GetValue(propertyName: "properties", comparison: StringComparison.OrdinalIgnoreCase);
-            var deploymentParameters = (deploymentProperties as JObject)?.GetValue(propertyName: "parameters", comparison: StringComparison.OrdinalIgnoreCase);
-            this.DeploymentParameters = CreateProperty(
-                name: "parameters",
-                property: deploymentParameters?.ToObject<GenericObjectProperty<JToken>>(jsonSerializer: PolicySerializerSettings.Serializer),
-                propertyParentPath: this.PathSegments.Add("deployment").Add("properties"));
-
-            this.Operations = (detailsObject.Operations?.Value ?? Array.Empty<GenericObjectProperty<FieldOperationObject>>())
-                .Select((operation, index) => new FieldOperation(
-                    operation: operation,
-                    path: this.PathSegments.Add($"operations[{index}]"),
-                    parent: this,
-                    typeMetadata: typeMetadata))
-                .ToImmutableArray();
+            return details.ToObject<GenericObjectProperty<T>>(jsonSerializer: PolicySerializerSettings.Serializer)!;
         }
     }
 }
