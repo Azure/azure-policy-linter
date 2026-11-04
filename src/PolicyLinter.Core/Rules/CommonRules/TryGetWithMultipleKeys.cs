@@ -41,7 +41,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 call.Arguments.Length > 2);
 
             return fires
-                ? new[] { this.CreateWarning(expression) }
+                ? new[] { this.CreateError(expression) }
                 : Array.Empty<LinterOutput>();
         }
     }

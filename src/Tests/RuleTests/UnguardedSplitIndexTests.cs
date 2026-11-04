@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "unguarded-split-index",
                 Title: "Unguarded Split Index",
-                Severity: Severity.Warning,
+                Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 10,
                 LinePosition: 35 + valueExpression.Length,

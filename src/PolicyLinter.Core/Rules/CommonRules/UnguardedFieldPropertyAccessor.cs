@@ -44,7 +44,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             return call == null
                 ? Array.Empty<LinterOutput>()
-                : new[] { this.CreateWarning(expression, call.Name) };
+                : new[] { this.CreateError(expression, call.Name) };
         }
     }
 }

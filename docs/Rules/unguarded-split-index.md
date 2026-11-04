@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-split-index | Warning | default |
+| BestPractices | unguarded-split-index | Error | default |
 
 ## Description
 

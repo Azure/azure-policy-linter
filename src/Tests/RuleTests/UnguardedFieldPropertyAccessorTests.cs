@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "unguarded-field-property-accessor",
                 Title: "Unguarded Field Property Accessor",
-                Severity: Severity.Warning,
+                Severity: Severity.Error,
                 Category: Category.BestPractices,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,

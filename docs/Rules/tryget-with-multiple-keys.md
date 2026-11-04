@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | tryget-with-multiple-keys | Warning | default |
+| BestPractices | tryget-with-multiple-keys | Error | default |
 
 ## Description
 

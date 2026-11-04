@@ -45,7 +45,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0));
 
             return fires
-                ? new[] { this.CreateWarning(expression) }
+                ? new[] { this.CreateError(expression) }
                 : Array.Empty<LinterOutput>();
         }
 
