@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------
+// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -1211,23 +1211,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var fieldTagsX = languageExpressions.SingleOrDefault(e => e.Expression == "[field('tags.x')]");
             fieldTagsX.Should().NotBeNull();
-            fieldTagsX.TryGetFunctionName(out var fieldFunctionName).Should().BeTrue();
-            fieldFunctionName.Should().Be("field");
+            fieldTagsX.Root.Should().BeOfType<FunctionCall>().Which.Name.Should().Be("field");
+            fieldTagsX.IsEntireValue.Should().BeTrue();
             fieldTagsX.References.Should().HaveCount(1);
             fieldTagsX.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsX.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("field");
 
             var concatAB = languageExpressions.SingleOrDefault(e => e.Expression == "[CoNcAt('a','b')]");
             concatAB.Should().NotBeNull();
-            concatAB.TryGetFunctionName(out var concatFunctionName).Should().BeTrue();
-            concatFunctionName.Should().Be("CoNcAt");
+            concatAB.Root.Should().BeOfType<FunctionCall>().Which.Name.Should().Be("CoNcAt");
             concatAB.References.Should().BeEmpty();
             concatAB.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("equals");
 
             var fieldParam = languageExpressions.SingleOrDefault(e => e.Expression == "[field(parameters('param'))]");
             fieldParam.Should().NotBeNull();
-            fieldParam.TryGetFunctionName(out var nestedFunctionName).Should().BeTrue();
-            nestedFunctionName.Should().Be("field");
+            fieldParam.Root.Should().BeOfType<FunctionCall>().Which.Reference.Should().BeSameAs(fieldParam.References[0]);
             fieldParam.References.Should().HaveCount(1);
             fieldParam.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldParam.References[0].ResolutionDependencies.Should().HaveCount(1);
@@ -1241,11 +1239,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             fieldTagsY.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsY.References[0].Identifier.Should().Be("tags.y");
             fieldTagsY.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("in");
+            fieldTagsY.IsEntireValue.Should().BeFalse();
 
             var literalExpression = languageExpressions.SingleOrDefault(e => e.Expression == "[1]");
             literalExpression.Should().NotBeNull();
-            literalExpression.TryGetFunctionName(out var literalFunctionName).Should().BeFalse();
-            literalFunctionName.Should().BeEmpty();
+            literalExpression.Root.Should().BeOfType<LiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
 
             var effectParam = languageExpressions.SingleOrDefault(e => e.Expression == "[parameters('effectParam')]");
             effectParam.Should().NotBeNull();

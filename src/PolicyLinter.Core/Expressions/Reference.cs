@@ -1,4 +1,4 @@
-// ------------------------------------------------------------
+﻿// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -129,6 +129,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.IsResolvedFieldReference();
 
         /// <summary>
+        /// The function call this reference was created from. Null for field accessor references.
+        /// </summary>
+        /// <remarks>
+        /// Used to link <see cref="FunctionCall"/> nodes to their references.
+        /// </remarks>
+        internal FunctionExpression? SourceFunction { get; }
+
+        /// <summary>
         /// Create a reference to a field which represents a field reference that is part of a field accessor expression.
         /// </summary>
         /// <param name="fieldAccessor">The field accessor value.</param>
@@ -176,41 +184,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             ITypeMetadata typeMetadata,
             List<Reference> results)
         {
-            Reference.FromLanguageExpression(
-                languageExpression: languageExpression,
-                jTokenMetadata: jTokenMetadata,
-                path: path,
-                parent: parent,
-                countExpressionScopes: countExpressionScopes,
-                typeMetadata: typeMetadata,
-                results: results,
-                functionCalls: null,
-                isConditionallyEvaluated: false);
-        }
-
-        /// <summary>
-        /// Extracts references and function calls from a language expression.
-        /// </summary>
-        /// <param name="languageExpression">The language expression.</param>
-        /// <param name="jTokenMetadata">The metadata of the JSON object from which this property was parsed.</param>
-        /// <param name="path">The path to the current expression.</param>
-        /// <param name="parent">The parent of the current expression.</param>
-        /// <param name="countExpressionScopes">The count expression scopes.</param>
-        /// <param name="typeMetadata">The type metadata.</param>
-        /// <param name="results">The list to which the references will be added.</param>
-        /// <param name="functionCalls">Optional list to which every function call in the expression will be added.</param>
-        /// <param name="isConditionallyEvaluated">Whether the expression is evaluated only for some values (see <see cref="FunctionCall.IsConditionallyEvaluated"/>).</param>
-        internal static void FromLanguageExpression(
-            LanguageExpression languageExpression,
-            JTokenMetadata? jTokenMetadata,
-            ImmutableArray<string> path,
-            PolicyExpression parent,
-            Stack<CountExpressionScope> countExpressionScopes,
-            ITypeMetadata typeMetadata,
-            List<Reference> results,
-            List<FunctionCall>? functionCalls,
-            bool isConditionallyEvaluated)
-        {
             if (languageExpression is not FunctionExpression function)
             {
                 return;
@@ -237,24 +210,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             // TODO: If there's a need for these "child" references to point back to the reference who depends on them,
             // we can add a "dependentReference" property to the reference class and set it to the reference that depends on it.
             var functionParamDependecies = new List<Reference>();
-            var arguments = new List<FunctionCallArgument>();
-            var parameters = function.Parameters.CoalesceEnumerable().ToArray();
-            for (var index = 0; index < parameters.Length; index++)
+            foreach (var parameter in function.Parameters.CoalesceEnumerable())
             {
-                var parameterReferences = new List<Reference>();
                 Reference.FromLanguageExpression(
-                    languageExpression: parameters[index],
+                    languageExpression: parameter,
                     jTokenMetadata: jTokenMetadata,
                     path: path,
                     parent: parent,
                     countExpressionScopes: countExpressionScopes,
                     typeMetadata: typeMetadata,
-                    results: parameterReferences,
-                    functionCalls: functionCalls,
-                    isConditionallyEvaluated: isConditionallyEvaluated || FunctionCall.IsConditionallyEvaluatedArgument(functionName: function.Function, argumentIndex: index));
-
-                functionParamDependecies.AddRange(parameterReferences);
-                arguments.Add(new FunctionCallArgument(expression: parameters[index], references: parameterReferences.ToImmutableArray()));
+                    results: functionParamDependecies);
             }
 
             var propertyDependecies = new List<Reference>();
@@ -267,9 +232,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     parent: parent,
                     countExpressionScopes: countExpressionScopes,
                     typeMetadata: typeMetadata,
-                    results: propertyDependecies,
-                    functionCalls: functionCalls,
-                    isConditionallyEvaluated: isConditionallyEvaluated);
+                    results: propertyDependecies);
             }
 
             PropertySelectionPath? propertySelectionPath = null;
@@ -293,10 +256,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 }
             }
 
-            Reference? functionReference = null;
             if (Reference.IsReferenceFunction(function, out var functionReferenceKind))
             {
-                functionReference = new Reference(
+                var reference = new Reference(
                     function: function,
                     kind: functionReferenceKind,
                     resolutionDependencies: functionParamDependecies.ToImmutableArray(),
@@ -307,7 +269,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     path: path,
                     parent: parent);
 
-                results.Add(functionReference);
+                results.Add(reference);
             }
             else
             {
@@ -315,12 +277,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 results.AddRange(functionParamDependecies);
                 results.AddRange(propertyDependecies);
             }
-
-            functionCalls?.Add(new FunctionCall(
-                expression: function,
-                arguments: arguments.ToImmutableArray(),
-                reference: functionReference,
-                isConditionallyEvaluated: isConditionallyEvaluated));
         }
 
         /// <summary>
@@ -351,6 +307,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent) : base(jTokenMetadata?.LineNumber, jTokenMetadata?.LinePosition, path, parent)
         {
             this.Kind = kind;
+            this.SourceFunction = function;
             this.IsResolved = !resolutionDependencies.Any();
             this.ResolutionDependencies = resolutionDependencies;
             this.PropertySelectionPath = propertySelectionPath;

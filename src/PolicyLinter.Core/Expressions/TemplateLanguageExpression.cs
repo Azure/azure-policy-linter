@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------
+// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -47,12 +47,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ImmutableArray<Reference> References { get; }
 
         /// <summary>
-        /// Every template function call in the expression, including nested calls and calls inside property selectors.
-        /// Nested calls come before the calls that contain them.
-        /// </summary>
-        public ImmutableArray<FunctionCall> FunctionCalls { get; }
-
-        /// <summary>
         /// The reference kind of the root language expression if it is a reference.
         /// </summary>
         /// <example>
@@ -63,6 +57,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// When this variable is not null, it can be expected that the <see cref="References"/> array will contain only one reference of the same kind.
         /// </remarks>
         public ReferenceKind? ReferenceKind { get; }
+
+        /// <summary>
+        /// The parsed expression: a <see cref="FunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="LiteralValue"/> (e.g. "[1]").
+        /// </summary>
+        public ExpressionNode Root { get; }
+
+        /// <summary>
+        /// Whether the expression is the entire property value, e.g. { "value": "[field('a')]" },
+        /// and not part of an array or object value, or a property name.
+        /// </summary>
+        public bool IsEntireValue { get; }
 
         /// <summary>
         /// Extracts template language expressions from a JToken.
@@ -82,6 +87,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent)
         {
             var results = new List<TemplateLanguageExpression>();
+            var root = token;
             JsonUtility.WalkJsonRecursive(
                 root: token,
                 propertyAction: (property) =>
@@ -90,6 +96,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     {
                         results.Add(new TemplateLanguageExpression(
                             expression: property.Name,
+                            isEntireValue: false,
                             jTokenMetadata: jTokenMetadata,
                             countExpressionScopes: countExpressionScopes,
                             typeMetadata: typeMetadata,
@@ -103,6 +110,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     {
                         results.Add(new TemplateLanguageExpression(
                             expression: token.ToStringValue()!,
+                            isEntireValue: object.ReferenceEquals(token, root),
                             jTokenMetadata: jTokenMetadata,
                             countExpressionScopes: countExpressionScopes,
                             typeMetadata: typeMetadata,
@@ -134,6 +142,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         internal void Visit(PolicyExpressionVisitor visitor, bool skipVisitingReferences)
         {
             visitor.Visit?.Invoke(this);
+            this.Root.Visit(visitor);
 
             if (skipVisitingReferences)
             {
@@ -155,27 +164,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             return this.References.Any(reference => !reference.IsResolved);
         }
 
-        /// <summary>
-        /// Tries to get the function name when the root language expression is a function.
-        /// </summary>
-        /// <param name="functionName">The root function name, or an empty string when the root expression is not a function.</param>
-        public bool TryGetFunctionName(out string functionName)
-        {
-            if (this.LanguageExpression is FunctionExpression functionExpression)
-            {
-                functionName = functionExpression.Function;
-                return true;
-            }
-
-            functionName = string.Empty;
-            return false;
-        }
 
         /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageExpression"/> class.
         /// </summary>
         private TemplateLanguageExpression(
             string expression,
+            bool isEntireValue,
             JTokenMetadata? jTokenMetadata,
             Stack<CountExpressionScope> countExpressionScopes,
             ITypeMetadata typeMetadata,
@@ -188,6 +183,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             this.Expression = expression;
+            this.IsEntireValue = isEntireValue;
             this.LanguageExpression = ExpressionsEngine.ParseLanguageExpression(expression);
             if (Reference.IsReferenceFunction(this.LanguageExpression, out var kind))
             {
@@ -195,7 +191,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             var references = new List<Reference>();
-            var functionCalls = new List<FunctionCall>();
 
             Reference.FromLanguageExpression(
                 languageExpression: this.LanguageExpression,
@@ -204,13 +199,38 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 countExpressionScopes: countExpressionScopes,
                 typeMetadata: typeMetadata,
                 jTokenMetadata: jTokenMetadata,
-                results: references,
-                functionCalls: functionCalls,
-                isConditionallyEvaluated: false);
+                results: references);
 
             this.References = references.ToImmutableArray();
-            this.FunctionCalls = functionCalls.ToImmutableArray();
+            this.Root = ExpressionNode.Create(
+                expression: this.LanguageExpression,
+                parent: this,
+                isConditionallyEvaluated: false,
+                references: TemplateLanguageExpression.GetReferencesBySourceFunction(this.References));
+        }
 
+        /// <summary>
+        /// Maps the function call of each reference (including resolution dependencies) to the reference.
+        /// </summary>
+        private static Dictionary<FunctionExpression, Reference> GetReferencesBySourceFunction(IEnumerable<Reference> references)
+        {
+            var result = new Dictionary<FunctionExpression, Reference>(ReferenceEqualityComparer.Instance);
+            var pending = new Stack<Reference>(references);
+            while (pending.Count > 0)
+            {
+                var reference = pending.Pop();
+                if (reference.SourceFunction != null)
+                {
+                    result[reference.SourceFunction] = reference;
+                }
+
+                foreach (var dependency in reference.ResolutionDependencies.Concat(reference.PropertySelectionPath?.ResolutionDependencies ?? ImmutableArray<Reference>.Empty))
+                {
+                    pending.Push(dependency);
+                }
+            }
+
+            return result;
         }
 
         /// <summary>

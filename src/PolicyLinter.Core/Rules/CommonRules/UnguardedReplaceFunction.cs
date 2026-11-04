@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags replace() calls whose string to replace is known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedReplaceFunction : LinterRule<TemplateLanguageExpression>
+    public sealed class UnguardedReplaceFunction : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "Unguarded Replace Function";
 
@@ -34,15 +34,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            var fires = expression.FunctionCalls.Any(call =>
-                !call.IsConditionallyEvaluated &&
-                call.Name.EqualsOrdinalInsensitively("replace") &&
-                call.Arguments.Length > 1 &&
-                call.Arguments[1].IsEvaluationTimeValue);
-
-            return fires
+            return !expression.IsConditionallyEvaluated &&
+                expression.Name.EqualsOrdinalInsensitively("replace") &&
+                expression.Arguments.Length > 1 &&
+                expression.Arguments[1].IsEvaluationTimeReference()
                 ? new[] { this.CreateWarning(expression) }
                 : Array.Empty<LinterOutput>();
         }

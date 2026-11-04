@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags a property or index selected from a field() or current() value, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedFieldPropertyAccessor : LinterRule<TemplateLanguageExpression>
+    public sealed class UnguardedFieldPropertyAccessor : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "Unguarded Field Property Accessor";
 
@@ -34,17 +34,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            var call = expression.FunctionCalls.FirstOrDefault(call =>
-                !call.IsConditionallyEvaluated &&
-                call.Selectors.Length > 0 &&
-                call.Reference != null &&
-                (call.Reference.Kind == ReferenceKind.ResourceField || call.Reference.IsResolvedFieldReference()));
-
-            return call == null
-                ? Array.Empty<LinterOutput>()
-                : new[] { this.CreateError(expression, call.Name) };
+            return !expression.IsConditionallyEvaluated &&
+                expression.Selectors.Length > 0 &&
+                expression.Reference != null &&
+                (expression.Reference.Kind == ReferenceKind.ResourceField || expression.Reference.IsResolvedFieldReference())
+                ? new[] { this.CreateError(expression, expression.Name) }
+                : Array.Empty<LinterOutput>();
         }
     }
 }

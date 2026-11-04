@@ -15,7 +15,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags an index on the result of split() on a value known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedSplitIndex : LinterRule<TemplateLanguageExpression>
+    public sealed class UnguardedSplitIndex : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "Unguarded Split Index";
 
@@ -35,17 +35,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            var fires = expression.FunctionCalls.Any(call =>
-                !call.IsConditionallyEvaluated &&
-                call.Name.EqualsOrdinalInsensitively("split") &&
-                call.Selectors.Length > 0 &&
-                UnguardedSplitIndex.CanBeOutOfBounds(index: call.Selectors[0]) &&
-                call.Arguments.Length > 0 &&
-                call.Arguments[0].IsEvaluationTimeValue);
-
-            return fires
+            return !expression.IsConditionallyEvaluated &&
+                expression.Name.EqualsOrdinalInsensitively("split") &&
+                expression.Selectors.Length > 0 &&
+                UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) &&
+                expression.Arguments.Length > 0 &&
+                expression.Arguments[0].IsEvaluationTimeReference()
                 ? new[] { this.CreateError(expression) }
                 : Array.Empty<LinterOutput>();
         }
@@ -53,9 +50,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <summary>
         /// Index 0 is always in bounds, because split() returns at least one element for a string, including an empty string.
         /// </summary>
-        private static bool CanBeOutOfBounds(JToken? index)
+        private static bool CanBeOutOfBounds(ExpressionNode index)
         {
-            return index == null || index.Type != JTokenType.Integer || index.Value<long>() != 0;
+            return index is not LiteralValue { Value: { Type: JTokenType.Integer } value } || value.Value<long>() != 0;
         }
     }
 }

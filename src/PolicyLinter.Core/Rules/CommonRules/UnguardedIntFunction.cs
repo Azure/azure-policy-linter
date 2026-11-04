@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags int() calls on values known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedIntFunction : LinterRule<TemplateLanguageExpression>
+    public sealed class UnguardedIntFunction : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "Unguarded Int Function";
 
@@ -34,14 +34,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            var fires = expression.FunctionCalls.Any(call =>
-                !call.IsConditionallyEvaluated &&
-                call.Name.EqualsOrdinalInsensitively("int") &&
-                call.Arguments.Any(argument => argument.IsEvaluationTimeValue));
-
-            return fires
+            return !expression.IsConditionallyEvaluated &&
+                expression.Name.EqualsOrdinalInsensitively("int") &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
                 ? new[] { this.CreateWarning(expression) }
                 : Array.Empty<LinterOutput>();
         }

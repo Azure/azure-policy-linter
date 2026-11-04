@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags div() and mod() calls with arguments known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedDivOrModFunction : LinterRule<TemplateLanguageExpression>
+    public sealed class UnguardedDivOrModFunction : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "Unguarded Div or Mod Function";
 
@@ -34,16 +34,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            var call = expression.FunctionCalls.FirstOrDefault(call =>
-                !call.IsConditionallyEvaluated &&
-                (call.Name.EqualsOrdinalInsensitively("div") || call.Name.EqualsOrdinalInsensitively("mod")) &&
-                call.Arguments.Any(argument => argument.IsEvaluationTimeValue));
-
-            return call == null
-                ? Array.Empty<LinterOutput>()
-                : new[] { this.CreateWarning(expression, call.Name) };
+            return !expression.IsConditionallyEvaluated &&
+                (expression.Name.EqualsOrdinalInsensitively("div") || expression.Name.EqualsOrdinalInsensitively("mod")) &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
+                ? new[] { this.CreateWarning(expression, expression.Name) }
+                : Array.Empty<LinterOutput>();
         }
     }
 }

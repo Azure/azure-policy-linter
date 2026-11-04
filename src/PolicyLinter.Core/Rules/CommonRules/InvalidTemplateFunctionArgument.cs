@@ -5,6 +5,7 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
+    using System;
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
@@ -12,7 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags template function calls that fail for a literal value or a known parameter value.
     /// </summary>
-    public sealed class InvalidTemplateFunctionArgument : LinterRule<TemplateLanguageExpression>
+    public sealed class InvalidTemplateFunctionArgument : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "Invalid Template Function Argument";
 
@@ -32,11 +33,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            return expression.FunctionCalls
-                .Where(call => !call.IsConditionallyEvaluated)
-                .SelectMany(call => call.GetFailuresForKnownValues(context))
+            if (expression.IsConditionallyEvaluated)
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return expression
+                .GetFailuresForKnownValues(context)
                 .Select(failure => this.CreateError(expression, failure))
                 .ToArray();
         }

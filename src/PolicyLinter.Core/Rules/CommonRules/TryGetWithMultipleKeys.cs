@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags tryGet() calls with more than one key.
     /// </summary>
-    public sealed class TryGetWithMultipleKeys : LinterRule<TemplateLanguageExpression>
+    public sealed class TryGetWithMultipleKeys : LinterRule<FunctionCall>
     {
         private const string RuleTitle = "tryGet with Multiple Keys";
 
@@ -34,13 +34,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
         {
-            var fires = expression.FunctionCalls.Any(call =>
-                call.Name.EqualsOrdinalInsensitively("tryGet") &&
-                call.Arguments.Length > 2);
-
-            return fires
+            return expression.Name.EqualsOrdinalInsensitively("tryGet") &&
+                expression.Arguments.Length > 2
                 ? new[] { this.CreateError(expression) }
                 : Array.Empty<LinterOutput>();
         }
