@@ -22,9 +22,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[float(field('Microsoft.Test/widgets/size'))]", "")]
-        [InlineData("[float(requestContext().apiVersion)]", "")]
-        public void RuleTests_UnguardedFloatFunction_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[float(field('Microsoft.Test/widgets/size'))]")]
+        [InlineData("[float(requestContext().apiVersion)]")]
+        public void RuleTests_UnguardedFloatFunction_Fires(string valueExpression)
         {
             var results = UnguardedFloatFunctionTests.LintValueExpression(valueExpression);
 
@@ -34,9 +34,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded Float Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(UnguardedFloatFunctionTests.ExpectedDescription, descriptionParameter),
+                Description: UnguardedFloatFunctionTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -56,11 +56,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

@@ -22,8 +22,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[json(field('tags[config]'))]", "")]
-        public void RuleTests_UnguardedJsonFunction_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[json(field('tags[config]'))]")]
+        public void RuleTests_UnguardedJsonFunction_Fires(string valueExpression)
         {
             var results = UnguardedJsonFunctionTests.LintValueExpression(valueExpression);
 
@@ -33,9 +33,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded Json Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 6,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(UnguardedJsonFunctionTests.ExpectedDescription, descriptionParameter),
+                Description: UnguardedJsonFunctionTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -54,13 +54,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var policyDefinition = $@"
                 {{
                   ""properties"": {{
-                    ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
-                    }},
                     ""policyRule"": {{
                       ""if"": {{
                         ""value"": ""{valueExpression}"",

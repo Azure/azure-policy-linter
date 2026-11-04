@@ -22,8 +22,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[base64ToJson(field('Microsoft.Test/widgets/settings'))]", "")]
-        public void RuleTests_UnguardedBase64ToJsonFunction_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[base64ToJson(field('Microsoft.Test/widgets/settings'))]")]
+        public void RuleTests_UnguardedBase64ToJsonFunction_Fires(string valueExpression)
         {
             var results = UnguardedBase64ToJsonFunctionTests.LintValueExpression(valueExpression);
 
@@ -33,9 +33,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded base64ToJson Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(UnguardedBase64ToJsonFunctionTests.ExpectedDescription, descriptionParameter),
+                Description: UnguardedBase64ToJsonFunctionTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -55,11 +55,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

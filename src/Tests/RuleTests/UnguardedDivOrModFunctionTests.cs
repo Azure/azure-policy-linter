@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded Div or Mod Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: string.Format(UnguardedDivOrModFunctionTests.ExpectedDescription, descriptionParameter),
                 Path: "properties.policyRule.if.value"));
@@ -56,11 +56,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

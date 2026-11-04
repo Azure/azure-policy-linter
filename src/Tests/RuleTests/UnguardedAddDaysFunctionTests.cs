@@ -22,9 +22,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[addDays(field('tags[createdOn]'), 90)]", "")]
-        [InlineData("[addDays(utcNow(), field('tags[days]'))]", "")]
-        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[addDays(field('tags[createdOn]'), 90)]")]
+        [InlineData("[addDays(utcNow(), field('tags[days]'))]")]
+        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression)
         {
             var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);
 
@@ -34,9 +34,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded addDays Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(UnguardedAddDaysFunctionTests.ExpectedDescription, descriptionParameter),
+                Description: UnguardedAddDaysFunctionTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -57,11 +57,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

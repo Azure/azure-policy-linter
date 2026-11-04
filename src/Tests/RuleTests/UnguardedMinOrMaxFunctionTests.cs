@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded Min or Max Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: string.Format(UnguardedMinOrMaxFunctionTests.ExpectedDescription, descriptionParameter),
                 Path: "properties.policyRule.if.value"));
@@ -57,11 +57,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

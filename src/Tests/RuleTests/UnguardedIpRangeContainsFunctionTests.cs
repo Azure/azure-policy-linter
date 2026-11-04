@@ -22,9 +22,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[ipRangeContains('10.0.0.0/8', field('Microsoft.Test/widgets/ipAddress'))]", "")]
-        [InlineData("[ipRangeContains(field('Microsoft.Test/widgets/range'), '10.0.0.1')]", "")]
-        public void RuleTests_UnguardedIpRangeContainsFunction_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[ipRangeContains('10.0.0.0/8', field('Microsoft.Test/widgets/ipAddress'))]")]
+        [InlineData("[ipRangeContains(field('Microsoft.Test/widgets/range'), '10.0.0.1')]")]
+        public void RuleTests_UnguardedIpRangeContainsFunction_Fires(string valueExpression)
         {
             var results = UnguardedIpRangeContainsFunctionTests.LintValueExpression(valueExpression);
 
@@ -34,9 +34,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded ipRangeContains Function",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(UnguardedIpRangeContainsFunctionTests.ExpectedDescription, descriptionParameter),
+                Description: UnguardedIpRangeContainsFunctionTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -56,11 +56,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Invalid base64ToJson Function Argument",
                 Severity: Severity.Error,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 6,
                 LinePosition: 35 + valueExpression.Length,
                 Description: string.Format(InvalidBase64ToJsonFunctionArgumentTests.ExpectedDescription, descriptionParameter),
                 Path: "properties.policyRule.if.value"));
@@ -53,13 +53,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var policyDefinition = $@"
                 {{
                   ""properties"": {{
-                    ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
-                    }},
                     ""policyRule"": {{
                       ""if"": {{
                         ""value"": ""{valueExpression}"",

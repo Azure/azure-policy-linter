@@ -22,10 +22,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[tryGet(field('Microsoft.Test/widgets/properties'), 'settings', 'tier')]", "")]
-        [InlineData("[coalesce(tryGet(field('Microsoft.Test/widgets/properties'), 'settings', 'tier'), '')]", "")]
-        [InlineData("[if(true(), '', tryGet(parameters('emptyArrayParam'), 0, 1))]", "")]
-        public void RuleTests_TryGetWithMultipleKeys_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[tryGet(field('Microsoft.Test/widgets/properties'), 'settings', 'tier')]")]
+        [InlineData("[coalesce(tryGet(field('Microsoft.Test/widgets/properties'), 'settings', 'tier'), '')]")]
+        [InlineData("[if(true(), '', tryGet(parameters('emptyArrayParam'), 0, 1))]")]
+        public void RuleTests_TryGetWithMultipleKeys_Fires(string valueExpression)
         {
             var results = TryGetWithMultipleKeysTests.LintValueExpression(valueExpression);
 
@@ -35,9 +35,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "tryGet with Multiple Keys",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(TryGetWithMultipleKeysTests.ExpectedDescription, descriptionParameter),
+                Description: TryGetWithMultipleKeysTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -57,11 +57,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 {{
                   ""properties"": {{
                     ""parameters"": {{
-                      ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{

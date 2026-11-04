@@ -22,10 +22,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[split(field('id'), '/')[2]]", "")]
-        [InlineData("[toLower(split(field('id'), '/')[4])]", "")]
-        [InlineData("[split(field('id'), '/')[parameters('zeroParam')]]", "")]
-        public void RuleTests_UnguardedSplitIndex_Fires(string valueExpression, string descriptionParameter)
+        [InlineData("[split(field('id'), '/')[2]]")]
+        [InlineData("[toLower(split(field('id'), '/')[4])]")]
+        [InlineData("[split(field('id'), '/')[parameters('zeroParam')]]")]
+        public void RuleTests_UnguardedSplitIndex_Fires(string valueExpression)
         {
             var results = UnguardedSplitIndexTests.LintValueExpression(valueExpression);
 
@@ -35,9 +35,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 Title: "Unguarded Split Index",
                 Severity: Severity.Warning,
                 Category: Category.BestPractices,
-                LineNumber: 13,
+                LineNumber: 10,
                 LinePosition: 35 + valueExpression.Length,
-                Description: string.Format(UnguardedSplitIndexTests.ExpectedDescription, descriptionParameter),
+                Description: UnguardedSplitIndexTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
@@ -60,10 +60,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                   ""properties"": {{
                     ""parameters"": {{
                       ""textParam"": {{ ""type"": ""String"", ""allowedValues"": [ ""1"", ""ten"" ], ""defaultValue"": ""1"" }},
-                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }},
-                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }},
-                      ""emptyStringParam"": {{ ""type"": ""String"", ""defaultValue"": """" }},
-                      ""noValuesParam"": {{ ""type"": ""String"" }}
+                      ""zeroParam"": {{ ""type"": ""Integer"", ""defaultValue"": 0 }}
                     }},
                     ""policyRule"": {{
                       ""if"": {{
