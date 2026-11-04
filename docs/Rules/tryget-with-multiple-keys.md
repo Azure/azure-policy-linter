@@ -10,7 +10,8 @@ This rule reports a call to [`tryGet()`](https://learn.microsoft.com/azure/azure
 
 ## Suggestions
 
-- Use one `tryGet()` for each key that can be missing: `tryGet(tryGet(obj, 'a'), 'b')`.
+- Use `selectProperty()` to read a nested property: `selectProperty(obj, 'a', 'b')`. It returns null when any key on the path is missing, so evaluation doesn't fail. Use `coalesce()` to replace the null with a fallback.
+- `selectProperty()` accepts only property names. If the path has an array index, use one `tryGet()` for each key that can be missing: `tryGet(tryGet(obj, 'a'), 0)`.
 
 ## Examples
 
@@ -27,7 +28,7 @@ This rule reports a call to [`tryGet()`](https://learn.microsoft.com/azure/azure
 
 ```json
 {
-  "value": "[coalesce(tryGet(tryGet(field('Microsoft.Test/resourceType/properties'), 'settings'), 'tier'), '')]",
+  "value": "[coalesce(selectProperty(field('Microsoft.Test/resourceType/properties'), 'settings', 'tier'), '')]",
   "equals": "premium"
 }
 ```
