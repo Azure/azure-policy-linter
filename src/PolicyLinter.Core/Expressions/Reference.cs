@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------
+// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -237,7 +237,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             // TODO: If there's a need for these "child" references to point back to the reference who depends on them,
             // we can add a "dependentReference" property to the reference class and set it to the reference that depends on it.
             var functionParamDependecies = new List<Reference>();
-            var argumentReferences = new List<ImmutableArray<Reference>>();
+            var arguments = new List<FunctionCallArgument>();
             var parameters = function.Parameters.CoalesceEnumerable().ToArray();
             for (var index = 0; index < parameters.Length; index++)
             {
@@ -254,7 +254,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     isConditionallyEvaluated: isConditionallyEvaluated || FunctionCall.IsConditionallyEvaluatedArgument(functionName: function.Function, argumentIndex: index));
 
                 functionParamDependecies.AddRange(parameterReferences);
-                argumentReferences.Add(parameterReferences.ToImmutableArray());
+                arguments.Add(new FunctionCallArgument(expression: parameters[index], references: parameterReferences.ToImmutableArray()));
             }
 
             var propertyDependecies = new List<Reference>();
@@ -318,7 +318,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
             functionCalls?.Add(new FunctionCall(
                 expression: function,
-                argumentReferences: argumentReferences.ToArray(),
+                arguments: arguments.ToImmutableArray(),
                 reference: functionReference,
                 isConditionallyEvaluated: isConditionallyEvaluated));
         }

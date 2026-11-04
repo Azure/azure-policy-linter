@@ -39,7 +39,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var fires = expression.FunctionCalls.Any(call =>
                 !call.IsConditionallyEvaluated &&
                 call.Name.EqualsOrdinalInsensitively("float") &&
-                call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0));
+                call.Arguments.Any(argument => argument.IsEvaluationTimeValue));
 
             return fires
                 ? new[] { this.CreateWarning(expression) }

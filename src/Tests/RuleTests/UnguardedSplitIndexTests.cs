@@ -45,6 +45,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[split(field('id'), '/')[0]]")]
         [InlineData("[split(parameters('textParam'), '/')[1]]")]
         [InlineData("[last(split(field('id'), '/'))]")]
+        [InlineData("[split(concat(field('id'), '//'), '/')[2]]")]
         [InlineData("[if(greater(length(split(field('id'), '/')), 2), split(field('id'), '/')[2], '')]")]
         public void RuleTests_UnguardedSplitIndex_NoFinding(string valueExpression)
         {

@@ -6,7 +6,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
     using global::Azure.Deployments.Expression.Expressions;
@@ -51,13 +50,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates a new instance of the <see cref="FunctionCall"/> class.
         /// </summary>
-        internal FunctionCall(FunctionExpression expression, ImmutableArray<Reference>[] argumentReferences, Reference? reference, bool isConditionallyEvaluated)
+        internal FunctionCall(FunctionExpression expression, ImmutableArray<FunctionCallArgument> arguments, Reference? reference, bool isConditionallyEvaluated)
         {
             this.Name = expression.Function;
-            this.Arguments = expression.Parameters
-                .CoalesceEnumerable()
-                .Select((argument, index) => new FunctionCallArgument(expression: argument, references: argumentReferences[index]))
-                .ToImmutableArray();
+            this.Arguments = arguments;
             this.Selectors = expression.Properties
                 .CoalesceEnumerable()
                 .Select(property => (property as JTokenExpression)?.Value)
@@ -79,20 +75,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Whether the argument at the given index exists and depends on a value that is known only when the policy is evaluated.
-        /// </summary>
-        /// <param name="argumentIndex">The zero-based argument index.</param>
-        public bool ArgumentDependsOnEvaluationTimeValue(int argumentIndex)
-        {
-            return argumentIndex < this.Arguments.Length && this.Arguments[argumentIndex].DependsOnEvaluationTimeValue;
-        }
-
-        /// <summary>
         /// Evaluates the call for the values known from the policy definition and returns the calls that fail, e.g. "int('ten')".
         /// </summary>
         /// <remarks>
         /// Applies only to calls of functions the linter can evaluate, whose arguments are literals or use a single parameter.
-        /// A parameter is evaluated with its default value and each of its allowed values.
+        /// A parameter is evaluated with each of its allowed values and its default value.
         /// Calls with any other reference, and values for which an argument fails to evaluate, are skipped.
         /// Any error from the function itself is a failure, including a wrong number of arguments (e.g. max() of an empty array).
         /// </remarks>
@@ -107,47 +94,44 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             var parameterNames = references.Select(reference => reference.Identifier).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
-            if (parameterNames.Length > 1)
+            var evaluationContexts = parameterNames.Length switch
             {
-                return Array.Empty<string>();
-            }
+                0 => new[] { new StaticTemplateFunctionEvaluationContext() },
+                1 => FunctionCall.GetKnownValues(context: context, parameterName: parameterNames[0])
+                    .Select(value => new StaticTemplateFunctionEvaluationContext(parameterName: parameterNames[0], parameterValue: value))
+                    .ToArray(),
+                _ => Array.Empty<StaticTemplateFunctionEvaluationContext>(),
+            };
 
-            if (parameterNames.Length == 0)
-            {
-                return this.TryGetFailure(evaluationContext: new StaticTemplateFunctionEvaluationContext(), failure: out var failure)
-                    ? new[] { failure! }
-                    : Array.Empty<string>();
-            }
-
-            if (context.Parameters == null || !context.Parameters.TryGetValue(parameterNames[0], out var parameter))
-            {
-                return Array.Empty<string>();
-            }
-
-            var knownValues = parameter.DefaultValue == null
-                ? parameter.AllowedValues.CoalesceEnumerable()
-                : parameter.AllowedValues.CoalesceEnumerable().Append(parameter.DefaultValue);
-
-            var failures = new List<string>();
-            foreach (var value in knownValues)
-            {
-                var evaluationContext = new StaticTemplateFunctionEvaluationContext(parameterName: parameterNames[0], parameterValue: value);
-                if (this.TryGetFailure(evaluationContext: evaluationContext, failure: out var failure) && !failures.Contains(failure!))
-                {
-                    failures.Add(failure!);
-                }
-            }
-
-            return failures.ToArray();
+            return evaluationContexts
+                .Select(this.GetFailure)
+                .OfType<string>()
+                .Distinct()
+                .ToArray();
         }
 
         /// <summary>
-        /// Evaluates the arguments and then the function. Returns true with the evaluated call when the function fails.
+        /// Gets the parameter's allowed values and default value.
         /// </summary>
-        private bool TryGetFailure(StaticTemplateFunctionEvaluationContext evaluationContext, out string? failure)
+        private static JToken[] GetKnownValues(LinterContext context, string parameterName)
         {
-            failure = null;
+            if (context.Parameters == null || !context.Parameters.TryGetValue(parameterName, out var parameter))
+            {
+                return Array.Empty<JToken>();
+            }
 
+            return parameter.AllowedValues
+                .CoalesceEnumerable()
+                .Concat(new[] { parameter.DefaultValue })
+                .OfType<JToken>()
+                .ToArray();
+        }
+
+        /// <summary>
+        /// Evaluates the arguments and then the function. Returns the evaluated call when the function fails, otherwise null.
+        /// </summary>
+        private string? GetFailure(StaticTemplateFunctionEvaluationContext evaluationContext)
+        {
             JToken[] argumentValues;
             try
             {
@@ -156,18 +140,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             catch (Exception exception) when (!exception.IsFatal())
             {
                 // The failure is not in this call (or the argument uses a function the linter can't evaluate).
-                return false;
+                return null;
             }
 
             try
             {
                 StaticTemplateFunctionEvaluationContext.EvaluateBuiltInFunction(functionName: this.Name, arguments: argumentValues);
-                return false;
+                return null;
             }
             catch (Exception exception) when (!exception.IsFatal())
             {
-                failure = $"{this.Name}({string.Join(", ", argumentValues.Select(FunctionCall.FormatValue))})";
-                return true;
+                return $"{this.Name}({string.Join(", ", argumentValues.Select(FunctionCall.FormatValue))})";
             }
         }
 
@@ -195,9 +178,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ImmutableArray<Reference> References { get; }
 
         /// <summary>
-        /// Whether the argument depends on a value that is known only when the policy is evaluated (see <see cref="Reference.IsEvaluationTimeValue"/>).
+        /// Whether the argument itself is a reference to a value known only when the policy is evaluated (see <see cref="Reference.IsEvaluationTimeValue"/>),
+        /// e.g. "field('name')" or "requestContext().apiVersion". A reference inside another function, e.g. "concat(field('name'), '-')", doesn't count.
         /// </summary>
-        public bool DependsOnEvaluationTimeValue => this.References.Any(reference => reference.IsEvaluationTimeValue());
+        public bool IsEvaluationTimeValue { get; }
 
         /// <summary>
         /// Creates a new instance of the <see cref="FunctionCallArgument"/> class.
@@ -206,6 +190,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             this.expression = expression;
             this.References = references;
+            this.IsEvaluationTimeValue = Reference.IsReferenceFunction(expression, out _) && references.Single().IsEvaluationTimeValue();
         }
 
         /// <summary>

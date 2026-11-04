@@ -5,30 +5,28 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 {
-    using System;
     using System.Linq;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
-    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
-    /// Flags float() calls that fail for a literal value or a known parameter value.
+    /// Flags template function calls that fail for a literal value or a known parameter value.
     /// </summary>
-    public sealed class InvalidFloatFunctionArgument : LinterRule<TemplateLanguageExpression>
+    public sealed class InvalidTemplateFunctionArgument : LinterRule<TemplateLanguageExpression>
     {
-        private const string RuleTitle = "Invalid Float Function Argument";
+        private const string RuleTitle = "Invalid Template Function Argument";
 
         private const string RuleDescription =
-            "The call {0} fails when the policy is evaluated, because the value is not a number. A failed expression makes the policy deny the request. Fix the value, or the parameter's defaultValue and allowedValues.";
+            "The call {0} fails when the policy is evaluated. A failed expression makes the policy deny the request. Fix the value, or the parameter's defaultValue and allowedValues.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InvalidFloatFunctionArgument"/> class.
+        /// Initializes a new instance of the <see cref="InvalidTemplateFunctionArgument"/> class.
         /// </summary>
-        public InvalidFloatFunctionArgument() : base(
-            identifier: "invalid-float-function-argument",
+        public InvalidTemplateFunctionArgument() : base(
+            identifier: "invalid-template-function-argument",
             category: Category.BestPractices,
-            title: InvalidFloatFunctionArgument.RuleTitle,
-            descriptionFormat: InvalidFloatFunctionArgument.RuleDescription,
+            title: InvalidTemplateFunctionArgument.RuleTitle,
+            descriptionFormat: InvalidTemplateFunctionArgument.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -37,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
         {
             return expression.FunctionCalls
-                .Where(call => !call.IsConditionallyEvaluated && call.Name.EqualsOrdinalInsensitively("float"))
+                .Where(call => !call.IsConditionallyEvaluated)
                 .SelectMany(call => call.GetFailuresForKnownValues(context))
                 .Select(failure => this.CreateError(expression, failure))
                 .ToArray();

@@ -42,7 +42,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 call.Name.EqualsOrdinalInsensitively("split") &&
                 call.Selectors.Length > 0 &&
                 UnguardedSplitIndex.CanBeOutOfBounds(index: call.Selectors[0]) &&
-                call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0));
+                call.Arguments.Length > 0 &&
+                call.Arguments[0].IsEvaluationTimeValue);
 
             return fires
                 ? new[] { this.CreateError(expression) }

@@ -39,7 +39,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var fires = expression.FunctionCalls.Any(call =>
                 !call.IsConditionallyEvaluated &&
                 call.Name.EqualsOrdinalInsensitively("replace") &&
-                call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 1));
+                call.Arguments.Length > 1 &&
+                call.Arguments[1].IsEvaluationTimeValue);
 
             return fires
                 ? new[] { this.CreateWarning(expression) }

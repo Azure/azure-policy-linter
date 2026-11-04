@@ -59,10 +59,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var call = expression.FunctionCalls.Single(call => call.Name == "replace");
             call.Arguments.Should().HaveCount(3);
             call.Arguments[0].References.Should().ContainSingle().Which.Kind.Should().Be(ReferenceKind.PolicyParameterName);
-            call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0).Should().BeFalse();
-            call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 1).Should().BeTrue();
-            call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 2).Should().BeTrue();
-            call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 3).Should().BeFalse();
+            call.Arguments.Select(argument => argument.IsEvaluationTimeValue).Should().Equal(false, false, true);
             call.Arguments[1].References.Single().Should().BeSameAs(expression.References.Single(reference => reference.Kind == ReferenceKind.ResourceField));
         }
 
@@ -91,7 +88,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var (expression, _) = FunctionCallTests.Lint(policy).Single(result => result.Expression.Expression.StartsWith("[int("));
 
-            expression.FunctionCalls.Single(call => call.Name == "int").ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0).Should().BeFalse();
+            expression.FunctionCalls.Single(call => call.Name == "int").Arguments[0].IsEvaluationTimeValue.Should().BeFalse();
         }
 
         [Fact]
@@ -106,7 +103,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var (expression, _) = FunctionCallTests.Lint(policy).Single(result => result.Expression.Expression.StartsWith("[int("));
 
-            expression.FunctionCalls.Single(call => call.Name == "int").ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0).Should().BeTrue();
+            expression.FunctionCalls.Single(call => call.Name == "int").Arguments[0].IsEvaluationTimeValue.Should().BeTrue();
         }
 
         [Theory]

@@ -39,7 +39,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var call = expression.FunctionCalls.FirstOrDefault(call =>
                 !call.IsConditionallyEvaluated &&
                 (call.Name.EqualsOrdinalInsensitively("div") || call.Name.EqualsOrdinalInsensitively("mod")) &&
-                (call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0) || call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 1)));
+                call.Arguments.Any(argument => argument.IsEvaluationTimeValue));
 
             return call == null
                 ? Array.Empty<LinterOutput>()

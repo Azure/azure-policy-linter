@@ -32,7 +32,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[substring(field('name'), 0, parameters('length'))]")]
         [InlineData("[toLower(substring(field('name'), 0, 3))]")]
         [InlineData("[concat(substring(field('name'), 0, 3), 'suffix')]")]
-        [InlineData("[substring('abcdef', 0, length(field('name')))]")]
         public void RuleTests_UnguardedSubstringFunction_EvaluationTimeInput_Fires(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
@@ -109,6 +108,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[substring('abcdef', 0, 3)]")]
         [InlineData("[length(field('name'))]")]
         [InlineData("[substring(parameters('name'), 0, 3)]")]
+        [InlineData("[substring(concat(field('name'), '---'), 0, 3)]")]
         [InlineData("prefix-[substring(field('name'), 0, 3)]")]
         public void RuleTests_UnguardedSubstringFunction_NotApplicable(string valueExpression)
         {

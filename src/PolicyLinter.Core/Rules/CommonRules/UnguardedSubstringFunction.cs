@@ -39,7 +39,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             var fires = expression.FunctionCalls.Any(call =>
                 !call.IsConditionallyEvaluated &&
                 call.Name.EqualsOrdinalInsensitively("substring") &&
-                call.Arguments.Any(argument => argument.DependsOnEvaluationTimeValue));
+                call.Arguments.Any(argument => argument.IsEvaluationTimeValue));
 
             return fires
                 ? new[] { this.CreateError(expression) }

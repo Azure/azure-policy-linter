@@ -86,7 +86,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 rules: new ILinterRule[] { new UnguardedFieldPropertyAccessor() },
                 metadata: UnguardedFieldPropertyAccessorTests.MockMetadata);
 
-            linter.Lint(policyDefinition).Should().HaveCount(expectedCount);
+            var results = linter.Lint(policyDefinition);
+
+            results.Should().HaveCount(expectedCount);
+            if (expectedCount == 1)
+            {
+                results.Should().ContainEquivalentOf(new LinterOutput(
+                    RuleIdentifier: "unguarded-field-property-accessor",
+                    Title: "Unguarded Field Property Accessor",
+                    Severity: Severity.Error,
+                    Category: Category.BestPractices,
+                    LineNumber: 11,
+                    LinePosition: 48 + valueExpression.Length,
+                    Description: string.Format(UnguardedFieldPropertyAccessorTests.ExpectedDescription, "current"),
+                    Path: "properties.policyRule.if.count.where.value"));
+            }
         }
 
         private static LinterOutput[] LintValueExpression(string valueExpression)
