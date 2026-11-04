@@ -91,14 +91,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// Evaluates the call for the values known from the policy definition and returns the calls that fail, e.g. "int('ten')".
         /// </summary>
         /// <remarks>
-        /// Applies only to calls whose arguments are literals or use a single parameter. A parameter is evaluated with its default value and each of its allowed values.
+        /// Applies only to calls of functions the linter can evaluate, whose arguments are literals or use a single parameter.
+        /// A parameter is evaluated with its default value and each of its allowed values.
         /// Calls with any other reference, and values for which an argument fails to evaluate, are skipped.
+        /// Any error from the function itself is a failure, including a wrong number of arguments (e.g. max() of an empty array).
         /// </remarks>
         /// <param name="context">The linter context.</param>
         public string[] GetFailuresForKnownValues(LinterContext context)
         {
             var references = this.Arguments.SelectMany(argument => argument.References).ToArray();
-            if (references.Any(reference => reference.Kind != ReferenceKind.PolicyParameterName || !reference.IsResolved))
+            if (!StaticTemplateFunctionEvaluationContext.IsBuiltInFunction(this.Name) ||
+                references.Any(reference => reference.Kind != ReferenceKind.PolicyParameterName || !reference.IsResolved))
             {
                 return Array.Empty<string>();
             }

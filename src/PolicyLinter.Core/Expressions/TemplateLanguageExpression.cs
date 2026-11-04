@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
         /// <summary>
         /// Every template function call in the expression, including nested calls and calls inside property selectors.
-        /// The order of the calls is not defined.
+        /// Nested calls come before the calls that contain them.
         /// </summary>
         public ImmutableArray<FunctionCall> FunctionCalls { get; }
 
@@ -205,7 +205,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 typeMetadata: typeMetadata,
                 jTokenMetadata: jTokenMetadata,
                 results: references,
-                functionCalls: functionCalls);
+                functionCalls: functionCalls,
+                isConditionallyEvaluated: false);
 
             this.References = references.ToImmutableArray();
             this.FunctionCalls = functionCalls.ToImmutableArray();

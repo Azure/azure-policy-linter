@@ -167,8 +167,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <param name="countExpressionScopes">The count expression scopes.</param>
         /// <param name="typeMetadata">The type metadata.</param>
         /// <param name="results">The list to which the references will be added.</param>
-        /// <param name="functionCalls">Optional list to which every function call in the expression will be added.</param>
-        /// <param name="isConditionallyEvaluated">Whether the expression is evaluated only for some values (see <see cref="FunctionCall.IsConditionallyEvaluated"/>).</param>
         public static void FromLanguageExpression(
             LanguageExpression languageExpression,
             JTokenMetadata? jTokenMetadata,
@@ -176,9 +174,42 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent,
             Stack<CountExpressionScope> countExpressionScopes,
             ITypeMetadata typeMetadata,
+            List<Reference> results)
+        {
+            Reference.FromLanguageExpression(
+                languageExpression: languageExpression,
+                jTokenMetadata: jTokenMetadata,
+                path: path,
+                parent: parent,
+                countExpressionScopes: countExpressionScopes,
+                typeMetadata: typeMetadata,
+                results: results,
+                functionCalls: null,
+                isConditionallyEvaluated: false);
+        }
+
+        /// <summary>
+        /// Extracts references and function calls from a language expression.
+        /// </summary>
+        /// <param name="languageExpression">The language expression.</param>
+        /// <param name="jTokenMetadata">The metadata of the JSON object from which this property was parsed.</param>
+        /// <param name="path">The path to the current expression.</param>
+        /// <param name="parent">The parent of the current expression.</param>
+        /// <param name="countExpressionScopes">The count expression scopes.</param>
+        /// <param name="typeMetadata">The type metadata.</param>
+        /// <param name="results">The list to which the references will be added.</param>
+        /// <param name="functionCalls">Optional list to which every function call in the expression will be added.</param>
+        /// <param name="isConditionallyEvaluated">Whether the expression is evaluated only for some values (see <see cref="FunctionCall.IsConditionallyEvaluated"/>).</param>
+        internal static void FromLanguageExpression(
+            LanguageExpression languageExpression,
+            JTokenMetadata? jTokenMetadata,
+            ImmutableArray<string> path,
+            PolicyExpression parent,
+            Stack<CountExpressionScope> countExpressionScopes,
+            ITypeMetadata typeMetadata,
             List<Reference> results,
-            List<FunctionCall>? functionCalls = null,
-            bool isConditionallyEvaluated = false)
+            List<FunctionCall>? functionCalls,
+            bool isConditionallyEvaluated)
         {
             if (languageExpression is not FunctionExpression function)
             {

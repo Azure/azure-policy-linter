@@ -50,6 +50,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
         }
 
         /// <summary>
+        /// Whether the linter can evaluate the given built-in function.
+        /// </summary>
+        /// <param name="functionName">The function name.</param>
+        public static bool IsBuiltInFunction(string functionName)
+        {
+            return StaticTemplateFunctionEvaluationContext.BuiltInFunctions.IsBuiltInFunction(functionName);
+        }
+
+        /// <summary>
         /// Evaluates a built-in function with the given argument values.
         /// </summary>
         /// <param name="functionName">The function name.</param>

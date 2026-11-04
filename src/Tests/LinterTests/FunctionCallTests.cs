@@ -44,6 +44,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
+        public void FunctionCallTests_SelectorInIfBranch_ConditionallyEvaluated()
+        {
+            var (expression, _) = FunctionCallTests.LintValue("[if(true(), split(field('a'), '/')[1], '')]");
+
+            expression.FunctionCalls.Single(call => call.Name == "split").IsConditionallyEvaluated.Should().BeTrue();
+        }
+
+        [Fact]
         public void FunctionCallTests_ArgumentReferences()
         {
             var (expression, _) = FunctionCallTests.LintValue("[replace(parameters('stringParam'), concat('a', field('a')), resourceGroup().name)]");
@@ -111,6 +119,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[replace('a''b', 'a''b', '')]", new string[0])]
         [InlineData("[div(4, 0)]", new[] { "div(4, 0)" })]
         [InlineData("[max(createArray())]", new[] { "max([])" })]
+        [InlineData("[selectProperty(createObject(), 1)]", new string[0])]
         public void FunctionCallTests_GetFailuresForKnownValues(string valueExpression, string[] expectedFailures)
         {
             var (expression, context) = FunctionCallTests.LintValue(valueExpression);

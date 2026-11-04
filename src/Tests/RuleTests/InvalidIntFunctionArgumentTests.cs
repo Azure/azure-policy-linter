@@ -5,6 +5,7 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 {
+    using System.Linq;
     using FluentAssertions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules;
@@ -50,6 +51,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var results = InvalidIntFunctionArgumentTests.LintValueExpression(valueExpression);
 
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_InvalidIntFunctionArgument_OneFindingPerFailingValue()
+        {
+            var results = InvalidIntFunctionArgumentTests.LintValueExpression("[int(concat(parameters('textParam'), 'x'))]");
+
+            results.Should().HaveCount(2);
+            results.Select(result => result.Description).Should().BeEquivalentTo(
+                string.Format(InvalidIntFunctionArgumentTests.ExpectedDescription, "int('1x')"),
+                string.Format(InvalidIntFunctionArgumentTests.ExpectedDescription, "int('tenx')"));
         }
 
         private static LinterOutput[] LintValueExpression(string valueExpression)

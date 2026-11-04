@@ -53,6 +53,42 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
+        [Theory]
+        [InlineData("Microsoft.Test/widgets/items[*]", "[current('Microsoft.Test/widgets/items[*]').name]", 1)]
+        [InlineData("[parameters('emptyArrayParam')]", "[current('item').name]", 0)]
+        public void RuleTests_UnguardedFieldPropertyAccessor_CurrentInCount(string countedArray, string valueExpression, int expectedCount)
+        {
+            var countSource = countedArray.StartsWith("[")
+                ? $@"""value"": ""{countedArray}"", ""name"": ""item"""
+                : $@"""field"": ""{countedArray}""";
+            var policyDefinition = $@"
+                {{
+                  ""properties"": {{
+                    ""parameters"": {{
+                      ""emptyArrayParam"": {{ ""type"": ""Array"", ""defaultValue"": [] }}
+                    }},
+                    ""policyRule"": {{
+                      ""if"": {{
+                        ""count"": {{
+                          {countSource},
+                          ""where"": {{ ""value"": ""{valueExpression}"", ""equals"": ""abc"" }}
+                        }},
+                        ""greater"": 0
+                      }},
+                      ""then"": {{
+                        ""effect"": ""deny""
+                      }}
+                    }}
+                  }}
+                }}";
+
+            var linter = new PolicyLinter(
+                rules: new ILinterRule[] { new UnguardedFieldPropertyAccessor() },
+                metadata: UnguardedFieldPropertyAccessorTests.MockMetadata);
+
+            linter.Lint(policyDefinition).Should().HaveCount(expectedCount);
+        }
+
         private static LinterOutput[] LintValueExpression(string valueExpression)
         {
             var policyDefinition = $@"

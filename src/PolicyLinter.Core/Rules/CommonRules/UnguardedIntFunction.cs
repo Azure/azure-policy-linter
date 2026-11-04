@@ -36,14 +36,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateLanguageExpression expression, LinterContext context)
         {
-            var call = expression.FunctionCalls.FirstOrDefault(call =>
+            var fires = expression.FunctionCalls.Any(call =>
                 !call.IsConditionallyEvaluated &&
                 call.Name.EqualsOrdinalInsensitively("int") &&
                 call.ArgumentDependsOnEvaluationTimeValue(argumentIndex: 0));
 
-            return call == null
-                ? Array.Empty<LinterOutput>()
-                : new[] { this.CreateWarning(expression) };
+            return fires
+                ? new[] { this.CreateWarning(expression) }
+                : Array.Empty<LinterOutput>();
         }
     }
 }
