@@ -6,12 +6,12 @@
 
 ## Description
 
-This rule reports a call to [`div()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#div) or [`mod()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#mod) with a divisor of zero. The divisor is a literal, or comes from a parameter's `defaultValue` or `allowedValues`. Evaluation fails whenever the policy uses that value, and [a failed evaluation is an implicit deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures).
+This rule reports a call to [`div()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#div) or [`mod()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#mod) with an argument that isn't an integer, or a divisor of zero. The value is a literal, or comes from a parameter's `defaultValue` or `allowedValues`. Evaluation fails whenever the policy uses that value, and [a failed evaluation is an implicit deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures).
 
 ## Suggestions
 
-- Change the divisor to a value other than zero.
-- For a parameter, remove zero from its `defaultValue` and `allowedValues`.
+- Use integer arguments, and a divisor other than zero.
+- For a parameter, fix its `defaultValue` and `allowedValues`, and declare it with the `Integer` type.
 
 ## Examples
 

@@ -19,23 +19,16 @@ This rule reports a call to [`ipRangeContains()`](https://learn.microsoft.com/az
 
 ```json
 "parameters": {
-  "allowedRanges": {
-    "type": "Array",
-    "defaultValue": [ "10.0.0.0/8", "AzureCloud" ]
+  "allowedRange": {
+    "type": "String",
+    "allowedValues": [ "10.0.0.0/8", "AzureCloud" ]
   }
 }
 ```
 
 ```json
 {
-  "count": {
-    "value": "[parameters('allowedRanges')]",
-    "name": "range",
-    "where": {
-      "value": "[ipRangeContains(current('range'), field('Microsoft.Test/resourceType/ipAddress'))]",
-      "equals": true
-    }
-  },
-  "equals": 0
+  "value": "[ipRangeContains(parameters('allowedRange'), field('Microsoft.Test/resourceType/ipAddress'))]",
+  "equals": false
 }
 ```

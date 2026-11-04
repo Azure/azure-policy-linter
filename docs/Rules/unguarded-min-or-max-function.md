@@ -6,12 +6,12 @@
 
 ## Description
 
-This rule reports a call to [`min()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#min) or [`max()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#max) with an argument that is known only when the policy is evaluated, for example a `field()` value. Evaluation fails when the array is empty or when a value isn't a number. A missing array is returned as an empty array, and a missing property is returned as an empty string, so both fail. [A failed evaluation is an implicit deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures). Every request with such a value is denied, whether or not the policy was meant to deny it.
+This rule reports a call to [`min()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#min) or [`max()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-numeric#max) with an argument that is known only when the policy is evaluated, for example a `field()` value. Evaluation fails when the array is empty or a value isn't a number. A missing array alias returns an empty array, and a missing property returns an empty string, so both fail. [A failed evaluation is an implicit deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures), so every request with such a value is denied, whether or not the policy was meant to deny it.
 
 ## Suggestions
 
 - Make sure the property always holds a number, or an array of numbers.
-- Check for an empty or missing value with `if()` and `empty()` before you call `min()` or `max()`. Set the fallback to the value that gives the result you want.
+- Check for an empty array with `if()` and `empty()`, or for a missing single value with `equals(..., '')`, before you call `min()` or `max()`. Set the fallback to the value that gives the result you want.
 
 ## Examples
 
