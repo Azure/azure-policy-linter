@@ -47,6 +47,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ImmutableArray<Reference> References { get; }
 
         /// <summary>
+        /// Every template function call in the expression, including nested calls and calls inside property selectors.
+        /// The order of the calls is not defined.
+        /// </summary>
+        public ImmutableArray<FunctionCall> FunctionCalls { get; }
+
+        /// <summary>
         /// The reference kind of the root language expression if it is a reference.
         /// </summary>
         /// <example>
@@ -189,6 +195,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             var references = new List<Reference>();
+            var functionCalls = new List<FunctionCall>();
 
             Reference.FromLanguageExpression(
                 languageExpression: this.LanguageExpression,
@@ -197,9 +204,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 countExpressionScopes: countExpressionScopes,
                 typeMetadata: typeMetadata,
                 jTokenMetadata: jTokenMetadata,
-                results: references);
+                results: references,
+                functionCalls: functionCalls);
 
             this.References = references.ToImmutableArray();
+            this.FunctionCalls = functionCalls.ToImmutableArray();
 
         }
 

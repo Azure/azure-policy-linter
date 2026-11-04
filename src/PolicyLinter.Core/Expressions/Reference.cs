@@ -114,6 +114,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 (this.Kind == ReferenceKind.CurrentArrayMember && this.ReferencedCountExpressionScope?.Type == CountScopeType.Field));
 
         /// <summary>
+        /// Checks if the referenced value is known only when the policy is evaluated: a resource field, a request context or token claims property,
+        /// or a property of the resource group or subscription.
+        /// </summary>
+        /// <remarks>
+        /// Policy parameter values and current() functions in value count expressions are not considered evaluation time values.
+        /// </remarks>
+        public bool IsEvaluationTimeValue() =>
+            this.Kind is ReferenceKind.ResourceField
+                or ReferenceKind.RequestContextProperty
+                or ReferenceKind.PolicyTokenClaims
+                or ReferenceKind.ResourceGroupProperty
+                or ReferenceKind.SubscriptionProperty ||
+            this.IsResolvedFieldReference();
+
+        /// <summary>
         /// Create a reference to a field which represents a field reference that is part of a field accessor expression.
         /// </summary>
         /// <param name="fieldAccessor">The field accessor value.</param>
@@ -152,6 +167,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <param name="countExpressionScopes">The count expression scopes.</param>
         /// <param name="typeMetadata">The type metadata.</param>
         /// <param name="results">The list to which the references will be added.</param>
+        /// <param name="functionCalls">Optional list to which every function call in the expression will be added.</param>
+        /// <param name="isConditionallyEvaluated">Whether the expression is evaluated only for some values (see <see cref="FunctionCall.IsConditionallyEvaluated"/>).</param>
         public static void FromLanguageExpression(
             LanguageExpression languageExpression,
             JTokenMetadata? jTokenMetadata,
@@ -159,7 +176,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent,
             Stack<CountExpressionScope> countExpressionScopes,
             ITypeMetadata typeMetadata,
-            List<Reference> results)
+            List<Reference> results,
+            List<FunctionCall>? functionCalls = null,
+            bool isConditionallyEvaluated = false)
         {
             if (languageExpression is not FunctionExpression function)
             {
@@ -187,16 +206,24 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             // TODO: If there's a need for these "child" references to point back to the reference who depends on them,
             // we can add a "dependentReference" property to the reference class and set it to the reference that depends on it.
             var functionParamDependecies = new List<Reference>();
-            foreach (var parameter in function.Parameters.CoalesceEnumerable())
+            var argumentReferences = new List<ImmutableArray<Reference>>();
+            var parameters = function.Parameters.CoalesceEnumerable().ToArray();
+            for (var index = 0; index < parameters.Length; index++)
             {
+                var parameterReferences = new List<Reference>();
                 Reference.FromLanguageExpression(
-                    languageExpression: parameter,
+                    languageExpression: parameters[index],
                     jTokenMetadata: jTokenMetadata,
                     path: path,
                     parent: parent,
                     countExpressionScopes: countExpressionScopes,
                     typeMetadata: typeMetadata,
-                    results: functionParamDependecies);
+                    results: parameterReferences,
+                    functionCalls: functionCalls,
+                    isConditionallyEvaluated: isConditionallyEvaluated || FunctionCall.IsConditionallyEvaluatedArgument(functionName: function.Function, argumentIndex: index));
+
+                functionParamDependecies.AddRange(parameterReferences);
+                argumentReferences.Add(parameterReferences.ToImmutableArray());
             }
 
             var propertyDependecies = new List<Reference>();
@@ -209,7 +236,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     parent: parent,
                     countExpressionScopes: countExpressionScopes,
                     typeMetadata: typeMetadata,
-                    results: propertyDependecies);
+                    results: propertyDependecies,
+                    functionCalls: functionCalls,
+                    isConditionallyEvaluated: isConditionallyEvaluated);
             }
 
             PropertySelectionPath? propertySelectionPath = null;
@@ -233,9 +262,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 }
             }
 
+            Reference? functionReference = null;
             if (Reference.IsReferenceFunction(function, out var functionReferenceKind))
             {
-                var reference = new Reference(
+                functionReference = new Reference(
                     function: function,
                     kind: functionReferenceKind,
                     resolutionDependencies: functionParamDependecies.ToImmutableArray(),
@@ -246,7 +276,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     path: path,
                     parent: parent);
 
-                results.Add(reference);
+                results.Add(functionReference);
             }
             else
             {
@@ -254,6 +284,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 results.AddRange(functionParamDependecies);
                 results.AddRange(propertyDependecies);
             }
+
+            functionCalls?.Add(new FunctionCall(
+                expression: function,
+                argumentReferences: argumentReferences.ToArray(),
+                reference: functionReference,
+                isConditionallyEvaluated: isConditionallyEvaluated));
         }
 
         /// <summary>
