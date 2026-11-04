@@ -161,7 +161,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 StaticTemplateFunctionEvaluationContext.EvaluateBuiltInFunction(functionName: this.Name, arguments: argumentValues);
                 return false;
             }
-            catch (Exception exception) when (!exception.IsFatal() && exception is not global::Azure.Deployments.Expression.Exceptions.BuiltinFunctionNumberOfParametersException)
+            catch (Exception exception) when (!exception.IsFatal())
             {
                 failure = $"{this.Name}({string.Join(", ", argumentValues.Select(FunctionCall.FormatValue))})";
                 return true;

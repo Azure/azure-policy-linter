@@ -110,6 +110,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[ipRangeContains(parameters('otherParam'), '10.0.0.1')]", new[] { "ipRangeContains('z', '10.0.0.1')" })]
         [InlineData("[replace('a''b', 'a''b', '')]", new string[0])]
         [InlineData("[div(4, 0)]", new[] { "div(4, 0)" })]
+        [InlineData("[max(createArray())]", new[] { "max([])" })]
         public void FunctionCallTests_GetFailuresForKnownValues(string valueExpression, string[] expectedFailures)
         {
             var (expression, context) = FunctionCallTests.LintValue(valueExpression);
