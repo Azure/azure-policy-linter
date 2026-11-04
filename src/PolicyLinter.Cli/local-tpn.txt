@@ -4157,7 +4157,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-Microsoft.Bcl.Cryptography 10.0.10 - MIT
+Microsoft.Bcl.Cryptography 10.0.13 - MIT
 
 
 Copyright (c) 2021
@@ -4310,7 +4310,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-System.Formats.Asn1 10.0.10 - MIT
+System.Formats.Asn1 10.0.13 - MIT
 
 
 Copyright (c) 2021
@@ -4403,7 +4403,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-System.Security.Cryptography.Pkcs 10.0.10 - MIT
+System.Security.Cryptography.Pkcs 10.0.13 - MIT
 
 
 Copyright (c) 2021
@@ -4477,7 +4477,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---------------------------------------------------------
 
-System.Security.Cryptography.Xml 10.0.10 - MIT
+System.Security.Cryptography.Xml 10.0.13 - MIT
 
 
 Copyright (c) 2021
