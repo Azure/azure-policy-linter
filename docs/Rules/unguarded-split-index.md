@@ -12,7 +12,7 @@ This rule reports an expression that selects an element from the result of [`spl
 
 ## Suggestions
 
-- To get the first or last segment, use `first()` or `last()`.
+- To get the last segment, use `last()`.
 - For another segment, use `first(skip(split(...), index))`. It returns null instead of failing when the value has too few segments, so wrap it in `coalesce()` with the value you want for that case.
 - If you keep the index, check the number of segments with `if()` and `length()` before the selection.
 
