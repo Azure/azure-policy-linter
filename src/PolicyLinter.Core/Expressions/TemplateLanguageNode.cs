@@ -205,7 +205,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
             catch (Exception exception) when (!exception.IsFatal())
             {
-                value = null;
                 return false;
             }
         }

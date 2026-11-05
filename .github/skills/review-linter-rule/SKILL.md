@@ -83,7 +83,7 @@ The implementation checks worth running are the ones that catch real bugs:
 - **`null` vs `[]` collection handling.** Verify the rule treats `null` (absent property) differently from an empty array (explicitly set to empty). Skipping on both is a common bug.
 - **Emit target specificity.** `CreateError`/`CreateWarning`/`CreateInformational` should be called with the most specific expression node, not the parent. Diagnostic line numbers and JSON paths come from the passed node. Flag if the rule passes a parent node when it could pass a child.
 - **One finding per independent problem.** If the rule checks multiple unrelated properties and aggregates them into one finding (especially via a branching description), flag - should be one per problem.
-- **Regex on template language expressions.** Any use of `Regex` to detect or parse `[...]` expressions. Use `ExpressionEngine.IsLanguageExpression()` / `ExpressionsEngine.ParseLanguageExpression()`. Flag.
+- **Regex on template language expressions.** Any use of `Regex` to detect or parse `[...]` expressions. Use `TemplateLanguageExpression.Root` (or `ExpressionsEngine.IsLanguageExpression()` to detect one). Flag.
 - **`.ToLower()`/`.ToUpper()` for case-insensitive comparison.** Use `StringComparison.OrdinalIgnoreCase` overloads. Flag.
 - **Local allocation of allowlist sets.** Static allowlists belong as `private static readonly HashSet<T>` on the class, not allocated per `Evaluate` call. Flag.
 - **Reserved severity/category.** `Severity.Critical` and `Category.Parsing` / `Linter` / `LinterRule` are reserved for engine-emitted findings. A rule using any of these is wrong. Flag as Error.

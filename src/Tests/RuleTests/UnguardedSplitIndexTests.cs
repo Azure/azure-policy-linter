@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedSplitIndexTests
     {
         private const string ExpectedDescription =
-            "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments, and a failed expression makes the policy deny the request. Use 'first()' or 'last()', or 'coalesce(first(skip(...)), <fallback>)'; they don't fail on short values.";
+            "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments, and a failed expression makes the policy deny the request. Use 'last()' or 'coalesce(first(skip(...)), <fallback>)'; they don't fail on short values.";
 
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 

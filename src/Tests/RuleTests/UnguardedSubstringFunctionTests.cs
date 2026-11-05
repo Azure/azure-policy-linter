@@ -114,6 +114,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[substring(concat(field('name'), '---'), 0, 3)]")]
         [InlineData("prefix-[substring(field('name'), 0, 3)]")]
         [InlineData("[take(skip(field('name'), 2), 3)]")]
+        [InlineData("[substring(toLower(field('name')), 0, 3)]")]
         public void RuleTests_UnguardedSubstringFunction_NotApplicable(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);

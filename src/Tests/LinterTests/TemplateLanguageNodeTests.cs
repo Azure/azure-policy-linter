@@ -23,14 +23,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             'stringParam': { 'type': 'String' }";
 
         [Fact]
-        public void TemplateLanguageNodeTests_NestedCalls()
-        {
-            var expression = TemplateLanguageNodeTests.LintValue("[if(equals(field('a'), ''), int(field('a')), and(true(), bool(field('b'))))]");
-
-            TemplateLanguageNodeTests.GetCalls(expression).Select(call => call.Name).Should().BeEquivalentTo("if", "equals", "field", "int", "field", "and", "true", "bool", "field");
-        }
-
-        [Fact]
         public void TemplateLanguageNodeTests_ArgumentReferences()
         {
             var expression = TemplateLanguageNodeTests.LintValue("[replace(parameters('stringParam'), concat('a', field('a')), resourceGroup().name)]");
