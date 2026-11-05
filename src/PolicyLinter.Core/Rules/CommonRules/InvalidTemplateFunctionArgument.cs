@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public InvalidTemplateFunctionArgument() : base(
             identifier: "invalid-template-function-argument",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: InvalidTemplateFunctionArgument.RuleTitle,
             descriptionFormat: InvalidTemplateFunctionArgument.RuleDescription,
             applyToDerivedTypes: false)

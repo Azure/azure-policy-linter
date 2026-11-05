@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedBase64ToJsonFunction() : base(
             identifier: "unguarded-base64tojson-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedBase64ToJsonFunction.RuleTitle,
             descriptionFormat: UnguardedBase64ToJsonFunction.RuleDescription,
             applyToDerivedTypes: false)

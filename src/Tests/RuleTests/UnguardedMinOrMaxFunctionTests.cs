@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-min-or-max-function",
                 Title: "Unguarded Min or Max Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: string.Format(UnguardedMinOrMaxFunctionTests.ExpectedDescription, descriptionParameter),

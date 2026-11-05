@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-base64tojson-function | Warning | default |
+| TemplateFunctions | unguarded-base64tojson-function | Warning | default |
 
 ## Description
 

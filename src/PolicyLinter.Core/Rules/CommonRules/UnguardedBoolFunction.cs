@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedBoolFunction() : base(
             identifier: "unguarded-bool-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedBoolFunction.RuleTitle,
             descriptionFormat: UnguardedBoolFunction.RuleDescription,
             applyToDerivedTypes: false)

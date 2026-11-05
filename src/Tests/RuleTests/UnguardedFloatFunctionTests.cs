@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-float-function",
                 Title: "Unguarded Float Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: UnguardedFloatFunctionTests.ExpectedDescription,

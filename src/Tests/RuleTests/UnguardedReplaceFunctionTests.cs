@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-replace-function",
                 Title: "Unguarded Replace Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 6,
                 LinePosition: 35 + valueExpression.Length,
                 Description: UnguardedReplaceFunctionTests.ExpectedDescription,

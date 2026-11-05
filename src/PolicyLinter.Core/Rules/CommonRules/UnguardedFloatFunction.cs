@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedFloatFunction() : base(
             identifier: "unguarded-float-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedFloatFunction.RuleTitle,
             descriptionFormat: UnguardedFloatFunction.RuleDescription,
             applyToDerivedTypes: false)

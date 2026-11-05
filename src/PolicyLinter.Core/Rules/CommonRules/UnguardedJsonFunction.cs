@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedJsonFunction() : base(
             identifier: "unguarded-json-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedJsonFunction.RuleTitle,
             descriptionFormat: UnguardedJsonFunction.RuleDescription,
             applyToDerivedTypes: false)

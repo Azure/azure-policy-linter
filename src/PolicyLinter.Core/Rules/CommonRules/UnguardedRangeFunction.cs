@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedRangeFunction() : base(
             identifier: "unguarded-range-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedRangeFunction.RuleTitle,
             descriptionFormat: UnguardedRangeFunction.RuleDescription,
             applyToDerivedTypes: false)

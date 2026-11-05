@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-iprangecontains-function | Warning | default |
+| TemplateFunctions | unguarded-iprangecontains-function | Warning | default |
 
 ## Description
 

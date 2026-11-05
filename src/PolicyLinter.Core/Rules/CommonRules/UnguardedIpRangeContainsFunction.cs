@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedIpRangeContainsFunction() : base(
             identifier: "unguarded-iprangecontains-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedIpRangeContainsFunction.RuleTitle,
             descriptionFormat: UnguardedIpRangeContainsFunction.RuleDescription,
             applyToDerivedTypes: false)

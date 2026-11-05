@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "tryget-with-multiple-keys",
                 Title: "tryGet with Multiple Keys",
                 Severity: Severity.Error,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: TryGetWithMultipleKeysTests.ExpectedDescription,

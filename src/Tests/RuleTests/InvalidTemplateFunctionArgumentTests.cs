@@ -73,7 +73,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "invalid-template-function-argument",
                 Title: "Invalid Template Function Argument",
                 Severity: Severity.Error,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 12,
                 LinePosition: 35 + valueExpression.Length,
                 Description: string.Format(InvalidTemplateFunctionArgumentTests.ExpectedDescription, failingCall),

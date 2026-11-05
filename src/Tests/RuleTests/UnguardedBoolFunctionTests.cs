@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-bool-function",
                 Title: "Unguarded Bool Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 6,
                 LinePosition: 35 + valueExpression.Length,
                 Description: UnguardedBoolFunctionTests.ExpectedDescription,

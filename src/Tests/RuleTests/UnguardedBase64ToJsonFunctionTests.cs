@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-base64tojson-function",
                 Title: "Unguarded base64ToJson Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: UnguardedBase64ToJsonFunctionTests.ExpectedDescription,

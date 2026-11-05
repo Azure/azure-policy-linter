@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedFieldPropertyAccessor() : base(
             identifier: "unguarded-field-property-accessor",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedFieldPropertyAccessor.RuleTitle,
             descriptionFormat: UnguardedFieldPropertyAccessor.RuleDescription,
             applyToDerivedTypes: false)

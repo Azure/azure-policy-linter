@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-div-or-mod-function",
                 Title: "Unguarded Div or Mod Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Description: string.Format(UnguardedDivOrModFunctionTests.ExpectedDescription, descriptionParameter),

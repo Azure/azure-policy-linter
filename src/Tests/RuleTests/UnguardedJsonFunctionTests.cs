@@ -32,7 +32,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-json-function",
                 Title: "Unguarded Json Function",
                 Severity: Severity.Warning,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 6,
                 LinePosition: 35 + valueExpression.Length,
                 Description: UnguardedJsonFunctionTests.ExpectedDescription,

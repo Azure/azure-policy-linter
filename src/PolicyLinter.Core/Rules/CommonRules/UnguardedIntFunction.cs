@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedIntFunction() : base(
             identifier: "unguarded-int-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedIntFunction.RuleTitle,
             descriptionFormat: UnguardedIntFunction.RuleDescription,
             applyToDerivedTypes: false)

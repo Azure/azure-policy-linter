@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedReplaceFunction() : base(
             identifier: "unguarded-replace-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedReplaceFunction.RuleTitle,
             descriptionFormat: UnguardedReplaceFunction.RuleDescription,
             applyToDerivedTypes: false)

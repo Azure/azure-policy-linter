@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-field-property-accessor | Error | default |
+| TemplateFunctions | unguarded-field-property-accessor | Error | default |
 
 ## Description
 

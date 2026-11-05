@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedDivOrModFunction() : base(
             identifier: "unguarded-div-or-mod-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedDivOrModFunction.RuleTitle,
             descriptionFormat: UnguardedDivOrModFunction.RuleDescription,
             applyToDerivedTypes: false)

@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-min-or-max-function | Warning | default |
+| TemplateFunctions | unguarded-min-or-max-function | Warning | default |
 
 ## Description
 

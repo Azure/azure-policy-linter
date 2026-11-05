@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public TryGetWithMultipleKeys() : base(
             identifier: "tryget-with-multiple-keys",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: TryGetWithMultipleKeys.RuleTitle,
             descriptionFormat: TryGetWithMultipleKeys.RuleDescription,
             applyToDerivedTypes: false)

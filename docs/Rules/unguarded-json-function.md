@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-json-function | Warning | default |
+| TemplateFunctions | unguarded-json-function | Warning | default |
 
 ## Description
 

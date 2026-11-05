@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedMinOrMaxFunction() : base(
             identifier: "unguarded-min-or-max-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedMinOrMaxFunction.RuleTitle,
             descriptionFormat: UnguardedMinOrMaxFunction.RuleDescription,
             applyToDerivedTypes: false)

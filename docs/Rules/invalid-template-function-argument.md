@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | invalid-template-function-argument | Error | default |
+| TemplateFunctions | invalid-template-function-argument | Error | default |
 
 ## Description
 

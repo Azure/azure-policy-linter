@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-bool-function | Warning | default |
+| TemplateFunctions | unguarded-bool-function | Warning | default |
 
 ## Description
 
