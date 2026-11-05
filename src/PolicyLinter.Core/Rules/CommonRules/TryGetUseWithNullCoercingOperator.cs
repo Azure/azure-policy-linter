@@ -43,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public TryGetUseWithNullCoercingOperator() : base(
             identifier: "tryget-use-with-null-coercing-operator",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: TryGetUseWithNullCoercingOperator.RuleTitle,
             descriptionFormat: TryGetUseWithNullCoercingOperator.RuleDescription,
             applyToDerivedTypes: false)

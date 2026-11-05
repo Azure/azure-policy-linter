@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public LogicalFunctionsInValueConditions() : base(
             identifier: "logical-functions-in-value-conditions",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: LogicalFunctionsInValueConditions.RuleTitle,
             descriptionFormat: LogicalFunctionsInValueConditions.RuleDescription,
             applyToDerivedTypes: false)

@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedTryGetOperatorValue() : base(
             identifier: "unguarded-tryget-operator-value",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedTryGetOperatorValue.RuleTitle,
             descriptionFormat: UnguardedTryGetOperatorValue.RuleDescription,
             applyToDerivedTypes: false)

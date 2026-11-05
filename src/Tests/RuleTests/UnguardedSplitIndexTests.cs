@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-split-index",
                 Title: "Unguarded Split Index",
                 Severity: Severity.Error,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 10,
                 LinePosition: 35 + valueExpression.Length,
                 Description: UnguardedSplitIndexTests.ExpectedDescription,

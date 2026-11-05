@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-adddays-function | Warning | default |
+| TemplateFunctions | unguarded-adddays-function | Warning | default |
 
 ## Description
 

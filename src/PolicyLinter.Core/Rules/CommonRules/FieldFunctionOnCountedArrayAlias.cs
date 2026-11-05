@@ -23,7 +23,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public FieldFunctionOnCountedArrayAlias() : base(
             identifier: "field-function-on-counted-array-alias",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: FieldFunctionOnCountedArrayAlias.RuleTitle,
             descriptionFormat: FieldFunctionOnCountedArrayAlias.RuleDescription,
             applyToDerivedTypes: false)
