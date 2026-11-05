@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | length-function-on-array-alias | Informational | default |
+| TemplateFunctions | length-function-on-array-alias | Informational | default |
 
 ## Description
 

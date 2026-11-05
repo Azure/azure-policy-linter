@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | tryget-use-with-null-coercing-operator | Informational | default |
+| TemplateFunctions | tryget-use-with-null-coercing-operator | Informational | default |
 
 ## Description
 

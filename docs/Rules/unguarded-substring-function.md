@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-substring-function | Error | default |
+| TemplateFunctions | unguarded-substring-function | Error | default |
 
 ## Description
 

@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | field-function-on-counted-array-alias | Warning | default |
+| TemplateFunctions | field-function-on-counted-array-alias | Warning | default |
 
 ## Description
 
