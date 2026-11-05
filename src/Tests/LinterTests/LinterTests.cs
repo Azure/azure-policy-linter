@@ -37,6 +37,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             };
             var linter = new PolicyLinter(new[] { testRule }, mockMetadata);
 
+
             var result = linter.Lint(@"{ 'properties': { 'mode': 'Indexed', 'policyRule': { 'if': { 'value': 1, 'equals': 1 }, 'then': { 'effect': 'deny' } } } }");
             result.Should().ContainSingle()
                 .Which.Description.Should().Be("Test rule was invoked");

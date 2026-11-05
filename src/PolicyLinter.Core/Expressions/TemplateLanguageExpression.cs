@@ -155,6 +155,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
         }
 
+
         /// <summary>
         /// Whether the expression contains any unresolved references.
         /// </summary>
