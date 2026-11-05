@@ -23,6 +23,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("[split(field('Microsoft.Test/widgets/subnet.id'), '/')[2]]", Severity.Error)]
+        [InlineData("[SPLIT(field('Microsoft.Test/widgets/subnet.id'), '/')[2]]", Severity.Error)]
         [InlineData("[toLower(split(field('Microsoft.Test/widgets/subnet.id'), '/')[4])]", Severity.Error)]
         [InlineData("[split(field('Microsoft.Test/widgets/subnet.id'), '/')[parameters('zeroParam')]]", Severity.Error)]
         [InlineData("[if(equals(split(field('Microsoft.Test/widgets/subnet.id'), '/')[2], 'x'), 'a', 'b')]", Severity.Error)]

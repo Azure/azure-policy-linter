@@ -54,12 +54,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public PropertySelectionPath? PropertySelectionPath { get; }
 
         /// <summary>
-        /// Whether the reference identifier (e.g. the policy parameter of field name) is known. If false, it probably means that the reference depends on another reference.
+        /// Whether the reference identifier (e.g. the policy parameter of field name) is known. If false, the reference depends on another reference,
+        /// or its identifier argument can't be evaluated by the linter (e.g. "field(selectProperty(...))").
         /// </summary>
         public bool IsResolved { get; private set; }
 
         /// <summary>
-        /// If the reference identifier is not resolved, this will contain the list of references that need to be resolved in order to resolve this reference.
+        /// The references that need to be resolved in order to resolve this reference. Empty when the reference is resolved,
+        /// or when it is not resolved because its identifier argument can't be evaluated.
         /// </summary>
         public ImmutableArray<Reference> ResolutionDependencies { get; }
 
@@ -107,21 +109,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public bool IsResolvedFieldReference() => this.IsResolved &&
                 (this.Kind == ReferenceKind.ResourceField ||
                 (this.Kind == ReferenceKind.CurrentArrayMember && this.ReferencedCountExpressionScope?.Type == CountScopeType.Field));
-
-        /// <summary>
-        /// Checks if the referenced value is known only when the policy is evaluated: a resource field, a request context or token claims property,
-        /// or a property of the resource group or subscription.
-        /// </summary>
-        /// <remarks>
-        /// Policy parameter values and current() functions in value count expressions are not considered evaluation time values.
-        /// </remarks>
-        public bool IsEvaluationTimeValue() =>
-            this.Kind is ReferenceKind.ResourceField
-                or ReferenceKind.RequestContextProperty
-                or ReferenceKind.PolicyTokenClaims
-                or ReferenceKind.ResourceGroupProperty
-                or ReferenceKind.SubscriptionProperty ||
-            this.IsResolvedFieldReference();
 
         /// <summary>
         /// Create a reference to a field which represents a field reference that is part of a field accessor expression.
