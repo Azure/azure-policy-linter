@@ -1,4 +1,4 @@
-// ------------------------------------------------------------
+﻿// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -36,7 +36,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 }
             };
             var linter = new PolicyLinter(new[] { testRule }, mockMetadata);
-
 
             var result = linter.Lint(@"{ 'properties': { 'mode': 'Indexed', 'policyRule': { 'if': { 'value': 1, 'equals': 1 }, 'then': { 'effect': 'deny' } } } }");
             result.Should().ContainSingle()
@@ -1324,7 +1323,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var splitCall = functionCalls.Single(call => call.Name == "split");
             splitCall.Selectors.Should().ContainSingle().Which.Should().BeOfType<LiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
             splitCall.Selectors[0].Parent.Should().BeSameAs(splitCall);
-
 
             functionCalls.Where(call => call.IsConditionallyEvaluated).Select(call => call.Name).Should().BeEquivalentTo("int", "split", "field");
             functionCalls.Single(call => call.IsConditionallyEvaluated && call.Name == "field").Reference.Identifier.Should().Be("id");
