@@ -17,14 +17,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedAddDaysFunctionTests
     {
         private const string ExpectedDescription =
-            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer, including the empty string returned for a missing property. A failed expression makes the policy deny the request. Check the value with 'if()' before the call.";
+            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer, including the empty string returned for a missing property. A failed expression makes the policy deny the request. Make sure an 'if()' around the call handles these values.";
 
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[addDays(field('tags[createdOn]'), 90)]")]
-        [InlineData("[addDays(utcNow(), field('tags[days]'))]")]
-        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression)
+        [InlineData("[addDays(field('tags[createdOn]'), 90)]", Severity.Warning)]
+        [InlineData("[addDays(utcNow(), field('tags[days]'))]", Severity.Warning)]
+        [InlineData("[if(equals(field('tags[createdOn]'), ''), '9999-12-31T00:00:00Z', addDays(field('tags[createdOn]'), 90))]", Severity.Informational)]
+        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression, Severity expectedSeverity)
         {
             var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);
 
@@ -32,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "unguarded-adddays-function",
                 Title: "Unguarded addDays Function",
-                Severity: Severity.Warning,
+                Severity: expectedSeverity,
                 Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
@@ -43,7 +44,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("[addDays(utcNow(), 30)]")]
         [InlineData("[addDays(utcNow(), parameters('zeroParam'))]")]
-        [InlineData("[if(equals(field('tags[createdOn]'), ''), '9999-12-31T00:00:00Z', addDays(field('tags[createdOn]'), 90))]")]
         public void RuleTests_UnguardedAddDaysFunction_NoFinding(string valueExpression)
         {
             var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);

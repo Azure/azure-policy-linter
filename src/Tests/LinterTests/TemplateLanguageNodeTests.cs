@@ -108,6 +108,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[parameters(split('a/stringParam', '/')[1])]", "stringParam")]
         [InlineData("[parameters(createObject('name', 'stringParam').name)]", "stringParam")]
         [InlineData("[parameters(if(true(), 'stringParam', 'otherParam'))]", "stringParam")]
+        [InlineData("[claims()]", "claims")]
         public void TemplateLanguageNodeTests_ReferenceIdentifier_Evaluated(string valueExpression, string expectedIdentifier)
         {
             var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);

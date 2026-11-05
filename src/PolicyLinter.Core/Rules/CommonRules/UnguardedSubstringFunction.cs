@@ -12,14 +12,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
-    /// Flags substring() calls on values known only when the policy is evaluated, outside an if() branch.
+    /// Flags substring() calls on values known only when the policy is evaluated. The finding is an error,
+    /// or a warning when the call is in an if() branch, because the if() condition might check the length.
     /// </summary>
     public sealed class UnguardedSubstringFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded Substring Function";
 
         private const string RuleDescription =
-            "The expression calls 'substring' on a value that is known only when the policy is evaluated, without checking its length first. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Guard the call with 'if()' and 'length()'.";
+            "The expression calls 'substring' on a value that is known only when the policy is evaluated. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Use 'take()' and 'skip()' instead; they don't fail on short values.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedSubstringFunction"/> class.
@@ -36,11 +37,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Name.EqualsOrdinalInsensitively("substring") &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
-                ? new[] { this.CreateError(expression) }
-                : Array.Empty<LinterOutput>();
+            if (!expression.Name.EqualsOrdinalInsensitively("substring") ||
+                !expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
         }
     }
 }
