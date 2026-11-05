@@ -132,7 +132,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// The function call this reference was created from. Null for field accessor references.
         /// </summary>
         /// <remarks>
-        /// Used to link <see cref="FunctionCall"/> nodes to their references.
+        /// Used to link <see cref="TemplateFunctionCall"/> nodes to their references.
         /// </remarks>
         internal FunctionExpression? SourceFunction { get; }
 

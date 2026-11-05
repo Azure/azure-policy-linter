@@ -49,7 +49,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var valueExpression = expression.Operator.LanguageExpressions[0];
             if (!valueExpression.IsEntireValue ||
-                valueExpression.Root is not FunctionCall rootCall ||
+                valueExpression.Root is not TemplateFunctionCall rootCall ||
                 !rootCall.Name.EqualsOrdinalInsensitively("tryGet"))
             {
                 return Array.Empty<LinterOutput>();

@@ -60,7 +60,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var languageExpression = value.LanguageExpressions[0];
             if (languageExpression.IsEntireValue &&
-                languageExpression.Root is FunctionCall { Name: var functionName } &&
+                languageExpression.Root is TemplateFunctionCall { Name: var functionName } &&
                 LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName))
             {
                 return new[]

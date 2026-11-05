@@ -1211,7 +1211,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var fieldTagsX = languageExpressions.SingleOrDefault(e => e.Expression == "[field('tags.x')]");
             fieldTagsX.Should().NotBeNull();
-            fieldTagsX.Root.Should().BeOfType<FunctionCall>().Which.Name.Should().Be("field");
+            fieldTagsX.Root.Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("field");
             fieldTagsX.IsEntireValue.Should().BeTrue();
             fieldTagsX.References.Should().HaveCount(1);
             fieldTagsX.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
@@ -1219,13 +1219,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var concatAB = languageExpressions.SingleOrDefault(e => e.Expression == "[CoNcAt('a','b')]");
             concatAB.Should().NotBeNull();
-            concatAB.Root.Should().BeOfType<FunctionCall>().Which.Name.Should().Be("CoNcAt");
+            concatAB.Root.Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("CoNcAt");
             concatAB.References.Should().BeEmpty();
             concatAB.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("equals");
 
             var fieldParam = languageExpressions.SingleOrDefault(e => e.Expression == "[field(parameters('param'))]");
             fieldParam.Should().NotBeNull();
-            fieldParam.Root.Should().BeOfType<FunctionCall>().Which.Reference.Should().BeSameAs(fieldParam.References[0]);
+            fieldParam.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference.Should().BeSameAs(fieldParam.References[0]);
             fieldParam.References.Should().HaveCount(1);
             fieldParam.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldParam.References[0].ResolutionDependencies.Should().HaveCount(1);
@@ -1243,7 +1243,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var literalExpression = languageExpressions.SingleOrDefault(e => e.Expression == "[1]");
             literalExpression.Should().NotBeNull();
-            literalExpression.Root.Should().BeOfType<LiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
+            literalExpression.Root.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
 
             var effectParam = languageExpressions.SingleOrDefault(e => e.Expression == "[parameters('effectParam')]");
             effectParam.Should().NotBeNull();
@@ -1256,13 +1256,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void LinterTests_VisitAllExpressionNodes()
         {
-            var functionCalls = new List<FunctionCall>();
-            var literalValues = new List<LiteralValue>();
+            var functionCalls = new List<TemplateFunctionCall>();
+            var literalValues = new List<TemplateLiteralValue>();
             var references = new List<Reference>();
             var rules = new ILinterRule[]
             {
-                new TestFunctionCallLinterRule { EvaluateFunc = (rule, expression, context) => { functionCalls.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
-                new TestLiteralValueLinterRule { EvaluateFunc = (rule, expression, context) => { literalValues.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
+                new TestTemplateFunctionCallLinterRule { EvaluateFunc = (rule, expression, context) => { functionCalls.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
+                new TestTemplateLiteralValueLinterRule { EvaluateFunc = (rule, expression, context) => { literalValues.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
                 new TestReferenceLinterRule { EvaluateFunc = (rule, expression, context) => { references.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
             };
 
@@ -1298,7 +1298,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             // Every node is visited once, belongs to a template language expression, and has its location.
             functionCalls.Should().OnlyHaveUniqueItems();
             literalValues.Should().OnlyHaveUniqueItems();
-            foreach (var node in functionCalls.Cast<ExpressionNode>().Concat(literalValues))
+            foreach (var node in functionCalls.Cast<TemplateLanguageNode>().Concat(literalValues))
             {
                 var root = LinterTests.GetTemplateLanguageExpression(node);
                 node.LineNumber.Should().Be(root.LineNumber);
@@ -1316,13 +1316,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             valueExpression.Root.Should().BeSameAs(ifCall);
             valueExpression.IsEntireValue.Should().BeTrue();
             ifCall.Arguments.Should().HaveCount(3);
-            ifCall.Arguments[0].Should().BeOfType<FunctionCall>().Which.Name.Should().Be("equals");
-            ifCall.Arguments[1].Should().BeOfType<LiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(0));
-            ifCall.Arguments[2].Should().BeOfType<FunctionCall>().Which.Name.Should().Be("int");
+            ifCall.Arguments[0].Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("equals");
+            ifCall.Arguments[1].Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(0));
+            ifCall.Arguments[2].Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("int");
             ifCall.Arguments.Should().OnlyContain(argument => argument.Parent == ifCall);
 
             var splitCall = functionCalls.Single(call => call.Name == "split");
-            splitCall.Selectors.Should().ContainSingle().Which.Should().BeOfType<LiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
+            splitCall.Selectors.Should().ContainSingle().Which.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
             splitCall.Selectors[0].Parent.Should().BeSameAs(splitCall);
 
             functionCalls.Where(call => call.IsConditionallyEvaluated).Select(call => call.Name).Should().BeEquivalentTo("int", "split", "field");

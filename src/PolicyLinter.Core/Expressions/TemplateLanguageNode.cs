@@ -18,12 +18,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// <remarks>
     /// Nodes have the line number, position and path of the template language expression they belong to.
     /// </remarks>
-    public abstract class ExpressionNode : PolicyExpression
+    public abstract class TemplateLanguageNode : PolicyExpression
     {
         /// <summary>
-        /// Creates a new instance of the <see cref="ExpressionNode"/> class.
+        /// Creates a new instance of the <see cref="TemplateLanguageNode"/> class.
         /// </summary>
-        private protected ExpressionNode(PolicyExpression parent)
+        private protected TemplateLanguageNode(PolicyExpression parent)
             : base(parent.LineNumber, parent.LinePosition, parent.PathSegments, parent)
         {
         }
@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </summary>
         public bool IsEvaluationTimeReference()
         {
-            return this is FunctionCall { Reference: { } reference } && reference.IsEvaluationTimeValue();
+            return this is TemplateFunctionCall { Reference: { } reference } && reference.IsEvaluationTimeValue();
         }
 
         /// <inheritdoc/>
@@ -46,22 +46,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates the node for the given parsed expression.
         /// </summary>
-        internal static ExpressionNode Create(
+        internal static TemplateLanguageNode Create(
             LanguageExpression expression,
             PolicyExpression parent,
             bool isConditionallyEvaluated,
             IReadOnlyDictionary<FunctionExpression, Reference> references)
         {
             return expression is FunctionExpression function
-                ? new FunctionCall(function, parent, isConditionallyEvaluated, references)
-                : new LiteralValue(expression, parent);
+                ? new TemplateFunctionCall(function, parent, isConditionallyEvaluated, references)
+                : new TemplateLiteralValue(expression, parent);
         }
     }
 
     /// <summary>
     /// A literal value in a template language expression, e.g. 'a' and 3 in "[substring('a', 3)]".
     /// </summary>
-    public sealed class LiteralValue : ExpressionNode
+    public sealed class TemplateLiteralValue : TemplateLanguageNode
     {
         /// <summary>
         /// The value.
@@ -69,9 +69,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public JToken Value { get; }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="LiteralValue"/> class.
+        /// Creates a new instance of the <see cref="TemplateLiteralValue"/> class.
         /// </summary>
-        internal LiteralValue(LanguageExpression expression, PolicyExpression parent)
+        internal TemplateLiteralValue(LanguageExpression expression, PolicyExpression parent)
             : base(parent)
         {
             this.Value = (expression as JTokenExpression)?.Value ?? JValue.CreateNull();
@@ -81,7 +81,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// <summary>
     /// A template function call, e.g. the 'int' call in "[less(int(field('a')), 5)]".
     /// </summary>
-    public sealed class FunctionCall : ExpressionNode
+    public sealed class TemplateFunctionCall : TemplateLanguageNode
     {
         /// <summary>
         /// The function name as written in the expression. Function names are case insensitive.
@@ -91,12 +91,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// The function arguments.
         /// </summary>
-        public ImmutableArray<ExpressionNode> Arguments { get; }
+        public ImmutableArray<TemplateLanguageNode> Arguments { get; }
 
         /// <summary>
         /// The property and index selectors applied to the function result, e.g. [2] and 'name' in "[split(x, '/')[2].name]".
         /// </summary>
-        public ImmutableArray<ExpressionNode> Selectors { get; }
+        public ImmutableArray<TemplateLanguageNode> Selectors { get; }
 
         /// <summary>
         /// The reference for this call, when the function is a reference function such as field() or parameters().
@@ -110,9 +110,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public bool IsConditionallyEvaluated { get; }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="FunctionCall"/> class and the nodes below it.
+        /// Creates a new instance of the <see cref="TemplateFunctionCall"/> class and the nodes below it.
         /// </summary>
-        internal FunctionCall(
+        internal TemplateFunctionCall(
             FunctionExpression expression,
             PolicyExpression parent,
             bool isConditionallyEvaluated,
@@ -124,15 +124,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Reference = references.TryGetValue(expression, out var reference) ? reference : null;
             this.Arguments = expression.Parameters
                 .CoalesceEnumerable()
-                .Select((argument, index) => ExpressionNode.Create(
+                .Select((argument, index) => TemplateLanguageNode.Create(
                     expression: argument,
                     parent: this,
-                    isConditionallyEvaluated: isConditionallyEvaluated || FunctionCall.IsConditionallyEvaluatedArgument(functionName: this.Name, argumentIndex: index),
+                    isConditionallyEvaluated: isConditionallyEvaluated || TemplateFunctionCall.IsConditionallyEvaluatedArgument(functionName: this.Name, argumentIndex: index),
                     references: references))
                 .ToImmutableArray();
             this.Selectors = expression.Properties
                 .CoalesceEnumerable()
-                .Select(selector => ExpressionNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated, references: references))
+                .Select(selector => TemplateLanguageNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated, references: references))
                 .ToImmutableArray();
         }
 

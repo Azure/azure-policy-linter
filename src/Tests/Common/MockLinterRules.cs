@@ -281,22 +281,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 
     /// <summary>
-    /// A test linter rule for testing purposes targeting FunctionCall.
+    /// A test linter rule for testing purposes targeting TemplateFunctionCall.
     /// </summary>
-    public class TestFunctionCallLinterRule : LinterRule<FunctionCall>
+    public class TestTemplateFunctionCallLinterRule : LinterRule<TemplateFunctionCall>
     {
-        public Func<TestFunctionCallLinterRule, FunctionCall, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+        public Func<TestTemplateFunctionCallLinterRule, TemplateFunctionCall, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
 
-        public TestFunctionCallLinterRule(string descriptionFormat = null) : base(
-            identifier: "test-function-call-rule",
+        public TestTemplateFunctionCallLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-template-function-call-rule",
             category: Category.Test,
-            title: "Test FunctionCall Rule",
-            descriptionFormat: descriptionFormat ?? "Test rule for FunctionCall",
+            title: "Test TemplateFunctionCall Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for TemplateFunctionCall",
             applyToDerivedTypes: false)
         {
         }
 
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             if (this.EvaluateFunc != null)
             {
@@ -308,22 +308,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 
     /// <summary>
-    /// A test linter rule for testing purposes targeting LiteralValue.
+    /// A test linter rule for testing purposes targeting TemplateLiteralValue.
     /// </summary>
-    public class TestLiteralValueLinterRule : LinterRule<LiteralValue>
+    public class TestTemplateLiteralValueLinterRule : LinterRule<TemplateLiteralValue>
     {
-        public Func<TestLiteralValueLinterRule, LiteralValue, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+        public Func<TestTemplateLiteralValueLinterRule, TemplateLiteralValue, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
 
-        public TestLiteralValueLinterRule(string descriptionFormat = null) : base(
-            identifier: "test-literal-value-rule",
+        public TestTemplateLiteralValueLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-template-literal-value-rule",
             category: Category.Test,
-            title: "Test LiteralValue Rule",
-            descriptionFormat: descriptionFormat ?? "Test rule for LiteralValue",
+            title: "Test TemplateLiteralValue Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for TemplateLiteralValue",
             applyToDerivedTypes: false)
         {
         }
 
-        protected override LinterOutput[] Evaluate(LiteralValue expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateLiteralValue expression, LinterContext context)
         {
             if (this.EvaluateFunc != null)
             {
