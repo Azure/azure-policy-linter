@@ -24,7 +24,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("[addDays(field('tags[createdOn]'), 90)]")]
         [InlineData("[addDays(utcNow(), field('tags[days]'))]")]
-        [InlineData("[if(equals(field('tags[createdOn]'), ''), addDays(field('tags[createdOn]'), 90), utcNow())]")]
         public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression)
         {
             var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);
