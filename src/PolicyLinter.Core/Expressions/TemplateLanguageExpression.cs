@@ -11,7 +11,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using System.Collections.Immutable;
     using System.Linq;
     using global::Azure.Deployments.Expression.Engines;
-    using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
@@ -23,7 +22,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// Represents a template language expression string (e.g. [field(concat('a', 'b'))]).
     /// </summary>
     /// <remarks>
-    /// This class contains the expression and details about references\functions within it, but it doesn't provide a way to traverse the expression tree.
+    /// The parsed expression is in <see cref="Root"/>, and the references in it are in <see cref="References"/>.
     /// </remarks>
     public class TemplateLanguageExpression : PolicyExpression
     {
@@ -163,11 +162,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
             this.Expression = expression;
             this.IsEntireValue = isEntireValue;
-            var languageExpression = ExpressionsEngine.ParseLanguageExpression(expression);
-            var references = new List<Reference>();
+            this.Root = TemplateLanguageNode.Create(
+                expression: ExpressionsEngine.ParseLanguageExpression(expression),
+                parent: this,
+                isConditionallyEvaluated: false);
 
+            var references = new List<Reference>();
             Reference.FromLanguageExpression(
-                languageExpression: languageExpression,
+                node: this.Root,
                 path: path,
                 parent: this,
                 countExpressionScopes: countExpressionScopes,
@@ -176,35 +178,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 results: references);
 
             this.References = references.ToImmutableArray();
-            this.Root = TemplateLanguageNode.Create(
-                expression: languageExpression,
-                parent: this,
-                isConditionallyEvaluated: false,
-                references: TemplateLanguageExpression.GetReferencesBySourceFunction(this.References));
-        }
-
-        /// <summary>
-        /// Maps the function call of each reference (including resolution dependencies) to the reference.
-        /// </summary>
-        private static Dictionary<FunctionExpression, Reference> GetReferencesBySourceFunction(IEnumerable<Reference> references)
-        {
-            var result = new Dictionary<FunctionExpression, Reference>(ReferenceEqualityComparer.Instance);
-            var pending = new Stack<Reference>(references);
-            while (pending.Count > 0)
-            {
-                var reference = pending.Pop();
-                if (reference.SourceFunction != null)
-                {
-                    result[reference.SourceFunction] = reference;
-                }
-
-                foreach (var dependency in reference.ResolutionDependencies.Concat(reference.PropertySelectionPath?.ResolutionDependencies ?? ImmutableArray<Reference>.Empty))
-                {
-                    pending.Push(dependency);
-                }
-            }
-
-            return result;
         }
 
         /// <summary>
