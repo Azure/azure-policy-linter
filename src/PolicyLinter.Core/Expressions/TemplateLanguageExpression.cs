@@ -43,12 +43,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public TemplateLanguageNode Root { get; }
 
         /// <summary>
-        /// Whether the expression is the entire property value, e.g. { "value": "[field('a')]" },
-        /// and not part of an array or object value, or a property name.
-        /// </summary>
-        public bool IsEntireValue { get; }
-
-        /// <summary>
         /// Extracts template language expressions from a JToken.
         /// </summary>
         /// <param name="token">The token.</param>
@@ -66,7 +60,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent)
         {
             var results = new List<TemplateLanguageExpression>();
-            var root = token;
             JsonUtility.WalkJsonRecursive(
                 root: token,
                 propertyAction: (property) =>
@@ -75,7 +68,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     {
                         results.Add(new TemplateLanguageExpression(
                             expression: property.Name,
-                            isEntireValue: false,
                             jTokenMetadata: jTokenMetadata,
                             countExpressionScopes: countExpressionScopes,
                             typeMetadata: typeMetadata,
@@ -89,7 +81,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     {
                         results.Add(new TemplateLanguageExpression(
                             expression: token.ToStringValue()!,
-                            isEntireValue: object.ReferenceEquals(token, root),
                             jTokenMetadata: jTokenMetadata,
                             countExpressionScopes: countExpressionScopes,
                             typeMetadata: typeMetadata,
@@ -148,7 +139,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </summary>
         private TemplateLanguageExpression(
             string expression,
-            bool isEntireValue,
             JTokenMetadata? jTokenMetadata,
             Stack<CountExpressionScope> countExpressionScopes,
             ITypeMetadata typeMetadata,
@@ -161,8 +151,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             this.Expression = expression;
-            this.IsEntireValue = isEntireValue;
-            this.Root = TemplateLanguageNode.Create(
+            this.Root =  TemplateLanguageNode.Create(
                 expression: ExpressionsEngine.ParseLanguageExpression(expression),
                 parent: this,
                 isConditionallyEvaluated: false);

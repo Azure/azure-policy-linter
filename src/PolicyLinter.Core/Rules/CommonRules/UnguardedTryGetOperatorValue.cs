@@ -8,7 +8,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
-    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -48,9 +47,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var valueExpression = expression.Operator.LanguageExpressions[0];
-            if (!valueExpression.IsEntireValue ||
-                valueExpression.Root is not TemplateFunctionCall rootCall ||
-                !rootCall.Name.EqualsOrdinalInsensitively("tryGet"))
+            if (!string.Equals(expression.Operator.Value.ToString(), valueExpression.Expression, StringComparison.Ordinal) ||
+                valueExpression.Root is not TemplateFunctionCall { Name: var functionName } ||
+                !string.Equals(functionName, "tryGet", StringComparison.OrdinalIgnoreCase))
             {
                 return Array.Empty<LinterOutput>();
             }

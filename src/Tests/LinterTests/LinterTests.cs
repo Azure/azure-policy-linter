@@ -1212,7 +1212,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var fieldTagsX = languageExpressions.SingleOrDefault(e => e.Expression == "[field('tags.x')]");
             fieldTagsX.Should().NotBeNull();
             fieldTagsX.Root.Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("field");
-            fieldTagsX.IsEntireValue.Should().BeTrue();
             fieldTagsX.References.Should().HaveCount(1);
             fieldTagsX.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsX.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("field");
@@ -1239,7 +1238,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             fieldTagsY.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsY.References[0].Identifier.Should().Be("tags.y");
             fieldTagsY.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("in");
-            fieldTagsY.IsEntireValue.Should().BeFalse();
 
             var literalExpression = languageExpressions.SingleOrDefault(e => e.Expression == "[1]");
             literalExpression.Should().NotBeNull();
@@ -1314,7 +1312,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             var ifCall = functionCalls.Single(call => call.Name == "if");
             var valueExpression = ifCall.Parent.Should().BeOfType<TemplateLanguageExpression>().Subject;
             valueExpression.Root.Should().BeSameAs(ifCall);
-            valueExpression.IsEntireValue.Should().BeTrue();
             ifCall.Arguments.Should().HaveCount(3);
             ifCall.Arguments[0].Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("equals");
             ifCall.Arguments[1].Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(0));
@@ -1330,10 +1327,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var fieldAccessor = LinterTests.GetTemplateLanguageExpression(functionCalls.Single(call => call.Name == "concat"));
             fieldAccessor.Parent.Should().BeOfType<Property>().Which.Name.Should().Be("field");
-            fieldAccessor.IsEntireValue.Should().BeTrue();
-
-            var arrayItem = LinterTests.GetTemplateLanguageExpression(functionCalls.Single(call => call.Reference?.Identifier == "tags.y"));
-            arrayItem.IsEntireValue.Should().BeFalse();
         }
 
         private static TemplateLanguageExpression GetTemplateLanguageExpression(PolicyExpression expression)

@@ -29,7 +29,7 @@ The node types you'll most often target as a rule author:
 | `ThenExpression` | Just `Effect` (a `Property`). The linter currently doesn't parse effect details. |
 | `Property` | Key-value pair derived from a json property. Holds `Name`, `Value` (`JToken`), `LanguageExpressions` (template references in the value), `HasLiteralValue`, and `HasSimpleParameterizedValue(...)`. |
 | `Reference` | A parsed template-language reference (`field`, `parameters`, `current`, `claims`, etc.). Carries `Kind`, `Identifier`, `IsResolved`, `PropertySelectionPath?`, and `ResourcePropertyMetadata` for resolved field aliases. |
-| `TemplateLanguageExpression` | One `[...]` string in a property value or name. `Expression` (raw text), `Root` (the parsed expression), `IsEntireValue` (the property value is exactly this expression), `References`. |
+| `TemplateLanguageExpression` | One `[...]` string in a property value or name. `Expression` (raw text), `Root` (the parsed expression), `References`. |
 | `TemplateFunctionCall` / `TemplateLiteralValue` | The nodes under `TemplateLanguageExpression.Root` (both derive from `TemplateLanguageNode`). A `TemplateFunctionCall` has `Name`, `Arguments`, `Selectors` (`[2]`, `.name` after the call), `Reference` (set for `field()`, `parameters()`, ...), and `IsConditionallyEvaluated`. Nodes share the line, position and path of their expression and are visited by the engine, so rules can target `TemplateFunctionCall` directly. |
 | `Parameter` | A policy parameter's `Name`, `Type`, `AllowedValues?`, `DefaultValue?`, `Metadata?` (raw `JToken` for the unmodeled metadata bag), plus `TryAsConcreteType<T>` for unwrapping to a C# type. |
 
