@@ -4,11 +4,11 @@
 |----------|------------|----------|----------|
 | TemplateFunctions | unguarded-split-index | Warning | default |
 
-> **Note:** This rule can't tell whether your policy already checks the number of segments before it selects the element, for example with `if()`. It reports every such selection. If your policy has a check, make sure it handles values with too few segments and missing values.
-
 ## Description
 
 This rule reports an expression that selects an element from the result of [`split()`](https://learn.microsoft.com/azure/azure-resource-manager/templates/template-functions-string#split), for example `split(field('id'), '/')[4]`, when the split value is known only when the policy is evaluated. If the value has fewer segments than the index requires, the index is out of bounds and evaluation fails. A missing property is an empty string, which splits into a single empty element. [A failed expression makes the policy deny the request](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures), so every request whose value has too few segments is denied, whether or not the policy was meant to deny it.
+
+**Note:** This rule can't tell whether your policy already checks the number of segments before it selects the element, for example with `if()`. It reports every such selection. If your policy has a check, make sure it handles values with too few segments and missing values.
 
 ## Suggestions
 
