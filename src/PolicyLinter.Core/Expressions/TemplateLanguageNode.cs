@@ -45,47 +45,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             return this is TemplateFunctionCall { Reference: { } reference } && reference.IsEvaluationTimeValue();
         }
 
-        /// <summary>
-        /// Whether an 'if()' around this reference selects its other branch when the reference has the given value,
-        /// e.g. the 'field('a')' call in "[if(equals(field('a'), ''), 0, int(field('a')))]" is guarded against ''.
-        /// </summary>
-        /// <remarks>
-        /// The 'if()' condition is evaluated with the value bound to every use of the same reference function (same kind and identifier),
-        /// before any property selection. A condition that can't be evaluated, e.g. because it also uses another field, doesn't guard the reference.
-        /// </remarks>
-        /// <param name="value">The value for which the function call that uses this reference fails, e.g. '' for a missing property.</param>
-        public bool IsGuardedAgainst(JToken value)
-        {
-            if (this is not TemplateFunctionCall { Reference: { IsResolved: true } reference })
-            {
-                return false;
-            }
-
-            for (TemplateLanguageNode node = this; node.Parent is TemplateFunctionCall parent; node = parent)
-            {
-                var branch = parent.Arguments.IndexOf(node);
-                if (!parent.Name.EqualsOrdinalInsensitively("if") || parent.Arguments.Length != 3 || branch < 1)
-                {
-                    continue;
-                }
-
-                var condition = parent.Arguments[0];
-                var referenceValues = condition
-                    .GetReferences()
-                    .Where(other => other.IsResolved && other.Kind == reference.Kind && other.Identifier.EqualsOrdinalInsensitively(reference.Identifier))
-                    .ToDictionary(keySelector: other => other, elementSelector: _ => value);
-
-                if (condition.TryEvaluate(referenceValues: referenceValues, value: out var conditionValue) &&
-                    conditionValue.Type == JTokenType.Boolean &&
-                    branch != (conditionValue.Value<bool>() ? 1 : 2))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
         /// <inheritdoc/>
         public override void Visit(PolicyExpressionVisitor visitor)
         {
@@ -139,14 +98,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             return expression is FunctionExpression function
                 ? new TemplateFunctionCall(function, parent, isConditionallyEvaluated)
                 : new TemplateLiteralValue(expression, parent);
-        }
-
-        /// <summary>
-        /// Gets the references in this node and all nodes below it.
-        /// </summary>
-        internal virtual IEnumerable<Reference> GetReferences()
-        {
-            return Enumerable.Empty<Reference>();
         }
     }
 
@@ -243,13 +194,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 node.Visit(visitor);
             }
-        }
-
-        /// <inheritdoc/>
-        internal override IEnumerable<Reference> GetReferences()
-        {
-            var references = this.Arguments.Concat(this.Selectors).SelectMany(node => node.GetReferences());
-            return this.Reference == null ? references : references.Prepend(this.Reference);
         }
 
         /// <inheritdoc/>

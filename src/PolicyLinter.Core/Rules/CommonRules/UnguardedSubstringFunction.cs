@@ -10,10 +10,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags substring() calls on values known only when the policy is evaluated, unless an if() around the call skips it for a missing property.
+    /// Flags substring() calls on values known only when the policy is evaluated, outside an if() branch.
     /// </summary>
     public sealed class UnguardedSubstringFunction : LinterRule<TemplateFunctionCall>
     {
@@ -37,8 +36,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return expression.Name.EqualsOrdinalInsensitively("substring") &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference() && !argument.IsGuardedAgainst(JValue.CreateString(string.Empty)))
+            return !expression.IsConditionallyEvaluated &&
+                expression.Name.EqualsOrdinalInsensitively("substring") &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
                 ? new[] { this.CreateError(expression) }
                 : Array.Empty<LinterOutput>();
         }

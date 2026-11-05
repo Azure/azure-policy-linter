@@ -151,24 +151,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             path.Path.Should().Equal(expectedPath);
         }
 
-        [Theory]
-        [InlineData("[if(equals(field('a'), ''), 0, int(field('a')))]", true)]
-        [InlineData("[if(not(empty(field('a'))), int(field('a')), 0)]", true)]
-        [InlineData("[if(contains(field('tags'), 'size'), int(field('tags')['size']), 0)]", true)]
-        [InlineData("[if(true(), if(equals(field('a'), ''), 0, int(field('a'))), 0)]", true)]
-        [InlineData("[if(equals(field('a'), ''), int(field('a')), 0)]", false)]
-        [InlineData("[if(equals(field('b'), ''), 0, int(field('a')))]", false)]
-        [InlineData("[if(and(equals(field('a'), ''), equals(field('b'), '')), 0, int(field('a')))]", false)]
-        [InlineData("[int(if(equals(field('a'), ''), 0, field('a')))]", false)]
-        [InlineData("[int(field('a'))]", false)]
-        public void TemplateLanguageNodeTests_IsGuardedAgainst(string valueExpression, bool expectedIsGuarded)
-        {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
-
-            var intArgument = TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "int").Arguments[0];
-            intArgument.IsGuardedAgainst(JValue.CreateString(string.Empty)).Should().Be(expectedIsGuarded);
-        }
-
         private static TemplateFunctionCall[] GetCalls(TemplateLanguageExpression expression)
         {
             var calls = new List<TemplateFunctionCall>();

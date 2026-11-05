@@ -10,10 +10,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags addDays() calls with arguments known only when the policy is evaluated, unless an if() around the call skips it for a missing property.
+    /// Flags addDays() calls with arguments known only when the policy is evaluated, outside an if() branch.
     /// </summary>
     public sealed class UnguardedAddDaysFunction : LinterRule<TemplateFunctionCall>
     {
@@ -37,8 +36,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return expression.Name.EqualsOrdinalInsensitively("addDays") &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference() && !argument.IsGuardedAgainst(JValue.CreateString(string.Empty)))
+            return !expression.IsConditionallyEvaluated &&
+                expression.Name.EqualsOrdinalInsensitively("addDays") &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
                 ? new[] { this.CreateWarning(expression) }
                 : Array.Empty<LinterOutput>();
         }
