@@ -126,7 +126,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
-
         [Fact]
         public void RuleTests_UnguardedSubstringFunction_FieldCondition_NoFinding()
         {

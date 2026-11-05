@@ -20,9 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class ExpressionNodeTests
     {
         private const string Parameters = @"
-            'stringParam': { 'type': 'String', 'allowedValues': [ '1', 'x' ], 'defaultValue': 'y' },
-            'otherParam': { 'type': 'String', 'defaultValue': 'z' },
-            'noValuesParam': { 'type': 'String' }";
+            'stringParam': { 'type': 'String' }";
 
         [Fact]
         public void ExpressionNodeTests_NestedCalls_ConditionalEvaluation()

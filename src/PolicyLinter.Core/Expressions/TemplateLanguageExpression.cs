@@ -1,4 +1,4 @@
-// ------------------------------------------------------------
+﻿// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -155,7 +155,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
         }
 
-
         /// <summary>
         /// Whether the expression contains any unresolved references.
         /// </summary>
@@ -163,7 +162,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             return this.References.Any(reference => !reference.IsResolved);
         }
-
 
         /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageExpression"/> class.
