@@ -28,14 +28,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     public class TemplateLanguageExpression : PolicyExpression
     {
         /// <summary>
-        /// The parsed language expression.
-        /// </summary>
-        /// <remarks>
-        /// This property is private by design. We don't want linter rules to use it because it'll prevent us from ever getting rid of the dependency on the policy engine.
-        /// </remarks>
-        private LanguageExpression LanguageExpression { get; }
-
-        /// <summary>
         /// The raw language expression string.
         /// </summary>
         public string Expression { get; }
@@ -59,9 +51,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ReferenceKind? ReferenceKind { get; }
 
         /// <summary>
-        /// The parsed expression: a <see cref="FunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="LiteralValue"/> (e.g. "[1]").
+        /// The parsed expression: a <see cref="TemplateFunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="TemplateLiteralValue"/> (e.g. "[1]").
         /// </summary>
-        public ExpressionNode Root { get; }
+        public TemplateLanguageNode Root { get; }
 
         /// <summary>
         /// Whether the expression is the entire property value, e.g. { "value": "[field('a')]" },
@@ -183,8 +175,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
             this.Expression = expression;
             this.IsEntireValue = isEntireValue;
-            this.LanguageExpression = ExpressionsEngine.ParseLanguageExpression(expression);
-            if (Reference.IsReferenceFunction(this.LanguageExpression, out var kind))
+            var languageExpression = ExpressionsEngine.ParseLanguageExpression(expression);
+            if (Reference.IsReferenceFunction(languageExpression, out var kind))
             {
                 this.ReferenceKind = kind;
             }
@@ -192,7 +184,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             var references = new List<Reference>();
 
             Reference.FromLanguageExpression(
-                languageExpression: this.LanguageExpression,
+                languageExpression: languageExpression,
                 path: path,
                 parent: this,
                 countExpressionScopes: countExpressionScopes,
@@ -201,8 +193,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 results: references);
 
             this.References = references.ToImmutableArray();
-            this.Root = ExpressionNode.Create(
-                expression: this.LanguageExpression,
+            this.Root = TemplateLanguageNode.Create(
+                expression: languageExpression,
                 parent: this,
                 isConditionallyEvaluated: false,
                 guardCondition: null,
@@ -244,25 +236,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             parameterName = string.Empty;
 
-            // Check if this is a parameter reference at the root level
-            if (this.ReferenceKind != Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.ReferenceKind.PolicyParameterName)
-            {
-                return false;
-            }
-
-            // Check if we have exactly one reference and it's resolved
-            if (this.References.Length != 1 || !this.References[0].IsResolved)
-            {
-                return false;
-            }
-
-            var reference = this.References[0];
-
-            // Check if the underlying language expression is a plain function call without property selectors
-            if (this.LanguageExpression is FunctionExpression functionExpression &&
-                functionExpression.Function.Equals("parameters", StringComparison.OrdinalIgnoreCase) &&
-                functionExpression.Parameters.Length == 1 &&
-                (functionExpression.Properties == null || functionExpression.Properties.Length == 0))
+            if (this.Root is TemplateFunctionCall { Reference: { Kind: Expressions.ReferenceKind.PolicyParameterName, IsResolved: true } reference } call &&
+                call.Arguments.Length == 1 &&
+                call.Selectors.Length == 0)
             {
                 parameterName = reference.Identifier;
                 return true;

@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags int() calls on values known only when the policy is evaluated, unless an if() condition around the call uses the same value.
     /// </summary>
-    public sealed class UnguardedIntFunction : LinterRule<FunctionCall>
+    public sealed class UnguardedIntFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded Int Function";
 
@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return expression.Name.EqualsOrdinalInsensitively("int") &&
                 expression.Arguments.Any(argument => argument.IsEvaluationTimeReference() && !argument.IsCheckedByGuardCondition())

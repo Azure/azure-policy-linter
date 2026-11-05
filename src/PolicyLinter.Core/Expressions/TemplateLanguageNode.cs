@@ -22,7 +22,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// <remarks>
     /// Nodes have the line number, position and path of the template language expression they belong to.
     /// </remarks>
-    public abstract class ExpressionNode : PolicyExpression
+    public abstract class TemplateLanguageNode : PolicyExpression
     {
         /// <summary>
         /// The parsed expression. Private by design, to keep expression engine types out of the linter rules.
@@ -30,9 +30,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         private readonly LanguageExpression expression;
 
         /// <summary>
-        /// Creates a new instance of the <see cref="ExpressionNode"/> class.
+        /// Creates a new instance of the <see cref="TemplateLanguageNode"/> class.
         /// </summary>
-        private protected ExpressionNode(LanguageExpression expression, PolicyExpression parent, ExpressionNode? guardCondition)
+        private protected TemplateLanguageNode(LanguageExpression expression, PolicyExpression parent, TemplateLanguageNode? guardCondition)
             : base(parent.LineNumber, parent.LinePosition, parent.PathSegments, parent)
         {
             this.expression = expression;
@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// The condition (first argument) of the nearest 'if()' whose second or third argument contains this node, otherwise null.
         /// </summary>
-        public ExpressionNode? GuardCondition { get; }
+        public TemplateLanguageNode? GuardCondition { get; }
 
         /// <summary>
         /// Whether this node is a reference that the condition of its guarding 'if()' also uses (see <see cref="GuardCondition"/>),
@@ -53,7 +53,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </remarks>
         public bool IsCheckedByGuardCondition()
         {
-            return this is FunctionCall { Reference: { } reference } &&
+            return this is TemplateFunctionCall { Reference: { } reference } &&
                 this.GuardCondition != null &&
                 this.GuardCondition
                     .GetReferences()
@@ -66,7 +66,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </summary>
         public bool IsEvaluationTimeReference()
         {
-            return this is FunctionCall { Reference: { } reference } && reference.IsEvaluationTimeValue();
+            return this is TemplateFunctionCall { Reference: { } reference } && reference.IsEvaluationTimeValue();
         }
 
         /// <inheritdoc/>
@@ -78,16 +78,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates the node for the given parsed expression.
         /// </summary>
-        internal static ExpressionNode Create(
+        internal static TemplateLanguageNode Create(
             LanguageExpression expression,
             PolicyExpression parent,
             bool isConditionallyEvaluated,
-            ExpressionNode? guardCondition,
+            TemplateLanguageNode? guardCondition,
             IReadOnlyDictionary<FunctionExpression, Reference> references)
         {
             return expression is FunctionExpression function
-                ? new FunctionCall(function, parent, isConditionallyEvaluated, guardCondition, references)
-                : new LiteralValue(expression, parent, guardCondition);
+                ? new TemplateFunctionCall(function, parent, isConditionallyEvaluated, guardCondition, references)
+                : new TemplateLiteralValue(expression, parent, guardCondition);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </remarks>
         internal JToken Evaluate(StaticTemplateFunctionEvaluationContext evaluationContext)
         {
-            return ExpressionNode.Copy(this.expression).EvaluateExpression(evaluationContext);
+            return TemplateLanguageNode.Copy(this.expression).EvaluateExpression(evaluationContext);
         }
 
         private static LanguageExpression Copy(LanguageExpression expression)
@@ -114,8 +114,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             return expression is FunctionExpression function
                 ? new FunctionExpression(
                     function.Function,
-                    function.Parameters.CoalesceEnumerable().SelectArray(ExpressionNode.Copy),
-                    function.Properties.CoalesceEnumerable().SelectArray(ExpressionNode.Copy))
+                    function.Parameters.CoalesceEnumerable().SelectArray(TemplateLanguageNode.Copy),
+                    function.Properties.CoalesceEnumerable().SelectArray(TemplateLanguageNode.Copy))
                 : expression;
         }
     }
@@ -123,7 +123,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// <summary>
     /// A literal value in a template language expression, e.g. 'a' and 3 in "[substring('a', 3)]".
     /// </summary>
-    public sealed class LiteralValue : ExpressionNode
+    public sealed class TemplateLiteralValue : TemplateLanguageNode
     {
         /// <summary>
         /// The value.
@@ -131,9 +131,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public JToken Value { get; }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="LiteralValue"/> class.
+        /// Creates a new instance of the <see cref="TemplateLiteralValue"/> class.
         /// </summary>
-        internal LiteralValue(LanguageExpression expression, PolicyExpression parent, ExpressionNode? guardCondition)
+        internal TemplateLiteralValue(LanguageExpression expression, PolicyExpression parent, TemplateLanguageNode? guardCondition)
             : base(expression, parent, guardCondition)
         {
             this.Value = (expression as JTokenExpression)?.Value ?? JValue.CreateNull();
@@ -143,7 +143,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// <summary>
     /// A template function call, e.g. the 'int' call in "[less(int(field('a')), 5)]".
     /// </summary>
-    public sealed class FunctionCall : ExpressionNode
+    public sealed class TemplateFunctionCall : TemplateLanguageNode
     {
         /// <summary>
         /// The function name as written in the expression. Function names are case insensitive.
@@ -153,12 +153,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// The function arguments.
         /// </summary>
-        public ImmutableArray<ExpressionNode> Arguments { get; }
+        public ImmutableArray<TemplateLanguageNode> Arguments { get; }
 
         /// <summary>
         /// The property and index selectors applied to the function result, e.g. [2] and 'name' in "[split(x, '/')[2].name]".
         /// </summary>
-        public ImmutableArray<ExpressionNode> Selectors { get; }
+        public ImmutableArray<TemplateLanguageNode> Selectors { get; }
 
         /// <summary>
         /// The reference for this call, when the function is a reference function such as field() or parameters().
@@ -172,13 +172,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public bool IsConditionallyEvaluated { get; }
 
         /// <summary>
-        /// Creates a new instance of the <see cref="FunctionCall"/> class and the nodes below it.
+        /// Creates a new instance of the <see cref="TemplateFunctionCall"/> class and the nodes below it.
         /// </summary>
-        internal FunctionCall(
+        internal TemplateFunctionCall(
             FunctionExpression expression,
             PolicyExpression parent,
             bool isConditionallyEvaluated,
-            ExpressionNode? guardCondition,
+            TemplateLanguageNode? guardCondition,
             IReadOnlyDictionary<FunctionExpression, Reference> references)
             : base(expression, parent, guardCondition)
         {
@@ -187,15 +187,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Reference = references.TryGetValue(expression, out var reference) ? reference : null;
 
             // The condition of an if() is built first, so the nodes in its branches can point to it.
-            var arguments = new List<ExpressionNode>();
+            var arguments = new List<TemplateLanguageNode>();
             var parameters = expression.Parameters.CoalesceEnumerable().ToArray();
             for (var index = 0; index < parameters.Length; index++)
             {
                 var isIfBranch = this.Name.EqualsOrdinalInsensitively("if") && index > 0;
-                arguments.Add(ExpressionNode.Create(
+                arguments.Add(TemplateLanguageNode.Create(
                     expression: parameters[index],
                     parent: this,
-                    isConditionallyEvaluated: isConditionallyEvaluated || FunctionCall.IsConditionallyEvaluatedArgument(functionName: this.Name, argumentIndex: index),
+                    isConditionallyEvaluated: isConditionallyEvaluated || TemplateFunctionCall.IsConditionallyEvaluatedArgument(functionName: this.Name, argumentIndex: index),
                     guardCondition: isIfBranch ? arguments[0] : guardCondition,
                     references: references));
             }
@@ -203,7 +203,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Arguments = arguments.ToImmutableArray();
             this.Selectors = expression.Properties
                 .CoalesceEnumerable()
-                .Select(selector => ExpressionNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated, guardCondition: guardCondition, references: references))
+                .Select(selector => TemplateLanguageNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated, guardCondition: guardCondition, references: references))
                 .ToImmutableArray();
         }
 
@@ -241,7 +241,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             var evaluationContexts = parameterNames.Length switch
             {
                 0 => new[] { new StaticTemplateFunctionEvaluationContext() },
-                1 => FunctionCall.GetKnownValues(context: context, parameterName: parameterNames[0])
+                1 => TemplateFunctionCall.GetKnownValues(context: context, parameterName: parameterNames[0])
                     .Select(value => new StaticTemplateFunctionEvaluationContext(parameterName: parameterNames[0], parameterValue: value))
                     .ToArray(),
                 _ => Array.Empty<StaticTemplateFunctionEvaluationContext>(),
@@ -311,7 +311,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
             catch (Exception exception) when (!exception.IsFatal())
             {
-                return $"{this.Name}({string.Join(", ", argumentValues.Select(FunctionCall.FormatValue))})";
+                return $"{this.Name}({string.Join(", ", argumentValues.Select(TemplateFunctionCall.FormatValue))})";
             }
         }
 

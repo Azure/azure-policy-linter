@@ -13,7 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags template function calls that fail for a literal value or a known parameter value.
     /// </summary>
-    public sealed class InvalidTemplateFunctionArgument : LinterRule<FunctionCall>
+    public sealed class InvalidTemplateFunctionArgument : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Invalid Template Function Argument";
 
@@ -33,7 +33,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             if (expression.IsConditionallyEvaluated)
             {

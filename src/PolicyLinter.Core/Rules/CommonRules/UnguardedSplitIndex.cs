@@ -15,7 +15,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags an index on the result of split() on a value known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedSplitIndex : LinterRule<FunctionCall>
+    public sealed class UnguardedSplitIndex : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded Split Index";
 
@@ -35,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return !expression.IsConditionallyEvaluated &&
                 expression.Name.EqualsOrdinalInsensitively("split") &&
@@ -50,9 +50,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <summary>
         /// Index 0 is always in bounds, because split() returns at least one element for a string, including an empty string.
         /// </summary>
-        private static bool CanBeOutOfBounds(ExpressionNode index)
+        private static bool CanBeOutOfBounds(TemplateLanguageNode index)
         {
-            return index is not LiteralValue { Value: { Type: JTokenType.Integer } value } || value.Value<long>() != 0;
+            return index is not TemplateLiteralValue { Value: { Type: JTokenType.Integer } value } || value.Value<long>() != 0;
         }
     }
 }

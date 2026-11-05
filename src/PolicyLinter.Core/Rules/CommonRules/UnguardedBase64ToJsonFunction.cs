@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags base64ToJson() calls on values known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedBase64ToJsonFunction : LinterRule<FunctionCall>
+    public sealed class UnguardedBase64ToJsonFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded base64ToJson Function";
 
@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return !expression.IsConditionallyEvaluated &&
                 expression.Name.EqualsOrdinalInsensitively("base64ToJson") &&

@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags min() and max() calls with arguments known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedMinOrMaxFunction : LinterRule<FunctionCall>
+    public sealed class UnguardedMinOrMaxFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded Min or Max Function";
 
@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return !expression.IsConditionallyEvaluated &&
                 (expression.Name.EqualsOrdinalInsensitively("min") || expression.Name.EqualsOrdinalInsensitively("max")) &&

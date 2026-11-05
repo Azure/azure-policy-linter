@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags addDays() calls with arguments known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedAddDaysFunction : LinterRule<FunctionCall>
+    public sealed class UnguardedAddDaysFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded addDays Function";
 
@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return !expression.IsConditionallyEvaluated &&
                 expression.Name.EqualsOrdinalInsensitively("addDays") &&

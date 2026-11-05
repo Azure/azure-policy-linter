@@ -14,7 +14,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags json() calls on values known only when the policy is evaluated, outside an if() branch.
     /// </summary>
-    public sealed class UnguardedJsonFunction : LinterRule<FunctionCall>
+    public sealed class UnguardedJsonFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded Json Function";
 
@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         }
 
         /// <inheritdoc/>
-        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return !expression.IsConditionallyEvaluated &&
                 expression.Name.EqualsOrdinalInsensitively("json") &&
