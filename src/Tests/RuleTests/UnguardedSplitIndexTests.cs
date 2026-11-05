@@ -22,13 +22,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[split(field('Microsoft.Test/widgets/subnet.id'), '/')[2]]", Severity.Error)]
-        [InlineData("[SPLIT(field('Microsoft.Test/widgets/subnet.id'), '/')[2]]", Severity.Error)]
-        [InlineData("[toLower(split(field('Microsoft.Test/widgets/subnet.id'), '/')[4])]", Severity.Error)]
-        [InlineData("[split(field('Microsoft.Test/widgets/subnet.id'), '/')[parameters('zeroParam')]]", Severity.Error)]
-        [InlineData("[if(equals(split(field('Microsoft.Test/widgets/subnet.id'), '/')[2], 'x'), 'a', 'b')]", Severity.Error)]
-        [InlineData("[if(greater(length(split(field('Microsoft.Test/widgets/subnet.id'), '/')), 2), split(field('Microsoft.Test/widgets/subnet.id'), '/')[2], '')]", Severity.Warning)]
-        public void RuleTests_UnguardedSplitIndex_Fires(string valueExpression, Severity expectedSeverity)
+        [InlineData("[split(field('Microsoft.Test/widgets/subnet.id'), '/')[2]]")]
+        [InlineData("[SPLIT(field('Microsoft.Test/widgets/subnet.id'), '/')[2]]")]
+        [InlineData("[toLower(split(field('Microsoft.Test/widgets/subnet.id'), '/')[4])]")]
+        [InlineData("[split(field('Microsoft.Test/widgets/subnet.id'), '/')[parameters('zeroParam')]]")]
+        [InlineData("[if(equals(split(field('Microsoft.Test/widgets/subnet.id'), '/')[2], 'x'), 'a', 'b')]")]
+        [InlineData("[if(greater(length(split(field('Microsoft.Test/widgets/subnet.id'), '/')), 2), split(field('Microsoft.Test/widgets/subnet.id'), '/')[2], '')]")]
+        public void RuleTests_UnguardedSplitIndex_Fires(string valueExpression)
         {
             var results = UnguardedSplitIndexTests.LintValueExpression(valueExpression);
 
@@ -36,7 +36,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "unguarded-split-index",
                 Title: "Unguarded Split Index",
-                Severity: expectedSeverity,
+                Severity: Severity.Warning,
                 Category: Category.TemplateFunctions,
                 LineNumber: 10,
                 LinePosition: 35 + valueExpression.Length,

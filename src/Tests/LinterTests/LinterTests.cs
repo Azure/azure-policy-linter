@@ -1322,9 +1322,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             splitCall.Selectors.Should().ContainSingle().Which.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
             splitCall.Selectors[0].Parent.Should().BeSameAs(splitCall);
 
-            functionCalls.Where(call => call.IsConditionallyEvaluated).Select(call => call.Name).Should().BeEquivalentTo("int", "split", "field");
-            functionCalls.Single(call => call.IsConditionallyEvaluated && call.Name == "field").Reference.Identifier.Should().Be("id");
-
             var fieldAccessor = LinterTests.GetTemplateLanguageExpression(functionCalls.Single(call => call.Name == "concat"));
             fieldAccessor.Parent.Should().BeOfType<Property>().Which.Name.Should().Be("field");
         }

@@ -153,8 +153,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Expression = expression;
             this.Root = TemplateLanguageNode.Create(
                 expression: ExpressionsEngine.ParseLanguageExpression(expression),
-                parent: this,
-                isConditionallyEvaluated: false);
+                parent: this);
 
             var references = new List<Reference>();
             Reference.FromLanguageExpression(

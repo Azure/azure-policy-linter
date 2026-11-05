@@ -12,8 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
-    /// Flags substring() calls on values known only when the policy is evaluated. The finding is an error,
-    /// or a warning when the call is in an if() branch, because the if() condition might check the length.
+    /// Flags substring() calls on values known only when the policy is evaluated.
     /// </summary>
     public sealed class UnguardedSubstringFunction : LinterRule<TemplateFunctionCall>
     {
@@ -40,7 +39,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             if (expression.Name.EqualsOrdinalInsensitively("substring") &&
                 expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
             {
-                return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
+                return new[] { this.CreateWarning(expression) };
             }
 
             return Array.Empty<LinterOutput>();

@@ -33,6 +33,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[toLower(substring(field('name'), 0, 3))]")]
         [InlineData("[concat(substring(field('name'), 0, 3), 'suffix')]")]
         [InlineData("[if(equals(substring(field('name'), 0, 3), 'abc'), 'a', 'b')]")]
+        [InlineData("[if(greaterOrEquals(length(field('name')), 3), substring(field('name'), 0, 3), field('name'))]")]
+        [InlineData("[if(equals(field('type'), 'x'), '', toLower(substring(field('name'), 0, 3)))]")]
         public void RuleTests_UnguardedSubstringFunction_EvaluationTimeInput_Fires(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
@@ -119,20 +121,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().BeEmpty();
         }
 
-        [Theory]
-        [InlineData("[if(greaterOrEquals(length(field('name')), 3), substring(field('name'), 0, 3), field('name'))]")]
-        [InlineData("[if(equals(field('type'), 'x'), '', toLower(substring(field('name'), 0, 3)))]")]
-        public void RuleTests_UnguardedSubstringFunction_InIfBranch_Warning(string valueExpression)
-        {
-            var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
-
-            results.Should().HaveCount(1);
-            results.Should().ContainEquivalentOf(UnguardedSubstringFunctionTests.CreateExpectedOutput(
-                lineNumber: 6,
-                linePosition: 35 + valueExpression.Length,
-                severity: Severity.Warning));
-        }
-
         [Fact]
         public void RuleTests_UnguardedSubstringFunction_FieldCondition_NoFinding()
         {
@@ -189,13 +177,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static LinterOutput CreateExpectedOutput(
             int lineNumber,
             int linePosition,
-            string path = "properties.policyRule.if.value",
-            Severity severity = Severity.Error)
+            string path = "properties.policyRule.if.value")
         {
             return new LinterOutput(
                 RuleIdentifier: "unguarded-substring-function",
                 Title: "Unguarded Substring Function",
-                Severity: severity,
+                Severity: Severity.Warning,
                 Category: Category.TemplateFunctions,
                 LineNumber: lineNumber,
                 LinePosition: linePosition,

@@ -22,13 +22,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 
         [Theory]
-        [InlineData("[addDays(field('tags[createdOn]'), 90)]", Severity.Warning)]
-        [InlineData("[addDays(utcNow(), field('tags[days]'))]", Severity.Warning)]
-        [InlineData("[ADDDAYS(field('tags[createdOn]'), 90)]", Severity.Warning)]
-        [InlineData("[less(addDays(field('tags[createdOn]'), 90), utcNow())]", Severity.Warning)]
-        [InlineData("[if(equals(addDays(field('tags[createdOn]'), 90), 'x'), 'a', 'b')]", Severity.Warning)]
-        [InlineData("[if(equals(field('tags[createdOn]'), ''), '9999-12-31T00:00:00Z', addDays(field('tags[createdOn]'), 90))]", Severity.Informational)]
-        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression, Severity expectedSeverity)
+        [InlineData("[addDays(field('tags[createdOn]'), 90)]")]
+        [InlineData("[addDays(utcNow(), field('tags[days]'))]")]
+        [InlineData("[ADDDAYS(field('tags[createdOn]'), 90)]")]
+        [InlineData("[less(addDays(field('tags[createdOn]'), 90), utcNow())]")]
+        [InlineData("[if(equals(addDays(field('tags[createdOn]'), 90), 'x'), 'a', 'b')]")]
+        [InlineData("[if(equals(field('tags[createdOn]'), ''), '9999-12-31T00:00:00Z', addDays(field('tags[createdOn]'), 90))]")]
+        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression)
         {
             var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);
 
@@ -36,7 +36,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             results.Should().ContainEquivalentOf(new LinterOutput(
                 RuleIdentifier: "unguarded-adddays-function",
                 Title: "Unguarded addDays Function",
-                Severity: expectedSeverity,
+                Severity: Severity.Warning,
                 Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
