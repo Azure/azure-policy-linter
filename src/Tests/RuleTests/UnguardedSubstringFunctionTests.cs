@@ -32,6 +32,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[substring(field('name'), 0, parameters('length'))]")]
         [InlineData("[toLower(substring(field('name'), 0, 3))]")]
         [InlineData("[concat(substring(field('name'), 0, 3), 'suffix')]")]
+        [InlineData("[if(equals(field('type'), 'x'), substring(field('name'), 0, 3), '')]")]
+        [InlineData("[if(greaterOrEquals(length(field('name')), 3), field('name'), substring(field('name'), 0, 3))]")]
         public void RuleTests_UnguardedSubstringFunction_EvaluationTimeInput_Fires(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);

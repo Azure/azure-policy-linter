@@ -25,6 +25,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[split(field('id'), '/')[2]]")]
         [InlineData("[toLower(split(field('id'), '/')[4])]")]
         [InlineData("[split(field('id'), '/')[parameters('zeroParam')]]")]
+        [InlineData("[if(equals(field('type'), 'x'), split(field('id'), '/')[2], '')]")]
         public void RuleTests_UnguardedSplitIndex_Fires(string valueExpression)
         {
             var results = UnguardedSplitIndexTests.LintValueExpression(valueExpression);
