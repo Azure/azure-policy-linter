@@ -59,9 +59,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ReferenceKind? ReferenceKind { get; }
 
         /// <summary>
-        /// The parsed expression: a <see cref="FunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="LiteralValue"/> (e.g. "[1]").
+        /// The parsed expression: a <see cref="TemplateFunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="TemplateLiteralValue"/> (e.g. "[1]").
         /// </summary>
-        public ExpressionNode Root { get; }
+        public TemplateLanguageNode Root { get; }
 
         /// <summary>
         /// Whether the expression is the entire property value, e.g. { "value": "[field('a')]" },
@@ -201,7 +201,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 results: references);
 
             this.References = references.ToImmutableArray();
-            this.Root = ExpressionNode.Create(
+            this.Root = TemplateLanguageNode.Create(
                 expression: this.LanguageExpression,
                 parent: this,
                 isConditionallyEvaluated: false,
