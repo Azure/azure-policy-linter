@@ -22,7 +22,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         private const string Parameters = @"
             'stringParam': { 'type': 'String', 'allowedValues': [ '1', 'x' ], 'defaultValue': 'y' },
             'otherParam': { 'type': 'String', 'defaultValue': 'z' },
-            'noValuesParam': { 'type': 'String' }";
+            'noValuesParam': { 'type': 'String' },
+            'arrayParam': { 'type': 'Array', 'allowedValues': [ 'a', 'b' ], 'defaultValue': [ 'a' ] }";
 
         [Fact]
         public void TemplateLanguageNodeTests_NestedCalls_ConditionalEvaluation()
@@ -117,6 +118,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[max(createArray())]", new[] { "max([])" })]
         [InlineData("[int(if(true(), 'ten', div(4, 0)))]", new[] { "int('ten')" })]
         [InlineData("[selectProperty(createObject(), 1)]", new string[0])]
+        [InlineData("[join(parameters('arrayParam'), ',')]", new string[0])]
+        [InlineData("[int(first(parameters('arrayParam')))]", new[] { "int('a')" })]
         public void TemplateLanguageNodeTests_GetFailuresForKnownValues(string valueExpression, string[] expectedFailures)
         {
             var (expression, context) = TemplateLanguageNodeTests.LintValue(valueExpression);

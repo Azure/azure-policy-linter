@@ -299,6 +299,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Gets the parameter's allowed values and default value.
         /// </summary>
+        /// <remarks>
+        /// The allowed values of an 'Array' parameter are the allowed array elements, not parameter values, so only its default value is used.
+        /// </remarks>
         private static JToken[] GetKnownValues(LinterContext context, string parameterName)
         {
             if (context.Parameters == null || !context.Parameters.TryGetValue(parameterName, out var parameter))
@@ -306,7 +309,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 return Array.Empty<JToken>();
             }
 
-            return parameter.AllowedValues
+            var allowedValues = parameter.Type.EqualsOrdinalInsensitively("Array") ? null : parameter.AllowedValues;
+            return allowedValues
                 .CoalesceEnumerable()
                 .Concat(new[] { parameter.DefaultValue })
                 .OfType<JToken>()
