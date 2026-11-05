@@ -37,13 +37,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            if (!expression.Name.EqualsOrdinalInsensitively("substring") ||
-                !expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
+            if (expression.Name.EqualsOrdinalInsensitively("substring") &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
             {
-                return Array.Empty<LinterOutput>();
+                return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
             }
 
-            return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
+            return Array.Empty<LinterOutput>();
         }
     }
 }
