@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedSubstringFunctionTests
     {
         private const string ExpectedDescription =
-            "The expression calls 'substring' on a value that is known only when the policy is evaluated. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Use 'take()' and 'skip()' instead; they don't fail on short values.";
+            "The expression calls 'substring()' on a value that is known only when the policy is evaluated. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Use 'take()' and 'skip()' instead; they don't fail on short values.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
