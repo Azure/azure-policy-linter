@@ -20,7 +20,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Unguarded Substring Function";
 
         private const string RuleDescription =
-            "The expression calls 'substring' on a value that is known only when the policy is evaluated. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Use 'take()' and 'skip()' instead; they don't fail on short values.";
+            "The expression calls 'substring()' on a value that is known only when the policy is evaluated. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Use 'take()' and 'skip()' instead; they don't fail on short values.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedSubstringFunction"/> class.
