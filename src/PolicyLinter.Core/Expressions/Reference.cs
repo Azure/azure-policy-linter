@@ -231,7 +231,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             if (call.Selectors.Any())
             {
                 var processedPath = call.Selectors
-                    .Select(selector => selector.TryEvaluate(referenceValues: Reference.NoReferenceValues, value: out var value) ? value.ToStringValue() : null)
+                    .Select(selector => selector.TryEvaluate(referenceValues: Reference.NoReferenceValues, value: out var value) && value is JValue ? value.ToStringValue() : null)
                     .ToArray();
 
                 // A selector can't be evaluated when it depends on a reference (or uses a function the linter can't evaluate).
@@ -336,11 +336,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
         /// <summary>
         /// Evaluates the first argument of the reference function, e.g. 'a' in "field('a')".
-        /// When the argument can't be evaluated, the reference is not resolved and the identifier is empty.
+        /// When the argument can't be evaluated or isn't a single value (e.g. an array), the reference is not resolved and the identifier is empty.
         /// </summary>
         private string EvaluateIdentifierArgument(TemplateFunctionCall call)
         {
-            if (call.Arguments[0].TryEvaluate(referenceValues: Reference.NoReferenceValues, value: out var value))
+            if (call.Arguments[0].TryEvaluate(referenceValues: Reference.NoReferenceValues, value: out var value) && value is JValue)
             {
                 return value.ToStringValue()!;
             }
