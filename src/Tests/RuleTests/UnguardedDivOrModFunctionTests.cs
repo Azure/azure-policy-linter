@@ -24,6 +24,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("[div(field('Microsoft.Test/widgets/size'), 2)]", "div")]
         [InlineData("[mod(10, field('Microsoft.Test/widgets/count'))]", "mod")]
+        [InlineData("[if(equals(field('Microsoft.Test/widgets/count'), 0), 0, div(10, field('Microsoft.Test/widgets/count')))]", "div")]
+        [InlineData("[if(equals(field('Microsoft.Test/widgets/count'), ''), 0, div(10, field('Microsoft.Test/widgets/count')))]", "div")]
         public void RuleTests_UnguardedDivOrModFunction_Fires(string valueExpression, string descriptionParameter)
         {
             var results = UnguardedDivOrModFunctionTests.LintValueExpression(valueExpression);
@@ -42,7 +44,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("[div(10, parameters('zeroParam'))]")]
-        [InlineData("[if(equals(field('Microsoft.Test/widgets/count'), 0), 0, div(10, field('Microsoft.Test/widgets/count')))]")]
+        [InlineData("[if(or(equals(field('Microsoft.Test/widgets/count'), ''), equals(field('Microsoft.Test/widgets/count'), 0)), 0, div(10, field('Microsoft.Test/widgets/count')))]")]
+        [InlineData("[if(or(equals(field('Microsoft.Test/widgets/size'), ''), equals(field('Microsoft.Test/widgets/count'), ''), equals(field('Microsoft.Test/widgets/count'), 0)), 0, div(field('Microsoft.Test/widgets/size'), field('Microsoft.Test/widgets/count')))]")]
         public void RuleTests_UnguardedDivOrModFunction_NoFinding(string valueExpression)
         {
             var results = UnguardedDivOrModFunctionTests.LintValueExpression(valueExpression);

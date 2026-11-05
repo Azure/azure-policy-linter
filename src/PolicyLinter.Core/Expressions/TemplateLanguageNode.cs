@@ -33,45 +33,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageNode"/> class.
         /// </summary>
-        private protected TemplateLanguageNode(PolicyExpression parent, TemplateLanguageNode? guardCondition)
+        private protected TemplateLanguageNode(PolicyExpression parent)
             : base(parent.LineNumber, parent.LinePosition, parent.PathSegments, parent)
         {
-            this.GuardCondition = guardCondition;
-        }
-
-        /// <summary>
-        /// The condition (first argument) of the nearest 'if()' whose second or third argument contains this node, otherwise null.
-        /// </summary>
-        public TemplateLanguageNode? GuardCondition { get; }
-
-        /// <summary>
-        /// Whether this node is a reference that the condition of its guarding 'if()' also uses (see <see cref="GuardCondition"/>),
-        /// e.g. the 'field('a')' call in "[if(empty(field('a')), 0, int(field('a')))]".
-        /// </summary>
-        /// <remarks>
-        /// Checks only that the condition uses the same value, not what the condition does with it.
-        /// The same value means the same reference kind, identifier and property path, e.g. 'resourceGroup().name' and 'resourceGroup().tags.size' are different values.
-        /// </remarks>
-        public bool IsCheckedByGuardCondition()
-        {
-            return this is TemplateFunctionCall { Reference: { } reference } &&
-                this.GuardCondition != null &&
-                this.GuardCondition
-                    .GetReferences()
-                    .Any(other => TemplateLanguageNode.IsSameValue(reference, other));
-        }
-
-        private static bool IsSameValue(Reference first, Reference second)
-        {
-            var firstPath = first.PropertySelectionPath;
-            var secondPath = second.PropertySelectionPath;
-            return first.IsResolved &&
-                second.IsResolved &&
-                first.Kind == second.Kind &&
-                first.Identifier.EqualsOrdinalInsensitively(second.Identifier) &&
-                firstPath?.IsResolved != false &&
-                secondPath?.IsResolved != false &&
-                (firstPath?.Path ?? Array.Empty<string>()).SequenceEqual(secondPath?.Path ?? Array.Empty<string>(), StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -84,20 +48,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Whether an 'if()' around this reference selects its other branch when the reference has the given value,
+        /// Whether an 'if()' around this reference selects its other branch when the referenced property has the given value,
         /// e.g. the 'field('a')' call in "[if(equals(field('a'), ''), 0, int(field('a')))]" is guarded against ''.
         /// </summary>
         /// <remarks>
-        /// The 'if()' condition is evaluated with the value bound to every use of the same reference function (same kind and identifier),
-        /// before any property selection. A condition that can't be evaluated, e.g. because it also uses another field, doesn't guard the reference.
+        /// The 'if()' condition is evaluated with the value bound to every use of the same reference function (same kind and identifier).
+        /// For field() and current() the value is the function's value, because they return '' for a missing field.
+        /// For the other reference functions it is the value of the selected property, e.g. 'resourceGroup().tags.size'.
+        /// A condition that can't be evaluated, e.g. because it also uses another field, doesn't guard the reference.
         /// </remarks>
         /// <param name="value">The value for which the function call that uses this reference fails, e.g. '' for a missing property.</param>
         public bool IsGuardedAgainst(JToken value)
         {
-            if (this is not TemplateFunctionCall { Reference: { IsResolved: true } reference })
+            if (this is not TemplateFunctionCall { Reference: { IsResolved: true } reference } ||
+                reference.PropertySelectionPath?.IsResolved == false)
             {
                 return false;
             }
+
+            var referenceValue = reference.Kind is ReferenceKind.ResourceField or ReferenceKind.CurrentArrayMember
+                ? value
+                : (reference.PropertySelectionPath?.Path ?? Array.Empty<string>())
+                    .Reverse()
+                    .Aggregate(seed: value, func: (propertyValue, propertyName) => new JObject { [propertyName] = propertyValue });
 
             for (TemplateLanguageNode node = this; node.Parent is TemplateFunctionCall parent; node = parent)
             {
@@ -111,7 +84,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 var referenceValues = condition
                     .GetReferences()
                     .Where(other => other.IsResolved && other.Kind == reference.Kind && other.Identifier.EqualsOrdinalInsensitively(reference.Identifier))
-                    .ToDictionary(keySelector: other => other, elementSelector: _ => value);
+                    .ToDictionary(keySelector: other => other, elementSelector: _ => referenceValue);
 
                 if (condition.TryEvaluate(referenceValues: referenceValues, value: out var conditionValue) &&
                     conditionValue.Type == JTokenType.Boolean &&
@@ -172,20 +145,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         internal static TemplateLanguageNode Create(
             LanguageExpression expression,
             PolicyExpression parent,
-            bool isConditionallyEvaluated,
-            TemplateLanguageNode? guardCondition)
+            bool isConditionallyEvaluated)
         {
             return expression is FunctionExpression function
-                ? new TemplateFunctionCall(function, parent, isConditionallyEvaluated, guardCondition)
-                : new TemplateLiteralValue(expression, parent, guardCondition);
-        }
-
-        /// <summary>
-        /// Gets the references in this node and all nodes below it.
-        /// </summary>
-        internal virtual IEnumerable<Reference> GetReferences()
-        {
-            return Enumerable.Empty<Reference>();
+                ? new TemplateFunctionCall(function, parent, isConditionallyEvaluated)
+                : new TemplateLiteralValue(expression, parent);
         }
 
         /// <summary>
@@ -210,8 +174,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates a new instance of the <see cref="TemplateLiteralValue"/> class.
         /// </summary>
-        internal TemplateLiteralValue(LanguageExpression expression, PolicyExpression parent, TemplateLanguageNode? guardCondition)
-            : base(parent, guardCondition)
+        internal TemplateLiteralValue(LanguageExpression expression, PolicyExpression parent)
+            : base(parent)
         {
             this.Value = (expression as JTokenExpression)?.Value ?? JValue.CreateNull();
         }
@@ -263,30 +227,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         internal TemplateFunctionCall(
             FunctionExpression expression,
             PolicyExpression parent,
-            bool isConditionallyEvaluated,
-            TemplateLanguageNode? guardCondition)
-            : base(parent, guardCondition)
+            bool isConditionallyEvaluated)
+            : base(parent)
         {
             this.Name = expression.Function;
             this.IsConditionallyEvaluated = isConditionallyEvaluated;
-
-            // The condition of an if() is built first, so the nodes in its branches can point to it.
-            var arguments = new List<TemplateLanguageNode>();
-            var parameters = expression.Parameters.CoalesceEnumerable().ToArray();
-            for (var index = 0; index < parameters.Length; index++)
-            {
-                var isIfBranch = this.Name.EqualsOrdinalInsensitively("if") && index > 0;
-                arguments.Add(TemplateLanguageNode.Create(
-                    expression: parameters[index],
+            this.Arguments = expression.Parameters
+                .CoalesceEnumerable()
+                .Select((argument, index) => TemplateLanguageNode.Create(
+                    expression: argument,
                     parent: this,
-                    isConditionallyEvaluated: isConditionallyEvaluated || isIfBranch,
-                    guardCondition: isIfBranch ? arguments[0] : guardCondition));
-            }
-
-            this.Arguments = arguments.ToImmutableArray();
+                    isConditionallyEvaluated: isConditionallyEvaluated || (this.Name.EqualsOrdinalInsensitively("if") && index > 0)))
+                .ToImmutableArray();
             this.Selectors = expression.Properties
                 .CoalesceEnumerable()
-                .Select(selector => TemplateLanguageNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated, guardCondition: guardCondition))
+                .Select(selector => TemplateLanguageNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated))
                 .ToImmutableArray();
         }
 
@@ -408,13 +363,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <inheritdoc/>
-        internal override IEnumerable<Reference> GetReferences()
-        {
-            var references = this.Arguments.Concat(this.Selectors).SelectMany(node => node.GetReferences());
-            return this.Reference == null ? references : references.Prepend(this.Reference);
-        }
-
-        /// <inheritdoc/>
         internal override bool TryEvaluate(IReadOnlyDictionary<Reference, JToken> referenceValues, [NotNullWhen(true)] out JToken? value)
         {
             if (!this.TryEvaluateWithoutSelectors(referenceValues: referenceValues, value: out value))
@@ -447,6 +395,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
             // Policy evaluation evaluates only the 'if()' branch that the condition selects,
             // and stops 'and()' and 'or()' at the first argument that decides the result.
+            // An argument that decides the result also decides it when an earlier argument can't be evaluated here.
             if (this.Name.EqualsOrdinalInsensitively("if") && this.Arguments.Length == 3)
             {
                 return this.Arguments[0].TryEvaluate(referenceValues: referenceValues, value: out var condition) &&
@@ -460,7 +409,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 if (!argument.TryEvaluate(referenceValues: referenceValues, value: out var argumentValue))
                 {
-                    return false;
+                    if (decidingValue == null)
+                    {
+                        return false;
+                    }
+
+                    continue;
                 }
 
                 if (argumentValue.Type == JTokenType.Boolean && argumentValue.Value<bool>() == decidingValue)
@@ -472,7 +426,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 argumentValues.Add(argumentValue);
             }
 
-            return TemplateLanguageNode.TryCallBuiltInFunction(functionName: this.Name, arguments: argumentValues.ToArray(), value: out value);
+            return argumentValues.Count == this.Arguments.Length &&
+                TemplateLanguageNode.TryCallBuiltInFunction(functionName: this.Name, arguments: argumentValues.ToArray(), value: out value);
         }
     }
 }

@@ -10,9 +10,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags div() and mod() calls with arguments known only when the policy is evaluated, outside an if() branch.
+    /// Flags div() and mod() calls with arguments known only when the policy is evaluated, unless an if() around the call skips it for a missing property,
+    /// and for the divisor also for zero.
     /// </summary>
     public sealed class UnguardedDivOrModFunction : LinterRule<TemplateFunctionCall>
     {
@@ -36,11 +38,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                (expression.Name.EqualsOrdinalInsensitively("div") || expression.Name.EqualsOrdinalInsensitively("mod")) &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
+            return (expression.Name.EqualsOrdinalInsensitively("div") || expression.Name.EqualsOrdinalInsensitively("mod")) &&
+                expression.Arguments.Where((argument, index) => argument.IsEvaluationTimeReference() && !UnguardedDivOrModFunction.IsGuarded(argument: argument, isDivisor: index == 1)).Any()
                 ? new[] { this.CreateWarning(expression, expression.Name) }
                 : Array.Empty<LinterOutput>();
+        }
+
+        private static bool IsGuarded(TemplateLanguageNode argument, bool isDivisor)
+        {
+            return argument.IsGuardedAgainst(JValue.CreateString(string.Empty)) &&
+                (!isDivisor || argument.IsGuardedAgainst(new JValue(0)));
         }
     }
 }

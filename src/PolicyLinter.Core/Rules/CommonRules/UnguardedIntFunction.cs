@@ -10,9 +10,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags int() calls on values known only when the policy is evaluated, unless an if() condition around the call uses the same value.
+    /// Flags int() calls on values known only when the policy is evaluated, unless an if() around the call skips it for a missing property.
     /// </summary>
     public sealed class UnguardedIntFunction : LinterRule<TemplateFunctionCall>
     {
@@ -37,7 +38,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
             return expression.Name.EqualsOrdinalInsensitively("int") &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference() && !argument.IsCheckedByGuardCondition())
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference() && !argument.IsGuardedAgainst(JValue.CreateString(string.Empty)))
                 ? new[] { this.CreateWarning(expression) }
                 : Array.Empty<LinterOutput>();
         }

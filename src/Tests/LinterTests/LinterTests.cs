@@ -1325,12 +1325,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             splitCall.Selectors.Should().ContainSingle().Which.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
             splitCall.Selectors[0].Parent.Should().BeSameAs(splitCall);
 
-            var intCall = functionCalls.Single(call => call.Name == "int");
-            intCall.GuardCondition.Should().BeSameAs(ifCall.Arguments[0]);
-            splitCall.GuardCondition.Should().BeSameAs(ifCall.Arguments[0]);
-            ifCall.GuardCondition.Should().BeNull();
-            ifCall.Arguments[0].GuardCondition.Should().BeNull();
-            ifCall.Arguments[1].GuardCondition.Should().BeSameAs(ifCall.Arguments[0]);
             functionCalls.Where(call => call.IsConditionallyEvaluated).Select(call => call.Name).Should().BeEquivalentTo("int", "split", "field");
             functionCalls.Single(call => call.IsConditionallyEvaluated && call.Name == "field").Reference.Identifier.Should().Be("id");
 

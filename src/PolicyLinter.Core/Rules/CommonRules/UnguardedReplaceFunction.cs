@@ -10,9 +10,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags replace() calls whose string to replace is known only when the policy is evaluated, outside an if() branch.
+    /// Flags replace() calls whose string to replace is known only when the policy is evaluated, unless an if() around the call skips it for a missing property.
     /// </summary>
     public sealed class UnguardedReplaceFunction : LinterRule<TemplateFunctionCall>
     {
@@ -36,10 +37,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Name.EqualsOrdinalInsensitively("replace") &&
+            return expression.Name.EqualsOrdinalInsensitively("replace") &&
                 expression.Arguments.Length > 1 &&
-                expression.Arguments[1].IsEvaluationTimeReference()
+                expression.Arguments[1].IsEvaluationTimeReference() &&
+                !expression.Arguments[1].IsGuardedAgainst(JValue.CreateString(string.Empty))
                 ? new[] { this.CreateWarning(expression) }
                 : Array.Empty<LinterOutput>();
         }

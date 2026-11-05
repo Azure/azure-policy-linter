@@ -10,9 +10,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags range() calls with arguments known only when the policy is evaluated, outside an if() branch.
+    /// Flags range() calls with arguments known only when the policy is evaluated, unless an if() around the call skips it for a missing property.
     /// </summary>
     public sealed class UnguardedRangeFunction : LinterRule<TemplateFunctionCall>
     {
@@ -36,9 +37,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Name.EqualsOrdinalInsensitively("range") &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
+            return expression.Name.EqualsOrdinalInsensitively("range") &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference() && !argument.IsGuardedAgainst(JValue.CreateString(string.Empty)))
                 ? new[] { this.CreateWarning(expression) }
                 : Array.Empty<LinterOutput>();
         }

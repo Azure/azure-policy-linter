@@ -10,9 +10,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+    using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags a property or index selected from a field() or current() value, outside an if() branch.
+    /// Flags a property or index selected from a field() or current() value, unless an if() around the selection skips it for a missing property.
     /// </summary>
     public sealed class UnguardedFieldPropertyAccessor : LinterRule<TemplateFunctionCall>
     {
@@ -36,10 +37,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Selectors.Length > 0 &&
+            return expression.Selectors.Length > 0 &&
                 expression.Reference != null &&
-                (expression.Reference.Kind == ReferenceKind.ResourceField || expression.Reference.IsResolvedFieldReference())
+                (expression.Reference.Kind == ReferenceKind.ResourceField || expression.Reference.IsResolvedFieldReference()) &&
+                !expression.IsGuardedAgainst(JValue.CreateString(string.Empty))
                 ? new[] { this.CreateError(expression, expression.Name) }
                 : Array.Empty<LinterOutput>();
         }
