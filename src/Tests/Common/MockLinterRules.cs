@@ -281,6 +281,60 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 
     /// <summary>
+    /// A test linter rule for testing purposes targeting FunctionCall.
+    /// </summary>
+    public class TestFunctionCallLinterRule : LinterRule<FunctionCall>
+    {
+        public Func<TestFunctionCallLinterRule, FunctionCall, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestFunctionCallLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-function-call-rule",
+            category: Category.Test,
+            title: "Test FunctionCall Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for FunctionCall",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(FunctionCall expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// A test linter rule for testing purposes targeting LiteralValue.
+    /// </summary>
+    public class TestLiteralValueLinterRule : LinterRule<LiteralValue>
+    {
+        public Func<TestLiteralValueLinterRule, LiteralValue, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestLiteralValueLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-literal-value-rule",
+            category: Category.Test,
+            title: "Test LiteralValue Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for LiteralValue",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(LiteralValue expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
     /// Test linter rule targeting count expressions.
     /// </summary>
     public class TestCountLinterRule : LinterRule<Count>
