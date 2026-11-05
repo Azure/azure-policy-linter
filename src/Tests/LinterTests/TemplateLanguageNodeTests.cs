@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void TemplateLanguageNodeTests_NestedCalls_ConditionalEvaluation()
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue("[if(equals(field('a'), ''), int(field('a')), and(true(), bool(field('b'))))]");
+            var expression = TemplateLanguageNodeTests.LintValue("[if(equals(field('a'), ''), int(field('a')), and(true(), bool(field('b'))))]");
 
             var calls = TemplateLanguageNodeTests.GetCalls(expression);
             calls.Select(call => call.Name).Should().BeEquivalentTo("if", "equals", "field", "int", "field", "and", "true", "bool", "field");
@@ -35,7 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void TemplateLanguageNodeTests_AndOrArguments_NotConditionallyEvaluated()
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue("[or(empty(field('a')), less(int(field('a')), 5))]");
+            var expression = TemplateLanguageNodeTests.LintValue("[or(empty(field('a')), less(int(field('a')), 5))]");
 
             TemplateLanguageNodeTests.GetCalls(expression).Should().OnlyContain(call => !call.IsConditionallyEvaluated);
         }
@@ -43,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void TemplateLanguageNodeTests_SelectorInIfBranch_ConditionallyEvaluated()
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue("[if(true(), split(field('a'), '/')[1], '')]");
+            var expression = TemplateLanguageNodeTests.LintValue("[if(true(), split(field('a'), '/')[1], '')]");
 
             TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "split").IsConditionallyEvaluated.Should().BeTrue();
         }
@@ -51,7 +51,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Fact]
         public void TemplateLanguageNodeTests_ArgumentReferences()
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue("[replace(parameters('stringParam'), concat('a', field('a')), resourceGroup().name)]");
+            var expression = TemplateLanguageNodeTests.LintValue("[replace(parameters('stringParam'), concat('a', field('a')), resourceGroup().name)]");
 
             var call = TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "replace");
             call.Arguments.Should().HaveCount(3);
@@ -60,10 +60,27 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "field").Reference.Should().BeSameAs(expression.References.Single(reference => reference.Kind == ReferenceKind.ResourceField));
         }
 
+        [Theory]
+        [InlineData("[field('a')]", true)]
+        [InlineData("[field(parameters('stringParam'))]", true)]
+        [InlineData("[requestContext().apiVersion]", true)]
+        [InlineData("[claims().aud]", true)]
+        [InlineData("[subscription().displayName]", true)]
+        [InlineData("[resourceGroup().name]", true)]
+        [InlineData("[parameters('stringParam')]", false)]
+        [InlineData("[concat(field('a'), '-')]", false)]
+        [InlineData("[1]", false)]
+        public void TemplateLanguageNodeTests_IsEvaluationTimeReference(string valueExpression, bool expectedResult)
+        {
+            var expression = TemplateLanguageNodeTests.LintValue(valueExpression);
+
+            expression.Root.IsEvaluationTimeReference().Should().Be(expectedResult);
+        }
+
         [Fact]
         public void TemplateLanguageNodeTests_Selectors()
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue("[concat(split(field('a'), '/')[2], field('tags')['env'], field('b'))]");
+            var expression = TemplateLanguageNodeTests.LintValue("[concat(split(field('a'), '/')[2], field('tags')['env'], field('b'))]");
 
             TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "split").Selectors.Should().ContainSingle().Which.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(2));
 
@@ -83,7 +100,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 },
                 'greater': 0");
 
-            var (expression, _) = TemplateLanguageNodeTests.Lint(policy).Single(result => result.Expression.Expression.StartsWith("[int("));
+            var expression = TemplateLanguageNodeTests.Lint(policy).Single(candidate => candidate.Expression.StartsWith("[int("));
 
             TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "int").Arguments[0].IsEvaluationTimeReference().Should().BeFalse();
         }
@@ -98,7 +115,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 },
                 'greater': 0");
 
-            var (expression, _) = TemplateLanguageNodeTests.Lint(policy).Single(result => result.Expression.Expression.StartsWith("[int("));
+            var expression = TemplateLanguageNodeTests.Lint(policy).Single(candidate => candidate.Expression.StartsWith("[int("));
 
             TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "int").Arguments[0].IsEvaluationTimeReference().Should().BeTrue();
         }
@@ -111,7 +128,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[claims()]", "claims")]
         public void TemplateLanguageNodeTests_ReferenceIdentifier_Evaluated(string valueExpression, string expectedIdentifier)
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
+            var expression = TemplateLanguageNodeTests.LintValue(valueExpression);
 
             var reference = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference;
             reference.IsResolved.Should().BeTrue();
@@ -125,11 +142,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[parameters(int('stringParam'))]")]
         [InlineData("[parameters(concat(div(1, 0), 'stringParam'))]")]
         [InlineData("[parameters(createArray('stringParam'))]")]
+        [InlineData("[parameters(createArray('stringParam')[99999999999])]")]
+        [InlineData("[parameters(createArray('stringParam')[int('x')])]")]
         [InlineData("[parameters(selectProperty(createObject('name', 'stringParam'), 'name'))]")]
         [InlineData("[parameters(concat(field('a'), 'Param'))]")]
         public void TemplateLanguageNodeTests_ReferenceIdentifier_NotEvaluated(string valueExpression)
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
+            var expression = TemplateLanguageNodeTests.LintValue(valueExpression);
 
             var reference = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference;
             reference.IsResolved.Should().BeFalse();
@@ -143,7 +162,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[field('tags')[createObject()]]", false, new string[0])]
         public void TemplateLanguageNodeTests_ReferencePropertySelectionPath(string valueExpression, bool expectedIsResolved, string[] expectedPath)
         {
-            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
+            var expression = TemplateLanguageNodeTests.LintValue(valueExpression);
 
             var path = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference.PropertySelectionPath;
             path.IsResolved.Should().Be(expectedIsResolved);
@@ -157,10 +176,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return calls.ToArray();
         }
 
-        private static (TemplateLanguageExpression Expression, LinterContext Context) LintValue(string valueExpression)
+        private static TemplateLanguageExpression LintValue(string valueExpression)
         {
             var policy = TemplateLanguageNodeTests.CreatePolicy($@"'value': ""{valueExpression}"", 'equals': 'x'");
-            return TemplateLanguageNodeTests.Lint(policy).Single(result => result.Expression.Expression == valueExpression);
+            return TemplateLanguageNodeTests.Lint(policy).Single(candidate => candidate.Expression == valueExpression);
         }
 
         private static string CreatePolicy(string condition)
@@ -177,14 +196,14 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             }}";
         }
 
-        private static List<(TemplateLanguageExpression Expression, LinterContext Context)> Lint(string policy)
+        private static List<TemplateLanguageExpression> Lint(string policy)
         {
-            var results = new List<(TemplateLanguageExpression, LinterContext)>();
+            var results = new List<TemplateLanguageExpression>();
             var rule = new TestTemplateLanguageExpressionLinterRule()
             {
                 EvaluateFunc = (rule, expression, context) =>
                 {
-                    results.Add((expression, context));
+                    results.Add(expression);
                     return Enumerable.Empty<LinterOutput>();
                 },
             };

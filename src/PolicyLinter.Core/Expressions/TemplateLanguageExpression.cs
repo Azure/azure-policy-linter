@@ -99,7 +99,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Visits the expression and its references with the given visitor.
+        /// Visits the expression, its nodes and its references with the given visitor.
         /// References will only be visited if <paramref name="skipVisitingReferences"/> is false.
         /// </summary>
         /// <param name="visitor">The visitor.</param>

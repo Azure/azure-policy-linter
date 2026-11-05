@@ -31,12 +31,22 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Whether this node is a reference to a value known only when the policy is evaluated (see <see cref="Reference.IsEvaluationTimeValue"/>),
-        /// e.g. "field('name')" or "requestContext().apiVersion". A reference inside another function, e.g. "concat(field('name'), '-')", doesn't count.
+        /// Whether this node is a reference to a value known only when the policy is evaluated: a resource field (including current() in a field count),
+        /// a request context or token claims property, or a resource group or subscription property, e.g. "field('name')" or "requestContext().apiVersion".
         /// </summary>
+        /// <remarks>
+        /// Policy parameters and current() in a value count are not evaluation time values.
+        /// A reference inside another function, e.g. "concat(field('name'), '-')", doesn't count.
+        /// </remarks>
         public bool IsEvaluationTimeReference()
         {
-            return this is TemplateFunctionCall { Reference: { } reference } && reference.IsEvaluationTimeValue();
+            return this is TemplateFunctionCall { Reference: { } reference } &&
+                (reference.Kind is ReferenceKind.ResourceField
+                    or ReferenceKind.RequestContextProperty
+                    or ReferenceKind.PolicyTokenClaims
+                    or ReferenceKind.ResourceGroupProperty
+                    or ReferenceKind.SubscriptionProperty ||
+                reference.IsResolvedFieldReference());
         }
 
         /// <inheritdoc/>
@@ -188,30 +198,34 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 argumentValues[index] = argumentValue;
             }
 
+            var properties = new JToken[this.Selectors.Length];
+            for (var index = 0; index < this.Selectors.Length; index++)
+            {
+                if (!this.Selectors[index].TryEvaluate(out var property))
+                {
+                    return false;
+                }
+
+                properties[index] = property;
+            }
+
             try
             {
-                value = TemplateFunctionCall.BuiltInFunctions.EvaluateFunction(functionName: this.Name, parameters: argumentValues);
+                // Property selection follows policy evaluation: e.g. a missing property or an index out of range fails.
+                FunctionResult result = new JTokenSelectableFunctionResult(root: TemplateFunctionCall.BuiltInFunctions.EvaluateFunction(functionName: this.Name, parameters: argumentValues));
+                foreach (var property in properties)
+                {
+                    result = result.SelectProperty(property: property);
+                }
+
+                value = result.CurrentValue();
+                return true;
             }
             catch (Exception exception) when (!exception.IsFatal())
             {
                 value = null;
                 return false;
             }
-
-            // Property selection follows policy evaluation: e.g. a missing property or an index out of range fails.
-            foreach (var selector in this.Selectors)
-            {
-                if (!selector.TryEvaluate(out var property) ||
-                    new JTokenSelectableFunctionResult(root: value).SelectProperty(property: property) is not JTokenSelectableFunctionResult result)
-                {
-                    value = null;
-                    return false;
-                }
-
-                value = result.CurrentValue();
-            }
-
-            return true;
         }
     }
 }
