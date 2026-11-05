@@ -1,4 +1,4 @@
-// ------------------------------------------------------------
+﻿// ------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 // Licensed under the MIT License.
 // ------------------------------------------------------------
@@ -1331,7 +1331,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             ifCall.GuardCondition.Should().BeNull();
             ifCall.Arguments[0].GuardCondition.Should().BeNull();
             ifCall.Arguments[1].GuardCondition.Should().BeSameAs(ifCall.Arguments[0]);
-
             functionCalls.Where(call => call.IsConditionallyEvaluated).Select(call => call.Name).Should().BeEquivalentTo("int", "split", "field");
             functionCalls.Single(call => call.IsConditionallyEvaluated && call.Name == "field").Reference.Identifier.Should().Be("id");
 
