@@ -13,14 +13,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags an index on the result of split() on a value known only when the policy is evaluated, outside an if() branch.
+    /// Flags an index on the result of split() on a value known only when the policy is evaluated. The finding is an error,
+    /// or a warning when the selection is in an if() branch, because the if() condition might check the number of segments.
     /// </summary>
     public sealed class UnguardedSplitIndex : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded Split Index";
 
         private const string RuleDescription =
-            "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments. A failed expression makes the policy deny the request. Use 'first()' or 'last()', or check 'length()' with 'if()' first.";
+            "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments, and a failed expression makes the policy deny the request. Use 'first()' or 'last()', or 'coalesce(first(skip(...)), <fallback>)'; they don't fail on short values.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedSplitIndex"/> class.
@@ -37,14 +38,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Name.EqualsOrdinalInsensitively("split") &&
-                expression.Selectors.Length > 0 &&
-                UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) &&
-                expression.Arguments.Length > 0 &&
-                expression.Arguments[0].IsEvaluationTimeReference()
-                ? new[] { this.CreateError(expression) }
-                : Array.Empty<LinterOutput>();
+            if (!expression.Name.EqualsOrdinalInsensitively("split") ||
+                expression.Selectors.Length == 0 ||
+                !UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) ||
+                expression.Arguments.Length == 0 ||
+                !expression.Arguments[0].IsEvaluationTimeReference())
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
         }
 
         /// <summary>

@@ -12,14 +12,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
-    /// Flags addDays() calls with arguments known only when the policy is evaluated, outside an if() branch.
+    /// Flags addDays() calls with arguments known only when the policy is evaluated. The finding is a warning,
+    /// or informational when the call is in an if() branch, because the if() condition might check the value.
     /// </summary>
     public sealed class UnguardedAddDaysFunction : LinterRule<TemplateFunctionCall>
     {
         private const string RuleTitle = "Unguarded addDays Function";
 
         private const string RuleDescription =
-            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer, including the empty string returned for a missing property. A failed expression makes the policy deny the request. Check the value with 'if()' before the call.";
+            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer, including the empty string returned for a missing property. A failed expression makes the policy deny the request. Make sure an 'if()' around the call handles these values.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnguardedAddDaysFunction"/> class.
@@ -36,11 +37,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Name.EqualsOrdinalInsensitively("addDays") &&
-                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference())
-                ? new[] { this.CreateWarning(expression) }
-                : Array.Empty<LinterOutput>();
+            if (!expression.Name.EqualsOrdinalInsensitively("addDays") ||
+                !expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
+            {
+                return Array.Empty<LinterOutput>();
+            }
+
+            return new[] { expression.IsConditionallyEvaluated ? this.CreateInformational(expression) : this.CreateWarning(expression) };
         }
     }
 }
