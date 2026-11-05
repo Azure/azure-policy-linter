@@ -33,12 +33,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void TemplateLanguageNodeTests_OrArgumentsAfterFirst_ConditionallyEvaluated()
+        public void TemplateLanguageNodeTests_AndOrArguments_NotConditionallyEvaluated()
         {
             var (expression, _) = TemplateLanguageNodeTests.LintValue("[or(empty(field('a')), less(int(field('a')), 5))]");
 
-            TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "empty").IsConditionallyEvaluated.Should().BeFalse();
-            TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "int").IsConditionallyEvaluated.Should().BeTrue();
+            TemplateLanguageNodeTests.GetCalls(expression).Should().OnlyContain(call => !call.IsConditionallyEvaluated);
         }
 
         [Fact]

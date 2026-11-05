@@ -104,9 +104,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public Reference? Reference { get; }
 
         /// <summary>
-        /// Whether the call is evaluated only for some values: it is inside the second or third argument of 'if()',
-        /// or inside an argument after the first one of 'and()' or 'or()'. Policy evaluation skips these arguments when they don't affect the result.
+        /// Whether the call is inside the second or third argument of 'if()'. Policy evaluation evaluates only the branch that the condition selects.
         /// </summary>
+        /// <remarks>
+        /// Only 'if()' is considered. Calls inside 'and()' and 'or()' are not conditionally evaluated, even though policy evaluation can skip their later arguments.
+        /// </remarks>
         public bool IsConditionallyEvaluated { get; }
 
         /// <summary>
@@ -127,7 +129,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 .Select((argument, index) => TemplateLanguageNode.Create(
                     expression: argument,
                     parent: this,
-                    isConditionallyEvaluated: isConditionallyEvaluated || TemplateFunctionCall.IsConditionallyEvaluatedArgument(functionName: this.Name, argumentIndex: index),
+                    isConditionallyEvaluated: isConditionallyEvaluated || (this.Name.EqualsOrdinalInsensitively("if") && index > 0),
                     references: references))
                 .ToImmutableArray();
             this.Selectors = expression.Properties
@@ -145,16 +147,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 node.Visit(visitor);
             }
-        }
-
-        /// <summary>
-        /// Whether the argument at the given index of the given function is evaluated only for some values
-        /// (the second and third arguments of 'if()', and the arguments after the first one of 'and()' and 'or()').
-        /// </summary>
-        private static bool IsConditionallyEvaluatedArgument(string functionName, int argumentIndex)
-        {
-            return (functionName.EqualsOrdinalInsensitively("if") && argumentIndex is 1 or 2) ||
-                ((functionName.EqualsOrdinalInsensitively("and") || functionName.EqualsOrdinalInsensitively("or")) && argumentIndex > 0);
         }
     }
 }
