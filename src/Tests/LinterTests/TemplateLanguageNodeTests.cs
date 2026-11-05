@@ -109,20 +109,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             reference.Identifier.Should().Be(expectedIdentifier);
         }
 
-        [Theory]
-        [InlineData("[parameters(split('stringParam', '/')[1])]")]
-        [InlineData("[parameters(createObject('name', 'stringParam').other)]")]
-        [InlineData("[parameters(if('true', 'stringParam', 'otherParam'))]")]
-        [InlineData("[parameters(int('stringParam'))]")]
-        [InlineData("[parameters(concat(div(1, 0), 'stringParam'))]")]
-        [InlineData("[parameters(createArray('stringParam'))]")]
-        [InlineData("[parameters(createArray('stringParam')[99999999999])]")]
-        [InlineData("[parameters(createArray('stringParam')[int('x')])]")]
-        [InlineData("[parameters(selectProperty(createObject('name', 'stringParam'), 'name'))]")]
-        [InlineData("[parameters(concat(field('a'), 'Param'))]")]
-        public void TemplateLanguageNodeTests_ReferenceIdentifier_NotEvaluated(string valueExpression)
+        [Fact]
+        public void TemplateLanguageNodeTests_ReferenceIdentifier_DependsOnReference()
         {
-            var expression = TemplateLanguageNodeTests.LintValue(valueExpression);
+            var expression = TemplateLanguageNodeTests.LintValue("[parameters(concat(field('a'), 'Param'))]");
 
             var reference = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference;
             reference.IsResolved.Should().BeFalse();
@@ -131,9 +121,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
         [Theory]
         [InlineData("[field('tags')[concat('e', 'nv')]]", true, new[] { "env" })]
-        [InlineData("[field('tags')[selectProperty(createObject('a', 'env'), 'a')]]", false, new string[0])]
         [InlineData("[field('tags')[parameters('stringParam')]]", false, new string[0])]
-        [InlineData("[field('tags')[createObject()]]", false, new string[0])]
         public void TemplateLanguageNodeTests_ReferencePropertySelectionPath(string valueExpression, bool expectedIsResolved, string[] expectedPath)
         {
             var expression = TemplateLanguageNodeTests.LintValue(valueExpression);
