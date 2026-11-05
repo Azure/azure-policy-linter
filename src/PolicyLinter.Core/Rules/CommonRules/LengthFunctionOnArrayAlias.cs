@@ -51,6 +51,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             // Inside a count 'where', a field count over the array is either bound to the counted member or not allowed.
             if (expression.Value?.Value.Type != JTokenType.String ||
                 expression.Value.LanguageExpressions.Length != 1 ||
+                expression.Value.LanguageExpressions[0].References.Length != 1 ||
                 expression.Operator == null ||
                 !LengthFunctionOnArrayAlias.NumericOperators.Contains(expression.Operator.Name) ||
                 expression.PathSegments.Any(segment => segment.EqualsOrdinalInsensitively("where")))
@@ -59,16 +60,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var languageExpression = expression.Value.LanguageExpressions[0];
-            if (languageExpression.IsEntireValue &&
-                languageExpression.Root is TemplateFunctionCall lengthCall &&
-                lengthCall.Name.EqualsOrdinalInsensitively("length") &&
-                lengthCall.Selectors.Length == 0 &&
-                lengthCall.Arguments.Length == 1 &&
-                lengthCall.Arguments[0] is TemplateFunctionCall { Reference: { } reference } fieldCall &&
-                fieldCall.Selectors.Length == 0 &&
-                reference.Kind == ReferenceKind.ResourceField &&
+            var reference = languageExpression.References[0];
+            if (reference.Kind == ReferenceKind.ResourceField &&
                 reference.IsResolved &&
-                reference.Identifier.EndsWith("[*]", StringComparison.Ordinal))
+                reference.Identifier.EndsWith("[*]", StringComparison.Ordinal) &&
+                languageExpression.Expression.EqualsOrdinalInsensitively($"[length(field('{reference.Identifier}'))]"))
             {
                 return new[]
                 {
