@@ -206,6 +206,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 expression: this.LanguageExpression,
                 parent: this,
                 isConditionallyEvaluated: false,
+                guardCondition: null,
                 references: TemplateLanguageExpression.GetReferencesBySourceFunction(this.References));
         }
 

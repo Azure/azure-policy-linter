@@ -106,6 +106,40 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             ExpressionNodeTests.GetCalls(expression).Single(call => call.Name == "int").Arguments[0].IsEvaluationTimeReference().Should().BeTrue();
         }
 
+        [Theory]
+        [InlineData("[int('ten')]", new[] { "int('ten')" })]
+        [InlineData("[int('10')]", new string[0])]
+        [InlineData("[int(parameters('stringParam'))]", new[] { "int('x')", "int('y')" })]
+        [InlineData("[int(concat(parameters('stringParam'), parameters('stringParam')))]", new[] { "int('xx')", "int('yy')" })]
+        [InlineData("[addDays('01/31/2026', 30)]", new[] { "addDays('01/31/2026', 30)" })]
+        [InlineData("[ipRangeContains(parameters('otherParam'), '10.0.0.1')]", new[] { "ipRangeContains('z', '10.0.0.1')" })]
+        [InlineData("[replace('a''b', 'a''b', '')]", new string[0])]
+        [InlineData("[div(4, 0)]", new[] { "div(4, 0)" })]
+        [InlineData("[max(createArray())]", new[] { "max([])" })]
+        [InlineData("[selectProperty(createObject(), 1)]", new string[0])]
+        public void ExpressionNodeTests_GetFailuresForKnownValues(string valueExpression, string[] expectedFailures)
+        {
+            var (expression, context) = ExpressionNodeTests.LintValue(valueExpression);
+
+            var rootCall = expression.Root.Should().BeOfType<FunctionCall>().Subject;
+            rootCall.GetFailuresForKnownValues(context).Should().BeEquivalentTo(expectedFailures);
+        }
+
+        [Theory]
+        [InlineData("[int(field('a'))]")]
+        [InlineData("[int(concat(parameters('stringParam'), parameters('otherParam')))]")]
+        [InlineData("[int(parameters('noValuesParam'))]")]
+        [InlineData("[int(parameters('undeclared'))]")]
+        [InlineData("[int(substring('abc', 5))]")]
+        [InlineData("[int(selectProperty(createObject('a', 'b'), 'a'))]")]
+        public void ExpressionNodeTests_GetFailuresForKnownValues_NotEvaluated(string valueExpression)
+        {
+            var (expression, context) = ExpressionNodeTests.LintValue(valueExpression);
+
+            var intCall = ExpressionNodeTests.GetCalls(expression).Single(call => call.Name == "int");
+            intCall.GetFailuresForKnownValues(context).Should().BeEmpty();
+        }
+
         private static FunctionCall[] GetCalls(TemplateLanguageExpression expression)
         {
             var calls = new List<FunctionCall>();
