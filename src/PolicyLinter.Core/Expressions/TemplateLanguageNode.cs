@@ -5,12 +5,9 @@
 
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
-    using System;
     using System.Collections.Immutable;
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using global::Azure.Deployments.Expression.Expressions;
-    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Newtonsoft.Json.Linq;
 
@@ -23,11 +20,17 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     public abstract class TemplateLanguageNode : PolicyExpression
     {
         /// <summary>
+        /// The parsed expression. Private by design, to keep expression engine types out of the linter rules.
+        /// </summary>
+        private readonly LanguageExpression expression;
+
+        /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageNode"/> class.
         /// </summary>
-        private protected TemplateLanguageNode(PolicyExpression parent)
+        private protected TemplateLanguageNode(LanguageExpression expression, PolicyExpression parent)
             : base(parent.LineNumber, parent.LinePosition, parent.PathSegments, parent)
         {
+            this.expression = expression;
         }
 
         /// <summary>
@@ -56,13 +59,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Evaluates a node that uses only literal values and built-in functions, e.g. "concat('a', 'b')".
+        /// Evaluates the node with the given evaluation context, e.g. 'a' in "field('a')".
         /// </summary>
-        /// <remarks>
-        /// Returns false when the node uses a reference function (e.g. field()), a function the linter can't evaluate, or the evaluation fails.
-        /// </remarks>
-        /// <param name="value">The value.</param>
-        internal abstract bool TryEvaluate([NotNullWhen(true)] out JToken? value);
+        /// <param name="evaluationContext">The evaluation context.</param>
+        internal JToken Evaluate(IEvaluationContext evaluationContext)
+        {
+            return this.expression.EvaluateExpression(evaluationContext);
+        }
 
         /// <summary>
         /// Creates the node for the given parsed expression.
@@ -89,16 +92,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// Creates a new instance of the <see cref="TemplateLiteralValue"/> class.
         /// </summary>
         internal TemplateLiteralValue(LanguageExpression expression, PolicyExpression parent)
-            : base(parent)
+            : base(expression, parent)
         {
             this.Value = (expression as JTokenExpression)?.Value ?? JValue.CreateNull();
-        }
-
-        /// <inheritdoc/>
-        internal override bool TryEvaluate([NotNullWhen(true)] out JToken? value)
-        {
-            value = this.Value;
-            return true;
         }
     }
 
@@ -107,11 +103,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// </summary>
     public sealed class TemplateFunctionCall : TemplateLanguageNode
     {
-        /// <summary>
-        /// The linter's copy of the built-in template functions of policy evaluation.
-        /// </summary>
-        private static readonly EvaluationHelpers.ExpressionBuiltInFunctions BuiltInFunctions = new EvaluationHelpers.ExpressionBuiltInFunctions();
-
         /// <summary>
         /// The function name as written in the expression. Function names are case insensitive.
         /// </summary>
@@ -136,7 +127,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// Creates a new instance of the <see cref="TemplateFunctionCall"/> class and the nodes below it.
         /// </summary>
         internal TemplateFunctionCall(FunctionExpression expression, PolicyExpression parent)
-            : base(parent)
+            : base(expression, parent)
         {
             this.Name = expression.Function;
             this.Arguments = expression.Parameters
@@ -157,55 +148,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             foreach (var node in this.Arguments.Concat(this.Selectors))
             {
                 node.Visit(visitor);
-            }
-        }
-
-        /// <inheritdoc/>
-        internal override bool TryEvaluate([NotNullWhen(true)] out JToken? value)
-        {
-            value = null;
-            if (this.Reference != null || !TemplateFunctionCall.BuiltInFunctions.IsBuiltInFunction(this.Name))
-            {
-                return false;
-            }
-
-            var argumentValues = new JToken[this.Arguments.Length];
-            for (var index = 0; index < this.Arguments.Length; index++)
-            {
-                if (!this.Arguments[index].TryEvaluate(out var argumentValue))
-                {
-                    return false;
-                }
-
-                argumentValues[index] = argumentValue;
-            }
-
-            var properties = new JToken[this.Selectors.Length];
-            for (var index = 0; index < this.Selectors.Length; index++)
-            {
-                if (!this.Selectors[index].TryEvaluate(out var property))
-                {
-                    return false;
-                }
-
-                properties[index] = property;
-            }
-
-            try
-            {
-                // Property selection follows policy evaluation: e.g. a missing property or an index out of range fails.
-                FunctionResult result = new JTokenSelectableFunctionResult(root: TemplateFunctionCall.BuiltInFunctions.EvaluateFunction(functionName: this.Name, parameters: argumentValues));
-                foreach (var property in properties)
-                {
-                    result = result.SelectProperty(property: property);
-                }
-
-                value = result.CurrentValue();
-                return true;
-            }
-            catch (Exception exception) when (!exception.IsFatal())
-            {
-                return false;
             }
         }
     }

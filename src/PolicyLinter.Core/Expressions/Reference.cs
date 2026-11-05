@@ -10,19 +10,23 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Linq;
+    using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Parsing;
     using Microsoft.WindowsAzure.ResourceStack.Common.Collections;
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
-    using Newtonsoft.Json.Linq;
 
     /// <summary>
     /// Represents the details of an expression within the policy definition that refers to some external data.
     /// </summary>
     public class Reference : PolicyExpression
     {
+        /// <summary>
+        /// A static instance of an <see cref="IEvaluationContext"/> for builtin (i.e. static) functions only.
+        /// </summary>
+        private static readonly IEvaluationContext BuiltInFunctionsOnlyExpressionEvaluationContext = new StaticTemplateFunctionEvaluationContext();
         /// <summary>
         /// A dictionary that maps function names to their corresponding reference kinds.
         /// Policy function names are case insensitive.
@@ -54,14 +58,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public PropertySelectionPath? PropertySelectionPath { get; }
 
         /// <summary>
-        /// Whether the reference identifier (e.g. the policy parameter of field name) is known. If false, the reference depends on another reference,
-        /// or its identifier argument can't be evaluated by the linter (e.g. "field(selectProperty(...))").
+        /// Whether the reference identifier (e.g. the policy parameter of field name) is known. If false, it probably means that the reference depends on another reference.
         /// </summary>
         public bool IsResolved { get; private set; }
 
         /// <summary>
-        /// The references that need to be resolved in order to resolve this reference. Empty when the reference is resolved,
-        /// or when it is not resolved because its identifier argument can't be evaluated.
+        /// If the reference identifier is not resolved, this will contain the list of references that need to be resolved in order to resolve this reference.
         /// </summary>
         public ImmutableArray<Reference> ResolutionDependencies { get; }
 
@@ -212,14 +214,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PropertySelectionPath? propertySelectionPath = null;
             if (call.Selectors.Any())
             {
-                var processedPath = call.Selectors
-                    .Select(selector => selector.TryEvaluate(out var value) && value is JValue ? value.ToStringValue() : null)
-                    .ToArray();
+                if (!propertyDependecies.Any())
+                {
+                    // No dependencies, so we can process the path.
+                    var processedPath = call.Selectors
+                        .Select(selector => selector.Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!)
+                        .ToArray();
 
-                // A selector can't be evaluated when it depends on a reference (or uses a function the linter can't evaluate).
-                propertySelectionPath = processedPath.All(segment => segment != null)
-                    ? new PropertySelectionPath(processedPath!, isResolved: true, resolutionDependencies: null)
-                    : new PropertySelectionPath(path: Array.Empty<string>(), isResolved: false, resolutionDependencies: propertyDependecies.ToArray());
+                    propertySelectionPath = new PropertySelectionPath(processedPath, isResolved: true, resolutionDependencies: null);
+                }
+                else
+                {
+                    // TODO: we can't easily reconstruct the property path from the parsed language expression so just use empty path for now.
+                    // This might require making changes to the upstream package.
+                    propertySelectionPath = new PropertySelectionPath(path: Array.Empty<string>(), isResolved: false, resolutionDependencies: propertyDependecies.ToArray());
+                }
             }
 
             if (Reference.FunctionNamesToReferenceKinds.TryGetValue(call.Name, out var functionReferenceKind))
@@ -266,7 +275,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 // For parameter and field functions, we need to extract the first argument name to use as the identifier of the reference.
                 this.Identifier = this.IsResolved && call.Arguments.Length > 0 ?
-                    this.EvaluateIdentifierArgument(call)
+                    call.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!
                     : string.Empty;
 
                 this.ReferencedCountExpressionScope =
@@ -280,7 +289,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 // If no argument but has property selection path, use the property path as identifier (e.g., claims().iss -> "iss")
                 if (this.IsResolved && call.Arguments.Length > 0)
                 {
-                    this.Identifier = this.EvaluateIdentifierArgument(call);
+                    this.Identifier = call.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!;
                 }
                 else if (this.PropertySelectionPath?.IsResolved == true && this.PropertySelectionPath.Path.Length > 0)
                 {
@@ -296,7 +305,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             else if (this.Kind == ReferenceKind.CurrentArrayMember)
             {
                 this.Identifier = call.Arguments.Length > 0 ?
-                    this.EvaluateIdentifierArgument(call)
+                    call.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!
                     : string.Empty;
 
                 var countScopeIdentifier = string.IsNullOrEmpty(this.Identifier) ? null : this.Identifier;
@@ -314,21 +323,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 this.IsResolvedFieldReference() && typeMetadata.TryGetAliasPropertyMetadata(this.Identifier, out var metadata) ?
                     metadata.ToImmutableArray()
                     : ImmutableArray<ResourcePropertyMetadata>.Empty;
-        }
-
-        /// <summary>
-        /// Evaluates the first argument of the reference function, e.g. 'a' in "field('a')".
-        /// When the argument can't be evaluated or isn't a single value (e.g. an array), the reference is not resolved and the identifier is empty.
-        /// </summary>
-        private string EvaluateIdentifierArgument(TemplateFunctionCall call)
-        {
-            if (call.Arguments[0].TryEvaluate(out var value) && value is JValue)
-            {
-                return value.ToStringValue()!;
-            }
-
-            this.IsResolved = false;
-            return string.Empty;
         }
 
         /// <summary>
