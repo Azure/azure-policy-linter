@@ -16,9 +16,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.EvaluationHelpers
     internal class StaticTemplateFunctionEvaluationContext : IEvaluationContext
     {
         /// <summary>
-        /// Whether short-circuit evaluation is allowed.
+        /// Whether short-circuit evaluation is allowed. Policy evaluation evaluates only the selected branch of 'if()' and stops 'and()'/'or()' early, so this context does the same.
         /// </summary>
-        public bool IsShortCircuitAllowed => false;
+        public bool IsShortCircuitAllowed => true;
 
         /// <summary>
         /// What is the current expression scope.

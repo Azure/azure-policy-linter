@@ -28,6 +28,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[if(true(), int(field('tags[a]')), 0)]")]
         [InlineData("[if(equals(field('tags[b]'), ''), 0, int(field('tags[a]')))]")]
         [InlineData("[or(empty(field('tags[a]')), less(int(field('tags[a]')), 5))]")]
+        [InlineData("[if(equals(resourceGroup().name, ''), 0, int(resourceGroup().tags.size))]")]
         public void RuleTests_UnguardedIntFunction_Fires(string valueExpression)
         {
             var results = UnguardedIntFunctionTests.LintValueExpression(valueExpression);
@@ -48,6 +49,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[if(equals(field('tags[a]'), ''), 0, int(field('tags[a]')))]")]
         [InlineData("[if(empty(field('tags[a]')), 0, add(int(field('tags[a]')), 1))]")]
         [InlineData("[if(not(equals(toLower(field('tags[a]')), '')), int(field('tags[a]')), 0)]")]
+        [InlineData("[if(empty(resourceGroup().tags.size), 0, int(resourceGroup().tags.size))]")]
         [InlineData("[int(parameters('textParam'))]")]
         [InlineData("[int('5')]")]
         public void RuleTests_UnguardedIntFunction_NoFinding(string valueExpression)

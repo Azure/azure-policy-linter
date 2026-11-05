@@ -115,6 +115,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[replace('a''b', 'a''b', '')]", new string[0])]
         [InlineData("[div(4, 0)]", new[] { "div(4, 0)" })]
         [InlineData("[max(createArray())]", new[] { "max([])" })]
+        [InlineData("[int(if(true(), 'ten', div(4, 0)))]", new[] { "int('ten')" })]
         [InlineData("[selectProperty(createObject(), 1)]", new string[0])]
         public void TemplateLanguageNodeTests_GetFailuresForKnownValues(string valueExpression, string[] expectedFailures)
         {
@@ -131,6 +132,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[int(parameters('undeclared'))]")]
         [InlineData("[int(substring('abc', 5))]")]
         [InlineData("[int(selectProperty(createObject('a', 'b'), 'a'))]")]
+        [InlineData("[int(substring(utcNow(), 17, 2))]")]
         public void TemplateLanguageNodeTests_GetFailuresForKnownValues_NotEvaluated(string valueExpression)
         {
             var (expression, context) = TemplateLanguageNodeTests.LintValue(valueExpression);

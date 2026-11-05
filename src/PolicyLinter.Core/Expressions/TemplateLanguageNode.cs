@@ -50,6 +50,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </summary>
         /// <remarks>
         /// Checks only that the condition uses the same value, not what the condition does with it.
+        /// The same value means the same reference kind, identifier and property path, e.g. 'resourceGroup().name' and 'resourceGroup().tags.size' are different values.
         /// </remarks>
         public bool IsCheckedByGuardCondition()
         {
@@ -57,7 +58,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 this.GuardCondition != null &&
                 this.GuardCondition
                     .GetReferences()
-                    .Any(other => other.Kind == reference.Kind && other.Identifier.EqualsOrdinalInsensitively(reference.Identifier));
+                    .Any(other => TemplateLanguageNode.IsSameValue(reference, other));
+        }
+
+        private static bool IsSameValue(Reference first, Reference second)
+        {
+            var firstPath = first.PropertySelectionPath;
+            var secondPath = second.PropertySelectionPath;
+            return first.IsResolved &&
+                second.IsResolved &&
+                first.Kind == second.Kind &&
+                first.Identifier.EqualsOrdinalInsensitively(second.Identifier) &&
+                firstPath?.IsResolved != false &&
+                secondPath?.IsResolved != false &&
+                (firstPath?.Path ?? Array.Empty<string>()).SequenceEqual(secondPath?.Path ?? Array.Empty<string>(), StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -226,7 +240,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <remarks>
         /// Applies only to calls of functions the linter can evaluate, whose arguments are literals or use a single parameter.
         /// A parameter is evaluated with each of its allowed values and its default value.
-        /// Calls with any other reference, and values for which an argument fails to evaluate, are skipped.
+        /// Calls with any other reference or with 'utcNow()' in an argument, and values for which an argument fails to evaluate, are skipped.
         /// Any error from the function itself is a failure, including a wrong number of arguments (e.g. max() of an empty array).
         /// </remarks>
         /// <param name="context">The linter context.</param>
@@ -234,7 +248,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             var references = this.Arguments.SelectMany(argument => argument.GetReferences()).ToArray();
             if (!StaticTemplateFunctionEvaluationContext.IsBuiltInFunction(this.Name) ||
-                references.Any(reference => reference.Kind != ReferenceKind.PolicyParameterName || !reference.IsResolved))
+                references.Any(reference => reference.Kind != ReferenceKind.PolicyParameterName || !reference.IsResolved) ||
+                this.Arguments.OfType<TemplateFunctionCall>().Any(argument => argument.UsesFunction("utcNow")))
             {
                 return Array.Empty<string>();
             }
@@ -278,6 +293,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 .Concat(new[] { parameter.DefaultValue })
                 .OfType<JToken>()
                 .ToArray();
+        }
+
+        /// <summary>
+        /// Whether this call, or a call in its arguments or selectors, is a call to the given function.
+        /// </summary>
+        private bool UsesFunction(string functionName)
+        {
+            return this.Name.EqualsOrdinalInsensitively(functionName) ||
+                this.Arguments.Concat(this.Selectors).OfType<TemplateFunctionCall>().Any(call => call.UsesFunction(functionName));
         }
 
         /// <summary>
