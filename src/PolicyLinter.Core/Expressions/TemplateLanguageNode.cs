@@ -46,20 +46,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Whether an 'if()' around this reference selects its other branch when the reference has the given value,
+        /// Whether an 'if()' around this reference selects its other branch when the referenced property has the given value,
         /// e.g. the 'field('a')' call in "[if(equals(field('a'), ''), 0, int(field('a')))]" is guarded against ''.
         /// </summary>
         /// <remarks>
-        /// The 'if()' condition is evaluated with the value bound to every use of the same reference function (same kind and identifier),
-        /// before any property selection. A condition that can't be evaluated, e.g. because it also uses another field, doesn't guard the reference.
+        /// The 'if()' condition is evaluated with the value bound to every use of the same reference function (same kind and identifier).
+        /// For field() and current() the value is the function's value, because they return '' for a missing field.
+        /// For the other reference functions it is the value of the selected property, e.g. 'resourceGroup().tags.size'.
+        /// A condition that can't be evaluated, e.g. because it also uses another field, doesn't guard the reference.
         /// </remarks>
         /// <param name="value">The value for which the function call that uses this reference fails, e.g. '' for a missing property.</param>
         public bool IsGuardedAgainst(JToken value)
         {
-            if (this is not TemplateFunctionCall { Reference: { IsResolved: true } reference })
+            if (this is not TemplateFunctionCall { Reference: { IsResolved: true } reference } ||
+                reference.PropertySelectionPath?.IsResolved == false)
             {
                 return false;
             }
+
+            var referenceValue = reference.Kind is ReferenceKind.ResourceField or ReferenceKind.CurrentArrayMember
+                ? value
+                : (reference.PropertySelectionPath?.Path ?? Array.Empty<string>())
+                    .Reverse()
+                    .Aggregate(seed: value, func: (propertyValue, propertyName) => new JObject { [propertyName] = propertyValue });
 
             for (TemplateLanguageNode node = this; node.Parent is TemplateFunctionCall parent; node = parent)
             {
@@ -73,7 +82,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 var referenceValues = condition
                     .GetReferences()
                     .Where(other => other.IsResolved && other.Kind == reference.Kind && other.Identifier.EqualsOrdinalInsensitively(reference.Identifier))
-                    .ToDictionary(keySelector: other => other, elementSelector: _ => value);
+                    .ToDictionary(keySelector: other => other, elementSelector: _ => referenceValue);
 
                 if (condition.TryEvaluate(referenceValues: referenceValues, value: out var conditionValue) &&
                     conditionValue.Type == JTokenType.Boolean &&
@@ -285,6 +294,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 
             // Policy evaluation evaluates only the 'if()' branch that the condition selects,
             // and stops 'and()' and 'or()' at the first argument that decides the result.
+            // An argument that decides the result also decides it when an earlier argument can't be evaluated here.
             if (this.Name.EqualsOrdinalInsensitively("if") && this.Arguments.Length == 3)
             {
                 return this.Arguments[0].TryEvaluate(referenceValues: referenceValues, value: out var condition) &&
@@ -298,7 +308,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 if (!argument.TryEvaluate(referenceValues: referenceValues, value: out var argumentValue))
                 {
-                    return false;
+                    if (decidingValue == null)
+                    {
+                        return false;
+                    }
+
+                    continue;
                 }
 
                 if (argumentValue.Type == JTokenType.Boolean && argumentValue.Value<bool>() == decidingValue)
@@ -310,7 +325,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 argumentValues.Add(argumentValue);
             }
 
-            return TemplateLanguageNode.TryCallBuiltInFunction(functionName: this.Name, arguments: argumentValues.ToArray(), value: out value);
+            return argumentValues.Count == this.Arguments.Length &&
+                TemplateLanguageNode.TryCallBuiltInFunction(functionName: this.Name, arguments: argumentValues.ToArray(), value: out value);
         }
     }
 }
