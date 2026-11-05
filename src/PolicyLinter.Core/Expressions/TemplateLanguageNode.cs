@@ -67,13 +67,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates the node for the given parsed expression.
         /// </summary>
-        internal static TemplateLanguageNode Create(
-            LanguageExpression expression,
-            PolicyExpression parent,
-            bool isConditionallyEvaluated)
+        internal static TemplateLanguageNode Create(LanguageExpression expression, PolicyExpression parent)
         {
             return expression is FunctionExpression function
-                ? new TemplateFunctionCall(function, parent, isConditionallyEvaluated)
+                ? new TemplateFunctionCall(function, parent)
                 : new TemplateLiteralValue(expression, parent);
         }
     }
@@ -136,34 +133,19 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public Reference? Reference { get; internal set; }
 
         /// <summary>
-        /// Whether the call is inside the second or third argument of 'if()'. Policy evaluation evaluates only the branch that the condition selects.
-        /// </summary>
-        /// <remarks>
-        /// Only 'if()' is considered. Calls inside 'and()' and 'or()' are not conditionally evaluated, even though policy evaluation can skip their later arguments.
-        /// </remarks>
-        public bool IsConditionallyEvaluated { get; }
-
-        /// <summary>
         /// Creates a new instance of the <see cref="TemplateFunctionCall"/> class and the nodes below it.
         /// </summary>
-        internal TemplateFunctionCall(
-            FunctionExpression expression,
-            PolicyExpression parent,
-            bool isConditionallyEvaluated)
+        internal TemplateFunctionCall(FunctionExpression expression, PolicyExpression parent)
             : base(parent)
         {
             this.Name = expression.Function;
-            this.IsConditionallyEvaluated = isConditionallyEvaluated;
             this.Arguments = expression.Parameters
                 .CoalesceEnumerable()
-                .Select((argument, index) => TemplateLanguageNode.Create(
-                    expression: argument,
-                    parent: this,
-                    isConditionallyEvaluated: isConditionallyEvaluated || (this.Name.EqualsOrdinalInsensitively("if") && index > 0)))
+                .Select(argument => TemplateLanguageNode.Create(expression: argument, parent: this))
                 .ToImmutableArray();
             this.Selectors = expression.Properties
                 .CoalesceEnumerable()
-                .Select(selector => TemplateLanguageNode.Create(expression: selector, parent: this, isConditionallyEvaluated: isConditionallyEvaluated))
+                .Select(selector => TemplateLanguageNode.Create(expression: selector, parent: this))
                 .ToImmutableArray();
         }
 

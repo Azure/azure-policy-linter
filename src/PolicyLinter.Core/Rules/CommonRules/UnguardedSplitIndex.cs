@@ -13,8 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags an index on the result of split() on a value known only when the policy is evaluated. The finding is an error,
-    /// or a warning when the selection is in an if() branch, because the if() condition might check the number of segments.
+    /// Flags an index on the result of split() on a value known only when the policy is evaluated.
     /// </summary>
     public sealed class UnguardedSplitIndex : LinterRule<TemplateFunctionCall>
     {
@@ -44,7 +43,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
                 expression.Arguments.Length > 0 &&
                 expression.Arguments[0].IsEvaluationTimeReference())
             {
-                return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
+                return new[] { this.CreateWarning(expression) };
             }
 
             return Array.Empty<LinterOutput>();

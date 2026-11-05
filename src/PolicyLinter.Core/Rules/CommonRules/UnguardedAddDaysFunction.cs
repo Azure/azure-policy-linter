@@ -12,8 +12,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
 
     /// <summary>
-    /// Flags addDays() calls with arguments known only when the policy is evaluated. The finding is a warning,
-    /// or informational when the call is in an if() branch, because the if() condition might check the value.
+    /// Flags addDays() calls with arguments known only when the policy is evaluated.
     /// </summary>
     public sealed class UnguardedAddDaysFunction : LinterRule<TemplateFunctionCall>
     {
@@ -40,7 +39,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             if (expression.Name.EqualsOrdinalInsensitively("addDays") &&
                 expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
             {
-                return new[] { expression.IsConditionallyEvaluated ? this.CreateInformational(expression) : this.CreateWarning(expression) };
+                return new[] { this.CreateWarning(expression) };
             }
 
             return Array.Empty<LinterOutput>();

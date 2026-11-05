@@ -23,29 +23,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             'stringParam': { 'type': 'String' }";
 
         [Fact]
-        public void TemplateLanguageNodeTests_NestedCalls_ConditionalEvaluation()
+        public void TemplateLanguageNodeTests_NestedCalls()
         {
             var expression = TemplateLanguageNodeTests.LintValue("[if(equals(field('a'), ''), int(field('a')), and(true(), bool(field('b'))))]");
 
-            var calls = TemplateLanguageNodeTests.GetCalls(expression);
-            calls.Select(call => call.Name).Should().BeEquivalentTo("if", "equals", "field", "int", "field", "and", "true", "bool", "field");
-            calls.Where(call => !call.IsConditionallyEvaluated).Select(call => call.Name).Should().BeEquivalentTo("if", "equals", "field");
-        }
-
-        [Fact]
-        public void TemplateLanguageNodeTests_AndOrArguments_NotConditionallyEvaluated()
-        {
-            var expression = TemplateLanguageNodeTests.LintValue("[or(empty(field('a')), less(int(field('a')), 5))]");
-
-            TemplateLanguageNodeTests.GetCalls(expression).Should().OnlyContain(call => !call.IsConditionallyEvaluated);
-        }
-
-        [Fact]
-        public void TemplateLanguageNodeTests_SelectorInIfBranch_ConditionallyEvaluated()
-        {
-            var expression = TemplateLanguageNodeTests.LintValue("[if(true(), split(field('a'), '/')[1], '')]");
-
-            TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "split").IsConditionallyEvaluated.Should().BeTrue();
+            TemplateLanguageNodeTests.GetCalls(expression).Select(call => call.Name).Should().BeEquivalentTo("if", "equals", "field", "int", "field", "and", "true", "bool", "field");
         }
 
         [Fact]
