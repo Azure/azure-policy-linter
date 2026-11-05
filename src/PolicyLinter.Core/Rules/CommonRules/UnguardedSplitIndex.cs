@@ -13,7 +13,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// Flags an index on the result of split() on a value known only when the policy is evaluated, outside an if() branch.
+    /// Flags an index on the result of split() on a value known only when the policy is evaluated, unless an if() around the call skips it for a missing property.
     /// </summary>
     public sealed class UnguardedSplitIndex : LinterRule<TemplateFunctionCall>
     {
@@ -37,12 +37,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            return !expression.IsConditionallyEvaluated &&
-                expression.Name.EqualsOrdinalInsensitively("split") &&
+            return expression.Name.EqualsOrdinalInsensitively("split") &&
                 expression.Selectors.Length > 0 &&
                 UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) &&
                 expression.Arguments.Length > 0 &&
-                expression.Arguments[0].IsEvaluationTimeReference()
+                expression.Arguments[0].IsEvaluationTimeReference() &&
+                !expression.Arguments[0].IsGuardedAgainst(JValue.CreateString(string.Empty))
                 ? new[] { this.CreateError(expression) }
                 : Array.Empty<LinterOutput>();
         }
