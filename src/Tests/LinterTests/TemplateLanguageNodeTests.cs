@@ -103,6 +103,52 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             TemplateLanguageNodeTests.GetCalls(expression).Single(call => call.Name == "int").Arguments[0].IsEvaluationTimeReference().Should().BeTrue();
         }
 
+        [Theory]
+        [InlineData("[parameters(concat('string', 'Param'))]", "stringParam")]
+        [InlineData("[parameters(split('a/stringParam', '/')[1])]", "stringParam")]
+        [InlineData("[parameters(createObject('name', 'stringParam').name)]", "stringParam")]
+        [InlineData("[parameters(if(true(), 'stringParam', div(1, 0)))]", "stringParam")]
+        [InlineData("[parameters(if(or(true(), div(1, 0)), 'stringParam', 'otherParam'))]", "stringParam")]
+        [InlineData("[parameters(if(and(false(), div(1, 0)), 'otherParam', 'stringParam'))]", "stringParam")]
+        public void TemplateLanguageNodeTests_ReferenceIdentifier_Evaluated(string valueExpression, string expectedIdentifier)
+        {
+            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
+
+            var reference = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference;
+            reference.IsResolved.Should().BeTrue();
+            reference.Identifier.Should().Be(expectedIdentifier);
+        }
+
+        [Theory]
+        [InlineData("[parameters(split('stringParam', '/')[1])]")]
+        [InlineData("[parameters(createObject('name', 'stringParam').other)]")]
+        [InlineData("[parameters(if('true', 'stringParam', 'otherParam'))]")]
+        [InlineData("[parameters(int('stringParam'))]")]
+        [InlineData("[parameters(concat(div(1, 0), 'stringParam'))]")]
+        [InlineData("[parameters(selectProperty(createObject('name', 'stringParam'), 'name'))]")]
+        [InlineData("[parameters(concat(field('a'), 'Param'))]")]
+        public void TemplateLanguageNodeTests_ReferenceIdentifier_NotEvaluated(string valueExpression)
+        {
+            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
+
+            var reference = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference;
+            reference.IsResolved.Should().BeFalse();
+            reference.Identifier.Should().BeEmpty();
+        }
+
+        [Theory]
+        [InlineData("[field('tags')[concat('e', 'nv')]]", true, new[] { "env" })]
+        [InlineData("[field('tags')[selectProperty(createObject('a', 'env'), 'a')]]", false, new string[0])]
+        [InlineData("[field('tags')[parameters('stringParam')]]", false, new string[0])]
+        public void TemplateLanguageNodeTests_ReferencePropertySelectionPath(string valueExpression, bool expectedIsResolved, string[] expectedPath)
+        {
+            var (expression, _) = TemplateLanguageNodeTests.LintValue(valueExpression);
+
+            var path = expression.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference.PropertySelectionPath;
+            path.IsResolved.Should().Be(expectedIsResolved);
+            path.Path.Should().Equal(expectedPath);
+        }
+
         private static TemplateFunctionCall[] GetCalls(TemplateLanguageExpression expression)
         {
             var calls = new List<TemplateFunctionCall>();
