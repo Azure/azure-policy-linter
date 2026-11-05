@@ -38,16 +38,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// <inheritdoc/>
         protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
         {
-            if (!expression.Name.EqualsOrdinalInsensitively("split") ||
-                expression.Selectors.Length == 0 ||
-                !UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) ||
-                expression.Arguments.Length == 0 ||
-                !expression.Arguments[0].IsEvaluationTimeReference())
+            if (expression.Name.EqualsOrdinalInsensitively("split") &&
+                expression.Selectors.Length > 0 &&
+                UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) &&
+                expression.Arguments.Length > 0 &&
+                expression.Arguments[0].IsEvaluationTimeReference())
             {
-                return Array.Empty<LinterOutput>();
+                return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
             }
 
-            return new[] { expression.IsConditionallyEvaluated ? this.CreateWarning(expression) : this.CreateError(expression) };
+            return Array.Empty<LinterOutput>();
         }
 
         /// <summary>
