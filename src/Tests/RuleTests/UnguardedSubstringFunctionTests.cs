@@ -188,7 +188,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "unguarded-substring-function",
                 Title: "Unguarded Substring Function",
                 Severity: Severity.Error,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: path,

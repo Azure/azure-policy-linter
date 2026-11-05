@@ -27,7 +27,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedSplitIndex() : base(
             identifier: "unguarded-split-index",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedSplitIndex.RuleTitle,
             descriptionFormat: UnguardedSplitIndex.RuleDescription,
             applyToDerivedTypes: false)

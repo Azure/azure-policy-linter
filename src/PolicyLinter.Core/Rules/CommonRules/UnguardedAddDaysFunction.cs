@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedAddDaysFunction() : base(
             identifier: "unguarded-adddays-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedAddDaysFunction.RuleTitle,
             descriptionFormat: UnguardedAddDaysFunction.RuleDescription,
             applyToDerivedTypes: false)

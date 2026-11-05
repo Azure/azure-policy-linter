@@ -48,6 +48,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts
         /// <summary>
         /// Everything else.. TODO: figure out reasonable categories.
         /// </summary>
-        Misc
+        Misc,
+
+        /// <summary>
+        /// Issues with how template functions are used in a policy.
+        /// </summary>
+        TemplateFunctions
     }
 }

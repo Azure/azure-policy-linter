@@ -38,7 +38,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public LengthFunctionOnArrayAlias() : base(
             identifier: "length-function-on-array-alias",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: LengthFunctionOnArrayAlias.RuleTitle,
             descriptionFormat: LengthFunctionOnArrayAlias.RuleDescription,
             applyToDerivedTypes: false)

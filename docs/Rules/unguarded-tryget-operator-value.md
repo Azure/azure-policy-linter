@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | unguarded-tryget-operator-value | Error | default |
+| TemplateFunctions | unguarded-tryget-operator-value | Error | default |
 
 ## Description
 

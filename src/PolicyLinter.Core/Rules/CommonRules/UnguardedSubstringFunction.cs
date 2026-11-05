@@ -26,7 +26,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedSubstringFunction() : base(
             identifier: "unguarded-substring-function",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedSubstringFunction.RuleTitle,
             descriptionFormat: UnguardedSubstringFunction.RuleDescription,
             applyToDerivedTypes: false)

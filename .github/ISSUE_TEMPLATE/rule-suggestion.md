@@ -50,7 +50,7 @@ complete suggestion can be picked up and implemented directly.
 ```
 
 **Suggested severity / category**
-<!-- e.g. severity Error / Warning / Informational; category BestPractices / ResourceFields / Misc. Or TBD. -->
+<!-- e.g. severity Error / Warning / Informational; category BestPractices / ResourceFields / TemplateFunctions / Misc. Or TBD. -->
 
 **Suggested rule set**
 <!-- e.g. default, or a non-default set name. Or TBD. -->

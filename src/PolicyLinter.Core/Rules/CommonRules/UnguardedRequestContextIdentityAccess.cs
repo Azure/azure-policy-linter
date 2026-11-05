@@ -29,7 +29,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedRequestContextIdentityAccess() : base(
             identifier: "unguarded-request-context-identity-access",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedRequestContextIdentityAccess.RuleTitle,
             descriptionFormat: UnguardedRequestContextIdentityAccess.RuleDescription,
             applyToDerivedTypes: false)
