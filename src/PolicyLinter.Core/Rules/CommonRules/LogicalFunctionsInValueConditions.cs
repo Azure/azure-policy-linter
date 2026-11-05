@@ -59,8 +59,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var languageExpression = value.LanguageExpressions[0];
-            if (string.Equals(value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) &&
-                languageExpression.TryGetFunctionName(out var functionName) &&
+            if (languageExpression.IsEntireValue &&
+                languageExpression.Root is FunctionCall { Name: var functionName } &&
                 LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName))
             {
                 return new[]

@@ -114,6 +114,29 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 (this.Kind == ReferenceKind.CurrentArrayMember && this.ReferencedCountExpressionScope?.Type == CountScopeType.Field));
 
         /// <summary>
+        /// Checks if the referenced value is known only when the policy is evaluated: a resource field, a request context or token claims property,
+        /// or a property of the resource group or subscription.
+        /// </summary>
+        /// <remarks>
+        /// Policy parameter values and current() functions in value count expressions are not considered evaluation time values.
+        /// </remarks>
+        public bool IsEvaluationTimeValue() =>
+            this.Kind is ReferenceKind.ResourceField
+                or ReferenceKind.RequestContextProperty
+                or ReferenceKind.PolicyTokenClaims
+                or ReferenceKind.ResourceGroupProperty
+                or ReferenceKind.SubscriptionProperty ||
+            this.IsResolvedFieldReference();
+
+        /// <summary>
+        /// The function call this reference was created from. Null for field accessor references.
+        /// </summary>
+        /// <remarks>
+        /// Used to link <see cref="FunctionCall"/> nodes to their references.
+        /// </remarks>
+        internal FunctionExpression? SourceFunction { get; }
+
+        /// <summary>
         /// Create a reference to a field which represents a field reference that is part of a field accessor expression.
         /// </summary>
         /// <param name="fieldAccessor">The field accessor value.</param>
@@ -284,6 +307,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             PolicyExpression parent) : base(jTokenMetadata?.LineNumber, jTokenMetadata?.LinePosition, path, parent)
         {
             this.Kind = kind;
+            this.SourceFunction = function;
             this.IsResolved = !resolutionDependencies.Any();
             this.ResolutionDependencies = resolutionDependencies;
             this.PropertySelectionPath = propertySelectionPath;

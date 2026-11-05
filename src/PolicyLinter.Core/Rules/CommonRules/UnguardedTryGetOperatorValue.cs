@@ -8,6 +8,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     using System;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
@@ -47,9 +48,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
             }
 
             var valueExpression = expression.Operator.LanguageExpressions[0];
-            if (!string.Equals(expression.Operator.Value.ToString(), valueExpression.Expression, StringComparison.Ordinal) ||
-                !valueExpression.TryGetFunctionName(out var functionName) ||
-                !string.Equals(functionName, "tryGet", StringComparison.OrdinalIgnoreCase))
+            if (!valueExpression.IsEntireValue ||
+                valueExpression.Root is not FunctionCall rootCall ||
+                !rootCall.Name.EqualsOrdinalInsensitively("tryGet"))
             {
                 return Array.Empty<LinterOutput>();
             }

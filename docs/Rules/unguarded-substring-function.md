@@ -6,7 +6,7 @@
 
 ## Description
 
-This rule reports an unsafe use of the `substring` function referencing resource fields, policy parameters and other non-literal values. `substring` fails when the requested range runs past the end of its input, and a [failed expression makes the policy deny the request](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures). Any request whose value is shorter than the requested range is blocked, whether or not the policy was meant to block it.
+This rule reports a call to `substring` on a value that is known only when the policy is evaluated, for example a `field()` value. `substring` fails when the requested range runs past the end of its input, and a [failed expression makes the policy deny the request](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures). Any request whose value is shorter than the requested range is blocked, whether or not the policy was meant to block it.
 
 ## Suggestions
 
