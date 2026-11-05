@@ -24,11 +24,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     public class Reference : PolicyExpression
     {
         /// <summary>
-        /// No reference values, for evaluating nodes that don't depend on references, e.g. 'a' in "field('a')".
-        /// </summary>
-        private static readonly IReadOnlyDictionary<Reference, JToken> NoReferenceValues = ImmutableDictionary<Reference, JToken>.Empty;
-
-        /// <summary>
         /// A dictionary that maps function names to their corresponding reference kinds.
         /// Policy function names are case insensitive.
         /// </summary>
@@ -231,7 +226,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             if (call.Selectors.Any())
             {
                 var processedPath = call.Selectors
-                    .Select(selector => selector.TryEvaluate(referenceValues: Reference.NoReferenceValues, value: out var value) && value is JValue ? value.ToStringValue() : null)
+                    .Select(selector => selector.TryEvaluate(out var value) && value is JValue ? value.ToStringValue() : null)
                     .ToArray();
 
                 // A selector can't be evaluated when it depends on a reference (or uses a function the linter can't evaluate).
@@ -340,7 +335,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// </summary>
         private string EvaluateIdentifierArgument(TemplateFunctionCall call)
         {
-            if (call.Arguments[0].TryEvaluate(referenceValues: Reference.NoReferenceValues, value: out var value) && value is JValue)
+            if (call.Arguments[0].TryEvaluate(out var value) && value is JValue)
             {
                 return value.ToStringValue()!;
             }

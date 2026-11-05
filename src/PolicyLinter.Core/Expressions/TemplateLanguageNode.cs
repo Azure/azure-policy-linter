@@ -6,7 +6,6 @@
 namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Immutable;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
@@ -23,11 +22,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// </remarks>
     public abstract class TemplateLanguageNode : PolicyExpression
     {
-        /// <summary>
-        /// The linter's copy of the built-in template functions of policy evaluation.
-        /// </summary>
-        private static readonly EvaluationHelpers.ExpressionBuiltInFunctions BuiltInFunctions = new EvaluationHelpers.ExpressionBuiltInFunctions();
-
         /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageNode"/> class.
         /// </summary>
@@ -52,40 +46,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Evaluates the node the way policy evaluation does.
+        /// Evaluates a node that uses only literal values and built-in functions, e.g. "concat('a', 'b')".
         /// </summary>
         /// <remarks>
-        /// Returns false when the value can't be known: the node uses a reference that has no value in <paramref name="referenceValues"/>,
-        /// calls a function the linter can't evaluate, or the evaluation fails.
+        /// Returns false when the node uses a reference function (e.g. field()), a function the linter can't evaluate, or the evaluation fails.
         /// </remarks>
-        /// <param name="referenceValues">The values of the references the node can use, e.g. a parameter value.</param>
         /// <param name="value">The value.</param>
-        internal abstract bool TryEvaluate(IReadOnlyDictionary<Reference, JToken> referenceValues, [NotNullWhen(true)] out JToken? value);
-
-        /// <summary>
-        /// Calls a built-in template function. Returns false when the linter can't evaluate the function or the function fails.
-        /// </summary>
-        /// <param name="functionName">The function name.</param>
-        /// <param name="arguments">The argument values.</param>
-        /// <param name="value">The function result.</param>
-        internal static bool TryCallBuiltInFunction(string functionName, JToken[] arguments, [NotNullWhen(true)] out JToken? value)
-        {
-            value = null;
-            if (!TemplateLanguageNode.BuiltInFunctions.IsBuiltInFunction(functionName))
-            {
-                return false;
-            }
-
-            try
-            {
-                value = TemplateLanguageNode.BuiltInFunctions.EvaluateFunction(functionName: functionName, parameters: arguments);
-                return true;
-            }
-            catch (Exception exception) when (!exception.IsFatal())
-            {
-                return false;
-            }
-        }
+        internal abstract bool TryEvaluate([NotNullWhen(true)] out JToken? value);
 
         /// <summary>
         /// Creates the node for the given parsed expression.
@@ -121,7 +88,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <inheritdoc/>
-        internal override bool TryEvaluate(IReadOnlyDictionary<Reference, JToken> referenceValues, [NotNullWhen(true)] out JToken? value)
+        internal override bool TryEvaluate([NotNullWhen(true)] out JToken? value)
         {
             value = this.Value;
             return true;
@@ -133,6 +100,11 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// </summary>
     public sealed class TemplateFunctionCall : TemplateLanguageNode
     {
+        /// <summary>
+        /// The linter's copy of the built-in template functions of policy evaluation.
+        /// </summary>
+        private static readonly EvaluationHelpers.ExpressionBuiltInFunctions BuiltInFunctions = new EvaluationHelpers.ExpressionBuiltInFunctions();
+
         /// <summary>
         /// The function name as written in the expression. Function names are case insensitive.
         /// </summary>
@@ -197,16 +169,39 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <inheritdoc/>
-        internal override bool TryEvaluate(IReadOnlyDictionary<Reference, JToken> referenceValues, [NotNullWhen(true)] out JToken? value)
+        internal override bool TryEvaluate([NotNullWhen(true)] out JToken? value)
         {
-            if (!this.TryEvaluateWithoutSelectors(referenceValues: referenceValues, value: out value))
+            value = null;
+            if (this.Reference != null || !TemplateFunctionCall.BuiltInFunctions.IsBuiltInFunction(this.Name))
             {
                 return false;
             }
 
+            var argumentValues = new JToken[this.Arguments.Length];
+            for (var index = 0; index < this.Arguments.Length; index++)
+            {
+                if (!this.Arguments[index].TryEvaluate(out var argumentValue))
+                {
+                    return false;
+                }
+
+                argumentValues[index] = argumentValue;
+            }
+
+            try
+            {
+                value = TemplateFunctionCall.BuiltInFunctions.EvaluateFunction(functionName: this.Name, parameters: argumentValues);
+            }
+            catch (Exception exception) when (!exception.IsFatal())
+            {
+                value = null;
+                return false;
+            }
+
+            // Property selection follows policy evaluation: e.g. a missing property or an index out of range fails.
             foreach (var selector in this.Selectors)
             {
-                if (!selector.TryEvaluate(referenceValues: referenceValues, value: out var property) ||
+                if (!selector.TryEvaluate(out var property) ||
                     new JTokenSelectableFunctionResult(root: value).SelectProperty(property: property) is not JTokenSelectableFunctionResult result)
                 {
                     value = null;
@@ -217,44 +212,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             return true;
-        }
-
-        private bool TryEvaluateWithoutSelectors(IReadOnlyDictionary<Reference, JToken> referenceValues, [NotNullWhen(true)] out JToken? value)
-        {
-            value = null;
-            if (this.Reference != null)
-            {
-                return referenceValues.TryGetValue(this.Reference, out value);
-            }
-
-            // Policy evaluation evaluates only the 'if()' branch that the condition selects,
-            // and stops 'and()' and 'or()' at the first argument that decides the result.
-            if (this.Name.EqualsOrdinalInsensitively("if") && this.Arguments.Length == 3)
-            {
-                return this.Arguments[0].TryEvaluate(referenceValues: referenceValues, value: out var condition) &&
-                    condition.Type == JTokenType.Boolean &&
-                    this.Arguments[condition.Value<bool>() ? 1 : 2].TryEvaluate(referenceValues: referenceValues, value: out value);
-            }
-
-            bool? decidingValue = this.Name.EqualsOrdinalInsensitively("and") ? false : this.Name.EqualsOrdinalInsensitively("or") ? true : null;
-            var argumentValues = new List<JToken>();
-            foreach (var argument in this.Arguments)
-            {
-                if (!argument.TryEvaluate(referenceValues: referenceValues, value: out var argumentValue))
-                {
-                    return false;
-                }
-
-                if (argumentValue.Type == JTokenType.Boolean && argumentValue.Value<bool>() == decidingValue)
-                {
-                    value = argumentValue;
-                    return true;
-                }
-
-                argumentValues.Add(argumentValue);
-            }
-
-            return TemplateLanguageNode.TryCallBuiltInFunction(functionName: this.Name, arguments: argumentValues.ToArray(), value: out value);
         }
     }
 }
