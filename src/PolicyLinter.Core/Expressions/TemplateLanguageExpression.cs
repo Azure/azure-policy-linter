@@ -39,18 +39,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ImmutableArray<Reference> References { get; }
 
         /// <summary>
-        /// The reference kind of the root language expression if it is a reference.
-        /// </summary>
-        /// <example>
-        /// [field('a')] => ReferenceKind.Field
-        /// [concat(field('a'), 'b')] => null
-        /// </example>
-        /// <remarks>
-        /// When this variable is not null, it can be expected that the <see cref="References"/> array will contain only one reference of the same kind.
-        /// </remarks>
-        public ReferenceKind? ReferenceKind { get; }
-
-        /// <summary>
         /// The parsed expression: a <see cref="TemplateFunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="TemplateLiteralValue"/> (e.g. "[1]").
         /// </summary>
         public TemplateLanguageNode Root { get; }
@@ -176,11 +164,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             this.Expression = expression;
             this.IsEntireValue = isEntireValue;
             var languageExpression = ExpressionsEngine.ParseLanguageExpression(expression);
-            if (Reference.IsReferenceFunction(languageExpression, out var kind))
-            {
-                this.ReferenceKind = kind;
-            }
-
             var references = new List<Reference>();
 
             Reference.FromLanguageExpression(
@@ -235,7 +218,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             parameterName = string.Empty;
 
-            if (this.Root is TemplateFunctionCall { Reference: { Kind: Expressions.ReferenceKind.PolicyParameterName, IsResolved: true } reference } call &&
+            if (this.Root is TemplateFunctionCall { Reference: { Kind: ReferenceKind.PolicyParameterName, IsResolved: true } reference } call &&
                 call.Arguments.Length == 1 &&
                 call.Selectors.Length == 0)
             {
