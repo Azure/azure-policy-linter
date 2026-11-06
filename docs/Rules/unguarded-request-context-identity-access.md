@@ -8,7 +8,7 @@
 
 `requestContext().identity` is always present during evaluation, but its sub-properties - individual identity claims in particular - are not guaranteed to appear in every auth token. Claims are keys directly on the identity object (for example `requestContext().identity['http://schemas.microsoft.com/identity/claims/objectidentifier']`). Selecting one of those keys directly fails at evaluation time when it is absent, and [a failed template evaluation is an implicit deny](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures). This rule flags a property selection that goes one or more segments past `requestContext().identity` without a safe-access guard.
 
-**Note:** This rule can't tell whether your policy already checks that the claim exists before it selects it, for example with `if()`. It reports every such selection. If your policy has a check, make sure it handles tokens without the claim.
+**Note:** This rule can't tell whether your policy already checks that the claim exists before it selects it, for example with `if()`. It reports every such selection.
 
 ## Suggestions
 
