@@ -8,7 +8,7 @@
 
 This rule reports a call to [`addDays()`](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#policy-functions) with an argument that is known only when the policy is evaluated, for example a `field()` value. `addDays()` fails when the date isn't a string in the Universal ISO 8601 format (`yyyy-MM-ddTHH:mm:ss.FFFFFFFZ`), or when the number of days isn't an integer. This includes the empty string that a missing property returns. [A failed expression makes the policy deny the request](https://learn.microsoft.com/azure/governance/policy/concepts/definition-structure-policy-rule#avoiding-template-failures), so every request with such a value is denied, whether or not the policy was meant to deny it.
 
-**Note:** This rule can't tell whether your policy already checks the values before it calls `addDays()`, for example with `if()`. It reports every such call. If your policy has a check, make sure it handles missing values and values in the wrong format.
+**Note:** This rule can't tell whether your policy already checks the values before it calls `addDays()`, for example with `if()`. It reports every such call.
 
 ## Suggestions
 
