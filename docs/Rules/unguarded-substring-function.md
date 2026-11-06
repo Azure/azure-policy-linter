@@ -21,16 +21,18 @@ This rule reports a call to `substring()` with a value that is known only when t
 
 ```json
 {
-  "value": "[substring(field('name'), 0, 3)]",
+  "value": "[substring(field('name'), 2, 3)]",
   "equals": "abc"
 }
 ```
 
 ### Correct
 
+`skip()` drops the first 2 characters and `take()` keeps up to 3 of the rest, so a short name gives a shorter result instead of failing:
+
 ```json
 {
-  "value": "[take(field('name'), 3)]",
+  "value": "[take(skip(field('name'), 2), 3)]",
   "equals": "abc"
 }
 ```
