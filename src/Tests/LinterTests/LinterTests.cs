@@ -1211,23 +1211,20 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var fieldTagsX = languageExpressions.SingleOrDefault(e => e.Expression == "[field('tags.x')]");
             fieldTagsX.Should().NotBeNull();
-            fieldTagsX.TryGetFunctionName(out var fieldFunctionName).Should().BeTrue();
-            fieldFunctionName.Should().Be("field");
+            fieldTagsX.Root.Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("field");
             fieldTagsX.References.Should().HaveCount(1);
             fieldTagsX.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldTagsX.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("field");
 
             var concatAB = languageExpressions.SingleOrDefault(e => e.Expression == "[CoNcAt('a','b')]");
             concatAB.Should().NotBeNull();
-            concatAB.TryGetFunctionName(out var concatFunctionName).Should().BeTrue();
-            concatFunctionName.Should().Be("CoNcAt");
+            concatAB.Root.Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("CoNcAt");
             concatAB.References.Should().BeEmpty();
             concatAB.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("equals");
 
             var fieldParam = languageExpressions.SingleOrDefault(e => e.Expression == "[field(parameters('param'))]");
             fieldParam.Should().NotBeNull();
-            fieldParam.TryGetFunctionName(out var nestedFunctionName).Should().BeTrue();
-            nestedFunctionName.Should().Be("field");
+            fieldParam.Root.Should().BeOfType<TemplateFunctionCall>().Which.Reference.Should().BeSameAs(fieldParam.References[0]);
             fieldParam.References.Should().HaveCount(1);
             fieldParam.References[0].Kind.Should().Be(ReferenceKind.ResourceField);
             fieldParam.References[0].ResolutionDependencies.Should().HaveCount(1);
@@ -1244,8 +1241,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
 
             var literalExpression = languageExpressions.SingleOrDefault(e => e.Expression == "[1]");
             literalExpression.Should().NotBeNull();
-            literalExpression.TryGetFunctionName(out var literalFunctionName).Should().BeFalse();
-            literalFunctionName.Should().BeEmpty();
+            literalExpression.Root.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
 
             var effectParam = languageExpressions.SingleOrDefault(e => e.Expression == "[parameters('effectParam')]");
             effectParam.Should().NotBeNull();
@@ -1253,6 +1249,91 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             effectParam.References[0].Kind.Should().Be(ReferenceKind.PolicyParameterName);
             effectParam.References[0].Identifier.Should().Be("effectParam");
             effectParam.Parent.Should().BeOfType<Property>().Subject.Name.Should().Be("effect");
+        }
+
+        [Fact]
+        public void LinterTests_VisitAllExpressionNodes()
+        {
+            var functionCalls = new List<TemplateFunctionCall>();
+            var literalValues = new List<TemplateLiteralValue>();
+            var references = new List<Reference>();
+            var rules = new ILinterRule[]
+            {
+                new TestTemplateFunctionCallLinterRule { EvaluateFunc = (rule, expression, context) => { functionCalls.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
+                new TestTemplateLiteralValueLinterRule { EvaluateFunc = (rule, expression, context) => { literalValues.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
+                new TestReferenceLinterRule { EvaluateFunc = (rule, expression, context) => { references.Add(expression); return Enumerable.Empty<LinterOutput>(); } },
+            };
+
+            var policy = @"
+            {
+                'properties': {
+                    'parameters': {
+                        'effectParam': { 'type': 'string', 'defaultValue': 'deny' },
+                        'param': { 'type': 'string' }
+                    },
+                    'policyRule': {
+                        'if': {
+                            'allOf': [
+                                { 'value': ""[if(equals(field('tags.x'), ''), 0, int(split(field('id'), '/')[1]))]"", 'equals': 1 },
+                                { 'field': ""[concat('tags.', parameters('param'))]"", 'in': [""[field('tags.y')]""] }
+                            ]
+                        },
+                        'then': {
+                            'effect': ""[parameters('effectParam')]""
+                        }
+                    }
+                }
+            }";
+
+            var results = new PolicyLinter(rules, new MockTypeMetadata()).Lint(policy);
+
+            results.Should().BeEmpty();
+            functionCalls.Select(call => call.Name).Should().BeEquivalentTo(
+                "if", "equals", "field", "int", "split", "field", "concat", "parameters", "field", "parameters");
+            literalValues.Select(literal => literal.Value.ToString()).Should().BeEquivalentTo(
+                "tags.x", "", "0", "id", "/", "1", "tags.", "param", "tags.y", "effectParam");
+
+            // Every node is visited once, belongs to a template language expression, and has its location.
+            functionCalls.Should().OnlyHaveUniqueItems();
+            literalValues.Should().OnlyHaveUniqueItems();
+            foreach (var node in functionCalls.Cast<TemplateLanguageNode>().Concat(literalValues))
+            {
+                var root = LinterTests.GetTemplateLanguageExpression(node);
+                node.LineNumber.Should().Be(root.LineNumber);
+                node.LinePosition.Should().Be(root.LinePosition);
+                node.Path.Should().Be(root.Path);
+            }
+
+            // References are visited once, and reference calls point to the same instances.
+            references.Should().OnlyHaveUniqueItems();
+            functionCalls.Where(call => call.Name is "field" or "parameters").Should().OnlyContain(call => call.Reference != null && references.Contains(call.Reference));
+            functionCalls.Where(call => call.Name is not ("field" or "parameters")).Should().OnlyContain(call => call.Reference == null);
+
+            var ifCall = functionCalls.Single(call => call.Name == "if");
+            var valueExpression = ifCall.Parent.Should().BeOfType<TemplateLanguageExpression>().Subject;
+            valueExpression.Root.Should().BeSameAs(ifCall);
+            ifCall.Arguments.Should().HaveCount(3);
+            ifCall.Arguments[0].Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("equals");
+            ifCall.Arguments[1].Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(0));
+            ifCall.Arguments[2].Should().BeOfType<TemplateFunctionCall>().Which.Name.Should().Be("int");
+            ifCall.Arguments.Should().OnlyContain(argument => argument.Parent == ifCall);
+
+            var splitCall = functionCalls.Single(call => call.Name == "split");
+            splitCall.Selectors.Should().ContainSingle().Which.Should().BeOfType<TemplateLiteralValue>().Which.Value.Should().BeEquivalentTo(new JValue(1));
+            splitCall.Selectors[0].Parent.Should().BeSameAs(splitCall);
+
+            var fieldAccessor = LinterTests.GetTemplateLanguageExpression(functionCalls.Single(call => call.Name == "concat"));
+            fieldAccessor.Parent.Should().BeOfType<Property>().Which.Name.Should().Be("field");
+        }
+
+        private static TemplateLanguageExpression GetTemplateLanguageExpression(PolicyExpression expression)
+        {
+            while (expression is not TemplateLanguageExpression)
+            {
+                expression = expression.Parent!;
+            }
+
+            return (TemplateLanguageExpression)expression;
         }
 
         [Fact]

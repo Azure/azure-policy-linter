@@ -281,6 +281,60 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 
     /// <summary>
+    /// A test linter rule for testing purposes targeting TemplateFunctionCall.
+    /// </summary>
+    public class TestTemplateFunctionCallLinterRule : LinterRule<TemplateFunctionCall>
+    {
+        public Func<TestTemplateFunctionCallLinterRule, TemplateFunctionCall, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestTemplateFunctionCallLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-template-function-call-rule",
+            category: Category.Test,
+            title: "Test TemplateFunctionCall Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for TemplateFunctionCall",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// A test linter rule for testing purposes targeting TemplateLiteralValue.
+    /// </summary>
+    public class TestTemplateLiteralValueLinterRule : LinterRule<TemplateLiteralValue>
+    {
+        public Func<TestTemplateLiteralValueLinterRule, TemplateLiteralValue, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestTemplateLiteralValueLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-template-literal-value-rule",
+            category: Category.Test,
+            title: "Test TemplateLiteralValue Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for TemplateLiteralValue",
+            applyToDerivedTypes: false)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(TemplateLiteralValue expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
     /// Test linter rule targeting count expressions.
     /// </summary>
     public class TestCountLinterRule : LinterRule<Count>
