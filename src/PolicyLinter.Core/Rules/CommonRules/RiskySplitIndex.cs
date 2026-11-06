@@ -14,21 +14,21 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
     /// <summary>
     /// Flags an index on the result of split() on a value known only when the policy is evaluated.
     /// </summary>
-    public sealed class UnguardedSplitIndex : LinterRule<TemplateFunctionCall>
+    public sealed class RiskySplitIndex : LinterRule<TemplateFunctionCall>
     {
-        private const string RuleTitle = "Unguarded Split Index";
+        private const string RuleTitle = "Risky Split Index";
 
         private const string RuleDescription =
             "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments, and a failed expression makes the policy deny the request. Use 'last()' or 'coalesce(first(skip(...)), <fallback>)'; they don't fail on short values.";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UnguardedSplitIndex"/> class.
+        /// Initializes a new instance of the <see cref="RiskySplitIndex"/> class.
         /// </summary>
-        public UnguardedSplitIndex() : base(
-            identifier: "unguarded-split-index",
+        public RiskySplitIndex() : base(
+            identifier: "risky-split-index",
             category: Category.TemplateFunctions,
-            title: UnguardedSplitIndex.RuleTitle,
-            descriptionFormat: UnguardedSplitIndex.RuleDescription,
+            title: RiskySplitIndex.RuleTitle,
+            descriptionFormat: RiskySplitIndex.RuleDescription,
             applyToDerivedTypes: false)
         {
         }
@@ -38,7 +38,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         {
             if (expression.Name.EqualsOrdinalInsensitively("split") &&
                 expression.Selectors.Length > 0 &&
-                UnguardedSplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) &&
+                RiskySplitIndex.CanBeOutOfBounds(index: expression.Selectors[0]) &&
                 expression.Arguments.Length > 0 &&
                 expression.Arguments[0].IsEvaluationTimeReference())
             {
