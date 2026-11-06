@@ -27,6 +27,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// A static instance of an <see cref="IEvaluationContext"/> for builtin (i.e. static) functions only.
         /// </summary>
         private static readonly IEvaluationContext BuiltInFunctionsOnlyExpressionEvaluationContext = new StaticTemplateFunctionEvaluationContext();
+
         /// <summary>
         /// A dictionary that maps function names to their corresponding reference kinds.
         /// Policy function names are case insensitive.
