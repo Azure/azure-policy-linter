@@ -35,6 +35,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[if(equals(substring(field('name'), 0, 3), 'abc'), 'a', 'b')]")]
         [InlineData("[if(greaterOrEquals(length(field('name')), 3), substring(field('name'), 0, 3), field('name'))]")]
         [InlineData("[if(equals(field('type'), 'x'), '', toLower(substring(field('name'), 0, 3)))]")]
+        [InlineData("[substring(parameters('name'), field('tags.start'))]")]
         public void RuleTests_UnguardedSubstringFunction_EvaluationTimeInput_Fires(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
@@ -115,11 +116,25 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("prefix-[substring(field('name'), 0, 3)]")]
         [InlineData("[take(skip(field('name'), 2), 3)]")]
         [InlineData("[substring(toLower(field('name')), 0, 3)]")]
+        [InlineData("[substring(parameters('name'), 0, int(field('tags.length')))]")]
         public void RuleTests_UnguardedSubstringFunction_NotApplicable(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
 
             results.Should().BeEmpty();
+        }
+
+        [Fact]
+        public void RuleTests_UnguardedSubstringFunction_TwoCalls_TwoFindings()
+        {
+            const string valueExpression = "[concat(substring(field('name'), 0, 3), substring(field('type'), 0, 2))]";
+
+            var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
+
+            results.Should().HaveCount(2);
+            results.Should().AllBeEquivalentTo(UnguardedSubstringFunctionTests.CreateExpectedOutput(
+                lineNumber: 6,
+                linePosition: 35 + valueExpression.Length));
         }
 
         [Fact]

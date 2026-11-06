@@ -64,7 +64,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void TemplateLanguageNodeTests_CurrentInValueCount_NotEvaluationTimeValue()
+        public void TemplateLanguageNodeTests_CurrentInValueCount_NotEvaluationTimeReference()
         {
             var policy = TemplateLanguageNodeTests.CreatePolicy(@"
                 'count': {
@@ -80,7 +80,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void TemplateLanguageNodeTests_CurrentInFieldCount_EvaluationTimeValue()
+        public void TemplateLanguageNodeTests_CurrentInFieldCount_EvaluationTimeReference()
         {
             var policy = TemplateLanguageNodeTests.CreatePolicy(@"
                 'count': {

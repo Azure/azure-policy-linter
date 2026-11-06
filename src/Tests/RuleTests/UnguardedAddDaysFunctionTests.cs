@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedAddDaysFunctionTests
     {
         private const string ExpectedDescription =
-            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer, including the empty string returned for a missing property. A failed expression makes the policy deny the request. Make sure the call only gets a valid date and an integer number of days.";
+            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer. A missing property is an empty string, which also fails. A failed expression makes the policy deny the request. Make sure the call only gets a valid date and an integer number of days.";
 
         private static readonly MockTypeMetadata MockMetadata = new MockTypeMetadata();
 

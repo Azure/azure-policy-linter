@@ -38,7 +38,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// a request context or token claims property, or a resource group or subscription property, e.g. "field('name')" or "requestContext().apiVersion".
         /// </summary>
         /// <remarks>
-        /// Policy parameters and current() in a value count are not evaluation time values.
+        /// Policy parameters and current() in a value count are not treated as evaluation time values.
         /// A reference inside another function, e.g. "concat(field('name'), '-')", doesn't count.
         /// </remarks>
         public bool IsEvaluationTimeReference()
@@ -74,7 +74,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             return expression is FunctionExpression function
                 ? new TemplateFunctionCall(function, parent)
-                : new TemplateLiteralValue(expression, parent);
+                : new TemplateLiteralValue((JTokenExpression)expression, parent);
         }
     }
 
@@ -91,10 +91,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         /// <summary>
         /// Creates a new instance of the <see cref="TemplateLiteralValue"/> class.
         /// </summary>
-        internal TemplateLiteralValue(LanguageExpression expression, PolicyExpression parent)
+        internal TemplateLiteralValue(JTokenExpression expression, PolicyExpression parent)
             : base(expression, parent)
         {
-            this.Value = (expression as JTokenExpression)?.Value ?? JValue.CreateNull();
+            this.Value = expression.Value;
         }
     }
 
