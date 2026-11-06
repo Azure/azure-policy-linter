@@ -12,9 +12,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     using Xunit;
 
     /// <summary>
-    /// Tests for the <see cref="UnguardedAddDaysFunction"/> rule.
+    /// Tests for the <see cref="RiskyAddDaysFunction"/> rule.
     /// </summary>
-    public class UnguardedAddDaysFunctionTests
+    public class RiskyAddDaysFunctionTests
     {
         private const string ExpectedDescription =
             "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer. A missing property is an empty string, which also fails. A failed expression makes the policy deny the request. Make sure the call only gets a valid date and an integer number of days.";
@@ -28,28 +28,28 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [InlineData("[less(addDays(field('tags[createdOn]'), 90), utcNow())]")]
         [InlineData("[if(equals(addDays(field('tags[createdOn]'), 90), 'x'), 'a', 'b')]")]
         [InlineData("[if(equals(field('tags[createdOn]'), ''), '9999-12-31T00:00:00Z', addDays(field('tags[createdOn]'), 90))]")]
-        public void RuleTests_UnguardedAddDaysFunction_Fires(string valueExpression)
+        public void RuleTests_RiskyAddDaysFunction_Fires(string valueExpression)
         {
-            var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);
+            var results = RiskyAddDaysFunctionTests.LintValueExpression(valueExpression);
 
             results.Should().HaveCount(1);
             results.Should().ContainEquivalentOf(new LinterOutput(
-                RuleIdentifier: "unguarded-adddays-function",
-                Title: "Unguarded addDays Function",
+                RuleIdentifier: "risky-adddays-function",
+                Title: "Risky addDays Function",
                 Severity: Severity.Warning,
                 Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
-                Description: UnguardedAddDaysFunctionTests.ExpectedDescription,
+                Description: RiskyAddDaysFunctionTests.ExpectedDescription,
                 Path: "properties.policyRule.if.value"));
         }
 
         [Theory]
         [InlineData("[addDays(utcNow(), 30)]")]
         [InlineData("[addDays(utcNow(), parameters('zeroParam'))]")]
-        public void RuleTests_UnguardedAddDaysFunction_NoFinding(string valueExpression)
+        public void RuleTests_RiskyAddDaysFunction_NoFinding(string valueExpression)
         {
-            var results = UnguardedAddDaysFunctionTests.LintValueExpression(valueExpression);
+            var results = RiskyAddDaysFunctionTests.LintValueExpression(valueExpression);
 
             results.Should().BeEmpty();
         }
@@ -75,8 +75,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 }}";
 
             var linter = new PolicyLinter(
-                rules: new ILinterRule[] { new UnguardedAddDaysFunction() },
-                metadata: UnguardedAddDaysFunctionTests.MockMetadata);
+                rules: new ILinterRule[] { new RiskyAddDaysFunction() },
+                metadata: RiskyAddDaysFunctionTests.MockMetadata);
 
             return linter.Lint(policyDefinition);
         }

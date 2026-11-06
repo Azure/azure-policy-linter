@@ -1,8 +1,8 @@
-# Unguarded addDays Function
+# Risky addDays Function
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| TemplateFunctions | unguarded-adddays-function | Warning | default |
+| TemplateFunctions | risky-adddays-function | Warning | default |
 
 ## Description
 

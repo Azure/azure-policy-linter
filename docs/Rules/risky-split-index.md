@@ -1,8 +1,8 @@
-# Unguarded Split Index
+# Risky Split Index
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| TemplateFunctions | unguarded-split-index | Warning | default |
+| TemplateFunctions | risky-split-index | Warning | default |
 
 ## Description
 
