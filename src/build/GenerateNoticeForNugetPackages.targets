@@ -8,6 +8,7 @@
     <GenerateNoticeBatchSize>100</GenerateNoticeBatchSize>
     <GenerateNoticeUseLocalFile Condition="'$(GenerateNoticeUseLocalFile)' == ''">true</GenerateNoticeUseLocalFile>
     <GenerateNoticeUpdateLocalFile Condition="'$(GenerateNoticeUpdateLocalFile)' == ''">false</GenerateNoticeUpdateLocalFile>
+    <_NoticeTargetFramework Condition="'$(TargetFrameworks)' != ''">$(TargetFrameworks.Split(';')[0])</_NoticeTargetFramework>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddNoticeToPackage</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
 
@@ -25,7 +26,9 @@
     </ItemGroup>
   </Target>
 
-  <Target Name="_AddNoticeToPackage" DependsOnTargets="GenerateNotice">
+  <!-- The assets file covers all frameworks; include its notice once at the package root. -->
+  <Target Name="_AddNoticeToPackage" DependsOnTargets="GenerateNotice"
+          Condition="'$(TargetFrameworks)' == '' Or '$(TargetFramework)' == '$(_NoticeTargetFramework)'">
     <ItemGroup>
       <TfmSpecificPackageFile Include="$(GenerateNoticeOutputPath)">
         <PackagePath>$(NoticeFileName)</PackagePath>

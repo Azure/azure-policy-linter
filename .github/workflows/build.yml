@@ -55,8 +55,12 @@ jobs:
 
       - name: Pack
         run: |
-          dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-restore -o ./packages
-          dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-restore -o ./packages
+          dotnet pack src/PolicyLinter.Core/PolicyLinter.Core.csproj --configuration Release --no-build --no-restore -o ./packages
+          dotnet pack src/PolicyLinter.Cli/PolicyLinter.Cli.csproj --configuration Release --no-build --no-restore -o ./packages
+
+      - name: Verify package frameworks and tool installation
+        shell: pwsh
+        run: ./scripts/TestPackages.ps1 -PackageDirectory ./packages
 
       - name: Upload test results
         if: always()

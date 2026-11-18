@@ -19,6 +19,10 @@ The linter project is meant to codify this knowledge and surface it as actionabl
 
 ## Installation
 
+The library and CLI packages contain .NET 8 and .NET 10 assets. Use the .NET 10 SDK and runtime
+for supported execution. The .NET 8 assets retain compatibility for existing consumers, but
+.NET 8 is out of support.
+
 Install the [`Microsoft.Azure.Policy.PolicyLinter.Cli`](https://www.nuget.org/packages/Microsoft.Azure.Policy.PolicyLinter.Cli) CLI as a global [.NET tool](https://learn.microsoft.com/dotnet/core/tools/global-tools):
 
 ```
@@ -111,7 +115,7 @@ dotnet build src/dirs.proj --configuration Release
 Run the CLI directly from source:
 
 ```
-dotnet run --project src/PolicyLinter.Cli -- <path-to-policy-json>
+dotnet run --project src/PolicyLinter.Cli --framework net10.0 -- <path-to-policy-json>
 ```
 
 > There is no standalone `.exe` since the Cli is modeled as a dotnet tool; run the CLI via `dotnet run` (or the installed `policylinter` command).
