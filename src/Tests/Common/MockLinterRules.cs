@@ -335,6 +335,33 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     }
 
     /// <summary>
+    /// A test linter rule for testing purposes targeting all TemplateLanguageNode types.
+    /// </summary>
+    public class TestTemplateLanguageNodeLinterRule : LinterRule<TemplateLanguageNode>
+    {
+        public Func<TestTemplateLanguageNodeLinterRule, TemplateLanguageNode, LinterContext, IEnumerable<LinterOutput>> EvaluateFunc { get; set; }
+
+        public TestTemplateLanguageNodeLinterRule(string descriptionFormat = null) : base(
+            identifier: "test-template-language-node-rule",
+            category: Category.Test,
+            title: "Test TemplateLanguageNode Rule",
+            descriptionFormat: descriptionFormat ?? "Test rule for TemplateLanguageNode",
+            applyToDerivedTypes: true)
+        {
+        }
+
+        protected override LinterOutput[] Evaluate(TemplateLanguageNode expression, LinterContext context)
+        {
+            if (this.EvaluateFunc != null)
+            {
+                return this.EvaluateFunc(this, expression, context).ToArray();
+            }
+
+            throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
     /// Test linter rule targeting count expressions.
     /// </summary>
     public class TestCountLinterRule : LinterRule<Count>
