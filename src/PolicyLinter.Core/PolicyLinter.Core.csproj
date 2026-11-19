@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <RootNamespace>Microsoft.Azure.Policy.PolicyLinter</RootNamespace>
     <AssemblyName>Microsoft.Azure.Policy.PolicyLinter.Core</AssemblyName>
     <Description>Core library for the Azure Policy Linter: static analysis of Azure Policy definitions that surfaces common authoring mistakes and policy primitive gotchas as actionable findings.</Description>

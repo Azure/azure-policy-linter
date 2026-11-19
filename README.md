@@ -111,7 +111,7 @@ dotnet build src/dirs.proj --configuration Release
 Run the CLI directly from source:
 
 ```
-dotnet run --project src/PolicyLinter.Cli -- <path-to-policy-json>
+dotnet run --project src/PolicyLinter.Cli --framework net10.0 -- <path-to-policy-json>
 ```
 
 > There is no standalone `.exe` since the Cli is modeled as a dotnet tool; run the CLI via `dotnet run` (or the installed `policylinter` command).

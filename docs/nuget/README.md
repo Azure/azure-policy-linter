@@ -6,6 +6,8 @@ The Azure Policy Linter inspects Azure Policy definitions for known issues, gotc
 
 ## Install the command-line tool
 
+Packages target .NET 8 and .NET 10. Use .NET 10 for supported execution; .NET 8 assets remain for existing consumers.
+
 ```console
 dotnet tool install --global Microsoft.Azure.Policy.PolicyLinter.Cli
 ```
