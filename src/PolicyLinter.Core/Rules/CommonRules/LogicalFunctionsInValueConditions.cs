@@ -34,7 +34,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public LogicalFunctionsInValueConditions() : base(
             identifier: "logical-functions-in-value-conditions",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: LogicalFunctionsInValueConditions.RuleTitle,
             descriptionFormat: LogicalFunctionsInValueConditions.RuleDescription,
             applyToDerivedTypes: false)
@@ -60,7 +60,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var languageExpression = value.LanguageExpressions[0];
             if (string.Equals(value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) &&
-                languageExpression.TryGetFunctionName(out var functionName) &&
+                languageExpression.Root is TemplateFunctionCall { Name: var functionName } &&
                 LogicalFunctionsInValueConditions.LogicalFunctions.Contains(functionName))
             {
                 return new[]

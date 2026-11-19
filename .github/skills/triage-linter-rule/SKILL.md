@@ -75,7 +75,7 @@ Walk the user through the draft in tiers - never dump the whole template at once
 
 ### Optional - fill only where there's signal
 
-- **Suggested severity / category** - e.g. severity `Error` / `Warning` / `Informational`; category `BestPractices` / `ResourceFields` / `Misc`. Revisable at implementation time - don't push the user on these.
+- **Suggested severity / category** - e.g. severity `Error` / `Warning` / `Informational`; category `BestPractices` / `ResourceFields` / `TemplateFunctions` / `Misc`. Revisable at implementation time - don't push the user on these.
 - **Suggested rule set** - e.g. `default`, or a non-default set name. Revisable at implementation time - don't push the user on this.
 - **Open questions** - anything the implementer needs to decide.
 - **References** - references that could be included in the rule's documentation.

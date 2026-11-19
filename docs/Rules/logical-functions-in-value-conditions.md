@@ -2,7 +2,7 @@
 
 | Category | Identifier | Severity | Rule Set |
 |----------|------------|----------|----------|
-| BestPractices | logical-functions-in-value-conditions | Informational | default |
+| TemplateFunctions | logical-functions-in-value-conditions | Informational | default |
 
 ## Description
 

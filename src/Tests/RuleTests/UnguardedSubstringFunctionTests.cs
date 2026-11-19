@@ -17,7 +17,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
     public class UnguardedSubstringFunctionTests
     {
         private const string ExpectedDescription =
-            "The expression calls 'substring' on a value that is not a literal, without checking its length first. When the value is shorter than the requested range the expression fails, and a failed expression makes the policy deny the request. Guard the call with 'if()' and 'length()'.";
+            "The expression calls 'substring()' with a value that is known only when the policy is evaluated. When the requested range runs past the end of the input the expression fails, and a failed expression makes the policy deny the request. Use 'take()' and 'skip()' instead; they don't fail on short values.";
 
         /// <summary>
         /// The mock type metadata used for the tests.
@@ -27,11 +27,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("[substring(field('name'), 0, 3)]")]
         [InlineData("[SuBsTrInG(FiElD('name'), 0, 3)]")]
-        [InlineData("[substring(parameters('name'), 0, 3)]")]
         [InlineData("[substring(field('name'), 2, 0)]")]
         [InlineData("[substring(field('name'), 0)]")]
         [InlineData("[substring(field('name'), 0, parameters('length'))]")]
-        public void RuleTests_UnguardedSubstringFunction_NonLiteralInput_Fires(string valueExpression)
+        [InlineData("[toLower(substring(field('name'), 0, 3))]")]
+        [InlineData("[concat(substring(field('name'), 0, 3), 'suffix')]")]
+        [InlineData("[if(equals(substring(field('name'), 0, 3), 'abc'), 'a', 'b')]")]
+        [InlineData("[if(greaterOrEquals(length(field('name')), 3), substring(field('name'), 0, 3), field('name'))]")]
+        [InlineData("[if(equals(field('type'), 'x'), '', toLower(substring(field('name'), 0, 3)))]")]
+        [InlineData("[substring(parameters('name'), field('tags.start'))]")]
+        public void RuleTests_UnguardedSubstringFunction_EvaluationTimeInput_Fires(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
 
@@ -106,7 +111,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         [Theory]
         [InlineData("[substring('abcdef', 0, 3)]")]
         [InlineData("[length(field('name'))]")]
+        [InlineData("[substring(parameters('name'), 0, 3)]")]
+        [InlineData("[substring(concat(field('name'), '---'), 0, 3)]")]
         [InlineData("prefix-[substring(field('name'), 0, 3)]")]
+        [InlineData("[take(skip(field('name'), 2), 3)]")]
+        [InlineData("[substring(toLower(field('name')), 0, 3)]")]
+        [InlineData("[substring(parameters('name'), 0, int(field('tags.length')))]")]
         public void RuleTests_UnguardedSubstringFunction_NotApplicable(string valueExpression)
         {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
@@ -115,22 +125,16 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
         }
 
         [Fact]
-        public void RuleTests_UnguardedSubstringFunction_GuardedWithIf_NoFinding()
+        public void RuleTests_UnguardedSubstringFunction_TwoCalls_TwoFindings()
         {
-            var results = UnguardedSubstringFunctionTests.LintValueExpression(
-                "[if(greaterOrEquals(length(field('name')), 3), substring(field('name'), 0, 3), field('name'))]");
+            const string valueExpression = "[concat(substring(field('name'), 0, 3), substring(field('type'), 0, 2))]";
 
-            results.Should().BeEmpty();
-        }
-
-        [Theory]
-        [InlineData("[toLower(substring(field('name'), 0, 3))]")]
-        [InlineData("[concat(substring(field('name'), 0, 3), 'suffix')]")]
-        public void RuleTests_UnguardedSubstringFunction_NestedInsideAnotherFunction_NoFinding(string valueExpression)
-        {
             var results = UnguardedSubstringFunctionTests.LintValueExpression(valueExpression);
 
-            results.Should().BeEmpty();
+            results.Should().HaveCount(2);
+            results.Should().AllBeEquivalentTo(UnguardedSubstringFunctionTests.CreateExpectedOutput(
+                lineNumber: 6,
+                linePosition: 35 + valueExpression.Length));
         }
 
         [Fact]
@@ -194,8 +198,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
             return new LinterOutput(
                 RuleIdentifier: "unguarded-substring-function",
                 Title: "Unguarded Substring Function",
-                Severity: Severity.Error,
-                Category: Category.BestPractices,
+                Severity: Severity.Warning,
+                Category: Category.TemplateFunctions,
                 LineNumber: lineNumber,
                 LinePosition: linePosition,
                 Path: path,

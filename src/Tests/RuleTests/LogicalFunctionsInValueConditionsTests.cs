@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Tests
                 RuleIdentifier: "logical-functions-in-value-conditions",
                 Title: "Logical Functions in Value Conditions",
                 Severity: Severity.Informational,
-                Category: Category.BestPractices,
+                Category: Category.TemplateFunctions,
                 LineNumber: 9,
                 LinePosition: 35 + valueExpression.Length,
                 Path: "properties.policyRule.if.value",

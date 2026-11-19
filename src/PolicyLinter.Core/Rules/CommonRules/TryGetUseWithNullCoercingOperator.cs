@@ -42,7 +42,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public TryGetUseWithNullCoercingOperator() : base(
             identifier: "tryget-use-with-null-coercing-operator",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: TryGetUseWithNullCoercingOperator.RuleTitle,
             descriptionFormat: TryGetUseWithNullCoercingOperator.RuleDescription,
             applyToDerivedTypes: false)
@@ -67,7 +67,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var languageExpression = expression.Value.LanguageExpressions[0];
             if (!string.Equals(expression.Value.Value.ToString(), languageExpression.Expression, StringComparison.Ordinal) ||
-                !languageExpression.TryGetFunctionName(out var functionName) ||
+                languageExpression.Root is not TemplateFunctionCall { Name: var functionName } ||
                 !string.Equals(functionName, "tryGet", StringComparison.OrdinalIgnoreCase))
             {
                 return Array.Empty<LinterOutput>();

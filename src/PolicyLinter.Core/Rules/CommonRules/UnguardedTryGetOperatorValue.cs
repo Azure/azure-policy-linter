@@ -25,7 +25,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         /// </summary>
         public UnguardedTryGetOperatorValue() : base(
             identifier: "unguarded-tryget-operator-value",
-            category: Category.BestPractices,
+            category: Category.TemplateFunctions,
             title: UnguardedTryGetOperatorValue.RuleTitle,
             descriptionFormat: UnguardedTryGetOperatorValue.RuleDescription,
             applyToDerivedTypes: false)
@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
 
             var valueExpression = expression.Operator.LanguageExpressions[0];
             if (!string.Equals(expression.Operator.Value.ToString(), valueExpression.Expression, StringComparison.Ordinal) ||
-                !valueExpression.TryGetFunctionName(out var functionName) ||
+                valueExpression.Root is not TemplateFunctionCall { Name: var functionName } ||
                 !string.Equals(functionName, "tryGet", StringComparison.OrdinalIgnoreCase))
             {
                 return Array.Empty<LinterOutput>();

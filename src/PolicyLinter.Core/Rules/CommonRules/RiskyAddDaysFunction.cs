@@ -1,0 +1,48 @@
+// ------------------------------------------------------------
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// Licensed under the MIT License.
+// ------------------------------------------------------------
+
+namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
+{
+    using System;
+    using System.Linq;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Expressions;
+    using Microsoft.Azure.Policy.PolicyLinter.Core.Rules.Contracts;
+    using Microsoft.WindowsAzure.ResourceStack.Common.Extensions;
+
+    /// <summary>
+    /// Flags addDays() calls with arguments known only when the policy is evaluated.
+    /// </summary>
+    public sealed class RiskyAddDaysFunction : LinterRule<TemplateFunctionCall>
+    {
+        private const string RuleTitle = "Risky addDays Function";
+
+        private const string RuleDescription =
+            "The expression calls 'addDays()' with a value that is known only when the policy is evaluated. 'addDays()' fails when the date is not in ISO 8601 format or the number of days is not an integer. A missing property is an empty string, which also fails. A failed expression makes the policy deny the request. Make sure the call only gets a valid date and an integer number of days.";
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RiskyAddDaysFunction"/> class.
+        /// </summary>
+        public RiskyAddDaysFunction() : base(
+            identifier: "risky-adddays-function",
+            category: Category.TemplateFunctions,
+            title: RiskyAddDaysFunction.RuleTitle,
+            descriptionFormat: RiskyAddDaysFunction.RuleDescription,
+            applyToDerivedTypes: false)
+        {
+        }
+
+        /// <inheritdoc/>
+        protected override LinterOutput[] Evaluate(TemplateFunctionCall expression, LinterContext context)
+        {
+            if (expression.Name.EqualsOrdinalInsensitively("addDays") &&
+                expression.Arguments.Any(argument => argument.IsEvaluationTimeReference()))
+            {
+                return new[] { this.CreateWarning(expression) };
+            }
+
+            return Array.Empty<LinterOutput>();
+        }
+    }
+}

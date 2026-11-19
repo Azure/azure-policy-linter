@@ -11,7 +11,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     using System.Collections.Immutable;
     using System.Linq;
     using global::Azure.Deployments.Expression.Engines;
-    using global::Azure.Deployments.Expression.Expressions;
     using Microsoft.Azure.Policy.PolicyLinter.Core;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Metadata;
     using Microsoft.Azure.Policy.PolicyLinter.Core.Extensions;
@@ -23,18 +22,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
     /// Represents a template language expression string (e.g. [field(concat('a', 'b'))]).
     /// </summary>
     /// <remarks>
-    /// This class contains the expression and details about references\functions within it, but it doesn't provide a way to traverse the expression tree.
+    /// The parsed expression is in <see cref="Root"/>, and the references in it are in <see cref="References"/>.
     /// </remarks>
     public class TemplateLanguageExpression : PolicyExpression
     {
-        /// <summary>
-        /// The parsed language expression.
-        /// </summary>
-        /// <remarks>
-        /// This property is private by design. We don't want linter rules to use it because it'll prevent us from ever getting rid of the dependency on the policy engine.
-        /// </remarks>
-        private LanguageExpression LanguageExpression { get; }
-
         /// <summary>
         /// The raw language expression string.
         /// </summary>
@@ -47,16 +38,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         public ImmutableArray<Reference> References { get; }
 
         /// <summary>
-        /// The reference kind of the root language expression if it is a reference.
+        /// The parsed expression: a <see cref="TemplateFunctionCall"/> (e.g. "[concat(field('a'), 'b')]") or a <see cref="TemplateLiteralValue"/> (e.g. "[1]").
         /// </summary>
-        /// <example>
-        /// [field('a')] => ReferenceKind.Field
-        /// [concat(field('a'), 'b')] => null
-        /// </example>
-        /// <remarks>
-        /// When this variable is not null, it can be expected that the <see cref="References"/> array will contain only one reference of the same kind.
-        /// </remarks>
-        public ReferenceKind? ReferenceKind { get; }
+        public TemplateLanguageNode Root { get; }
 
         /// <summary>
         /// Extracts template language expressions from a JToken.
@@ -115,7 +99,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Visits the expression and its references with the given visitor.
+        /// Visits the expression, its nodes and its references with the given visitor.
         /// References will only be visited if <paramref name="skipVisitingReferences"/> is false.
         /// </summary>
         /// <param name="visitor">The visitor.</param>
@@ -128,6 +112,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         internal void Visit(PolicyExpressionVisitor visitor, bool skipVisitingReferences)
         {
             visitor.Visit?.Invoke(this);
+            this.Root.Visit(visitor);
 
             if (skipVisitingReferences)
             {
@@ -150,22 +135,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         /// <summary>
-        /// Tries to get the function name when the root language expression is a function.
-        /// </summary>
-        /// <param name="functionName">The root function name, or an empty string when the root expression is not a function.</param>
-        public bool TryGetFunctionName(out string functionName)
-        {
-            if (this.LanguageExpression is FunctionExpression functionExpression)
-            {
-                functionName = functionExpression.Function;
-                return true;
-            }
-
-            functionName = string.Empty;
-            return false;
-        }
-
-        /// <summary>
         /// Creates a new instance of the <see cref="TemplateLanguageExpression"/> class.
         /// </summary>
         private TemplateLanguageExpression(
@@ -182,16 +151,13 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             this.Expression = expression;
-            this.LanguageExpression = ExpressionsEngine.ParseLanguageExpression(expression);
-            if (Reference.IsReferenceFunction(this.LanguageExpression, out var kind))
-            {
-                this.ReferenceKind = kind;
-            }
+            this.Root = TemplateLanguageNode.Create(
+                expression: ExpressionsEngine.ParseLanguageExpression(expression),
+                parent: this);
 
             var references = new List<Reference>();
-
             Reference.FromLanguageExpression(
-                languageExpression: this.LanguageExpression,
+                node: this.Root,
                 path: path,
                 parent: this,
                 countExpressionScopes: countExpressionScopes,
@@ -200,7 +166,6 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 results: references);
 
             this.References = references.ToImmutableArray();
-
         }
 
         /// <summary>
@@ -214,25 +179,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         {
             parameterName = string.Empty;
 
-            // Check if this is a parameter reference at the root level
-            if (this.ReferenceKind != Microsoft.Azure.Policy.PolicyLinter.Core.Expressions.ReferenceKind.PolicyParameterName)
-            {
-                return false;
-            }
-
-            // Check if we have exactly one reference and it's resolved
-            if (this.References.Length != 1 || !this.References[0].IsResolved)
-            {
-                return false;
-            }
-
-            var reference = this.References[0];
-
-            // Check if the underlying language expression is a plain function call without property selectors
-            if (this.LanguageExpression is FunctionExpression functionExpression &&
-                functionExpression.Function.Equals("parameters", StringComparison.OrdinalIgnoreCase) &&
-                functionExpression.Parameters.Length == 1 &&
-                (functionExpression.Properties == null || functionExpression.Properties.Length == 0))
+            if (this.Root is TemplateFunctionCall { Reference: { Kind: ReferenceKind.PolicyParameterName, IsResolved: true } reference } call &&
+                call.Arguments.Length == 1 &&
+                call.Selectors.Length == 0)
             {
                 parameterName = reference.Identifier;
                 return true;
