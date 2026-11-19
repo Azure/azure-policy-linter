@@ -1,8 +1,8 @@
 <Project>
   <PropertyGroup>
     <LangVersion>9.0</LangVersion>
-    <Version>0.12.0</Version>
-    <PackageReleaseNotes>Added .NET 10 library and CLI assets while retaining .NET 8 compatibility. Builds and tests use .NET 10.</PackageReleaseNotes>
+    <Version>0.13.0</Version>
+    <PackageReleaseNotes>Added the risky-split-index and risky-adddays-function rules. Added the TemplateFunctions category, with unguarded-substring-function and 6 other existing rules. unguarded-substring-function is a Warning (was Error). Breaking: Reference.FromLanguageExpression, Reference.IsReferenceFunction, TemplateLanguageExpression.ReferenceKind and TemplateLanguageExpression.TryGetFunctionName are removed; use TemplateLanguageExpression.Root and TemplateLanguageExpression.References.</PackageReleaseNotes>
     <!--
       Keep the public assemblies architecture-neutral regardless of a consuming build's Platform.
       The packages target any platform.
