@@ -19,7 +19,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Rules.CommonRules
         private const string RuleTitle = "Risky Split Index";
 
         private const string RuleDescription =
-            "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments, and a failed expression makes the policy deny the request. Use 'last()' or 'coalesce(first(skip(...)), <fallback>)'; they don't fail on short values.";
+            "The expression selects an element by index from the result of 'split()' on a value that is known only when the policy is evaluated. The selection fails when the value has too few segments, and a failed expression makes the policy deny the request. Use 'coalesce(first(skip(...)), <fallback>)'; it doesn't fail on short values.";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RiskySplitIndex"/> class.
