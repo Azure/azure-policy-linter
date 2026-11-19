@@ -161,7 +161,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             ITypeMetadata typeMetadata,
             List<Reference> results)
         {
-            if (node is not TemplateFunctionCall call)
+            if (node is not TemplateFunctionCall function)
             {
                 return;
             }
@@ -187,7 +187,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             // TODO: If there's a need for these "child" references to point back to the reference who depends on them,
             // we can add a "dependentReference" property to the reference class and set it to the reference that depends on it.
             var functionParamDependecies = new List<Reference>();
-            foreach (var argument in call.Arguments)
+            foreach (var argument in function.Arguments)
             {
                 Reference.FromLanguageExpression(
                     node: argument,
@@ -200,7 +200,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             var propertyDependecies = new List<Reference>();
-            foreach (var selector in call.Selectors)
+            foreach (var selector in function.Selectors)
             {
                 Reference.FromLanguageExpression(
                     node: selector,
@@ -213,12 +213,12 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             }
 
             PropertySelectionPath? propertySelectionPath = null;
-            if (call.Selectors.Any())
+            if (function.Selectors.Any())
             {
                 if (!propertyDependecies.Any())
                 {
                     // No dependencies, so we can process the path.
-                    var processedPath = call.Selectors
+                    var processedPath = function.Selectors
                         .Select(selector => selector.Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!)
                         .ToArray();
 
@@ -232,10 +232,10 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 }
             }
 
-            if (Reference.FunctionNamesToReferenceKinds.TryGetValue(call.Name, out var functionReferenceKind))
+            if (Reference.FunctionNamesToReferenceKinds.TryGetValue(function.Name, out var functionReferenceKind))
             {
                 var reference = new Reference(
-                    call: call,
+                    function: function,
                     kind: functionReferenceKind,
                     resolutionDependencies: functionParamDependecies.ToImmutableArray(),
                     propertySelectionPath: propertySelectionPath,
@@ -245,7 +245,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                     path: path,
                     parent: parent);
 
-                call.Reference = reference;
+                function.Reference = reference;
                 results.Add(reference);
             }
             else
@@ -257,7 +257,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
         }
 
         private Reference(
-            TemplateFunctionCall call,
+            TemplateFunctionCall function,
             ReferenceKind kind,
             ImmutableArray<Reference> resolutionDependencies,
             PropertySelectionPath? propertySelectionPath,
@@ -275,8 +275,8 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             if (this.Kind == ReferenceKind.PolicyParameterName || this.Kind == ReferenceKind.ResourceField)
             {
                 // For parameter and field functions, we need to extract the first argument name to use as the identifier of the reference.
-                this.Identifier = this.IsResolved && call.Arguments.Length > 0 ?
-                    call.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!
+                this.Identifier = this.IsResolved && function.Arguments.Length > 0 ?
+                    function.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!
                     : string.Empty;
 
                 this.ReferencedCountExpressionScope =
@@ -288,9 +288,9 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             {
                 // For claims function, extract the first argument if present (e.g., claims('aud'))
                 // If no argument but has property selection path, use the property path as identifier (e.g., claims().iss -> "iss")
-                if (this.IsResolved && call.Arguments.Length > 0)
+                if (this.IsResolved && function.Arguments.Length > 0)
                 {
-                    this.Identifier = call.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!;
+                    this.Identifier = function.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!;
                 }
                 else if (this.PropertySelectionPath?.IsResolved == true && this.PropertySelectionPath.Path.Length > 0)
                 {
@@ -298,15 +298,15 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
                 }
                 else
                 {
-                    this.Identifier = call.Name;
+                    this.Identifier = function.Name;
                 }
 
                 this.ReferencedCountExpressionScope = null;
             }
             else if (this.Kind == ReferenceKind.CurrentArrayMember)
             {
-                this.Identifier = call.Arguments.Length > 0 ?
-                    call.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!
+                this.Identifier = function.Arguments.Length > 0 ?
+                    function.Arguments[0].Evaluate(Reference.BuiltInFunctionsOnlyExpressionEvaluationContext).ToStringValue()!
                     : string.Empty;
 
                 var countScopeIdentifier = string.IsNullOrEmpty(this.Identifier) ? null : this.Identifier;
@@ -315,7 +315,7 @@ namespace Microsoft.Azure.Policy.PolicyLinter.Core.Expressions
             else
             {
                 // For stuff like resourceGroup function the identifier is just going to be the function name and the property selection path is more relevant.
-                this.Identifier = call.Name;
+                this.Identifier = function.Name;
                 this.ReferencedCountExpressionScope = null;
             }
 
