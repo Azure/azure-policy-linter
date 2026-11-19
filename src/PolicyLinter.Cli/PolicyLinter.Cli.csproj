@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
     <AssemblyName>Microsoft.Azure.Policy.PolicyLinter.Cli</AssemblyName>
     <RootNamespace>Microsoft.Azure.Policy.PolicyLinter.Cli</RootNamespace>
     <Description>Command-line tool for the Azure Policy Linter. Lints Azure Policy definition files and reports authoring issues and improvement opportunities, with JSON output for CI integration.</Description>
@@ -24,7 +24,7 @@
 
       1. PackageType=DotnetTool. The metadata marker that makes `dotnet tool install` accept this package
          as a tool. Without it, install rejects the package, treating it as a plain library, not a tool.
-      2. The _AddToolPayload target. Copies the build output into tools/net8.0/any/ inside the package.
+      2. The _AddToolPayload target. Copies each target's build output into tools/$(TargetFramework)/any/.
          PackAsTool would have produced this via its re-publish.
       3. DotnetToolSettings.xml (hand-authored, next to this csproj). Maps the command name `policylinter`
          to the entry-point assembly. PackAsTool would have generated this from ToolCommandName.
@@ -62,10 +62,10 @@
   <Target Name="_AddToolPayload">
     <ItemGroup>
       <TfmSpecificPackageFile Include="$(OutputPath)**\*" Exclude="$(OutputPath)**\*.nupkg;$(OutputPath)**\*.pdb">
-        <PackagePath>tools/net8.0/any/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
+        <PackagePath>tools/$(TargetFramework)/any/%(RecursiveDir)%(Filename)%(Extension)</PackagePath>
       </TfmSpecificPackageFile>
       <TfmSpecificPackageFile Include="DotnetToolSettings.xml">
-        <PackagePath>tools/net8.0/any/DotnetToolSettings.xml</PackagePath>
+        <PackagePath>tools/$(TargetFramework)/any/DotnetToolSettings.xml</PackagePath>
       </TfmSpecificPackageFile>
     </ItemGroup>
   </Target>
