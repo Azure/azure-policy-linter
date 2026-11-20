@@ -1,9 +1,9 @@
 ﻿# Optional Field Alias
 
 
-| Category | Identifier | Severity |
-|----------|------------|----------|
-| ResourceFields | optional-field-alias | Informational |
+| Category | Identifier | Severity | Rule Set |
+|----------|------------|----------|----------|
+| ResourceFields | optional-field-alias | Informational | default |
 
 ## Description
 
@@ -15,7 +15,7 @@ The policy definition is referencing a [field alias](https://learn.microsoft.com
 - Decide what is the desired policy outcome in the case the property is missing.
   - If deciding not to enforce, add an `exists` condition to the policy rule.
   - If deciding to enforce, identify how often the property is expected to be missing in incoming requests, and whether it is acceptable.
-    - Test the policy against common Azure clients (portal, PS, CLI) to ensure their latest version contains the property.
+    - Test the policy against common Azure clients (portal, PowerShell, CLI) to ensure their latest version contains the property.
     - Assign the policy with `audit` effect and inspect the [activity logs](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema#policy-category) for audit events, which will also contain the request details.
     - Things to look for in activity logs:
       - Number of audited requests caused by the property being missing. Large number might indicate that the policy has false-positives and in any case, it might not be safe to apply an enforcement policy while these requests are ongoing.
